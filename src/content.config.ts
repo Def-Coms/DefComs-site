@@ -33,6 +33,24 @@ const pages = defineCollection({
     changefreq: z.string().optional(),
     priority: z.number().optional(),
     draft: z.boolean().default(false),
+    // Blog article card (used by the generated blog archive)
+    blog: z
+      .object({
+        categories: z.array(z.string()),
+        date: z.coerce.date(),
+        order: z.number().default(0),
+        title: z.string(),
+        summary: z.string(),
+        image: z.string(),
+        imageAlt: z.string(),
+        imageWidth: z.number().default(1200),
+        imageHeight: z.number().default(675),
+        ariaLabel: z.string().optional(),
+        cta: z.string().default('Прочетете ръководството →'),
+      })
+      .optional(),
+    // Replaces the <!--@listing--> marker in the body with a generated list
+    listing: z.enum(['blog']).optional(),
   }),
 });
 
