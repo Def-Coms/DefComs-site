@@ -34,7 +34,8 @@
 Команди: `npm install` (веднъж), `npm run dev` (http://localhost:4321), `npm run build`, `npm run check`.
 
 - **Нова статия:** Markdown файл в `src/content/pages/blog/` с `article:` във frontmatter. Картата в блога, JSON-LD и sitemap се появяват автоматично. Образец: съществуваща статия.
-- **Нова услуга / термин:** страницата с `card:` във frontmatter (група и ред за услугите) → появява се в списъка. След задача 2.2 / 2.5 се ползва съответният шаблон.
+- **Нова услуга:** файл в `src/content/pages/services/` със `service:` (hero, секции, ЧЗВ) и `card:` (група, ред). Заглавието, JSON-LD и ЧЗВ схемата се генерират. Образец: `vps-servers.html`.
+- **Нов термин от речника:** страница с `card:` (след задача 2.5 ще има шаблон).
 - **Нов град:** файл `src/content/pages/bulgaria/<град>.html` само с frontmatter (`city:`, `card:`), без тяло. Образец: `varna.html`.
 - **Промяна в менюто или футъра:** само `src/data/site.ts`.
 - **Скриване на страница:** `draft: true`.

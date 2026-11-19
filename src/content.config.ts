@@ -56,6 +56,33 @@ const pages = defineCollection({
         loc: z.string().optional(),
       })
       .optional(),
+    // Service landing page: hero, JSON-LD and sections are generated from this record
+    service: z
+      .object({
+        name: z.string(),
+        short: z.string().optional(),
+        schemaName: z.string().optional(),
+        category: z.string(),
+        lead: z.string(),
+        actions: z.array(z.object({ text: z.string(), href: z.string() })).length(2),
+        image: z.object({ src: z.string(), alt: z.string(), width: z.number().optional(), height: z.number().optional() }),
+        breadcrumb: z.boolean().optional(),
+        nodes: z.array(z.object({ title: z.string(), text: z.string() })),
+        serviceType: z.string().optional(),
+        summary: z.string().optional(),
+        sections: z.array(
+          z.object({
+            type: z.enum(['content', 'faq', 'html']),
+            alt: z.boolean().optional(),
+            kicker: z.string().optional(),
+            title: z.string().optional(),
+            body: z.string().optional(),
+            html: z.string().optional(),
+            items: z.array(z.object({ q: z.string(), a: z.string(), open: z.boolean().optional() })).optional(),
+          }),
+        ),
+      })
+      .optional(),
     // Card(s) shown on generated indexes (services, glossary, cities); an array when a page is listed in several
     card: z
       .union([cardSchema, z.array(cardSchema)])

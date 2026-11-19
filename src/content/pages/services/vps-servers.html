@@ -11,63 +11,6 @@ twitterTitle: VPS Виртуални сървъри | DefComs
 twitterDescription: Виртуални сървъри с изолирани CPU, RAM и диск ресурси за всеки клиент.
 meta:
   theme-color: "#050811"
-schema:
-  - "@context": https://schema.org
-    "@graph":
-      - "@type": Organization
-        "@id": https://defcoms.eu/#organization
-        name: DefComs
-        url: https://defcoms.eu/
-      - "@type": WebPage
-        "@id": https://defcoms.eu/services/vps-servers#webpage
-        url: https://defcoms.eu/services/vps-servers
-        name: VPS Виртуални сървъри | DefComs България
-        inLanguage: bg
-        isPartOf:
-          "@id": https://defcoms.eu/#website
-        breadcrumb:
-          "@id": https://defcoms.eu/services/vps-servers#breadcrumb
-        publisher:
-          "@id": https://defcoms.eu/#organization
-      - "@type": Service
-        "@id": https://defcoms.eu/services/vps-servers#service
-        name: VPS виртуални сървъри
-        serviceType: VPS Hosting
-        url: https://defcoms.eu/services/vps-servers
-        provider:
-          "@id": https://defcoms.eu/#organization
-        areaServed:
-          "@type": Country
-          name: Bulgaria
-        description: Виртуални сървъри за клиенти с отделни, изолирани ресурси (CPU, RAM, диск) за всеки.
-      - "@type": BreadcrumbList
-        "@id": https://defcoms.eu/services/vps-servers#breadcrumb
-        itemListElement:
-          - "@type": ListItem
-            position: 1
-            name: Начало
-            item: https://defcoms.eu/
-          - "@type": ListItem
-            position: 2
-            name: Услуги
-            item: https://defcoms.eu/services
-          - "@type": ListItem
-            position: 3
-            name: VPS виртуални сървъри
-            item: https://defcoms.eu/services/vps-servers
-      - "@type": FAQPage
-        mainEntity:
-          - "@type": Question
-            name: Какво означава отделни ресурси за всеки VPS?
-            acceptedAnswer:
-              "@type": Answer
-              text: Всеки виртуален сървър получава собствен, изолиран пакет CPU, RAM и диск пространство, така че натоварването на други клиенти не влияе на вашата машина.
-          - "@type": Question
-            name: Коя операционна система се използва на VPS?
-            acceptedAnswer:
-              "@type": Answer
-              text: Стандартно Linux дистрибуции (напр. Debian, Ubuntu, AlmaLinux). По желание конфигурираме софтуера и службите спрямо вашите нужди.
-headExtra: <link rel="preload" as="image" href="/images/Webp/%D0%9F%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0_%D0%B7%D0%B0_%D0%BC%D1%80%D0%B5%D0%B6%D0%BE%D0%B2%D0%B0_%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F.webp" fetchpriority="high">
 bodyClass: service-landing
 card:
   list: services
@@ -76,5 +19,47 @@ card:
   title: VPS виртуални сървъри
   text: Виртуални сървъри за клиенти с отделни, изолирани ресурси (CPU, RAM, диск) за всеки.
   cta: Виж подробности
+service:
+  name: VPS виртуални сървъри
+  category: Hosting &amp; Infrastructure
+  lead: Виртуални сървъри с отделни, изолирани ресурси за всеки клиент, изградени в собствената ни виртуализирана инфраструктура — за сайтове, приложения и бизнес услуги.
+  actions:
+    - text: Заяви VPS оферта
+      href: /contact
+    - text: Всички услуги
+      href: /services
+  image:
+    src: /images/Webp/%D0%9F%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0_%D0%B7%D0%B0_%D0%BC%D1%80%D0%B5%D0%B6%D0%BE%D0%B2%D0%B0_%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F.webp
+    alt: VPS виртуални сървъри
+    width: 2752
+    height: 1536
+  nodes:
+    - title: CPU
+      text: Изолирани ядра
+    - title: RAM
+      text: Отделна памет
+    - title: Диск
+      text: Собственно пространство
+    - title: Control
+      text: Пълен root достъп
+  serviceType: VPS Hosting
+  summary: Виртуални сървъри за клиенти с отделни, изолирани ресурси (CPU, RAM, диск) за всеки.
+  sections:
+    - type: content
+      kicker: Вашата машина, вашият контрол
+      title: Защо VPS от собствената ни инфраструктура
+      body: <p>Всеки клиент получава собствена виртуална машина с гарантирано разпределени ресурси. Не споделяте натоварване с чужди проекти, а ние се грижим за физическите сървъри, мрежата и <a href="/services/backup-as-a-service">резервните копия</a> на хипервизорско ниво.</p><ul class="service-landing-list"><li><strong>Изолирани ресурси</strong>Отделни CPU, RAM и диск за всяка виртуална машина.</li><li><strong>Пълен администраторски достъп</strong>Root access и свободен избор на Linux дистрибуция и софтуер.</li><li><strong>Управление от нас</strong>Поддръжка на хипервизора, ъпдейти на физическото ниво и мрежова свързаност — в синхрон с <a href="/services/noc-services">NOC услугите</a>.</li><li><strong>Мащабируемост</strong>Ресурсите на машината се променят според растящите ви нужди.</li></ul>
+    - type: faq
+      kicker: Често задавани въпроси
+      title: VPS сървъри
+      items:
+        - q: Какво означава отделни ресурси за всеки VPS?
+          a: Всеки виртуален сървър получава собствен, изолиран пакет CPU, RAM и диск пространство, така че натоварването на други клиенти не влияе на вашата машина.
+          open: true
+        - q: Коя операционна система се използва на VPS?
+          a: Стандартно Linux дистрибуции (напр. Debian, Ubuntu, AlmaLinux). По желание конфигурираме софтуера и службите спрямо вашите нужди.
+    - type: content
+      kicker: Обхват и оферта
+      title: Как се формира офертата за VPS
+      body: '<p>Офертата се договаря писмено след кратка оценка на нуждите ви: избрания ресурсен пакет (CPU/RAM/диск), очакваното натоварване, нуждата от резервни копия и управлението на софтуера от наша страна.</p><p>За индивидуална оценка — <a href="/contact">заявете консултация</a>.</p>'
 ---
-<main><section class="service-landing-hero"><div class="container service-landing-grid"><div><nav class="blog-breadcrumbs" aria-label="Навигационна пътека" style="font-size: .9rem; margin-bottom: 16px;"><a href="/">Начало</a> › <a href="/services">Услуги</a> › <span>VPS виртуални сървъри</span></nav><p class="service-landing-kicker">Hosting &amp; Infrastructure</p><h1>VPS виртуални сървъри</h1><p class="service-landing-lead">Виртуални сървъри с отделни, изолирани ресурси за всеки клиент, изградени в собствената ни виртуализирана инфраструктура — за сайтове, приложения и бизнес услуги.</p><div class="service-landing-actions"><a href="/contact" class="btn btn-primary">Заяви VPS оферта</a><a href="/services" class="btn btn-secondary">Всички услуги</a></div></div><div class="service-landing-visual"><img src="/images/Webp/%D0%9F%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B0_%D0%B7%D0%B0_%D0%BC%D1%80%D0%B5%D0%B6%D0%BE%D0%B2%D0%B0_%D0%B0%D0%B2%D1%82%D0%BE%D0%BC%D0%B0%D1%82%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F.webp" alt="VPS виртуални сървъри" width="2752" height="1536" fetchpriority="high"><div class="service-landing-nodes"><div class="service-landing-node"><strong>CPU</strong>Изолирани ядра</div><div class="service-landing-node"><strong>RAM</strong>Отделна памет</div><div class="service-landing-node"><strong>Диск</strong>Собственно пространство</div><div class="service-landing-node"><strong>Control</strong>Пълен root достъп</div></div></div></div></section><section class="service-landing-section"><div class="container"><p class="service-landing-kicker">Вашата машина, вашият контрол</p><h2>Защо VPS от собствената ни инфраструктура</h2><p>Всеки клиент получава собствена виртуална машина с гарантирано разпределени ресурси. Не споделяте натоварване с чужди проекти, а ние се грижим за физическите сървъри, мрежата и <a href="/services/backup-as-a-service">резервните копия</a> на хипервизорско ниво.</p><ul class="service-landing-list"><li><strong>Изолирани ресурси</strong>Отделни CPU, RAM и диск за всяка виртуална машина.</li><li><strong>Пълен администраторски достъп</strong>Root access и свободен избор на Linux дистрибуция и софтуер.</li><li><strong>Управление от нас</strong>Поддръжка на хипервизора, ъпдейти на физическото ниво и мрежова свързаност — в синхрон с <a href="/services/noc-services">NOC услугите</a>.</li><li><strong>Мащабируемост</strong>Ресурсите на машината се променят според растящите ви нужди.</li></ul></div></section><section class="service-landing-section"><div class="container service-landing-faq"><p class="service-landing-kicker">Често задавани въпроси</p><h2>VPS сървъри</h2><details open=""><summary>Какво означава отделни ресурси за всеки VPS?</summary><p>Всеки виртуален сървър получава собствен, изолиран пакет CPU, RAM и диск пространство, така че натоварването на други клиенти не влияе на вашата машина.</p></details><details><summary>Коя операционна система се използва на VPS?</summary><p>Стандартно Linux дистрибуции (напр. Debian, Ubuntu, AlmaLinux). По желание конфигурираме софтуера и службите спрямо вашите нужди.</p></details></div></section><section class="service-landing-section"><div class="container"><p class="service-landing-kicker">Обхват и оферта</p><h2>Как се формира офертата за VPS</h2><p>Офертата се договаря писмено след кратка оценка на нуждите ви: избрания ресурсен пакет (CPU/RAM/диск), очакваното натоварване, нуждата от резервни копия и управлението на софтуера от наша страна.</p><p>За индивидуална оценка — <a href="/contact">заявете консултация</a>.</p></div></section></main>

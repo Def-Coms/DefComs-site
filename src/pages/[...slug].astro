@@ -2,6 +2,8 @@
 import { getCollection } from 'astro:content';
 import Page from '../layouts/Page.astro';
 import BlogArticle from '../components/BlogArticle.astro';
+import ServicePage from '../components/ServicePage.astro';
+import { serviceMeta } from '../lib/service';
 import CityPage from '../components/CityPage.astro';
 import { cityMeta } from '../lib/city';
 import CardList from '../components/CardList.astro';
@@ -16,7 +18,7 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const data = entry.data.city ? { ...cityMeta(entry.data.city, entry.id), ...entry.data, title: entry.data.title || cityMeta(entry.data.city, entry.id).title, description: entry.data.description || cityMeta(entry.data.city, entry.id).description } : entry.data;
+const data = entry.data.service ? { ...serviceMeta(entry.data.service, entry.id, entry.data.title), ...entry.data } : entry.data.city ? { ...cityMeta(entry.data.city, entry.id), ...entry.data, title: entry.data.title || cityMeta(entry.data.city, entry.id).title, description: entry.data.description || cityMeta(entry.data.city, entry.id).description } : entry.data;
 const path = entry.id === 'index' ? '/' : '/' + entry.id;
 const html = entry.rendered?.html ?? '';
 const parts = html.split(/<!--@listing:([\w:-]+)-->/);
@@ -24,7 +26,7 @@ const parts = html.split(/<!--@listing:([\w:-]+)-->/);
 const [before, after] = html.split('<!--@listing-->');
 ---
 <Page page={data} path={path}>
-  {entry.data.city ? <CityPage city={entry.data.city} id={entry.id} /> : parts.length > 1 ? parts.map((part, i) => i % 2 === 0
+  {entry.data.service ? <ServicePage service={entry.data.service} /> : entry.data.city ? <CityPage city={entry.data.city} id={entry.id} /> : parts.length > 1 ? parts.map((part, i) => i % 2 === 0
     ? <Fragment set:html={part} />
     : <CardList list={part.split(':')[0]} group={part.split(':')[1]} />
   ) : entry.data.article ? (

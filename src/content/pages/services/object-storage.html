@@ -10,63 +10,6 @@ ogDescription: MinIO S3-съвместимо съхранение на обек�
 twitterTitle: Обект хранилище | DefComs
 meta:
   theme-color: "#050811"
-schema:
-  - "@context": https://schema.org
-    "@graph":
-      - "@type": Organization
-        "@id": https://defcoms.eu/#organization
-        name: DefComs
-        url: https://defcoms.eu/
-      - "@type": WebPage
-        "@id": https://defcoms.eu/services/object-storage#webpage
-        url: https://defcoms.eu/services/object-storage
-        name: Обект хранилище, съвместимо със S3 | DefComs
-        inLanguage: bg
-        isPartOf:
-          "@id": https://defcoms.eu/#website
-        breadcrumb:
-          "@id": https://defcoms.eu/services/object-storage#breadcrumb
-        publisher:
-          "@id": https://defcoms.eu/#organization
-      - "@type": Service
-        "@id": https://defcoms.eu/services/object-storage#service
-        name: Обектно хранилище (MinIO / S3)
-        serviceType: Object Storage
-        url: https://defcoms.eu/services/object-storage
-        provider:
-          "@id": https://defcoms.eu/#organization
-        areaServed:
-          "@type": Country
-          name: Bulgaria
-        description: S3-съвместимо обектно хранилище за файлове, копия и медии — мащабируемо, шифровано и в собствената ни инфраструктура.
-      - "@type": BreadcrumbList
-        "@id": https://defcoms.eu/services/object-storage#breadcrumb
-        itemListElement:
-          - "@type": ListItem
-            position: 1
-            name: Начало
-            item: https://defcoms.eu/
-          - "@type": ListItem
-            position: 2
-            name: Услуги
-            item: https://defcoms.eu/services
-          - "@type": ListItem
-            position: 3
-            name: Обектно хранилище
-            item: https://defcoms.eu/services/object-storage
-      - "@type": FAQPage
-        mainEntity:
-          - "@type": Question
-            name: Какво означава S3-съвместимост?
-            acceptedAnswer:
-              "@type": Answer
-              text: Означава, че приложения, написани за Amazon S3 API, могат да работят с нашето MinIO хранилище без преработка на кода.
-          - "@type": Question
-            name: Подходящо ли е за документи в реално време?
-            acceptedAnswer:
-              "@type": Answer
-              text: Обектното хранилище е за цели файлове, не за често редактирани части; за синхронизирана работа с документи е по-подходящ Nextcloud.
-headExtra: <link rel="preload" as="image" href="/images/Webp/COBO_Industrial_Data-to-Decision_Pipeline_Overview.webp" fetchpriority="high">
 bodyClass: service-landing
 card:
   list: services
@@ -75,5 +18,49 @@ card:
   title: Обектно хранилище (S3)
   text: S3-съвместимо MinIO хранилище за файлове, копия и медии в наша инфраструктура.
   cta: Виж подробности
+service:
+  name: Обектно хранилище, съвместимо със S3
+  short: Обектно хранилище
+  schemaName: Обектно хранилище (MinIO / S3)
+  category: Hosting &amp; Infrastructure
+  lead: Отделно, мащабируемо хранилище за обекти — за резервни копия, медии и приложения, с достъп през стандартния S3 интерфейс и в наша инфраструктура.
+  actions:
+    - text: Заяви обектно хранилище
+      href: /contact
+    - text: Всички услуги
+      href: /services
+  image:
+    src: /images/Webp/COBO_Industrial_Data-to-Decision_Pipeline_Overview.webp
+    alt: Обектно хранилище на данни
+    width: 2745
+    height: 1493
+  nodes:
+    - title: S3
+      text: S3 API
+    - title: Scale
+      text: Мащаб
+    - title: Encrypt
+      text: Шифроване
+    - title: Buckets
+      text: Кошове
+  serviceType: Object Storage
+  summary: S3-съвместимо обектно хранилище за файлове, копия и медии — мащабируемо, шифровано и в собствената ни инфраструктура.
+  sections:
+    - type: content
+      kicker: Хранилище, което расте с вас
+      title: Какво е обектно хранилище и за какво служи
+      body: <p>Подходящо е за неструктурирани данни — копия, снимки, видеа и логове. Комбинира се лесно с <a href="/services/nextcloud">Nextcloud</a> и <a href="/services/backup-as-a-service">backup като услуга</a>.</p><ul class="service-landing-list"><li><strong>S3-съвместим достъп</strong>Работи с инструменти и приложения, които очакват Amazon S3 API.</li><li><strong>Място за копия и медии</strong>Съхранение на резервни копия, архиви и тежки файлове извън основния диск.</li><li><strong>Шифроване и контрол</strong>Данни в наша инфраструктура с контрол над достъпа и кошовете.</li><li><strong>Оразмеряване по нуждите</strong>Обемът се планира спрямо реалните нужди, без излишен капацитет.</li></ul>
+    - type: faq
+      kicker: Често задавани въпроси
+      title: Обектно хранилище
+      items:
+        - q: Какво означава S3-съвместимост?
+          a: Означава, че приложения, написани за Amazon S3 API, могат да работят с нашето MinIO хранилище без преработка на кода.
+          open: true
+        - q: Подходящо ли е за документи в реално време?
+          a: Обектното хранилище е за цели файлове, не за често редактирани части; за синхронизирана работа с документи е по-подходящ Nextcloud.
+    - type: content
+      kicker: Обхват и оферта
+      title: Как се формира офертата за обектно хранилище
+      body: <p>Обемът, броят кошове, политиките за достъп и наличието (или не) на публичен интернет достъп се договарят писмено според конкретния случай.</p><p>За индивидуална оценка — <a href="/contact">заявете консултация</a>.</p>
 ---
-<main><section class="service-landing-hero"><div class="container service-landing-grid"><div><nav class="blog-breadcrumbs" aria-label="Навигационна пътека" style="font-size: .9rem; margin-bottom: 16px;"><a href="/">Начало</a> › <a href="/services">Услуги</a> › <span>Обектно хранилище</span></nav><p class="service-landing-kicker">Hosting &amp; Infrastructure</p><h1>Обектно хранилище, съвместимо със S3</h1><p class="service-landing-lead">Отделно, мащабируемо хранилище за обекти — за резервни копия, медии и приложения, с достъп през стандартния S3 интерфейс и в наша инфраструктура.</p><div class="service-landing-actions"><a href="/contact" class="btn btn-primary">Заяви обектно хранилище</a><a href="/services" class="btn btn-secondary">Всички услуги</a></div></div><div class="service-landing-visual"><img src="/images/Webp/COBO_Industrial_Data-to-Decision_Pipeline_Overview.webp" alt="Обектно хранилище на данни" width="2745" height="1493" fetchpriority="high"><div class="service-landing-nodes"><div class="service-landing-node"><strong>S3</strong>S3 API</div><div class="service-landing-node"><strong>Scale</strong>Мащаб</div><div class="service-landing-node"><strong>Encrypt</strong>Шифроване</div><div class="service-landing-node"><strong>Buckets</strong>Кошове</div></div></div></div></section><section class="service-landing-section"><div class="container"><p class="service-landing-kicker">Хранилище, което расте с вас</p><h2>Какво е обектно хранилище и за какво служи</h2><p>Подходящо е за неструктурирани данни — копия, снимки, видеа и логове. Комбинира се лесно с <a href="/services/nextcloud">Nextcloud</a> и <a href="/services/backup-as-a-service">backup като услуга</a>.</p><ul class="service-landing-list"><li><strong>S3-съвместим достъп</strong>Работи с инструменти и приложения, които очакват Amazon S3 API.</li><li><strong>Място за копия и медии</strong>Съхранение на резервни копия, архиви и тежки файлове извън основния диск.</li><li><strong>Шифроване и контрол</strong>Данни в наша инфраструктура с контрол над достъпа и кошовете.</li><li><strong>Оразмеряване по нуждите</strong>Обемът се планира спрямо реалните нужди, без излишен капацитет.</li></ul></div></section><section class="service-landing-section"><div class="container service-landing-faq"><p class="service-landing-kicker">Често задавани въпроси</p><h2>Обектно хранилище</h2><details open=""><summary>Какво означава S3-съвместимост?</summary><p>Означава, че приложения, написани за Amazon S3 API, могат да работят с нашето MinIO хранилище без преработка на кода.</p></details><details><summary>Подходящо ли е за документи в реално време?</summary><p>Обектното хранилище е за цели файлове, не за често редактирани части; за синхронизирана работа с документи е по-подходящ Nextcloud.</p></details></div></section><section class="service-landing-section"><div class="container"><p class="service-landing-kicker">Обхват и оферта</p><h2>Как се формира офертата за обектно хранилище</h2><p>Обемът, броят кошове, политиките за достъп и наличието (или не) на публичен интернет достъп се договарят писмено според конкретния случай.</p><p>За индивидуална оценка — <a href="/contact">заявете консултация</a>.</p></div></section></main>

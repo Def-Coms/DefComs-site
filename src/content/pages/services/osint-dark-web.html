@@ -10,63 +10,6 @@ ogDescription: OSINT оценка на видимата атакуваща по�
 twitterTitle: OSINT и dark web | DefComs
 meta:
   theme-color: "#050811"
-schema:
-  - "@context": https://schema.org
-    "@graph":
-      - "@type": Organization
-        "@id": https://defcoms.eu/#organization
-        name: DefComs
-        url: https://defcoms.eu/
-      - "@type": WebPage
-        "@id": https://defcoms.eu/services/osint-dark-web#webpage
-        url: https://defcoms.eu/services/osint-dark-web
-        name: OSINT и наблюдение на dark web | DefComs
-        inLanguage: bg
-        isPartOf:
-          "@id": https://defcoms.eu/#website
-        breadcrumb:
-          "@id": https://defcoms.eu/services/osint-dark-web#breadcrumb
-        publisher:
-          "@id": https://defcoms.eu/#organization
-      - "@type": Service
-        "@id": https://defcoms.eu/services/osint-dark-web#service
-        name: OSINT и dark web мониторинг
-        serviceType: OSINT & Dark Web Monitoring
-        url: https://defcoms.eu/services/osint-dark-web
-        provider:
-          "@id": https://defcoms.eu/#organization
-        areaServed:
-          "@type": Country
-          name: Bulgaria
-        description: Проверка на цифровия отпечатък на фирмата и наблюдение за изтичащи данни и пароли в публични и dark web източници.
-      - "@type": BreadcrumbList
-        "@id": https://defcoms.eu/services/osint-dark-web#breadcrumb
-        itemListElement:
-          - "@type": ListItem
-            position: 1
-            name: Начало
-            item: https://defcoms.eu/
-          - "@type": ListItem
-            position: 2
-            name: Услуги
-            item: https://defcoms.eu/services
-          - "@type": ListItem
-            position: 3
-            name: OSINT и dark web
-            item: https://defcoms.eu/services/osint-dark-web
-      - "@type": FAQPage
-        mainEntity:
-          - "@type": Question
-            name: Какво е OSINT накратко?
-            acceptedAnswer:
-              "@type": Answer
-              text: OSINT е събиране и анализ на информация от открити източници — същото, което би направил подготвен нападател преди атака.
-          - "@type": Question
-            name: Гарантирате ли че няма изтичане?
-            acceptedAnswer:
-              "@type": Answer
-              text: Не — услугата проверява и сигнализира за налични публични данни и изтичания; не може да гарантира абсолютната им липса.
-headExtra: <link rel="preload" as="image" href="/images/Webp/Omaya.webp" fetchpriority="high">
 bodyClass: service-landing
 card:
   list: services
@@ -75,5 +18,49 @@ card:
   title: OSINT и наблюдение на dark web
   text: Какво се вижда за фирмата отвън — цифров отпечатък, изложени системи и проверки за изтичащи данни.
   cta: Виж подробности
+service:
+  name: OSINT и наблюдение на dark web
+  short: OSINT и dark web
+  schemaName: OSINT и dark web мониторинг
+  category: Cybersecurity Services
+  lead: "Вижте каквото външен нападател вижда за фирмата: събрани публични данни, изложени системи и евентуално изтичащи пароли или документи."
+  actions:
+    - text: Заяви OSINT оценка
+      href: /contact
+    - text: Всички услуги
+      href: /services
+  image:
+    src: /images/Webp/Omaya.webp
+    alt: Анализ на заплахи и цифров отпечатък
+    width: 2745
+    height: 1496
+  nodes:
+    - title: Footprint
+      text: Отпечатък
+    - title: Exposure
+      text: Изложеност
+    - title: Leaks
+      text: Изтичане
+    - title: Alerts
+      text: Сигнали
+  serviceType: OSINT & Dark Web Monitoring
+  summary: Проверка на цифровия отпечатък на фирмата и наблюдение за изтичащи данни и пароли в публични и dark web източници.
+  sections:
+    - type: content
+      kicker: Какво се вижда отвън
+      title: Какво включва OSINT оценката
+      body: <p>Събираме и анализираме публично достъпната информация за фирмата и проверяваме дали данни или достъпи не се появяват в отворени изтичания. Резултатите захранват <a href="/services/vulnerability-management">управлението на уязвимости</a> и <a href="/services/soc-monitoring">SOC мониторинга</a>.</p><ul class="service-landing-list"><li><strong>Цифров отпечатък</strong>Какви домейни, имейли, документи и служители са видими отвън.</li><li><strong>Изложени системи</strong>Открити уязвими услуги или административни панели, достъпни от интернет.</li><li><strong>Проверка за изтичане</strong>Търсене на фирмени данни и пароли в бази от известни инциденти.</li><li><strong>Наблюдение във времето</strong>Периодични повторни проверки и сигнал при нова открита експозиция.</li></ul>
+    - type: faq
+      kicker: Често задавани въпроси
+      title: OSINT и dark web
+      items:
+        - q: Какво е OSINT накратко?
+          a: OSINT е събиране и анализ на информация от открити източници — същото, което би направил подготвен нападател преди атака.
+          open: true
+        - q: Гарантирате ли че няма изтичане?
+          a: Не — услугата проверява и сигнализира за налични публични данни и изтичания; не може да гарантира абсолютната им липса.
+    - type: content
+      kicker: Обхват и оферта
+      title: Как се формира OSINT офертата
+      body: <p>Обхватът (домейни и организации, честота на проверките и ниво на отчитане) се договаря писмено преди начало на работа.</p><p>За индивидуална оценка — <a href="/contact">заявете консултация</a>.</p>
 ---
-<main><section class="service-landing-hero"><div class="container service-landing-grid"><div><nav class="blog-breadcrumbs" aria-label="Навигационна пътека" style="font-size: .9rem; margin-bottom: 16px;"><a href="/">Начало</a> › <a href="/services">Услуги</a> › <span>OSINT и dark web</span></nav><p class="service-landing-kicker">Cybersecurity Services</p><h1>OSINT и наблюдение на dark web</h1><p class="service-landing-lead">Вижте каквото външен нападател вижда за фирмата: събрани публични данни, изложени системи и евентуално изтичащи пароли или документи.</p><div class="service-landing-actions"><a href="/contact" class="btn btn-primary">Заяви OSINT оценка</a><a href="/services" class="btn btn-secondary">Всички услуги</a></div></div><div class="service-landing-visual"><img src="/images/Webp/Omaya.webp" alt="Анализ на заплахи и цифров отпечатък" width="2745" height="1496" fetchpriority="high"><div class="service-landing-nodes"><div class="service-landing-node"><strong>Footprint</strong>Отпечатък</div><div class="service-landing-node"><strong>Exposure</strong>Изложеност</div><div class="service-landing-node"><strong>Leaks</strong>Изтичане</div><div class="service-landing-node"><strong>Alerts</strong>Сигнали</div></div></div></div></section><section class="service-landing-section"><div class="container"><p class="service-landing-kicker">Какво се вижда отвън</p><h2>Какво включва OSINT оценката</h2><p>Събираме и анализираме публично достъпната информация за фирмата и проверяваме дали данни или достъпи не се появяват в отворени изтичания. Резултатите захранват <a href="/services/vulnerability-management">управлението на уязвимости</a> и <a href="/services/soc-monitoring">SOC мониторинга</a>.</p><ul class="service-landing-list"><li><strong>Цифров отпечатък</strong>Какви домейни, имейли, документи и служители са видими отвън.</li><li><strong>Изложени системи</strong>Открити уязвими услуги или административни панели, достъпни от интернет.</li><li><strong>Проверка за изтичане</strong>Търсене на фирмени данни и пароли в бази от известни инциденти.</li><li><strong>Наблюдение във времето</strong>Периодични повторни проверки и сигнал при нова открита експозиция.</li></ul></div></section><section class="service-landing-section"><div class="container service-landing-faq"><p class="service-landing-kicker">Често задавани въпроси</p><h2>OSINT и dark web</h2><details open=""><summary>Какво е OSINT накратко?</summary><p>OSINT е събиране и анализ на информация от открити източници — същото, което би направил подготвен нападател преди атака.</p></details><details><summary>Гарантирате ли че няма изтичане?</summary><p>Не — услугата проверява и сигнализира за налични публични данни и изтичания; не може да гарантира абсолютната им липса.</p></details></div></section><section class="service-landing-section"><div class="container"><p class="service-landing-kicker">Обхват и оферта</p><h2>Как се формира OSINT офертата</h2><p>Обхватът (домейни и организации, честота на проверките и ниво на отчитане) се договаря писмено преди начало на работа.</p><p>За индивидуална оценка — <a href="/contact">заявете консултация</a>.</p></div></section></main>
