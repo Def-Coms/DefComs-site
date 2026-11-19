@@ -1,0 +1,33 @@
+# ---------------------------------------------------------------------------
+# DefComs analytics - protect internals from direct HTTP access.
+# Still reachable (needed): track.php, event.php (called by site JS),
+#   stats.php (password login), cleanup.php (requires ?token=...).
+# Blocked: config.php, db.php, and everything under data/ (SQLite DB + logs).
+# These rules apply to this directory and its subdirectories.
+# PHP includes config.php/db.php via the FILESYSTEM (require), not HTTP, so
+# blocking them here does not break tracking, stats or cleanup.
+# ---------------------------------------------------------------------------
+
+Options -Indexes
+
+# Block sensitive PHP includes (never meant to be fetched over HTTP)
+<FilesMatch "^(config|db)\.php$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# Block data / log / backup files by extension (defense in depth)
+<FilesMatch "\.(db|sqlite|sqlite3|log|bak|old|orig)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>

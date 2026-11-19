@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DORA изисквания: основни задължения и подготовка | DefComs</title>
+    <meta name="description" content="Практичен преглед на изискванията по DORA: управление на ICT риска, инциденти, тестове, доставчици, регистър на информацията и надзор.">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <link rel="canonical" href="https://defcoms.eu/blog/dora-requirements.html">
+    <link rel="alternate" hreflang="bg" href="https://defcoms.eu/blog/dora-requirements.html">
+    <link rel="alternate" hreflang="x-default" href="https://defcoms.eu/blog/dora-requirements.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="bg_BG">
+    <meta property="og:site_name" content="DefComs">
+    <meta property="og:url" content="https://defcoms.eu/blog/dora-requirements.html">
+    <meta property="og:title" content="DORA изисквания: основни задължения и подготовка | DefComs">
+    <meta property="og:description" content="Какво изисква DORA от финансовите субекти и как да структурирате подготовката по ICT риск, инциденти, тестове и трети страни.">
+    <meta property="og:image" content="https://defcoms.eu/images/PR_image/Киберсигурност_за_бизнес_оцеляване.webp">
+    <meta property="og:image:alt" content="Основни изисквания за дигитална оперативна устойчивост по DORA">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DORA изисквания: основни задължения | DefComs">
+    <meta name="twitter:description" content="Рамка за подготовка по DORA за финансови субекти: ICT риск, инциденти, тестове и доставчици.">
+    <meta name="twitter:image" content="https://defcoms.eu/images/PR_image/Киберсигурност_за_бизнес_оцеляване.webp">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../images/Logos/DefComs-logo.svg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        { "@type": "Organization", "@id": "https://defcoms.eu/#organization", "name": "DefComs", "url": "https://defcoms.eu/" },
+        { "@type": "WebSite", "@id": "https://defcoms.eu/#website", "url": "https://defcoms.eu/", "name": "DefComs", "publisher": { "@id": "https://defcoms.eu/#organization" }, "inLanguage": "bg" },
+        {
+          "@type": "WebPage",
+          "@id": "https://defcoms.eu/blog/dora-requirements.html#webpage",
+          "url": "https://defcoms.eu/blog/dora-requirements.html",
+          "name": "DORA изисквания: основни задължения и как да подготвите организацията",
+          "inLanguage": "bg",
+          "isPartOf": { "@id": "https://defcoms.eu/#website" },
+          "breadcrumb": { "@id": "https://defcoms.eu/blog/dora-requirements.html#breadcrumb" },
+          "mainEntity": { "@id": "https://defcoms.eu/blog/dora-requirements.html#article" }
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://defcoms.eu/blog/dora-requirements.html#article",
+          "headline": "DORA изисквания: основни задължения и как да подготвите организацията",
+          "description": "Практичен преглед на основните изисквания по Регламент (ЕС) 2022/2554 за ICT риск, инциденти, устойчивост, трети страни и споделяне на информация.",
+          "image": "https://defcoms.eu/images/PR_image/Киберсигурност_за_бизнес_оцеляване.webp",
+          "datePublished": "2026-10-06",
+          "dateModified": "2026-10-06",
+          "inLanguage": "bg",
+          "mainEntityOfPage": { "@id": "https://defcoms.eu/blog/dora-requirements.html#webpage" },
+          "author": { "@type": "Person", "@id": "https://defcoms.eu/about/team/author/elena-dimitrova.html", "name": "Елена Димитрова", "jobTitle": "Lead Compliance & NIS2/DORA Advisor", "url": "https://defcoms.eu/about/team/author/elena-dimitrova.html" },
+          "publisher": { "@id": "https://defcoms.eu/#organization" },
+          "citation": [
+            "https://eur-lex.europa.eu/eli/reg/2022/2554/oj",
+            "https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation/digital-operational-resilience-act-dora",
+            "https://www.eiopa.europa.eu/digital-operational-resilience-act-dora_en"
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://defcoms.eu/blog/dora-requirements.html#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Начало", "item": "https://defcoms.eu/" },
+            { "@type": "ListItem", "position": 2, "name": "Блог", "item": "https://defcoms.eu/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "DORA изисквания", "item": "https://defcoms.eu/blog/dora-requirements.html" }
+          ]
+        }
+      ]
+    }
+    </script>
+    <style>
+        .blog-article { max-width: 860px; margin: 0 auto; padding: 150px 24px 80px; }
+        .blog-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: 28px; }
+        .blog-breadcrumbs a { color: var(--secondary-cyan); }
+        .blog-kicker { color: var(--secondary-cyan); text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+        .blog-article h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.12; margin: 12px 0 20px; }
+        .blog-deck { color: var(--text-secondary); font-size: 1.2rem; line-height: 1.7; }
+        .blog-meta { color: var(--text-secondary); font-size: var(--font-size-sm); margin: 22px 0; }
+        .blog-hero-image { width: 100%; max-height: 460px; object-fit: cover; border-radius: var(--radius-lg); margin: 16px 0 32px; }
+        .blog-article h2 { margin-top: 42px; }
+        .blog-article p, .blog-article li { color: var(--text-secondary); line-height: 1.8; }
+        .blog-article ul, .blog-article ol { padding-left: 24px; }
+        .blog-callout { border-left: 3px solid var(--secondary-cyan); background: var(--background-card); padding: 18px 22px; border-radius: var(--radius-md); }
+        .blog-related, .blog-source-list { display: grid; gap: 12px; margin: 20px 0; }
+        .blog-related a, .blog-source-list a { color: var(--secondary-cyan); }
+        .blog-source-list li { overflow-wrap: anywhere; }
+        .blog-cta { margin-top: 44px; padding: 24px; background: var(--background-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); }
+    </style>
+</head>
+<body class="service-landing">
+
+    <!-- Header -->
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay"></div>
+
+    <header class="header">
+        <nav class="nav" aria-label="Основна навигация">
+            <div class="nav-container">
+                <a href="../index.html" class="logo">
+                    <img src="../images/Logos/DefComs-logo.svg" alt="DefComs">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Начало</a></li>
+                    <li><a href="../about/index.html">За нас</a></li>
+                    <li><a href="../services/index.html">Услуги</a></li>
+                    <li><a href="../compliance/index.html">Регулации</a></li>
+                    <li><a href="../cybersecurity-os/index.html">Cybersecurity OS</a></li>
+                    <li><a href="../wizard.html">NIS2 &amp; DORA Оценка</a></li>
+                    <li><a href="../spravochnik.html">Справочник</a></li>
+                    <li><a href="index.html">Блог</a></li>
+                    <li><a href="../contact/index.html">Контакти</a></li>
+                    <li class="mobile-only"><a href="../contact/index.html" class="mobile-cta">Свържете се с нас</a></li>
+                </ul>
+                <a href="../contact/index.html" class="cta-button">Свържете се с нас</a>
+                <button class="hamburger" type="button" aria-label="Отвори меню" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+
+    <main class="blog-article">
+        <nav class="blog-breadcrumbs" aria-label="Навигационна пътека">
+            <a href="../index.html">Начало</a><span aria-hidden="true">›</span>
+            <a href="index.html">Блог</a><span aria-hidden="true">›</span>
+            <span aria-current="page">DORA изисквания</span>
+        </nav>
+        <article>
+            <p class="blog-kicker">DORA · Изисквания · Финансов сектор</p>
+            <h1>DORA изисквания: основни задължения и как да подготвите организацията</h1>
+            <p class="blog-deck">Регламент (ЕС) 2022/2554 установява обща рамка за дигитална оперативна устойчивост на финансовите субекти в обхвата му. Тя обхваща управление на ICT риска, инциденти, тестове, риск от ICT трети страни, споделяне на информация и надзор над доставчици, формално определени като критични.</p>
+            <p class="blog-meta">Автор: <a href="../about/team/author/elena-dimitrova.html" style="color: var(--secondary-cyan);">Елена Димитрова</a> · Публикувано: <time datetime="2026-10-06">6 октомври 2026 г.</time> · Обновено: <time datetime="2026-10-06">6 октомври 2026 г.</time></p>
+            <img class="blog-hero-image" src="../images/PR_image/Киберсигурност_за_бизнес_оцеляване.webp" alt="Управление на ICT риска и дигиталната оперативна устойчивост по DORA" width="1200" height="675" fetchpriority="high">
+            <p class="blog-legal-notice" style="border-left:4px solid #f0a500;background:rgba(240,165,0,.08);padding:16px 20px;border-radius:8px;margin:24px 0;font-size:.95rem;line-height:1.6;"><strong>⚠️ Важна бележка:</strong> Тази публикация е с информационна и образователна цел и <strong>не представлява юридическо или правно тълкуване</strong> на приложимото законодателство. Обстоятелствата варират, а нормативните изисквания се променят. При конкретен казус се консултирайте с квалифициран юрист.</p>
+
+            <p class="blog-callout"><strong>Кратък отговор:</strong> DORA се прилага от 17 януари 2025 г. и изисква обхванатите финансови субекти да управляват ICT риска през целия жизнен цикъл — от управлението и превенцията до реакцията, възстановяването и извлечените поуки. Точните мерки зависят от вида субект, размера и приложимите пропорционални режими; това ръководство е ориентир, не индивидуално правно становище.</p>
+
+            <h2>Какво включват изискванията на DORA?</h2>
+            <p>Основният акт е Регламент (ЕС) 2022/2554. Практически той се чете заедно с приложимите регулаторни и имплементиращи технически стандарти (RTS/ITS), делегирани актове и надзорни указания. Те уточняват например методики, отчетни формати, договорни клаузи и критериите за отделни режими.</p>
+            <p>Следните области са удобна карта за планиране, но не са самостоятелен тест за съответствие:</p>
+            <ol>
+                <li><strong>Управление и рамка за ICT риск</strong> (основно членове 5–16): отговорности на управителния орган, стратегия и рамка за ICT риск, инвентаризация и защита на активи, откриване, реакция, възстановяване, резервиране, комуникация и периодичен преглед. Принципът е риск-базиран; използвайте точните изисквания и стандарти, приложими към субекта.</li>
+                <li><strong>Управление на ICT инциденти и докладване</strong> (членове 17–23): процес за регистриране, класифициране, ескалация, ограничаване и анализ на инциденти. Инцидентите, класифицирани като major ICT-related incidents, подлежат на докладване по приложимите правила и формати. Уведомяването за значими киберзаплахи е отделен режим при условията на регламента.</li>
+                <li><strong>Тестване на дигиталната оперативна устойчивост</strong> (членове 24–27): програма от подходящи тестове, избрана според риска и дейността — например уязвимости, сценарии, възстановяване и други методи. Threat-led <a href="../resources/glossary/penetration-testing/">penetration testing</a> (TLPT) е разширен режим за субекти, определени по критериите и процедурата на DORA; не приемайте, че едно и също TLPT задължение важи автоматично за всички.</li>
+                <li><strong>Управление на ICT риска от трети страни</strong> (членове 28–30): политика и надзор върху доставчици, предварителна оценка, регистър на договорните arrangements, договорни клаузи, подизпълнение, концентрационен риск, достъп и одитни права, непрекъснатост и стратегии за изход. Финансовият субект запазва отговорността за своето съответствие, дори когато услуга е възложена външно.</li>
+                <li><strong>Обмен на информация за киберзаплахи</strong> (член 45): регламентът създава условия за доброволни договорености за споделяне на информация и разузнавателни данни за заплахи, при спазване на приложимите правила за поверителност, конкуренция и защита на данните.</li>
+                <li><strong>Надзор над критични ICT доставчици</strong> (членове 31–44): европейската рамка позволява доставчик да бъде формално определен като критичен за финансовия сектор и поставен под надзора на Lead Overseer. Това не означава, че всеки cloud, SaaS, MSP или друг доставчик автоматично е пряко регулиран по този специален режим.</li>
+            </ol>
+
+            <h2>Ръководство за приоритетни доказателства</h2>
+            <p>За всяка приложима област свържете изискването с отговорник, работещ процес и доказателство. Примерният списък по-долу не замества точния нормативен анализ и не означава, че всяка точка се прилага идентично към всеки субект.</p>
+            <ul>
+                <li><strong>Управление:</strong> одобрена рамка и политики, разпределени роли, решения и записи от прегледи на управителния орган.</li>
+                <li><strong>Активи и контрол:</strong> инвентар на ICT активи и зависимости, класификация на данните, управление на достъп и промени, уязвимости и защитни мерки.</li>
+                <li><strong>Непрекъснатост:</strong> анализ на въздействието, планове за реакция и възстановяване, резервни копия и доказателства от тестове.</li>
+                <li><strong>Инциденти:</strong> регистър, схема за класификация и ескалация, вътрешни роли, готови канали за уведомяване и след-инцидентни анализи.</li>
+                <li><strong>Тестване:</strong> риск-базирана програма, обхват и резултати, проследими коригиращи действия и проверка на тяхното приключване.</li>
+                <li><strong>Трети страни:</strong> регистър на информацията по договорните отношения, оценка на критични/важни функции, подписани договорни клаузи, преглед на подизпълнители и изходни сценарии.</li>
+            </ul>
+
+            <h2>Регистър на информацията и договорните отношения</h2>
+            <p>DORA изисква финансовите субекти да поддържат и да предоставят на компетентните органи информация за договорните arrangements за използване на ICT услуги. Регистърът (Register of Information) не бива да се третира като обикновен списък с доставчици: качеството му зависи от пълнотата на правните лица, услугите, функциите, местата на предоставяне, подизпълнителските вериги и връзките между записите.</p>
+            <p>Преди ново споразумение, което поддържа критична или важна функция, субектът следва да извърши оценка и да осигури приложимите договорни гаранции. Прегледайте членове 28–30 и съответните RTS/ITS за точните обхват, шаблони и клаузи. Съществуващите договори също изискват инвентаризация и план за отстраняване на пропуски, а не само шаблон за бъдещи покупки.</p>
+
+            <h2>Пропорционалност: няма универсален контролен списък</h2>
+            <p>DORA прилага пропорционалност, но тя не е общо освобождаване от регламента. Предвидени са специфични опростени изисквания за определени категории субекти и правила, които отчитат размера, профила на риска, естеството, мащаба и сложността на дейността. Трябва да се идентифицират точната правна категория, приложимите членове и съответните технически стандарти, преди да се изключи или опрости контрол.</p>
+            <p>Не приемайте, че всички финансови субекти трябва да прилагат еднакъв набор от процедури, че всички трябва да преминат TLPT, или че всеки техен ICT доставчик е под пряк надзор. Това са отделни преценки по приложимите текстове, статут и критерии.</p>
+
+            <h2>Как да организирате подготовката по DORA?</h2>
+            <ol>
+                <li>Потвърдете правния субект, лиценза/регистрацията и конкретната категория по DORA. Вижте и <a href="who-is-covered-by-dora.html">кои организации попадат под DORA</a>.</li>
+                <li>Определете обхвата: критични или важни функции, процеси, ICT активи, данни, доставчици и взаимозависимости.</li>
+                <li>Направете gap analysis срещу Регламент (ЕС) 2022/2554 и приложимите Level 2 стандарти, като документирате всяко приложимо/неприложимо изискване и основанието.</li>
+                <li>Назначете собственици, срокове и одобрение за всяка констатация; приоритизирайте според риск и критичност на услугата.</li>
+                <li>Съгласувайте инцидентните процедури, непрекъснатостта, тестовете, договорите и регистъра на информацията между бизнес, ICT, риск, правни и procurement функции.</li>
+                <li>Тествайте процесите и проследявайте коригиращите мерки; пазете доказателства, версии и управленски решения.</li>
+                <li>Проверявайте редовно EUR-Lex и актуализациите на EBA, EIOPA, ESMA и националния компетентен орган. Изискванията се конкретизират от технически актове и надзорни материали.</li>
+            </ol>
+
+            <h2>Често задавани въпроси</h2>
+            <h3>Кога започна да се прилага DORA?</h3>
+            <p>Регламент (ЕС) 2022/2554 се прилага от 17 януари 2025 г. Проверявайте актуалните приложими технически стандарти, делегирани актове и указания.</p>
+            <h3>DORA задължава ли всеки финансов субект да докладва всеки ICT инцидент?</h3>
+            <p>Субектите трябва да управляват и класифицират ICT инцидентите. Докладването към компетентния орган се отнася до major ICT-related incidents по критериите и процедурата в регламента и приложимите технически стандарти; значимите киберзаплахи имат отделен режим за уведомяване при предвидените условия.</p>
+            <h3>Всеки субект трябва ли да прави TLPT?</h3>
+            <p>Не. DORA предвижда TLPT за финансови субекти, определени според обхвата и критериите в регламента и приложимите RTS. Всички обхванати субекти имат приложими задължения за тестване, но методът и обхватът зависят от конкретния режим.</p>
+            <h3>Всеки ICT доставчик на банка ли е пряко поднадзорен по DORA?</h3>
+            <p>Не. Финансовият субект управлява и договорно адресира риска от външните ICT услуги. Прекият надзор в рамките на DORA се отнася до доставчици, формално определени като критични по установения процес.</p>
+            <h3>Достатъчен ли е този списък, за да се заяви съответствие?</h3>
+            <p>Не. Статията е общ образователен преглед, а не правно становище, одит или удостоверение. Необходим е анализ спрямо точния субект, действащите актове и националния надзорен контекст.</p>
+
+            <h2>Свързани ресурси</h2>
+            <ul class="blog-related">
+                <li><a href="dora-checklist.html">DORA checklist: практическа самооценка за финансови организации</a></li>
+                <li><a href="dora-penetration-testing.html">DORA penetration testing и TLPT: разлики и изисквания</a></li>
+                <li><a href="dora-third-party-risk.html">DORA third-party risk: управление на ICT доставчици и договори</a></li>
+                <li><a href="dora-incident-management.html">DORA incident management: управление и докладване на ICT инциденти</a></li>
+                <li><a href="dora-ict-risk-management.html">DORA ICT риск: рамка за управление и контролни мерки</a></li>
+                <li><a href="what-is-dora.html">Какво е DORA? Регламентът за дигитална оперативна устойчивост</a></li>
+                <li><a href="who-is-covered-by-dora.html">Кои организации попадат под DORA?</a></li>
+                <li><a href="../compliance/dora/index.html">DORA: оценка и подготовка</a></li>
+                <li><a href="../assessment/nis2-dora/index.html">Предварителна NIS2/DORA самооценка — информационен ориентир, не правно становище</a></li>
+                <li><a href="nis2-requirements.html">NIS2 изисквания: мерки за киберсигурност и докладване</a></li>
+                <li><a href="nis2-supply-chain-security.html">NIS2 и сигурност на веригата на доставки</a></li>
+            </ul>
+
+            <h2>Официални източници</h2>
+            <ul class="blog-source-list">
+                <li><a href="https://eur-lex.europa.eu/eli/reg/2022/2554/oj" target="_blank" rel="noopener noreferrer">EUR-Lex — Регламент (ЕС) 2022/2554 (DORA), по-специално дялове II–VI</a></li>
+                <li><a href="https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation/digital-operational-resilience-act-dora" target="_blank" rel="noopener noreferrer">ESMA — DORA policy requirements и надзорни материали</a></li>
+                <li><a href="https://www.eiopa.europa.eu/digital-operational-resilience-act-dora_en" target="_blank" rel="noopener noreferrer">EIOPA — DORA, приложими Level 2 актове и насоки</a></li>
+                <li><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1774" target="_blank" rel="noopener noreferrer">EUR-Lex — Делегиран регламент (ЕС) 2024/1774 за рамката за управление на ICT риска</a></li>
+                <li><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1772" target="_blank" rel="noopener noreferrer">EUR-Lex — Делегиран регламент (ЕС) 2024/1772 за класификацията на ICT инциденти</a></li>
+                <li><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1773" target="_blank" rel="noopener noreferrer">EUR-Lex — Делегиран регламент (ЕС) 2024/1773 за политиката по договорните arrangements за ICT услуги</a></li>
+                <li><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32025R0301" target="_blank" rel="noopener noreferrer">EUR-Lex — Делегиран регламент (ЕС) 2025/301 за докладването на major ICT инциденти</a></li>
+                <li><a href="https://eur-lex.europa.eu/eli/reg_impl/2025/302/oj/eng" target="_blank" rel="noopener noreferrer">EUR-Lex — Регламент за изпълнение (ЕС) 2025/302 за формуляри и процедури за докладване</a></li>
+                <li><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32025R1190" target="_blank" rel="noopener noreferrer">EUR-Lex — Делегиран регламент (ЕС) 2025/1190 за TLPT</a></li>
+            </ul>
+
+            <aside class="blog-cta">
+                <h2>Нужна ви е подготовка по DORA?</h2>
+                <p>Започнете с проверка на приложимостта, обхвата на ICT услугите и приоритизиран план за доказуеми подобрения.</p>
+                <a class="btn btn-primary" href="../compliance/dora/index.html">DORA подготовка</a>
+                <a class="btn btn-secondary" href="../index.html#contact">Заявете консултация</a>
+            </aside>
+        </article>
+    </main>
+        <!-- Footer -->
+
+    <script src="../script.js" defer></script>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="../images/Logos/DefComs-logo.svg" alt="DefComs" class="footer-logo" loading="lazy">
+                    <p>Вашият високотехнологичен партньор в киберсигурността. Предотвратяване, засичане и бърза неутрализация на съвременните заплахи.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Услуги</h3>
+                    <ul>
+                        <li><a href="../services/soc-monitoring/index.html">SOC Мониторинг 24/7</a></li>
+                        <li><a href="../services/noc-services/index.html">NOC Управление</a></li>
+                        <li><a href="../services/corporate-training/index.html">Обучения за фирми</a></li>
+                        <li><a href="../services/penetration-testing/index.html">Penetration Testing</a></li>
+                        <li><a href="../compliance/nis2/index.html">GDPR/NIS2/DORA Съответствие</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Ресурси</h3>
+                    <ul>
+                        <li><a href="../spravochnik.html">Регулаторен Хъб</a></li>
+                        <li><a href="../cybersecurity-os/index.html">Cybersecurity OS</a></li>
+                        <li><a href="../blog/index.html">Статии &amp; Блог</a></li>
+                        <li><a href="../about/index.html">За Нас</a></li>
+                        <li><a href="../bulgaria/index.html">Покритие в България</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Правна рамка</h3>
+                    <ul>
+                        <li><a href="../compliance/nis2/index.html">Регулация NIS2</a></li>
+                        <li><a href="../compliance/gdpr/index.html">Регламент GDPR</a></li>
+                        <li><a href="../compliance/iso-27001/index.html">Стандарт ISO 27001</a></li>
+                        <li><a href="../index.html#contact">Контакти</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DefComs. Всички права запазени.</p>
+                <div class="footer-bottom-links">
+                    <a href="../terms.html">Условия за ползване</a>
+                    <a href="../privacy.html">Защита на данни</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../chat-widget.js"></script>
+</body>
+</html>

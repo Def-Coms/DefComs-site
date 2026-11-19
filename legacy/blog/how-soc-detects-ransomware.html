@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Как SOC открива ransomware? Сигнали и реакция | DefComs</title>
+    <meta name="description" content="Как SOC открива ransomware: endpoint, identity, network, backup и cloud сигнали, корелация, триаж и координирана реакция без обещания за 100% детекция.">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <link rel="canonical" href="https://defcoms.eu/blog/how-soc-detects-ransomware.html">
+    <link rel="alternate" hreflang="bg" href="https://defcoms.eu/blog/how-soc-detects-ransomware.html">
+    <link rel="alternate" hreflang="x-default" href="https://defcoms.eu/blog/how-soc-detects-ransomware.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="bg_BG">
+    <meta property="og:site_name" content="DefComs">
+    <meta property="og:url" content="https://defcoms.eu/blog/how-soc-detects-ransomware.html">
+    <meta property="og:title" content="Как SOC открива ransomware? | DefComs">
+    <meta property="og:description" content="Разгледайте ранни сигнали от endpoint-и, identity, мрежа и backup системи и как SOC ги корелира и ескалира.">
+    <meta property="og:image" content="https://defcoms.eu/images/PR_image/Киберсигурността__Щит_на_модерния_бизнес.webp">
+    <meta property="og:image:alt" content="SOC анализира подозрителни ransomware сигнали от различни системи">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Как SOC открива ransomware? | DefComs">
+    <meta name="twitter:description" content="Сигнали, корелация, триаж и координирана реакция при потенциална ransomware атака.">
+    <meta name="twitter:image" content="https://defcoms.eu/images/PR_image/Киберсигурността__Щит_на_модерния_бизнес.webp">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../images/Logos/DefComs-logo.svg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        { "@type": "Organization", "@id": "https://defcoms.eu/#organization", "name": "DefComs", "url": "https://defcoms.eu/" },
+        { "@type": "WebSite", "@id": "https://defcoms.eu/#website", "url": "https://defcoms.eu/", "name": "DefComs", "publisher": { "@id": "https://defcoms.eu/#organization" }, "inLanguage": "bg" },
+        {
+          "@type": "WebPage",
+          "@id": "https://defcoms.eu/blog/how-soc-detects-ransomware.html#webpage",
+          "url": "https://defcoms.eu/blog/how-soc-detects-ransomware.html",
+          "name": "Как SOC открива ransomware? Сигнали, корелация и реакция",
+          "inLanguage": "bg",
+          "isPartOf": { "@id": "https://defcoms.eu/#website" },
+          "breadcrumb": { "@id": "https://defcoms.eu/blog/how-soc-detects-ransomware.html#breadcrumb" },
+          "mainEntity": { "@id": "https://defcoms.eu/blog/how-soc-detects-ransomware.html#article" }
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://defcoms.eu/blog/how-soc-detects-ransomware.html#article",
+          "headline": "Как SOC открива ransomware? Сигнали, корелация и реакция",
+          "description": "Обзор на ransomware detection от SOC чрез endpoint, identity, network, backup и cloud telemetry и координация на incident response.",
+          "image": "https://defcoms.eu/images/PR_image/Киберсигурността__Щит_на_модерния_бизнес.webp",
+          "datePublished": "2026-10-06",
+          "dateModified": "2026-10-06",
+          "inLanguage": "bg",
+          "mainEntityOfPage": { "@id": "https://defcoms.eu/blog/how-soc-detects-ransomware.html#webpage" },
+          "author": { "@type": "Person", "@id": "https://defcoms.eu/about/team/author/georgi-todorov.html", "name": "Георги Тодоров", "jobTitle": "SOC Operations Manager (24/7)", "url": "https://defcoms.eu/about/team/author/georgi-todorov.html" },
+          "publisher": { "@id": "https://defcoms.eu/#organization" },
+          "citation": [
+            "https://www.cisa.gov/stopransomware/ransomware-guide",
+            "https://attack.mitre.org/techniques/T1486/",
+            "https://doi.org/10.6028/NIST.SP.800-61r3"
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://defcoms.eu/blog/how-soc-detects-ransomware.html#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Начало", "item": "https://defcoms.eu/" },
+            { "@type": "ListItem", "position": 2, "name": "Блог", "item": "https://defcoms.eu/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "Как SOC открива ransomware?", "item": "https://defcoms.eu/blog/how-soc-detects-ransomware.html" }
+          ]
+        }
+      ]
+    }
+    </script>
+    <style>
+        .blog-article { max-width: 860px; margin: 0 auto; padding: 150px 24px 80px; }
+        .blog-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: 28px; }
+        .blog-breadcrumbs a { color: var(--secondary-cyan); }
+        .blog-kicker { color: var(--secondary-cyan); text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+        .blog-article h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.12; margin: 12px 0 20px; }
+        .blog-deck { color: var(--text-secondary); font-size: 1.2rem; line-height: 1.7; }
+        .blog-meta { color: var(--text-secondary); font-size: var(--font-size-sm); margin: 22px 0; }
+        .blog-hero-image { width: 100%; max-height: 460px; object-fit: cover; border-radius: var(--radius-lg); margin: 16px 0 32px; }
+        .blog-article h2 { margin-top: 42px; }
+        .blog-article p, .blog-article li { color: var(--text-secondary); line-height: 1.8; }
+        .blog-article ul, .blog-article ol { padding-left: 24px; }
+        .blog-callout { border-left: 3px solid var(--secondary-cyan); background: var(--background-card); padding: 18px 22px; border-radius: var(--radius-md); }
+        .blog-table-wrap { overflow-x: auto; margin: 24px 0; }
+        .blog-article table { width: 100%; border-collapse: collapse; min-width: 620px; }
+        .blog-article th, .blog-article td { padding: 14px; border: 1px solid var(--border-color); text-align: left; vertical-align: top; color: var(--text-secondary); line-height: 1.65; }
+        .blog-article th { color: var(--text-primary); background: var(--background-card); }
+        .blog-related, .blog-source-list { display: grid; gap: 12px; margin: 20px 0; }
+        .blog-related a, .blog-source-list a { color: var(--secondary-cyan); }
+        .blog-source-list li { overflow-wrap: anywhere; }
+        .blog-cta { margin-top: 44px; padding: 24px; background: var(--background-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); }
+    </style>
+</head>
+<body class="service-landing">
+
+    <!-- Header -->
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay"></div>
+
+    <header class="header">
+        <nav class="nav" aria-label="Основна навигация">
+            <div class="nav-container">
+                <a href="../index.html" class="logo">
+                    <img src="../images/Logos/DefComs-logo.svg" alt="DefComs">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Начало</a></li>
+                    <li><a href="../about/index.html">За нас</a></li>
+                    <li><a href="../services/index.html">Услуги</a></li>
+                    <li><a href="../compliance/index.html">Регулации</a></li>
+                    <li><a href="../cybersecurity-os/index.html">Cybersecurity OS</a></li>
+                    <li><a href="../wizard.html">NIS2 &amp; DORA Оценка</a></li>
+                    <li><a href="../spravochnik.html">Справочник</a></li>
+                    <li><a href="index.html">Блог</a></li>
+                    <li><a href="../contact/index.html">Контакти</a></li>
+                    <li class="mobile-only"><a href="../contact/index.html" class="mobile-cta">Свържете се с нас</a></li>
+                </ul>
+                <a href="../contact/index.html" class="cta-button">Свържете се с нас</a>
+                <button class="hamburger" type="button" aria-label="Отвори меню" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+
+    <main class="blog-article">
+        <nav class="blog-breadcrumbs" aria-label="Навигационна пътека">
+            <a href="../index.html">Начало</a><span aria-hidden="true">›</span>
+            <a href="index.html">Блог</a><span aria-hidden="true">›</span>
+            <span aria-current="page">Как <a href="../resources/glossary/soc/">SOC</a> открива <a href="../resources/glossary/ransomware/">ransomware</a>?</span>
+        </nav>
+        <article>
+            <p class="blog-kicker">SOC · Ransomware · Detection & response</p>
+            <h1>Как SOC открива ransomware? Ранни сигнали и реакция</h1>
+            <p class="blog-deck">SOC търси комбинации от сигнали, които могат да показват подготовка, разпространение, криптиране или опит за изнудване с ransomware. Откриването зависи от наличната telemetry, покритието и правилата; нито един инструмент не гарантира, че всеки инцидент ще бъде засечен навреме.</p>
+            <p class="blog-meta">Автор: <a href="../about/team/author/georgi-todorov.html" style="color: var(--secondary-cyan);">Георги Тодоров</a> · Публикувано: <time datetime="2026-10-06">6 октомври 2026 г.</time> · Обновено: <time datetime="2026-10-06">6 октомври 2026 г.</time></p>
+            <img class="blog-hero-image" src="../images/PR_image/Киберсигурността__Щит_на_модерния_бизнес.webp" alt="SOC анализира ransomware сигнали от endpoints, identities, мрежа и cloud" width="1200" height="675" fetchpriority="high">
+            <p class="blog-legal-notice" style="border-left:4px solid #f0a500;background:rgba(240,165,0,.08);padding:16px 20px;border-radius:8px;margin:24px 0;font-size:.95rem;line-height:1.6;"><strong>⚠️ Важна бележка:</strong> Тази публикация е с информационна и образователна цел и <strong>не представлява юридическо или правно тълкуване</strong> на приложимото законодателство. Обстоятелствата варират, а нормативните изисквания се променят. При конкретен казус се консултирайте с квалифициран юрист.</p>
+
+            <p class="blog-callout"><strong>Кратък отговор:</strong> SOC не разчита само на ransom note или файлове с ново разширение. Ранни сигнали могат да бъдат необичайни входове, промени в привилегии, подозрителни endpoint процеси, необичайно движение между системи, масови промени по файлове, намеса в backup/защитни механизми и необичаен изходящ трафик. Анализаторите съпоставят тези сигнали, оценяват въздействието и ескалират според runbook-а и предварително договорените права за реакция.</p>
+
+            <h2>Ransomware е повече от криптиране</h2>
+            <p>Съвременният ransomware инцидент може да включва компрометирани идентичности, неправомерен достъп, странично придвижване, опит за кражба на данни, прекъсване на защита и след това криптиране или изнудване. Затова SOC може да търси предшественици и съпътстващи дейности, а не само финалния ефект върху файловете.</p>
+            <p><a href="../resources/glossary/mitre-attack/">MITRE ATT&CK</a> описва криптирането на данни за въздействие в техниката T1486; CISA #StopRansomware Guide препоръчва на организациите да запазват логове и да съпоставят endpoint, network, cloud и identity информация при detection and analysis. Точните индикатори се различават между инциденти, платформи и среда.</p>
+
+            <h2>Какви сигнали могат да са важни?</h2>
+            <div class="blog-table-wrap">
+                <table>
+                    <thead><tr><th>Източник</th><th>Примерни аномалии за проверка</th><th>Какво добавя SOC анализът</th></tr></thead>
+                    <tbody>
+                        <tr><th>Identity и remote access</th><td>Необичаен вход, MFA промени, нови/привилегировани акаунти, atypical VPN/RDP access.</td><td>Съпоставяне с потребител, устройство, локация, обичайно поведение и други промени по акаунта.</td></tr>
+                        <tr><th>Endpoint и сървъри</th><td>Непознати процеси, необичайно масово четене/презаписване на файлове, промени в защита или системни настройки.</td><td>Хронология на процеси и родители, потребителски контекст, <a href="../resources/glossary/edr/">EDR</a> telemetry и свързани хостове.</td></tr>
+                        <tr><th>Файлове и споделени ресурси</th><td>Рязко увеличение на rename/write действия, засегнати споделени папки, повтарящи се промени по много файлове.</td><td>Обхват, скорост, засегнати собственици и дали поведението съвпада с легитимен batch job.</td></tr>
+                        <tr><th>Backup и security controls</th><td>Неочаквани промени по backup задания, защити, retention или logging; alerts за изключване на защитни средства.</td><td>Проверка на actor, change approval, управление на достъп и събития в съседни платформи.</td></tr>
+                        <tr><th>Мрежа и външна комуникация</th><td>Необичайни връзки между endpoints/сървъри, нетипичен изходящ обем, нови домейни или remote management дейност.</td><td>Корелация на DNS, firewall, VPN, proxy, <a href="../resources/glossary/ndr/">NDR</a> и endpoint данни спрямо baseline-а.</td></tr>
+                        <tr><th>Cloud и SaaS</th><td>Неочакван достъп до множество обекти, масови изтривания/промени, нови cloud credentials или configuration changes.</td><td>Проверка на API/audit events, principal, роля, сесия, target resources и recovery опциите.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Това са примери за defensive detection, не сигнатури за универсално блокиране. Подобни активности могат да бъдат легитимни административни или бизнес задачи; нужни са baseline, change context и проверка от отговорен екип.</p>
+
+            <h2>Как SOC корелира сигналите?</h2>
+            <ol>
+                <li><strong>Събира контекст:</strong> потвърждава кой asset, identity и услуга са засегнати и кои log източници са налични.</li>
+                <li><strong>Подрежда времевата линия:</strong> сравнява входове, промени в достъпа, процеси, файлови събития, network activity и security alerts.</li>
+                <li><strong>Оценява обхвата и увереността:</strong> разделя потвърдени факти от хипотези и определя дали сигналът може да е свързан с инцидент.</li>
+                <li><strong>Проверява въздействието:</strong> използва inventory и business context, за да идентифицира критични системи и зависимости.</li>
+                <li><strong>Ескалира и документира:</strong> уведомява определения incident contact, посочва evidence, неизвестни и следващи безопасни действия.</li>
+            </ol>
+            <p>Корелацията е толкова добра, колкото е качеството, покритието и времевата синхронизация на логовете. Липсваща telemetry или пропуснати системи могат да оставят слепи зони, които трябва да се показват в coverage документацията.</p>
+
+            <h2>Каква е ролята на клиента при реакция?</h2>
+            <p>SOC доставчикът може да открива, анализира и ескалира сигналите, но правото да изолира устройство, блокира акаунт или спира услуга трябва да бъде изрично договорено. Непланирано автоматично блокиране може да прекъсне критичен процес; забавено одобрение също може да увеличи въздействието.</p>
+            <p>Организацията трябва да има предварително определени дежурни контакти и incident response план. При реален или вероятен ransomware инцидент следвайте вътрешния IR plan и указанията на компетентните специалисти; решенията за изолация, запазване на доказателства, уведомяване и възстановяване се координират според ситуацията. Тази статия не е инструкция за самостоятелно разследване или заместител на incident response услуга.</p>
+
+            <h2>Данни и покритие, които помагат за откриването</h2>
+            <ul>
+                <li>актуален inventory на endpoint-и, сървъри, cloud ресурси и критични услуги;</li>
+                <li>централизирани endpoint, identity, firewall/VPN, DNS и cloud audit сигнали, където са налични и договорени;</li>
+                <li>надеждни timestamps, достатъчно log retention и аларми за прекъснато подаване на данни;</li>
+                <li>контекст за административни акаунти, approved remote tools, промени и maintenance windows;</li>
+                <li>backup status и защита на логове/backup management събития от неразрешени промени;</li>
+                <li>процедура за contact, escalation, containment approval и координирана възстановка.</li>
+            </ul>
+            <p>Не е необходимо да се събира всяко поле от всяка система. Изборът на telemetry трябва да е пропорционален на риска, полезен за конкретни detection use cases и съобразен с поверителността, достъпа и retention правилата.</p>
+
+            <h2>Какво да попитате SOC доставчик?</h2>
+            <ul>
+                <li>Кои конкретни ransomware сценарии и telemetry източници са включени в обхвата?</li>
+                <li>Как се отличават масова легитимна file activity и подозрително поведение?</li>
+                <li>Какви са сроковете и каналите за critical escalation извън работно време?</li>
+                <li>Кой може да задейства endpoint/network isolation и как се одобрява това?</li>
+                <li>Как доставчикът проверява gaps в лог ingest и непокрити системи?</li>
+                <li>Как се свързва SOC процесът с backup, IR, legal, management и external response екипите?</li>
+                <li>Какви отчети и exercises проверяват дали откритият сигнал води до приложимо действие?</li>
+            </ul>
+
+            <h2>Често задавани въпроси</h2>
+            <h3>Може ли SOC да открие ransomware преди криптирането?</h3>
+            <p>Понякога могат да се видят ранни сигнали от identity, endpoint, network или backup системи преди видимото криптиране. Това зависи от конкретното поведение, telemetry покритието и правилата; не може да се гарантира ранно откриване във всеки случай.</p>
+            <h3>EDR достатъчен ли е за ransomware detection?</h3>
+            <p>EDR може да предоставя важни endpoint сигнали, но самостоятелната му ефективност зависи от конфигурацията, покритието, лицензирането и процеса за преглед и response. Корелацията с identity, network, cloud и backup данни може да добави контекст.</p>
+            <h3>Може ли аларма за масово преименуване да значи ransomware?</h3>
+            <p>Това е повод за проверка, не окончателна диагноза. Легитимна миграция или batch задача също може да промени множество файлове; SOC проверява контекста, източника и съпътстващите сигнали.</p>
+            <h3>SOC гарантира ли спиране на ransomware?</h3>
+            <p>Не. SOC може да подобри видимостта и да подпомогне по-бърза ескалация и реакция, но не елиминира риска и не гарантира, че всеки инцидент ще бъде открит или спрян преди въздействие.</p>
+
+            <h2>Свързани ресурси</h2>
+            <ul class="blog-related">
+                <li><a href="what-is-ransomware.html">Какво е ransomware? Криптиране, изнудване и риск за бизнеса</a></li>
+                <li><a href="how-ransomware-works.html">Как работи ransomware? Етапи на една атака</a></li>
+                <li><a href="edr-vs-ransomware.html">EDR срещу ransomware: възможности и ограничения</a></li>
+                <li><a href="soc-vs-ransomware.html">SOC срещу ransomware: роля и отговорности</a></li>
+                <li><a href="ransomware-incident-response.html">Ransomware incident response: координирани действия и ескалация</a></li>
+                <li><a href="soc-and-nis2.html">SOC и NIS2: как мониторингът може да подпомогне изискванията</a></li>
+                <li><a href="what-does-soc-monitor.html">Какво наблюдава SOC? Системи, логове и сигнали</a></li>
+                <li><a href="how-soc-monitoring-works.html">Как работи SOC мониторингът?</a></li>
+                <li><a href="what-is-soc.html">Какво е SOC и как помага на бизнеса?</a></li>
+                <li><a href="../services/ransomware-protection/index.html">Ransomware превенция и устойчивост</a></li>
+                <li><a href="../services/backup-disaster-recovery/index.html">Backup и Disaster Recovery</a></li>
+                <li><a href="../services/incident-response/index.html">Incident Response услуги</a></li>
+                <li><a href="../services/soc-monitoring/index.html">SOC мониторинг 24/7/365 от DefComs</a></li>
+            </ul>
+
+            <h2>Официални източници</h2>
+            <ul class="blog-source-list">
+                <li><a href="https://www.cisa.gov/stopransomware/ransomware-guide" target="_blank" rel="noopener noreferrer">CISA et al. — #StopRansomware Guide: prevention, detection and response checklist</a></li>
+                <li><a href="https://attack.mitre.org/techniques/T1486/" target="_blank" rel="noopener noreferrer">MITRE ATT&CK T1486 — Data Encrypted for Impact, detection strategy and mitigations</a></li>
+                <li><a href="https://doi.org/10.6028/NIST.SP.800-61r3" target="_blank" rel="noopener noreferrer">NIST SP 800-61 Rev. 3 (април 2025 г.) — incident response в контекста на управлението на риска</a></li>
+            </ul>
+
+            <aside class="blog-cta">
+                <h2>Подготвени ли са сигналите и ескалациите ви за ransomware инцидент?</h2>
+                <p>Проверете endpoint, identity, network и backup видимостта, контактите за дежурство и предварително одобрените действия за containment.</p>
+                <a class="btn btn-primary" href="../services/soc-monitoring/index.html">SOC мониторинг 24/7/365</a>
+                <a class="btn btn-secondary" href="../services/incident-response/index.html">Incident Response услуги</a>
+            </aside>
+        </article>
+    </main>
+        <!-- Footer -->
+
+    <script src="../script.js" defer></script>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="../images/Logos/DefComs-logo.svg" alt="DefComs" class="footer-logo" loading="lazy">
+                    <p>Вашият високотехнологичен партньор в киберсигурността. Предотвратяване, засичане и бърза неутрализация на съвременните заплахи.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Услуги</h3>
+                    <ul>
+                        <li><a href="../services/soc-monitoring/index.html">SOC Мониторинг 24/7</a></li>
+                        <li><a href="../services/noc-services/index.html">NOC Управление</a></li>
+                        <li><a href="../services/corporate-training/index.html">Обучения за фирми</a></li>
+                        <li><a href="../services/penetration-testing/index.html">Penetration Testing</a></li>
+                        <li><a href="../compliance/nis2/index.html">GDPR/NIS2/DORA Съответствие</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Ресурси</h3>
+                    <ul>
+                        <li><a href="../spravochnik.html">Регулаторен Хъб</a></li>
+                        <li><a href="../cybersecurity-os/index.html">Cybersecurity OS</a></li>
+                        <li><a href="../blog/index.html">Статии &amp; Блог</a></li>
+                        <li><a href="../about/index.html">За Нас</a></li>
+                        <li><a href="../bulgaria/index.html">Покритие в България</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Правна рамка</h3>
+                    <ul>
+                        <li><a href="../compliance/nis2/index.html">Регулация NIS2</a></li>
+                        <li><a href="../compliance/gdpr/index.html">Регламент GDPR</a></li>
+                        <li><a href="../compliance/iso-27001/index.html">Стандарт ISO 27001</a></li>
+                        <li><a href="../index.html#contact">Контакти</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DefComs. Всички права запазени.</p>
+                <div class="footer-bottom-links">
+                    <a href="../terms.html">Условия за ползване</a>
+                    <a href="../privacy.html">Защита на данни</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../chat-widget.js"></script>
+</body>
+</html>

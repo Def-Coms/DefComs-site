@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIS2 risk assessment: оценка на киберриска | DefComs</title>
+    <meta name="description" content="Как да структурирате оценка на киберриска по NIS2: контекст, активи, заплахи, уязвимости, въздействие, контроли, остатъчен риск и план за действие.">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <link rel="canonical" href="https://defcoms.eu/blog/nis2-risk-assessment.html">
+    <link rel="alternate" hreflang="bg" href="https://defcoms.eu/blog/nis2-risk-assessment.html">
+    <link rel="alternate" hreflang="x-default" href="https://defcoms.eu/blog/nis2-risk-assessment.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="bg_BG">
+    <meta property="og:site_name" content="DefComs">
+    <meta property="og:url" content="https://defcoms.eu/blog/nis2-risk-assessment.html">
+    <meta property="og:title" content="NIS2 risk assessment: оценка на киберриска стъпка по стъпка | DefComs">
+    <meta property="og:description" content="Методика за свързване на киберрисковете с услугите, активите, контролите и плана за третиране по NIS2.">
+    <meta property="og:image" content="https://defcoms.eu/images/PR_image/Киберсигурност_за_бизнес_оцеляване.webp">
+    <meta property="og:image:alt" content="Оценка и управление на киберриска по NIS2">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NIS2 risk assessment | DefComs">
+    <meta name="twitter:description" content="Стъпки за оценка на киберриска: контекст, сценарии, въздействие, контроли и остатъчен риск.">
+    <meta name="twitter:image" content="https://defcoms.eu/images/PR_image/Киберсигурност_за_бизнес_оцеляване.webp">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../images/Logos/DefComs-logo.svg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://defcoms.eu/#organization",
+          "name": "DefComs",
+          "url": "https://defcoms.eu/"
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://defcoms.eu/#website",
+          "url": "https://defcoms.eu/",
+          "name": "DefComs",
+          "publisher": { "@id": "https://defcoms.eu/#organization" },
+          "inLanguage": "bg"
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://defcoms.eu/blog/nis2-risk-assessment.html#webpage",
+          "url": "https://defcoms.eu/blog/nis2-risk-assessment.html",
+          "name": "NIS2 risk assessment: оценка на киберриска стъпка по стъпка",
+          "inLanguage": "bg",
+          "isPartOf": { "@id": "https://defcoms.eu/#website" },
+          "breadcrumb": { "@id": "https://defcoms.eu/blog/nis2-risk-assessment.html#breadcrumb" },
+          "mainEntity": { "@id": "https://defcoms.eu/blog/nis2-risk-assessment.html#article" }
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://defcoms.eu/blog/nis2-risk-assessment.html#article",
+          "headline": "NIS2 risk assessment: оценка на киберриска стъпка по стъпка",
+          "description": "Практически процес за оценка и третиране на киберрискове, свързани с услугите и системите на организацията.",
+          "image": "https://defcoms.eu/images/PR_image/Киберсигурност_за_бизнес_оцеляване.webp",
+          "datePublished": "2026-10-05",
+          "dateModified": "2026-10-05",
+          "inLanguage": "bg",
+          "mainEntityOfPage": { "@id": "https://defcoms.eu/blog/nis2-risk-assessment.html#webpage" },
+          "author": { "@type": "Person", "@id": "https://defcoms.eu/about/team/author/elena-dimitrova.html", "name": "Елена Димитрова", "jobTitle": "Lead Compliance & NIS2/DORA Advisor", "url": "https://defcoms.eu/about/team/author/elena-dimitrova.html" },
+          "publisher": { "@id": "https://defcoms.eu/#organization" },
+          "citation": [
+            "https://eur-lex.europa.eu/eli/dir/2022/2555/oj",
+            "https://csrc.nist.gov/pubs/sp/800/30/r1/final",
+            "https://digital-strategy.ec.europa.eu/en/policies/nis2-directive"
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://defcoms.eu/blog/nis2-risk-assessment.html#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Начало", "item": "https://defcoms.eu/" },
+            { "@type": "ListItem", "position": 2, "name": "Блог", "item": "https://defcoms.eu/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "NIS2 risk assessment", "item": "https://defcoms.eu/blog/nis2-risk-assessment.html" }
+          ]
+        }
+      ]
+    }
+    </script>
+    <style>
+        .blog-article { max-width: 860px; margin: 0 auto; padding: 150px 24px 80px; }
+        .blog-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: 28px; }
+        .blog-breadcrumbs a { color: var(--secondary-cyan); }
+        .blog-kicker { color: var(--secondary-cyan); text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+        .blog-article h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.12; margin: 12px 0 20px; }
+        .blog-deck { color: var(--text-secondary); font-size: 1.2rem; line-height: 1.7; }
+        .blog-meta { color: var(--text-secondary); font-size: var(--font-size-sm); margin: 22px 0; }
+        .blog-hero-image { width: 100%; max-height: 460px; object-fit: cover; border-radius: var(--radius-lg); margin: 16px 0 32px; }
+        .blog-article h2 { margin-top: 42px; }
+        .blog-article p, .blog-article li { color: var(--text-secondary); line-height: 1.8; }
+        .blog-article ul, .blog-article ol { padding-left: 24px; }
+        .blog-callout { border-left: 3px solid var(--secondary-cyan); background: var(--background-card); padding: 18px 22px; border-radius: var(--radius-md); }
+        .risk-table-wrap { overflow-x: auto; margin: 22px 0; }
+        .risk-table { width: 100%; min-width: 760px; border-collapse: collapse; }
+        .risk-table th, .risk-table td { border: 1px solid var(--border-color); padding: 12px; text-align: left; vertical-align: top; }
+        .risk-table th { color: var(--secondary-cyan); background: var(--background-card); }
+        .risk-table td { color: var(--text-secondary); }
+        .blog-related, .blog-source-list { display: grid; gap: 12px; margin: 20px 0; }
+        .blog-related a, .blog-source-list a { color: var(--secondary-cyan); }
+        .blog-source-list li { overflow-wrap: anywhere; }
+        .blog-cta { margin-top: 44px; padding: 24px; background: var(--background-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); }
+        @media print { .header, .footer, .blog-cta, .blog-hero-image, .blog-breadcrumbs { display:none !important; } .blog-article { max-width:none; padding:0; } .blog-article p, .blog-article li, .risk-table td { color:#222; } }
+    </style>
+</head>
+<body class="service-landing">
+
+    <!-- Header -->
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay"></div>
+
+    <header class="header">
+        <nav class="nav" aria-label="Основна навигация">
+            <div class="nav-container">
+                <a href="../index.html" class="logo">
+                    <img src="../images/Logos/DefComs-logo.svg" alt="DefComs">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Начало</a></li>
+                    <li><a href="../about/index.html">За нас</a></li>
+                    <li><a href="../services/index.html">Услуги</a></li>
+                    <li><a href="../compliance/index.html">Регулации</a></li>
+                    <li><a href="../cybersecurity-os/index.html">Cybersecurity OS</a></li>
+                    <li><a href="../wizard.html">NIS2 &amp; DORA Оценка</a></li>
+                    <li><a href="../spravochnik.html">Справочник</a></li>
+                    <li><a href="index.html">Блог</a></li>
+                    <li><a href="../contact/index.html">Контакти</a></li>
+                    <li class="mobile-only"><a href="../contact/index.html" class="mobile-cta">Свържете се с нас</a></li>
+                </ul>
+                <a href="../contact/index.html" class="cta-button">Свържете се с нас</a>
+                <button class="hamburger" type="button" aria-label="Отвори меню" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+
+    <main class="blog-article">
+        <nav class="blog-breadcrumbs" aria-label="Навигационна пътека">
+            <a href="../index.html">Начало</a><span aria-hidden="true">›</span>
+            <a href="index.html">Блог</a><span aria-hidden="true">›</span>
+            <span aria-current="page">NIS2 risk assessment</span>
+        </nav>
+        <article>
+            <p class="blog-kicker">NIS2 · Управление на риска · Risk assessment</p>
+            <h1>NIS2 risk assessment: как да оцените киберриска стъпка по стъпка</h1>
+            <p class="blog-deck">Оценката на киберриска свързва критичните услуги и активи с реалистични заплахи, уязвимости, възможни последствия и вече действащи мерки. По NIS2 тя е част от по-широкия процес за управление на риска — не еднократно упражнение и не само таблица с числов резултат.</p>
+            <p class="blog-meta">Автор: <a href="../about/team/author/elena-dimitrova.html" style="color: var(--secondary-cyan);">Елена Димитрова</a> · Публикувано: <time datetime="2026-10-05">5 октомври 2026 г.</time> · Обновено: <time datetime="2026-10-05">5 октомври 2026 г.</time></p>
+            <img class="blog-hero-image" src="../images/PR_image/Киберсигурност_за_бизнес_оцеляване.webp" alt="Оценка на киберриска и мерки за защита" width="1200" height="675" fetchpriority="high">
+            <p class="blog-legal-notice" style="border-left:4px solid #f0a500;background:rgba(240,165,0,.08);padding:16px 20px;border-radius:8px;margin:24px 0;font-size:.95rem;line-height:1.6;"><strong>⚠️ Важна бележка:</strong> Тази публикация е с информационна и образователна цел и <strong>не представлява юридическо или правно тълкуване</strong> на приложимото законодателство. Обстоятелствата варират, а нормативните изисквания се променят. При конкретен казус се консултирайте с квалифициран юрист.</p>
+
+            <p class="blog-callout"><strong>Накратко:</strong> определете обхвата и бизнес контекста, инвентаризирайте услугите и активите, формулирайте риск-сценарии, оценете вероятността и въздействието по одобрена от организацията методика, прегледайте действащите контроли и документирайте остатъчния риск и решенията за третиране. Методът трябва да отчита конкретната организация; NIS2 не задава универсална числова скала.</p>
+
+            <h2>Какво представлява оценката на киберриска?</h2>
+            <p>Оценката на риска е структуриран начин да се разбере как заплахи и слабости могат да засегнат целите, услугите, системите и хората на организацията. Тя помага на ръководството и собствениците на процеси да изберат какво да се третира първо, какви мерки са подходящи и кой приема остатъчния риск.</p>
+            <p>Член 21 на NIS2 включва политики за анализ на риска и сигурност на информационните системи сред тематичните области на мерките. Директивата изисква подходящи и пропорционални мерки, като изборът следва да отчита риска и контекста. Тя не предписва един задължителен шаблон, една формула или един софтуерен продукт за всички организации.</p>
+
+            <h2>Стъпка 1: определете контекста и обхвата</h2>
+            <ul>
+                <li>Кои юридически лица, услуги, локации и системи са включени?</li>
+                <li>Кои услуги са критични за клиенти, обществото, безопасността или непрекъснатостта?</li>
+                <li>Кои зависимости са съществени: хора, доставчици, облачни платформи, комуникации, електрозахранване и данни?</li>
+                <li>Кои са основните вътрешни и външни заинтересовани страни и кой одобрява оценката?</li>
+                <li>Какви са критериите за вероятност, въздействие, приемане и ескалация на риска според вътрешната методика?</li>
+            </ul>
+            <p>Отделете оценката на риска от въпроса за правната приложимост. Преди да твърдите, че NIS2 се прилага или не се прилага, проверете отделно конкретния правен субект, дейност, сектор и актуалните национални правила.</p>
+
+            <h2>Стъпка 2: опишете услуги, активи и зависимости</h2>
+            <p>Създайте достатъчно точен инвентар, за да можете да проследите какъв процес или услуга би бил засегнат от даден сценарий. За всеки важен актив или група активи отбележете собственик, предназначение, данни, свързани системи, външен достъп, доставчици и изисквания за наличност.</p>
+            <p>Инвентарът не е само списък с устройства. Той може да включва бизнес процеси, приложения, идентичности, мрежови зони, данни, OT компоненти и договорни зависимости — според обхвата и средата на организацията.</p>
+
+            <h2>Стъпка 3: формулирайте риск-сценарии</h2>
+            <p>Описвайте риска като причинно-следствен сценарий, а не само като етикет като „<a href="../resources/glossary/ransomware/">ransomware</a>“ или „фишинг“. Полезна структура е:</p>
+            <p class="blog-callout"><strong>Заплаха или събитие</strong> използва <strong>слабост или зависимост</strong> и засяга <strong>актив/услуга</strong>, което води до <strong>бизнес последствие</strong>.</p>
+            <p>Примерът по-долу е хипотетичен и служи само за илюстрация; той не описва инцидент на DefComs или клиент.</p>
+            <p><em>Компрометирани данни за достъп на външен доставчик могат да бъдат използвани за проникване в среда за дистанционна поддръжка; това може да прекъсне критична услуга и да затрудни възстановяването.</em></p>
+
+            <h2>Стъпка 4: оценете риска по последователна методика</h2>
+            <p>Организацията трябва да определи собствените си критерии за вероятност и въздействие, скали, източници на информация, период на оценяване и правила за ескалация. При нужда разделяйте въздействието по измерения: непрекъснатост на услугата, безопасност, данни, финанси, правни задължения и доверие.</p>
+            <p>Може да се използва качествена, количествена или комбинирана методика. Ако се използва матрица или произведение „вероятност × въздействие“, това е избор на организацията, а не универсална формула, зададена от NIS2. Записвайте допусканията и нивото на несигурност, за да може оценката да бъде разбрана и повторена.</p>
+
+            <h2>Стъпка 5: прегледайте контролите и остатъчния риск</h2>
+            <p>За всеки сценарий посочете съществуващите превантивни, детективни и възстановителни мерки, но преценете и дали имате доказателства, че работят. Наличието на политика не доказва само по себе си, че тя се прилага; наличието на backup не доказва, че възстановяването е проверено.</p>
+            <p>След отчитане на действащите мерки оценете оставащия риск по същите критерии. Документирайте кое е известно, кое е предположение и кой има правомощие да приеме остатъчния риск.</p>
+
+            <h2>Стъпка 6: изберете третиране и възложете действия</h2>
+            <p>За всеки приоритетен риск определете подход: намаляване чрез мерки, избягване на дейността, споделяне/прехвърляне на част от риска или приемане от упълномощено лице в рамките на политиката. Изборът трябва да бъде обоснован, а не подразбиран.</p>
+            <p>Планът за третиране обичайно посочва действието, собственика, срока, нужните ресурси, зависимостите, целевото доказателство, остатъчния риск и начина за проверка след изпълнение.</p>
+
+            <h2>Примерна рамка за регистър на риска</h2>
+            <div class="risk-table-wrap">
+                <table class="risk-table">
+                    <thead><tr><th>ID</th><th>Услуга/актив и риск-сценарий</th><th>Съществуващи мерки и доказателства</th><th>Оценка и обосновка</th><th>Третиране, собственик и срок</th></tr></thead>
+                    <tbody>
+                        <tr><td>R-01</td><td>Опишете услуга, актив, заплаха, слабост и възможно въздействие.</td><td>Посочете реални контроли и доказателства, например конфигурация, тест или запис от упражнение.</td><td>Приложете одобрените критерии; запишете допусканията и остатъчния риск.</td><td>Запишете решение, отговорник, краен срок и начин за валидиране.</td></tr>
+                        <tr><td>R-02</td><td>Добавете отделен сценарий за друга услуга или зависимост.</td><td>Разграничете планирана мярка от внедрена и проверена мярка.</td><td>Отразете вероятност, въздействие, несигурност и обосновка според вътрешния метод.</td><td>Определете приоритет, ресурс, ескалация и следваща дата за преглед.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Кога се преглежда оценката отново?</h2>
+            <ul>
+                <li>след съществена промяна в услугите, системите, организационната структура или доставчиците;</li>
+                <li>след инцидент или нова информация за заплаха, слабост или въздействие;</li>
+                <li>след промяна в приложимите закони, указания или статуса на обхвата;</li>
+                <li>при периодичния преглед, определен от управленската методика и риска;</li>
+                <li>когато резултатите от тестове, одити или учения поставят под съмнение ефективността на мерките.</li>
+            </ul>
+
+            <h2>Често задавани въпроси</h2>
+            <h3>NIS2 задава ли конкретна формула за изчисляване на риска?</h3>
+            <p>Не е посочена една универсална числова формула за всички субекти. Организацията следва да има последователен и обоснован метод, съобразен с приложимото право, риска и контекста.</p>
+            <h3>Достатъчна ли е стандартна risk matrix?</h3>
+            <p>Матрицата може да е полезен инструмент, ако критериите са ясни и подходящи. Тя не замества сценарийния анализ, доказателствата, управленското решение и проверката на контролите.</p>
+            <h3>Оценката на риска равна ли е на NIS2 gap analysis?</h3>
+            <p>Не напълно. Оценката на риска анализира събитията и възможните последствия; gap analysis сравнява текущите процеси и доказателства с избрана база от приложими изисквания. Двете дейности се допълват.</p>
+
+            <h2>Свързани ресурси</h2>
+            <ul class="blog-related">
+              <li><a href="nis2-supply-chain-security.html">NIS2 и сигурност на веригата на доставки</a></li>
+                <li><a href="what-is-nis2.html">Какво е NIS2? Цели, обхват и основни задължения</a></li>
+                <li><a href="who-is-covered-by-nis2-bulgaria.html">Кои компании в България попадат под NIS2?</a></li>
+                <li><a href="nis2-requirements.html">NIS2 изисквания: мерки за киберсигурност и докладване</a></li>
+                <li><a href="nis2-checklist.html">NIS2 checklist</a></li>
+                <li><a href="nis2-gap-analysis.html">NIS2 gap analysis</a></li>
+                <li><a href="../services/incident-response/index.html">Реакция при киберинциденти</a></li>
+                <li><a href="../services/supply-chain-security/index.html">Сигурност на веригата на доставки</a></li>
+                <li><a href="../services/backup-disaster-recovery/index.html">Backup и Disaster Recovery</a></li>
+            </ul>
+
+            <h2>Официални източници и методика</h2>
+            <ul class="blog-source-list">
+                <li><a href="https://eur-lex.europa.eu/eli/dir/2022/2555/oj" target="_blank" rel="noopener noreferrer">EUR-Lex — Директива (ЕС) 2022/2555, особено член 21</a></li>
+                <li><a href="https://csrc.nist.gov/pubs/sp/800/30/r1/final" target="_blank" rel="noopener noreferrer">NIST SP 800-30 Rev. 1 — Guide for Conducting Risk Assessments (обща методическа насока, не NIS2 изискване)</a></li>
+                <li><a href="https://csrc.nist.gov/pubs/sp/800/39/final" target="_blank" rel="noopener noreferrer">NIST SP 800-39 — Managing Information Security Risk (обща рамка за управление на риска)</a></li>
+                <li><a href="https://digital-strategy.ec.europa.eu/en/policies/nis2-directive" target="_blank" rel="noopener noreferrer">Европейска комисия — обзор на NIS2</a></li>
+                <li><a href="https://digital-strategy.ec.europa.eu/en/policies/nis2-directive-bulgaria" target="_blank" rel="noopener noreferrer">Европейска комисия — профил за България (проверявайте датата на актуализация)</a></li>
+            </ul>
+
+            <aside class="blog-cta">
+                <h2>Нуждаете се от структурирана оценка на риска?</h2>
+                <p>Свържете услугите, активите и зависимостите с реални риск-сценарии, контролите и план за третиране — след като е потвърден приложимият обхват.</p>
+                <a class="btn btn-primary" href="../compliance/nis2/index.html">NIS2 подготовка</a>
+                <a class="btn btn-secondary" href="nis2-gap-analysis.html">NIS2 gap analysis</a>
+            </aside>
+        </article>
+    </main>
+        <!-- Footer -->
+
+    <script src="../script.js" defer></script>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="../images/Logos/DefComs-logo.svg" alt="DefComs" class="footer-logo" loading="lazy">
+                    <p>Вашият високотехнологичен партньор в киберсигурността. Предотвратяване, засичане и бърза неутрализация на съвременните заплахи.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Услуги</h3>
+                    <ul>
+                        <li><a href="../services/soc-monitoring/index.html">SOC Мониторинг 24/7</a></li>
+                        <li><a href="../services/noc-services/index.html">NOC Управление</a></li>
+                        <li><a href="../services/corporate-training/index.html">Обучения за фирми</a></li>
+                        <li><a href="../services/penetration-testing/index.html">Penetration Testing</a></li>
+                        <li><a href="../compliance/nis2/index.html">GDPR/NIS2/DORA Съответствие</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Ресурси</h3>
+                    <ul>
+                        <li><a href="../spravochnik.html">Регулаторен Хъб</a></li>
+                        <li><a href="../cybersecurity-os/index.html">Cybersecurity OS</a></li>
+                        <li><a href="../blog/index.html">Статии &amp; Блог</a></li>
+                        <li><a href="../about/index.html">За Нас</a></li>
+                        <li><a href="../bulgaria/index.html">Покритие в България</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Правна рамка</h3>
+                    <ul>
+                        <li><a href="../compliance/nis2/index.html">Регулация NIS2</a></li>
+                        <li><a href="../compliance/gdpr/index.html">Регламент GDPR</a></li>
+                        <li><a href="../compliance/iso-27001/index.html">Стандарт ISO 27001</a></li>
+                        <li><a href="../index.html#contact">Контакти</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DefComs. Всички права запазени.</p>
+                <div class="footer-bottom-links">
+                    <a href="../terms.html">Условия за ползване</a>
+                    <a href="../privacy.html">Защита на данни</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../chat-widget.js"></script>
+</body>
+</html>

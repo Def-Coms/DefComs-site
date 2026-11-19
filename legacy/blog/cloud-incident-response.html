@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud incident response: подготовка и реакция | DefComs</title>
+    <meta name="description" content="Cloud incident response: как да подготвите достъп, logs и роли и да координирате анализ, containment, evidence, recovery и lessons learned в AWS, Azure и други cloud среди.">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <link rel="canonical" href="https://defcoms.eu/blog/cloud-incident-response.html">
+    <link rel="alternate" hreflang="bg" href="https://defcoms.eu/blog/cloud-incident-response.html">
+    <link rel="alternate" hreflang="x-default" href="https://defcoms.eu/blog/cloud-incident-response.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="bg_BG">
+    <meta property="og:site_name" content="DefComs">
+    <meta property="og:url" content="https://defcoms.eu/blog/cloud-incident-response.html">
+    <meta property="og:title" content="Cloud incident response: подготовка и реакция при cloud инцидент | DefComs">
+    <meta property="og:description" content="Cloud-specific рамка за scope, compromised identities, control/data plane, логове, containment решения, provider escalation и безопасно възстановяване.">
+    <meta property="og:image" content="https://defcoms.eu/images/Webp/Incident_Management.webp">
+    <meta property="og:image:alt" content="Демонстрационен incident management interface, не cloud provider console или реални инцидентни данни">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cloud incident response: практическо ръководство | DefComs">
+    <meta name="twitter:description" content="Подготовка, scoping, evidence, cloud containment и recovery с ясни owner-и и provider boundaries.">
+    <meta name="twitter:image" content="https://defcoms.eu/images/Webp/Incident_Management.webp">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../images/Logos/DefComs-logo.svg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        { "@type": "Organization", "@id": "https://defcoms.eu/#organization", "name": "DefComs", "url": "https://defcoms.eu/" },
+        { "@type": "WebSite", "@id": "https://defcoms.eu/#website", "url": "https://defcoms.eu/", "name": "DefComs", "publisher": { "@id": "https://defcoms.eu/#organization" }, "inLanguage": "bg" },
+        {
+          "@type": "WebPage",
+          "@id": "https://defcoms.eu/blog/cloud-incident-response.html#webpage",
+          "url": "https://defcoms.eu/blog/cloud-incident-response.html",
+          "name": "Cloud incident response: подготовка и реакция при cloud инцидент",
+          "inLanguage": "bg",
+          "isPartOf": { "@id": "https://defcoms.eu/#website" },
+          "breadcrumb": { "@id": "https://defcoms.eu/blog/cloud-incident-response.html#breadcrumb" },
+          "mainEntity": { "@id": "https://defcoms.eu/blog/cloud-incident-response.html#article" }
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://defcoms.eu/blog/cloud-incident-response.html#article",
+          "headline": "Cloud incident response: подготовка и реакция при cloud инцидент",
+          "description": "Ръководство за cloud incident response с preparation, scope/impact, evidence, identity и control-plane containment, provider coordination, recovery и post-incident improvement.",
+          "image": "https://defcoms.eu/images/Webp/Incident_Management.webp",
+          "datePublished": "2026-10-10",
+          "dateModified": "2026-10-10",
+          "inLanguage": "bg",
+          "mainEntityOfPage": { "@id": "https://defcoms.eu/blog/cloud-incident-response.html#webpage" },
+          "author": { "@type": "Person", "@id": "https://defcoms.eu/about/team/author/georgi-todorov.html", "name": "Георги Тодоров", "jobTitle": "SOC Operations Manager (24/7)", "url": "https://defcoms.eu/about/team/author/georgi-todorov.html" },
+          "publisher": { "@id": "https://defcoms.eu/#organization" },
+          "citation": [
+            "https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/incident-response.html",
+            "https://learn.microsoft.com/en-us/security/operations/incident-response-overview",
+            "https://csrc.nist.gov/pubs/sp/800/61/r3/final"
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://defcoms.eu/blog/cloud-incident-response.html#faq",
+          "mainEntity": [
+            { "@type": "Question", "name": "Какво е различното при cloud incident response?", "acceptedAnswer": { "@type": "Answer", "text": "Трябва да се обхванат cloud identities, control-plane операции, ресурси в няколко accounts/subscriptions/projects, provider logs и услугите на доставчика. Конкретните достъп, evidence и containment възможности зависят от услугата и deployment модела." } },
+            { "@type": "Question", "name": "Трябва ли да изтрия компрометиран cloud ресурс веднага?", "acceptedAnswer": { "@type": "Answer", "text": "Не като универсална първа стъпка. Изтриването може да унищожи volatile evidence или да прекъсне зависими услуги. Оценете спешността, запазете нужните доказателства и вземете containment решение според IR плана и отговорните специалисти." } },
+            { "@type": "Question", "name": "Достатъчни ли са default cloud audit logs за разследване?", "acceptedAnswer": { "@type": "Answer", "text": "Не непременно. Default coverage и retention се различават по provider и service; data-plane, workload или application logs може да изискват отделно включване и routing. Проверете действителната конфигурация и наличните периоди." } },
+            { "@type": "Question", "name": "Кога да се свържа с cloud provider?", "acceptedAnswer": { "@type": "Answer", "text": "Ескалирайте към provider support или security channel, когато случаят засяга provider-managed service, подозирате проблем извън клиентския control plane или са нужни provider-side данни/действия. Следвайте договорените support процедури и не приемайте, че provider ще управлява клиентските identities и workloads." } },
+            { "@type": "Question", "name": "Кой отговаря за cloud incident response?", "acceptedAnswer": { "@type": "Answer", "text": "Отговорността е споделена според услугата и модела. Provider управлява определени инфраструктурни слоеве; клиентът координира собствените identities, конфигурации, приложения, данни и бизнес решения, в съответствие с договора и приложимите правила." } }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://defcoms.eu/blog/cloud-incident-response.html#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Начало", "item": "https://defcoms.eu/" },
+            { "@type": "ListItem", "position": 2, "name": "Блог", "item": "https://defcoms.eu/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "Cloud incident response", "item": "https://defcoms.eu/blog/cloud-incident-response.html" }
+          ]
+        }
+      ]
+    }
+    </script>
+    <style>
+        .blog-article { max-width: 860px; margin: 0 auto; padding: 150px 24px 80px; }
+        .blog-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: 28px; }
+        .blog-breadcrumbs a { color: var(--secondary-cyan); }
+        .blog-kicker { color: var(--secondary-cyan); text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+        .blog-article h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.12; margin: 12px 0 20px; }
+        .blog-deck { color: var(--text-secondary); font-size: 1.2rem; line-height: 1.7; }
+        .blog-meta { color: var(--text-secondary); font-size: var(--font-size-sm); margin: 22px 0; }
+        .blog-hero-image { width: 100%; max-height: 460px; object-fit: cover; border-radius: var(--radius-lg); margin: 16px 0 32px; }
+        .blog-article h2 { margin-top: 42px; }
+        .blog-article p, .blog-article li { color: var(--text-secondary); line-height: 1.8; }
+        .blog-article ul, .blog-article ol { padding-left: 24px; }
+        .blog-callout { border-left: 3px solid var(--secondary-cyan); background: var(--background-card); padding: 18px 22px; border-radius: var(--radius-md); }
+        .blog-table-wrap { overflow-x: auto; margin: 24px 0; }
+        .blog-article table { width: 100%; border-collapse: collapse; min-width: 620px; }
+        .blog-article th, .blog-article td { padding: 14px; border: 1px solid var(--border-color); text-align: left; vertical-align: top; color: var(--text-secondary); line-height: 1.65; }
+        .blog-article th { color: var(--text-primary); background: var(--background-card); }
+        .blog-related, .blog-source-list { display: grid; gap: 12px; margin: 20px 0; }
+        .blog-related a, .blog-source-list a { color: var(--secondary-cyan); }
+        .blog-source-list li { overflow-wrap: anywhere; }
+        .blog-cta { margin-top: 44px; padding: 24px; background: var(--background-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); }
+    </style>
+</head>
+<body class="service-landing">
+
+    <!-- Header -->
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay"></div>
+
+    <header class="header">
+        <nav class="nav" aria-label="Основна навигация">
+            <div class="nav-container">
+                <a href="../index.html" class="logo">
+                    <img src="../images/Logos/DefComs-logo.svg" alt="DefComs">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Начало</a></li>
+                    <li><a href="../about/index.html">За нас</a></li>
+                    <li><a href="../services/index.html">Услуги</a></li>
+                    <li><a href="../compliance/index.html">Регулации</a></li>
+                    <li><a href="../cybersecurity-os/index.html">Cybersecurity OS</a></li>
+                    <li><a href="../wizard.html">NIS2 &amp; DORA Оценка</a></li>
+                    <li><a href="../spravochnik.html">Справочник</a></li>
+                    <li><a href="index.html">Блог</a></li>
+                    <li><a href="../contact/index.html">Контакти</a></li>
+                    <li class="mobile-only"><a href="../contact/index.html" class="mobile-cta">Свържете се с нас</a></li>
+                </ul>
+                <a href="../contact/index.html" class="cta-button">Свържете се с нас</a>
+                <button class="hamburger" type="button" aria-label="Отвори меню" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+
+    <main class="blog-article">
+        <nav class="blog-breadcrumbs" aria-label="Навигационна пътека">
+            <a href="../index.html">Начало</a><span aria-hidden="true">›</span>
+            <a href="index.html">Блог</a><span aria-hidden="true">›</span>
+            <span aria-current="page">Cloud incident response</span>
+        </nav>
+        <article>
+            <p class="blog-kicker">Cloud Security · Incident Response · Recovery</p>
+            <h1>Cloud incident response: как да подготвите и координирате реакцията?</h1>
+            <p class="blog-deck">Cloud incident response съчетава установяване на обхвата в tenants/accounts/subscriptions/projects, запазване на provider и workload telemetry, оценка на identities и control-plane промени, containment и безопасно възстановяване. Решенията зависят от конкретните услуги, shared responsibility, бизнес impact и наличните logs — няма еднакъв playbook за всяка cloud среда.</p>
+            <p class="blog-meta">Автор: <a href="../about/team/author/georgi-todorov.html" style="color: var(--secondary-cyan);">Георги Тодоров</a> · Публикувано: <time datetime="2026-10-10">10 октомври 2026 г.</time> · Обновено: <time datetime="2026-10-10">10 октомври 2026 г.</time></p>
+            <img class="blog-hero-image" src="../images/Webp/Incident_Management.webp" alt="Демонстрационен incident management interface, не cloud provider console или реални инцидентни данни" width="1200" height="675" fetchpriority="high">
+            <p class="blog-legal-notice" style="border-left:4px solid #f0a500;background:rgba(240,165,0,.08);padding:16px 20px;border-radius:8px;margin:24px 0;font-size:.95rem;line-height:1.6;"><strong>⚠️ Важна бележка:</strong> Тази публикация е с информационна и образователна цел и <strong>не представлява юридическо или правно тълкуване</strong> на приложимото законодателство. Обстоятелствата варират, а нормативните изисквания се променят. При конкретен казус се консултирайте с квалифициран юрист.</p>
+            <p class="blog-meta">Изображението е mock incident dashboard за визуален контекст; не показва реални cloud събития или доставчик.</p>
+
+            <p class="blog-callout"><strong>Първо:</strong> активирайте incident lead и проверен канал за координация; уточнете tenant/account/resource scope и вероятно бизнес въздействие; запазете достъпните audit logs и evidence; оценете compromised identities и продължаващ достъп; вземете containment решение с правилните owners; след това проверете eradication и recovery по одобрен план.</p>
+
+            <h2>Какво е специфично при cloud incident?</h2>
+            <ul>
+                <li><strong>Control plane и data plane са различни.</strong> Audit event за промяна в <a href="../resources/glossary/iam/">IAM</a> policy не е същото като data access log от storage/database или application log.</li>
+                <li><strong>Обхватът може да пресича граници.</strong> Една identity, automation pipeline или trust relationship може да докосва няколко accounts, subscriptions, projects или Regions.</li>
+                <li><strong>Resources са динамични.</strong> Ephemeral instances/containers, serverless executions и autoscaling могат да променят обхвата бързо; image, deployment и orchestration logs са важни за timeline.</li>
+                <li><strong>Visibility има provider-specific gaps.</strong> Default audit history може да е кратък или да не включва data events; част от logs трябва да бъдат изрично включени и routed.</li>
+                <li><strong>Containment има API/control-plane последствия.</strong> Revocation, role changes, quarantine, network policies или resource stop/delete могат да прекъснат услуги, pipelines или logging itself.</li>
+                <li><strong>Provider и customer responsibilities се различават.</strong> Provider support може да помогне при provider-managed layer или account abuse, но клиентът управлява собствените identities, data, configurations и business decisions според услугата и договора.</li>
+            </ul>
+
+            <h2>Подгответе достъп, хора и процедури преди инцидент</h2>
+            <p>Облачната подготовка трябва да покрива People, Process и Technology: incident roles, provider escalation, usable playbooks, evidence capability, достъп до нужните consoles/logs и упражняване на сценарии. Предварително осигурете responder access, който е защитен, auditable и достъпен дори ако обичайните workforce identities или federation са засегнати. Не разчитайте на един администратор или един sign-in път.</p>
+            <ul>
+                <li>Поддържайте актуални account/subscription/project inventory, Region/tenant relationships, service owners и dependency maps.</li>
+                <li>Определете incident lead, cloud platform owners, workload/data owners, <a href="../resources/glossary/soc/">SOC</a>/IR contacts, legal/privacy и communication roles.</li>
+                <li>Запишете как се активира provider support и какви account IDs, timestamps, request IDs и доказателства са нужни.</li>
+                <li>Уточнете emergency access, MFA/device requirements, vault/recovery process и кой може да одобрява privilege elevation.</li>
+                <li>Подгответе log sources, destination permissions, retention, time synchronization, evidence access controls и pipeline health alarms.</li>
+                <li>Упражнявайте identity compromise, malicious resource deployment, exposed data и logging/configuration tampering сценарии.</li>
+            </ul>
+
+            <h2>Workflow по време на cloud инцидент</h2>
+            <ol>
+                <li><strong>Координирайте и запишете началната картина.</strong> Активирайте incident process, направете timeline и определете канал за сигурна комуникация. Разделяйте потвърдени факти, вероятности и неизвестни.</li>
+                <li><strong>Определете scope и impact.</strong> Идентифицирайте accounts/tenants/subscriptions/projects, identities, Regions, resources, данни и зависими услуги; потърсете related resources и persistence пътища.</li>
+                <li><strong>Запазете наличните evidence.</strong> Експортирайте релевантните provider audit logs, resource/data-plane logs, workload/OS/application records и deployment history според плана. Запишете source, timestamps, time zone, query/filter, export и access chain.</li>
+                <li><strong>Ограничете достъпа и активността.</strong> Отнемете или ограничете потвърдени compromised credentials/sessions, role assignments или trust relationships; изолирайте network/resource access или спрете workload само след оценка на зависимости и доказателства.</li>
+                <li><strong>Потвърдете containment.</strong> Проверете дали командата се е приложила в правилния scope, дали останали credentials/Regions/automation пътища не дават достъп и дали log routing продължава.</li>
+                <li><strong>Премахнете persistence и уязвимия вход.</strong> Изследвайте policy changes, federated trust, keys/secrets, scheduled automation, deployment pipelines и новосъздадени resources; remediation трябва да бъде одобрено и документирано.</li>
+                <li><strong>Възстановете от известна добра конфигурация.</strong> Използвайте проверени images/IaC/configurations и clean data/recovery points; rotate засегнатите secrets/tokens, validate workloads със service owners и наблюдавайте повторна активност.</li>
+                <li><strong>Затворете цикъла.</strong> Запишете въздействие, решения, provider involvement, logging gaps, отклонения от плана и owners/deadlines за подобрения.</li>
+            </ol>
+            <p>Това е рамка за подготовка и координация, не команди за изпълнение по време на активен инцидент. Следвайте вътрешния playbook и насоките на qualified responders, които познават засегнатите услуги.</p>
+
+            <h2>Containment: identity, resource или account?</h2>
+            <div class="blog-table-wrap">
+                <table>
+                    <thead><tr><th>Обект</th><th>Възможни варианти за оценка</th><th>Риск, който трябва да се прецени</th></tr></thead>
+                    <tbody>
+                        <tr><th>Identity / credential</th><td>Revocation на sessions/tokens, disabled principal/key, корекция на role/trust binding.</td><td>Може да прекъсне production workload, automation или recovery path; проверете dependencies и alternate credentials.</td></tr>
+                        <tr><th>Resource / workload</th><td>Network restriction, quarantine/isolation, scale/stop или друга услуга-specific мярка.</td><td>Може да прекъсне бизнес услуга, да премахне volatile state или да засегне съседни resources.</td></tr>
+                        <tr><th>Account / subscription / project</th><td>Ограничаване на privileged actions, guardrails и централизирана координация между owner-и.</td><td>Широк action може да засегне множество системи; организационни/policy changes изискват точен scope и authority.</td></tr>
+                        <tr><th>Provider-managed service</th><td>Запазване на provider references и ескалация към contractual support/security channels.</td><td>Customer visibility може да е ограничена; provider scope и customer evidence трябва да се съгласуват.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Няма универсално правилно ниво на containment. Балансирайте active risk, evidence, availability, safety и recovery; запишете who/what/when/why и проверете effect след действието.</p>
+
+            <h2>Provider escalation и shared responsibility</h2>
+            <p>Запазете provider support case/reference IDs и изпратете конкретни timestamps, resource identifiers, Regions, correlation/request IDs и observed impact през одобрения канал. Не включвайте ненужно sensitive data и не предполагайте, че provider има достъп до customer logs или може да предприеме действие без customer authorization.</p>
+            <p>Отговорността зависи от услугата: provider infrastructure, managed control plane, guest OS, application, identities и customer data имат различни owners при IaaS/PaaS/SaaS. По време на incident response използвайте service-specific shared responsibility и договора, а не обща диаграма, за да определите кой може да изследва, containment-ва и възстановява всеки слой.</p>
+
+            <h2>Чести грешки</h2>
+            <ul>
+                <li>Разчитане на provider Activity History без проверка на срока, Region/account scope и missing data-plane sources.</li>
+                <li>Изтриване на compromised resource или rotation на credentials преди да са запазени нужните logs/context, когато времето и рискът позволяват preservation.</li>
+                <li>Незабавно disable на workload identity без проверка на production dependencies и rollback/access path.</li>
+                <li>Containment в един account, докато trust relationships, federated credentials или automation са валидни другаде.</li>
+                <li>Изключване на audit pipeline или logs през remediation policy и липса на independent alert за logging changes.</li>
+                <li>Приемане, че provider support замества customer incident command, notification, recovery и правна оценка.</li>
+                <li>Възстановяване на workload без проверка на identity, IaC, deployment pipeline, secrets и initial access path.</li>
+            </ul>
+
+            <h2>Често задавани въпроси</h2>
+            <h3>Какво е различното при cloud incident response?</h3>
+            <p>Трябва да се обхванат cloud identities, control-plane операции, ресурси в няколко accounts/subscriptions/projects, provider logs и услугите на доставчика. Конкретните достъп, evidence и containment възможности зависят от услугата и deployment модела.</p>
+            <h3>Трябва ли да изтрия компрометиран cloud ресурс веднага?</h3>
+            <p>Не като универсална първа стъпка. Изтриването може да унищожи volatile evidence или да прекъсне зависими услуги. Оценете спешността, запазете нужните доказателства и вземете containment решение според IR плана и отговорните специалисти.</p>
+            <h3>Достатъчни ли са default cloud audit logs за разследване?</h3>
+            <p>Не непременно. Default coverage и retention се различават по provider и service; data-plane, workload или application logs може да изискват отделно включване и routing. Проверете действителната конфигурация и наличните периоди.</p>
+            <h3>Кога да се свържа с cloud provider?</h3>
+            <p>Ескалирайте към provider support или security channel, когато случаят засяга provider-managed service, подозирате проблем извън клиентския control plane или са нужни provider-side данни/действия. Следвайте договорените support процедури и не приемайте, че provider ще управлява клиентските identities и workloads.</p>
+            <h3>Кой отговаря за cloud incident response?</h3>
+            <p>Отговорността е споделена според услугата и модела. Provider управлява определени инфраструктурни слоеве; клиентът координира собствените identities, конфигурации, приложения, данни и бизнес решения, в съответствие с договора и приложимите правила.</p>
+
+            <h2>Свързани ресурси</h2>
+            <ul class="blog-related">
+                <li><a href="ransomware-incident-response.html">Ransomware incident response: как да координирате реакцията</a></li>
+                <li><a href="endpoint-isolation.html">Endpoint isolation: кога и как се изолира устройство?</a></li>
+                <li><a href="cloud-logging.html">Cloud logging: как да събирате, пазите и използвате cloud logs</a></li>
+                <li><a href="aws-security.html">AWS Security: account governance и logging</a></li>
+                <li><a href="azure-security.html">Azure Security: logging, identity и response</a></li>
+                <li><a href="what-is-soc.html">Какво е SOC и как помага на бизнеса?</a></li>
+                <li><a href="../services/incident-response/index.html">Incident Response услуги на DefComs</a></li>
+                <li><a href="../services/cloud-security/index.html">Cloud Security услуги на DefComs</a></li>
+            </ul>
+
+            <h2>Официални източници</h2>
+            <ul class="blog-source-list">
+                <li><a href="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/incident-response.html" target="_blank" rel="noopener noreferrer">AWS Well-Architected — Incident response</a></li>
+                <li><a href="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/preparation.html" target="_blank" rel="noopener noreferrer">AWS Well-Architected — Preparation</a></li>
+                <li><a href="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/operations.html" target="_blank" rel="noopener noreferrer">AWS Well-Architected — Operations</a></li>
+                <li><a href="https://learn.microsoft.com/en-us/security/operations/incident-response-overview" target="_blank" rel="noopener noreferrer">Microsoft Learn — Incident response overview</a></li>
+                <li><a href="https://csrc.nist.gov/pubs/sp/800/61/r3/final" target="_blank" rel="noopener noreferrer">NIST SP 800-61 Rev. 3 — incident response в контекста на cybersecurity risk management</a></li>
+            </ul>
+
+            <aside class="blog-cta">
+                <h2>Подгответе cloud response преди първия сигнал</h2>
+                <p>Уточнете scope, emergency access, log preservation, containment authority и recovery owners по provider и workload.</p>
+                <a class="btn btn-primary" href="../services/incident-response/index.html">Incident Response услуги</a>
+                <a class="btn btn-secondary" href="../services/cloud-security/index.html">Cloud Security</a>
+            </aside>
+        </article>
+    </main>
+        <!-- Footer -->
+
+    <script src="../script.js" defer></script>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="../images/Logos/DefComs-logo.svg" alt="DefComs" class="footer-logo" loading="lazy">
+                    <p>Вашият високотехнологичен партньор в киберсигурността. Предотвратяване, засичане и бърза неутрализация на съвременните заплахи.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Услуги</h3>
+                    <ul>
+                        <li><a href="../services/soc-monitoring/index.html">SOC Мониторинг 24/7</a></li>
+                        <li><a href="../services/noc-services/index.html">NOC Управление</a></li>
+                        <li><a href="../services/corporate-training/index.html">Обучения за фирми</a></li>
+                        <li><a href="../services/penetration-testing/index.html">Penetration Testing</a></li>
+                        <li><a href="../compliance/nis2/index.html">GDPR/NIS2/DORA Съответствие</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Ресурси</h3>
+                    <ul>
+                        <li><a href="../spravochnik.html">Регулаторен Хъб</a></li>
+                        <li><a href="../cybersecurity-os/index.html">Cybersecurity OS</a></li>
+                        <li><a href="../blog/index.html">Статии &amp; Блог</a></li>
+                        <li><a href="../about/index.html">За Нас</a></li>
+                        <li><a href="../bulgaria/index.html">Покритие в България</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Правна рамка</h3>
+                    <ul>
+                        <li><a href="../compliance/nis2/index.html">Регулация NIS2</a></li>
+                        <li><a href="../compliance/gdpr/index.html">Регламент GDPR</a></li>
+                        <li><a href="../compliance/iso-27001/index.html">Стандарт ISO 27001</a></li>
+                        <li><a href="../index.html#contact">Контакти</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DefComs. Всички права запазени.</p>
+                <div class="footer-bottom-links">
+                    <a href="../terms.html">Условия за ползване</a>
+                    <a href="../privacy.html">Защита на данни</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../chat-widget.js"></script>
+</body>
+</html>

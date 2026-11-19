@@ -1,0 +1,226 @@
+---
+lastmod: 2026-10-05
+title: "NIS2 gap analysis: как да откриете пропуските | DefComs"
+description: "Практическо ръководство за NIS2 gap analysis: потвърждаване на обхвата, събиране на доказателства, оценка на пропуските и план за действия по членове 20, 21 и 23."
+ogType: article
+image: https://defcoms.eu/images/PR_image/Киберсигурност_за_бизнес_оцеляване.webp
+imageAlt: Анализ на пропуски в киберсигурността по NIS2
+ogDescription: Методика за проверка на обхвата, доказателства, gap register и приоритизиране на NIS2 подобренията.
+twitterTitle: NIS2 gap analysis | DefComs
+twitterDescription: Как да проверите доказателства, пропуски, риск и план за подобрения по NIS2.
+schema:
+  - "@context": https://schema.org
+    "@graph":
+      - "@type": Organization
+        "@id": https://defcoms.eu/#organization
+        name: DefComs
+        url: https://defcoms.eu/
+      - "@type": WebSite
+        "@id": https://defcoms.eu/#website
+        url: https://defcoms.eu/
+        name: DefComs
+        publisher:
+          "@id": https://defcoms.eu/#organization
+        inLanguage: bg
+      - "@type": WebPage
+        "@id": https://defcoms.eu/blog/nis2-gap-analysis#webpage
+        url: https://defcoms.eu/blog/nis2-gap-analysis
+        name: "NIS2 gap analysis: как да откриете пропуските"
+        inLanguage: bg
+        isPartOf:
+          "@id": https://defcoms.eu/#website
+        breadcrumb:
+          "@id": https://defcoms.eu/blog/nis2-gap-analysis#breadcrumb
+        mainEntity:
+          "@id": https://defcoms.eu/blog/nis2-gap-analysis#article
+      - "@type": BlogPosting
+        "@id": https://defcoms.eu/blog/nis2-gap-analysis#article
+        headline: "NIS2 gap analysis: как да откриете пропуските"
+        description: Методика за проверка на приложимостта, доказателствата и пропуските по темите за управление на риска по NIS2.
+        image: https://defcoms.eu/images/PR_image/Киберсигурност_за_бизнес_оцеляване.webp
+        datePublished: 2026-10-05
+        dateModified: 2026-10-05
+        inLanguage: bg
+        mainEntityOfPage:
+          "@id": https://defcoms.eu/blog/nis2-gap-analysis#webpage
+        author:
+          "@type": Person
+          "@id": https://defcoms.eu/about/team/author/elena-dimitrova
+          name: Елена Димитрова
+          jobTitle: Lead Compliance & NIS2/DORA Advisor
+          url: https://defcoms.eu/about/team/author/elena-dimitrova
+        publisher:
+          "@id": https://defcoms.eu/#organization
+        citation:
+          - https://eur-lex.europa.eu/eli/dir/2022/2555/oj
+          - https://eur-lex.europa.eu/eli/reg_impl/2024/2690/oj
+          - https://digital-strategy.ec.europa.eu/en/policies/nis2-directive
+      - "@type": BreadcrumbList
+        "@id": https://defcoms.eu/blog/nis2-gap-analysis#breadcrumb
+        itemListElement:
+          - "@type": ListItem
+            position: 1
+            name: Начало
+            item: https://defcoms.eu/
+          - "@type": ListItem
+            position: 2
+            name: Блог
+            item: https://defcoms.eu/blog
+          - "@type": ListItem
+            position: 3
+            name: NIS2 gap analysis
+            item: https://defcoms.eu/blog/nis2-gap-analysis
+headExtra: |-
+  <style>
+          .blog-article { max-width: 900px; margin: 0 auto; padding: 150px 24px 80px; }
+          .blog-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: 28px; }
+          .blog-breadcrumbs a { color: var(--secondary-cyan); }
+          .blog-kicker { color: var(--secondary-cyan); text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+          .blog-article h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.12; margin: 12px 0 20px; }
+          .blog-deck { color: var(--text-secondary); font-size: 1.2rem; line-height: 1.7; }
+          .blog-meta { color: var(--text-secondary); font-size: var(--font-size-sm); margin: 22px 0; }
+          .blog-hero-image { width: 100%; max-height: 460px; object-fit: cover; border-radius: var(--radius-lg); margin: 16px 0 32px; }
+          .blog-article h2 { margin-top: 42px; }
+          .blog-article p, .blog-article li { color: var(--text-secondary); line-height: 1.8; }
+          .blog-article ul, .blog-article ol { padding-left: 24px; }
+          .blog-callout { border-left: 3px solid var(--secondary-cyan); background: var(--background-card); padding: 18px 22px; border-radius: var(--radius-md); }
+          .blog-related, .blog-source-list { display: grid; gap: 12px; margin: 20px 0; }
+          .blog-related a, .blog-source-list a { color: var(--secondary-cyan); }
+          .blog-source-list li { overflow-wrap: anywhere; }
+          .blog-cta { margin-top: 44px; padding: 24px; background: var(--background-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); }
+          .gap-table-wrap { overflow-x: auto; margin: 22px 0; }
+          .gap-table { width: 100%; min-width: 720px; border-collapse: collapse; }
+          .gap-table th, .gap-table td { border: 1px solid var(--border-color); padding: 12px; text-align: left; vertical-align: top; }
+          .gap-table th { color: var(--secondary-cyan); background: var(--background-card); }
+          .gap-table td { color: var(--text-secondary); }
+          @media print {
+              .header, .footer, .blog-cta, .blog-hero-image, .blog-breadcrumbs { display: none !important; }
+              .blog-article { max-width: none; padding: 0; }
+              .blog-article p, .blog-article li, .gap-table td { color: #222; }
+          }
+      </style>
+bodyClass: service-landing
+blog:
+  categories:
+    - NIS2
+    - Gap analysis
+  date: 2026-10-05
+  order: 64
+  title: "NIS2 gap analysis: как да откриете и приоритизирате пропуските"
+  summary: Методика за проверка на обхвата, доказателствата, пропуските и коригиращите действия по NIS2.
+  image: /images/secure-storage-associate.webp
+  imageAlt: Анализ на пропуските и планиране на NIS2 мерки
+  imageWidth: 1200
+  imageHeight: 675
+  ariaLabel: "Прочетете: NIS2 gap analysis"
+  cta: Прочетете ръководството →
+---
+<main class="blog-article">
+        <nav class="blog-breadcrumbs" aria-label="Навигационна пътека">
+            <a href="/">Начало</a><span aria-hidden="true">›</span>
+            <a href="/blog">Блог</a><span aria-hidden="true">›</span>
+            <span aria-current="page">NIS2 gap analysis</span>
+        </nav>
+        <article>
+            <p class="blog-kicker">NIS2 · Gap analysis · Управление на риска</p>
+            <h1>NIS2 gap analysis: как да откриете и приоритизирате пропуските</h1>
+            <p class="blog-deck">NIS2 gap analysis е структуриран преглед на разликата между приложимите изисквания, текущите процеси и проверимите доказателства на организацията. Резултатът трябва да е приоритизиран план за действия — не само таблица с отметки или общ процент за „съответствие“.</p>
+            <p class="blog-meta">Автор: <a href="/about/team/author/elena-dimitrova" style="color: var(--secondary-cyan);">Елена Димитрова</a> · Публикувано: <time datetime="2026-10-05">5 октомври 2026 г.</time> · Обновено: <time datetime="2026-10-05">5 октомври 2026 г.</time></p>
+            <img class="blog-hero-image" src="/images/PR_image/%D0%9A%D0%B8%D0%B1%D0%B5%D1%80%D1%81%D0%B8%D0%B3%D1%83%D1%80%D0%BD%D0%BE%D1%81%D1%82_%D0%B7%D0%B0_%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81_%D0%BE%D1%86%D0%B5%D0%BB%D1%8F%D0%B2%D0%B0%D0%BD%D0%B5.webp" alt="Анализ на пропуските и планиране на мерки за киберсигурност" width="1200" height="675" fetchpriority="high">
+            <p class="blog-legal-notice" style="border-left:4px solid #f0a500;background:rgba(240,165,0,.08);padding:16px 20px;border-radius:8px;margin:24px 0;font-size:.95rem;line-height:1.6;"><strong>⚠️ Важна бележка:</strong> Тази публикация е с информационна и образователна цел и <strong>не представлява юридическо или правно тълкуване</strong> на приложимото законодателство. Обстоятелствата варират, а нормативните изисквания се променят. При конкретен казус се консултирайте с квалифициран юрист.</p>
+
+            <p class="blog-callout"><strong>Накратко:</strong> потвърдете обхвата, преведете приложимите теми от член 21 в проверими контролни въпроси, съберете доказателства, оценете пропуските и риска, назначете собственици и проследявайте коригиращите действия. Не обявявайте резултата за NIS2 compliance, ако не е проверена приложимостта, националното право и ефективността на контролите.</p>
+
+            <h2>Какво е gap analysis и с какво се различава от одит?</h2>
+            <p>Gap analysis сравнява целево състояние с текущата практика, за да открие липсващи, непълни или недоказани елементи и да предложи следващи стъпки. Тя може да бъде първоначална самооценка или част от по-широк ангажимент. Само по себе си преглеждането на документи или отметките в checklist не представляват независим одит, официална оценка от компетентен орган или юридическо заключение.</p>
+            <p>За NIS2 целевите критерии трябва да се определят спрямо приложимите разпоредби на Директива (ЕС) 2022/2555, националните мерки и, когато е приложимо, специфичните правила за съответната категория субект. Регламент за изпълнение (ЕС) 2024/2690 има ограничен персонален обхват за определени цифрови доставчици; той не е универсален контролен стандарт за всички организации.</p>
+
+            <h2>Преди оценката: потвърдете обхвата</h2>
+            <ol>
+                <li>Определете юридическото лице и услугите, които реално предоставя.</li>
+                <li>Съпоставете дейностите със секторните дефиниции и приложенията към директивата.</li>
+                <li>Проверете критериите за размер, специалните случаи, груповите отношения и националните правила.</li>
+                <li>Запишете източника, датата и лицето, одобрило преценката за обхват.</li>
+            </ol>
+            <p>Ако обхватът не е потвърден, отбележете го като отворено правно/регулаторно действие. Не третирайте неопределен статус като „извън обхвата“.</p>
+
+            <h2>Стъпки за провеждане на NIS2 gap analysis</h2>
+            <ol>
+                <li><strong>Определете обхвата на оценката.</strong> Съгласувайте юридическите лица, услугите, локациите, системите, доставчиците и периодите, които ще бъдат разгледани.</li>
+                <li><strong>Създайте карта на изискванията.</strong> Разложете приложимите теми от членове 20, 21 и 23 на контролни въпроси и свържете всеки въпрос с точен правен или организационен източник.</li>
+                <li><strong>Съберете доказателства.</strong> Проверявайте политики, регистри, конфигурации, записи от тестове, протоколи от упражнения, договори, логове и интервюта със собствениците на процесите.</li>
+                <li><strong>Оценете изпълнението и качеството на доказателството.</strong> Разграничете „не е внедрено“, „частично“, „внедрено, но не е доказано“ и „внедрено и проверено“. Това са вътрешни работни статуси, не официални категории на NIS2.</li>
+                <li><strong>Оценете риска и въздействието.</strong> Разгледайте критичността на услугата, вероятността, въздействието върху непрекъснатостта и безопасността, външните зависимости и наличните компенсиращи мерки.</li>
+                <li><strong>Приоритизирайте и възложете действията.</strong> Назначете собственик, срок, нужни ресурси, целево доказателство и ескалация за всяка корекция.</li>
+                <li><strong>Проверете отново изпълнението.</strong> След приключване прегледайте доказателствата и, когато е уместно, тествайте контролата или процеса, а не само факта, че документът съществува.</li>
+            </ol>
+
+            <h2>Области, които да включите в работната матрица</h2>
+            <div class="gap-table-wrap">
+                <table class="gap-table">
+                    <thead><tr><th>Тема</th><th>Примерни въпроси за преглед</th><th>Примери за доказателства</th><th>Запишете</th></tr></thead>
+                    <tbody>
+                        <tr><td>Управление и риск</td><td>Кой одобрява и надзирава мерките? Как се оценява и преглежда рискът?</td><td>Одобрения, политики, регистър на риска, протоколи за преглед и обучение</td><td>Пропуск, собственик, срок</td></tr>
+                        <tr><td>Инциденти</td><td>Кой открива, класифицира, ескалира и документира инцидент?</td><td>Процедури, планове за ескалация, записи от учения, образци за уведомяване</td><td>Време за реакция, блокери</td></tr>
+                        <tr><td>Непрекъснатост и кризи</td><td>Кои услуги са критични? Тествани ли са възстановяването и комуникациите?</td><td>BCP/DR планове, резултати от backup/restore тестове, учения</td><td>Зависимости, възстановяване</td></tr>
+                        <tr><td>Доставчици</td><td>Кои доставчици имат достъп или поддържат критична услуга? Как се следи рискът?</td><td>Инвентар, оценки, договори, изисквания за достъп, прегледи</td><td>Риск от трети страни</td></tr>
+                        <tr><td>Системи и уязвимости</td><td>Как се управляват промени, уязвимости, обновявания и сигурността през жизнения цикъл?</td><td>Процедури, тикети, сканирания, прегледи на промени, disclosure записи</td><td>Технически пропуски</td></tr>
+                        <tr><td>Ефективност и обучение</td><td>Как се проверява, че контролите работят и персоналът знае ролите си?</td><td>Тестове, метрики, обучения, резултати от упражнения</td><td>Недостатъчна ефективност</td></tr>
+                        <tr><td>Криптография, достъп и активи</td><td>Има ли видимост върху активите и достъпа? Подходящи ли са криптографските мерки?</td><td>Инвентар, матрици за достъп, прегледи на акаунти, криптографски политики</td><td>Собственик и доказателство</td></tr>
+                        <tr><td>MFA и защитени комуникации</td><td>Използва ли се MFA или непрекъсната автентикация, когато е приложимо? Има ли защитени аварийни канали?</td><td>Настройки, процедури, тестове и план за спешни комуникации</td><td>Изключения и мерки</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Как да приоритизирате откритите пропуски?</h2>
+            <p>Не приоритизирайте само по това дали контролът е отметнат. За всяко откритие документирайте приложимото изискване, риска за услугите, доказателствата, причината за пропуска, съществуващите компенсиращи мерки и възможното въздействие. След това определете действие, собственик, срок, ресурс и начин за проверка.</p>
+            <p>Практическият регистър може да съдържа полета: ID; източник/изискване; система или процес; текущ статус; доказателства; риск и обосновка; коригиращо действие; отговорник; срок; остатъчен риск; дата и резултат от повторната проверка.</p>
+            <p>Избягвайте произволен общ „NIS2 score“. Процентът може да скрие критичен пропуск, да смеси приложими и неприложими изисквания или да създаде впечатление за официална сертификация, каквато такава самооценка не предоставя.</p>
+
+            <h2>Изходи от добър gap analysis</h2>
+            <ul>
+                <li>документирана преценка за обхвата и нерешените въпроси;</li>
+                <li>карта на приложимите теми и доказателства;</li>
+                <li>регистър на пропуските и рисковете с ясни собственици;</li>
+                <li>приоритизиран план за коригиращи действия и ресурси;</li>
+                <li>план за валидиране и периодичен преглед;</li>
+                <li>пакет доказателства, проследими до конкретната контролна цел.</li>
+            </ul>
+
+            <h2>Често задавани въпроси</h2>
+            <h3>Gap analysis доказва ли съответствие с NIS2?</h3>
+            <p>Не сама по себе си. Тя открива и документира разлики спрямо определена база за оценка. Извод за съответствие изисква проверен обхват, актуална нормативна основа, подходящи доказателства и, според нуждите, независим или правен преглед.</p>
+            <h3>Трябва ли gap analysis да използва точно десет контроли?</h3>
+            <p>Не. Десетте тематични области по член 21 могат да служат за структура, но оценката трябва да отразява точните приложими изисквания, секторните правила и националните мерки.</p>
+            <h3>Еднакви ли са изискванията по Регламент за изпълнение 2024/2690 за всички?</h3>
+            <p>Не. Регламентът задава изисквания за определени категории цифрови доставчици в персоналния си обхват. Проверете текста на акта и дали той се отнася до конкретния субект, вместо да го прилагате универсално.</p>
+
+            <h2>Свързани ресурси</h2>
+            <ul class="blog-related">
+                <li><a href="/blog/nis2-risk-assessment">NIS2 risk assessment: как да оцените киберриска стъпка по стъпка</a></li>
+                <li><a href="/blog/what-is-nis2">Какво е NIS2? Цели, обхват и основни задължения</a></li>
+                <li><a href="/blog/who-is-covered-by-nis2-bulgaria">Кои компании в България попадат под NIS2?</a></li>
+                <li><a href="/blog/nis2-requirements">NIS2 изисквания: мерки за киберсигурност и докладване</a></li>
+                <li><a href="/blog/nis2-checklist">NIS2 checklist</a></li>
+                <li><a href="/assessment/nis2-dora">Предварителна NIS2/DORA самооценка — информационен ориентир</a></li>
+                <li><a href="/compliance/nis2">NIS2: оценка и подготовка</a></li>
+                <li><a href="/services/incident-response">Реакция при киберинциденти</a></li>
+                <li><a href="/services/supply-chain-security">Сигурност на веригата на доставки</a></li>
+            </ul>
+
+            <h2>Официални източници</h2>
+            <ul class="blog-source-list">
+                <li><a href="https://eur-lex.europa.eu/eli/dir/2022/2555/oj" target="_blank" rel="noopener noreferrer">EUR-Lex — Директива (ЕС) 2022/2555, членове 20, 21, 23 и 32</a></li>
+                <li><a href="https://eur-lex.europa.eu/eli/reg_impl/2024/2690/oj" target="_blank" rel="noopener noreferrer">EUR-Lex — Регламент за изпълнение (ЕС) 2024/2690</a></li>
+                <li><a href="https://digital-strategy.ec.europa.eu/en/policies/nis2-directive" target="_blank" rel="noopener noreferrer">Европейска комисия — обзор на NIS2</a></li>
+                <li><a href="https://digital-strategy.ec.europa.eu/en/policies/nis2-directive-bulgaria" target="_blank" rel="noopener noreferrer">Европейска комисия — профил за България (проверявайте датата на актуализация)</a></li>
+            </ul>
+
+            <aside class="blog-cta">
+                <h2>Нуждаете се от структуриран gap analysis?</h2>
+                <p>Определете приложимостта, проверете доказателствата и приоритизирайте реалните пропуски спрямо контекста на организацията.</p>
+                <a class="btn btn-primary" href="/compliance/nis2">NIS2 подготовка</a>
+                <a class="btn btn-secondary" href="/blog/nis2-checklist">Отворете работния checklist</a>
+            </aside>
+        </article>
+    </main>

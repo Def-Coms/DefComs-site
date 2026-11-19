@@ -1,0 +1,276 @@
+---
+lastmod: 2026-10-10
+title: "AWS Security: ръководство за защита на AWS | DefComs"
+description: "Практично AWS security ръководство: account governance, IAM и MFA, CloudTrail, мрежа, S3 и данни, workloads, детекция и incident response."
+ogType: article
+image: https://defcoms.eu/images/Webp/AWS_AIM_Auditor.webp
+imageAlt: Илюстративен интерфейс за AWS S3 security audit с проверки за публичен достъп и CORS
+ogTitle: "AWS Security: практично ръководство за защита на AWS среда | DefComs"
+ogDescription: Контекстуален checklist за AWS identity, logs, network, data, workloads и incident response без универсална продуктова рецепта.
+twitterTitle: "AWS Security: практично ръководство | DefComs"
+twitterDescription: "Account governance, IAM, CloudTrail, S3, network и response: основни области за преглед в AWS."
+schema:
+  - "@context": https://schema.org
+    "@graph":
+      - "@type": Organization
+        "@id": https://defcoms.eu/#organization
+        name: DefComs
+        url: https://defcoms.eu/
+      - "@type": WebSite
+        "@id": https://defcoms.eu/#website
+        url: https://defcoms.eu/
+        name: DefComs
+        publisher:
+          "@id": https://defcoms.eu/#organization
+        inLanguage: bg
+      - "@type": WebPage
+        "@id": https://defcoms.eu/blog/aws-security#webpage
+        url: https://defcoms.eu/blog/aws-security
+        name: "AWS Security: практично ръководство за защита на AWS среда"
+        inLanguage: bg
+        isPartOf:
+          "@id": https://defcoms.eu/#website
+        breadcrumb:
+          "@id": https://defcoms.eu/blog/aws-security#breadcrumb
+        mainEntity:
+          "@id": https://defcoms.eu/blog/aws-security#article
+      - "@type": BlogPosting
+        "@id": https://defcoms.eu/blog/aws-security#article
+        headline: "AWS Security: практично ръководство за защита на AWS среда"
+        description: Риск-базирана AWS security рамка за account governance, IAM, CloudTrail logging, network exposure, S3/data, workloads, detective controls и incident response.
+        image: https://defcoms.eu/images/Webp/AWS_AIM_Auditor.webp
+        datePublished: 2026-10-10
+        dateModified: 2026-10-10
+        inLanguage: bg
+        mainEntityOfPage:
+          "@id": https://defcoms.eu/blog/aws-security#webpage
+        author:
+          "@type": Person
+          "@id": https://defcoms.eu/about/team/author/alexander-petrov
+          name: Инж. Александър Петров
+          jobTitle: Lead Cyber Security Architect
+          url: https://defcoms.eu/about/team/author/alexander-petrov
+        publisher:
+          "@id": https://defcoms.eu/#organization
+        citation:
+          - https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/welcome.html
+          - https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html
+          - https://docs.aws.amazon.com/awscloudtrail/latest/userguide/best-practices-security.html
+          - https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html
+          - https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/shared-responsibility.html
+          - https://csrc.nist.gov/pubs/sp/800/61/r3/final
+      - "@type": FAQPage
+        "@id": https://defcoms.eu/blog/aws-security#faq
+        mainEntity:
+          - "@type": Question
+            name: Какво да защитя първо в AWS?
+            acceptedAnswer:
+              "@type": Answer
+              text: Започнете с account recovery и root access, привилегированите IAM идентичности, постоянния audit trail, публичната експозиция и критичните данни. Приоритетът зависи от конкретните workloads, заплахи и бизнес impact.
+          - "@type": Question
+            name: Нужно ли е AWS Organizations за сигурна AWS среда?
+            acceptedAnswer:
+              "@type": Answer
+              text: Не за всеки самостоятелен account. Organizations и централизирани guardrails са полезни при множество accounts и нужда от общо управление, но структурата трябва да отговаря на операционния модел.
+          - "@type": Question
+            name: Достатъчни ли са CloudTrail Event history логовете?
+            acceptedAnswer:
+              "@type": Answer
+              text: Не непременно. Event history предоставя ограничен период за management events и не е постоянен централен архив или пълен запис на всички възможни event types. Определете trail, event coverage, retention, access и monitoring според нуждите.
+          - "@type": Question
+            name: Трябва ли всички S3 buckets да са публично блокирани?
+            acceptedAnswer:
+              "@type": Answer
+              text: За данни без изискване за публичен достъп блокирането е важна защита, но проверете приложните зависимости преди промяна. Потвърден use case за публично съдържание изисква тесен, контролиран и преглеждан достъп.
+          - "@type": Question
+            name: AWS ли отговаря за сигурността на cloud workloads?
+            acceptedAnswer:
+              "@type": Answer
+              text: Отговорностите са споделени и зависят от услугата и deployment модела. AWS управлява сигурността на cloud инфраструктурата; клиентът остава отговорен за приложимите конфигурации, identities, данни и workloads според модела.
+      - "@type": BreadcrumbList
+        "@id": https://defcoms.eu/blog/aws-security#breadcrumb
+        itemListElement:
+          - "@type": ListItem
+            position: 1
+            name: Начало
+            item: https://defcoms.eu/
+          - "@type": ListItem
+            position: 2
+            name: Блог
+            item: https://defcoms.eu/blog
+          - "@type": ListItem
+            position: 3
+            name: AWS Security
+            item: https://defcoms.eu/blog/aws-security
+headExtra: |-
+  <style>
+          .blog-article { max-width: 860px; margin: 0 auto; padding: 150px 24px 80px; }
+          .blog-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: 28px; }
+          .blog-breadcrumbs a { color: var(--secondary-cyan); }
+          .blog-kicker { color: var(--secondary-cyan); text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+          .blog-article h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.12; margin: 12px 0 20px; }
+          .blog-deck { color: var(--text-secondary); font-size: 1.2rem; line-height: 1.7; }
+          .blog-meta { color: var(--text-secondary); font-size: var(--font-size-sm); margin: 22px 0; }
+          .blog-hero-image { width: 100%; max-height: 460px; object-fit: cover; border-radius: var(--radius-lg); margin: 16px 0 32px; }
+          .blog-article h2 { margin-top: 42px; }
+          .blog-article p, .blog-article li { color: var(--text-secondary); line-height: 1.8; }
+          .blog-article ul, .blog-article ol { padding-left: 24px; }
+          .blog-callout { border-left: 3px solid var(--secondary-cyan); background: var(--background-card); padding: 18px 22px; border-radius: var(--radius-md); }
+          .blog-table-wrap { overflow-x: auto; margin: 24px 0; }
+          .blog-article table { width: 100%; border-collapse: collapse; min-width: 620px; }
+          .blog-article th, .blog-article td { padding: 14px; border: 1px solid var(--border-color); text-align: left; vertical-align: top; color: var(--text-secondary); line-height: 1.65; }
+          .blog-article th { color: var(--text-primary); background: var(--background-card); }
+          .blog-related, .blog-source-list { display: grid; gap: 12px; margin: 20px 0; }
+          .blog-related a, .blog-source-list a { color: var(--secondary-cyan); }
+          .blog-source-list li { overflow-wrap: anywhere; }
+          .blog-cta { margin-top: 44px; padding: 24px; background: var(--background-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); }
+      </style>
+bodyClass: service-landing
+blog:
+  categories:
+    - Cloud Security
+    - AWS
+  date: 2026-10-10
+  order: 4
+  title: "AWS Security: откъде да започнете защитата на AWS среда?"
+  summary: Практически приоритети за <a href="/resources/glossary/iam">IAM</a>, CloudTrail, мрежа, S3, workloads и incident response.
+  image: /images/Webp/AWS_AIM_Auditor.webp
+  imageAlt: Илюстративен интерфейс за AWS S3 security audit с проверки за публичен достъп и CORS
+  imageWidth: 1200
+  imageHeight: 675
+  ariaLabel: "Прочетете: AWS Security"
+  cta: Прочетете ръководството →
+---
+<main class="blog-article">
+        <nav class="blog-breadcrumbs" aria-label="Навигационна пътека">
+            <a href="/">Начало</a><span aria-hidden="true">›</span>
+            <a href="/blog">Блог</a><span aria-hidden="true">›</span>
+            <span aria-current="page">AWS Security</span>
+        </nav>
+        <article>
+            <p class="blog-kicker">Cloud Security · AWS · Практическо ръководство</p>
+            <h1>AWS Security: откъде да започнете защитата на AWS среда?</h1>
+            <p class="blog-deck">Сигурната AWS среда започва с контрол над акаунтите и идентичностите, видимост върху промените, ограничен достъп до данни и план за реакция. Конкретните мерки зависят от услугите, архитектурата, риска и споделения модел на отговорност; няма един задължителен набор от AWS продукти за всяка организация.</p>
+            <p class="blog-meta">Автор: <a href="/about/team/author/alexander-petrov" style="color: var(--secondary-cyan);">Инж. Александър Петров</a> · Публикувано: <time datetime="2026-10-10">10 октомври 2026 г.</time> · Обновено: <time datetime="2026-10-10">10 октомври 2026 г.</time></p>
+            <img class="blog-hero-image" src="/images/Webp/AWS_AIM_Auditor.webp" alt="Илюстративен интерфейс за AWS S3 security audit с проверки за публичен достъп и CORS" width="1200" height="675" fetchpriority="high">
+            <p class="blog-legal-notice" style="border-left:4px solid #f0a500;background:rgba(240,165,0,.08);padding:16px 20px;border-radius:8px;margin:24px 0;font-size:.95rem;line-height:1.6;"><strong>⚠️ Важна бележка:</strong> Тази публикация е с информационна и образователна цел и <strong>не представлява юридическо или правно тълкуване</strong> на приложимото законодателство. Обстоятелствата варират, а нормативните изисквания се променят. При конкретен казус се консултирайте с квалифициран юрист.</p>
+            <p class="blog-meta">Изображението е демонстрационна илюстрация, не AWS Management Console и не показва конфигурация, препоръчана за всяка среда.</p>
+
+            <p class="blog-callout"><strong>Първи приоритети:</strong> защитете root recovery и привилегирования достъп; използвайте MFA и краткосрочни credentials; осигурете постоянен, ограничен и запазен audit trail; прегледайте публичната мрежова/даннова експозиция; проверете encryption, workload updates и пътя за инцидентна реакция.</p>
+
+            <h2>Какво означава shared responsibility в AWS?</h2>
+            <p>AWS и клиентът имат различни отговорности, които зависят от използваната услуга и deployment модела. AWS отговаря за сигурността на cloud инфраструктурата; клиентът конфигурира и управлява приложимите части като identities, permissions, данни, мрежови правила и workload софтуер. При managed services част от операционните отговорности се променят, затова проверявайте модела за всяка услуга, а не само общата диаграма.</p>
+            <p>AWS Well-Architected Security Pillar е отправна рамка за архитектурни решения, не сертификат или еднократен audit checklist. Използвайте го за преглед и trade-off-и, като адаптирате контрола спрямо системата и бизнес риска.</p>
+
+            <h2>Основни области за AWS Security</h2>
+            <div class="blog-table-wrap">
+                <table>
+                    <thead><tr><th>Област</th><th>Какво да проверите</th><th>Въпрос за owner-а</th></tr></thead>
+                    <tbody>
+                        <tr><th>Accounts и governance</th><td>Account ownership, recovery contacts, enabled Regions, разделение на production/non-production и guardrails при multi-account модели.</td><td>Кой може да създава accounts, променя organization policies и управлява централизирани настройки?</td></tr>
+                        <tr><th><a href="/resources/glossary/iam">IAM</a> и credentials</th><td>Root user protection, MFA, federation/Identity Center, roles, краткосрочни credentials, least privilege и неизползвани keys/permissions.</td><td>Има ли човешки или workload access keys без owner, rotation и ясна причина?</td></tr>
+                        <tr><th>Logging и detection</th><td>CloudTrail trail coverage, account/Region scope, event types, retention, log access, integrity, alerts и service-specific logs.</td><td>Ще се запази ли следа за важна промяна и кой преглежда high-priority findings?</td></tr>
+                        <tr><th>Network exposure</th><td>Public IPs, security groups, routing, load balancers, remote administration paths, private endpoints и междусистемни зависимости.</td><td>Кои ресурси трябва да са достъпни отвън и как е ограничен всеки входящ път?</td></tr>
+                        <tr><th>Data и storage</th><td>S3 policies/ACLs, Block Public Access, encryption, key access, data classification, backup и retention.</td><td>Публичен ли е достъпът по изискване и валидирана ли е зависимостта на приложението преди промяна?</td></tr>
+                        <tr><th>Workloads</th><td>OS/runtime updates, workload identities, secrets, container/image hygiene, application exposure и configuration drift.</td><td>Кой поддържа всеки workload и как се валидират промените без да се наруши service availability?</td></tr>
+                        <tr><th>Incident response</th><td>Контакти, account access при инцидент, log preservation, escalation, containment authority и възстановяване.</td><td>Може ли екипът да разследва, ограничи и възстанови средата, ако обичайният admin access е компрометиран?</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>1. Защитете root и привилегированите идентичности</h2>
+            <p>Root identity има широки правомощия и трябва да се използва само за задачи, които изискват root access. Защитете sign-in и recovery процеса, включете подходяща MFA, пазете recovery данните контролирано и избягвайте root access keys. За ежедневен човешки достъп AWS препоръчва федерация и временни credentials; workload-и в AWS обичайно трябва да получават credentials чрез IAM roles, вместо чрез вградени дългосрочни keys.</p>
+            <ul>
+                <li>Използвайте отделни човешки identities и roles, вместо споделени administrator credentials.</li>
+                <li>Давайте права според конкретната задача и ресурс; намалявайте широки права след като use case-ът е изяснен.</li>
+                <li>Преглеждайте access keys, роли и permissions за последна употреба и премахвайте неизползваните след проверка на зависимостите.</li>
+                <li>При няколко accounts оценете централизирана identity и permissions guardrails; SCP не предоставя permissions сам по себе си, а ограничава максимално разрешеното в приложимия scope.</li>
+            </ul>
+
+            <h2>2. Направете audit trail постоянен и използваем</h2>
+            <p>CloudTrail Event history показва management events за ограничен период, но не е постоянен архив и не включва автоматично всички възможни event types. Ако са нужни дългосрочен audit, разследване или откриване, създайте trail с подходящи accounts, Regions и event types; обхватът на data events и допълнителното им логване зависят от нуждите и разходите.</p>
+            <p>Определете log destination, достъпа, retention, encryption и алармите. За няколко accounts може да е приложим централен log archive account и organization trail, но изберете дизайн според account структурата. Защитавайте audit bucket и key permissions от прекомерен достъп, изтриване или изменение и тествайте, че trail-ът действително доставя събитията, които очаквате.</p>
+
+            <h2>3. Ограничете мрежовата и публичната експозиция</h2>
+            <p>Прегледайте security groups, маршрути, публични endpoints и пътищата за администриране. Ограничавайте входящия достъп до нужните протоколи и източници; не приемайте „private subnet“ или наличието на firewall правило като достатъчно доказателство без проверка на цялата свързаност, load balancer-ите и услугите.</p>
+            <p>За S3 данни, които не трябва да са публични, оценете account- или organization-level S3 Block Public Access и IAM Access Analyzer findings. Преди да приложите по-строга настройка, проверете дали сайт, интеграция или друг легитимен use case разчита на публичен достъп. Публичен bucket трябва да има изричен owner, ограничен purpose, тестове и редовен review; не оставяйте широк достъп само защото „работи“.</p>
+
+            <h2>4. Защитете данните и ключовете</h2>
+            <ul>
+                <li>Класифицирайте важните данни и идентифицирайте къде се съхраняват, репликират и обработват.</li>
+                <li>Изберете encryption-at-rest и encryption-in-transit controls според услугата и риска; прегледайте кой може да използва, администрира или променя KMS key policies.</li>
+                <li>Ограничете достъпа до secrets и credentials; не ги поставяйте в source code, images или logs.</li>
+                <li>За backup-и уточнете отделен access path, retention, recovery цели и реални restore тестове.</li>
+                <li>Проверете public и cross-account resource access, включително споделени snapshots, storage policies и роли за външни доставчици.</li>
+            </ul>
+
+            <h2>5. Поддържайте workload security и конфигурационна видимост</h2>
+            <p>Опишете кой patch-ва guest operating systems, container images, runtime dependencies и приложенията според модела за услугата. Използвайте подходящи роли за workload access и управлявайте secrets отделно от deployment templates. За production промени дефинирайте owner, тест, rollback и проверка след deployment.</p>
+            <p>AWS Config, Security Hub CSPM, GuardDuty, Inspector и други detective/security services могат да подпомогнат оценка или мониторинг. Те са различни услуги с отделни prerequisites, coverage, тарифи и конфигурации; не са задължителен фиксиран bundle. Изберете ги, ако добавят покритие, което е важно за вашия риск и оперативен модел.</p>
+
+            <h2>6. Подгответе cloud incident response</h2>
+            <ol>
+                <li>Определете incident lead, технически и бизнес собственици, заместници и out-of-band контакти.</li>
+                <li>Документирайте account inventory, critical resources, log destinations, identity providers, recovery access и зависимостите.</li>
+                <li>Задайте кой може да деактивира или ограничи credential, променя policy, изолира workload или спира ресурс и кои действия изискват одобрение.</li>
+                <li>Проверете как се запазват CloudTrail и service logs, кой има достъп и как се поддържа integrity/retention по време на разследване.</li>
+                <li>Упражнете сценарий за компрометиран access key, публична експозиция на данни или подозрителна промяна в production account; запишете gaps и коригирайте плана.</li>
+            </ol>
+            <p>Containment може да прекъсне услуга или интеграция. Действията трябва да следват предварително одобрения incident response процес и да отчитат услугата, доказателствата и възможността за recovery.</p>
+
+            <h2>Поетапен стартов checklist</h2>
+            <ol>
+                <li>Потвърдете account ownership, recovery contacts, root safeguards и MFA за привилегирован достъп.</li>
+                <li>Картографирайте човешки и workload identities; заменете ненужните long-lived credentials с подходящи временни роли.</li>
+                <li>Проверете CloudTrail coverage, Regions, event types, log archive permissions, retention и alert routing.</li>
+                <li>Инвентаризирайте public IPs, security groups, S3 public access, cross-account sharing и критични paths.</li>
+                <li>Проверете encryption/key access, secrets handling, patch ownership и backup recovery.</li>
+                <li>Изберете нужните detective services, потвърдете тарифите и assign-нете owner за findings.</li>
+                <li>Тествайте response contacts и одобрени действия; при multi-account среда проверете организацията и guardrails.</li>
+            </ol>
+            <p>Започнете с една account/workload група и приоритизирайте отклоненията според exposure, чувствителността на данните, привилегиите и business impact. AWS security frameworks и managed services подпомагат работата, но не заменят asset owners, валидирани конфигурации и упражнен response процес.</p>
+
+            <h2>Често задавани въпроси</h2>
+            <h3>Какво да защитя първо в AWS?</h3>
+            <p>Започнете с account recovery и root access, привилегированите IAM идентичности, постоянния audit trail, публичната експозиция и критичните данни. Приоритетът зависи от конкретните workloads, заплахи и бизнес impact.</p>
+            <h3>Нужно ли е AWS Organizations за сигурна AWS среда?</h3>
+            <p>Не за всеки самостоятелен account. Organizations и централизирани guardrails са полезни при множество accounts и нужда от общо управление, но структурата трябва да отговаря на операционния модел.</p>
+            <h3>Достатъчни ли са CloudTrail Event history логовете?</h3>
+            <p>Не непременно. Event history предоставя ограничен период за management events и не е постоянен централен архив или пълен запис на всички възможни event types. Определете trail, event coverage, retention, access и monitoring според нуждите.</p>
+            <h3>Трябва ли всички S3 buckets да са публично блокирани?</h3>
+            <p>За данни без изискване за публичен достъп блокирането е важна защита, но проверете приложните зависимости преди промяна. Потвърден use case за публично съдържание изисква тесен, контролиран и преглеждан достъп.</p>
+            <h3>AWS ли отговаря за сигурността на cloud workloads?</h3>
+            <p>Отговорностите са споделени и зависят от услугата и deployment модела. AWS управлява сигурността на cloud инфраструктурата; клиентът остава отговорен за приложимите конфигурации, identities, данни и workloads според модела.</p>
+
+            <h2>Свързани ресурси</h2>
+            <ul class="blog-related">
+                <li><a href="/blog/cloud-incident-response">Cloud incident response: подготовка и реакция при cloud инцидент</a></li>
+                <li><a href="/blog/cloud-logging">Cloud logging: как да събирате и използвате cloud logs?</a></li>
+                <li><a href="/blog/cloud-iam">Cloud IAM: идентичности, роли и least privilege в облака</a></li>
+                <li><a href="/blog/azure-security">Azure Security: практично ръководство за защита на Azure</a></li>
+                <li><a href="/blog/cloud-pentest">Cloud pentest: как се тества сигурността в облака?</a></li>
+                <li><a href="/blog/nist-sp-800-207">NIST SP 800-207: Zero Trust Architecture обяснена</a></li>
+                <li><a href="/blog/what-is-edr">Какво е EDR? Endpoint Detection and Response</a></li>
+                <li><a href="/services/cloud-security">Cloud Security услуги на DefComs</a></li>
+                <li><a href="/services/backup-disaster-recovery">Backup и Disaster Recovery</a></li>
+                <li><a href="/services/soc-monitoring">SOC мониторинг 24/7/365</a></li>
+            </ul>
+
+            <h2>Официални източници</h2>
+            <ul class="blog-source-list">
+                <li><a href="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/welcome.html" target="_blank" rel="noopener noreferrer">AWS Well-Architected Framework — Security Pillar</a></li>
+                <li><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html" target="_blank" rel="noopener noreferrer">AWS IAM — Security best practices</a></li>
+                <li><a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/best-practices-security.html" target="_blank" rel="noopener noreferrer">AWS CloudTrail — Security best practices</a></li>
+                <li><a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html" target="_blank" rel="noopener noreferrer">Amazon S3 — Blocking public access</a></li>
+                <li><a href="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/shared-responsibility.html" target="_blank" rel="noopener noreferrer">AWS Well-Architected — Shared responsibility</a></li>
+                <li><a href="https://csrc.nist.gov/pubs/sp/800/61/r3/final" target="_blank" rel="noopener noreferrer">NIST SP 800-61 Rev. 3 — incident response в контекста на cybersecurity risk management</a></li>
+            </ul>
+
+            <aside class="blog-cta">
+                <h2>Съпоставете AWS controls с реалните workloads</h2>
+                <p>Прегледайте identity, logging, exposure и response спрямо account структурата и критичността на услугите.</p>
+                <a class="btn btn-primary" href="/services/cloud-security">Cloud Security услуги</a>
+                <a class="btn btn-secondary" href="/#contact">Заявете консултация</a>
+            </aside>
+        </article>
+    </main>

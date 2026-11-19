@@ -1,0 +1,27 @@
+---
+import { site, footer } from '../data/site';
+---
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <img src={site.logo} alt={site.name} width="260" height="300" class="footer-logo" loading="lazy" />
+        <p>{footer.about}</p>
+      </div>
+      {footer.columns.map((col) => (
+        <div class="footer-section">
+          <h3>{col.title}</h3>
+          <ul>
+            {col.links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+          </ul>
+        </div>
+      ))}
+    </div>
+    <div class="footer-bottom">
+      <p>© {site.year} {site.name}. Всички права запазени.</p>
+      <div class="footer-bottom-links">
+        {footer.legal.map((l) => <a href={l.href}>{l.label}</a>)}
+      </div>
+    </div>
+  </div>
+</footer>

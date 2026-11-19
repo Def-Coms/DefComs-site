@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIST SP 800-207: Zero Trust Architecture обяснена | DefComs</title>
+    <meta name="description" content="Какво описва NIST SP 800-207: седем Zero Trust tenets, ресурсно-базиран достъп, архитектурен обхват и разликата спрямо SP 800-207A.">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <link rel="canonical" href="https://defcoms.eu/blog/nist-sp-800-207.html">
+    <link rel="alternate" hreflang="bg" href="https://defcoms.eu/blog/nist-sp-800-207.html">
+    <link rel="alternate" hreflang="x-default" href="https://defcoms.eu/blog/nist-sp-800-207.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="bg_BG">
+    <meta property="og:site_name" content="DefComs">
+    <meta property="og:url" content="https://defcoms.eu/blog/nist-sp-800-207.html">
+    <meta property="og:title" content="NIST SP 800-207: Zero Trust Architecture обяснена | DefComs">
+    <meta property="og:description" content="Преглед на седемте NIST Zero Trust tenets, обхвата на документа и начина да ги използвате като архитектурен ориентир, а не сертификат или продуктова рецепта.">
+    <meta property="og:image" content="https://defcoms.eu/images/Webp/Киберсигурност_за_модерния_бизнес.webp">
+    <meta property="og:image:alt" content="Защита на потребители, устройства и ресурси в Zero Trust архитектура">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NIST SP 800-207: Zero Trust Architecture | DefComs">
+    <meta name="twitter:description" content="Какво представлява NIST SP 800-207 и какво не представлява при планиране на Zero Trust.">
+    <meta name="twitter:image" content="https://defcoms.eu/images/Webp/Киберсигурност_за_модерния_бизнес.webp">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../images/Logos/DefComs-logo.svg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        { "@type": "Organization", "@id": "https://defcoms.eu/#organization", "name": "DefComs", "url": "https://defcoms.eu/" },
+        { "@type": "WebSite", "@id": "https://defcoms.eu/#website", "url": "https://defcoms.eu/", "name": "DefComs", "publisher": { "@id": "https://defcoms.eu/#organization" }, "inLanguage": "bg" },
+        {
+          "@type": "WebPage",
+          "@id": "https://defcoms.eu/blog/nist-sp-800-207.html#webpage",
+          "url": "https://defcoms.eu/blog/nist-sp-800-207.html",
+          "name": "NIST SP 800-207: Zero Trust Architecture",
+          "inLanguage": "bg",
+          "isPartOf": { "@id": "https://defcoms.eu/#website" },
+          "breadcrumb": { "@id": "https://defcoms.eu/blog/nist-sp-800-207.html#breadcrumb" },
+          "mainEntity": { "@id": "https://defcoms.eu/blog/nist-sp-800-207.html#article" }
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://defcoms.eu/blog/nist-sp-800-207.html#article",
+          "headline": "NIST SP 800-207: Zero Trust Architecture обяснена",
+          "description": "Обобщава предназначението, обхвата и седемте Zero Trust tenets в NIST SP 800-207, както и разликите спрямо NIST SP 800-207A.",
+          "image": "https://defcoms.eu/images/Webp/Киберсигурност_за_модерния_бизнес.webp",
+          "datePublished": "2026-10-09",
+          "dateModified": "2026-10-09",
+          "inLanguage": "bg",
+          "mainEntityOfPage": { "@id": "https://defcoms.eu/blog/nist-sp-800-207.html#webpage" },
+          "author": { "@type": "Person", "@id": "https://defcoms.eu/about/team/author/alexander-petrov.html", "name": "Инж. Александър Петров", "jobTitle": "Lead Cyber Security Architect", "url": "https://defcoms.eu/about/team/author/alexander-petrov.html" },
+          "publisher": { "@id": "https://defcoms.eu/#organization" },
+          "citation": [
+            "https://csrc.nist.gov/pubs/sp/800/207/final",
+            "https://csrc.nist.gov/pubs/sp/800/207/a/final"
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://defcoms.eu/blog/nist-sp-800-207.html#faq",
+          "mainEntity": [
+            { "@type": "Question", "name": "NIST SP 800-207 стандарт за сертификация ли е?", "acceptedAnswer": { "@type": "Answer", "text": "Не. Това е NIST публикация с архитектурни принципи и примери за Zero Trust, а не сертификат или самостоятелна нормативна схема за оценка на съответствие." } },
+            { "@type": "Question", "name": "Каква е разликата между SP 800-207 и SP 800-207A?", "acceptedAnswer": { "@type": "Answer", "text": "SP 800-207 представя общата Zero Trust Architecture рамка; SP 800-207A разглежда модел за access control в cloud-native приложения и multi-cloud среди." } },
+            { "@type": "Question", "name": "Изисква ли NIST SP 800-207 конкретен продукт?", "acceptedAnswer": { "@type": "Answer", "text": "Не. Публикацията описва принципи и логически архитектурни функции; реализацията може да използва различни съвместими технологии и зависи от средата." } },
+            { "@type": "Question", "name": "Заменя ли NIST SP 800-207 национални или секторни правила?", "acceptedAnswer": { "@type": "Answer", "text": "Не. Това е технически архитектурен ориентир; приложимите национални закони, регулаторни и договорни изисквания се проверяват отделно." } }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://defcoms.eu/blog/nist-sp-800-207.html#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Начало", "item": "https://defcoms.eu/" },
+            { "@type": "ListItem", "position": 2, "name": "Блог", "item": "https://defcoms.eu/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "NIST SP 800-207", "item": "https://defcoms.eu/blog/nist-sp-800-207.html" }
+          ]
+        }
+      ]
+    }
+    </script>
+    <style>
+        .blog-article { max-width: 860px; margin: 0 auto; padding: 150px 24px 80px; }
+        .blog-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: 28px; }
+        .blog-breadcrumbs a { color: var(--secondary-cyan); }
+        .blog-kicker { color: var(--secondary-cyan); text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+        .blog-article h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.12; margin: 12px 0 20px; }
+        .blog-deck { color: var(--text-secondary); font-size: 1.2rem; line-height: 1.7; }
+        .blog-meta { color: var(--text-secondary); font-size: var(--font-size-sm); margin: 22px 0; }
+        .blog-hero-image { width: 100%; max-height: 460px; object-fit: cover; border-radius: var(--radius-lg); margin: 16px 0 32px; }
+        .blog-article h2 { margin-top: 42px; }
+        .blog-article p, .blog-article li { color: var(--text-secondary); line-height: 1.8; }
+        .blog-article ul, .blog-article ol { padding-left: 24px; }
+        .blog-callout { border-left: 3px solid var(--secondary-cyan); background: var(--background-card); padding: 18px 22px; border-radius: var(--radius-md); }
+        .blog-table-wrap { overflow-x: auto; margin: 24px 0; }
+        .blog-article table { width: 100%; border-collapse: collapse; min-width: 620px; }
+        .blog-article th, .blog-article td { padding: 14px; border: 1px solid var(--border-color); text-align: left; vertical-align: top; color: var(--text-secondary); line-height: 1.65; }
+        .blog-article th { color: var(--text-primary); background: var(--background-card); }
+        .blog-related, .blog-source-list { display: grid; gap: 12px; margin: 20px 0; }
+        .blog-related a, .blog-source-list a { color: var(--secondary-cyan); }
+        .blog-source-list li { overflow-wrap: anywhere; }
+        .blog-cta { margin-top: 44px; padding: 24px; background: var(--background-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); }
+    </style>
+</head>
+<body class="service-landing">
+
+    <!-- Header -->
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay"></div>
+
+    <header class="header">
+        <nav class="nav" aria-label="Основна навигация">
+            <div class="nav-container">
+                <a href="../index.html" class="logo">
+                    <img src="../images/Logos/DefComs-logo.svg" alt="DefComs">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Начало</a></li>
+                    <li><a href="../about/index.html">За нас</a></li>
+                    <li><a href="../services/index.html">Услуги</a></li>
+                    <li><a href="../compliance/index.html">Регулации</a></li>
+                    <li><a href="../cybersecurity-os/index.html">Cybersecurity OS</a></li>
+                    <li><a href="../wizard.html">NIS2 &amp; DORA Оценка</a></li>
+                    <li><a href="../spravochnik.html">Справочник</a></li>
+                    <li><a href="index.html">Блог</a></li>
+                    <li><a href="../contact/index.html">Контакти</a></li>
+                    <li class="mobile-only"><a href="../contact/index.html" class="mobile-cta">Свържете се с нас</a></li>
+                </ul>
+                <a href="../contact/index.html" class="cta-button">Свържете се с нас</a>
+                <button class="hamburger" type="button" aria-label="Отвори меню" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+
+    <main class="blog-article">
+        <nav class="blog-breadcrumbs" aria-label="Навигационна пътека">
+            <a href="../index.html">Начало</a><span aria-hidden="true">›</span>
+            <a href="index.html">Блог</a><span aria-hidden="true">›</span>
+            <span aria-current="page">NIST SP 800-207</span>
+        </nav>
+        <article>
+            <p class="blog-kicker">NIST · <a href="../resources/glossary/zero-trust/">Zero Trust</a> · Architecture guidance</p>
+            <h1>NIST SP 800-207: Zero Trust Architecture обяснена</h1>
+            <p class="blog-deck">NIST Special Publication 800-207 е архитектурно ръководство за Zero Trust: то описва защита, ориентирана към users, assets и resources, вместо implicit trust по мрежов периметър. Публикацията дава принципи и примерни модели; не е сертификат, правен режим или спецификация на един задължителен продукт.</p>
+            <p class="blog-meta">Автор: <a href="../about/team/author/alexander-petrov.html" style="color: var(--secondary-cyan);">Инж. Александър Петров</a> · Публикувано: <time datetime="2026-10-09">9 октомври 2026 г.</time> · Обновено: <time datetime="2026-10-09">9 октомври 2026 г.</time></p>
+            <img class="blog-hero-image" src="../images/Webp/Киберсигурност_за_модерния_бизнес.webp" alt="Потребители, активи и ресурси като фокус на Zero Trust архитектура" width="1200" height="675" fetchpriority="high">
+            <p class="blog-legal-notice" style="border-left:4px solid #f0a500;background:rgba(240,165,0,.08);padding:16px 20px;border-radius:8px;margin:24px 0;font-size:.95rem;line-height:1.6;"><strong>⚠️ Важна бележка:</strong> Тази публикация е с информационна и образователна цел и <strong>не представлява юридическо или правно тълкуване</strong> на приложимото законодателство. Обстоятелствата варират, а нормативните изисквания се променят. При конкретен казус се консултирайте с квалифициран юрист.</p>
+
+            <p class="blog-callout"><strong>Същината:</strong> SP 800-207 предлага седем Zero Trust tenets: третиране на източници на данни и услуги като ресурси; защита на комуникациите независимо от местоположението; сесиен, ресурсен достъп; динамична политика; наблюдение на целостта на активите; динамична authentication/authorization преди достъп; и използване на telemetry за подобряване на posture-а.</p>
+
+            <h2>Какво представлява документът?</h2>
+            <p>NIST SP 800-207, публикуван през август 2020 г., е публикация на National Institute of Standards and Technology за планиране на Zero Trust Architecture (ZTA) в enterprise среда. Тя описва концептуални принципи, логически компоненти, trust evaluation и deployment модели, като оставя на организацията избора на технологии и съобразяването им с наличните systems, users, workflows и рискове.</p>
+            <p>Документът е полезен като общ архитектурен ориентир, когато се картографират ресурси, access paths, decision points и policy inputs. Той не представлява „Zero Trust certificate“, задължителен национален закон или доказателство, че дадена организация покрива определена регулаторна рамка.</p>
+
+            <h2>Седемте Zero Trust tenets с кратко тълкуване</h2>
+            <ol>
+                <li><strong>Всички източници на данни и computing services се разглеждат като ресурси.</strong> Обхватът не се свежда до традиционни сървъри; важно е да се идентифицира какво се защитава и кой го използва.</li>
+                <li><strong>Цялата комуникация се защитава независимо от мрежовото местоположение.</strong> Вътрешната мрежа сама по себе си не е достатъчно основание за доверие.</li>
+                <li><strong>Достъпът до отделен enterprise ресурс се предоставя на сесийна основа.</strong> Разрешение за една услуга не трябва автоматично да се превръща в широко доверие към други ресурси.</li>
+                <li><strong>Достъпът се определя от динамична политика.</strong> Решенията могат да вземат предвид наблюдаемото състояние на идентичността, заявяващия актив, ресурса и приложимия контекст.</li>
+                <li><strong>Активите се поддържат в подходящо сигурно състояние и целостта им се наблюдава.</strong> Собствеността, конфигурацията и сигналите за промяна имат значение след първоначалното внедряване.</li>
+                <li><strong>Authentication и authorization са динамични и се прилагат преди достъп.</strong> Успешното удостоверяване е само един вход към решението; то не замества проверката на права за конкретния ресурс.</li>
+                <li><strong>Събират се данни за състоянието на активи, мрежова инфраструктура и комуникации.</strong> Анализът на telemetry подпомага откриването на аномалии и подобряването на политиките и posture-а.</li>
+            </ol>
+            <p>Това са обобщени формулировки на tenets, не самостоятелни контролни критерии. NIST document обяснява архитектурни принципи; конкретните източници на сигнал, enforcement и доказателства зависят от implementation-а.</p>
+
+            <h2>Логическа архитектура накратко</h2>
+            <p>В концептуалния модел Policy Engine (PE) оценява заявката и взема решение; Policy Administrator (PA) координира изпълнението му; Policy Enforcement Point (PEP) посредничи между subject и resource и прилага разрешение, отказ или прекратяване. PE и PA формират Policy Decision Point (PDP). Това са логически роли и не означават задължително отделни физически appliances или конкретни vendor products.</p>
+            <p>Данните за решението могат да идват от identity management, asset/device state, resource policy, activity logs, <a href="../resources/glossary/cti/">threat intelligence</a> и други подходящи източници. Качеството, актуалността и достъпността на тези данни ограничават това, което policy engine може надеждно да оцени.</p>
+
+            <h2>SP 800-207 и SP 800-207A</h2>
+            <div class="blog-table-wrap">
+                <table>
+                    <thead><tr><th>Публикация</th><th>Фокус</th><th>Кога е релевантна</th></tr></thead>
+                    <tbody>
+                        <tr><th>NIST SP 800-207</th><td>Обща Zero Trust Architecture рамка: tenets, логически компоненти, trust evaluation и примерни deployment модели.</td><td>При формулиране на ZTA концепция, protect surface, ресурси, политики и архитектурни граници в enterprise контекст.</td></tr>
+                        <tr><th>NIST SP 800-207A</th><td>Модел за access control в cloud-native applications в multi-cloud environments, включително identity-tier и network-tier политики.</td><td>Когато архитектурният проблем е конкретно контролът на достъпа между приложения и микросървиси в multi-cloud среда.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>SP 800-207A допълва, а не заменя общата публикация. Не пренасяйте детайлите за cloud-native microservices към всяка организация, ако те не описват реалната ѝ среда.</p>
+
+            <h2>Как да използвате SP 800-207 в проект?</h2>
+            <ol>
+                <li>Определете критичните ресурси и access paths, а не започвайте от списък с продукти.</li>
+                <li>Съпоставете текущите идентичности, активи, политики и telemetry с принципите, които са релевантни за избрания обхват.</li>
+                <li>Изберете подходящи логически decision и enforcement роли и уточнете ownership, интеграции и ограничения.</li>
+                <li>Пилотирайте върху конкретен поток, включително валидни/невалидни сценарии, operational impact и fallback.</li>
+                <li>Измервайте реално покритие, policy exceptions, достъпност на signals и качество на access decisions; разширявайте поетапно.</li>
+            </ol>
+            <p>Подробен rollout checklist е в <a href="zero-trust-implementation.html">ръководството за Zero Trust implementation</a>; това NIST обобщение е полезно за разбиране на референтната рамка, не заместител на планиране за конкретна среда.</p>
+
+            <h2>Какво SP 800-207 не е</h2>
+            <ul>
+                <li>Не е сертификат и не съдържа универсална оценъчна скала за „Zero Trust compliant“.</li>
+                <li>Не предписва един конкретен vendor, topology или продуктова комбинация.</li>
+                <li>Не е задължителен regulatory text за всяка организация или юрисдикция.</li>
+                <li>Не гарантира, че внедряване на отделен контрол елиминира риска или премахва всички trusted paths.</li>
+            </ul>
+
+            <h2>Често задавани въпроси</h2>
+            <h3>NIST SP 800-207 стандарт за сертификация ли е?</h3>
+            <p>Не. Това е NIST публикация с архитектурни принципи и примери за Zero Trust, а не сертификат или самостоятелна схема за оценка на съответствие.</p>
+            <h3>Каква е разликата между SP 800-207 и SP 800-207A?</h3>
+            <p>SP 800-207 представя общата ZTA рамка; SP 800-207A разглежда модел за access control в cloud-native приложения и multi-cloud среди.</p>
+            <h3>Изисква ли NIST SP 800-207 конкретен продукт?</h3>
+            <p>Не. Публикацията описва принципи и логически архитектурни функции; реализацията може да използва различни съвместими технологии и зависи от средата.</p>
+            <h3>Заменя ли NIST SP 800-207 национални или секторни правила?</h3>
+            <p>Не. Това е технически архитектурен ориентир; приложимите национални закони, регулаторни и договорни изисквания се проверяват отделно.</p>
+
+            <h2>Свързани ресурси</h2>
+            <ul class="blog-related">
+              <li><a href="zero-trust-for-smb.html">Zero Trust за SMB: практическо прилагане с ограничен ресурс</a></li>
+                <li><a href="what-is-zero-trust.html">Какво е Zero Trust? Принципи и практическо приложение</a></li>
+                <li><a href="../services/zero-trust/index.html">Zero Trust Architecture: компоненти и поток на достъп</a></li>
+                <li><a href="zero-trust-implementation.html">Zero Trust implementation: поетапен план за внедряване</a></li>
+                <li><a href="zero-trust-network.html">Zero Trust Network: мрежова сегментация и достъп до ресурси</a></li>
+                <li><a href="zero-trust-vs-vpn.html">Zero Trust vs VPN: разлики, избор и съвместна употреба</a></li>
+                <li><a href="../services/zero-trust/index.html">Zero Trust архитектура и внедряване на DefComs</a></li>
+            </ul>
+
+            <h2>Официални източници</h2>
+            <ul class="blog-source-list">
+                <li><a href="https://csrc.nist.gov/pubs/sp/800/207/final" target="_blank" rel="noopener noreferrer">NIST SP 800-207 — Zero Trust Architecture</a></li>
+                <li><a href="https://csrc.nist.gov/pubs/sp/800/207/a/final" target="_blank" rel="noopener noreferrer">NIST SP 800-207A — cloud-native access control in multi-cloud environments</a></li>
+            </ul>
+
+            <aside class="blog-cta">
+                <h2>Използвайте NIST като архитектурен ориентир</h2>
+                <p>Съпоставете tenets и logical roles с ресурсите, рисковете и приложимите изисквания на вашата среда.</p>
+                <a class="btn btn-primary" href="../services/zero-trust/index.html">Zero Trust анализ</a>
+                <a class="btn btn-secondary" href="../index.html#contact">Заявете консултация</a>
+            </aside>
+        </article>
+    </main>
+        <!-- Footer -->
+
+    <script src="../script.js" defer></script>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="../images/Logos/DefComs-logo.svg" alt="DefComs" class="footer-logo" loading="lazy">
+                    <p>Вашият високотехнологичен партньор в киберсигурността. Предотвратяване, засичане и бърза неутрализация на съвременните заплахи.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Услуги</h3>
+                    <ul>
+                        <li><a href="../services/soc-monitoring/index.html">SOC Мониторинг 24/7</a></li>
+                        <li><a href="../services/noc-services/index.html">NOC Управление</a></li>
+                        <li><a href="../services/corporate-training/index.html">Обучения за фирми</a></li>
+                        <li><a href="../services/penetration-testing/index.html">Penetration Testing</a></li>
+                        <li><a href="../compliance/nis2/index.html">GDPR/NIS2/DORA Съответствие</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Ресурси</h3>
+                    <ul>
+                        <li><a href="../spravochnik.html">Регулаторен Хъб</a></li>
+                        <li><a href="../cybersecurity-os/index.html">Cybersecurity OS</a></li>
+                        <li><a href="../blog/index.html">Статии &amp; Блог</a></li>
+                        <li><a href="../about/index.html">За Нас</a></li>
+                        <li><a href="../bulgaria/index.html">Покритие в България</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Правна рамка</h3>
+                    <ul>
+                        <li><a href="../compliance/nis2/index.html">Регулация NIS2</a></li>
+                        <li><a href="../compliance/gdpr/index.html">Регламент GDPR</a></li>
+                        <li><a href="../compliance/iso-27001/index.html">Стандарт ISO 27001</a></li>
+                        <li><a href="../index.html#contact">Контакти</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DefComs. Всички права запазени.</p>
+                <div class="footer-bottom-links">
+                    <a href="../terms.html">Условия за ползване</a>
+                    <a href="../privacy.html">Защита на данни</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../chat-widget.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+---
+import { site } from '../data/site';
+
+const { page, path } = Astro.props;
+const url = page.canonical ?? site.url + (path === '/' ? '/' : path);
+const ogTitle = page.ogTitle ?? page.title;
+const ogDescription = page.ogDescription ?? page.description;
+const image = page.image ?? site.defaultImage;
+const robots = page.robots ?? 'index, follow, max-snippet:-1, max-image-preview:large';
+const schema: object[] = page.schema ?? [];
+---
+<title>{page.title}</title>
+<meta name="description" content={page.description} />
+<meta name="robots" content={robots} />
+{Object.entries(page.meta ?? {}).map(([name, content]) => <meta name={name} content={content as string} />)}
+<link rel="canonical" href={url} />
+<link rel="alternate" hreflang={site.lang} href={url} />
+<link rel="alternate" hreflang="x-default" href={url} />
+<link rel="sitemap" type="application/xml" title="Sitemap" href={site.url + '/sitemap.xml'} />
+<link rel="alternate" type="text/plain" href={site.url + '/llms.txt'} title="LLMs.txt" />
+<meta property="og:type" content={page.ogType ?? 'website'} />
+<meta property="og:locale" content={site.locale} />
+<meta property="og:site_name" content={site.name} />
+<meta property="og:url" content={url} />
+<meta property="og:title" content={ogTitle} />
+<meta property="og:description" content={ogDescription} />
+<meta property="og:image" content={image} />
+{page.imageAlt && <meta property="og:image:alt" content={page.imageAlt} />}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={page.twitterTitle ?? ogTitle} />
+<meta name="twitter:description" content={page.twitterDescription ?? ogDescription} />
+<meta name="twitter:image" content={image} />
+{schema.map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}

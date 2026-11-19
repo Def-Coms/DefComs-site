@@ -1,0 +1,18 @@
+---
+import { getCollection } from 'astro:content';
+import Page from '../layouts/Page.astro';
+
+export async function getStaticPaths() {
+  const pages = await getCollection('pages', ({ data }) => !data.draft);
+  return pages.map((entry) => ({
+    params: { slug: entry.id === 'index' ? undefined : entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const path = entry.id === 'index' ? '/' : '/' + entry.id;
+---
+<Page page={entry.data} path={path}>
+  <Fragment set:html={entry.rendered?.html} />
+</Page>

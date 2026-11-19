@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ransomware backup strategy: план за възстановяване | DefComs</title>
+    <meta name="description" content="Как да изградим ransomware backup strategy: обхват, изолирани копия, отделен достъп, retention, приоритети, RPO/RTO и реални restore тестове.">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <link rel="canonical" href="https://defcoms.eu/blog/ransomware-backup-strategy.html">
+    <link rel="alternate" hreflang="bg" href="https://defcoms.eu/blog/ransomware-backup-strategy.html">
+    <link rel="alternate" hreflang="x-default" href="https://defcoms.eu/blog/ransomware-backup-strategy.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="bg_BG">
+    <meta property="og:site_name" content="DefComs">
+    <meta property="og:url" content="https://defcoms.eu/blog/ransomware-backup-strategy.html">
+    <meta property="og:title" content="Ransomware backup strategy: план за възстановяване | DefComs">
+    <meta property="og:description" content="Практическа стратегия за защита и възстановяване на критични данни и системи след ransomware инцидент.">
+    <meta property="og:image" content="https://defcoms.eu/images/PR_image/Киберсигурност_за_бизнес_оцеляване.webp">
+    <meta property="og:image:alt" content="Защитени backup копия и планирано възстановяване от ransomware">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ransomware backup strategy | DefComs">
+    <meta name="twitter:description" content="Scope, access isolation, recovery targets and restore tests for business backups.">
+    <meta name="twitter:image" content="https://defcoms.eu/images/PR_image/Киберсигурност_за_бизнес_оцеляване.webp">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../images/Logos/DefComs-logo.svg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        { "@type": "Organization", "@id": "https://defcoms.eu/#organization", "name": "DefComs", "url": "https://defcoms.eu/" },
+        { "@type": "WebSite", "@id": "https://defcoms.eu/#website", "url": "https://defcoms.eu/", "name": "DefComs", "publisher": { "@id": "https://defcoms.eu/#organization" }, "inLanguage": "bg" },
+        {
+          "@type": "WebPage",
+          "@id": "https://defcoms.eu/blog/ransomware-backup-strategy.html#webpage",
+          "url": "https://defcoms.eu/blog/ransomware-backup-strategy.html",
+          "name": "Ransomware backup strategy: scope, защита и възстановяване",
+          "inLanguage": "bg",
+          "isPartOf": { "@id": "https://defcoms.eu/#website" },
+          "breadcrumb": { "@id": "https://defcoms.eu/blog/ransomware-backup-strategy.html#breadcrumb" },
+          "mainEntity": { "@id": "https://defcoms.eu/blog/ransomware-backup-strategy.html#article" }
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://defcoms.eu/blog/ransomware-backup-strategy.html#article",
+          "headline": "Ransomware backup strategy: scope, защита и възстановяване",
+          "description": "Ръководство за определяне на backup scope, отделяне на администрацията, защита на копията, retention, RPO/RTO, recovery tests и clean restore среда.",
+          "image": "https://defcoms.eu/images/PR_image/Киберсигурност_за_бизнес_оцеляване.webp",
+          "datePublished": "2026-10-07",
+          "dateModified": "2026-10-07",
+          "inLanguage": "bg",
+          "mainEntityOfPage": { "@id": "https://defcoms.eu/blog/ransomware-backup-strategy.html#webpage" },
+          "author": { "@type": "Person", "@id": "https://defcoms.eu/about/team/author/georgi-todorov.html", "name": "Георги Тодоров", "jobTitle": "SOC Operations Manager (24/7)", "url": "https://defcoms.eu/about/team/author/georgi-todorov.html" },
+          "publisher": { "@id": "https://defcoms.eu/#organization" },
+          "citation": [
+            "https://www.cisa.gov/stopransomware/ransomware-guide",
+            "https://csrc.nist.gov/pubs/ir/8374/r1/final"
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://defcoms.eu/blog/ransomware-backup-strategy.html#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Начало", "item": "https://defcoms.eu/" },
+            { "@type": "ListItem", "position": 2, "name": "Блог", "item": "https://defcoms.eu/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "Ransomware backup strategy", "item": "https://defcoms.eu/blog/ransomware-backup-strategy.html" }
+          ]
+        }
+      ]
+    }
+    </script>
+    <style>
+        .blog-article { max-width: 860px; margin: 0 auto; padding: 150px 24px 80px; }
+        .blog-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: 28px; }
+        .blog-breadcrumbs a { color: var(--secondary-cyan); }
+        .blog-kicker { color: var(--secondary-cyan); text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+        .blog-article h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.12; margin: 12px 0 20px; }
+        .blog-deck { color: var(--text-secondary); font-size: 1.2rem; line-height: 1.7; }
+        .blog-meta { color: var(--text-secondary); font-size: var(--font-size-sm); margin: 22px 0; }
+        .blog-hero-image { width: 100%; max-height: 460px; object-fit: cover; border-radius: var(--radius-lg); margin: 16px 0 32px; }
+        .blog-article h2 { margin-top: 42px; }
+        .blog-article p, .blog-article li { color: var(--text-secondary); line-height: 1.8; }
+        .blog-article ul, .blog-article ol { padding-left: 24px; }
+        .blog-callout { border-left: 3px solid var(--secondary-cyan); background: var(--background-card); padding: 18px 22px; border-radius: var(--radius-md); }
+        .blog-table-wrap { overflow-x: auto; margin: 24px 0; }
+        .blog-article table { width: 100%; border-collapse: collapse; min-width: 620px; }
+        .blog-article th, .blog-article td { padding: 14px; border: 1px solid var(--border-color); text-align: left; vertical-align: top; color: var(--text-secondary); line-height: 1.65; }
+        .blog-article th { color: var(--text-primary); background: var(--background-card); }
+        .blog-related, .blog-source-list { display: grid; gap: 12px; margin: 20px 0; }
+        .blog-related a, .blog-source-list a { color: var(--secondary-cyan); }
+        .blog-source-list li { overflow-wrap: anywhere; }
+        .blog-cta { margin-top: 44px; padding: 24px; background: var(--background-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); }
+    </style>
+</head>
+<body class="service-landing">
+
+    <!-- Header -->
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay"></div>
+
+    <header class="header">
+        <nav class="nav" aria-label="Основна навигация">
+            <div class="nav-container">
+                <a href="../index.html" class="logo">
+                    <img src="../images/Logos/DefComs-logo.svg" alt="DefComs">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Начало</a></li>
+                    <li><a href="../about/index.html">За нас</a></li>
+                    <li><a href="../services/index.html">Услуги</a></li>
+                    <li><a href="../compliance/index.html">Регулации</a></li>
+                    <li><a href="../cybersecurity-os/index.html">Cybersecurity OS</a></li>
+                    <li><a href="../wizard.html">NIS2 &amp; DORA Оценка</a></li>
+                    <li><a href="../spravochnik.html">Справочник</a></li>
+                    <li><a href="index.html">Блог</a></li>
+                    <li><a href="../contact/index.html">Контакти</a></li>
+                    <li class="mobile-only"><a href="../contact/index.html" class="mobile-cta">Свържете се с нас</a></li>
+                </ul>
+                <a href="../contact/index.html" class="cta-button">Свържете се с нас</a>
+                <button class="hamburger" type="button" aria-label="Отвори меню" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+
+    <main class="blog-article">
+        <nav class="blog-breadcrumbs" aria-label="Навигационна пътека">
+            <a href="../index.html">Начало</a><span aria-hidden="true">›</span>
+            <a href="index.html">Блог</a><span aria-hidden="true">›</span>
+            <span aria-current="page"><a href="../resources/glossary/ransomware/">Ransomware</a> backup strategy</span>
+        </nav>
+        <article>
+            <p class="blog-kicker">Ransomware · Backup · Recovery</p>
+            <h1>Ransomware backup strategy: как да планираме възстановяването?</h1>
+            <p class="blog-deck">Backup стратегията срещу ransomware не е само график за копиране на файлове. Тя трябва да определи кои данни и системи са нужни за работа, да пази копията от същите идентичности и административни пътища като production средата и да доказва чрез restore упражнения, че възстановяването е възможно.</p>
+            <p class="blog-meta">Автор: <a href="../about/team/author/georgi-todorov.html" style="color: var(--secondary-cyan);">Георги Тодоров</a> · Публикувано: <time datetime="2026-10-07">7 октомври 2026 г.</time> · Обновено: <time datetime="2026-10-07">7 октомври 2026 г.</time></p>
+            <img class="blog-hero-image" src="../images/PR_image/Киберсигурност_за_бизнес_оцеляване.webp" alt="Планиране и проверка на backup възстановяване след ransomware" width="1200" height="675" fetchpriority="high">
+            <p class="blog-legal-notice" style="border-left:4px solid #f0a500;background:rgba(240,165,0,.08);padding:16px 20px;border-radius:8px;margin:24px 0;font-size:.95rem;line-height:1.6;"><strong>⚠️ Важна бележка:</strong> Тази публикация е с информационна и образователна цел и <strong>не представлява юридическо или правно тълкуване</strong> на приложимото законодателство. Обстоятелствата варират, а нормативните изисквания се променят. При конкретен казус се консултирайте с квалифициран юрист.</p>
+
+            <p class="blog-callout"><strong>Накратко:</strong> Определете recovery приоритетите с business owner-ите; включете нужните данни, системи, конфигурации и зависимости; отделете backup administration и credentials от ежедневната среда; поддържайте подходящи offline, isolated или immutable копия; и упражнявайте възстановяването в контролиран контекст. Нито един storage feature сам по себе си не гарантира clean restore или непрекъсваемост.</p>
+
+            <h2>1. Определете какво трябва да се възстанови</h2>
+            <p>Започнете от услугите и бизнес процесите, не от списъка със backup задания. Съставете inventory на критичните данни, application workloads, бази данни, identity/configuration компоненти, virtual machine images, cloud ресурси и нужните dependencies. Не всяка организация трябва да възстановява всичко едновременно: определете приоритети и зависимости за всяка услуга.</p>
+            <p>Свържете избора с business owner-ите: колко data loss е допустим и колко време може да е прекъсната дадена услуга. Измервайте това като договорени recovery point и recovery time цели (RPO/RTO), с конкретни условия и зависимости; те не са обещани резултати, докато не бъдат потвърдени чрез подходящи тестове.</p>
+
+            <h2>2. Проектирайте копията за различни откази</h2>
+            <p>Не разчитайте на едно repository, един admin account или една failure domain. Спрямо средата използвайте комбинация от отделни location/account boundaries, offline или логически изолирани копия и storage controls като retention lock/immutability, когато услугата и конфигурацията го поддържат. Криптирането на backup данните и сигурното управление на ключовете са част от дизайна.</p>
+            <p>Offline, isolated и immutable не означават едно и също. Immutable copy може да остане достъпно през същия compromised control plane; offline copy има други оперативни зависимости; cloud copy зависи от конфигурация, identities, retention и провайдър. Изберете контроли спрямо конкретния ransomware scenario и проверете какво може да се изтрива, overwrite-ва или административно променя.</p>
+
+            <h2>3. Отделете backup identities и управленския plane</h2>
+            <ul>
+                <li>използвайте отделни, ограничени identities за backup administration, с MFA и контролирани привилегии;</li>
+                <li>избягвайте споделени администраторски credentials между production и backup системите;</li>
+                <li>ограничете кой може да променя retention, delete protection, encryption и recovery policy;</li>
+                <li>логвайте и преглеждайте опити за промяна, масово изтриване или изключване на backup jobs;</li>
+                <li>проверете достъпа и отговорностите на доставчици и managed service providers.</li>
+            </ul>
+            <p>Точният модел зависи от продукта и cloud/shared-responsibility условията. Отделянето има смисъл само ако достъпът, идентичностите, recovery механизмите и административните канали са разгледани като цялостна граница.</p>
+
+            <h2>4. Задайте retention, frequency и backup scope</h2>
+            <p>Честотата и retention трябва да отговарят на изискванията на процеса, change rate, допустимия data loss, капацитета, разхода и приложимите правила за съхранение. Копията на файловете може да не са достатъчни, ако за да стартира услугата са нужни още конфигурации, software images, keys, certificates, identity settings или документация за възстановяване.</p>
+            <p>Документирайте какво е включено и изключено, кой одобрява промените, как се наблюдават неуспешните задания и как се пазят логовете. Възможността да има backup не е доказателство, че съдържанието е пълно, чисто или възстановимо.</p>
+
+            <h2>5. Проверявайте restore, не само успешния backup job</h2>
+            <p>Планирайте тестове според критичността и архитектурата: проверка на backup integrity, възстановяване на отделни обекти, application/database restore и упражнение на услуга в изолирана или clean среда. Измервайте време, dependencies, човешки стъпки, нужни credentials, ключове и реалистичния обхват спрямо RTO/RPO целите.</p>
+            <p>Restore упражненията трябва да проверяват и дали възстановеният компонент може безопасно да се свърже с останалата среда, а не само дали файловете са прочетими. При подозрение за компрометиране следвайте incident response и recovery плана: неподходящо възстановяване може да върне компрометирани accounts, settings или persistence в production.</p>
+
+            <h2>6. Свържете backup-а с response и business continuity</h2>
+            <p>Назначете owner-и за решение за възстановяване, приоритизиране на услугите, комуникация и координация с IT/security, operations, ръководството и доставчиците. Дръжте достъпа до runbooks и контактите налични и извън средата, която може да стане недостъпна. Упражнете сценария, включително как се потвърждава чистата среда и кой разрешава връщането към работа.</p>
+            <p>CISA препоръчва offline encrypted backup копия и редовно тестване на тяхната наличност и integrity при disaster recovery сценарий; NIST IR 8374 Rev. 1 разглежда ransomware риска в рамките на Cybersecurity Framework 2.0. Използвайте тези насоки за планиране, а конкретните цели определяйте според собствената си среда.</p>
+
+            <h2>Проверка на backup стратегията</h2>
+            <div class="blog-table-wrap">
+                <table>
+                    <thead><tr><th>Контролен въпрос</th><th>Какво да потвърдите</th><th>Доказателство</th></tr></thead>
+                    <tbody>
+                        <tr><th>Обхванати ли са критичните услуги?</th><td>Данни, конфигурации, dependencies, owners и recovery priority.</td><td>Одобрен inventory и service dependency map.</td></tr>
+                        <tr><th>Може ли същият достъп да изтрие production и backup?</th><td>Различни identities, roles, MFA, retention/immutability и admin boundaries.</td><td>Access review и отчет от тест на контролите.</td></tr>
+                        <tr><th>Има ли copy извън обичайната attack path?</th><td>Offline/isolation options, location/account separation, encryption и key access.</td><td>Архитектурна схема и проверен достъп/retention.</td></tr>
+                        <tr><th>Знае ли екипът да възстановява?</th><td>Restore steps, dependencies, clean environment, decision authority и контакти.</td><td>Датиран restore exercise с време, резултат и пропуски.</td></tr>
+                        <tr><th>Покриват ли тестовете реалните цели?</th><td>Recovery order и постигнати времена спрямо договорените RPO/RTO.</td><td>Резултати, отклонения, коригиращи задачи и повторна проверка.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Чести погрешни допускания</h2>
+            <ul>
+                <li><strong>„Cloud backup е автоматично изолиран“:</strong> identities, tenant permissions, keys и deletion controls трябва да се проверят.</li>
+                <li><strong>„Backup job е зелен, следователно restore работи“:</strong> само реално възстановяване проверява цялата процедура и dependencies.</li>
+                <li><strong>„Immutable означава невъзможно за въздействие“:</strong> защитата зависи от конкретната услуга, policy, account и възможностите за промяна.</li>
+                <li><strong>„Копираме само файловете“:</strong> услугата може да има нужда от приложения, конфигурации, keys, identities и runbooks.</li>
+                <li><strong>„Едно успешно test restore доказва всичко“:</strong> един тест покрива само избран workload, версия, scope и момент.</li>
+            </ul>
+
+            <h2>Често задавани въпроси</h2>
+            <h3>Колко често трябва да се правят backup-и?</h3>
+            <p>Честотата зависи от допустимата загуба на данни, критичността, обема на промените, архитектурата и цената. Определете RPO с business owner-ите и проверете, че реалните копия го покриват.</p>
+            <h3>Immutable backup достатъчен ли е срещу ransomware?</h3>
+            <p>Не сам по себе си. Важни са отделните identities, административните граници, retention, ключовете, наличността на независими копия и провереният restore процес.</p>
+            <h3>Как се доказва, че backup стратегията работи?</h3>
+            <p>Чрез планирани и документирани restore упражнения върху подходящи системи/данни, с измерване на резултатите спрямо договорените цели и проследяване на пропуските.</p>
+            <h3>Backup стратегията покрива ли ransomware response?</h3>
+            <p>Не. Тя е част от устойчивостта и recovery. Detection, containment, evidence, communication и decision authority трябва да бъдат описани в свързан incident response план.</p>
+
+            <h2>Свързани ресурси</h2>
+            <ul class="blog-related">
+                <li><a href="3-2-1-backup.html">3-2-1 backup правило: как работи и какво не гарантира</a></li>
+                <li><a href="ransomware-recovery.html">Ransomware recovery: безопасно възстановяване стъпка по стъпка</a></li>
+                <li><a href="what-is-ransomware.html">Какво е ransomware? Криптиране, изнудване и риск за бизнеса</a></li>
+                <li><a href="how-ransomware-works.html">Как работи ransomware? Етапи на една атака</a></li>
+                <li><a href="how-to-protect-business-from-ransomware.html">Как да защитим фирма от ransomware?</a></li>
+                <li><a href="../services/backup-disaster-recovery/index.html">Backup и Disaster Recovery услуги на DefComs</a></li>
+                <li><a href="../services/ransomware-protection/index.html">Ransomware защита и превенция</a></li>
+                <li><a href="../services/incident-response/index.html">Incident Response услуги</a></li>
+                <li><a href="how-soc-detects-ransomware.html">Как SOC открива ransomware?</a></li>
+            </ul>
+
+            <h2>Официални източници</h2>
+            <ul class="blog-source-list">
+                <li><a href="https://www.cisa.gov/stopransomware/ransomware-guide" target="_blank" rel="noopener noreferrer">CISA, FBI, NSA и MS-ISAC — #StopRansomware Guide: offline backups и recovery tests</a></li>
+                <li><a href="https://csrc.nist.gov/pubs/ir/8374/r1/final" target="_blank" rel="noopener noreferrer">NIST IR 8374 Rev. 1 — Ransomware Risk Management: A Cybersecurity Framework 2.0 Community Profile</a></li>
+            </ul>
+
+            <aside class="blog-cta">
+                <h2>Проверете възстановяването на критичните услуги</h2>
+                <p>Съгласувайте обхват, recovery цели, достъп до копията и тестови процедури с отговорните бизнес и технически собственици.</p>
+                <a class="btn btn-primary" href="../services/backup-disaster-recovery/index.html">Backup и Disaster Recovery</a>
+                <a class="btn btn-secondary" href="../index.html#contact">Заявете консултация</a>
+            </aside>
+        </article>
+    </main>
+        <!-- Footer -->
+
+    <script src="../script.js" defer></script>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="../images/Logos/DefComs-logo.svg" alt="DefComs" class="footer-logo" loading="lazy">
+                    <p>Вашият високотехнологичен партньор в киберсигурността. Предотвратяване, засичане и бърза неутрализация на съвременните заплахи.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Услуги</h3>
+                    <ul>
+                        <li><a href="../services/soc-monitoring/index.html">SOC Мониторинг 24/7</a></li>
+                        <li><a href="../services/noc-services/index.html">NOC Управление</a></li>
+                        <li><a href="../services/corporate-training/index.html">Обучения за фирми</a></li>
+                        <li><a href="../services/penetration-testing/index.html">Penetration Testing</a></li>
+                        <li><a href="../compliance/nis2/index.html">GDPR/NIS2/DORA Съответствие</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Ресурси</h3>
+                    <ul>
+                        <li><a href="../spravochnik.html">Регулаторен Хъб</a></li>
+                        <li><a href="../cybersecurity-os/index.html">Cybersecurity OS</a></li>
+                        <li><a href="../blog/index.html">Статии &amp; Блог</a></li>
+                        <li><a href="../about/index.html">За Нас</a></li>
+                        <li><a href="../bulgaria/index.html">Покритие в България</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Правна рамка</h3>
+                    <ul>
+                        <li><a href="../compliance/nis2/index.html">Регулация NIS2</a></li>
+                        <li><a href="../compliance/gdpr/index.html">Регламент GDPR</a></li>
+                        <li><a href="../compliance/iso-27001/index.html">Стандарт ISO 27001</a></li>
+                        <li><a href="../index.html#contact">Контакти</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DefComs. Всички права запазени.</p>
+                <div class="footer-bottom-links">
+                    <a href="../terms.html">Условия за ползване</a>
+                    <a href="../privacy.html">Защита на данни</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../chat-widget.js"></script>
+</body>
+</html>

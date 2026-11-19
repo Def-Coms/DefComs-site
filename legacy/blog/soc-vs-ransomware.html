@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOC срещу ransomware: роля, реакция и ограничения | DefComs</title>
+    <meta name="description" content="Как SOC подпомага организацията при ransomware чрез мониторинг, анализ и ескалация, къде се включва incident response и какво да договорите с доставчик.">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <link rel="canonical" href="https://defcoms.eu/blog/soc-vs-ransomware.html">
+    <link rel="alternate" hreflang="bg" href="https://defcoms.eu/blog/soc-vs-ransomware.html">
+    <link rel="alternate" hreflang="x-default" href="https://defcoms.eu/blog/soc-vs-ransomware.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="bg_BG">
+    <meta property="og:site_name" content="DefComs">
+    <meta property="og:url" content="https://defcoms.eu/blog/soc-vs-ransomware.html">
+    <meta property="og:title" content="SOC срещу ransomware: роля, реакция и ограничения | DefComs">
+    <meta property="og:description" content="Разграничете мониторинга и ескалацията от prevention, incident response и recovery; проверете покритие, SLA и правата за containment.">
+    <meta property="og:image" content="https://defcoms.eu/images/PR_image/Киберсигурността__Щит_на_модерния_бизнес.webp">
+    <meta property="og:image:alt" content="SOC екип анализира сигнали и координира ескалация при ransomware">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SOC срещу ransomware: роля и ограничения | DefComs">
+    <meta name="twitter:description" content="Какво може да поеме SOC при ransomware и какво трябва да остане в incident response плана на организацията.">
+    <meta name="twitter:image" content="https://defcoms.eu/images/PR_image/Киберсигурността__Щит_на_модерния_бизнес.webp">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../images/Logos/DefComs-logo.svg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        { "@type": "Organization", "@id": "https://defcoms.eu/#organization", "name": "DefComs", "url": "https://defcoms.eu/" },
+        { "@type": "WebSite", "@id": "https://defcoms.eu/#website", "url": "https://defcoms.eu/", "name": "DefComs", "publisher": { "@id": "https://defcoms.eu/#organization" }, "inLanguage": "bg" },
+        {
+          "@type": "WebPage",
+          "@id": "https://defcoms.eu/blog/soc-vs-ransomware.html#webpage",
+          "url": "https://defcoms.eu/blog/soc-vs-ransomware.html",
+          "name": "SOC срещу ransomware: роля, реакция и ограничения",
+          "inLanguage": "bg",
+          "isPartOf": { "@id": "https://defcoms.eu/#website" },
+          "breadcrumb": { "@id": "https://defcoms.eu/blog/soc-vs-ransomware.html#breadcrumb" },
+          "mainEntity": { "@id": "https://defcoms.eu/blog/soc-vs-ransomware.html#article" }
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://defcoms.eu/blog/soc-vs-ransomware.html#article",
+          "headline": "SOC срещу ransomware: как мониторингът подпомага реакцията",
+          "description": "Практически обзор на SOC мониторинг, триаж, ескалация и договорени response роли при ransomware, включително разграничение от EDR, incident response и recovery.",
+          "image": "https://defcoms.eu/images/PR_image/Киберсигурността__Щит_на_модерния_бизнес.webp",
+          "datePublished": "2026-10-07",
+          "dateModified": "2026-10-07",
+          "inLanguage": "bg",
+          "mainEntityOfPage": { "@id": "https://defcoms.eu/blog/soc-vs-ransomware.html#webpage" },
+          "author": { "@type": "Person", "@id": "https://defcoms.eu/about/team/author/georgi-todorov.html", "name": "Георги Тодоров", "jobTitle": "SOC Operations Manager (24/7)", "url": "https://defcoms.eu/about/team/author/georgi-todorov.html" },
+          "publisher": { "@id": "https://defcoms.eu/#organization" },
+          "citation": [
+            "https://www.cisa.gov/stopransomware/ransomware-guide",
+            "https://doi.org/10.6028/NIST.SP.800-61r3",
+            "https://csrc.nist.gov/pubs/ir/8374/r1/final"
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://defcoms.eu/blog/soc-vs-ransomware.html#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Начало", "item": "https://defcoms.eu/" },
+            { "@type": "ListItem", "position": 2, "name": "Блог", "item": "https://defcoms.eu/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "SOC срещу ransomware", "item": "https://defcoms.eu/blog/soc-vs-ransomware.html" }
+          ]
+        }
+      ]
+    }
+    </script>
+    <style>
+        .blog-article { max-width: 860px; margin: 0 auto; padding: 150px 24px 80px; }
+        .blog-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: 28px; }
+        .blog-breadcrumbs a { color: var(--secondary-cyan); }
+        .blog-kicker { color: var(--secondary-cyan); text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+        .blog-article h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.12; margin: 12px 0 20px; }
+        .blog-deck { color: var(--text-secondary); font-size: 1.2rem; line-height: 1.7; }
+        .blog-meta { color: var(--text-secondary); font-size: var(--font-size-sm); margin: 22px 0; }
+        .blog-hero-image { width: 100%; max-height: 460px; object-fit: cover; border-radius: var(--radius-lg); margin: 16px 0 32px; }
+        .blog-article h2 { margin-top: 42px; }
+        .blog-article p, .blog-article li { color: var(--text-secondary); line-height: 1.8; }
+        .blog-article ul, .blog-article ol { padding-left: 24px; }
+        .blog-callout { border-left: 3px solid var(--secondary-cyan); background: var(--background-card); padding: 18px 22px; border-radius: var(--radius-md); }
+        .blog-table-wrap { overflow-x: auto; margin: 24px 0; }
+        .blog-article table { width: 100%; border-collapse: collapse; min-width: 620px; }
+        .blog-article th, .blog-article td { padding: 14px; border: 1px solid var(--border-color); text-align: left; vertical-align: top; color: var(--text-secondary); line-height: 1.65; }
+        .blog-article th { color: var(--text-primary); background: var(--background-card); }
+        .blog-related, .blog-source-list { display: grid; gap: 12px; margin: 20px 0; }
+        .blog-related a, .blog-source-list a { color: var(--secondary-cyan); }
+        .blog-source-list li { overflow-wrap: anywhere; }
+        .blog-cta { margin-top: 44px; padding: 24px; background: var(--background-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); }
+    </style>
+</head>
+<body class="service-landing">
+
+    <!-- Header -->
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay"></div>
+
+    <header class="header">
+        <nav class="nav" aria-label="Основна навигация">
+            <div class="nav-container">
+                <a href="../index.html" class="logo">
+                    <img src="../images/Logos/DefComs-logo.svg" alt="DefComs">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Начало</a></li>
+                    <li><a href="../about/index.html">За нас</a></li>
+                    <li><a href="../services/index.html">Услуги</a></li>
+                    <li><a href="../compliance/index.html">Регулации</a></li>
+                    <li><a href="../cybersecurity-os/index.html">Cybersecurity OS</a></li>
+                    <li><a href="../wizard.html">NIS2 &amp; DORA Оценка</a></li>
+                    <li><a href="../spravochnik.html">Справочник</a></li>
+                    <li><a href="index.html">Блог</a></li>
+                    <li><a href="../contact/index.html">Контакти</a></li>
+                    <li class="mobile-only"><a href="../contact/index.html" class="mobile-cta">Свържете се с нас</a></li>
+                </ul>
+                <a href="../contact/index.html" class="cta-button">Свържете се с нас</a>
+                <button class="hamburger" type="button" aria-label="Отвори меню" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+
+    <main class="blog-article">
+        <nav class="blog-breadcrumbs" aria-label="Навигационна пътека">
+            <a href="../index.html">Начало</a><span aria-hidden="true">›</span>
+            <a href="index.html">Блог</a><span aria-hidden="true">›</span>
+            <span aria-current="page"><a href="../resources/glossary/soc/">SOC</a> срещу <a href="../resources/glossary/ransomware/">ransomware</a></span>
+        </nav>
+        <article>
+            <p class="blog-kicker">SOC · Ransomware · Monitoring & response</p>
+            <h1>SOC срещу ransomware: как мониторингът подпомага реакцията</h1>
+            <p class="blog-deck">SOC може да наблюдава налични security сигнали, да ги анализира и корелира, да ескалира потвърдени или подозрителни събития и да подпомага договорените response действия. Той не е самостоятелна гаранция срещу ransomware: резултатът зависи от обхвата, telemetry, правилата, комуникацията и ясното разпределение на отговорностите.</p>
+            <p class="blog-meta">Автор: <a href="../about/team/author/georgi-todorov.html" style="color: var(--secondary-cyan);">Георги Тодоров</a> · Публикувано: <time datetime="2026-10-07">7 октомври 2026 г.</time> · Обновено: <time datetime="2026-10-07">7 октомври 2026 г.</time></p>
+            <img class="blog-hero-image" src="../images/PR_image/Киберсигурността__Щит_на_модерния_бизнес.webp" alt="SOC екип анализира сигнали и координира ескалация при ransomware" width="1200" height="675" fetchpriority="high">
+            <p class="blog-legal-notice" style="border-left:4px solid #f0a500;background:rgba(240,165,0,.08);padding:16px 20px;border-radius:8px;margin:24px 0;font-size:.95rem;line-height:1.6;"><strong>⚠️ Важна бележка:</strong> Тази публикация е с информационна и образователна цел и <strong>не представлява юридическо или правно тълкуване</strong> на приложимото законодателство. Обстоятелствата варират, а нормативните изисквания се променят. При конкретен казус се консултирайте с квалифициран юрист.</p>
+
+            <p class="blog-callout"><strong>Краткият отговор:</strong> при ransomware риск SOC добавя наблюдение, триаж, корелация и ескалация между източници като <a href="../resources/glossary/edr/">EDR</a>, identity, network и cloud logs. Дали SOC може и да блокира акаунт, изолира endpoint или задейства друга реакция зависи от договора и runbook-а. Техническото containment не е същото като пълно incident response, почистване или възстановяване.</p>
+
+            <h2>Какво означава „SOC срещу ransomware“?</h2>
+            <p>Това не е противопоставяне между SOC услуга и ransomware като технология. Практическият въпрос е как оперативният мониторинг се вписва в защитата и реакцията на организацията, когато се появят сигнали за компрометиране или криптиране. SOC може да работи вътрешно, външно или в хибриден модел; конкретният обхват зависи от средата и договора.</p>
+            <p>Полезният процес започва преди инцидента: избрани лог източници и активи се включват в мониторинга, алармите се маршрутизират към екип, а контактите и ескалациите се проверяват. При сигнал SOC събира контекст, оценява увереността и възможното въздействие, документира какво е известно и уведомява определените лица. Следващите действия се изпълняват от страната, която има нужните права и оперативна отговорност.</p>
+
+            <h2>Кой какво поема?</h2>
+            <div class="blog-table-wrap">
+                <table>
+                    <thead><tr><th>Функция</th><th>Типичен принос при ransomware</th><th>Какво не следва автоматично</th></tr></thead>
+                    <tbody>
+                        <tr><th>SOC мониторинг</th><td>Приемане на договорените telemetry източници, анализ и корелация на alerts, триаж, ескалация и отчет.</td><td>Пълно покритие на всички активи, изчерпателно разследване или право за промяна на клиентски системи.</td></tr>
+                        <tr><th>EDR платформа</th><td>Endpoint telemetry и, според продукта и настройките, локално блокиране, карантина или изолация на устройство.</td><td>Мониторинг на всички identities, мрежови устройства и cloud ресурси или организационна координация сама по себе си.</td></tr>
+                        <tr><th>Incident response (IR)</th><td>Организирано разследване, определяне на обхвата, containment/eradication препоръки и координация според ангажимента.</td><td>Автоматично включване само защото има SOC договор; провери дали има отделен IR обхват и activation process.</td></tr>
+                        <tr><th>IT и бизнес собственици</th><td>Дават контекст за критичността, потвърждават промени и изпълняват или одобряват действията според ролите.</td><td>Решения за бизнес прекъсване, правни уведомления или възстановяване не могат да се делегират неясно.</td></tr>
+                        <tr><th>Backup и recovery екип</th><td>Проверява възстановимите копия и изпълнява приоритетно clean recovery по утвърден план.</td><td>Наличието на SOC не доказва, че backup-ите са защитени, здрави или успешно тествани.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Как протича SOC ескалацията?</h2>
+            <ol>
+                <li><strong>Проверява се обхватът:</strong> кой актив и акаунт са засегнати, какво telemetry пристига и има ли известни пропуски.</li>
+                <li><strong>Събират се свързани сигнали:</strong> времева линия от endpoint, identity, network, email, cloud и backup системи, когато са договорени и налични.</li>
+                <li><strong>Извършва се триаж:</strong> различават се наблюдаваните факти, работните хипотези и легитимните промени, които могат да приличат на атака.</li>
+                <li><strong>Ескалира се според runbook:</strong> определените контакти получават severity, evidence, неизвестни, препоръчани следващи действия и срок за потвърждение.</li>
+                <li><strong>Действията се координират:</strong> изолация, блокиране на акаунт или спиране на услуга се предприемат само от упълномощени лица или автоматизации, предварително одобрени за конкретния сценарий.</li>
+                <li><strong>Предава се към IR и recovery:</strong> SOC мониторингът подпомага visibility и комуникацията; разследването, eradication и clean restoration следват определените планове и роли.</li>
+            </ol>
+            <p>Реакцията не е само техническа. При изолация на критична система трябва да се преценят зависимостите и operational impact. При съмнение за компрометирани комуникационни канали е важно екипите да използват одобрения incident communication plan.</p>
+
+            <h2>Какво може да ограничи ефективността?</h2>
+            <ul>
+                <li><strong>Непълен asset/log scope:</strong> системи и identities извън покритието остават извън видимостта; прекъснат log ingest трябва да се открива и съобщава.</li>
+                <li><strong>Неясни срокове:</strong> „24/7“ не обяснява само по себе си response time, severity definitions, канала за уведомяване и сроковете за acknowledgement.</li>
+                <li><strong>Неактуални контакти:</strong> ескалация без дежурен decision-maker може да забави containment, дори когато сигналът е анализиран.</li>
+                <li><strong>Неуточнени права:</strong> не е ясно кой може да изолира endpoint, блокира акаунт, променя firewall или спира бизнес услуга.</li>
+                <li><strong>Шум или липсващ контекст:</strong> легитимни batch процеси и администрация могат да създават alerts; baseline, change window и asset criticality помагат за правилния triage.</li>
+                <li><strong>Очакване SOC да замени IR:</strong> мониторингът не доказва сам по себе си, че атакуващият е отстранен, всички засегнати активи са намерени или възстановяването е безопасно.</li>
+            </ul>
+
+            <h2>Какво да уточните със SOC доставчик?</h2>
+            <ul>
+                <li>Кои конкретни активи, log източници, EDR tenants и cloud среди са включени и кои са изключени?</li>
+                <li>Как се открива загуба на telemetry, неработещ агент или изчерпване на log retention?</li>
+                <li>Какво означават severity нива, acknowledgement/escalation times и 24/7 покритие в договора?</li>
+                <li>Кой получава critical alert-и, по кои канали и какво става, ако няма отговор?</li>
+                <li>Кой има authority за endpoint isolation, account disablement, firewall changes и спиране на критична услуга?</li>
+                <li>Включени ли са <a href="../resources/glossary/threat-hunting/">threat hunting</a>, incident response, forensic support или recovery, или те са отделни услуги?</li>
+                <li>Какво съдържа incident notification: timeline, засегнати активи, evidence, увереност, неизвестни и предложено действие?</li>
+                <li>Как се тестват контактите и playbook-ите и как се докладват coverage gaps и подобрения?</li>
+            </ul>
+
+            <h2>Често задавани въпроси</h2>
+            <h3>SOC спира ли ransomware?</h3>
+            <p>SOC може да подпомогне по-ранното откриване, анализа и ескалацията, а някои договорени модели включват определени response действия. Това не гарантира, че всеки инцидент ще бъде засечен или спрян преди въздействие.</p>
+            <h3>SOC и EDR едно и също ли са?</h3>
+            <p>Не. EDR е технология за endpoint telemetry и response функции; SOC е оперативен екип/функция, която анализира избрани сигнали и координира ескалация според обхвата. SOC може да използва EDR, но не се свежда до него.</p>
+            <h3>Нужен ли е отделен incident response договор?</h3>
+            <p>Провери писмено какво е включено. Мониторинг, triage и уведомяване не означават непременно пълно разследване, containment, eradication и recovery support.</p>
+            <h3>Какво означава 24/7 SOC?</h3>
+            <p>Уточни кои дейности се покриват непрекъснато, какви са времената за triage и ескалация, кои контакти се търсят и има ли действия, които доставчикът може да изпълни без допълнително одобрение.</p>
+
+            <h2>Свързани ресурси</h2>
+            <ul class="blog-related">
+                <li><a href="how-soc-detects-ransomware.html">Как SOC открива ransomware? Ранни сигнали и реакция</a></li>
+                <li><a href="ransomware-incident-response.html">Ransomware incident response: как да координирате реакцията</a></li>
+                <li><a href="edr-vs-ransomware.html">EDR срещу ransomware: как помага и къде са границите?</a></li>
+                <li><a href="how-to-protect-business-from-ransomware.html">Как да защитим фирма от ransomware?</a></li>
+                <li><a href="ransomware-backup-strategy.html">Ransomware backup strategy: как да планираме възстановяването?</a></li>
+                <li><a href="../services/soc-monitoring/index.html">SOC мониторинг 24/7/365 от DefComs</a></li>
+                <li><a href="../services/incident-response/index.html">Incident Response услуги</a></li>
+                <li><a href="../services/backup-disaster-recovery/index.html">Backup и Disaster Recovery</a></li>
+            </ul>
+
+            <h2>Официални източници</h2>
+            <ul class="blog-source-list">
+                <li><a href="https://www.cisa.gov/stopransomware/ransomware-guide" target="_blank" rel="noopener noreferrer">CISA, FBI, NSA и MS-ISAC — #StopRansomware Guide: preparation, detection, response и recovery</a></li>
+                <li><a href="https://doi.org/10.6028/NIST.SP.800-61r3" target="_blank" rel="noopener noreferrer">NIST SP 800-61 Rev. 3 — Incident Response Recommendations and Considerations</a></li>
+                <li><a href="https://csrc.nist.gov/pubs/ir/8374/r1/final" target="_blank" rel="noopener noreferrer">NIST IR 8374 Rev. 1 — Ransomware Risk Management</a></li>
+            </ul>
+
+            <aside class="blog-cta">
+                <h2>Сверете обхвата и ескалациите си</h2>
+                <p>Проверете кои сигнали се наблюдават, кой приема critical alerts и кой може да одобрява containment действия.</p>
+                <a class="btn btn-primary" href="../services/soc-monitoring/index.html">SOC мониторинг 24/7/365</a>
+                <a class="btn btn-secondary" href="../services/incident-response/index.html">Incident Response услуги</a>
+            </aside>
+        </article>
+    </main>
+        <!-- Footer -->
+
+    <script src="../script.js" defer></script>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="../images/Logos/DefComs-logo.svg" alt="DefComs" class="footer-logo" loading="lazy">
+                    <p>Вашият високотехнологичен партньор в киберсигурността. Предотвратяване, засичане и бърза неутрализация на съвременните заплахи.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Услуги</h3>
+                    <ul>
+                        <li><a href="../services/soc-monitoring/index.html">SOC Мониторинг 24/7</a></li>
+                        <li><a href="../services/noc-services/index.html">NOC Управление</a></li>
+                        <li><a href="../services/corporate-training/index.html">Обучения за фирми</a></li>
+                        <li><a href="../services/penetration-testing/index.html">Penetration Testing</a></li>
+                        <li><a href="../compliance/nis2/index.html">GDPR/NIS2/DORA Съответствие</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Ресурси</h3>
+                    <ul>
+                        <li><a href="../spravochnik.html">Регулаторен Хъб</a></li>
+                        <li><a href="../cybersecurity-os/index.html">Cybersecurity OS</a></li>
+                        <li><a href="../blog/index.html">Статии &amp; Блог</a></li>
+                        <li><a href="../about/index.html">За Нас</a></li>
+                        <li><a href="../bulgaria/index.html">Покритие в България</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Правна рамка</h3>
+                    <ul>
+                        <li><a href="../compliance/nis2/index.html">Регулация NIS2</a></li>
+                        <li><a href="../compliance/gdpr/index.html">Регламент GDPR</a></li>
+                        <li><a href="../compliance/iso-27001/index.html">Стандарт ISO 27001</a></li>
+                        <li><a href="../index.html#contact">Контакти</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DefComs. Всички права запазени.</p>
+                <div class="footer-bottom-links">
+                    <a href="../terms.html">Условия за ползване</a>
+                    <a href="../privacy.html">Защита на данни</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../chat-widget.js"></script>
+</body>
+</html>

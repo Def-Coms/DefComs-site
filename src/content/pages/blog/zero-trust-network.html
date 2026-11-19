@@ -1,0 +1,224 @@
+---
+lastmod: 2026-10-09
+title: "Zero Trust Network: сегментация и достъп до ресурси | DefComs"
+description: Как Zero Trust Network ограничава достъпа до приложения и workloads чрез сегментация, identity-aware политики и наблюдение, без да се свежда до VPN или firewall.
+ogType: article
+image: https://defcoms.eu/images/Webp/Киберсигурност_за_модерния_бизнес.webp
+imageAlt: Защита на мрежовия достъп до приложения и бизнес ресурси
+ogDescription: "Network слоя на Zero Trust: картографиране на потоците, segmentation, enforcement points, наблюдение и поетапно внедряване."
+twitterDescription: Практически модел за ограничаване и наблюдение на мрежовия достъп в Zero Trust среда.
+schema:
+  - "@context": https://schema.org
+    "@graph":
+      - "@type": Organization
+        "@id": https://defcoms.eu/#organization
+        name: DefComs
+        url: https://defcoms.eu/
+      - "@type": WebSite
+        "@id": https://defcoms.eu/#website
+        url: https://defcoms.eu/
+        name: DefComs
+        publisher:
+          "@id": https://defcoms.eu/#organization
+        inLanguage: bg
+      - "@type": WebPage
+        "@id": https://defcoms.eu/blog/zero-trust-network#webpage
+        url: https://defcoms.eu/blog/zero-trust-network
+        name: "Zero Trust Network: сегментация и контрол на достъпа"
+        inLanguage: bg
+        isPartOf:
+          "@id": https://defcoms.eu/#website
+        breadcrumb:
+          "@id": https://defcoms.eu/blog/zero-trust-network#breadcrumb
+        mainEntity:
+          "@id": https://defcoms.eu/blog/zero-trust-network#article
+      - "@type": BlogPosting
+        "@id": https://defcoms.eu/blog/zero-trust-network#article
+        headline: "Zero Trust Network: сегментация и достъп до ресурси"
+        description: Разглежда network слоя на Zero Trust чрез карта на комуникационните потоци, сегментация, policy enforcement points, наблюдение и поетапно внедряване.
+        image: https://defcoms.eu/images/Webp/Киберсигурност_за_модерния_бизнес.webp
+        datePublished: 2026-10-09
+        dateModified: 2026-10-09
+        inLanguage: bg
+        mainEntityOfPage:
+          "@id": https://defcoms.eu/blog/zero-trust-network#webpage
+        author:
+          "@type": Person
+          "@id": https://defcoms.eu/about/team/author/alexander-petrov
+          name: Инж. Александър Петров
+          jobTitle: Lead Cyber Security Architect
+          url: https://defcoms.eu/about/team/author/alexander-petrov
+        publisher:
+          "@id": https://defcoms.eu/#organization
+        citation:
+          - https://csrc.nist.gov/pubs/sp/800/207/final
+          - https://csrc.nist.gov/pubs/sp/800/207/a/final
+      - "@type": FAQPage
+        "@id": https://defcoms.eu/blog/zero-trust-network#faq
+        mainEntity:
+          - "@type": Question
+            name: Zero Trust Network същото ли е като Zero Trust Architecture?
+            acceptedAnswer:
+              "@type": Answer
+              text: Не точно. Zero Trust Network описва мрежовите контроли и комуникационните пътища в по-широка Zero Trust Architecture, която обхваща и идентичности, приложения, устройства, политики и данни.
+          - "@type": Question
+            name: Достатъчна ли е мрежовата сегментация за Zero Trust?
+            acceptedAnswer:
+              "@type": Answer
+              text: Не. Сегментацията може да ограничи пътищата и обхвата на достъп, но трябва да се свърже с identity-aware политики, управление на устройства, ресурсни права и наблюдение.
+          - "@type": Question
+            name: Zero Trust Network премахва ли нуждата от VPN?
+            acceptedAnswer:
+              "@type": Answer
+              text: Не непременно. VPN може да осигурява криптиран транспорт, но не определя самостоятелно кой има достъп до конкретен ресурс и при какви условия.
+          - "@type": Question
+            name: Как се прилага Zero Trust в legacy или OT среда?
+            acceptedAnswer:
+              "@type": Answer
+              text: Започнете с видимост, карта на зависимостите и ограничен пилот. Промените по legacy/OT сегменти изискват оценка на наличността, безопасността, съвместимостта и одобрение от собствениците на процесите.
+      - "@type": BreadcrumbList
+        "@id": https://defcoms.eu/blog/zero-trust-network#breadcrumb
+        itemListElement:
+          - "@type": ListItem
+            position: 1
+            name: Начало
+            item: https://defcoms.eu/
+          - "@type": ListItem
+            position: 2
+            name: Блог
+            item: https://defcoms.eu/blog
+          - "@type": ListItem
+            position: 3
+            name: Zero Trust Network
+            item: https://defcoms.eu/blog/zero-trust-network
+headExtra: |-
+  <style>
+          .blog-article { max-width: 860px; margin: 0 auto; padding: 150px 24px 80px; }
+          .blog-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: 28px; }
+          .blog-breadcrumbs a { color: var(--secondary-cyan); }
+          .blog-kicker { color: var(--secondary-cyan); text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+          .blog-article h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.12; margin: 12px 0 20px; }
+          .blog-deck { color: var(--text-secondary); font-size: 1.2rem; line-height: 1.7; }
+          .blog-meta { color: var(--text-secondary); font-size: var(--font-size-sm); margin: 22px 0; }
+          .blog-hero-image { width: 100%; max-height: 460px; object-fit: cover; border-radius: var(--radius-lg); margin: 16px 0 32px; }
+          .blog-article h2 { margin-top: 42px; }
+          .blog-article p, .blog-article li { color: var(--text-secondary); line-height: 1.8; }
+          .blog-article ul, .blog-article ol { padding-left: 24px; }
+          .blog-callout { border-left: 3px solid var(--secondary-cyan); background: var(--background-card); padding: 18px 22px; border-radius: var(--radius-md); }
+          .blog-table-wrap { overflow-x: auto; margin: 24px 0; }
+          .blog-article table { width: 100%; border-collapse: collapse; min-width: 620px; }
+          .blog-article th, .blog-article td { padding: 14px; border: 1px solid var(--border-color); text-align: left; vertical-align: top; color: var(--text-secondary); line-height: 1.65; }
+          .blog-article th { color: var(--text-primary); background: var(--background-card); }
+          .blog-related, .blog-source-list { display: grid; gap: 12px; margin: 20px 0; }
+          .blog-related a, .blog-source-list a { color: var(--secondary-cyan); }
+          .blog-source-list li { overflow-wrap: anywhere; }
+          .blog-cta { margin-top: 44px; padding: 24px; background: var(--background-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); }
+      </style>
+bodyClass: service-landing
+blog:
+  categories:
+    - Zero Trust
+    - Network access
+  date: 2026-10-09
+  order: 16
+  title: "Zero Trust Network: мрежова сегментация и достъп до ресурси"
+  summary: Как се картографират потоците и прилагат сегментация, enforcement точки и наблюдение.
+  image: /images/PR_image/%D0%9A%D0%B8%D0%B1%D0%B5%D1%80%D1%81%D0%B8%D0%B3%D1%83%D1%80%D0%BD%D0%BE%D1%81%D1%82_%D0%B2_%D0%B8%D0%BD%D0%B4%D1%83%D1%81%D1%82%D1%80%D0%B8%D0%B0%D0%BB%D0%BD%D0%B0%D1%82%D0%B0_%D1%81%D1%80%D0%B5%D0%B4%D0%B0.webp
+  imageAlt: Zero Trust network контролира достъпа до мрежови ресурси
+  imageWidth: 1200
+  imageHeight: 675
+  ariaLabel: "Прочетете: Zero Trust Network"
+  cta: Прочетете ръководството →
+---
+<main class="blog-article">
+        <nav class="blog-breadcrumbs" aria-label="Навигационна пътека">
+            <a href="/">Начало</a><span aria-hidden="true">›</span>
+            <a href="/blog">Блог</a><span aria-hidden="true">›</span>
+            <span aria-current="page"><a href="/resources/glossary/zero-trust">Zero Trust</a> Network</span>
+        </nav>
+        <article>
+            <p class="blog-kicker">Zero Trust · Network access · Segmentation</p>
+            <h1>Zero Trust Network: мрежова сегментация и достъп до ресурси</h1>
+            <p class="blog-deck">Zero Trust Network описва мрежовия слой на по-широка Zero Trust архитектура: кой може да комуникира с кой ресурс, по какъв път и при какви условия. Целта е да се ограничи доверието, което иначе може да следва само от вътрешна мрежова позиция, и да се намалят ненужните пътища между системите.</p>
+            <p class="blog-meta">Автор: <a href="/about/team/author/alexander-petrov" style="color: var(--secondary-cyan);">Инж. Александър Петров</a> · Публикувано: <time datetime="2026-10-09">9 октомври 2026 г.</time> · Обновено: <time datetime="2026-10-09">9 октомври 2026 г.</time></p>
+            <img class="blog-hero-image" src="/images/Webp/%D0%9A%D0%B8%D0%B1%D0%B5%D1%80%D1%81%D0%B8%D0%B3%D1%83%D1%80%D0%BD%D0%BE%D1%81%D1%82_%D0%B7%D0%B0_%D0%BC%D0%BE%D0%B4%D0%B5%D1%80%D0%BD%D0%B8%D1%8F_%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81.webp" alt="Мрежов достъп до приложения и ресурси с контекстни проверки и сегментация" width="1200" height="675" fetchpriority="high">
+            <p class="blog-legal-notice" style="border-left:4px solid #f0a500;background:rgba(240,165,0,.08);padding:16px 20px;border-radius:8px;margin:24px 0;font-size:.95rem;line-height:1.6;"><strong>⚠️ Важна бележка:</strong> Тази публикация е с информационна и образователна цел и <strong>не представлява юридическо или правно тълкуване</strong> на приложимото законодателство. Обстоятелствата варират, а нормативните изисквания се променят. При конкретен казус се консултирайте с квалифициран юрист.</p>
+
+            <p class="blog-callout"><strong>Накратко:</strong> Zero Trust Network не означава просто повече VLAN-и, нов firewall или задължително премахване на VPN. Това е целенасочено контролиране на комуникационните пътища към ресурси, съчетано с identity, device posture, policy enforcement и наблюдение. Сегментацията е един възможен контрол, не цялата архитектура.</p>
+
+            <h2>Какво покрива мрежовият слой?</h2>
+            <p>Мрежовите контроли определят кои пътища са възможни между потребителски устройства, администраторски среди, workloads и приложения. В Zero Trust дизайн те подпомагат достъпа до ресурс, вместо да приемат, че достижимостта от „вътрешната мрежа“ сама по себе си означава разрешение.</p>
+            <p>Това може да включва идентифициране на ресурси и комуникационни зависимости, ограничаване на ненужния east-west трафик, отделяне на management plane, контролирани access gateways и логване на позволени/отказани опити. Конкретната комбинация зависи от това къде са ресурсите и кои технически точки могат надеждно да прилагат политиките.</p>
+
+            <h2>Сегментация е полезна, но не е достатъчна</h2>
+            <p>Сегментацията разделя мрежа или workloads на по-малки области и ограничава кои системи могат да комуникират. Това може да затрудни ненужното странично придвижване и да намали обхвата на грешка или компрометиране. Zero Trust добавя въпросите кой/какво отправя заявката, кой ресурс е поискан и при какви условия политиката трябва да я разреши.</p>
+            <div class="blog-table-wrap">
+                <table>
+                    <thead><tr><th>Подход</th><th>Основен принос</th><th>Какво самостоятелно не доказва</th></tr></thead>
+                    <tbody>
+                        <tr><th>VLAN/firewall zones</th><td>Разделят адресни пространства и задават правила между зони.</td><td>Че потребителят или workload-ът е идентифициран или разрешен за конкретното приложение.</td></tr>
+                        <tr><th>Microsegmentation</th><td>Ограничава комуникацията между избрани workloads/системи по по-фини правила.</td><td>Че са покрити всички ресурси, identities, device signals или бизнес контексти.</td></tr>
+                        <tr><th>VPN</th><td>Може да осигурява криптиран транспорт и контролиран отдалечен път.</td><td>Че след свързване достъпът е ограничен само до нужния ресурс и остава подходящ при промяна на риска.</td></tr>
+                        <tr><th>Identity-aware access proxy/gateway</th><td>Може да посредничи достъп до приложения и да прилага identity/context политика.</td><td>Че други пътища, service-to-service комуникация и локални мрежови потоци също са защитени.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Тези механизми могат да се комбинират. Сравнението не е избор на една технология за всички случаи; то помага да се види кои пътища и решения остават извън покритието.</p>
+
+            <h2>Как се проектира мрежовият достъп?</h2>
+            <ol>
+                <li><strong>Открийте ресурсите и потоците.</strong> Съберете inventory на приложения, устройства, workloads и зависимости; проверете кои потоци са реално нужни.</li>
+                <li><strong>Определете границите и собствениците.</strong> Свържете ресурсите с бизнес услуга, критичност, собственик, данни и очаквани роли.</li>
+                <li><strong>Задайте policy по ресурс.</strong> Опишете субект, действие, ресурс и наличните identity/device/context сигнали; не използвайте мрежов адрес като единствен критерий за доверие.</li>
+                <li><strong>Изберете enforcement точки.</strong> Те могат да са host/workload controls, gateways, proxies, network controls или cloud-native политики според потока и платформата.</li>
+                <li><strong>Пилотирайте с наблюдение.</strong> Започнете с ограничен ресурсен обхват; регистрирайте legitimate flows и блокиранията, уточнете нужните изключения и тествайте отказите.</li>
+                <li><strong>Разширявайте и преглеждайте.</strong> Добавяйте сегменти и приложения постепенно, проверявайте policy drift, неизползвани правила, bypass paths и ефекта върху оперативните услуги.</li>
+            </ol>
+
+            <h2>Планирайте внимателно за legacy и OT</h2>
+            <p>В наследени или индустриални среди активите може да не поддържат модерни identity агенти или криптирани протоколи, а прекъсване на комуникация може да засегне процеси и безопасност. Първо документирайте зависимости, owners и ограничения; после тествайте в подходяща среда и съгласувайте промяната със собствениците на системите. Не прилагайте blanket deny правила без валидиране на необходимите потоци и аварийни процедури.</p>
+            <p>Когато директна интеграция не е възможна, може да се използват компенсиращи мрежови контроли и мониторинг, описани като ограничения и план за постепенно подобрение. Изключенията трябва да са ограничени, одобрени, логвани и периодично преглеждани.</p>
+
+            <h2>Как да измервате напредъка?</h2>
+            <ul>
+                <li>дял на критичните приложения и потоци с известен owner и актуална карта на зависимостите;</li>
+                <li>пътища към ресурси, които вече минават през определени enforcement точки;</li>
+                <li>неизползвани или прекомерно широки правила и отворени exception-и;</li>
+                <li>видимост върху отказани заявки, policy changes и загуба на telemetry;</li>
+                <li>резултати от контролирани тестове за валидни и невалидни access paths;</li>
+                <li>оперативни откази, latency и service impact след промяна на политиките.</li>
+            </ul>
+            <p>Метриките трябва да показват реално покритие и риск, не само брой внедрени сегменти или закупени продукти. Измервайте и изключенията, слепите зони и оперативното въздействие.</p>
+
+            <h2>Често задавани въпроси</h2>
+            <h3>Zero Trust Network същото ли е като Zero Trust Architecture?</h3>
+            <p>Не точно. Zero Trust Network описва мрежовите контроли и комуникационните пътища в по-широка архитектура, която обхваща и идентичности, приложения, устройства, политики и данни.</p>
+            <h3>Достатъчна ли е мрежовата сегментация за Zero Trust?</h3>
+            <p>Не. Сегментацията може да ограничи пътищата и обхвата на достъп, но трябва да се свърже с identity-aware политики, управление на устройства, ресурсни права и наблюдение.</p>
+            <h3>Zero Trust Network премахва ли нуждата от VPN?</h3>
+            <p>Не непременно. VPN може да осигурява криптиран транспорт, но не определя самостоятелно кой има достъп до конкретен ресурс и при какви условия.</p>
+            <h3>Как се прилага Zero Trust в legacy или OT среда?</h3>
+            <p>Започнете с видимост, карта на зависимостите и ограничен пилот. Промените по legacy/OT сегменти изискват оценка на наличността, безопасността, съвместимостта и одобрение от собствениците на процесите.</p>
+
+            <h2>Свързани ресурси</h2>
+            <ul class="blog-related">
+              <li><a href="/blog/zero-trust-vs-vpn">Zero Trust vs VPN: разлики, избор и съвместна употреба</a></li>
+                <li><a href="/blog/what-is-zero-trust">Какво е Zero Trust? Принципи и практическо приложение</a></li>
+                <li><a href="/services/zero-trust">Zero Trust Architecture: компоненти и поток на достъп</a></li>
+                <li><a href="/services/zero-trust">Zero Trust архитектура и внедряване на DefComs</a></li>
+            </ul>
+
+            <h2>Официални източници</h2>
+            <ul class="blog-source-list">
+                <li><a href="https://csrc.nist.gov/pubs/sp/800/207/final" target="_blank" rel="noopener noreferrer">NIST SP 800-207 — Zero Trust Architecture</a></li>
+                <li><a href="https://csrc.nist.gov/pubs/sp/800/207/a/final" target="_blank" rel="noopener noreferrer">NIST SP 800-207A — Zero Trust access control in cloud-native, multi-cloud environments</a></li>
+            </ul>
+
+            <aside class="blog-cta">
+                <h2>Планирайте network контроли около ресурсите</h2>
+                <p>Картографирайте потоците, собствениците и enforcement точките преди разширяване на сегментацията.</p>
+                <a class="btn btn-primary" href="/services/zero-trust">Zero Trust анализ</a>
+                <a class="btn btn-secondary" href="/#contact">Заявете консултация</a>
+            </aside>
+        </article>
+    </main>

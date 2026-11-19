@@ -1,0 +1,80 @@
+---
+lastmod: 2026-10-10
+changefreq: monthly
+priority: 0.8
+title: Доклади, Изследвания и Анализи за Киберсигурност | DefComs
+description: Ежегодни доклади, проучвания за състоянието на киберсигурността в България и индустриални анализи от експертите на DefComs.
+robots: index, follow
+ogTitle: Доклади, Изследвания и Анализи за Киберсигурност | DefComs Resources
+schema:
+  - "@context": https://schema.org
+    "@graph":
+      - "@type": WebPage
+        "@id": https://defcoms.eu/resources/reports#webpage
+        url: https://defcoms.eu/resources/reports
+        name: Доклади, Изследвания и Анализи за Киберсигурност | DefComs Resources
+        description: Ежегодни доклади, проучвания за състоянието на киберсигурността в България и индустриални анализи от експертите на DefComs.
+        inLanguage: bg-BG
+        isPartOf:
+          "@id": https://defcoms.eu/#website
+        publisher:
+          "@id": https://defcoms.eu/#organization
+        about:
+          "@id": https://defcoms.eu/#organization
+      - "@type": BreadcrumbList
+        itemListElement:
+          - "@type": ListItem
+            position: 1
+            name: DefComs
+            item: https://defcoms.eu/
+          - "@type": ListItem
+            position: 2
+            name: Доклади, Изследвания и Анализи за Киберсигурност
+            item: https://defcoms.eu/resources/reports
+headExtra: |-
+  <style>
+          .page-hero {
+              padding: 160px 24px 80px;
+              background: radial-gradient(circle at 50% 20%, rgba(0, 240, 255, 0.12) 0%, transparent 60%),
+                          radial-gradient(circle at 80% 80%, rgba(0, 102, 255, 0.1) 0%, transparent 50%),
+                          var(--background-dark);
+              text-align: center;
+          }
+          .page-hero-inner { max-width: 900px; margin: 0 auto; }
+          .page-hero h1 { font-size: clamp(2.3rem, 4.5vw, 3.6rem); margin-bottom: 20px; line-height: 1.15; }
+          .page-hero p { font-size: 1.18rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 30px; }
+          .grid-section { padding: 80px 24px; max-width: 1200px; margin: 0 auto; }
+          .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 40px; }
+          .report-card {
+              background: var(--background-card);
+              border: 1px solid var(--border-color);
+              border-radius: var(--radius-lg);
+              padding: 32px;
+              display: flex; flex-direction: column;
+              transition: transform 0.3s ease, border-color 0.3s ease;
+          }
+          .report-card:hover { transform: translateY(-5px); border-color: var(--primary-cyan); }
+          .report-card h3 { font-size: 1.35rem; color: var(--text-primary); margin-bottom: 14px; }
+          .report-card p { color: var(--text-secondary); line-height: 1.65; font-size: 0.98rem; margin-bottom: 20px; flex: 1; }
+      </style>
+bodyClass: service-landing
+---
+<main>
+        <section class="page-hero">
+            <div class="page-hero-inner">
+                <nav aria-label="Навигационна пътека"><a href="/">Начало</a> › <span>Ресурси</span> › <span aria-current="page">Доклади &amp; Проучвания</span></nav>
+                <h1>Доклади и Проучвания за Киберсигурност</h1>
+                <p>Официални годишни анализи, изследвания на заплахите и проучвания за нивата на подготвеност на българските компании.</p>
+            </div>
+        </section>
+
+        <section class="grid-section">
+            <div class="cards-grid">
+                <div class="report-card">
+                    <h3>Състояние на Киберсигурността в Българския Бизнес 2026</h3>
+                    <p>Подробен доклад за готовността за NIS2/DORA, честата употреба на EDR и предизвикателствата пред SOC екипите в България.</p>
+                    <a href="/resources/reports/state-of-cybersecurity-bulgaria-2026" class="btn btn-secondary">Разгледайте пълния доклад →</a>
+                </div>
+            </div>
+        </section>
+    </main>

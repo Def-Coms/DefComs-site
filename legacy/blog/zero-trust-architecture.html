@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zero Trust Architecture: компоненти по NIST | DefComs</title>
+    <meta name="description" content="Как е устроена Zero Trust Architecture по NIST SP 800-207: Policy Engine, Policy Administrator, Policy Enforcement Point, данни за доверие и примерен поток за достъп.">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <link rel="canonical" href="https://defcoms.eu/blog/zero-trust-architecture.html">
+    <link rel="alternate" hreflang="bg" href="https://defcoms.eu/blog/zero-trust-architecture.html">
+    <link rel="alternate" hreflang="x-default" href="https://defcoms.eu/blog/zero-trust-architecture.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="bg_BG">
+    <meta property="og:site_name" content="DefComs">
+    <meta property="og:url" content="https://defcoms.eu/blog/zero-trust-architecture.html">
+    <meta property="og:title" content="Zero Trust Architecture: компоненти и access flow по NIST | DefComs">
+    <meta property="og:description" content="Преглед на логическите роли Policy Engine, Policy Administrator и Policy Enforcement Point и на данните, които могат да участват в решение за достъп.">
+    <meta property="og:image" content="https://defcoms.eu/images/Webp/Киберсигурност_за_модерния_бизнес.webp">
+    <meta property="og:image:alt" content="Защита на потребители, устройства и ресурси в Zero Trust архитектура">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Zero Trust Architecture по NIST | DefComs">
+    <meta name="twitter:description" content="Как Policy Engine, Policy Administrator и Policy Enforcement Point участват в архитектурния модел.">
+    <meta name="twitter:image" content="https://defcoms.eu/images/Webp/Киберсигурност_за_модерния_бизнес.webp">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../images/Logos/DefComs-logo.svg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        { "@type": "Organization", "@id": "https://defcoms.eu/#organization", "name": "DefComs", "url": "https://defcoms.eu/" },
+        { "@type": "WebSite", "@id": "https://defcoms.eu/#website", "url": "https://defcoms.eu/", "name": "DefComs", "publisher": { "@id": "https://defcoms.eu/#organization" }, "inLanguage": "bg" },
+        {
+          "@type": "WebPage",
+          "@id": "https://defcoms.eu/blog/zero-trust-architecture.html#webpage",
+          "url": "https://defcoms.eu/blog/zero-trust-architecture.html",
+          "name": "Zero Trust Architecture: компоненти и access flow по NIST",
+          "inLanguage": "bg",
+          "isPartOf": { "@id": "https://defcoms.eu/#website" },
+          "breadcrumb": { "@id": "https://defcoms.eu/blog/zero-trust-architecture.html#breadcrumb" },
+          "mainEntity": { "@id": "https://defcoms.eu/blog/zero-trust-architecture.html#article" }
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://defcoms.eu/blog/zero-trust-architecture.html#article",
+          "headline": "Zero Trust Architecture: логически компоненти и поток на достъп",
+          "description": "Обяснява NIST Zero Trust Architecture логическите роли Policy Engine, Policy Administrator и Policy Enforcement Point, данните за оценка и примерния поток на заявка към ресурс.",
+          "image": "https://defcoms.eu/images/Webp/Киберсигурност_за_модерния_бизнес.webp",
+          "datePublished": "2026-10-09",
+          "dateModified": "2026-10-09",
+          "inLanguage": "bg",
+          "mainEntityOfPage": { "@id": "https://defcoms.eu/blog/zero-trust-architecture.html#webpage" },
+          "author": { "@type": "Person", "@id": "https://defcoms.eu/about/team/author/alexander-petrov.html", "name": "Инж. Александър Петров", "jobTitle": "Lead Cyber Security Architect", "url": "https://defcoms.eu/about/team/author/alexander-petrov.html" },
+          "publisher": { "@id": "https://defcoms.eu/#organization" },
+          "citation": [
+            "https://csrc.nist.gov/pubs/sp/800/207/final",
+            "https://csrc.nist.gov/pubs/sp/800/207/a/final"
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://defcoms.eu/blog/zero-trust-architecture.html#faq",
+          "mainEntity": [
+            { "@type": "Question", "name": "Какво прави Policy Engine?", "acceptedAnswer": { "@type": "Answer", "text": "Policy Engine оценява заявката спрямо политиката и наличната информация за субекта, ресурса и контекста и решава дали достъпът да бъде разрешен, отказан или отнет." } },
+            { "@type": "Question", "name": "Policy Engine, Policy Administrator и PEP отделни продукти ли са?", "acceptedAnswer": { "@type": "Answer", "text": "Не задължително. В NIST SP 800-207 това са логически компоненти/функции; реализацията им може да е разпределена между различни услуги и технологии." } },
+            { "@type": "Question", "name": "Какво представлява Policy Enforcement Point?", "acceptedAnswer": { "@type": "Answer", "text": "PEP е точката, която посредничи между субекта и ресурса и прилага решението за достъп, включително поддържане или прекратяване на връзката според политиката." } },
+            { "@type": "Question", "name": "Нужна ли е микросегментация за всяка Zero Trust архитектура?", "acceptedAnswer": { "@type": "Answer", "text": "Не като единствена или универсална реализация. Сегментацията може да е един контрол, но архитектурата трябва да се съобрази с ресурсите, риска, наличната telemetry и техническите ограничения." } }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://defcoms.eu/blog/zero-trust-architecture.html#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Начало", "item": "https://defcoms.eu/" },
+            { "@type": "ListItem", "position": 2, "name": "Блог", "item": "https://defcoms.eu/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "Zero Trust Architecture", "item": "https://defcoms.eu/blog/zero-trust-architecture.html" }
+          ]
+        }
+      ]
+    }
+    </script>
+    <style>
+        .blog-article { max-width: 860px; margin: 0 auto; padding: 150px 24px 80px; }
+        .blog-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: 28px; }
+        .blog-breadcrumbs a { color: var(--secondary-cyan); }
+        .blog-kicker { color: var(--secondary-cyan); text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+        .blog-article h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.12; margin: 12px 0 20px; }
+        .blog-deck { color: var(--text-secondary); font-size: 1.2rem; line-height: 1.7; }
+        .blog-meta { color: var(--text-secondary); font-size: var(--font-size-sm); margin: 22px 0; }
+        .blog-hero-image { width: 100%; max-height: 460px; object-fit: cover; border-radius: var(--radius-lg); margin: 16px 0 32px; }
+        .blog-article h2 { margin-top: 42px; }
+        .blog-article p, .blog-article li { color: var(--text-secondary); line-height: 1.8; }
+        .blog-article ul, .blog-article ol { padding-left: 24px; }
+        .blog-callout { border-left: 3px solid var(--secondary-cyan); background: var(--background-card); padding: 18px 22px; border-radius: var(--radius-md); }
+        .blog-table-wrap { overflow-x: auto; margin: 24px 0; }
+        .blog-article table { width: 100%; border-collapse: collapse; min-width: 620px; }
+        .blog-article th, .blog-article td { padding: 14px; border: 1px solid var(--border-color); text-align: left; vertical-align: top; color: var(--text-secondary); line-height: 1.65; }
+        .blog-article th { color: var(--text-primary); background: var(--background-card); }
+        .blog-related, .blog-source-list { display: grid; gap: 12px; margin: 20px 0; }
+        .blog-related a, .blog-source-list a { color: var(--secondary-cyan); }
+        .blog-source-list li { overflow-wrap: anywhere; }
+        .blog-cta { margin-top: 44px; padding: 24px; background: var(--background-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); }
+    </style>
+</head>
+<body class="service-landing">
+
+    <!-- Header -->
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay"></div>
+
+    <header class="header">
+        <nav class="nav" aria-label="Основна навигация">
+            <div class="nav-container">
+                <a href="../index.html" class="logo">
+                    <img src="../images/Logos/DefComs-logo.svg" alt="DefComs">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Начало</a></li>
+                    <li><a href="../about/index.html">За нас</a></li>
+                    <li><a href="../services/index.html">Услуги</a></li>
+                    <li><a href="../compliance/index.html">Регулации</a></li>
+                    <li><a href="../cybersecurity-os/index.html">Cybersecurity OS</a></li>
+                    <li><a href="../wizard.html">NIS2 &amp; DORA Оценка</a></li>
+                    <li><a href="../spravochnik.html">Справочник</a></li>
+                    <li><a href="index.html">Блог</a></li>
+                    <li><a href="../contact/index.html">Контакти</a></li>
+                    <li class="mobile-only"><a href="../contact/index.html" class="mobile-cta">Свържете се с нас</a></li>
+                </ul>
+                <a href="../contact/index.html" class="cta-button">Свържете се с нас</a>
+                <button class="hamburger" type="button" aria-label="Отвори меню" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+
+    <main class="blog-article">
+        <nav class="blog-breadcrumbs" aria-label="Навигационна пътека">
+            <a href="../index.html">Начало</a><span aria-hidden="true">›</span>
+            <a href="index.html">Блог</a><span aria-hidden="true">›</span>
+            <span aria-current="page"><a href="../resources/glossary/zero-trust/">Zero Trust</a> Architecture</span>
+        </nav>
+        <article>
+            <p class="blog-kicker">Zero Trust · NIST SP 800-207 · Архитектура</p>
+            <h1>Zero Trust Architecture: компоненти и поток на достъп</h1>
+            <p class="blog-deck">Zero Trust Architecture (ZTA) превръща принципите на Zero Trust в логически модел за защита на ресурси. В NIST SP 800-207 основните access decision функции са Policy Engine (PE) и Policy Administrator (PA), които заедно формират Policy Decision Point (PDP), и Policy Enforcement Point (PEP), който посредничи между субекта и ресурса и прилага решението.</p>
+            <p class="blog-meta">Автор: <a href="../about/team/author/alexander-petrov.html" style="color: var(--secondary-cyan);">Инж. Александър Петров</a> · Публикувано: <time datetime="2026-10-09">9 октомври 2026 г.</time> · Обновено: <time datetime="2026-10-09">9 октомври 2026 г.</time></p>
+            <img class="blog-hero-image" src="../images/Webp/Киберсигурност_за_модерния_бизнес.webp" alt="Визуална схема на потребители, устройства и защитени ресурси в Zero Trust среда" width="1200" height="675" fetchpriority="high">
+            <p class="blog-legal-notice" style="border-left:4px solid #f0a500;background:rgba(240,165,0,.08);padding:16px 20px;border-radius:8px;margin:24px 0;font-size:.95rem;line-height:1.6;"><strong>⚠️ Важна бележка:</strong> Тази публикация е с информационна и образователна цел и <strong>не представлява юридическо или правно тълкуване</strong> на приложимото законодателство. Обстоятелствата варират, а нормативните изисквания се променят. При конкретен казус се консултирайте с квалифициран юрист.</p>
+
+            <p class="blog-callout"><strong>Кратко:</strong> субектът отправя заявка към ресурс; PEP я посредничи; PDP оценява заявката спрямо политика и налични сигнали; PA комуникира и изпълнява разрешението или отказа чрез PEP. Това са логически роли от NIST модела, а не задължително три отделни физически системи или продукта.</p>
+
+            <h2>Логическите компоненти по NIST SP 800-207</h2>
+            <div class="blog-table-wrap">
+                <table>
+                    <thead><tr><th>Компонент</th><th>Роля</th><th>Практическа реализация</th></tr></thead>
+                    <tbody>
+                        <tr><th>Policy Engine (PE)</th><td>Взема решението да разреши, откаже или отнеме достъп според политиката и текущата оценка на заявката.</td><td>Функция за policy decision, която използва identity, device posture, ресурсна политика и други достъпни сигнали.</td></tr>
+                        <tr><th>Policy Administrator (PA)</th><td>Изпълнява решението на PE и координира конфигурирането или прекратяването на пътя за достъп през PEP.</td><td>Оркестрационна/control-plane функция, която подава необходимите команди или конфигурация към enforcement точката.</td></tr>
+                        <tr><th>Policy Enforcement Point (PEP)</th><td>Посредничи между субекта и ресурса, позволява или блокира комуникацията и прилага последващи промени в достъпа.</td><td>Може да бъде gateway, proxy, endpoint/network enforcement функция или друга точка според избраната архитектура.</td></tr>
+                        <tr><th>Policy Decision Point (PDP)</th><td>Съвкупността от PE и PA: логическото вземане и изпълнение на решение за достъп.</td><td>Може да е реализирана чрез интегрирани или разпределени системи; терминът обозначава функцията в архитектурата.</td></tr>
+                        <tr><th>Subject и resource</th><td>Субектът (потребител, устройство или workload) и защитаваният ресурс (данни, приложение, услуга).</td><td>Трябва да бъдат идентифицирани, описани и обвързани с конкретни права и собственици.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Поток на една заявка за достъп</h2>
+            <ol>
+                <li><strong>Субектът заявява достъп.</strong> Например потребител или workload иска конкретно действие върху определено приложение или данни.</li>
+                <li><strong>PEP посредничи.</strong> Заявката минава през enforcement point, който може да поиска или предаде необходимия контекст.</li>
+                <li><strong>Събират се наличните сигнали.</strong> В зависимост от дизайна това може да включва identity и authentication резултати, устройство, ресурс, политики, activity logs, <a href="../resources/glossary/cti/">threat intelligence</a> или състояние на контролите.</li>
+                <li><strong>PE оценява политиката.</strong> Решението е за конкретна заявка и контекст: разрешение, отказ или прекратяване/преоценка на достъпа.</li>
+                <li><strong>PA координира изпълнението.</strong> Комуникира решението към PEP и подпомага setup или teardown на защитения access path.</li>
+                <li><strong>PEP прилага и записва резултата.</strong> Достъпът се предоставя в договорените граници; telemetry и промени в контекста могат да задействат последваща оценка според политиката.</li>
+            </ol>
+            <p>Това е обобщен поток, не предписание за синхронно извикване на отделни сървъри при всяко действие. Разпределението на функции, latency изискванията, availability и fail-safe поведението се проектират според системите и риска.</p>
+
+            <h2>Кои сигнали могат да участват в решението?</h2>
+            <p>Policy Engine има нужда от източници на информация, за да приложи политика към реален контекст. NIST SP 800-207 разглежда източници като identity management, данни за състоянието на активи и конфигурации, threat intelligence, network/system activity logs, data access policies и enterprise PKI. Наличието и качеството на тези сигнали влияе върху това какви решения архитектурата може да взема.</p>
+            <ul>
+                <li><strong>Identity:</strong> потребител/workload, authentication strength, роля и актуални привилегии.</li>
+                <li><strong>Устройство:</strong> ownership/management, posture, конфигурация и поддържани security controls.</li>
+                <li><strong>Ресурс:</strong> класификация, owner, критичност, зависимости и допустими действия.</li>
+                <li><strong>Контекст:</strong> заявено действие, сесия, време и други рискови сигнали, ако средата ги поддържа.</li>
+                <li><strong>Telemetry:</strong> логове и сигнали за последваща оценка, одит и incident investigation.</li>
+            </ul>
+            <p>Не всеки внедрен Zero Trust модел има еднакъв набор или качество на сигналите. Политиката трябва да описва какво се случва при липсваща или остаряла информация, а не да приема, че telemetry винаги е пълна.</p>
+
+            <h2>Как архитектурните функции се свързват с контролите?</h2>
+            <div class="blog-table-wrap">
+                <table>
+                    <thead><tr><th>Област</th><th>Какво осигурява</th><th>Архитектурен въпрос</th></tr></thead>
+                    <tbody>
+                        <tr><th>Identity and access management</th><td>Потребители, workload identities, authentication, роли и lifecycle.</td><td>Кой е субектът и как системата получава актуалните му права?</td></tr>
+                        <tr><th>Device/workload posture</th><td>Signals за състояние и управление на device или workload.</td><td>Кой компонент оценява сигнала и какво действие може да задейства?</td></tr>
+                        <tr><th>Policy decision</th><td>Обединява политиката и достъпния контекст за конкретна заявка.</td><td>Кой owner одобрява политиката, изключенията и промените?</td></tr>
+                        <tr><th>Enforcement</th><td>PEP прилага разрешения/откази на пътя към конкретния ресурс.</td><td>Къде се намират enforcement points и как се избягва незащитен обходен път?</td></tr>
+                        <tr><th>Monitoring and telemetry</th><td>Записва решения, промени и подозрителна активност за наблюдение и преглед.</td><td>Как се открива загуба на логове, drift или неработещо policy enforcement?</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Един модел, различни реализации</h2>
+            <p>NIST SP 800-207 представя архитектурни функции и примерни deployment подходи; не изисква една конкретна продуктова топология. Организация може да реализира политиките чрез комбинация от identity services, access gateways/proxies, endpoint controls, network segmentation, cloud controls и telemetry systems. При cloud-native и multi-cloud приложения SP 800-207A разглежда допълнителен модел за access control, включително identity-tier и network-tier политики.</p>
+            <p>Важно е логическите роли да са покрити, независимо как се разпределят между продуктите. При избор сравнявайте не само feature списъци, а resource coverage, сигнали, интеграции, policy ownership, availability, logging, управление на изключения и начина за безопасна промяна или възстановяване при отказ.</p>
+
+            <h2>Архитектурни решения, които си струва да се документират</h2>
+            <ul>
+                <li>Кои ресурси и access paths са в първоначалния обхват и как ще се добавят след това.</li>
+                <li>Кои системи са trust-information sources и как се проверяват freshness, integrity и availability на данните.</li>
+                <li>Къде са PE, PA и PEP функциите и какво е тяхното поведение при outage или загубена връзка.</li>
+                <li>Как се дефинират policy owners, одобренията, time-bound exceptions и emergency access.</li>
+                <li>Кои логове и метрики потвърждават, че решенията се прилагат и могат да бъдат разследвани.</li>
+                <li>Как архитектурата се тества с легитимни потребители, администраторски задачи и критични service dependencies.</li>
+            </ul>
+
+            <h2>Често задавани въпроси</h2>
+            <h3>Какво прави Policy Engine?</h3>
+            <p>PE оценява заявката спрямо политиката и наличната информация за субекта, ресурса и контекста и решава дали достъпът да бъде разрешен, отказан или отнет.</p>
+            <h3>Policy Engine, Policy Administrator и PEP отделни продукти ли са?</h3>
+            <p>Не задължително. В NIST SP 800-207 това са логически компоненти/функции; реализацията им може да бъде разпределена между различни услуги и технологии.</p>
+            <h3>Какво представлява Policy Enforcement Point?</h3>
+            <p>PEP е точката, която посредничи между субекта и ресурса и прилага решението за достъп, включително поддържане или прекратяване на връзката според политиката.</p>
+            <h3>Нужна ли е микросегментация за всяка Zero Trust архитектура?</h3>
+            <p>Не като единствена или универсална реализация. Сегментацията може да е един контрол, но архитектурата се съобразява с ресурсите, риска, наличната telemetry и техническите ограничения.</p>
+
+            <h2>Свързани ресурси</h2>
+            <ul class="blog-related">
+                <li><a href="nist-sp-800-207.html">NIST SP 800-207: Zero Trust Architecture обяснена</a></li>
+                <li><a href="zero-trust-implementation.html">Zero Trust implementation: поетапен план за внедряване</a></li>
+                <li><a href="what-is-zero-trust.html">Какво е Zero Trust? Принципи и практическо приложение</a></li>
+                <li><a href="zero-trust-network.html">Zero Trust Network: мрежова сегментация и достъп до ресурси</a></li>
+                <li><a href="../services/zero-trust/index.html">Zero Trust архитектура и внедряване на DefComs</a></li>
+                <li><a href="../services/edr-xdr/index.html">Endpoint Security и EDR</a></li>
+                <li><a href="../services/cloud-security/index.html">Cloud Security услуги</a></li>
+            </ul>
+
+            <h2>Официални източници</h2>
+            <ul class="blog-source-list">
+                <li><a href="https://csrc.nist.gov/pubs/sp/800/207/final" target="_blank" rel="noopener noreferrer">NIST SP 800-207 — Zero Trust Architecture</a></li>
+                <li><a href="https://csrc.nist.gov/pubs/sp/800/207/a/final" target="_blank" rel="noopener noreferrer">NIST SP 800-207A — Zero Trust access control for cloud-native, multi-cloud applications</a></li>
+            </ul>
+
+            <aside class="blog-cta">
+                <h2>Картографирайте access decision и enforcement точките</h2>
+                <p>Започнете от критичен ресурс, неговите потребители и workloads, политиките и наличната telemetry.</p>
+                <a class="btn btn-primary" href="../services/zero-trust/index.html">Zero Trust архитектура</a>
+                <a class="btn btn-secondary" href="../index.html#contact">Заявете анализ</a>
+            </aside>
+        </article>
+    </main>
+        <!-- Footer -->
+
+    <script src="../script.js" defer></script>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="../images/Logos/DefComs-logo.svg" alt="DefComs" class="footer-logo" loading="lazy">
+                    <p>Вашият високотехнологичен партньор в киберсигурността. Предотвратяване, засичане и бърза неутрализация на съвременните заплахи.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Услуги</h3>
+                    <ul>
+                        <li><a href="../services/soc-monitoring/index.html">SOC Мониторинг 24/7</a></li>
+                        <li><a href="../services/noc-services/index.html">NOC Управление</a></li>
+                        <li><a href="../services/corporate-training/index.html">Обучения за фирми</a></li>
+                        <li><a href="../services/penetration-testing/index.html">Penetration Testing</a></li>
+                        <li><a href="../compliance/nis2/index.html">GDPR/NIS2/DORA Съответствие</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Ресурси</h3>
+                    <ul>
+                        <li><a href="../spravochnik.html">Регулаторен Хъб</a></li>
+                        <li><a href="../cybersecurity-os/index.html">Cybersecurity OS</a></li>
+                        <li><a href="../blog/index.html">Статии &amp; Блог</a></li>
+                        <li><a href="../about/index.html">За Нас</a></li>
+                        <li><a href="../bulgaria/index.html">Покритие в България</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Правна рамка</h3>
+                    <ul>
+                        <li><a href="../compliance/nis2/index.html">Регулация NIS2</a></li>
+                        <li><a href="../compliance/gdpr/index.html">Регламент GDPR</a></li>
+                        <li><a href="../compliance/iso-27001/index.html">Стандарт ISO 27001</a></li>
+                        <li><a href="../index.html#contact">Контакти</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DefComs. Всички права запазени.</p>
+                <div class="footer-bottom-links">
+                    <a href="../terms.html">Условия за ползване</a>
+                    <a href="../privacy.html">Защита на данни</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../chat-widget.js"></script>
+</body>
+</html>

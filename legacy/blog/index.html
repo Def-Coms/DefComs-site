@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блог за киберсигурност и защита на бизнеса | DefComs</title>
+    <meta name="description" content="Практически ръководства за киберсигурност, SOC, NIS2/DORA, IT/OT защита, мрежи и реакция при инциденти от екипа на DefComs.">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <link rel="canonical" href="https://defcoms.eu/blog/">
+    <link rel="alternate" hreflang="bg" href="https://defcoms.eu/blog/">
+    <link rel="alternate" hreflang="x-default" href="https://defcoms.eu/blog/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="bg_BG">
+    <meta property="og:site_name" content="DefComs">
+    <meta property="og:url" content="https://defcoms.eu/blog/">
+    <meta property="og:title" content="Блог за киберсигурност и защита на бизнеса | DefComs">
+    <meta property="og:description" content="Практически ръководства за киберсигурност, SOC, NIS2/DORA и защита на индустриални среди.">
+    <meta property="og:image" content="https://defcoms.eu/images/PR_image/Киберсигурност_в_индустриалното_производство.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Блог за киберсигурност | DefComs">
+    <meta name="twitter:description" content="Практически ръководства за киберсигурност, SOC и устойчивост на бизнеса.">
+    <meta name="twitter:image" content="https://defcoms.eu/images/PR_image/Киберсигурност_в_индустриалното_производство.webp">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../images/Logos/DefComs-logo.svg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://defcoms.eu/#organization",
+          "name": "DefComs",
+          "url": "https://defcoms.eu/"
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://defcoms.eu/blog/#webpage",
+          "url": "https://defcoms.eu/blog/",
+          "name": "Блог за киберсигурност и защита на бизнеса",
+          "inLanguage": "bg",
+          "breadcrumb": { "@id": "https://defcoms.eu/blog/#breadcrumb" },
+          "mainEntity": { "@id": "https://defcoms.eu/blog/#blog" }
+        },
+        {
+          "@type": "Blog",
+          "@id": "https://defcoms.eu/blog/#blog",
+          "name": "Блог на DefComs за киберсигурност",
+          "url": "https://defcoms.eu/blog/",
+          "inLanguage": "bg",
+                    "author": [{ "@type": "Person", "@id": "https://defcoms.eu/about/team/author/alexander-petrov.html", "name": "Инж. Александър Петров", "jobTitle": "Lead Cyber Security Architect", "url": "https://defcoms.eu/about/team/author/alexander-petrov.html" }, { "@type": "Person", "@id": "https://defcoms.eu/about/team/author/georgi-todorov.html", "name": "Георги Тодоров", "jobTitle": "SOC Operations Manager (24/7)", "url": "https://defcoms.eu/about/team/author/georgi-todorov.html" }, { "@type": "Person", "@id": "https://defcoms.eu/about/team/author/elena-dimitrova.html", "name": "Елена Димитрова", "jobTitle": "Lead Compliance & NIS2/DORA Advisor", "url": "https://defcoms.eu/about/team/author/elena-dimitrova.html" }, { "@type": "Person", "@id": "https://defcoms.eu/about/team/author/mikhail-georgiev.html", "name": "Михаил Георгиев", "jobTitle": "Head of Offensive Security (Pentesting)", "url": "https://defcoms.eu/about/team/author/mikhail-georgiev.html" }],
+          "publisher": { "@id": "https://defcoms.eu/#organization" },
+          "blogPost": [
+            { "@id": "https://defcoms.eu/blog/industrial-cybersecurity-industry-4-0.html#article" },
+            { "@id": "https://defcoms.eu/blog/what-is-nis2.html#article" },
+            { "@id": "https://defcoms.eu/blog/who-is-covered-by-nis2-bulgaria.html#article" },
+            { "@id": "https://defcoms.eu/blog/nis2-requirements.html#article" },
+            { "@id": "https://defcoms.eu/blog/nis2-checklist.html#article" },
+            { "@id": "https://defcoms.eu/blog/nis2-gap-analysis.html#article" },
+            { "@id": "https://defcoms.eu/blog/nis2-risk-assessment.html#article" },
+            { "@id": "https://defcoms.eu/blog/nis2-incident-reporting.html#article" },
+            { "@id": "https://defcoms.eu/blog/nis2-supply-chain-security.html#article" },
+            { "@id": "https://defcoms.eu/blog/nis2-manufacturing.html#article" },
+            { "@id": "https://defcoms.eu/blog/nis2-it-companies.html#article" },
+            { "@id": "https://defcoms.eu/blog/what-is-dora.html#article" },
+            { "@id": "https://defcoms.eu/blog/who-is-covered-by-dora.html#article" },
+            { "@id": "https://defcoms.eu/blog/dora-requirements.html#article" },
+            { "@id": "https://defcoms.eu/blog/dora-ict-risk-management.html#article" },
+            { "@id": "https://defcoms.eu/blog/dora-incident-management.html#article" },
+            { "@id": "https://defcoms.eu/blog/dora-third-party-risk.html#article" },
+            { "@id": "https://defcoms.eu/blog/dora-it-providers.html#article" },
+            { "@id": "https://defcoms.eu/blog/dora-saas-companies.html#article" },
+            { "@id": "https://defcoms.eu/blog/dora-penetration-testing.html#article" },
+            { "@id": "https://defcoms.eu/blog/dora-checklist.html#article" },
+            { "@id": "https://defcoms.eu/blog/what-is-soc.html#article" },
+            { "@id": "https://defcoms.eu/blog/how-soc-monitoring-works.html#article" },
+            { "@id": "https://defcoms.eu/blog/soc-vs-siem.html#article" },
+            { "@id": "https://defcoms.eu/blog/soc-vs-mssp.html#article" },
+            { "@id": "https://defcoms.eu/blog/soc-as-a-service.html#article" },
+            { "@id": "https://defcoms.eu/blog/does-smb-need-soc.html#article" },
+            { "@id": "https://defcoms.eu/blog/how-much-does-soc-cost.html#article" },
+            { "@id": "https://defcoms.eu/blog/what-does-soc-monitor.html#article" },
+            { "@id": "https://defcoms.eu/blog/how-soc-detects-ransomware.html#article" },
+            { "@id": "https://defcoms.eu/blog/soc-and-nis2.html#article" },
+            { "@id": "https://defcoms.eu/blog/what-is-penetration-testing.html#article" },
+            { "@id": "https://defcoms.eu/blog/types-of-penetration-testing.html#article" },
+            { "@id": "https://defcoms.eu/blog/web-application-pentest.html#article" },
+            { "@id": "https://defcoms.eu/blog/api-pentest.html#article" },
+            { "@id": "https://defcoms.eu/blog/network-pentest.html#article" },
+            { "@id": "https://defcoms.eu/blog/external-vs-internal-pentest.html#article" },
+            { "@id": "https://defcoms.eu/blog/cloud-pentest.html#article" },
+            { "@id": "https://defcoms.eu/blog/aws-security.html#article" },
+            { "@id": "https://defcoms.eu/blog/azure-security.html#article" },
+            { "@id": "https://defcoms.eu/blog/cloud-iam.html#article" },
+            { "@id": "https://defcoms.eu/blog/cloud-logging.html#article" },
+            { "@id": "https://defcoms.eu/blog/cloud-incident-response.html#article" },
+            { "@id": "https://defcoms.eu/blog/cvss-explained.html#article" },
+            { "@id": "https://defcoms.eu/blog/pentest-report.html#article" },
+            { "@id": "https://defcoms.eu/blog/retesting.html#article" },
+            { "@id": "https://defcoms.eu/blog/what-is-ransomware.html#article" },
+            { "@id": "https://defcoms.eu/blog/how-ransomware-works.html#article" },
+            { "@id": "https://defcoms.eu/blog/how-to-protect-business-from-ransomware.html#article" },
+            { "@id": "https://defcoms.eu/blog/ransomware-backup-strategy.html#article" },
+            { "@id": "https://defcoms.eu/blog/3-2-1-backup.html#article" },
+            { "@id": "https://defcoms.eu/blog/edr-vs-ransomware.html#article" },
+            { "@id": "https://defcoms.eu/blog/soc-vs-ransomware.html#article" },
+            { "@id": "https://defcoms.eu/blog/ransomware-incident-response.html#article" },
+            { "@id": "https://defcoms.eu/blog/ransomware-recovery.html#article" },
+            { "@id": "https://defcoms.eu/blog/ransomware-and-nis2.html#article" },
+            { "@id": "https://defcoms.eu/blog/what-is-edr.html#article" },
+            { "@id": "https://defcoms.eu/blog/what-is-xdr.html#article" },
+            { "@id": "https://defcoms.eu/blog/edr-vs-xdr.html#article" },
+            { "@id": "https://defcoms.eu/blog/edr-vs-antivirus.html#article" },
+            { "@id": "https://defcoms.eu/blog/endpoint-isolation.html#article" },
+            { "@id": "https://defcoms.eu/blog/threat-hunting.html#article" },
+            { "@id": "https://defcoms.eu/blog/edr-and-soc.html#article" },
+            { "@id": "https://defcoms.eu/blog/what-is-zero-trust.html#article" },
+            { "@id": "https://defcoms.eu/blog/zero-trust-architecture.html#article" },
+            { "@id": "https://defcoms.eu/blog/zero-trust-network.html#article" },
+            { "@id": "https://defcoms.eu/blog/zero-trust-vs-vpn.html#article" },
+            { "@id": "https://defcoms.eu/blog/zero-trust-implementation.html#article" },
+            { "@id": "https://defcoms.eu/blog/zero-trust-for-smb.html#article" },
+            { "@id": "https://defcoms.eu/blog/nist-sp-800-207.html#article" }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://defcoms.eu/blog/#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Начало", "item": "https://defcoms.eu/" },
+            { "@type": "ListItem", "position": 2, "name": "Блог", "item": "https://defcoms.eu/blog/" }
+          ]
+        }
+      ]
+    }
+    </script>
+    <style>
+        .blog-index { padding: 150px 24px 80px; }
+        .blog-index-inner { max-width: 1120px; margin: 0 auto; }
+        .blog-index h1 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; }
+        .blog-index-intro { color: var(--text-secondary); max-width: 760px; font-size: 1.15rem; line-height: 1.7; }
+        .blog-listing { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 24px; margin-top: 42px; }
+        .blog-listing-card { display: flex; flex-direction: column; overflow: hidden; border: 1px solid var(--border-color); border-radius: var(--radius-lg); background: var(--background-card); }
+        .blog-listing-card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+        .blog-listing-content { padding: 24px; display: flex; flex-direction: column; flex: 1; }
+        .blog-listing-content p { color: var(--text-secondary); line-height: 1.65; }
+        .blog-listing-content a { color: var(--secondary-cyan); font-weight: 700; margin-top: auto; }
+        .blog-listing-meta { color: var(--text-secondary); font-size: var(--font-size-sm); }
+        .blog-filters { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+        .blog-filter-btn { border: 1px solid var(--border-color); background: var(--background-card); color: var(--text-secondary); padding: 8px 14px; border-radius: 999px; font: inherit; font-size: var(--font-size-sm); cursor: pointer; }
+        .blog-filter-btn.active { color: #050811; background: var(--secondary-cyan); border-color: var(--secondary-cyan); }
+        .blog-results-count { color: var(--text-secondary); font-size: var(--font-size-sm); margin-top: 16px; }
+        .blog-pagination { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 40px; }
+        .blog-pagination button { min-width: 42px; padding: 10px 12px; border: 1px solid var(--border-color); background: var(--background-card); color: var(--text-secondary); border-radius: 8px; font: inherit; cursor: pointer; }
+        .blog-pagination button.active { color: #050811; background: var(--secondary-cyan); border-color: var(--secondary-cyan); }
+        .blog-pagination button[disabled] { opacity: .4; cursor: default; }
+    </style>
+    <script src="blog.js" defer></script>
+</head>
+<body class="service-landing">
+
+    <!-- Header -->
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay"></div>
+
+    <header class="header">
+        <nav class="nav" aria-label="Основна навигация">
+            <div class="nav-container">
+                <a href="../index.html" class="logo">
+                    <img src="../images/Logos/DefComs-logo.svg" alt="DefComs">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Начало</a></li>
+                    <li><a href="../about/index.html">За нас</a></li>
+                    <li><a href="../services/index.html">Услуги</a></li>
+                    <li><a href="../compliance/index.html">Регулации</a></li>
+                    <li><a href="../cybersecurity-os/index.html">Cybersecurity OS</a></li>
+                    <li><a href="../wizard.html">NIS2 &amp; DORA Оценка</a></li>
+                    <li><a href="../spravochnik.html">Справочник</a></li>
+                    <li><a href="index.html">Блог</a></li>
+                    <li><a href="../contact/index.html">Контакти</a></li>
+                    <li class="mobile-only"><a href="../contact/index.html" class="mobile-cta">Свържете се с нас</a></li>
+                </ul>
+                <a href="../contact/index.html" class="cta-button">Свържете се с нас</a>
+                <button class="hamburger" type="button" aria-label="Отвори меню" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+
+    <main class="blog-index">
+        <div class="blog-index-inner">
+            <nav aria-label="Навигационна пътека"><a href="../index.html">Начало</a> &rsaquo; <span aria-current="page">Блог</span></nav>
+            <h1>Практически ръководства по киберсигурност</h1>
+            <p class="blog-index-intro">Материали за управление на киберриска, защитата на свързани производствени среди, регулации и устойчивост на бизнеса. Съдържанието се допълва и актуализира от екипа на DefComs.</p>
+            <div class="blog-filters" id="blogFilters" role="group" aria-label="Филтър по категория">
+                <button class="blog-filter-btn active" type="button" data-cat="" aria-pressed="true">Всички</button>
+            </div>
+            <p class="blog-results-count">Показани <span id="blogShownCount">0</span> от <span id="blogTotalCount">0</span> статии</p>
+            <section class="blog-listing" aria-label="Статии">
+              <article class="blog-listing-card">
+                <a href="cloud-incident-response.html" aria-label="Прочетете: Cloud incident response"><img src="../images/Webp/Incident_Management.webp" alt="Демонстрационен incident management interface, не cloud provider console или реални инцидентни данни" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">Cloud Security · Incident Response · <time datetime="2026-10-10">10 октомври 2026 г.</time></span>
+                  <h2><a href="cloud-incident-response.html">Cloud incident response: как да подготвите и координирате реакцията?</a></h2>
+                  <p>Cloud-specific подготовка, evidence, identity и resource containment, provider escalation и recovery.</p>
+                  <a href="cloud-incident-response.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="cloud-logging.html" aria-label="Прочетете: Cloud logging"><img src="../images/Webp/SIEM_Alert.webp" alt="Демонстрационна таблица с примерни security alerts, не реален SIEM или cloud log archive" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">Cloud Security · Logging · <time datetime="2026-10-10">10 октомври 2026 г.</time></span>
+                  <h2><a href="cloud-logging.html">Cloud logging: как да събирате и използвате логовете?</a></h2>
+                  <p>Сравнение на event coverage, retention, routing, integrity, alerting и разходите при cloud logs.</p>
+                  <a href="cloud-logging.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="cloud-iam.html" aria-label="Прочетете: Cloud IAM"><img src="../images/Webp/Asset-CMDB.webp" alt="Демонстрационен asset inventory interface, не реална cloud IAM конзола" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">Cloud Security · Identity &amp; Access · <time datetime="2026-10-10">10 октомври 2026 г.</time></span>
+                  <h2><a href="cloud-iam.html">Cloud IAM: как да управлявате идентичности и достъп в облака?</a></h2>
+                  <p>Практическа рамка за human/workload identities, роли, credentials, lifecycle и least privilege.</p>
+                  <a href="cloud-iam.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="azure-security.html" aria-label="Прочетете: Azure Security"><img src="../images/Webp/Operation_overview.webp" alt="Илюстративен security operations dashboard; не е Azure portal" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">Cloud Security · Azure · <time datetime="2026-10-10">10 октомври 2026 г.</time></span>
+                  <h2><a href="azure-security.html">Azure Security: откъде да започнете защитата на Azure среда?</a></h2>
+                  <p>Практически приоритети за Entra, RBAC, logging, network, data, workloads и incident response.</p>
+                  <a href="azure-security.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="aws-security.html" aria-label="Прочетете: AWS Security"><img src="../images/Webp/AWS_AIM_Auditor.webp" alt="Илюстративен интерфейс за AWS S3 security audit с проверки за публичен достъп и CORS" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">Cloud Security · AWS · <time datetime="2026-10-10">10 октомври 2026 г.</time></span>
+                  <h2><a href="aws-security.html">AWS Security: откъде да започнете защитата на AWS среда?</a></h2>
+                  <p>Практически приоритети за <a href="../resources/glossary/iam/">IAM</a>, CloudTrail, мрежа, S3, workloads и incident response.</p>
+                  <a href="aws-security.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="edr-and-soc.html" aria-label="Прочетете: EDR и SOC"><img src="../images/Webp/Киберсигурност_4.0__Инструменти_и_стратегии.webp" alt="Илюстративен incident management интерфейс за проследяване на сигнали и случаи" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">Endpoint Security · <a href="../resources/glossary/soc/">SOC</a> · <time datetime="2026-10-10">10 октомври 2026 г.</time></span>
+                  <h2><a href="edr-and-soc.html">EDR и SOC: как работят заедно?</a></h2>
+                  <p>От endpoint alert до triage и ескалация: покритие, роли и договорени response правомощия.</p>
+                  <a href="edr-and-soc.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="threat-hunting.html" aria-label="Прочетете: Threat hunting"><img src="../images/Webp/Киберсигурност_за_модерния_бизнес.webp" alt="Анализ на сигнали и заплахи в среда за киберсигурност" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">SOC · <a href="../resources/glossary/threat-hunting/">Threat Hunting</a> · <time datetime="2026-10-10">10 октомври 2026 г.</time></span>
+                  <h2><a href="threat-hunting.html">Threat hunting: какво е и как се провежда?</a></h2>
+                  <p>Практичен цикъл от хипотеза и telemetry до валидиране, ескалация и подобряване на detections.</p>
+                  <a href="threat-hunting.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="endpoint-isolation.html" aria-label="Прочетете: Endpoint isolation"><img src="../images/Webp/Киберсигурност_за_устойчив_бизнес.webp" alt="Координирано containment действие при съмнение за компрометирано устройство" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">Endpoint Security · Incident Response · <time datetime="2026-10-09">9 октомври 2026 г.</time></span>
+                  <h2><a href="endpoint-isolation.html">Endpoint isolation: кога и как се изолира устройство?</a></h2>
+                  <p>Containment на endpoint с оценка на бизнес въздействието, evidence, одобрения и условия за връщане.</p>
+                  <a href="endpoint-isolation.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="edr-vs-antivirus.html" aria-label="Прочетете: EDR vs Antivirus"><img src="../images/Webp/Киберсигурност_4.0__Пътна_карта.webp" alt="Слоеве за защита на крайни устройства и устойчивост на бизнеса" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">Endpoint Security · Antivirus · <time datetime="2026-10-09">9 октомври 2026 г.</time></span>
+                  <h2><a href="edr-vs-antivirus.html">EDR vs Antivirus: каква е разликата и може ли EDR да замени антивируса?</a></h2>
+                  <p>Сравнение на prevention, endpoint telemetry, разследване и response без фалшивото противопоставяне на функциите.</p>
+                  <a href="edr-vs-antivirus.html">Прочетете сравнението →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="edr-vs-xdr.html" aria-label="Прочетете: EDR vs XDR"><img src="../images/PR_image/Киберсигурност_за_бизнес_оцеляване.webp" alt="Сравнение на endpoint защита и интегриран security monitoring" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">Endpoint Security · <a href="../resources/glossary/xdr/">XDR</a> · <time datetime="2026-10-09">9 октомври 2026 г.</time></span>
+                  <h2><a href="edr-vs-xdr.html">EDR vs XDR: каква е разликата и кое ви е нужно?</a></h2>
+                  <p>Сравнение на telemetry, покритие, корелация, response и оперативните условия за избор.</p>
+                  <a href="edr-vs-xdr.html">Прочетете сравнението →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="what-is-xdr.html" aria-label="Прочетете: Какво е XDR?"><img src="../images/PR_image/Киберсигурността__Щит_на_модерния_бизнес.webp" alt="Свързване на контроли и сигнали от различни области на киберсигурността" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">SOC · XDR · <time datetime="2026-10-09">9 октомври 2026 г.</time></span>
+                  <h2><a href="what-is-xdr.html">Какво е XDR (Extended Detection and Response)?</a></h2>
+                  <p>Как XDR свързва сигнали от различни security домейни и как да оценим реалното покритие и response процеса.</p>
+                  <a href="what-is-xdr.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="what-is-edr.html" aria-label="Прочетете: Какво е EDR?"><img src="../images/PR_image/Киберсигурност_4.0__Инструменти_и_стратегии.webp" alt="Мониторинг и анализ на сигнали от крайни устройства" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">Endpoint Security · <a href="../resources/glossary/edr/">EDR</a> · <time datetime="2026-10-09">9 октомври 2026 г.</time></span>
+                  <h2><a href="what-is-edr.html">Какво е EDR (Endpoint Detection and Response)?</a></h2>
+                  <p>Как endpoint telemetry подпомага detection, разследването и реакцията и какви са ограниченията на EDR.</p>
+                  <a href="what-is-edr.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="zero-trust-for-smb.html" aria-label="Прочетете: Zero Trust за SMB"><img src="../images/PR_image/Стратегия_за_съвременна_киберсигурност.webp" alt="Поетапна защита на бизнес ресурси с Zero Trust" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta"><a href="../resources/glossary/zero-trust/">Zero Trust</a> · SMB · <time datetime="2026-10-09">9 октомври 2026 г.</time></span>
+                  <h2><a href="zero-trust-for-smb.html">Zero Trust за SMB: откъде да започне малкият бизнес?</a></h2>
+                  <p>Практични първи стъпки за идентичности, приложения, устройства, мрежови пътища и наблюдение.</p>
+                  <a href="zero-trust-for-smb.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="nist-sp-800-207.html" aria-label="Прочетете: NIST SP 800-207"><img src="../images/PR_image/Киберсигурност_в_индустриалното_производство.webp" alt="Zero Trust защита на потребители, активи и ресурси" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">Zero Trust · NIST SP 800-207 · <time datetime="2026-10-09">9 октомври 2026 г.</time></span>
+                  <h2><a href="nist-sp-800-207.html">NIST SP 800-207: Zero Trust Architecture обяснена</a></h2>
+                  <p>Седемте Zero Trust tenets, обхватът на документа и разликата спрямо SP 800-207A.</p>
+                  <a href="nist-sp-800-207.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="zero-trust-implementation.html" aria-label="Прочетете: Zero Trust implementation"><img src="../images/PR_image/Киберсигурността_като_бизнес_стратегия.webp" alt="Планиране на защитата около бизнес ресурси и достъп" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">Zero Trust · Implementation · <time datetime="2026-10-09">9 октомври 2026 г.</time></span>
+                  <h2><a href="zero-trust-implementation.html">Zero Trust implementation: поетапен план за внедряване</a></h2>
+                  <p>От инвентар и protect surface до пилот, постепенно разширяване и измерване на резултатите.</p>
+                  <a href="zero-trust-implementation.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="zero-trust-vs-vpn.html" aria-label="Прочетете: Zero Trust vs VPN"><img src="../images/PR_image/Protecting_the_Connected_Factory.webp" alt="Сигурен достъп до приложения и бизнес ресурси" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">Zero Trust · VPN · <time datetime="2026-10-09">9 октомври 2026 г.</time></span>
+                  <h2><a href="zero-trust-vs-vpn.html">Zero Trust vs VPN: разлики, избор и съвместна употреба</a></h2>
+                  <p>Сравнение между защитената свързаност и ресурсно-базирания контрол на достъпа, с варианти за съвместна употреба.</p>
+                  <a href="zero-trust-vs-vpn.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="zero-trust-network.html" aria-label="Прочетете: Zero Trust Network"><img src="../images/PR_image/Киберсигурност_в_индустриалната_среда.webp" alt="Zero Trust network контролира достъпа до мрежови ресурси" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">Zero Trust · Network access · <time datetime="2026-10-09">9 октомври 2026 г.</time></span>
+                  <h2><a href="zero-trust-network.html">Zero Trust Network: мрежова сегментация и достъп до ресурси</a></h2>
+                  <p>Как се картографират потоците и прилагат сегментация, enforcement точки и наблюдение.</p>
+                  <a href="zero-trust-network.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="../services/zero-trust/index.html" aria-label="Прочетете: Zero Trust Architecture"><img src="../images/PR_image/Киберсигурност__От_разход_към_инвестиция.webp" alt="Архитектурен модел за достъп до потребители, устройства и ресурси" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">Zero Trust · NIST SP 800-207 · <time datetime="2026-10-09">9 октомври 2026 г.</time></span>
+                  <h2><a href="../services/zero-trust/index.html">Zero Trust Architecture: компоненти и поток на достъп</a></h2>
+                  <p>Как PE, PA и PEP оценяват и прилагат достъп до конкретен ресурс според политика и сигнали.</p>
+                  <a href="../services/zero-trust/index.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="what-is-zero-trust.html" aria-label="Прочетете: Какво е Zero Trust"><img src="../images/SocNoc/dashboard_1.png" alt="Zero Trust като стълб на съвременната киберсигурност" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">Zero Trust · Архитектура · <time datetime="2026-10-09">9 октомври 2026 г.</time></span>
+                  <h2><a href="what-is-zero-trust.html">Какво е Zero Trust? Принципи и практическо приложение</a></h2>
+                  <p>Как се проверяват идентичност, устройство и контекст преди достъп до конкретен ресурс.</p>
+                  <a href="what-is-zero-trust.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="ransomware-and-nis2.html" aria-label="Прочетете: Ransomware и NIS2"><img src="../images/SocNoc/alert_enrichment.webp" alt="Ransomware готовност и NIS2 incident response" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">Ransomware · NIS2 · <time datetime="2026-10-08">8 октомври 2026 г.</time></span>
+                  <h2><a href="ransomware-and-nis2.html">Ransomware и NIS2: как се свързват защитата, реакцията и докладването?</a></h2>
+                  <p>Връзка между governance, мерките по член 21, business continuity и прага за значим инцидент по член 23.</p>
+                  <a href="ransomware-and-nis2.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="ransomware-recovery.html" aria-label="Прочетете: Ransomware recovery"><img src="../images/SocNoc/indicator_1.webp" alt="Безопасно възстановяване на услуги след ransomware" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">Ransomware · Recovery · <time datetime="2026-10-08">8 октомври 2026 г.</time></span>
+                  <h2><a href="ransomware-recovery.html">Ransomware recovery: безопасно възстановяване стъпка по стъпка</a></h2>
+                  <p>Приоритизиране на услуги, clean среда, проверени копия, тестове и контролирано връщане към работа.</p>
+                  <a href="ransomware-recovery.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="ransomware-incident-response.html" aria-label="Прочетете: Ransomware incident response"><img src="../images/SocNoc/Cyber_shield.webp" alt="Координирана реакция при ransomware инцидент" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">Ransomware · Incident Response · <time datetime="2026-10-08">8 октомври 2026 г.</time></span>
+                  <h2><a href="ransomware-incident-response.html">Ransomware incident response: как да координирате реакцията</a></h2>
+                  <p>Рамка за активиране на плана, оценка на обхвата, evidence preservation, containment и recovery handoff.</p>
+                  <a href="ransomware-incident-response.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="soc-vs-ransomware.html" aria-label="Прочетете: SOC срещу ransomware"><img src="../images/SocNoc/noc_2.webp" alt="SOC екип анализира сигнали и координира реакция при ransomware" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">SOC · Ransomware · <time datetime="2026-10-07">7 октомври 2026 г.</time></span>
+                  <h2><a href="soc-vs-ransomware.html">SOC срещу ransomware: как мониторингът подпомага реакцията</a></h2>
+                  <p>Разграничение между мониторинг, EDR, incident response и recovery, с въпроси за обхват, SLA и правомощия.</p>
+                  <a href="soc-vs-ransomware.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="edr-vs-ransomware.html" aria-label="Прочетете: EDR срещу ransomware"><img src="../images/SocNoc/SIEM.webp" alt="EDR наблюдение и реакция при ransomware" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">Endpoint Security · Ransomware · <time datetime="2026-10-07">7 октомври 2026 г.</time></span>
+                  <h2><a href="edr-vs-ransomware.html">EDR срещу ransomware: как помага и къде са границите?</a></h2>
+                  <p>Как endpoint telemetry, поведенческата детекция и containment допълват, но не заменят останалите защити.</p>
+                  <a href="edr-vs-ransomware.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="3-2-1-backup.html" aria-label="Прочетете: 3-2-1 backup"><img src="../images/SocNoc/Dashboard.webp" alt="Три backup копия в различни носители и локации" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">Backup · Ransomware resilience · <time datetime="2026-10-07">7 октомври 2026 г.</time></span>
+                  <h2><a href="3-2-1-backup.html">3-2-1 backup правило: как работи и какво не гарантира</a></h2>
+                  <p>Три копия, два вида носител и едно offsite копие, с caveats за cloud и restore тестове.</p>
+                  <a href="3-2-1-backup.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="ransomware-backup-strategy.html" aria-label="Прочетете: Ransomware backup strategy"><img src="../images/SocNoc/Threats.webp" alt="Защитени backup копия и план за възстановяване" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">Ransomware · Backup · Recovery · <time datetime="2026-10-07">7 октомври 2026 г.</time></span>
+                  <h2><a href="ransomware-backup-strategy.html">Ransomware backup strategy: как да планираме възстановяването?</a></h2>
+                  <p>Обхват, изолиран достъп, recovery цели, retention и реални restore тестове.</p>
+                  <a href="ransomware-backup-strategy.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="how-to-protect-business-from-ransomware.html" aria-label="Прочетете: Как да защитим фирма от ransomware"><img src="../images/SocNoc/UNIFIED OPERATIONS CENTER.webp" alt="Многослойна защита и възстановяване от ransomware" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">Ransomware · Защита · <time datetime="2026-10-07">7 октомври 2026 г.</time></span>
+                  <h2><a href="how-to-protect-business-from-ransomware.html">Как да защитим фирма от ransomware?</a></h2>
+                  <p>Приоритизиран план за идентичности, exposed services, endpoints, сегментация, backup и incident response.</p>
+                  <a href="how-to-protect-business-from-ransomware.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="how-ransomware-works.html" aria-label="Прочетете: Как работи ransomware"><img src="../images/SocNoc/noc.webp" alt="Етапи и защитни прекъсвачи при ransomware инцидент" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">Ransomware · Attack lifecycle · <time datetime="2026-10-07">7 октомври 2026 г.</time></span>
+                  <h2><a href="how-ransomware-works.html">Как работи ransomware? Етапи на една атака</a></h2>
+                  <p>Типичен, но променлив ход от първоначален достъп до въздействие, криптиране или изнудване.</p>
+                  <a href="how-ransomware-works.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="what-is-ransomware.html" aria-label="Прочетете: Какво е ransomware?"><img src="../images/SocNoc/Audit.webp" alt="Ransomware риск и въздействие върху организацията" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">Ransomware · Основи · <time datetime="2026-10-06">6 октомври 2026 г.</time></span>
+                  <h2><a href="what-is-ransomware.html">Какво е ransomware? Криптиране, изнудване и риск за бизнеса</a></h2>
+                  <p>Криптиране, data extortion, double extortion и реалното въздействие върху операциите.</p>
+                  <a href="what-is-ransomware.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="retesting.html" aria-label="Прочетете: Pentest retesting"><img src="../images/SocNoc/incident.webp" alt="Повторна проверка на корекция след penetration test" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">Penetration Testing · Retesting · <time datetime="2026-10-06">6 октомври 2026 г.</time></span>
+                  <h2><a href="retesting.html">Pentest retesting: как се проверява поправена уязвимост?</a></h2>
+                  <p>Scope, потвърждение на корекции, finding статуси, ограничения и evidence.</p>
+                  <a href="retesting.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="pentest-report.html" aria-label="Прочетете: Pentest report"><img src="../images/SocNoc/interface_global_threat_dashboard.webp" alt="Доклад с penetration test находки и препоръки" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">Penetration Testing · Reporting · <time datetime="2026-10-06">6 октомври 2026 г.</time></span>
+                  <h2><a href="pentest-report.html">Pentest report: какво трябва да съдържа докладът?</a></h2>
+                  <p>Структура, evidence, severity, ограничения, remediation и ретест.</p>
+                  <a href="pentest-report.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="cvss-explained.html" aria-label="Прочетете: CVSS 4.0"><img src="../images/Sentinel/Sentinel_ops_center.webp" alt="CVSS 4.0 severity и vulnerability prioritization" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">Penetration Testing · Vulnerability Management · <time datetime="2026-10-06">6 октомври 2026 г.</time></span>
+                  <h2><a href="cvss-explained.html">CVSS 4.0: какво означава оценката на уязвимост?</a></h2>
+                  <p>Metric groups, severity скала, vector string и разликата между техническа severity и бизнес риск.</p>
+                  <a href="cvss-explained.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="cloud-pentest.html" aria-label="Прочетете: Cloud pentest"><img src="../images/Sentinel/Asset_Invertory_soc-noc.webp" alt="Разрешена оценка на cloud среда" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">Penetration Testing · Cloud Security · <time datetime="2026-10-06">6 октомври 2026 г.</time></span>
+                  <h2><a href="cloud-pentest.html">Cloud pentest: как се тества сигурността в облака?</a></h2>
+                  <p>IAM, експозиция, workloads, provider правила, разрешен scope и безопасност.</p>
+                  <a href="cloud-pentest.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="external-vs-internal-pentest.html" aria-label="Прочетете: External vs Internal pentest"><img src="../images/Sentinel/Operation_overview_soc-noc.webp" alt="Сравнение на външна и вътрешна перспектива при pentest" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">Penetration Testing · Scope · <time datetime="2026-10-06">6 октомври 2026 г.</time></span>
+                  <h2><a href="external-vs-internal-pentest.html">External vs Internal pentest: каква е разликата?</a></h2>
+                  <p>Сравнение на тестовата позиция, целите, достъпа, обхвата и правилата за безопасност.</p>
+                  <a href="external-vs-internal-pentest.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="network-pentest.html" aria-label="Прочетете: Network pentest"><img src="../images/Sentinel/Vulnerability_management.webp" alt="Контролиран тест на мрежова инфраструктура" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">Penetration Testing · Network Security · <time datetime="2026-10-06">6 октомври 2026 г.</time></span>
+                  <h2><a href="network-pentest.html">Network pentest: какво проверява тестът на мрежата?</a></h2>
+                  <p>Външни и вътрешни услуги, сегментация, конфигурации, безопасен scope и доклад.</p>
+                  <a href="network-pentest.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="api-pentest.html" aria-label="Прочетете: API pentest"><img src="../images/Sentinel/Sentinel_Modules.webp" alt="API penetration test в предварително одобрен обхват" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">Penetration Testing · API Security · <time datetime="2026-10-06">6 октомври 2026 г.</time></span>
+                  <h2><a href="api-pentest.html">API pentest: какво проверява тестът за сигурност?</a></h2>
+                  <p>Authentication, достъп до обекти и функции, данни, бизнес потоци, resource controls и API inventory.</p>
+                  <a href="api-pentest.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="web-application-pentest.html" aria-label="Прочетете: Web application pentest"><img src="../images/Sentinel/Sentilen_Industrial_cyber_security_platform.webp" alt="Разрешен тест за сигурност на web приложение" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">Penetration Testing · Web · <time datetime="2026-10-06">6 октомври 2026 г.</time></span>
+                  <h2><a href="web-application-pentest.html">Web application pentest: какво проверява тестът?</a></h2>
+                  <p>Scope, authentication, authorization, сесии, бизнес логика, доклад и remediation по OWASP WSTG.</p>
+                  <a href="web-application-pentest.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="types-of-penetration-testing.html" aria-label="Прочетете: Видове penetration testing"><img src="../images/Sentinel/Infrastructure_network.webp" alt="Web, API, network и cloud penetration testing" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">Penetration Testing · Видове · <time datetime="2026-10-06">6 октомври 2026 г.</time></span>
+                  <h2><a href="types-of-penetration-testing.html">Видове penetration testing: как да изберете подходящия тест?</a></h2>
+                  <p>Сравнение по цел и обхват: web, API, network, cloud, mobile, wireless и social-engineering оценки.</p>
+                  <a href="types-of-penetration-testing.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="what-is-penetration-testing.html" aria-label="Прочетете: Какво е penetration testing?"><img src="../images/Persevs/02_Signup_Page_persevs.webp" alt="Разрешен penetration test за откриване и приоритизиране на уязвимости" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">Penetration Testing · Основи · <time datetime="2026-10-06">6 октомври 2026 г.</time></span>
+                  <h2><a href="what-is-penetration-testing.html">Какво е penetration testing и как протича един пентест?</a></h2>
+                  <p>Цели, authorization, scope, правила за ангажиране, доклад, remediation и разлика спрямо vulnerability scan.</p>
+                  <a href="what-is-penetration-testing.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="soc-and-nis2.html" aria-label="Прочетете: SOC и NIS2"><img src="../images/Persevs/04_Reports_Page_Persevs.webp" alt="SOC мониторингът подпомага NIS2 risk management и инцидентната готовност" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">SOC · NIS2 · <time datetime="2026-10-06">6 октомври 2026 г.</time></span>
+                  <h2><a href="soc-and-nis2.html">SOC и NIS2: как мониторингът може да подпомогне изискванията</a></h2>
+                  <p>Връзката между telemetry, инцидентното обработване и риск-мерките по NIS2 — без да представя SOC като задължителен продукт.</p>
+                  <a href="soc-and-nis2.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="how-soc-detects-ransomware.html" aria-label="Прочетете: Как SOC открива ransomware?"><img src="../images/Persevs/perservs.webp" alt="SOC анализира ransomware сигнали от endpoints, identities и мрежа" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">SOC · Ransomware · <time datetime="2026-10-06">6 октомври 2026 г.</time></span>
+                  <h2><a href="how-soc-detects-ransomware.html">Как SOC открива ransomware? Ранни сигнали и реакция</a></h2>
+                  <p>Endpoint, identity, network, backup и cloud сигнали, корелация, триаж и координирана ескалация.</p>
+                  <a href="how-soc-detects-ransomware.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="what-does-soc-monitor.html" aria-label="Прочетете: Какво наблюдава SOC?"><img src="../images/Webp/Екосистема_за_киберсигурност_на_бизнеса.webp" alt="SOC наблюдава логове и сигнали от identity, endpoint, мрежа и cloud системи" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">SOC · Telemetry · <time datetime="2026-10-06">6 октомври 2026 г.</time></span>
+                  <h2><a href="what-does-soc-monitor.html">Какво наблюдава SOC? Системи, логове и сигнали</a></h2>
+                  <p>Identity, endpoint, сървъри, мрежи, cloud, приложения и security logs — в рамките на реалния обхват.</p>
+                  <a href="what-does-soc-monitor.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="how-much-does-soc-cost.html" aria-label="Прочетете: Колко струва SOC?"><img src="../images/Webp/Киберсигурност_и_дигитална_устойчивост.webp" alt="Фактори при бюджетиране на SOC мониторинг услуга" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">SOC · Цена и бюджет · <time datetime="2026-10-06">6 октомври 2026 г.</time></span>
+                  <h2><a href="how-much-does-soc-cost.html">Колко струва SOC? Фактори за цена и бюджетиране</a></h2>
+                  <p>Обхват, telemetry, логове, 24/7 покритие, интеграции, SLA и вътрешно участие.</p>
+                  <a href="how-much-does-soc-cost.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="does-smb-need-soc.html" aria-label="Прочетете: Има ли нужда SMB от SOC?"><img src="../images/Webp/Пълна_защита_за_вашата_киберсигурност.webp" alt="SMB организация оценява риск и необходимост от SOC мониторинг" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">SOC · SMB · <time datetime="2026-10-06">6 октомври 2026 г.</time></span>
+                  <h2><a href="does-smb-need-soc.html">Има ли нужда малкият бизнес от SOC?</a></h2>
+                  <p>Риск-базирани критерии за вътрешна готовност, външен мониторинг и споделен SOC модел.</p>
+                  <a href="does-smb-need-soc.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="soc-as-a-service.html" aria-label="Прочетете: SOC as a Service"><img src="../images/Webp/Команден_център_за_киберсигурност.webp" alt="Външна SOC услуга за наблюдение и реакция при киберинциденти" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">SOC · Managed SOC · <time datetime="2026-10-06">6 октомври 2026 г.</time></span>
+                  <h2><a href="soc-as-a-service.html">SOC as a Service: как работи външният SOC модел?</a></h2>
+                  <p>Модели на доставка, onboarding, 24/7 покритие, SLA, ескалации и споделена отговорност.</p>
+                  <a href="soc-as-a-service.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="soc-vs-mssp.html" aria-label="Прочетете: SOC vs MSSP"><img src="../images/Webp/GAP_анализ_за_NIS2_и_DORA.webp" alt="Вътрешен SOC екип и външен MSSP доставчик на управлявани услуги по сигурност" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">SOC · MSSP · <time datetime="2026-10-06">6 октомври 2026 г.</time></span>
+                  <h2><a href="soc-vs-mssp.html">SOC vs MSSP: разлика, обхват и отговорности</a></h2>
+                  <p>Оперативна функция срещу доставчик: как се припокриват, как могат да се комбинират и какво да проверите в договора.</p>
+                  <a href="soc-vs-mssp.html">Прочетете сравнението →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="soc-vs-siem.html" aria-label="Прочетете: SOC vs SIEM"><img src="../images/Webp/Пътят_към_NIS2_и_DORA–1.webp" alt="SOC екип използва SIEM за анализ на събития по сигурността" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">SOC · SIEM · <time datetime="2026-10-06">6 октомври 2026 г.</time></span>
+                  <h2><a href="soc-vs-siem.html">SOC vs SIEM: разлики и как работят заедно</a></h2>
+                  <p>Оперативен екип срещу лог платформа: роли, резултати, ограничения и споделена работа.</p>
+                  <a href="soc-vs-siem.html">Прочетете сравнението →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="how-soc-monitoring-works.html" aria-label="Прочетете: Как работи SOC мониторингът?"><img src="../images/Webp/Пътна_карта_за_NCM_съответствие.webp" alt="SOC процес от събиране на телеметрия до ескалация и реакция" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">SOC · Работен процес · <time datetime="2026-10-06">6 октомври 2026 г.</time></span>
+                  <h2><a href="how-soc-monitoring-works.html">Как работи SOC мониторингът? От сигнал до координирана реакция</a></h2>
+                  <p>Telemetry, детекция, триаж, разследване, ескалация и последващо подобрение — с ясни граници на отговорност.</p>
+                  <a href="how-soc-monitoring-works.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="what-is-soc.html" aria-label="Прочетете: Какво е SOC?"><img src="../images/Webp/Industry_5.0_Architecture_Overview.webp" alt="Security Operations Center наблюдава и анализира сигнали за киберсигурност" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">SOC · Мониторинг · <time datetime="2026-10-06">6 октомври 2026 г.</time></span>
+                  <h2><a href="what-is-soc.html">Какво е SOC и как помага на бизнеса?</a></h2>
+                  <p>Основните функции на Security Operations Center: наблюдение, анализ, ескалация и координация на реакцията.</p>
+                  <a href="what-is-soc.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="dora-checklist.html" aria-label="Прочетете: DORA checklist"><img src="../images/Webp/Industrial_Color_AI_Architecture_Blueprint.webp" alt="Checklist за оценка и планиране по DORA" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">DORA · Checklist · <time datetime="2026-10-06">6 октомври 2026 г.</time></span>
+                  <h2><a href="dora-checklist.html">DORA checklist: практическа самооценка за финансови организации</a></h2>
+                  <p>Работен списък за приложимост, ICT риск, инциденти, тестване, доставчици и доказателства.</p>
+                  <a href="dora-checklist.html">Отворете checklist-а →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="dora-penetration-testing.html" aria-label="Прочетете: DORA penetration testing и TLPT"><img src="../images/Webp/COBO_Industrial_Data-to-Decision_Pipeline_Overview.webp" alt="DORA тестове за дигитална устойчивост и TLPT" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">DORA · Resilience testing · <time datetime="2026-10-06">6 октомври 2026 г.</time></span>
+                  <h2><a href="dora-penetration-testing.html">DORA penetration testing и TLPT: разлики и изисквания</a></h2>
+                  <p>Какво включва DORA testing programme, за кого важи TLPT и защо не е обикновен пентест.</p>
+                  <a href="dora-penetration-testing.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="dora-saas-companies.html" aria-label="Прочетете: DORA за SaaS компании"><img src="../images/Webp/Industrial_Intelligence_AI_Engine_Diagram.webp" alt="SaaS услуга и DORA изисквания за финансови клиенти" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">DORA · SaaS · <time datetime="2026-10-06">6 октомври 2026 г.</time></span>
+                  <h2><a href="dora-saas-companies.html">DORA за SaaS компании: подготовка за финансови клиенти</a></h2>
+                  <p>Multi-tenant защита, данни и локации, инциденти, подизпълнители, одит и exit готовност.</p>
+                  <a href="dora-saas-companies.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="dora-it-providers.html" aria-label="Прочетете: DORA за IT доставчици"><img src="../images/Webp/Архитектура_на_модерна_IoT_платформа.webp" alt="Подготовка на IT доставчик за DORA изискванията на финансовите клиенти" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">DORA · IT доставчици · <time datetime="2026-10-06">6 октомври 2026 г.</time></span>
+                  <h2><a href="dora-it-providers.html">DORA за IT доставчици: как да се подготвите за изискванията на финансовите клиенти</a></h2>
+                  <p>Договорни контроли, due diligence, одит, инцидентна ескалация, подизпълнители и разграничение от пряк надзор.</p>
+                  <a href="dora-it-providers.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="dora-third-party-risk.html" aria-label="Прочетете: DORA third-party risk"><img src="../images/Webp/pentest-platform-Sentinel.webp" alt="Управление на ICT доставчици и third-party риск по DORA" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">DORA · ICT доставчици · <time datetime="2026-10-06">6 октомври 2026 г.</time></span>
+                  <h2><a href="dora-third-party-risk.html">DORA third-party risk: как да управлявате ICT доставчиците</a></h2>
+                  <p>Due diligence, Register of Information, договорни клаузи, подизпълнение и exit планове.</p>
+                  <a href="dora-third-party-risk.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="dora-incident-management.html" aria-label="Прочетете: DORA incident management"><img src="../images/Webp/ICAP-systems.webp" alt="Управление и докладване на ICT инциденти по DORA" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">DORA · ICT инциденти · <time datetime="2026-10-06">6 октомври 2026 г.</time></span>
+                  <h2><a href="dora-incident-management.html">DORA incident management: управление и докладване на ICT инциденти</a></h2>
+                  <p>Класификация на major инциденти, процес за реакция и срокове за уведомяване по DORA RTS/ITS.</p>
+                  <a href="dora-incident-management.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="dora-ict-risk-management.html" aria-label="Прочетете: DORA ICT risk management"><img src="../images/Webp/ICAP.webp" alt="Управление на ICT риска по DORA" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">DORA · ICT риск · <time datetime="2026-10-06">6 октомври 2026 г.</time></span>
+                  <h2><a href="dora-ict-risk-management.html">DORA ICT риск: рамка за управление и контролни мерки</a></h2>
+                  <p>Управленска отговорност, идентификация на активи, защита, откриване, реакция и възстановяване по DORA и RTS 2024/1774.</p>
+                  <a href="dora-ict-risk-management.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="dora-requirements.html" aria-label="Прочетете: DORA изисквания"><img src="../images/Webp/OMAYA-PR.webp" alt="Карта на основните DORA изисквания за финансови субекти" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">DORA · Изисквания · <time datetime="2026-10-06">6 октомври 2026 г.</time></span>
+                  <h2><a href="dora-requirements.html">DORA изисквания: основни задължения и как да подготвите организацията</a></h2>
+                  <p>Преглед на управлението на ICT риска, инцидентите, тестовете, доставчиците и приложимите доказателства.</p>
+                  <a href="dora-requirements.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="who-is-covered-by-dora.html" aria-label="Прочетете: Кои организации попадат под DORA?"><img src="../images/Webp/RED_HAT_ENTERPRISE_LINUX-RHEL.webp" alt="Проверка на DORA приложимостта към финансови организации" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">DORA · Приложимост · <time datetime="2026-10-06">6 октомври 2026 г.</time></span>
+                  <h2><a href="who-is-covered-by-dora.html">Кои организации попадат под DORA?</a></h2>
+                  <p>Преглед на финансовите субекти по член 2, изключенията и отделния режим за ICT доставчици.</p>
+                  <a href="who-is-covered-by-dora.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="what-is-dora.html" aria-label="Прочетете: Какво е DORA?"><img src="../images/Webp/Еволюция_на_софтуерна_мрежова_платформа.webp" alt="Дигитална оперативна устойчивост във финансовия сектор" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">DORA · Финансов сектор · <time datetime="2026-10-06">6 октомври 2026 г.</time></span>
+                  <h2><a href="what-is-dora.html">Какво е DORA? Регламентът за дигитална оперативна устойчивост</a></h2>
+                  <p>Въведение в DORA, финансовите субекти, ICT риска, инцидентите, тестовете и третите страни.</p>
+                  <a href="what-is-dora.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="nis2-it-companies.html" aria-label="Прочетете: NIS2 за IT компании"><img src="../images/Webp/Софтуер_за_автоматизирано_мрежово_управление.webp" alt="NIS2 и управление на риска в IT компании" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">NIS2 · IT услуги · <time datetime="2026-10-06">6 октомври 2026 г.</time></span>
+                  <h2><a href="nis2-it-companies.html">NIS2 за IT компании: MSP, MSSP и доставчици на услуги</a></h2>
+                  <p>Разграничете определени управлявани и цифрови услуги от общата IT дейност и проверете критериите за обхват.</p>
+                  <a href="nis2-it-companies.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="nis2-manufacturing.html" aria-label="Прочетете: NIS2 за производствени компании"><img src="../images/Webp/Платформа_за_сигурност_и_съответствие.webp" alt="Киберсигурност на производствени IT/OT системи" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">NIS2 · Производство · <time datetime="2026-10-05">5 октомври 2026 г.</time></span>
+                  <h2><a href="nis2-manufacturing.html">NIS2 за производствени компании: обхват и OT риск</a></h2>
+                  <p>Проверете производствените дейности в приложение II и свържете приложимия риск с реалните IT/OT процеси.</p>
+                  <a href="nis2-manufacturing.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="nis2-supply-chain-security.html" aria-label="Прочетете: NIS2 и сигурност на веригата на доставки"><img src="../images/Webp/AI-Powered_Industrial_Monitoring_Infographic.webp" alt="Оценка на киберриска във веригата на доставки" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">NIS2 · Веригата на доставки · <time datetime="2026-10-05">5 октомври 2026 г.</time></span>
+                  <h2><a href="nis2-supply-chain-security.html">NIS2 и сигурност на веригата на доставки</a></h2>
+                  <p>Практически подход за критичност на доставчици, достъп, доказателства и текущо управление на риска.</p>
+                  <a href="nis2-supply-chain-security.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="nis2-incident-reporting.html" aria-label="Прочетете: NIS2 докладване на инциденти"><img src="../images/Webp/Киберсигурност_и_автоматизирано_регулаторно_съответствие.webp" alt="Подготовка за докладване на киберинциденти по NIS2" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">NIS2 · Инцидентно докладване · <time datetime="2026-10-05">5 октомври 2026 г.</time></span>
+                  <h2><a href="nis2-incident-reporting.html">NIS2 докладване на инциденти: срокове и подготовка</a></h2>
+                  <p>Критерий за значим инцидент, последователност на уведомяването и предварителна оперативна подготовка.</p>
+                  <a href="nis2-incident-reporting.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="nis2-risk-assessment.html" aria-label="Прочетете: NIS2 risk assessment"><img src="../images/Pen_test_platform/Modular_Security_Testing_Platform_Architecture.webp" alt="Оценка на киберриска и мерки за защита" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">NIS2 · Управление на риска · <time datetime="2026-10-05">5 октомври 2026 г.</time></span>
+                  <h2><a href="nis2-risk-assessment.html">NIS2 risk assessment: как да оцените киберриска стъпка по стъпка</a></h2>
+                  <p>Свържете услуги и активи с риск-сценарии, въздействие, контроли и план за третиране.</p>
+                  <a href="nis2-risk-assessment.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="nis2-gap-analysis.html" aria-label="Прочетете: NIS2 gap analysis"><img src="../images/secure-storage-associate.webp" alt="Анализ на пропуските и планиране на NIS2 мерки" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">NIS2 · Gap analysis · <time datetime="2026-10-05">5 октомври 2026 г.</time></span>
+                  <h2><a href="nis2-gap-analysis.html">NIS2 gap analysis: как да откриете и приоритизирате пропуските</a></h2>
+                  <p>Методика за проверка на обхвата, доказателствата, пропуските и коригиращите действия по NIS2.</p>
+                  <a href="nis2-gap-analysis.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="nis2-checklist.html" aria-label="Отворете NIS2 checklist"><img src="../images/web-traffic-protection-associate.webp" alt="Работен checklist за NIS2 подготовка" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">NIS2 · Checklist · <time datetime="2026-10-05">5 октомври 2026 г.</time></span>
+                  <h2><a href="nis2-checklist.html">NIS2 checklist: практическа самооценка за организации</a></h2>
+                  <p>Работен списък за обхват, управление, риск, инциденти и доказателства — без подвеждащ процент за „съответствие“.</p>
+                  <a href="nis2-checklist.html">Отворете checklist-а →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="nis2-requirements.html" aria-label="Прочетете: NIS2 изисквания"><img src="../images/legacy-system-security-associate.webp" alt="Основни области на NIS2 изискванията за киберсигурност" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">NIS2 · Управление на риска · <time datetime="2026-10-05">5 октомври 2026 г.</time></span>
+                  <h2><a href="nis2-requirements.html">NIS2 изисквания: мерки за киберсигурност и докладване</a></h2>
+                  <p>Обзор на отговорностите на ръководството, член 21 мерките за риск и докладването на значими инциденти по член 23.</p>
+                  <a href="nis2-requirements.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="who-is-covered-by-nis2-bulgaria.html" aria-label="Прочетете: Кои компании в България попадат под NIS2?"><img src="../images/data-transfer-security-associate.webp" alt="Проверка на NIS2 обхвата и управление на киберриска" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">NIS2 · България · <time datetime="2026-10-05">5 октомври 2026 г.</time></span>
+                  <h2><a href="who-is-covered-by-nis2-bulgaria.html">Кои компании в България попадат под NIS2?</a></h2>
+                  <p>Практически ориентир за секторите, размерните критерии, изключенията и проверката на актуалния български статус.</p>
+                  <a href="who-is-covered-by-nis2-bulgaria.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+              <article class="blog-listing-card">
+                <a href="what-is-nis2.html" aria-label="Прочетете: Какво е NIS2?"><img src="../images/Webp/Incident_Management.webp" alt="Управление на киберриска за бизнеса" width="1200" height="675" loading="lazy"></a>
+                <div class="blog-listing-content">
+                  <span class="blog-listing-meta">NIS2 · Регулации · <time datetime="2026-10-05">5 октомври 2026 г.</time></span>
+                  <h2><a href="what-is-nis2.html">Какво е NIS2? Цели, обхват и основни задължения</a></h2>
+                  <p>Въведение в Директива (ЕС) 2022/2555, основните теми за управление на риска и проверката на потенциалната приложимост.</p>
+                  <a href="what-is-nis2.html">Прочетете ръководството →</a>
+                </div>
+              </article>
+                <article class="blog-listing-card">
+                    <a href="industrial-cybersecurity-industry-4-0.html" aria-label="Прочетете: Киберсигурност в индустрията 4.0/5.0"><img src="../images/Webp/SIEM_Alert.webp" alt="Киберсигурност в индустриална производствена среда" width="1200" height="675" loading="lazy"></a>
+                    <div class="blog-listing-content">
+                        <span class="blog-listing-meta">Industrial Cybersecurity · <time datetime="2026-10-04">4 октомври 2026 г.</time></span>
+                        <h2><a href="industrial-cybersecurity-industry-4-0.html">Киберсигурност в индустрията 4.0/5.0: рискове и мерки</a></h2>
+                        <p>Преглед на ключовите рискове в IT/OT среди и на практическите мерки за сегментация, отдалечен достъп, мониторинг и реакция.</p>
+                        <a href="industrial-cybersecurity-industry-4-0.html">Прочетете ръководството →</a>
+                    </div>
+                </article>
+            </section>
+        </div>
+    </main>
+        <!-- Footer -->
+
+    <script src="../script.js" defer></script>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="../images/Logos/DefComs-logo.svg" alt="DefComs" class="footer-logo" loading="lazy">
+                    <p>Вашият високотехнологичен партньор в киберсигурността. Предотвратяване, засичане и бърза неутрализация на съвременните заплахи.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Услуги</h3>
+                    <ul>
+                        <li><a href="../services/soc-monitoring/index.html">SOC Мониторинг 24/7</a></li>
+                        <li><a href="../services/noc-services/index.html">NOC Управление</a></li>
+                        <li><a href="../services/corporate-training/index.html">Обучения за фирми</a></li>
+                        <li><a href="../services/penetration-testing/index.html">Penetration Testing</a></li>
+                        <li><a href="../compliance/nis2/index.html">GDPR/NIS2/DORA Съответствие</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Ресурси</h3>
+                    <ul>
+                        <li><a href="../spravochnik.html">Регулаторен Хъб</a></li>
+                        <li><a href="../cybersecurity-os/index.html">Cybersecurity OS</a></li>
+                        <li><a href="../blog/index.html">Статии &amp; Блог</a></li>
+                        <li><a href="../about/index.html">За Нас</a></li>
+                        <li><a href="../bulgaria/index.html">Покритие в България</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Правна рамка</h3>
+                    <ul>
+                        <li><a href="../compliance/nis2/index.html">Регулация NIS2</a></li>
+                        <li><a href="../compliance/gdpr/index.html">Регламент GDPR</a></li>
+                        <li><a href="../compliance/iso-27001/index.html">Стандарт ISO 27001</a></li>
+                        <li><a href="../index.html#contact">Контакти</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DefComs. Всички права запазени.</p>
+                <div class="footer-bottom-links">
+                    <a href="../terms.html">Условия за ползване</a>
+                    <a href="../privacy.html">Защита на данни</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../chat-widget.js"></script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+---
+lastmod: 2026-10-08
+title: "Ransomware incident response: план за реакция | DefComs"
+description: "Практическа рамка за реакция при ransomware: активиране на плана, оценка на обхвата, запазване на доказателства, координиран containment и преход към recovery."
+ogType: article
+image: https://defcoms.eu/images/PR_image/Киберсигурност_за_бизнес_оцеляване.webp
+imageAlt: План за реакция и възстановяване при ransomware инцидент
+ogDescription: Последователност за координирана реакция при ransomware с акцент върху обхвата, evidence, containment, комуникация и възстановяване.
+twitterDescription: Какво да подготвите и координирате при ransomware инцидент, от първия сигнал до recovery handoff.
+schema:
+  - "@context": https://schema.org
+    "@graph":
+      - "@type": Organization
+        "@id": https://defcoms.eu/#organization
+        name: DefComs
+        url: https://defcoms.eu/
+      - "@type": WebSite
+        "@id": https://defcoms.eu/#website
+        url: https://defcoms.eu/
+        name: DefComs
+        publisher:
+          "@id": https://defcoms.eu/#organization
+        inLanguage: bg
+      - "@type": WebPage
+        "@id": https://defcoms.eu/blog/ransomware-incident-response#webpage
+        url: https://defcoms.eu/blog/ransomware-incident-response
+        name: "Ransomware incident response: план за реакция"
+        inLanguage: bg
+        isPartOf:
+          "@id": https://defcoms.eu/#website
+        breadcrumb:
+          "@id": https://defcoms.eu/blog/ransomware-incident-response#breadcrumb
+        mainEntity:
+          "@id": https://defcoms.eu/blog/ransomware-incident-response#article
+      - "@type": BlogPosting
+        "@id": https://defcoms.eu/blog/ransomware-incident-response#article
+        headline: "Ransomware incident response: как да координирате реакцията"
+        description: Рамка за активиране на incident response план, оценка на ransomware инцидент, запазване на доказателства, containment, уведомяване и recovery handoff.
+        image: https://defcoms.eu/images/PR_image/Киберсигурност_за_бизнес_оцеляване.webp
+        datePublished: 2026-10-08
+        dateModified: 2026-10-08
+        inLanguage: bg
+        mainEntityOfPage:
+          "@id": https://defcoms.eu/blog/ransomware-incident-response#webpage
+        author:
+          "@type": Person
+          "@id": https://defcoms.eu/about/team/author/georgi-todorov
+          name: Георги Тодоров
+          jobTitle: SOC Operations Manager (24/7)
+          url: https://defcoms.eu/about/team/author/georgi-todorov
+        publisher:
+          "@id": https://defcoms.eu/#organization
+        citation:
+          - https://www.cisa.gov/stopransomware/ransomware-guide
+          - https://doi.org/10.6028/NIST.SP.800-61r3
+          - https://csrc.nist.gov/pubs/ir/8374/r1/final
+      - "@type": FAQPage
+        "@id": https://defcoms.eu/blog/ransomware-incident-response#faq
+        mainEntity:
+          - "@type": Question
+            name: Трябва ли да изключим засегнатите компютри?
+            acceptedAnswer:
+              "@type": Answer
+              text: Няма универсален отговор. Изолацията може да ограничи въздействието, но изключването може да заличи volatile evidence. Следвайте IR плана и указанията на квалифицираните responders.
+          - "@type": Question
+            name: Трябва ли да платим откупа?
+            acceptedAnswer:
+              "@type": Answer
+              text: Решението не гарантира възстановяване или неразкриване на данни и трябва да се вземе от ръководството с правен, застрахователен и специализиран съвет според приложимите правила.
+          - "@type": Question
+            name: Кога може да започне възстановяването от backup?
+            acceptedAnswer:
+              "@type": Answer
+              text: След като отговорният екип оцени обхвата и риска от повторно компрометиране и одобри clean recovery процедурата; backup наличността сама по себе си не означава, че средата е безопасна.
+          - "@type": Question
+            name: Кой трябва да бъде уведомен?
+            acceptedAnswer:
+              "@type": Answer
+              text: Следвайте комуникационния и incident response плана; включете определените IT/security, management, legal/privacy, доставчици и компетентни органи според обстоятелствата и приложимите срокове.
+      - "@type": BreadcrumbList
+        "@id": https://defcoms.eu/blog/ransomware-incident-response#breadcrumb
+        itemListElement:
+          - "@type": ListItem
+            position: 1
+            name: Начало
+            item: https://defcoms.eu/
+          - "@type": ListItem
+            position: 2
+            name: Блог
+            item: https://defcoms.eu/blog
+          - "@type": ListItem
+            position: 3
+            name: Ransomware incident response
+            item: https://defcoms.eu/blog/ransomware-incident-response
+headExtra: |-
+  <style>
+          .blog-article { max-width: 860px; margin: 0 auto; padding: 150px 24px 80px; }
+          .blog-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: 28px; }
+          .blog-breadcrumbs a { color: var(--secondary-cyan); }
+          .blog-kicker { color: var(--secondary-cyan); text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+          .blog-article h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.12; margin: 12px 0 20px; }
+          .blog-deck { color: var(--text-secondary); font-size: 1.2rem; line-height: 1.7; }
+          .blog-meta { color: var(--text-secondary); font-size: var(--font-size-sm); margin: 22px 0; }
+          .blog-hero-image { width: 100%; max-height: 460px; object-fit: cover; border-radius: var(--radius-lg); margin: 16px 0 32px; }
+          .blog-article h2 { margin-top: 42px; }
+          .blog-article p, .blog-article li { color: var(--text-secondary); line-height: 1.8; }
+          .blog-article ul, .blog-article ol { padding-left: 24px; }
+          .blog-callout { border-left: 3px solid var(--secondary-cyan); background: var(--background-card); padding: 18px 22px; border-radius: var(--radius-md); }
+          .blog-table-wrap { overflow-x: auto; margin: 24px 0; }
+          .blog-article table { width: 100%; border-collapse: collapse; min-width: 620px; }
+          .blog-article th, .blog-article td { padding: 14px; border: 1px solid var(--border-color); text-align: left; vertical-align: top; color: var(--text-secondary); line-height: 1.65; }
+          .blog-article th { color: var(--text-primary); background: var(--background-card); }
+          .blog-related, .blog-source-list { display: grid; gap: 12px; margin: 20px 0; }
+          .blog-related a, .blog-source-list a { color: var(--secondary-cyan); }
+          .blog-source-list li { overflow-wrap: anywhere; }
+          .blog-cta { margin-top: 44px; padding: 24px; background: var(--background-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); }
+      </style>
+bodyClass: service-landing
+blog:
+  categories:
+    - Ransomware
+    - Incident Response
+  date: 2026-10-08
+  order: 21
+  title: "Ransomware incident response: как да координирате реакцията"
+  summary: Рамка за активиране на плана, оценка на обхвата, evidence preservation, containment и recovery handoff.
+  image: /images/SocNoc/Cyber_shield.webp
+  imageAlt: Координирана реакция при ransomware инцидент
+  imageWidth: 1200
+  imageHeight: 675
+  ariaLabel: "Прочетете: Ransomware incident response"
+  cta: Прочетете ръководството →
+---
+<main class="blog-article">
+        <nav class="blog-breadcrumbs" aria-label="Навигационна пътека">
+            <a href="/">Начало</a><span aria-hidden="true">›</span>
+            <a href="/blog">Блог</a><span aria-hidden="true">›</span>
+            <span aria-current="page"><a href="/resources/glossary/ransomware">Ransomware</a> incident response</span>
+        </nav>
+        <article>
+            <p class="blog-kicker">Ransomware · Incident Response · Координация</p>
+            <h1>Ransomware incident response: как да координирате реакцията</h1>
+            <p class="blog-deck">При съмнение за ransomware активирайте утвърдения incident response план, уведомете определените отговорници и координирайте оценката на обхвата, запазването на доказателства и containment. Следващите действия зависят от засегнатите системи, риска за бизнеса и приложимите правила; обща статия не заменя ситуация-специфична помощ от квалифициран екип.</p>
+            <p class="blog-meta">Автор: <a href="/about/team/author/georgi-todorov" style="color: var(--secondary-cyan);">Георги Тодоров</a> · Публикувано: <time datetime="2026-10-08">8 октомври 2026 г.</time> · Обновено: <time datetime="2026-10-08">8 октомври 2026 г.</time></p>
+            <img class="blog-hero-image" src="/images/PR_image/%D0%9A%D0%B8%D0%B1%D0%B5%D1%80%D1%81%D0%B8%D0%B3%D1%83%D1%80%D0%BD%D0%BE%D1%81%D1%82_%D0%B7%D0%B0_%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81_%D0%BE%D1%86%D0%B5%D0%BB%D1%8F%D0%B2%D0%B0%D0%BD%D0%B5.webp" alt="Координирана реакция и план за възстановяване след ransomware инцидент" width="1200" height="675" fetchpriority="high">
+            <p class="blog-legal-notice" style="border-left:4px solid #f0a500;background:rgba(240,165,0,.08);padding:16px 20px;border-radius:8px;margin:24px 0;font-size:.95rem;line-height:1.6;"><strong>⚠️ Важна бележка:</strong> Тази публикация е с информационна и образователна цел и <strong>не представлява юридическо или правно тълкуване</strong> на приложимото законодателство. Обстоятелствата варират, а нормативните изисквания се променят. При конкретен казус се консултирайте с квалифициран юрист.</p>
+
+            <p class="blog-callout"><strong>Кратък отговор:</strong> активирайте IR плана, използвайте утвърдения канал за координация, запазете наличните logs/evidence, оценете кои системи и акаунти са засегнати и планирайте containment с отговорните технически и бизнес собственици. Не изтривайте и не възстановявайте системи прибързано. Изолацията, събирането на доказателства, уведомяването и recovery трябва да се координират според риска и професионалните указания.</p>
+
+            <h2>Преди да има инцидент: подгответе решенията</h2>
+            <p>Планът има стойност, когато е приложим под напрежение. Предварително определете incident lead, заместници, технически и бизнес отговорници, контактите на <a href="/resources/glossary/soc">SOC</a>/IR доставчици, правния и privacy екип, застрахователя и резервен комуникационен канал. Съхранявайте копие на плана и необходимите контакти така, че да са достъпни и при недостъпност на корпоративните системи.</p>
+            <ul>
+                <li>Критични активи, зависимости, собственици и приоритет за безопасността и услугите.</li>
+                <li>Кой може да обяви инцидент и кой одобрява изолация, account changes и прекъсване на услуги.</li>
+                <li>Процедури за log/evidence preservation и достъп до резервни комуникации.</li>
+                <li>Външни договори, activation условия и дежурни контакти, проверявани периодично.</li>
+                <li>Процес за правна/privacy оценка и уведомяване според приложимата юрисдикция.</li>
+                <li>Връзка между incident response, clean recovery и упражнения за проверка на плана.</li>
+            </ul>
+
+            <h2>Какво да направите при първия достоверен сигнал?</h2>
+            <ol>
+                <li><strong>Активирайте плана и координацията.</strong> Уведомете incident lead и определените технически и бизнес контакти по проверения канал. Започнете времева линия с часове, наблюдения, решения и участници.</li>
+                <li><strong>Оценете непосредствения риск.</strong> Установете кои услуги, устройства, identities и локации може да са засегнати; преценете въздействието върху критични операции и безопасност.</li>
+                <li><strong>Запазете информацията.</strong> Ограничете автоматичното изтриване/презаписване на релевантни logs и следвайте процедурата за evidence. Не изтривайте malware, не преинсталирайте системи и не изключвайте произволно оборудване без координация.</li>
+                <li><strong>Координирайте containment.</strong> Изолацията може да ограничи разпространението, но може и да прекъсне критична услуга или да промени volatile evidence. Определените специалисти и собственици преценяват метод, ред и одобрение според плана.</li>
+                <li><strong>Проверете обхвата и първопричината.</strong> Съпоставете endpoint, identity, network, email, cloud и backup данни, когато са достъпни. Проверете и за други засегнати активи, възможна кражба на данни и продължаващ неразрешен достъп.</li>
+                <li><strong>Ескалирайте и управлявайте уведомяването.</strong> Свържете се с incident response специалисти и договорените доставчици; включете management, legal/privacy и други заинтересовани лица. Сроковете за уведомяване зависят от приложимите правила и фактите, затова се оценяват от отговорните функции.</li>
+                <li><strong>Преминете към eradication и recovery по одобрен план.</strong> След като обхватът и остатъчният достъп са оценени, екипите отстраняват причините и предават към clean recovery. Възстановяването и критериите за приключване са отделни контролирани решения.</li>
+            </ol>
+
+            <h2>Изолация, доказателства и непрекъснатост</h2>
+            <p>При ransomware често има напрежение между ограничаване на разпространението, запазване на доказателства и поддържане на критични услуги. Няма универсално действие за всеки endpoint или сървър. CISA препоръчва засегнатите системи да бъдат изолирани и разглежда кога изключването може да унищожи volatile artifacts; следвайте одобрения IR playbook и указанията на responders, които познават средата.</p>
+            <p>Не използвайте компрометирани устройства или акаунти за координация, ако планът определя out-of-band канал. Не правете предположения само по ransom note: криптиране, предполагаема кражба на данни и публикация са отделни твърдения/събития, които изискват проверка.</p>
+
+            <h2>Разпределете отговорностите ясно</h2>
+            <div class="blog-table-wrap">
+                <table>
+                    <thead><tr><th>Роля</th><th>Типична отговорност</th><th>Предварително уточнение</th></tr></thead>
+                    <tbody>
+                        <tr><th>Incident lead / управление</th><td>Обявява координацията, приоритизира бизнес решенията и поддържа общата картина.</td><td>Кой има authority за решения с оперативно и финансово въздействие?</td></tr>
+                        <tr><th>IT и security екипи</th><td>Събират технически контекст, изпълняват одобрени containment и remediation действия и поддържат service owners.</td><td>Кои промени изискват второ одобрение или change record?</td></tr>
+                        <tr><th>SOC доставчик</th><td>В рамките на договора анализира telemetry, ескалира alerts и може да подпомага предварително договорени действия.</td><td>Кой приема критичния alert и какви response права са включени?</td></tr>
+                        <tr><th>Incident response специалисти</th><td>Подпомагат разследване, обхват, evidence, containment/eradication и recovery handoff според ангажимента.</td><td>Как се активира услугата и какви ресурси/достъпи трябва да се осигурят?</td></tr>
+                        <tr><th>Legal, privacy и communications</th><td>Оценяват задълженията, уведомленията, комуникацията и работата с външни страни.</td><td>Кой одобрява съобщенията и кой следи приложимите срокове?</td></tr>
+                        <tr><th>Business/service owners</th><td>Описват зависимостите и impact-а, определят приоритети и участват в решенията за прекъсване/връщане.</td><td>Как се оценяват safety, клиентски и договорни последствия?</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Какво не трябва да се приема за даденост?</h2>
+            <ul>
+                <li>Един endpoint alert не доказва пълния обхват или първоначалния вход.</li>
+                <li>Липсата на видимо криптиране не изключва компрометиране или data extortion.</li>
+                <li>SOC мониторингът не винаги включва пълно разследване, containment authority или IR retainer.</li>
+                <li>Изолацията на един хост не доказва, че други системи или identities не са засегнати.</li>
+                <li>Наличен backup не доказва, че копието е чисто, цялостно или може да бъде възстановено безопасно.</li>
+                <li>Общото ръководство не определя законови срокове за всяка организация; задълженията зависят от приложимото право и конкретните факти.</li>
+            </ul>
+
+            <h2>Често задавани въпроси</h2>
+            <h3>Трябва ли да изключим засегнатите компютри?</h3>
+            <p>Няма универсален отговор. Изолацията може да ограничи комуникацията, докато изключването може да премахне volatile evidence. Следвайте IR плана и указанията на квалифицираните responders; решенията за критични системи изискват и оценка на operational impact.</p>
+            <h3>Трябва ли да платим откупа?</h3>
+            <p>Тази статия не може да вземе такова решение. Плащането не гарантира възстановяване или че откраднати данни няма да бъдат разкрити; ръководството трябва да потърси правен, застрахователен и специализиран съвет и да отчете приложимите правила.</p>
+            <h3>Кога може да започне възстановяването от backup?</h3>
+            <p>Когато отговорният екип е оценил обхвата и риска от повторно компрометиране и има одобрен clean recovery план. Предварително определените приоритети и тестваните restore процедури помагат, но възстановяването не е само копиране на данни.</p>
+            <h3>Кой трябва да бъде уведомен?</h3>
+            <p>Следвайте комуникационния и incident response плана. Спрямо обстоятелствата включете IT/security, management, legal/privacy, засегнати клиенти/партньори, застраховател и компетентни органи; отговорните правни функции трябва да оценят приложимите задължения и срокове.</p>
+
+            <h2>Свързани ресурси</h2>
+            <ul class="blog-related">
+              <li><a href="/blog/cloud-incident-response">Cloud incident response: подготовка и реакция при cloud инцидент</a></li>
+              <li><a href="/blog/endpoint-isolation">Endpoint isolation: кога и как се изолира устройство?</a></li>
+                <li><a href="/blog/soc-vs-ransomware">SOC срещу ransomware: как мониторингът подпомага реакцията</a></li>
+                <li><a href="/blog/how-soc-detects-ransomware">Как SOC открива ransomware? Ранни сигнали и реакция</a></li>
+                <li><a href="/blog/how-ransomware-works">Как работи ransomware? Етапи на една атака</a></li>
+                <li><a href="/blog/how-to-protect-business-from-ransomware">Как да защитим фирма от ransomware?</a></li>
+                <li><a href="/blog/ransomware-backup-strategy">Ransomware backup strategy: как да планираме възстановяването?</a></li>
+                <li><a href="/blog/ransomware-recovery">Ransomware recovery: безопасно възстановяване стъпка по стъпка</a></li>
+                <li><a href="/services/incident-response">Incident Response услуги на DefComs</a></li>
+                <li><a href="/services/backup-disaster-recovery">Backup и Disaster Recovery</a></li>
+                <li><a href="/services/soc-monitoring">SOC мониторинг 24/7/365</a></li>
+            </ul>
+
+            <h2>Официални източници</h2>
+            <ul class="blog-source-list">
+                <li><a href="https://www.cisa.gov/stopransomware/ransomware-guide" target="_blank" rel="noopener noreferrer">CISA, FBI, NSA и MS-ISAC — #StopRansomware Guide: response checklist</a></li>
+                <li><a href="https://doi.org/10.6028/NIST.SP.800-61r3" target="_blank" rel="noopener noreferrer">NIST SP 800-61 Rev. 3 — Incident Response Recommendations and Considerations</a></li>
+                <li><a href="https://csrc.nist.gov/pubs/ir/8374/r1/final" target="_blank" rel="noopener noreferrer">NIST IR 8374 Rev. 1 — Ransomware Risk Management</a></li>
+            </ul>
+
+            <aside class="blog-cta">
+                <h2>Проверете готовността за реакция</h2>
+                <p>Уточнете контактите, authority за containment, запазването на evidence и прехода към чисто възстановяване преди инцидент.</p>
+                <a class="btn btn-primary" href="/services/incident-response">Incident Response услуги</a>
+                <a class="btn btn-secondary" href="/services/soc-monitoring">SOC мониторинг</a>
+            </aside>
+        </article>
+    </main>

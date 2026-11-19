@@ -1,0 +1,64 @@
+# Disable Directory Indexing (FTP style listing)
+Options -Indexes
+DirectoryIndex index.html
+
+# Custom 404 page (self-contained, branded). Apache returns it with a real
+# 404 status for any missing path under this document root.
+ErrorDocument 404 /404.html
+
+# ---------------------------------------------------------------------------
+# Security headers. Comments kept ASCII-safe (mojibake avoidance).
+# 'always' => headers are also sent on error responses (404/403/5xx).
+# CSP reflects what the site actually loads: same-origin assets, inline
+# script/style (JSON-LD blocks, inline tracking snippet, style= attrs) and
+# Google Fonts. No external JS, no iframes, forms post to send_form.php only.
+# ---------------------------------------------------------------------------
+<IfModule mod_headers.c>
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "DENY"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()"
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"
+    Header always unset X-Powered-By
+</IfModule>
+
+# Browser caching for static assets (SEO / Core Web Vitals friendly)
+<IfModule mod_headers.c>
+    # HTML documents — revalidate hourly so content updates propagate quickly
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "public, max-age=3600, must-revalidate"
+    </FilesMatch>
+
+    # CSS, JavaScript — cache for a week
+    <FilesMatch "\.(css|js)$">
+        Header set Cache-Control "public, max-age=604800"
+    </FilesMatch>
+
+    # Images, fonts, icons — cache for a week
+    <FilesMatch "\.(webp|jpg|jpeg|png|gif|svg|ico|woff|woff2|ttf|otf)$">
+        Header set Cache-Control "public, max-age=604800"
+    </FilesMatch>
+</IfModule>
+
+RewriteEngine On
+
+# Redirect HTTP, www, and /index.html requests to one canonical URL in one hop.
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} ^www\.defcoms\.eu(?::\d+)?$ [NC,OR]
+RewriteCond %{THE_REQUEST} \s/+index\.html(?:[\s?]) [NC]
+RewriteRule ^ https://defcoms.eu%{REQUEST_URI} [R=301,L]
+
+# 301 пренасочване от стари плоски URL към каноничните /services/ версии (INFO.md задача #4)
+RewriteRule ^soc-monitoring\.html$ https://defcoms.eu/services/soc-monitoring/ [R=301,L]
+RewriteRule ^noc-services\.html$ https://defcoms.eu/services/noc-services/ [R=301,L]
+RewriteRule ^penetration-testing\.html$ https://defcoms.eu/services/penetration-testing/ [R=301,L]
+RewriteRule ^incident-response\.html$ https://defcoms.eu/services/incident-response/ [R=301,L]
+RewriteRule ^cloud-security\.html$ https://defcoms.eu/services/cloud-security/ [R=301,L]
+RewriteRule ^endpoint-security\.html$ https://defcoms.eu/services/edr-xdr/ [R=301,L]
+RewriteRule ^phishing-protection\.html$ https://defcoms.eu/services/phishing-simulation/ [R=301,L]
+RewriteRule ^ransomware-prevention\.html$ https://defcoms.eu/services/ransomware-protection/ [R=301,L]
+RewriteRule ^zero-trust-architecture\.html$ https://defcoms.eu/services/zero-trust/ [R=301,L]
+RewriteRule ^backup-disaster-recovery\.html$ https://defcoms.eu/services/backup-disaster-recovery/ [R=301,L]
+RewriteRule ^nis2-dora-compliance\.html$ https://defcoms.eu/compliance/nis2/ [R=301,L]
+RewriteRule ^supply-chain-security\.html$ https://defcoms.eu/services/supply-chain-security/ [R=301,L]

@@ -1,0 +1,81 @@
+---
+lastmod: 2026-10-21
+changefreq: monthly
+priority: 0.7
+title: CVSS — определение | Речник по киберсигурност | DefComs
+description: CVSS е стандартна скала (0–10) за оценка на тежестта на уязвимост; помага за приоритизация, но не измерва риска за вашата конкретна среда.
+robots: index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1
+ogType: article
+image: https://defcoms.eu/images/Logos/DefComs-logo.svg
+ogTitle: CVSS — Речник по киберсигурност | DefComs
+schema:
+  - "@context": https://schema.org
+    "@type": DefinedTerm
+    name: CVSS (Common Vulnerability Scoring System)
+    description: CVSS е стандартна скала (0–10) за оценка на тежестта на уязвимост; помага за приоритизация, но не измерва риска за вашата конкретна среда.
+    inLanguage: bg
+    url: https://defcoms.eu/resources/glossary/cvss
+    isPartOf:
+      "@type": DefinedTermSet
+      name: Речник по киберсигурност
+      url: https://defcoms.eu/resources/glossary
+  - "@context": https://schema.org
+    "@type": BreadcrumbList
+    itemListElement:
+      - "@type": ListItem
+        position: 1
+        name: Начало
+        item: https://defcoms.eu/
+      - "@type": ListItem
+        position: 2
+        name: Речник
+        item: https://defcoms.eu/resources/glossary
+      - "@type": ListItem
+        position: 3
+        name: CVSS
+        item: https://defcoms.eu/resources/glossary/cvss
+---
+<main>
+        <section class="hero-section">
+            <div class="container hero-container">
+                <p class="breadcrumb-nav"><a href="/">Начало</a> / <a href="/resources/glossary">Речник</a> / CVSS</p>
+                <span class="badge">Уязвимости</span>
+                <h1>CVSS (Common Vulnerability Scoring System)</h1>
+                <p class="hero-subtitle">CVSS: стандартна оценка на тежестта на уязвимост — полезна за сравнение, не за сляпо приоритизиране.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <article class="card term-card">
+                    <h2>Дефиниция</h2>
+                    <p>CVSS (Common Vulnerability Scoring System) е отворен стандарт за оценка на тежестта на уязвимост по скала от 0 до 10, изчислена от метрики като вектор на атака, сложност, необходими привилегии и влиянието върху поверителността, целостта и наличността.</p>
+                    <h2>Защо е важно</h2>
+                    <p>CVSS дава последователна, сравнима мярка за тежестта, която помага при приоритизиране между много уязвимости. Тя обаче е обща, не специфична за средата: реалният риск зависи от това дали засегнатата система е достъпна и как е конфигурирана.</p>
+                    <h2>Как работи</h2>
+                    <p>Оценителят попълва базови метрики (вектор на атака, сложност, привилегии, потребителско взаимодействие, влияние), от които се получава базова оценка; добавят се временна (експлоатируемост) и екологична (контекст на средата) корекция.</p>
+                    <h2>Пример</h2>
+                    <p>Уязвимост с оценка 9.8, но на система, достъпна само през вътрешен интерфейс, може да е с по-нисък реален приоритет от 7.5 на интернет-експониран сервис.</p>
+                    <h2>Рискове</h2>
+                    <ul><li>Сляното следване на оценките води до грешни приоритети; висок CVSS не винаги означава висок риск за вас.</li>
+<li>Различни оценители могат да дадат различни оценки за една и съща CVE.</li></ul>
+                    <h2>Добри практики</h2>
+                    <ul><li>Използвайте CVSS като вход за приоритизация, не като финална дума.</li>
+<li>Добавете контекст: достъпност, експлоатируемост, стойност на актива.</li>
+<li>Следете временната и екологичната оценка, които отразяват нови данни и вашата среда.</li></ul>
+                    <h2>Свързани ресурси</h2>
+                    <ul><li><a href="/blog/cvss-explained">CVSS обяснено</a></li>
+<li><a href="/blog/pentest-report">Доклад след penetration testing</a></li></ul>
+                    <h2>Официални източници</h2>
+                    <ul><li><a href="https://www.first.org/cvss/" rel="noopener" target="_blank">FIRST — CVSS работна група</a></li></ul>
+                </article>
+
+                <div class="hero-actions">
+                    <a href="/contact" class="btn btn-primary">Безплатна консултация по имейл</a>
+                    <a href="/resources/glossary" class="btn btn-secondary">Към целия речник</a>
+                </div>
+
+                <p><em>Публикуван и последно актуализиран: 21.10.2026. Материалът е с образователна цел и не представлява правен или технически съвет за конкретния ви случай.</em></p>
+            </div>
+        </section>
+    </main>

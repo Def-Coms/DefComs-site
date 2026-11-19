@@ -1,0 +1,264 @@
+# Пълна информация за DefComs - Киберсигурност, SOC/NOC Услуги и Регулаторно съответствие
+
+> Това е пълният машиночитаем документ с детайлна информация за DefComs, създаден за обработка от AI модели, ботове и интелигентни системи за търсене (GEO / Search / LLMs).
+
+## 1. Обща информация и Контакти
+
+- **Бранд име**: DefComs
+- **Домейн**: https://defcoms.eu/
+- **Език**: български, с английски ключови термини за международно търсене
+- **Слоган**: "Киберсигурността, Щитът на Модерния Бизнес"
+- **Основно мото**: "Вашата Денонощна сигурност на корпоративно ниво"
+- **Имейл адрес за контакти и GDPR запитвания**: info@defcoms.eu
+- **Телефонен номер**: +359 886 088 668
+- **Работно време**:
+  - SOC/NOC операции: 24/7/365 (непрекъснато)
+  - Търговски отдел: Понеделник - Петък (09:00 - 18:00)
+- **Официални канали**:
+  - [Уебсайт](https://defcoms.eu)
+  - [LinkedIn](https://www.linkedin.com/company/defcoms/?viewAsMember=true)
+  - [Facebook](https://www.facebook.com/profile.php?id=61590374520528)
+  - [GitHub](https://github.com/Def-Coms)
+  - [Discord](https://discord.com/channels/1530579681143689286/1530595022985232464)
+
+## 2. Ключови Услуги
+
+1. **SOC Мониторинг 24/7/365**
+   - Наблюдение на сигнали, анализ и координация на реакцията при инциденти според договорения обхват на SOC услугата.
+   - Интеграция на SIEM, EDR и NDR системи с автоматизирано филтриране на фалшиви тревоги и детекция на аномалии.
+
+2. **NOC Операции**
+   - Управление и мониторинг на мрежовата инфраструктура според нуждите и договорения обхват.
+
+3. **Специализирани корпоративни мрежи с MikroTik**
+   - Проектиране и изграждане на високотехнологични MikroTik RouterOS мрежи за летища, конгресни центрове, хотели и хотелски комплекси.
+   - Включва VLAN сегментация, защитен Wi-Fi, CAPsMAN управление, VPN, QoS, контрол на достъпа, резервирани WAN връзки и site-to-site свързаност между сгради.
+   - Мрежите могат да бъдат интегрирани с NOC и SOC услугите на DefComs за постоянен мониторинг и реакция.
+   - Специализирани страници: [хотели и комплекси](mikrotik-hotels.html), [летища](mikrotik-airports.html), [конгресни центрове](mikrotik-congress-centers.html).
+
+4. **Penetration Testing (Пентест)**
+   - Контролирани и етични тестове за проникване. Симулация на реални хакерски атаки за намиране на уязвимостите в инфраструктурата преди злонамерените лица да се възползват от тях.
+
+5. **GDPR/NIS2/DORA Съответствие**
+   - Оценка на технически и организационни мерки, изготвяне на документация и подготовка по приложимите европейски регулации за киберсигурност.
+
+6. **Cloud Security (Облачна сигурност)**
+   - Подобряване на защитата и конфигурационен одит на облачни среди и услуги (AWS, Azure, Google Cloud, DigitalOcean).
+
+7. **Incident Response (Реакция при инциденти)**
+   - Подкрепа при локализиране, изолиране и възстановяване след киберинциденти; сроковете и дейностите зависят от обхвата и договорените условия.
+
+8. **Endpoint Security (EDR)**
+   - Управление и защита на крайните устройства (лаптопи, сървъри, работни станции) от напреднали безфайлови и зловредни атаки.
+
+9. **Phishing Защита & Симулации**
+   - Обучение на служителите чрез симулация на реални фишинг атаки и развиване на силен човешки firewall.
+
+10. **Ransomware Превенция**
+   - Многослойна стратегия, изолиране на бекъпи и мрежова сегментация за нулева толерантност към криптиращ софтуер.
+
+11. **Zero Trust Архитектура**
+    - Проектиране и внедряване на модел за сигурност "никога не се доверявай, винаги проверявай всяка идентичност" на базата на NIST SP 800-207.
+
+12. **Backup & Disaster Recovery**
+    - Бекъп по златното правило 3-2-1 с тествани и автоматизирани процедури за спешно възстановяване на данните.
+
+13. **Supply Chain Security**
+    - Оценка на рисковете от софтуерни решения на трети страни и сигурност по цялата верига на доставки.
+
+14. **Обучения по киберсигурност за фирми и организации**
+    - Практически обучения за служители, ИТ и Security екипи и ръководители по фишинг, киберхигиена, реакция при инциденти и NIS2/DORA.
+
+15. **Хостинг и инфраструктура**
+    - VPS виртуални сървъри с отделни ресурси за всеки клиент, уеб хостинг и приложения в изолирани LXC контейнери, game сървъри и dev/test среди с CI/CD (GitLab Runner, Jenkins).
+
+16. **Приложения като услуга**
+    - Nextcloud облачно хранилище, пощенски сървър с Mail Gateway, VPN (WireGuard/OpenVPN) и Vaultwarden, мониторинг със Zabbix и Grafana, видеонаблюдение с Frigate, Home Assistant и Jellyfin/Plex.
+
+17. **Услуги за бизнес**
+    - Backup като услуга върху Proxmox Backup Server (PBS), виртуален офис с Windows RDP/VDI машини, миграция на малки фирми от физически към виртуални сървъри и мониторинг и управлявана ИТ поддръжка (MSP) на инфраструктурата.
+
+## 6. Специализирани service страници
+
+- [SOC мониторинг 24/7/365](soc-monitoring.html): Managed SOC със SIEM, EDR, NDR, детекция и реакция.
+- [NOC услуги](noc-services.html): 24/7 мониторинг и управление на мрежи, сървъри и инфраструктура.
+- [Обучения по киберсигурност за фирми и организации](services/corporate-training/): Практически програми за служители, ИТ екипи и ръководители.
+- [Penetration Testing](penetration-testing.html): Web, API, network и cloud тестове с CVSS приоритизация и retest.
+- [NIS2 и DORA съответствие](nis2-dora-compliance.html): Gap analysis, риск оценка, контроли, документация и одитна готовност.
+- [Incident Response](incident-response.html): Containment, forensic анализ, възстановяване и планове за реакция.
+- [Cloud Security](cloud-security.html): IAM, cloud posture, конфигурационен одит, защита на данни и мониторинг.
+- [Endpoint Security и EDR](endpoint-security.html): Защита, детекция и изолация на крайни устройства и сървъри.
+- [Phishing защита и симулации](phishing-protection.html): Контролирани кампании, обучение и email security мерки.
+- [Ransomware превенция](ransomware-prevention.html): EDR, сегментация, изолирани копия и възстановяване.
+- [Zero Trust архитектура](zero-trust-architecture.html): Контрол на идентичности, устройства, сегментация и достъп.
+- [Backup и Disaster Recovery](backup-disaster-recovery.html): 3-2-1 стратегия, RTO/RPO и тестове за възстановяване.
+- [Supply Chain Security](supply-chain-security.html): Оценка на third-party доставчици, контроли и договорни изисквания.
+- [VPS виртуални сървъри](https://defcoms.eu/services/vps-servers/): Виртуални машини с изолирани CPU, RAM и диск ресурси за всеки клиент.
+- [Уеб хостинг и WordPress](https://defcoms.eu/services/web-hosting/): Сайтове и приложения в изолирани LXC контейнери с поддръжка.
+- [Game сървъри](https://defcoms.eu/services/game-servers/): Minecraft, Counter-Strike и други dedicated сървъри за общности.
+- [Dev/test среди и CI/CD](https://defcoms.eu/services/devops-cicd/): Автоматичен build, тестване и деплой с GitLab Runner и Jenkins.
+- [Nextcloud](https://defcoms.eu/services/nextcloud/): Облачно хранилище, споделяне и съвместна работа — алтернатива на Google Drive.
+- [Пощенски сървър с Mail Gateway](https://defcoms.eu/services/mail-server/): Имейл на собствения домейн с SPF/DKIM/DMARC и филтри.
+- [VPN и Vaultwarden](https://defcoms.eu/services/vpn-service/): WireGuard/OpenVPN достъп и шифрирано хранилище за пароли.
+- [Мониторинг и видеонаблюдение](https://defcoms.eu/services/monitoring-vms/): Zabbix, Grafana dashboard-и и Frigate с локална AI обработка.
+- [Home Assistant и Jellyfin/Plex](https://defcoms.eu/services/smart-home-media/): Умен дом и личен медиен център за семейна употреба.
+- [Backup като услуга](https://defcoms.eu/services/backup-as-a-service/): Шифровани версийни копия в Proxmox Backup Server с тествано възстановяване.
+- [Виртуален офис](https://defcoms.eu/services/virtual-office/): Windows RDP/VDI работни места за отдалечени екипи.
+- [Миграция към виртуализация](https://defcoms.eu/services/server-migration/): Пренос на физически сървъри във виртуална среда с план и тестове.
+- [Мониторинг и управлявана ИТ поддръжка](https://defcoms.eu/services/msp-managed-it/): Външен ИТ екип за сървъри, мрежи и работни станции с договорен обхват.
+- [vCISO — виртуален директор по сигурността](https://defcoms.eu/services/vciso/): Стратегия, политики и надзор на сигурността без щатен ръководител.
+- [DPO на аутсорс](https://defcoms.eu/services/dpo-as-a-service/): Външен специалист по GDPR — надзор, регистри и контакт с администрацията.
+- [Управление на уязвимости](https://defcoms.eu/services/vulnerability-management/): Постоянен цикъл сканиране–оценка–отстраняване с повторни проверки.
+- [OSINT и наблюдение на dark web](https://defcoms.eu/services/osint-dark-web/): Какво се вижда за фирмата отвън и сигнали при изтичане на данни.
+- [OT/ICS сигурност за производство](https://defcoms.eu/services/ot-security/): IT/OT сегментация, наблюдение на индустриален трафик и план за реакция.
+- [Управлявани бази данни](https://defcoms.eu/services/managed-databases/): Експлоатация на PostgreSQL, MySQL и MariaDB — копия, мониторинг, версии.
+- [Обектно хранилище (S3)](https://defcoms.eu/services/object-storage/): MinIO S3-съвместим обектен storage за копия, медии и приложения.
+- [Kubernetes като услуга](https://defcoms.eu/services/managed-kubernetes/): Клъстъри, деплойменти, мащабиране и наблюдение на контейнерни приложения.
+- [Частен облак с Proxmox](https://defcoms.eu/services/private-cloud-proxmox/): Виртуални машини, LXC контейнери и копия под един покрив.
+- [Защитен чат за екипа](https://defcoms.eu/services/secure-team-chat/): Mattermost / Rocket.Chat в контролирана среда — алтернатива на Slack/Teams.
+- [VoIP телефония (PBX)](https://defcoms.eu/services/voip-pbx/): Собствена IP централа — номера, IVR, опашки и мобилни клиенти.
+- [Проектиране на мрежи и Wi-Fi](https://defcoms.eu/services/network-design/): Топология, VLAN сегментация, безжично покритие и контрол на достъпа.
+
+## 7. Блог и ръководства
+
+- [Блог за киберсигурност](https://defcoms.eu/blog/): Индекс на публикуваните практически ръководства.
+- [Какво е Zero Trust? Принципи и практическо приложение](https://defcoms.eu/blog/what-is-zero-trust): Въвежда Zero Trust по NIST SP 800-207 като архитектурен подход, който защитава ресурси и оценява заявките според идентичност, устройство, контекст и политика, независимо от мрежовото местоположение. Разглежда least privilege, telemetry, session-specific decisions, поетапен пилот и заблудите, че MFA/VPN/един продукт сам по себе си е Zero Trust. Включва FAQ/schema и официален NIST източник.
+- [Zero Trust Architecture: компоненти и поток на достъп](https://defcoms.eu/blog/zero-trust-architecture): Разглежда NIST SP 800-207 Policy Engine (PE), Policy Administrator (PA), Policy Enforcement Point (PEP) и Policy Decision Point (PE+PA) като логически роли, след което проследява заявка от subject през policy evaluation до enforcement към resource. Описва възможни trust-information sources, връзката с IAM, device/workload posture, telemetry и контролите, които да се документират; уточнява, че това не са задължително отделни продукти и че реализацията зависи от средата. Включва FAQ/schema и NIST SP 800-207/207A.
+- [Zero Trust Network: мрежова сегментация и достъп до ресурси](https://defcoms.eu/blog/zero-trust-network): Фокусира network слоя на по-широка ZTA: инвентар на ресурси и потоци, segmentation/microsegmentation, identity-aware access enforcement, east-west наблюдение и поетапен пилот. Сравнява VLAN/firewall zones, microsegmentation, VPN и identity-aware gateways без да приравнява нито една технология към целия Zero Trust модел. Отделя caveats за legacy/OT, service availability, exceptions и telemetry gaps; включва FAQ/schema и NIST SP 800-207/207A.
+- [Zero Trust vs VPN: разлики, избор и съвместна употреба](https://defcoms.eu/blog/zero-trust-vs-vpn): Разграничава VPN като транспорт/свързаност от Zero Trust като ресурсно-базиран access policy подход, като уточнява, че и двата модела имат вариации по продукт и конфигурация. Сравнява access scope, identity/device signals, enforcement и logging; описва съвместно използване за legacy/site-to-site пътища и стъпки за постепенен преход. Не обещава, че ZT автоматично премахва VPN или е универсално по-сигурен; включва FAQ/schema и NIST SP 800-207/207A.
+- [Zero Trust implementation: поетапен план за внедряване](https://defcoms.eu/blog/zero-trust-implementation): Практическа, риск-базирана рамка: governance и owners, identity/asset/access-flow inventory, protect surface, target access policy, telemetry/dependency readiness, ограничен пилот, поетапно разширяване и измерване. Разграничава рамката от задължителен NIST rollout ред и препоръчва специфичен подход за legacy/OT, exceptions, fail behavior и operational sign-off. Включва FAQ/schema и NIST SP 800-207/207A.
+- [NIST SP 800-207: Zero Trust Architecture обяснена](https://defcoms.eu/blog/nist-sp-800-207): Обяснява обхвата на NIST публикацията от 2020 г. и обобщава седемте tenets: resources, защитена комуникация независимо от местоположение, per-session достъп до конкретни ресурси, динамична policy, състояние/целостта на активите, динамични authentication/authorization решения и използване на telemetry. Описва SP 800-207A като отделно cloud-native/multi-cloud допълнение. Изрично разграничава архитектурното ръководство от сертификат, закон или задължителен vendor/product; включва FAQ/schema и официални NIST източници.
+- [Zero Trust за SMB: откъде да започне малкият бизнес?](https://defcoms.eu/blog/zero-trust-for-smb): Риск-базирани първи стъпки за малък екип: избиране на критична услуга/protect surface, инвентар на identities/устройства/зависимости, MFA и отделни admin акаунти, права към приложения, endpoint/network ограничения, logging и пилот с тест/rollback. Включва таблица за readiness, практични метрики и caveats за legacy/неподдържани активи; подчертава, че NIST SP 800-207 е общ архитектурен ориентир, а не SMB-specific mandate или изискване за отделен продукт. Включва FAQ/schema и NIST source.
+- [Какво е SOC и как помага на бизнеса?](https://defcoms.eu/blog/what-is-soc): Обяснение на Security Operations Center като функция, която съчетава хора, процеси и технологии за наблюдение, триаж, анализ, ескалация и подпомагане на реакцията. Разграничава SOC от SIEM и уточнява, че покритието, работното време и правомощията зависят от модела и договора.
+- [Как работи SOC мониторингът? От сигнал до координирана реакция](https://defcoms.eu/blog/how-soc-monitoring-works): Описва типичния цикъл от определяне на обхвата и приемане на telemetry до корелация, детекция, triage, разследване, договорена ескалация/реакция, документация и lessons learned. Уточнява разликата между събитие, аларма и инцидент, клиент/SOC отговорностите и значението на SLA дефинициите.
+- [SOC vs SIEM: разлики и как работят заедно](https://defcoms.eu/blog/soc-vs-siem): Разграничава SOC като оперативна функция от SIEM като платформа за централизирано логване и анализ на събития. Обяснява как SIEM подава аларми, които SOC поставя в контекст, проверява, ескалира и проследява; включва NIST източници.
+- [SOC vs MSSP: разлика, обхват и отговорности](https://defcoms.eu/blog/soc-vs-mssp): Сравнява SOC като вътрешна, външна или хибридна оперативна функция с MSSP като външна организация за управлявани security услуги. Разглежда хибридни модели, споделена отговорност и въпроси за проверка на покритието, SLA, ескалации, правомощия и изход от договора.
+- [SOC as a Service: как работи външният SOC модел?](https://defcoms.eu/blog/soc-as-a-service): Обяснява SOCaaS като пазарно използван модел за външно предоставяне на договорени SOC функции, без универсално задължителен feature set. Обхваща onboarding, log integrations, monitoring, triage, ескалации, SLA, response authority, shared responsibilities и избор на доставчик.
+- [Има ли нужда малкият бизнес от SOC?](https://defcoms.eu/blog/does-smb-need-soc): Риск-базирани критерии за SMB организации при сравнение на вътрешна готовност, ограничен/управляван мониторинг и външен или хибриден SOC. Не твърди, че всеки малък бизнес задължително се нуждае от пълен SOC; подчертава нуждата от вътрешни собственици, ясни ескалации и проверка на договора.
+- [Колко струва SOC? Фактори за цена и бюджетиране](https://defcoms.eu/blog/how-much-does-soc-cost): Ръководство за scope-based SOC budgeting: активи и критичност, обем/retention на логовете, интеграции, coverage hours, triage/response, платформи, onboarding, SLA, вътрешно време и допълнителни услуги. Не дава фиктивни пазарни цени; препоръчва сравняване на оферти по еднакъв обхват и deliverables.
+- [Какво наблюдава SOC? Системи, логове и сигнали](https://defcoms.eu/blog/what-does-soc-monitor): Обяснява възможните източници на SOC telemetry — identity, endpoints, сървъри, network, cloud, приложения, email и security tools — и подчертава, че покритието е ограничено от интеграциите, качеството на логовете, договора и privacy/retention правилата.
+- [Как SOC открива ransomware? Ранни сигнали и реакция](https://defcoms.eu/blog/how-soc-detects-ransomware): Разглежда ransomware detection чрез корелация на endpoint, identity, network, backup и cloud signals, ранни аномалии, SOC triage и договорена реакция. Обяснява ограниченията на telemetry и че алармите изискват контекст; SOC не гарантира откриване или спиране на всеки инцидент.
+- [SOC и NIS2: как мониторингът може да подпомогне изискванията](https://defcoms.eu/blog/soc-and-nis2): Образователен анализ на начина, по който SOC telemetry, triage, escalation и incident records могат да подпомогнат части от NIS2 risk management и incident handling. Пояснява, че директивата не налага универсално SOC решение и че обхватът и уведомяването се проверяват спрямо националното законодателство и конкретния субект.
+- [Какво е penetration testing и как протича един пентест?](https://defcoms.eu/blog/what-is-penetration-testing): Практическо въведение в разрешената и контролирана техническа оценка: authorization, scope, правила за ангажиране, тестови дейности, доклад, remediation и retest. Разграничава pentest от vulnerability scan и подчертава ограниченията и безопасността.
+- [Видове penetration testing: как да изберете подходящия тест?](https://defcoms.eu/blog/types-of-penetration-testing): Сравнява тестове по технология/цел — web application, API, network, cloud, mobile, wireless и одобрени social-engineering сценарии — и отделно обяснява external/internal perspective и black/gray/white-box knowledge levels. Това са scoping dimensions, не единна официална таксономия; всеки test scope изисква писмено разрешение и правила за ангажиране.
+- [Web application pentest: какво проверява тестът?](https://defcoms.eu/blog/web-application-pentest): Практическо описание на разрешен web application security test: scope, ownership, test accounts, правила за безопасност, authentication/authorization, sessions, input validation, business logic, доклад и remediation. OWASP WSTG служи като структуриран ориентир, но всеки тест се адаптира към приложението и договора.
+- [API pentest: какво проверява тестът за сигурност?](https://defcoms.eu/blog/api-pentest): Практическо ръководство за разрешена оценка на API: authentication и token lifecycle, object/property/function authorization, бизнес потоци, resource consumption, inventory, конфигурация и външни интеграции. Обяснява scope, тестови роли/данни, безопасност, ограничения, доклад и retest; OWASP API Security Top 10 (2023) е awareness ориентир, не универсален тестов план или гаранция за съответствие.
+- [Network pentest: какво проверява тестът на мрежата?](https://defcoms.eu/blog/network-pentest): Обяснява scope-based мрежов тест на одобрени външни или вътрешни активи, услуги и сегменти, включително конфигурационни рискове, достъп и граници. Разглежда authorization, third-party активи, production/OT безопасност, ограничения срещу натоварващи проверки, отчет и retest; NIST SP 800-115 е общо техническо ръководство, не универсален план.
+- [External vs Internal pentest: каква е разликата?](https://defcoms.eu/blog/external-vs-internal-pentest): Съпоставя външната и вътрешната начална перспектива по цел, обхват, предоставен достъп и ограничения. Обяснява, че external/internal не е синоним на black/gray/white-box, включва third-party и production safety cautions и подпомага избора на обхват; NIST SP 800-115 е обща насока за планиране и оценка, не универсален тестов сценарий.
+- [Cloud pentest: как се тества сигурността в облака?](https://defcoms.eu/blog/cloud-pentest): Обяснява разрешена оценка на избрани cloud accounts/tenants/projects, identities, ресурси, workloads, storage и мрежови граници. Разглежда писменото разрешение, provider-specific правила, shared responsibility, production/data safety, reporting и retest; NIST SP 800-144/800-115 са общи технически насоки, а доставчиците имат отделни и променящи се правила за тестове.
+- [AWS Security: откъде да започнете защитата на AWS среда?](https://defcoms.eu/blog/aws-security): Практическа, риск-базирана рамка за account ownership/recovery, защитен root и privileged access, федерация/MFA/least privilege и временни credentials, CloudTrail trail coverage/retention/integrity, network exposure, S3 Block Public Access, data/KMS, workload hygiene и incident response. Разграничава security of the cloud от клиентските отговорности според избраната услуга; Organizations, Config, GuardDuty, Security Hub CSPM и други инструменти са опции според архитектурата/риска, не задължителен bundle. Пояснява ограниченията на Event history, нуждата от проверка на легитимен public-access use case преди промяна и демонстрационния характер на AWS auditor изображението. Източници: AWS Well-Architected Security Pillar, IAM, CloudTrail, S3 Block Public Access и Shared Responsibility; NIST SP 800-61 Rev. 3 за incident response контекст.
+- [Azure Security: откъде да започнете защитата на Azure среда?](https://defcoms.eu/blog/azure-security): Практическа рамка за tenant/subscription governance, Entra identities, MFA/Conditional Access, RBAC scope/PIM, Activity Log, diagnostic settings за data-plane resource logs, network, storage/Key Vault, workloads и Defender for Cloud posture. Уточнява, че Activity Log се пази 90 дни, resource logs не се събират автоматично, Conditional Access и Defender features имат licensing/scope зависимости, а secure score не доказва сигурност или compliance. Включва shared responsibility по IaaS/PaaS/SaaS, staged checklist, FAQ/schema и Microsoft Learn sources; hero asset е обозначен като generic mock UI, не Azure portal.
+- [Cloud IAM: как да управлявате идентичности и достъп в облака?](https://defcoms.eu/blog/cloud-iam): Provider-neutral framework за human, workload и federated identities; разглежда authentication срещу authorization, federation и краткосрочни credentials, role/policy scope, least privilege, привилегировано elevation, secrets, cross-account trust и joiner/mover/leaver lifecycle. Разграничава AWS IAM roles/policies, Entra plus Azure RBAC и Google Cloud IAM/service accounts; предупреждава за impersonation, stale access, споделени identities и ключове в код. Включва access review workflow, FAQ/schema и уточнява, че конкретната имплементация зависи от provider и runtime. Източници: AWS IAM, Microsoft Azure RBAC и Google Cloud IAM best practices.
+- [Cloud logging: как да събирате и използвате cloud logs?](https://defcoms.eu/blog/cloud-logging): Риск-базирано ръководство за security logging в AWS, Azure и Google Cloud. Разграничава control-plane, data-plane, workload и network/security logs; сравнява AWS CloudTrail Event history/trails/data events, Azure Activity Log/resource logs/diagnostic settings и Google Cloud Audit Logs (_Required/_Default buckets, Admin Activity, Data Access). Включва routing, retention, access/integrity, pipeline-health alerting, privacy, cost и deployment checklist. Уточнява, че default coverage и сроковете са provider-specific, data events може да са изключени или платени, а storage без monitoring не е detection. Източници: AWS CloudTrail, Microsoft Azure Monitor и Google Cloud Logging.
+- [Cloud incident response: подготовка и реакция при cloud инцидент](https://defcoms.eu/blog/cloud-incident-response): Cloud-specific рамка за preparation, scope across tenants/accounts/subscriptions/projects, control-plane/data-plane investigation, identity containment, log/evidence preservation, resource/provider coordination, eradication/recovery и post-incident learning. Разграничава provider-managed layers от клиентските identities, data, configuration и business decisions; предупреждава за availability/evidence impact на containment, dynamic resources, logging gaps и provider-specific support boundaries. Включва response checklist, decision table, FAQ/schema и mock incident dashboard с пояснение; източници: AWS Well-Architected Incident Response, Microsoft Incident Response Overview, NIST SP 800-61 Rev. 3.
+- [CVSS 4.0: какво означава оценката на уязвимост?](https://defcoms.eu/blog/cvss-explained): Ръководство за FIRST CVSS v4.0 metric groups, Base exploitability/impact metrics, Threat Exploit Maturity, Environmental context, Supplemental metrics, CVSS-B/BT/BE/BTE naming, qualitative severity ratings и vector strings. Подчертава, че CVSS Base измерва technical severity, не организационен риск; при remediation се добавят приложимостта към asset/version, threat intelligence, експозиция, бизнес критичност и контролите.
+- [Pentest report: какво трябва да съдържа докладът?](https://defcoms.eu/blog/pentest-report): Практическо ръководство за управленска и техническа структура на penetration test report: цели, scope, методика, изключения, кратък executive overview, потвърдени findings, минимално необходимо evidence, severity rationale, въздействие, корекции, owner-и и retest. Обхваща безопасна работа с чувствителни доказателства и разграничаване на наблюдавани факти от предположения; структурата се съгласува по engagement, не е универсален нормативен шаблон.
+- [Pentest retesting: как се проверява поправена уязвимост?](https://defcoms.eu/blog/retesting): Практическо ръководство за повторна проверка след remediation: първоначален finding ID, asset/version, променена среда, разрешен scope, безопасно потвърждение и резултатни статуси fixed, partially fixed, open, unable to verify и risk accepted/mitigated. Разграничава retest от пълен повторен pentest и regression test, изисква документиране на evidence, ограничение и remaining risk; рискът се приема от клиента, не от тестера.
+- [Какво е ransomware? Криптиране, изнудване и риск за бизнеса](https://defcoms.eu/blog/what-is-ransomware): Въведение в ransomware като malware за криптиране или блокиране на достъп, и в съпътстваща либо самостоятелна data extortion. Разграничава наблюдавано криптиране, твърдения за кражба и double extortion; обхваща бизнес въздействие, общ цикъл подготовка/защита/откриване/реакция/възстановяване и caveats, без универсален първоначален вектор или обещание за пълно предотвратяване. Използва CISA #StopRansomware и NIST IR 8374 Rev. 1 като официални източници.
+- [Как работи ransomware? Етапи на една атака](https://defcoms.eu/blog/how-ransomware-works): Описва общ, променлив incident lifecycle: първоначален достъп, действия в средата, разширяване на достъпа, възможно засягане на logs/backups, кражба на данни, криптиране или други форми на изнудване. Посочва защитни прекъсвачи като MFA, least privilege, сегментация, endpoint/identity telemetry и защитени възстановими копия; подчертава, че не всеки инцидент следва всички етапи или ред и че списъкът не е оперативен playbook.
+- [Как да защитим фирма от ransomware?](https://defcoms.eu/blog/how-to-protect-business-from-ransomware): Приоритизиран, риск-базиран план за asset inventory, MFA и least privilege, remote access/patching, email и endpoint controls, сегментация, защитени и тествани backup-и, telemetry и упражнен incident response. Акцентира, че конкретният ред зависи от средата и ресурсите, няма един продукт или мярка, която гарантира защита, а общите насоки не са incident-specific playbook; използва CISA #StopRansomware и NIST IR 8374 Rev. 1.
+- [Ransomware backup strategy: как да планираме възстановяването?](https://defcoms.eu/blog/ransomware-backup-strategy): Ръководство за ransomware-resilient backup architecture: service/data scope, dependencies, recovery priorities, договорени RPO/RTO, отделени identities и admin plane, offline/isolated/immutable options, encryption, retention, logs и control checks, плюс реални restore exercises в подходяща среда. Разглежда cloud/shared-responsibility caveats и че immutability или успешен backup job сами по себе си не доказват clean restore; не е заместител на incident response/recovery план. Използва CISA #StopRansomware и NIST IR 8374 Rev. 1.
+- [3-2-1 backup правило: как работи и какво не гарантира](https://defcoms.eu/blog/3-2-1-backup): Обяснява традиционната евристика като три копия общо (production плюс две backups), два различни вида носител и поне едно offsite копие. Разглежда failure domains, cloud/account/control-plane независимост, offline/immutable разширения, encryption, retention и restore тестове; изрично уточнява, че 3-2-1 не е сертификация, универсален стандарт или гаранция за clean recovery. Официалният CISA/NIST контекст подкрепя offline/encrypted copies, integrity tests и contingency planning.
+- [EDR срещу ransomware: как помага и къде са границите?](https://defcoms.eu/blog/edr-vs-ransomware): Обяснява как EDR telemetry и поведенчески сигнали могат да подпомогнат откриването и как някои платформи могат да блокират действия или да изолират endpoint според продукта и настройките. Сравнява потенциалния принос по етапи с ограниченията от agent coverage, конфигурация, false positives, identities, cloud/network ресурси и възстановяване. Включва deployment/response checklist и уточнява, че containment правата и ефектът върху критични услуги трябва да са предварително договорени; EDR не гарантира предотвратяване и не замества backup или incident response. Източници: CISA #StopRansomware Guide, MITRE ATT&CK T1486/M1040 и NIST IR 8374 Rev. 1.
+- [Какво е EDR (Endpoint Detection and Response)?](https://defcoms.eu/blog/what-is-edr): Основно ръководство за endpoint sensor/agent, telemetry, detection, investigation и response. Описва примерни процесни, файлови, потребителски и мрежови събития, с уточнение, че покритието варира според продукта и платформата. Разграничава EDR от antivirus/endpoint prevention, SIEM, SOC и XDR; включва внедряване, agent health, alert ownership, ограничения и FAQ/schema. Не представя EDR като гаранция срещу атаки или заместител на останалите контроли. Източници: MITRE ATT&CK Data Sources и NIST SP 800-83 Rev. 1.
+- [Какво е XDR (Extended Detection and Response)?](https://defcoms.eu/blog/what-is-xdr): Представя XDR като продуктова категория/подход за свързване на telemetry и detections от поддържани endpoint, identity, email, network и cloud източници, като уточнява, че няма универсален задължителен feature set. Описва приемане, нормализиране, корелация, investigation и разрешени response действия; сравнява XDR с EDR, SIEM и SOC и дава критерии за източници, API права, licensing, ownership, privacy, пилот и метрики. Предупреждава за vendor lock-in, слепи зони, alert noise и риск от автоматичен containment. Източникът NIST SP 800-61 Rev. 3 е посочен за incident response контекст, не като дефиниция на XDR.
+- [EDR vs XDR: каква е разликата и кое ви е нужно?](https://defcoms.eu/blog/edr-vs-xdr): Съпоставя EDR endpoint telemetry/response с XDR целта за корелация на поддържани източници от няколко security домейна. Разглежда, че двете категории могат да се допълват, кога EDR може да покрие приоритета и кога XDR интеграциите могат да подобрят конкретни разследвания. Включва сравнение по coverage, данни, response, оперативни зависимости и критерии за пилот; предупреждава за vendor-specific feature sets, скрити разходи, telemetry gaps и липса на автоматичен 24/7 SOC. NIST SP 800-61 Rev. 3 е посочен за incident response контекст, не като дефиниция на EDR/XDR.
+- [EDR vs Antivirus: каква е разликата и може ли EDR да замени антивируса?](https://defcoms.eu/blog/edr-vs-antivirus): Сравнява antivirus/antimalware prevention с endpoint telemetry, investigation и response на EDR. Изрично уточнява, че antivirus не е само signatures: възможни са heuristics, reputation, cloud и behavior-based техники; съвременните endpoint suites могат да обединяват или припокриват функциите. Дава примерен сценарий, внедряване и проверки на лиценз, agent coverage, exclusions, policy, response ownership и съвместимост. Не препоръчва премахване на съществуваща защита без потвърждение на нужните функции. Източници: MITRE ATT&CK M1049 и NIST SP 800-83 Rev. 1 (2013).
+- [Endpoint isolation: кога и как се изолира устройство?](https://defcoms.eu/blog/endpoint-isolation): Практическа рамка за containment на избран endpoint: какво цели isolation, как се различава от network access controls, account/session blocking и power-off, как да се проверят активът, критичността, зависимостите, evidence, authority и control-plane състоянието, и как да се потвърди резултатът и одобри връщането на свързаността. Изрично предупреждава, че действието е продуктово-зависимо, може да остави отделни канали или локална активност и може да прекъсне услуга или да засегне volatile evidence; следва се инцидентният план. Източници: CISA #StopRansomware Guide и NIST SP 800-61 Rev. 3.
+- [Threat hunting: какво е и как се провежда?](https://defcoms.eu/blog/threat-hunting): Практическо въведение в хипотезно, проактивно търсене в endpoint, identity, network, email и cloud telemetry. Разграничава hunting от постоянния monitoring/alert triage и incident response; описва приоритет, scope, проверка на източниците, заявки, контекстуална валидация, escalation и feedback към detections/coverage. Подчертава, че отрицателен резултат не доказва липса на компрометиране при telemetry gaps и че ATT&CK е knowledge base за моделиране, не универсален hunting playbook. Източници: MITRE ATT&CK и NIST SP 800-61 Rev. 3.
+- [EDR и SOC: как работят заедно?](https://defcoms.eu/blog/edr-and-soc): Практическо ръководство за EDR signal flow към SOC triage, investigation, escalation и договорена response мярка. Разграничава technology от оперативния екип и incident command; сравнява вътрешен, външен и хибриден модел; предлага starting-point RACI, договорни/runbook въпроси и метрики за agent health, alert forwarding и escalation. Уточнява, че EDR не гарантира наблюдение, SOC означението не гарантира фиксиран scope/24/7/containment и remediation/recovery ownership трябва да е ясно договорен. Източник: NIST SP 800-61 Rev. 3 за incident response контекст.
+- [SOC срещу ransomware: как мониторингът подпомага реакцията](https://defcoms.eu/blog/soc-vs-ransomware): Практически обзор на SOC мониторинга при ransomware и разпределението между SOC, EDR, incident response, IT/бизнес собственици и backup/recovery екип. Описва detection/triage/escalation/response handoff, покритие на log източници, контакти, 24/7 SLA, authority за containment и ограничения при telemetry gaps или непълни договори. Изрично посочва, че monitoring не гарантира спиране на инцидент и не означава автоматично forensic investigation, eradication или recovery. Източници: CISA #StopRansomware Guide, NIST SP 800-61 Rev. 3 и NIST IR 8374 Rev. 1.
+- [Ransomware incident response: как да координирате реакцията](https://defcoms.eu/blog/ransomware-incident-response): Координирана рамка за активиране на IR плана, определяне на incident lead и комуникационни канали, първоначален обхват, evidence/log preservation, containment trade-offs, разследване, правно/privacy уведомяване и recovery handoff. Подчертава, че действията като изолация/изключване зависят от засегнатите системи, доказателствата, бизнес въздействието и квалифицираните responders; не е универсален кризисен playbook или правно становище. Включва FAQ schema и източници CISA #StopRansomware Guide, NIST SP 800-61 Rev. 3 и NIST IR 8374 Rev. 1.
+- [Ransomware recovery: безопасно възстановяване стъпка по стъпка](https://defcoms.eu/blog/ransomware-recovery): Практическа recovery рамка след containment handoff: приоритизиране на услуги и зависимости според бизнес impact и RTO/RPO, подготовка на clean/isolate recovery среда, избор и integrity проверка на подходящ backup point, последователно възстановяване, техническа и бизнес валидация, sign-off и поетапно връщане към production. Изрично предупреждава, че backup restore не доказва премахната persistence или затворен initial access, че възстановяването само по себе си не решава data extortion и че сроковете зависят от средата. FAQ/schema и източници: CISA #StopRansomware Guide, NIST IR 8374 Rev. 1 и NIST SP 800-34 Rev. 1.
+- [Ransomware и NIS2: как се свързват защитата, реакцията и докладването?](https://defcoms.eu/blog/ransomware-and-nis2): Разграничава съображение 54 за ransomware в националните стратегии от задълженията на конкретните субекти по приложимия обхват. Свързва член 20 governance, член 21 риск-мерки/incident handling/business continuity и член 23 значим инцидент и докладване. Уточнява, че ransomware не е автоматично значим инцидент, секторни актове като DORA могат да заменят съответни NIS2 правила за обхванатите финансови субекти, а GDPR breach notification е отделна оценка. Препраща към актуалното национално транспониране, включва FAQ/schema и официални EUR-Lex, Европейска комисия и ENISA източници.
+- [Какво е NIS2? Цели, обхват и основни задължения](https://defcoms.eu/blog/what-is-nis2): Въведение в Директива (ЕС) 2022/2555, основните изисквания и ограниченията при преценка на приложимостта.
+- [Кои компании в България попадат под NIS2?](https://defcoms.eu/blog/who-is-covered-by-nis2-bulgaria): Секторни и размерни критерии, специални случаи и официална проверка на българския статус.
+- [NIS2 изисквания: мерки за киберсигурност и докладване](https://defcoms.eu/blog/nis2-requirements): Обзор на управленската отговорност, член 21 risk-management областите и член 23 incident reporting.
+- [NIS2 checklist: практическа самооценка за организации](https://defcoms.eu/blog/nis2-checklist): Работен списък за обхват, управление, риск, инциденти и доказателства; не представлява правно становище или сертификат за съответствие.
+- [NIS2 gap analysis: как да откриете и приоритизирате пропуските](https://defcoms.eu/blog/nis2-gap-analysis): Методика за сравнение на приложимите изисквания с текущите процеси и доказателства и за съставяне на приоритизиран план за действие.
+- [NIS2 risk assessment: как да оцените киберриска стъпка по стъпка](https://defcoms.eu/blog/nis2-risk-assessment): Рамка за контекст, активи, риск-сценарии, контролни мерки, остатъчен риск и план за третиране.
+- [NIS2 докладване на инциденти: срокове и подготовка](https://defcoms.eu/blog/nis2-incident-reporting): Обзор на значимите инциденти, етапите на уведомяване по член 23 и оперативната подготовка; проверявайте националните процедури.
+- [NIS2 и сигурност на веригата на доставки](https://defcoms.eu/blog/nis2-supply-chain-security): Подход за оценка на преките доставчици, критичност, достъп, договори и текущ преглед на риска.
+- [NIS2 за производствени компании: обхват и OT риск](https://defcoms.eu/blog/nis2-manufacturing): Обзор на производствените дейности в приложение II и разглеждане на киберриска в IT/OT среда; необходима е проверка на конкретния правен субект и националните правила.
+- [NIS2 за IT компании: MSP, MSSP и доставчици на услуги](https://defcoms.eu/blog/nis2-it-companies): Разграничение на определени управлявани и цифрови услуги от обща IT дейност, с проверка на юридическото лице и приложимите критерии.
+- [Какво е DORA? Регламентът за дигитална оперативна устойчивост](https://defcoms.eu/blog/what-is-dora): Въведение в DORA, приложимостта към финансови субекти и основните области за ICT риск, инциденти, тестове и трети страни.
+- [Кои организации попадат под DORA?](https://defcoms.eu/blog/who-is-covered-by-dora): Обзор на финансовите субекти по член 2, изключенията и разграничението за ICT доставчици и критични доставчици под надзор.
+- [DORA изисквания: основни задължения и как да подготвите организацията](https://defcoms.eu/blog/dora-requirements): Образователен преглед на областите по DORA — управление на ICT риска, инциденти и докладване, устойчивост и TLPT тестове, риск от трети страни, регистър на информацията, обмен на информация и надзор над формално определени критични ICT доставчици. Точните задължения зависят от категорията на финансовия субект и актуалните Level 2 актове; не е правно становище или декларация за съответствие.
+- [DORA ICT риск: рамка за управление и контролни мерки](https://defcoms.eu/blog/dora-ict-risk-management): Практически преглед на управленската отговорност и цикъла за идентифициране, защита, откриване, реакция, възстановяване и подобрение по членове 5–16 от Регламент (ЕС) 2022/2554 и Делегиран регламент (ЕС) 2024/1774. Опростената рамка е само за категориите, предвидени в член 16; статията не е правно становище.
+- [DORA incident management: управление и докладване на ICT инциденти](https://defcoms.eu/blog/dora-incident-management): Образователно ръководство за регистриране, класифициране, реакция и възстановяване при ICT инциденти, както и за докладването на major incidents по DORA, RTS 2024/1772, RTS 2025/301 и ITS 2025/302. Посочените срокове трябва да се сверят с действащите актове, компетентния орган и актуалните ESAs operational instructions; не е правно становище.
+- [DORA third-party risk: как да управлявате ICT доставчиците](https://defcoms.eu/blog/dora-third-party-risk): Практически обзор на членове 28–30: due diligence, класификация на поддържаните функции, концентрационен риск, договорни клаузи, Register of Information по ITS 2024/2956 и контрол на веригата на подизпълнение по Делегиран регламент 2025/532. Финансовият субект запазва отговорността си; договорните изисквания към доставчик не го правят автоматично пряко поднадзорен по DORA.
+- [DORA за IT доставчици: как да се подготвите за изискванията на финансовите клиенти](https://defcoms.eu/blog/dora-it-providers): Практическо ръководство за ICT доставчици по договорни DORA заявки: service mapping, security evidence, incident escalation, audit rights, подизпълнители и exit support. Разграничава клиентските договорни изисквания от прякото CTPP определяне от ESAs; не представлява универсален compliance сертификат или правно становище.
+- [DORA за SaaS компании: как да подготвите услугата си за финансови клиенти](https://defcoms.eu/blog/dora-saas-companies): Образователен преглед за SaaS доставчици на multi-tenant контроли, данни и места за обработване, cloud/subprocessor зависимости, incident escalation, assurance, договорни права и exit. Не извежда универсално EU-only hosting изискване и разграничава клиентските договорни мерки от формалното CTPP определяне.
+- [DORA penetration testing и TLPT: разлики и изисквания](https://defcoms.eu/blog/dora-penetration-testing): Ръководство за тестовете по членове 24–27 на Регламент (ЕС) 2022/2554, включително общата програма и поне ежегодното тестване за субекти, различни от microenterprises, при системи, поддържащи критични/важни функции, както и отделния TLPT режим по член 26 и Делегиран регламент (ЕС) 2025/1190. TLPT не е стандартен пентест; приложимостта зависи от идентификацията на компетентния орган.
+- [DORA checklist: практическа самооценка за финансови организации](https://defcoms.eu/blog/dora-checklist): Интерактивен checklist за първоначално организиране на прегледа по приложимост, governance, ICT risk, инциденти, тестове, ICT third-party risk и доказателства. Чекнатите точки не оценяват съответствие и не са юридически одит; приложимостта зависи от конкретния финансов субект и актуалните актове.
+- [Киберсигурност в индустрията 4.0/5.0: рискове и мерки](https://defcoms.eu/blog/industrial-cybersecurity-industry-4-0): IT/OT риск, сегментация, отдалечен достъп, наблюдение и готовност за инциденти.
+
+## 8. Самооценка NIS2/DORA
+
+- [Предварителна NIS2 и DORA самооценка](https://defcoms.eu/wizard): Обяснение на въпросника и достъп до него; резултатът е информационен ориентир, не правно становище.
+- [Интерактивен въпросник](https://defcoms.eu/wizard): Кратък self-assessment с доброволен контакт след показване на резултата.
+
+## 9. Допълнителни Страници и Индустриални Решения
+
+- [За нас](https://defcoms.eu/about/): За компанията DefComs, нашата мисия, технологичен стек и методологии.
+- [Нашият Екип](https://defcoms.eu/about/team/): Сертифицирани експерти и инженери по SOC, офанзивна сигурност и регулаторно съответствие.
+- [Решение за Хотели](https://defcoms.eu/solutions/hotels/): Специализирана мрежова защита за хотели, Guest Wi-Fi, PMS/POS и камери.
+- [Решение за Летища](https://defcoms.eu/solutions/airports/): Киберсигурност за летищна инфраструктура и IT/OT защита по NIS2.
+- [MikroTik Технологична Страница](https://defcoms.eu/technology/mikrotik/): RouterOS hardening, Firewall филтрация, VLANs и VPN тунели.
+- [Речник на Термините](https://defcoms.eu/resources/glossary/): Пълен речник на съкращенията и понятията в киберсигурността.
+- [Политика за Бисквитки](https://defcoms.eu/cookie-policy): Информация за бисквитките.
+- [Security & Responsible Disclosure](https://defcoms.eu/security): Политика за сигурност, докладване на уязвимости и спешни SOC контакти.
+- [Ръководства (Guides)](https://defcoms.eu/resources/guides/): Технически и архитектурни ръководства за киберсигурност.
+- [Чек-листи (Checklists)](https://defcoms.eu/resources/checklists/): Интерактивни и работни чек-листи за NIS2, DORA, SOC и Ransomware.
+- [GDPR Съответствие](https://defcoms.eu/compliance/gdpr/): Технически и организационни мерки за защита на личните данни.
+- [ISO/IEC 27001](https://defcoms.eu/compliance/iso-27001/): Изграждане и подготовка за сертификация на СУИС.
+- [Доклади и Изследвания (Reports)](https://defcoms.eu/resources/reports/): Годишни доклади и изследвания за киберзаплахите в България.
+- [State of Cybersecurity 2026](https://defcoms.eu/resources/reports/state-of-cybersecurity-bulgaria-2026): Доклад за състоянието на киберсигурността в българския бизнес.
+
+## 3. Платформи Cybersecurity OS и технологичен стек
+
+Семейството **Cybersecurity OS** на DefComs включва две платформи: **Sentinel OS** – вътрешна операционна платформа, използвана от SOC/NOC екипите (не се предлага като самостоятелен продукт), и **NetWatch** – платформа, която се внедрява при клиента, за следене на мрежата, трафика, натоварванията, IP адресите и входящия трафик в реално време: скорост (download/upload, активни и блокирани адреси), графика на трафика за последните 60 секунди, натоварване на връзката в проценти с разпределение по вид трафик (видео, VoIP и др.), класация на топ консуматори по IP, списък с устройствата с бутон „Блокирай“ / „Отблокирай“, блокиране на входящ трафик по ръчно въведен външен IP, дневник със събития за сигурност и вход за екипа с роли (администратори и наблюдатели). Покрива връзки от 1 Gbps до 10 Gbps и се интегрира с MikroTik. Платформите работят върху мощна и защитена съвременна сървърна инфраструктура и включват следните технологии:
+
+- **Операционни системи & Облак**: Linux / Ubuntu Server, AWS, Azure, Google Cloud, DigitalOcean.
+- **Контейнеризация**: Docker, Kubernetes, Helm, Istio.
+- **Мрежово оборудване & Сигурност**: MikroTik RouterOS, Cisco, Wireshark, HashiCorp Vault, Falco, Trivy Scanner.
+- **Мониторинг & Бази Данни**: Supabase, PostgreSQL, MongoDB, Redis, ClickHouse, Apache Kafka, RabbitMQ, Prometheus, Grafana.
+- **Програмни езици & Анализ на данни (Data Science)**: Python, Java, Go, Rust, C++, TypeScript, NodeJS.
+
+## 4. Интерактивен инструмент за NIS2 & DORA оценка
+
+Чрез нашата [предварителна NIS2/DORA самооценка](https://defcoms.eu/wizard) посетителите могат да отговорят на кратки въпроси за сектор, размер и роля във веригата на доставки. Инструментът показва информационна индикация въз основа на отговорите, след което по избор може да бъде изпратено запитване до DefComs.
+
+Самооценката не е пълен compliance assessment, правно становище или официално решение дали конкретно юридическо лице попада под NIS2 или DORA. Тя не проверява всички секторни критерии, изключения, национални правила и факти за организацията. Резултатът трябва да бъде потвърден спрямо актуалните официални източници и конкретните обстоятелства.
+
+## 5. Регулаторен & Сертификационен Справочник
+
+В нашия [Справочник по киберсигурност](spravochnik.html) поддържаме пълен списък на:
+1. **Европейски регламенти**: GDPR, NIS/NIS2, DORA, Cyber Resilience Act (CRA), EU AI Act, ePrivacy Directive, eIDAS/eIDAS 2.0, Data Act, Data Governance Act, Cyber Solidarity Act, CER Directive, PSD2/PSD3, PSR, EMC2.
+2. **ISO/IEC Стандарти**: ISO/IEC 27001 (СУИС), ISO/IEC 27002, ISO/IEC 27005 (Риск), ISO/IEC 27017 & 27018 (Облачна сигурност), ISO/IEC 27701 (Поверителност), ISO/IEC 29147 & 30111 (Уязвимости), ISO/IEC 42001 (AI), ISO 22301, ISO 31000.
+3. **NIST Рамки**: NIST CSF 2.0, NIST AI RMF, SP 800-30, SP 800-37 (RMF), SP 800-53, SP 800-61 (Инциденти), SP 800-115 (Пентест), SP 800-171/172, SP 800-207 (Zero Trust).
+4. **CIS & OWASP**: CIS Controls v8, CIS Benchmarks, OWASP Top 10, API Security, ASVS, MASVS, SAMM, WSTG.
+5. **Одит & Секторни рамки**: SOC 1/2/3, PCI DSS 4.0, HITRUST, COBIT, ITIL 4, MITRE ATT&CK, MITRE D3FEND, STIX/TAXII, HIPAA, HITECH, GLBA, FedRAMP, CMMC 2.0.
+6. **Национални рамки**: Закон за киберсигурност в България.
+
+## Additional Compliance Standards & Frameworks
+- [ISO/IEC 27017 Cloud Security](https://defcoms.eu/compliance/iso-27017/): Controls and guidance for cloud service security.
+- [ISO/IEC 27701 Privacy Information Management](https://defcoms.eu/compliance/iso-27701/): Privacy management and GDPR alignment.
+- [NIST Cybersecurity Framework 2.0](https://defcoms.eu/compliance/nist-csf/): Govern, Identify, Protect, Detect, Respond, Recover.
+- [CIS Controls v8](https://defcoms.eu/compliance/cis-controls/): Essential cyber hygiene and implementation groups.
+- [OWASP Application Security](https://defcoms.eu/compliance/owasp/): Web and API security standards.
+- [PCI DSS v4.0](https://defcoms.eu/compliance/pci-dss/): Cardholder data environment security and pentesting.
+
+## Industry Solutions
+- [Manufacturing & OT Security](https://defcoms.eu/solutions/manufacturing/): OT/ICS/SCADA protection and NIS2 readiness.
+- [Financial Institutions & Fintech](https://defcoms.eu/solutions/finance/): DORA, PCI DSS v4.0 and digital operational resilience.
+- [Healthcare & Hospitals](https://defcoms.eu/solutions/healthcare/): IoMT protection, electronic health record security, NIS2/GDPR.
+- [ICT Providers, MSPs & SaaS](https://defcoms.eu/solutions/ict-providers/): Supply chain risk management and white-label SOC.
+
+## Technologies
+- [AWS Cloud Security](https://defcoms.eu/technology/aws/): AWS GuardDuty, CloudTrail, S3 and IAM security audits.
+- [Microsoft Azure & Entra ID Security](https://defcoms.eu/technology/azure/): Entra ID, Conditional Access and Defender for Cloud.
+- [Kubernetes & Container Security](https://defcoms.eu/technology/kubernetes/): K8s RBAC, Network Policies, container scanning and runtime protection.
+
+## Whitepapers
+- [Whitepapers & Technical Papers](https://defcoms.eu/resources/whitepapers/): Deep-dive architectural whitepapers on Zero Trust and DORA TLPT.

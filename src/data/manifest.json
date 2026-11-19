@@ -1,0 +1,1142 @@
+[
+ {
+  "route": "/404",
+  "source": "404.html",
+  "name": "404.json"
+ },
+ {
+  "route": "/about/author/alexander-petrov",
+  "source": "about/author/alexander-petrov.html",
+  "name": "about__author__alexander-petrov.json"
+ },
+ {
+  "route": "/about/author/elena-dimitrova",
+  "source": "about/author/elena-dimitrova.html",
+  "name": "about__author__elena-dimitrova.json"
+ },
+ {
+  "route": "/about/author/georgi-todorov",
+  "source": "about/author/georgi-todorov.html",
+  "name": "about__author__georgi-todorov.json"
+ },
+ {
+  "route": "/about/author/mikhail-georgiev",
+  "source": "about/author/mikhail-georgiev.html",
+  "name": "about__author__mikhail-georgiev.json"
+ },
+ {
+  "route": "/about",
+  "source": "about/index.html",
+  "name": "about.json"
+ },
+ {
+  "route": "/about/team/author/alexander-petrov",
+  "source": "about/team/author/alexander-petrov.html",
+  "name": "about__team__author__alexander-petrov.json"
+ },
+ {
+  "route": "/about/team/author/elena-dimitrova",
+  "source": "about/team/author/elena-dimitrova.html",
+  "name": "about__team__author__elena-dimitrova.json"
+ },
+ {
+  "route": "/about/team/author/georgi-todorov",
+  "source": "about/team/author/georgi-todorov.html",
+  "name": "about__team__author__georgi-todorov.json"
+ },
+ {
+  "route": "/about/team/author/mikhail-georgiev",
+  "source": "about/team/author/mikhail-georgiev.html",
+  "name": "about__team__author__mikhail-georgiev.json"
+ },
+ {
+  "route": "/about/team",
+  "source": "about/team/index.html",
+  "name": "about__team.json"
+ },
+ {
+  "route": "/assessment/nis2-dora",
+  "source": "assessment/nis2-dora/index.html",
+  "name": "assessment__nis2-dora.json"
+ },
+ {
+  "route": "/backup-disaster-recovery",
+  "source": "backup-disaster-recovery.html",
+  "name": "backup-disaster-recovery.json"
+ },
+ {
+  "route": "/blog/3-2-1-backup",
+  "source": "blog/3-2-1-backup.html",
+  "name": "blog__3-2-1-backup.json"
+ },
+ {
+  "route": "/blog/api-pentest",
+  "source": "blog/api-pentest.html",
+  "name": "blog__api-pentest.json"
+ },
+ {
+  "route": "/blog/aws-security",
+  "source": "blog/aws-security.html",
+  "name": "blog__aws-security.json"
+ },
+ {
+  "route": "/blog/azure-security",
+  "source": "blog/azure-security.html",
+  "name": "blog__azure-security.json"
+ },
+ {
+  "route": "/blog/cloud-iam",
+  "source": "blog/cloud-iam.html",
+  "name": "blog__cloud-iam.json"
+ },
+ {
+  "route": "/blog/cloud-incident-response",
+  "source": "blog/cloud-incident-response.html",
+  "name": "blog__cloud-incident-response.json"
+ },
+ {
+  "route": "/blog/cloud-logging",
+  "source": "blog/cloud-logging.html",
+  "name": "blog__cloud-logging.json"
+ },
+ {
+  "route": "/blog/cloud-pentest",
+  "source": "blog/cloud-pentest.html",
+  "name": "blog__cloud-pentest.json"
+ },
+ {
+  "route": "/blog/cvss-explained",
+  "source": "blog/cvss-explained.html",
+  "name": "blog__cvss-explained.json"
+ },
+ {
+  "route": "/blog/does-smb-need-soc",
+  "source": "blog/does-smb-need-soc.html",
+  "name": "blog__does-smb-need-soc.json"
+ },
+ {
+  "route": "/blog/dora-checklist",
+  "source": "blog/dora-checklist.html",
+  "name": "blog__dora-checklist.json"
+ },
+ {
+  "route": "/blog/dora-ict-risk-management",
+  "source": "blog/dora-ict-risk-management.html",
+  "name": "blog__dora-ict-risk-management.json"
+ },
+ {
+  "route": "/blog/dora-incident-management",
+  "source": "blog/dora-incident-management.html",
+  "name": "blog__dora-incident-management.json"
+ },
+ {
+  "route": "/blog/dora-it-providers",
+  "source": "blog/dora-it-providers.html",
+  "name": "blog__dora-it-providers.json"
+ },
+ {
+  "route": "/blog/dora-penetration-testing",
+  "source": "blog/dora-penetration-testing.html",
+  "name": "blog__dora-penetration-testing.json"
+ },
+ {
+  "route": "/blog/dora-requirements",
+  "source": "blog/dora-requirements.html",
+  "name": "blog__dora-requirements.json"
+ },
+ {
+  "route": "/blog/dora-saas-companies",
+  "source": "blog/dora-saas-companies.html",
+  "name": "blog__dora-saas-companies.json"
+ },
+ {
+  "route": "/blog/dora-third-party-risk",
+  "source": "blog/dora-third-party-risk.html",
+  "name": "blog__dora-third-party-risk.json"
+ },
+ {
+  "route": "/blog/edr-and-soc",
+  "source": "blog/edr-and-soc.html",
+  "name": "blog__edr-and-soc.json"
+ },
+ {
+  "route": "/blog/edr-vs-antivirus",
+  "source": "blog/edr-vs-antivirus.html",
+  "name": "blog__edr-vs-antivirus.json"
+ },
+ {
+  "route": "/blog/edr-vs-ransomware",
+  "source": "blog/edr-vs-ransomware.html",
+  "name": "blog__edr-vs-ransomware.json"
+ },
+ {
+  "route": "/blog/edr-vs-xdr",
+  "source": "blog/edr-vs-xdr.html",
+  "name": "blog__edr-vs-xdr.json"
+ },
+ {
+  "route": "/blog/endpoint-isolation",
+  "source": "blog/endpoint-isolation.html",
+  "name": "blog__endpoint-isolation.json"
+ },
+ {
+  "route": "/blog/external-vs-internal-pentest",
+  "source": "blog/external-vs-internal-pentest.html",
+  "name": "blog__external-vs-internal-pentest.json"
+ },
+ {
+  "route": "/blog/how-much-does-soc-cost",
+  "source": "blog/how-much-does-soc-cost.html",
+  "name": "blog__how-much-does-soc-cost.json"
+ },
+ {
+  "route": "/blog/how-ransomware-works",
+  "source": "blog/how-ransomware-works.html",
+  "name": "blog__how-ransomware-works.json"
+ },
+ {
+  "route": "/blog/how-soc-detects-ransomware",
+  "source": "blog/how-soc-detects-ransomware.html",
+  "name": "blog__how-soc-detects-ransomware.json"
+ },
+ {
+  "route": "/blog/how-soc-monitoring-works",
+  "source": "blog/how-soc-monitoring-works.html",
+  "name": "blog__how-soc-monitoring-works.json"
+ },
+ {
+  "route": "/blog/how-to-protect-business-from-ransomware",
+  "source": "blog/how-to-protect-business-from-ransomware.html",
+  "name": "blog__how-to-protect-business-from-ransomware.json"
+ },
+ {
+  "route": "/blog",
+  "source": "blog/index.html",
+  "name": "blog.json"
+ },
+ {
+  "route": "/blog/industrial-cybersecurity-industry-4-0",
+  "source": "blog/industrial-cybersecurity-industry-4-0.html",
+  "name": "blog__industrial-cybersecurity-industry-4-0.json"
+ },
+ {
+  "route": "/blog/network-pentest",
+  "source": "blog/network-pentest.html",
+  "name": "blog__network-pentest.json"
+ },
+ {
+  "route": "/blog/nis2-checklist",
+  "source": "blog/nis2-checklist.html",
+  "name": "blog__nis2-checklist.json"
+ },
+ {
+  "route": "/blog/nis2-gap-analysis",
+  "source": "blog/nis2-gap-analysis.html",
+  "name": "blog__nis2-gap-analysis.json"
+ },
+ {
+  "route": "/blog/nis2-incident-reporting",
+  "source": "blog/nis2-incident-reporting.html",
+  "name": "blog__nis2-incident-reporting.json"
+ },
+ {
+  "route": "/blog/nis2-it-companies",
+  "source": "blog/nis2-it-companies.html",
+  "name": "blog__nis2-it-companies.json"
+ },
+ {
+  "route": "/blog/nis2-manufacturing",
+  "source": "blog/nis2-manufacturing.html",
+  "name": "blog__nis2-manufacturing.json"
+ },
+ {
+  "route": "/blog/nis2-requirements",
+  "source": "blog/nis2-requirements.html",
+  "name": "blog__nis2-requirements.json"
+ },
+ {
+  "route": "/blog/nis2-risk-assessment",
+  "source": "blog/nis2-risk-assessment.html",
+  "name": "blog__nis2-risk-assessment.json"
+ },
+ {
+  "route": "/blog/nis2-supply-chain-security",
+  "source": "blog/nis2-supply-chain-security.html",
+  "name": "blog__nis2-supply-chain-security.json"
+ },
+ {
+  "route": "/blog/nist-sp-800-207",
+  "source": "blog/nist-sp-800-207.html",
+  "name": "blog__nist-sp-800-207.json"
+ },
+ {
+  "route": "/blog/pentest-report",
+  "source": "blog/pentest-report.html",
+  "name": "blog__pentest-report.json"
+ },
+ {
+  "route": "/blog/ransomware-and-nis2",
+  "source": "blog/ransomware-and-nis2.html",
+  "name": "blog__ransomware-and-nis2.json"
+ },
+ {
+  "route": "/blog/ransomware-backup-strategy",
+  "source": "blog/ransomware-backup-strategy.html",
+  "name": "blog__ransomware-backup-strategy.json"
+ },
+ {
+  "route": "/blog/ransomware-incident-response",
+  "source": "blog/ransomware-incident-response.html",
+  "name": "blog__ransomware-incident-response.json"
+ },
+ {
+  "route": "/blog/ransomware-recovery",
+  "source": "blog/ransomware-recovery.html",
+  "name": "blog__ransomware-recovery.json"
+ },
+ {
+  "route": "/blog/retesting",
+  "source": "blog/retesting.html",
+  "name": "blog__retesting.json"
+ },
+ {
+  "route": "/blog/soc-and-nis2",
+  "source": "blog/soc-and-nis2.html",
+  "name": "blog__soc-and-nis2.json"
+ },
+ {
+  "route": "/blog/soc-as-a-service",
+  "source": "blog/soc-as-a-service.html",
+  "name": "blog__soc-as-a-service.json"
+ },
+ {
+  "route": "/blog/soc-vs-mssp",
+  "source": "blog/soc-vs-mssp.html",
+  "name": "blog__soc-vs-mssp.json"
+ },
+ {
+  "route": "/blog/soc-vs-ransomware",
+  "source": "blog/soc-vs-ransomware.html",
+  "name": "blog__soc-vs-ransomware.json"
+ },
+ {
+  "route": "/blog/soc-vs-siem",
+  "source": "blog/soc-vs-siem.html",
+  "name": "blog__soc-vs-siem.json"
+ },
+ {
+  "route": "/blog/threat-hunting",
+  "source": "blog/threat-hunting.html",
+  "name": "blog__threat-hunting.json"
+ },
+ {
+  "route": "/blog/types-of-penetration-testing",
+  "source": "blog/types-of-penetration-testing.html",
+  "name": "blog__types-of-penetration-testing.json"
+ },
+ {
+  "route": "/blog/web-application-pentest",
+  "source": "blog/web-application-pentest.html",
+  "name": "blog__web-application-pentest.json"
+ },
+ {
+  "route": "/blog/what-does-soc-monitor",
+  "source": "blog/what-does-soc-monitor.html",
+  "name": "blog__what-does-soc-monitor.json"
+ },
+ {
+  "route": "/blog/what-is-dora",
+  "source": "blog/what-is-dora.html",
+  "name": "blog__what-is-dora.json"
+ },
+ {
+  "route": "/blog/what-is-edr",
+  "source": "blog/what-is-edr.html",
+  "name": "blog__what-is-edr.json"
+ },
+ {
+  "route": "/blog/what-is-nis2",
+  "source": "blog/what-is-nis2.html",
+  "name": "blog__what-is-nis2.json"
+ },
+ {
+  "route": "/blog/what-is-penetration-testing",
+  "source": "blog/what-is-penetration-testing.html",
+  "name": "blog__what-is-penetration-testing.json"
+ },
+ {
+  "route": "/blog/what-is-ransomware",
+  "source": "blog/what-is-ransomware.html",
+  "name": "blog__what-is-ransomware.json"
+ },
+ {
+  "route": "/blog/what-is-soc",
+  "source": "blog/what-is-soc.html",
+  "name": "blog__what-is-soc.json"
+ },
+ {
+  "route": "/blog/what-is-xdr",
+  "source": "blog/what-is-xdr.html",
+  "name": "blog__what-is-xdr.json"
+ },
+ {
+  "route": "/blog/what-is-zero-trust",
+  "source": "blog/what-is-zero-trust.html",
+  "name": "blog__what-is-zero-trust.json"
+ },
+ {
+  "route": "/blog/who-is-covered-by-dora",
+  "source": "blog/who-is-covered-by-dora.html",
+  "name": "blog__who-is-covered-by-dora.json"
+ },
+ {
+  "route": "/blog/who-is-covered-by-nis2-bulgaria",
+  "source": "blog/who-is-covered-by-nis2-bulgaria.html",
+  "name": "blog__who-is-covered-by-nis2-bulgaria.json"
+ },
+ {
+  "route": "/blog/zero-trust-architecture",
+  "source": "blog/zero-trust-architecture.html",
+  "name": "blog__zero-trust-architecture.json"
+ },
+ {
+  "route": "/blog/zero-trust-for-smb",
+  "source": "blog/zero-trust-for-smb.html",
+  "name": "blog__zero-trust-for-smb.json"
+ },
+ {
+  "route": "/blog/zero-trust-implementation",
+  "source": "blog/zero-trust-implementation.html",
+  "name": "blog__zero-trust-implementation.json"
+ },
+ {
+  "route": "/blog/zero-trust-network",
+  "source": "blog/zero-trust-network.html",
+  "name": "blog__zero-trust-network.json"
+ },
+ {
+  "route": "/blog/zero-trust-vs-vpn",
+  "source": "blog/zero-trust-vs-vpn.html",
+  "name": "blog__zero-trust-vs-vpn.json"
+ },
+ {
+  "route": "/bulgaria/blagoevgrad",
+  "source": "bulgaria/blagoevgrad/index.html",
+  "name": "bulgaria__blagoevgrad.json"
+ },
+ {
+  "route": "/bulgaria/burgas",
+  "source": "bulgaria/burgas/index.html",
+  "name": "bulgaria__burgas.json"
+ },
+ {
+  "route": "/bulgaria/dobrich",
+  "source": "bulgaria/dobrich/index.html",
+  "name": "bulgaria__dobrich.json"
+ },
+ {
+  "route": "/bulgaria/gabrovo",
+  "source": "bulgaria/gabrovo/index.html",
+  "name": "bulgaria__gabrovo.json"
+ },
+ {
+  "route": "/bulgaria/haskovo",
+  "source": "bulgaria/haskovo/index.html",
+  "name": "bulgaria__haskovo.json"
+ },
+ {
+  "route": "/bulgaria",
+  "source": "bulgaria/index.html",
+  "name": "bulgaria.json"
+ },
+ {
+  "route": "/bulgaria/kardzhali",
+  "source": "bulgaria/kardzhali/index.html",
+  "name": "bulgaria__kardzhali.json"
+ },
+ {
+  "route": "/bulgaria/kyustendil",
+  "source": "bulgaria/kyustendil/index.html",
+  "name": "bulgaria__kyustendil.json"
+ },
+ {
+  "route": "/bulgaria/lovech",
+  "source": "bulgaria/lovech/index.html",
+  "name": "bulgaria__lovech.json"
+ },
+ {
+  "route": "/bulgaria/montana",
+  "source": "bulgaria/montana/index.html",
+  "name": "bulgaria__montana.json"
+ },
+ {
+  "route": "/bulgaria/pazardzhik",
+  "source": "bulgaria/pazardzhik/index.html",
+  "name": "bulgaria__pazardzhik.json"
+ },
+ {
+  "route": "/bulgaria/pernik",
+  "source": "bulgaria/pernik/index.html",
+  "name": "bulgaria__pernik.json"
+ },
+ {
+  "route": "/bulgaria/pleven",
+  "source": "bulgaria/pleven/index.html",
+  "name": "bulgaria__pleven.json"
+ },
+ {
+  "route": "/bulgaria/plovdiv",
+  "source": "bulgaria/plovdiv/index.html",
+  "name": "bulgaria__plovdiv.json"
+ },
+ {
+  "route": "/bulgaria/razgrad",
+  "source": "bulgaria/razgrad/index.html",
+  "name": "bulgaria__razgrad.json"
+ },
+ {
+  "route": "/bulgaria/ruse",
+  "source": "bulgaria/ruse/index.html",
+  "name": "bulgaria__ruse.json"
+ },
+ {
+  "route": "/bulgaria/shumen",
+  "source": "bulgaria/shumen/index.html",
+  "name": "bulgaria__shumen.json"
+ },
+ {
+  "route": "/bulgaria/silistra",
+  "source": "bulgaria/silistra/index.html",
+  "name": "bulgaria__silistra.json"
+ },
+ {
+  "route": "/bulgaria/sliven",
+  "source": "bulgaria/sliven/index.html",
+  "name": "bulgaria__sliven.json"
+ },
+ {
+  "route": "/bulgaria/smolyan",
+  "source": "bulgaria/smolyan/index.html",
+  "name": "bulgaria__smolyan.json"
+ },
+ {
+  "route": "/bulgaria/sofia",
+  "source": "bulgaria/sofia/index.html",
+  "name": "bulgaria__sofia.json"
+ },
+ {
+  "route": "/bulgaria/stara-zagora",
+  "source": "bulgaria/stara-zagora/index.html",
+  "name": "bulgaria__stara-zagora.json"
+ },
+ {
+  "route": "/bulgaria/targovishte",
+  "source": "bulgaria/targovishte/index.html",
+  "name": "bulgaria__targovishte.json"
+ },
+ {
+  "route": "/bulgaria/varna",
+  "source": "bulgaria/varna/index.html",
+  "name": "bulgaria__varna.json"
+ },
+ {
+  "route": "/bulgaria/veliko-tarnovo",
+  "source": "bulgaria/veliko-tarnovo/index.html",
+  "name": "bulgaria__veliko-tarnovo.json"
+ },
+ {
+  "route": "/bulgaria/vidin",
+  "source": "bulgaria/vidin/index.html",
+  "name": "bulgaria__vidin.json"
+ },
+ {
+  "route": "/bulgaria/vratsa",
+  "source": "bulgaria/vratsa/index.html",
+  "name": "bulgaria__vratsa.json"
+ },
+ {
+  "route": "/bulgaria/yambol",
+  "source": "bulgaria/yambol/index.html",
+  "name": "bulgaria__yambol.json"
+ },
+ {
+  "route": "/cloud-security",
+  "source": "cloud-security.html",
+  "name": "cloud-security.json"
+ },
+ {
+  "route": "/compliance/cis-controls",
+  "source": "compliance/cis-controls/index.html",
+  "name": "compliance__cis-controls.json"
+ },
+ {
+  "route": "/compliance/dora",
+  "source": "compliance/dora/index.html",
+  "name": "compliance__dora.json"
+ },
+ {
+  "route": "/compliance/gdpr",
+  "source": "compliance/gdpr/index.html",
+  "name": "compliance__gdpr.json"
+ },
+ {
+  "route": "/compliance",
+  "source": "compliance/index.html",
+  "name": "compliance.json"
+ },
+ {
+  "route": "/compliance/iso-27001",
+  "source": "compliance/iso-27001/index.html",
+  "name": "compliance__iso-27001.json"
+ },
+ {
+  "route": "/compliance/iso-27017",
+  "source": "compliance/iso-27017/index.html",
+  "name": "compliance__iso-27017.json"
+ },
+ {
+  "route": "/compliance/iso-27701",
+  "source": "compliance/iso-27701/index.html",
+  "name": "compliance__iso-27701.json"
+ },
+ {
+  "route": "/compliance/nis2",
+  "source": "compliance/nis2/index.html",
+  "name": "compliance__nis2.json"
+ },
+ {
+  "route": "/compliance/nist-csf",
+  "source": "compliance/nist-csf/index.html",
+  "name": "compliance__nist-csf.json"
+ },
+ {
+  "route": "/compliance/owasp",
+  "source": "compliance/owasp/index.html",
+  "name": "compliance__owasp.json"
+ },
+ {
+  "route": "/compliance/pci-dss",
+  "source": "compliance/pci-dss/index.html",
+  "name": "compliance__pci-dss.json"
+ },
+ {
+  "route": "/contact",
+  "source": "contact/index.html",
+  "name": "contact.json"
+ },
+ {
+  "route": "/cookie-policy",
+  "source": "cookie-policy.html",
+  "name": "cookie-policy.json"
+ },
+ {
+  "route": "/cybersecurity-os",
+  "source": "cybersecurity-os/index.html",
+  "name": "cybersecurity-os.json"
+ },
+ {
+  "route": "/cybersecurity-os/netwatch",
+  "source": "cybersecurity-os/netwatch/index.html",
+  "name": "cybersecurity-os__netwatch.json"
+ },
+ {
+  "route": "/cybersecurity-os/sentinel",
+  "source": "cybersecurity-os/sentinel/index.html",
+  "name": "cybersecurity-os__sentinel.json"
+ },
+ {
+  "route": "/endpoint-security",
+  "source": "endpoint-security.html",
+  "name": "endpoint-security.json"
+ },
+ {
+  "route": "/incident-response",
+  "source": "incident-response.html",
+  "name": "incident-response.json"
+ },
+ {
+  "route": "/",
+  "source": "index.html",
+  "name": "index.json"
+ },
+ {
+  "route": "/mikrotik-airports",
+  "source": "mikrotik-airports.html",
+  "name": "mikrotik-airports.json"
+ },
+ {
+  "route": "/mikrotik-congress-centers",
+  "source": "mikrotik-congress-centers.html",
+  "name": "mikrotik-congress-centers.json"
+ },
+ {
+  "route": "/mikrotik-hotels",
+  "source": "mikrotik-hotels.html",
+  "name": "mikrotik-hotels.json"
+ },
+ {
+  "route": "/nis2-dora-compliance",
+  "source": "nis2-dora-compliance.html",
+  "name": "nis2-dora-compliance.json"
+ },
+ {
+  "route": "/noc-services",
+  "source": "noc-services.html",
+  "name": "noc-services.json"
+ },
+ {
+  "route": "/penetration-testing",
+  "source": "penetration-testing.html",
+  "name": "penetration-testing.json"
+ },
+ {
+  "route": "/phishing-protection",
+  "source": "phishing-protection.html",
+  "name": "phishing-protection.json"
+ },
+ {
+  "route": "/privacy",
+  "source": "privacy.html",
+  "name": "privacy.json"
+ },
+ {
+  "route": "/ransomware-prevention",
+  "source": "ransomware-prevention.html",
+  "name": "ransomware-prevention.json"
+ },
+ {
+  "route": "/resources/checklists",
+  "source": "resources/checklists/index.html",
+  "name": "resources__checklists.json"
+ },
+ {
+  "route": "/resources/glossary/casb",
+  "source": "resources/glossary/casb/index.html",
+  "name": "resources__glossary__casb.json"
+ },
+ {
+  "route": "/resources/glossary/cti",
+  "source": "resources/glossary/cti/index.html",
+  "name": "resources__glossary__cti.json"
+ },
+ {
+  "route": "/resources/glossary/cve",
+  "source": "resources/glossary/cve/index.html",
+  "name": "resources__glossary__cve.json"
+ },
+ {
+  "route": "/resources/glossary/cvss",
+  "source": "resources/glossary/cvss/index.html",
+  "name": "resources__glossary__cvss.json"
+ },
+ {
+  "route": "/resources/glossary/cwe",
+  "source": "resources/glossary/cwe/index.html",
+  "name": "resources__glossary__cwe.json"
+ },
+ {
+  "route": "/resources/glossary/dlp",
+  "source": "resources/glossary/dlp/index.html",
+  "name": "resources__glossary__dlp.json"
+ },
+ {
+  "route": "/resources/glossary/edr",
+  "source": "resources/glossary/edr/index.html",
+  "name": "resources__glossary__edr.json"
+ },
+ {
+  "route": "/resources/glossary/iam",
+  "source": "resources/glossary/iam/index.html",
+  "name": "resources__glossary__iam.json"
+ },
+ {
+  "route": "/resources/glossary",
+  "source": "resources/glossary/index.html",
+  "name": "resources__glossary.json"
+ },
+ {
+  "route": "/resources/glossary/ioa",
+  "source": "resources/glossary/ioa/index.html",
+  "name": "resources__glossary__ioa.json"
+ },
+ {
+  "route": "/resources/glossary/ioc",
+  "source": "resources/glossary/ioc/index.html",
+  "name": "resources__glossary__ioc.json"
+ },
+ {
+  "route": "/resources/glossary/mdr",
+  "source": "resources/glossary/mdr/index.html",
+  "name": "resources__glossary__mdr.json"
+ },
+ {
+  "route": "/resources/glossary/mitre-attack",
+  "source": "resources/glossary/mitre-attack/index.html",
+  "name": "resources__glossary__mitre-attack.json"
+ },
+ {
+  "route": "/resources/glossary/mssp",
+  "source": "resources/glossary/mssp/index.html",
+  "name": "resources__glossary__mssp.json"
+ },
+ {
+  "route": "/resources/glossary/ndr",
+  "source": "resources/glossary/ndr/index.html",
+  "name": "resources__glossary__ndr.json"
+ },
+ {
+  "route": "/resources/glossary/noc",
+  "source": "resources/glossary/noc/index.html",
+  "name": "resources__glossary__noc.json"
+ },
+ {
+  "route": "/resources/glossary/pam",
+  "source": "resources/glossary/pam/index.html",
+  "name": "resources__glossary__pam.json"
+ },
+ {
+  "route": "/resources/glossary/penetration-testing",
+  "source": "resources/glossary/penetration-testing/index.html",
+  "name": "resources__glossary__penetration-testing.json"
+ },
+ {
+  "route": "/resources/glossary/phishing",
+  "source": "resources/glossary/phishing/index.html",
+  "name": "resources__glossary__phishing.json"
+ },
+ {
+  "route": "/resources/glossary/ransomware",
+  "source": "resources/glossary/ransomware/index.html",
+  "name": "resources__glossary__ransomware.json"
+ },
+ {
+  "route": "/resources/glossary/sase",
+  "source": "resources/glossary/sase/index.html",
+  "name": "resources__glossary__sase.json"
+ },
+ {
+  "route": "/resources/glossary/siem",
+  "source": "resources/glossary/siem/index.html",
+  "name": "resources__glossary__siem.json"
+ },
+ {
+  "route": "/resources/glossary/soar",
+  "source": "resources/glossary/soar/index.html",
+  "name": "resources__glossary__soar.json"
+ },
+ {
+  "route": "/resources/glossary/soc",
+  "source": "resources/glossary/soc/index.html",
+  "name": "resources__glossary__soc.json"
+ },
+ {
+  "route": "/resources/glossary/threat-hunting",
+  "source": "resources/glossary/threat-hunting/index.html",
+  "name": "resources__glossary__threat-hunting.json"
+ },
+ {
+  "route": "/resources/glossary/xdr",
+  "source": "resources/glossary/xdr/index.html",
+  "name": "resources__glossary__xdr.json"
+ },
+ {
+  "route": "/resources/glossary/zero-trust",
+  "source": "resources/glossary/zero-trust/index.html",
+  "name": "resources__glossary__zero-trust.json"
+ },
+ {
+  "route": "/resources/guides",
+  "source": "resources/guides/index.html",
+  "name": "resources__guides.json"
+ },
+ {
+  "route": "/resources/reports",
+  "source": "resources/reports/index.html",
+  "name": "resources__reports.json"
+ },
+ {
+  "route": "/resources/reports/state-of-cybersecurity-bulgaria-2026",
+  "source": "resources/reports/state-of-cybersecurity-bulgaria-2026.html",
+  "name": "resources__reports__state-of-cybersecurity-bulgaria-2026.json"
+ },
+ {
+  "route": "/resources/whitepapers",
+  "source": "resources/whitepapers/index.html",
+  "name": "resources__whitepapers.json"
+ },
+ {
+  "route": "/security",
+  "source": "security.html",
+  "name": "security.json"
+ },
+ {
+  "route": "/services/backup-as-a-service",
+  "source": "services/backup-as-a-service/index.html",
+  "name": "services__backup-as-a-service.json"
+ },
+ {
+  "route": "/services/backup-disaster-recovery",
+  "source": "services/backup-disaster-recovery/index.html",
+  "name": "services__backup-disaster-recovery.json"
+ },
+ {
+  "route": "/services/cloud-security",
+  "source": "services/cloud-security/index.html",
+  "name": "services__cloud-security.json"
+ },
+ {
+  "route": "/services/corporate-training",
+  "source": "services/corporate-training/index.html",
+  "name": "services__corporate-training.json"
+ },
+ {
+  "route": "/services/devops-cicd",
+  "source": "services/devops-cicd/index.html",
+  "name": "services__devops-cicd.json"
+ },
+ {
+  "route": "/services/dpo-as-a-service",
+  "source": "services/dpo-as-a-service/index.html",
+  "name": "services__dpo-as-a-service.json"
+ },
+ {
+  "route": "/services/edr-xdr",
+  "source": "services/edr-xdr/index.html",
+  "name": "services__edr-xdr.json"
+ },
+ {
+  "route": "/services/game-servers",
+  "source": "services/game-servers/index.html",
+  "name": "services__game-servers.json"
+ },
+ {
+  "route": "/services/incident-response",
+  "source": "services/incident-response/index.html",
+  "name": "services__incident-response.json"
+ },
+ {
+  "route": "/services",
+  "source": "services/index.html",
+  "name": "services.json"
+ },
+ {
+  "route": "/services/mail-server",
+  "source": "services/mail-server/index.html",
+  "name": "services__mail-server.json"
+ },
+ {
+  "route": "/services/managed-databases",
+  "source": "services/managed-databases/index.html",
+  "name": "services__managed-databases.json"
+ },
+ {
+  "route": "/services/managed-kubernetes",
+  "source": "services/managed-kubernetes/index.html",
+  "name": "services__managed-kubernetes.json"
+ },
+ {
+  "route": "/services/monitoring-vms",
+  "source": "services/monitoring-vms/index.html",
+  "name": "services__monitoring-vms.json"
+ },
+ {
+  "route": "/services/msp-managed-it",
+  "source": "services/msp-managed-it/index.html",
+  "name": "services__msp-managed-it.json"
+ },
+ {
+  "route": "/services/network-design",
+  "source": "services/network-design/index.html",
+  "name": "services__network-design.json"
+ },
+ {
+  "route": "/services/nextcloud",
+  "source": "services/nextcloud/index.html",
+  "name": "services__nextcloud.json"
+ },
+ {
+  "route": "/services/noc-services",
+  "source": "services/noc-services/index.html",
+  "name": "services__noc-services.json"
+ },
+ {
+  "route": "/services/object-storage",
+  "source": "services/object-storage/index.html",
+  "name": "services__object-storage.json"
+ },
+ {
+  "route": "/services/osint-dark-web",
+  "source": "services/osint-dark-web/index.html",
+  "name": "services__osint-dark-web.json"
+ },
+ {
+  "route": "/services/ot-security",
+  "source": "services/ot-security/index.html",
+  "name": "services__ot-security.json"
+ },
+ {
+  "route": "/services/penetration-testing",
+  "source": "services/penetration-testing/index.html",
+  "name": "services__penetration-testing.json"
+ },
+ {
+  "route": "/services/phishing-simulation",
+  "source": "services/phishing-simulation/index.html",
+  "name": "services__phishing-simulation.json"
+ },
+ {
+  "route": "/services/private-cloud-proxmox",
+  "source": "services/private-cloud-proxmox/index.html",
+  "name": "services__private-cloud-proxmox.json"
+ },
+ {
+  "route": "/services/ransomware-protection",
+  "source": "services/ransomware-protection/index.html",
+  "name": "services__ransomware-protection.json"
+ },
+ {
+  "route": "/services/secure-team-chat",
+  "source": "services/secure-team-chat/index.html",
+  "name": "services__secure-team-chat.json"
+ },
+ {
+  "route": "/services/server-migration",
+  "source": "services/server-migration/index.html",
+  "name": "services__server-migration.json"
+ },
+ {
+  "route": "/services/smart-home-media",
+  "source": "services/smart-home-media/index.html",
+  "name": "services__smart-home-media.json"
+ },
+ {
+  "route": "/services/soc-monitoring",
+  "source": "services/soc-monitoring/index.html",
+  "name": "services__soc-monitoring.json"
+ },
+ {
+  "route": "/services/supply-chain-security",
+  "source": "services/supply-chain-security/index.html",
+  "name": "services__supply-chain-security.json"
+ },
+ {
+  "route": "/services/vciso",
+  "source": "services/vciso/index.html",
+  "name": "services__vciso.json"
+ },
+ {
+  "route": "/services/virtual-office",
+  "source": "services/virtual-office/index.html",
+  "name": "services__virtual-office.json"
+ },
+ {
+  "route": "/services/voip-pbx",
+  "source": "services/voip-pbx/index.html",
+  "name": "services__voip-pbx.json"
+ },
+ {
+  "route": "/services/vpn-service",
+  "source": "services/vpn-service/index.html",
+  "name": "services__vpn-service.json"
+ },
+ {
+  "route": "/services/vps-servers",
+  "source": "services/vps-servers/index.html",
+  "name": "services__vps-servers.json"
+ },
+ {
+  "route": "/services/vulnerability-management",
+  "source": "services/vulnerability-management/index.html",
+  "name": "services__vulnerability-management.json"
+ },
+ {
+  "route": "/services/web-hosting",
+  "source": "services/web-hosting/index.html",
+  "name": "services__web-hosting.json"
+ },
+ {
+  "route": "/services/zero-trust",
+  "source": "services/zero-trust/index.html",
+  "name": "services__zero-trust.json"
+ },
+ {
+  "route": "/soc-monitoring",
+  "source": "soc-monitoring.html",
+  "name": "soc-monitoring.json"
+ },
+ {
+  "route": "/solutions/airports",
+  "source": "solutions/airports/index.html",
+  "name": "solutions__airports.json"
+ },
+ {
+  "route": "/solutions/finance",
+  "source": "solutions/finance/index.html",
+  "name": "solutions__finance.json"
+ },
+ {
+  "route": "/solutions/healthcare",
+  "source": "solutions/healthcare/index.html",
+  "name": "solutions__healthcare.json"
+ },
+ {
+  "route": "/solutions/hotels",
+  "source": "solutions/hotels/index.html",
+  "name": "solutions__hotels.json"
+ },
+ {
+  "route": "/solutions/ict-providers",
+  "source": "solutions/ict-providers/index.html",
+  "name": "solutions__ict-providers.json"
+ },
+ {
+  "route": "/solutions/manufacturing",
+  "source": "solutions/manufacturing/index.html",
+  "name": "solutions__manufacturing.json"
+ },
+ {
+  "route": "/spravochnik",
+  "source": "spravochnik.html",
+  "name": "spravochnik.json"
+ },
+ {
+  "route": "/supply-chain-security",
+  "source": "supply-chain-security.html",
+  "name": "supply-chain-security.json"
+ },
+ {
+  "route": "/technology/aws",
+  "source": "technology/aws/index.html",
+  "name": "technology__aws.json"
+ },
+ {
+  "route": "/technology/azure",
+  "source": "technology/azure/index.html",
+  "name": "technology__azure.json"
+ },
+ {
+  "route": "/technology/kubernetes",
+  "source": "technology/kubernetes/index.html",
+  "name": "technology__kubernetes.json"
+ },
+ {
+  "route": "/technology/mikrotik",
+  "source": "technology/mikrotik/index.html",
+  "name": "technology__mikrotik.json"
+ },
+ {
+  "route": "/terms",
+  "source": "terms.html",
+  "name": "terms.json"
+ },
+ {
+  "route": "/wizard",
+  "source": "wizard.html",
+  "name": "wizard.json"
+ },
+ {
+  "route": "/zero-trust-architecture",
+  "source": "zero-trust-architecture.html",
+  "name": "zero-trust-architecture.json"
+ }
+]

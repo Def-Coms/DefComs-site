@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Как работи SOC мониторингът? Процес и ескалация | DefComs</title>
+    <meta name="description" content="Как работи SOC мониторингът стъпка по стъпка: telemetry, SIEM корелация, триаж, разследване, ескалация, реакция и подобрение.">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <link rel="canonical" href="https://defcoms.eu/blog/how-soc-monitoring-works.html">
+    <link rel="alternate" hreflang="bg" href="https://defcoms.eu/blog/how-soc-monitoring-works.html">
+    <link rel="alternate" hreflang="x-default" href="https://defcoms.eu/blog/how-soc-monitoring-works.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="bg_BG">
+    <meta property="og:site_name" content="DefComs">
+    <meta property="og:url" content="https://defcoms.eu/blog/how-soc-monitoring-works.html">
+    <meta property="og:title" content="Как работи SOC мониторингът? | DefComs">
+    <meta property="og:description" content="От събирането на телеметрия до триаж, разследване, ескалация и подобрение — как SOC обработва сигналите за киберсигурност.">
+    <meta property="og:image" content="https://defcoms.eu/images/PR_image/Киберсигурността__Щит_на_модерния_бизнес.webp">
+    <meta property="og:image:alt" content="SOC мониторинг: детекция, анализ и ескалация на сигнали">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Как работи SOC мониторингът? | DefComs">
+    <meta name="twitter:description" content="Практическо описание на SOC мониторинг процеса, от telemetry до координирана реакция.">
+    <meta name="twitter:image" content="https://defcoms.eu/images/PR_image/Киберсигурността__Щит_на_модерния_бизнес.webp">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../images/Logos/DefComs-logo.svg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        { "@type": "Organization", "@id": "https://defcoms.eu/#organization", "name": "DefComs", "url": "https://defcoms.eu/" },
+        { "@type": "WebSite", "@id": "https://defcoms.eu/#website", "url": "https://defcoms.eu/", "name": "DefComs", "publisher": { "@id": "https://defcoms.eu/#organization" }, "inLanguage": "bg" },
+        {
+          "@type": "WebPage",
+          "@id": "https://defcoms.eu/blog/how-soc-monitoring-works.html#webpage",
+          "url": "https://defcoms.eu/blog/how-soc-monitoring-works.html",
+          "name": "Как работи SOC мониторингът? От събитие до ескалация",
+          "inLanguage": "bg",
+          "isPartOf": { "@id": "https://defcoms.eu/#website" },
+          "breadcrumb": { "@id": "https://defcoms.eu/blog/how-soc-monitoring-works.html#breadcrumb" },
+          "mainEntity": { "@id": "https://defcoms.eu/blog/how-soc-monitoring-works.html#article" }
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://defcoms.eu/blog/how-soc-monitoring-works.html#article",
+          "headline": "Как работи SOC мониторингът? От събитие до ескалация",
+          "description": "Обяснение на SOC monitoring lifecycle: покритие и телеметрия, корелация, детекция, триаж, разследване, реакция и lessons learned.",
+          "image": "https://defcoms.eu/images/PR_image/Киберсигурността__Щит_на_модерния_бизнес.webp",
+          "datePublished": "2026-10-06",
+          "dateModified": "2026-10-06",
+          "inLanguage": "bg",
+          "mainEntityOfPage": { "@id": "https://defcoms.eu/blog/how-soc-monitoring-works.html#webpage" },
+          "author": { "@type": "Person", "@id": "https://defcoms.eu/about/team/author/georgi-todorov.html", "name": "Георги Тодоров", "jobTitle": "SOC Operations Manager (24/7)", "url": "https://defcoms.eu/about/team/author/georgi-todorov.html" },
+          "publisher": { "@id": "https://defcoms.eu/#organization" },
+          "citation": [
+            "https://doi.org/10.6028/NIST.SP.800-61r3",
+            "https://www.nist.gov/cyberframework"
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://defcoms.eu/blog/how-soc-monitoring-works.html#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Начало", "item": "https://defcoms.eu/" },
+            { "@type": "ListItem", "position": 2, "name": "Блог", "item": "https://defcoms.eu/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "Как работи SOC мониторингът?", "item": "https://defcoms.eu/blog/how-soc-monitoring-works.html" }
+          ]
+        }
+      ]
+    }
+    </script>
+    <style>
+        .blog-article { max-width: 860px; margin: 0 auto; padding: 150px 24px 80px; }
+        .blog-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: 28px; }
+        .blog-breadcrumbs a { color: var(--secondary-cyan); }
+        .blog-kicker { color: var(--secondary-cyan); text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+        .blog-article h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.12; margin: 12px 0 20px; }
+        .blog-deck { color: var(--text-secondary); font-size: 1.2rem; line-height: 1.7; }
+        .blog-meta { color: var(--text-secondary); font-size: var(--font-size-sm); margin: 22px 0; }
+        .blog-hero-image { width: 100%; max-height: 460px; object-fit: cover; border-radius: var(--radius-lg); margin: 16px 0 32px; }
+        .blog-article h2 { margin-top: 42px; }
+        .blog-article p, .blog-article li { color: var(--text-secondary); line-height: 1.8; }
+        .blog-article ul, .blog-article ol { padding-left: 24px; }
+        .blog-callout { border-left: 3px solid var(--secondary-cyan); background: var(--background-card); padding: 18px 22px; border-radius: var(--radius-md); }
+        .blog-related, .blog-source-list { display: grid; gap: 12px; margin: 20px 0; }
+        .blog-related a, .blog-source-list a { color: var(--secondary-cyan); }
+        .blog-source-list li { overflow-wrap: anywhere; }
+        .blog-cta { margin-top: 44px; padding: 24px; background: var(--background-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); }
+    </style>
+</head>
+<body class="service-landing">
+
+    <!-- Header -->
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay"></div>
+
+    <header class="header">
+        <nav class="nav" aria-label="Основна навигация">
+            <div class="nav-container">
+                <a href="../index.html" class="logo">
+                    <img src="../images/Logos/DefComs-logo.svg" alt="DefComs">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Начало</a></li>
+                    <li><a href="../about/index.html">За нас</a></li>
+                    <li><a href="../services/index.html">Услуги</a></li>
+                    <li><a href="../compliance/index.html">Регулации</a></li>
+                    <li><a href="../cybersecurity-os/index.html">Cybersecurity OS</a></li>
+                    <li><a href="../wizard.html">NIS2 &amp; DORA Оценка</a></li>
+                    <li><a href="../spravochnik.html">Справочник</a></li>
+                    <li><a href="index.html">Блог</a></li>
+                    <li><a href="../contact/index.html">Контакти</a></li>
+                    <li class="mobile-only"><a href="../contact/index.html" class="mobile-cta">Свържете се с нас</a></li>
+                </ul>
+                <a href="../contact/index.html" class="cta-button">Свържете се с нас</a>
+                <button class="hamburger" type="button" aria-label="Отвори меню" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+
+    <main class="blog-article">
+        <nav class="blog-breadcrumbs" aria-label="Навигационна пътека">
+            <a href="../index.html">Начало</a><span aria-hidden="true">›</span>
+            <a href="index.html">Блог</a><span aria-hidden="true">›</span>
+            <span aria-current="page">Как работи <a href="../resources/glossary/soc/">SOC</a> мониторингът?</span>
+        </nav>
+        <article>
+            <p class="blog-kicker">SOC · Мониторинг · Incident response</p>
+            <h1>Как работи SOC мониторингът? От сигнал до координирана реакция</h1>
+            <p class="blog-deck">SOC мониторингът свързва телеметрия от договорените системи с правила за детекция, човешки анализ и ясни процедури за ескалация. Целта не е просто да се генерират аларми, а да се разбере кои сигнали изискват действие, кой трябва да бъде уведомен и как случаят се проследява до затваряне.</p>
+            <p class="blog-meta">Автор: <a href="../about/team/author/georgi-todorov.html" style="color: var(--secondary-cyan);">Георги Тодоров</a> · Публикувано: <time datetime="2026-10-06">6 октомври 2026 г.</time> · Обновено: <time datetime="2026-10-06">6 октомври 2026 г.</time></p>
+            <img class="blog-hero-image" src="../images/PR_image/Киберсигурността__Щит_на_модерния_бизнес.webp" alt="SOC мониторинг обработва сигнали от детекция до ескалация" width="1200" height="675" fetchpriority="high">
+            <p class="blog-legal-notice" style="border-left:4px solid #f0a500;background:rgba(240,165,0,.08);padding:16px 20px;border-radius:8px;margin:24px 0;font-size:.95rem;line-height:1.6;"><strong>⚠️ Важна бележка:</strong> Тази публикация е с информационна и образователна цел и <strong>не представлява юридическо или правно тълкуване</strong> на приложимото законодателство. Обстоятелствата варират, а нормативните изисквания се променят. При конкретен казус се консултирайте с квалифициран юрист.</p>
+
+            <p class="blog-callout"><strong>Кратък отговор:</strong> Типичният SOC процес минава през подготовка и определяне на обхвата, събиране на логове и telemetry, корелация и детекция, триаж, разследване, ескалация или предварително разрешено containment, документация и последващо подобрение. Конкретните етапи, покритие и права за реакция зависят от услугата и договорените процедури.</p>
+
+            <h2>Преди наблюдението: определяне на обхват и контекст</h2>
+            <p>Преди да включи нова организация или услуга, SOC трябва да разбере какво наблюдава и защо. Изготвят се инвентар на системите и източниците на събития, картират се критичните услуги и техните собственици, уточняват се контактите, времевите зони, дежурствата и правилата за ескалация.</p>
+            <p>В този етап се съгласуват и границите на достъп: кои логове се изпращат, как се защитават, колко време се пазят според договора и кой може да вижда чувствителна информация. Без контекст за активите и бизнес въздействието алармата трудно може да бъде приоритизирана правилно.</p>
+
+            <h2>Стъпка 1: събиране и подготовка на telemetry</h2>
+            <p>Източниците могат да включват identity системи, endpoints, сървъри, firewalls, мрежови устройства, cloud платформи, приложения и email защита — само в степента, договорена с клиента. <a href="../resources/glossary/siem/">SIEM</a> или друга платформа приема събития, нормализира полетата, синхронизира времеви данни и подпомага търсенето и корелацията.</p>
+            <p>Качество и покритие са важни: неправилна конфигурация, липсващи логове, разсинхронизирани часовници или изключена система могат да създадат сляпо петно. SOC и клиентът трябва да имат процес за проверка, че критичните източници продължават да изпращат данни.</p>
+
+            <h2>Стъпка 2: детекция и генериране на аларми</h2>
+            <p>Сигнал може да се появи от конкретно правило, комбинация от събития, поведенческа аномалия, <a href="../resources/glossary/edr/">EDR</a>/<a href="../resources/glossary/ndr/">NDR</a> детекция или външен <a href="../resources/glossary/cti/">threat intelligence</a> контекст. Аналитичните правила се настройват и актуализират спрямо инфраструктурата, известните заплахи и резултатите от предишни разследвания.</p>
+            <p>Едно събитие не е автоматично инцидент. Събитие е наблюдавана активност; алармата е сигнал, че активността може да изисква проверка; инцидентът е случай, оценен според критериите и процесите на организацията. Тази разлика помага да се избегне както преувеличаване на всяка тревога, така и пропускане на събития, които стават значими само в комбинация.</p>
+
+            <h2>Стъпка 3: триаж и приоритизация</h2>
+            <p>Аналитикът събира контекст, проверява хронологията, засегнатия актив, акаунтите, свързаните сигнали и вероятното въздействие. После определя следващата стъпка: затваряне като benign/false positive с основание, допълнително наблюдение, разследване или незабавна ескалация.</p>
+            <p>Приоритетът трябва да отразява риска и контекста, а не само техническата тежест на алармата. Например една активност върху критичен сървър или привилегирован акаунт може да изисква по-бързо действие от подобен сигнал в тестова среда.</p>
+
+            <h2>Стъпка 4: разследване и потвърждаване</h2>
+            <p>При необходимост SOC разглежда събитията във времеви ред, съпоставя данните от наличните източници и проверява дали има индикации за компрометиране, движение между системи или засегнати данни. Обхватът на анализа зависи от наличната телеметрия, задълженията по договора, достъпа и нуждата от отделна forensic услуга.</p>
+            <p>Добрата case документация пази ключовите факти: кога е открит сигналът, какво е проверено, какво остава неизвестно, какво е заключението, кой е уведомен и какво действие е поискано или предприето.</p>
+
+            <h2>Стъпка 5: ескалация и реакция</h2>
+            <p>Ако случаят изисква действие, SOC уведомява предварително определените контакти по severity и канал. Съобщението трябва да даде достатъчно контекст за решение: засегнат актив, наблюдавани индикатори, възможно въздействие, предприети проверки, препоръка и нужда от одобрение.</p>
+            <p>Някои SOC услуги могат да изпълняват предварително разрешени containment действия — например изолиране на endpoint — докато други само препоръчват действия и изчакват клиента. Правомощията, ограниченията, stop conditions и отговорността за бизнес решения трябва да са изрично съгласувани; няма универсална реакция, която да е безопасна за всяка среда.</p>
+
+            <h2>Стъпка 6: затваряне на случая и подобрение</h2>
+            <p>След овладяване и възстановяване случаят се актуализира с резултата, остатъчните рискове и follow-up действията. SOC може да предложи корекция на детекцията, допълнителен лог източник, промяна на контрол или упражнение; собственикът на системата или клиентът отговаря за одобрението и внедряването, когато това не е включено в услугата.</p>
+            <p>NIST SP 800-61 Rev. 3 свързва incident response с по-широкото управление на киберриска и непрекъснатото подобрение. Практически това означава не само приключване на тикета, а и преглед дали процесът, покритието и ескалацията са сработили.</p>
+
+            <h2>Какви показатели помагат да се оцени процесът?</h2>
+            <p>Метриките трябва да имат ясни дефиниции, scope и период. Възможни показатели са времето до първоначална triage, време до уведомяване, броят/типът на ескалациите, обхватът на източниците, качеството на case документацията и приключването на коригиращите действия.</p>
+            <p>MTTD и MTTR често се използват, но резултатът зависи от това кога започва и свършва измерването и какво се счита за „открит“ или „разрешен“ инцидент. Не сравнявайте показателите между доставчици без еднакви дефиниции; едно число не описва само по себе си качеството на услугата.</p>
+
+            <h2>Клиентът и SOC: споделени отговорности</h2>
+            <ul>
+                <li>Клиентът предоставя точен инвентар, контекст, собственици, контакти и необходимия достъп.</li>
+                <li>SOC наблюдава договорените източници, проверява сигнали и документира/ескалира според runbook и SLA.</li>
+                <li>Правото за блокиране, изолиране или промяна трябва да е ясно одобрено предварително и технически ограничено.</li>
+                <li>Клиентът обичайно запазва решенията за бизнес приоритети, правни уведомления, регулаторно докладване и възстановяване, освен ако договорът не определя различно.</li>
+                <li>След инцидент двете страни преглеждат хронологията, действията и нужните подобрения.</li>
+            </ul>
+
+            <h2>Често задавани въпроси</h2>
+            <h3>SOC мониторингът означава ли, че всяка аларма се проверява от човек?</h3>
+            <p>Не непременно. Автоматизацията може да филтрира, обогатява или групира сигнали; човешки анализ се прилага според правилата и договореното ниво на услугата. Уточнете кои събития се обработват ръчно и как се ескалират.</p>
+            <h3>Може ли SOC да работи без SIEM?</h3>
+            <p>Възможни са различни архитектури и инструменти. SIEM е често срещан за централизация и корелация на логове, но SOC като функция се определя от хората, процесите, покритието и договорената работа, не от конкретно име на продукт.</p>
+            <h3>Какво става при критична аларма през нощта?</h3>
+            <p>Това се определя от работното покритие, severity матрицата, контактите, заместниците и договорените ескалационни срокове. Преди старта тествайте телефоните/каналите и ясно посочете кой може да одобри containment действие.</p>
+            <h3>SOC сам ли докладва инцидент на регулатора?</h3>
+            <p>Не приемайте това по подразбиране. Отговорността и правото за регулаторно докладване зависят от приложимото право и ролите на страните; услугата трябва ясно да уточнява кой подготвя информацията и кой подава уведомлението.</p>
+
+            <h2>Свързани ресурси</h2>
+            <ul class="blog-related">
+              <li><a href="threat-hunting.html">Threat hunting: какво е и как се провежда?</a></li>
+              <li><a href="how-soc-detects-ransomware.html">Как SOC открива ransomware? Ранни сигнали и реакция</a></li>
+              <li><a href="what-does-soc-monitor.html">Какво наблюдава SOC? Системи, логове и сигнали</a></li>
+              <li><a href="soc-as-a-service.html">SOC as a Service: външен SOC мониторинг за бизнеса</a></li>
+              <li><a href="soc-vs-mssp.html">SOC vs MSSP: разлика, обхват и отговорности</a></li>
+              <li><a href="soc-vs-siem.html">SOC vs SIEM: каква е разликата?</a></li>
+                <li><a href="what-is-soc.html">Какво е SOC и как помага на бизнеса?</a></li>
+                <li><a href="../services/soc-monitoring/index.html">SOC мониторинг 24/7/365 от DefComs</a></li>
+                <li><a href="../services/incident-response/index.html">Incident Response услуги</a></li>
+                <li><a href="../services/edr-xdr/index.html">Endpoint Security и EDR</a></li>
+                <li><a href="../services/cloud-security/index.html">Cloud Security услуги</a></li>
+            </ul>
+
+            <h2>Източници и допълнително четене</h2>
+            <ul class="blog-source-list">
+                <li><a href="https://doi.org/10.6028/NIST.SP.800-61r3" target="_blank" rel="noopener noreferrer">NIST SP 800-61 Rev. 3 (април 2025 г.) — Incident Response Recommendations and Considerations for Cybersecurity Risk Management</a></li>
+                <li><a href="https://www.nist.gov/cyberframework" target="_blank" rel="noopener noreferrer">NIST Cybersecurity Framework 2.0 — рамка за управление на киберриска</a></li>
+            </ul>
+
+            <aside class="blog-cta">
+                <h2>Искате да оцените SOC мониторинг за вашата среда?</h2>
+                <p>Започнете с уточняване на telemetry покритието, контактите за ескалация, нивото на реакция и метриките по услугата.</p>
+                <a class="btn btn-primary" href="../services/soc-monitoring/index.html">SOC мониторинг 24/7/365</a>
+                <a class="btn btn-secondary" href="../index.html#contact">Свържете се с DefComs</a>
+            </aside>
+        </article>
+    </main>
+        <!-- Footer -->
+
+    <script src="../script.js" defer></script>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="../images/Logos/DefComs-logo.svg" alt="DefComs" class="footer-logo" loading="lazy">
+                    <p>Вашият високотехнологичен партньор в киберсигурността. Предотвратяване, засичане и бърза неутрализация на съвременните заплахи.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Услуги</h3>
+                    <ul>
+                        <li><a href="../services/soc-monitoring/index.html">SOC Мониторинг 24/7</a></li>
+                        <li><a href="../services/noc-services/index.html">NOC Управление</a></li>
+                        <li><a href="../services/corporate-training/index.html">Обучения за фирми</a></li>
+                        <li><a href="../services/penetration-testing/index.html">Penetration Testing</a></li>
+                        <li><a href="../compliance/nis2/index.html">GDPR/NIS2/DORA Съответствие</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Ресурси</h3>
+                    <ul>
+                        <li><a href="../spravochnik.html">Регулаторен Хъб</a></li>
+                        <li><a href="../cybersecurity-os/index.html">Cybersecurity OS</a></li>
+                        <li><a href="../blog/index.html">Статии &amp; Блог</a></li>
+                        <li><a href="../about/index.html">За Нас</a></li>
+                        <li><a href="../bulgaria/index.html">Покритие в България</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Правна рамка</h3>
+                    <ul>
+                        <li><a href="../compliance/nis2/index.html">Регулация NIS2</a></li>
+                        <li><a href="../compliance/gdpr/index.html">Регламент GDPR</a></li>
+                        <li><a href="../compliance/iso-27001/index.html">Стандарт ISO 27001</a></li>
+                        <li><a href="../index.html#contact">Контакти</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DefComs. Всички права запазени.</p>
+                <div class="footer-bottom-links">
+                    <a href="../terms.html">Условия за ползване</a>
+                    <a href="../privacy.html">Защита на данни</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../chat-widget.js"></script>
+</body>
+</html>

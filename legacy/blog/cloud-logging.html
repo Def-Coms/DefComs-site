@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud logging: събиране и работа с cloud logs | DefComs</title>
+    <meta name="description" content="Cloud logging в AWS, Azure и Google Cloud: типове събития, default coverage и retention, export, защита, monitoring, разходи и проверка на pipeline-а.">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <link rel="canonical" href="https://defcoms.eu/blog/cloud-logging.html">
+    <link rel="alternate" hreflang="bg" href="https://defcoms.eu/blog/cloud-logging.html">
+    <link rel="alternate" hreflang="x-default" href="https://defcoms.eu/blog/cloud-logging.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="bg_BG">
+    <meta property="og:site_name" content="DefComs">
+    <meta property="og:url" content="https://defcoms.eu/blog/cloud-logging.html">
+    <meta property="og:title" content="Cloud logging: как да събирате, пазите и използвате cloud logs | DefComs">
+    <meta property="og:description" content="Сравнение на AWS CloudTrail, Azure Activity/resource logs и Google Cloud Audit Logs с покритие, retention, routing и cost caveats.">
+    <meta property="og:image" content="https://defcoms.eu/images/Webp/SIEM_Alert.webp">
+    <meta property="og:image:alt" content="Демонстрационна таблица с примерни security alerts, не реален SIEM или cloud log archive">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cloud logging: практическо ръководство | DefComs">
+    <meta name="twitter:description" content="От cloud event sources и retention до централизирано routing, alerting, integrity и pipeline monitoring.">
+    <meta name="twitter:image" content="https://defcoms.eu/images/Webp/SIEM_Alert.webp">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../images/Logos/DefComs-logo.svg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        { "@type": "Organization", "@id": "https://defcoms.eu/#organization", "name": "DefComs", "url": "https://defcoms.eu/" },
+        { "@type": "WebSite", "@id": "https://defcoms.eu/#website", "url": "https://defcoms.eu/", "name": "DefComs", "publisher": { "@id": "https://defcoms.eu/#organization" }, "inLanguage": "bg" },
+        {
+          "@type": "WebPage",
+          "@id": "https://defcoms.eu/blog/cloud-logging.html#webpage",
+          "url": "https://defcoms.eu/blog/cloud-logging.html",
+          "name": "Cloud logging: как да събирате, пазите и използвате cloud logs",
+          "inLanguage": "bg",
+          "isPartOf": { "@id": "https://defcoms.eu/#website" },
+          "breadcrumb": { "@id": "https://defcoms.eu/blog/cloud-logging.html#breadcrumb" },
+          "mainEntity": { "@id": "https://defcoms.eu/blog/cloud-logging.html#article" }
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://defcoms.eu/blog/cloud-logging.html#article",
+          "headline": "Cloud logging: как да събирате, пазите и използвате cloud logs",
+          "description": "Практическо cloud logging ръководство за event coverage, различия между control и data plane, retention, routing, защита, monitoring и cost в AWS, Azure и Google Cloud.",
+          "image": "https://defcoms.eu/images/Webp/SIEM_Alert.webp",
+          "datePublished": "2026-10-10",
+          "dateModified": "2026-10-10",
+          "inLanguage": "bg",
+          "mainEntityOfPage": { "@id": "https://defcoms.eu/blog/cloud-logging.html#webpage" },
+          "author": { "@type": "Person", "@id": "https://defcoms.eu/about/team/author/alexander-petrov.html", "name": "Инж. Александър Петров", "jobTitle": "Lead Cyber Security Architect", "url": "https://defcoms.eu/about/team/author/alexander-petrov.html" },
+          "publisher": { "@id": "https://defcoms.eu/#organization" },
+          "citation": [
+            "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events.html",
+            "https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/activity-log",
+            "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/diagnostic-settings",
+            "https://docs.cloud.google.com/logging/docs/audit",
+            "https://docs.cloud.google.com/logging/quotas#logs_retention_periods"
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://defcoms.eu/blog/cloud-logging.html#faq",
+          "mainEntity": [
+            { "@type": "Question", "name": "Cloud logging покрива ли всички дейности в cloud средата?", "acceptedAnswer": { "@type": "Answer", "text": "Не автоматично. Default coverage се различава по provider и service. Някои data-plane или resource logs изискват изрична конфигурация, а application, OS и network logs може да са отделни източници." } },
+            { "@type": "Question", "name": "Колко дълго се пазят cloud logs по подразбиране?", "acceptedAnswer": { "@type": "Answer", "text": "Няма един общ срок. Например AWS CloudTrail Event history и Azure Activity Log имат 90-дневен обхват, докато Google Cloud Logging използва различни срокове за _Required и _Default bucket. Проверете актуалния provider scope, retention настройки и отделните архиви." } },
+            { "@type": "Question", "name": "Логовете генерират ли се автоматично?", "acceptedAnswer": { "@type": "Answer", "text": "Само част от тях. AWS Event history и Azure Activity Log включват определени management events; AWS data events, Azure resource logs и повечето Google Cloud Data Access audit logs изискват service-specific конфигурация, с provider/service exceptions." } },
+            { "@type": "Question", "name": "Достатъчно ли е логовете да се съхраняват?", "acceptedAnswer": { "@type": "Answer", "text": "Не. Определете кой ги преглежда, как се създават alerts, кой може да променя routing/retention, как се открива прекъсване на ingestion и какви са escalation действията." } },
+            { "@type": "Question", "name": "Как да контролирам разходите за cloud logging?", "acceptedAnswer": { "@type": "Answer", "text": "Започнете от нужните event categories и retention/use cases. Изберете подходящите sources и destinations, измервайте ingestion и storage, включете разхода от data events и analytics и филтрирайте само след оценка на audit/response последствията." } }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://defcoms.eu/blog/cloud-logging.html#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Начало", "item": "https://defcoms.eu/" },
+            { "@type": "ListItem", "position": 2, "name": "Блог", "item": "https://defcoms.eu/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "Cloud logging", "item": "https://defcoms.eu/blog/cloud-logging.html" }
+          ]
+        }
+      ]
+    }
+    </script>
+    <style>
+        .blog-article { max-width: 860px; margin: 0 auto; padding: 150px 24px 80px; }
+        .blog-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: 28px; }
+        .blog-breadcrumbs a { color: var(--secondary-cyan); }
+        .blog-kicker { color: var(--secondary-cyan); text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+        .blog-article h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.12; margin: 12px 0 20px; }
+        .blog-deck { color: var(--text-secondary); font-size: 1.2rem; line-height: 1.7; }
+        .blog-meta { color: var(--text-secondary); font-size: var(--font-size-sm); margin: 22px 0; }
+        .blog-hero-image { width: 100%; max-height: 460px; object-fit: cover; border-radius: var(--radius-lg); margin: 16px 0 32px; }
+        .blog-article h2 { margin-top: 42px; }
+        .blog-article p, .blog-article li { color: var(--text-secondary); line-height: 1.8; }
+        .blog-article ul, .blog-article ol { padding-left: 24px; }
+        .blog-callout { border-left: 3px solid var(--secondary-cyan); background: var(--background-card); padding: 18px 22px; border-radius: var(--radius-md); }
+        .blog-table-wrap { overflow-x: auto; margin: 24px 0; }
+        .blog-article table { width: 100%; border-collapse: collapse; min-width: 620px; }
+        .blog-article th, .blog-article td { padding: 14px; border: 1px solid var(--border-color); text-align: left; vertical-align: top; color: var(--text-secondary); line-height: 1.65; }
+        .blog-article th { color: var(--text-primary); background: var(--background-card); }
+        .blog-related, .blog-source-list { display: grid; gap: 12px; margin: 20px 0; }
+        .blog-related a, .blog-source-list a { color: var(--secondary-cyan); }
+        .blog-source-list li { overflow-wrap: anywhere; }
+        .blog-cta { margin-top: 44px; padding: 24px; background: var(--background-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); }
+    </style>
+</head>
+<body class="service-landing">
+
+    <!-- Header -->
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay"></div>
+
+    <header class="header">
+        <nav class="nav" aria-label="Основна навигация">
+            <div class="nav-container">
+                <a href="../index.html" class="logo">
+                    <img src="../images/Logos/DefComs-logo.svg" alt="DefComs">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Начало</a></li>
+                    <li><a href="../about/index.html">За нас</a></li>
+                    <li><a href="../services/index.html">Услуги</a></li>
+                    <li><a href="../compliance/index.html">Регулации</a></li>
+                    <li><a href="../cybersecurity-os/index.html">Cybersecurity OS</a></li>
+                    <li><a href="../wizard.html">NIS2 &amp; DORA Оценка</a></li>
+                    <li><a href="../spravochnik.html">Справочник</a></li>
+                    <li><a href="index.html">Блог</a></li>
+                    <li><a href="../contact/index.html">Контакти</a></li>
+                    <li class="mobile-only"><a href="../contact/index.html" class="mobile-cta">Свържете се с нас</a></li>
+                </ul>
+                <a href="../contact/index.html" class="cta-button">Свържете се с нас</a>
+                <button class="hamburger" type="button" aria-label="Отвори меню" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+
+    <main class="blog-article">
+        <nav class="blog-breadcrumbs" aria-label="Навигационна пътека">
+            <a href="../index.html">Начало</a><span aria-hidden="true">›</span>
+            <a href="index.html">Блог</a><span aria-hidden="true">›</span>
+            <span aria-current="page">Cloud logging</span>
+        </nav>
+        <article>
+            <p class="blog-kicker">Cloud Security · Audit · Monitoring</p>
+            <h1>Cloud logging: как да събирате и използвате логовете?</h1>
+            <p class="blog-deck">Cloud logging е проектиран процес за събиране, маршрутизиране, защита, търсене и преглед на събития от cloud control plane, ресурси и workloads. Наличието на provider activity history не гарантира пълно coverage, достатъчна retention, централно копие или alerts; всяка от тези цели изисква отделно решение и проверка.</p>
+            <p class="blog-meta">Автор: <a href="../about/team/author/alexander-petrov.html" style="color: var(--secondary-cyan);">Инж. Александър Петров</a> · Публикувано: <time datetime="2026-10-10">10 октомври 2026 г.</time> · Обновено: <time datetime="2026-10-10">10 октомври 2026 г.</time></p>
+            <img class="blog-hero-image" src="../images/Webp/SIEM_Alert.webp" alt="Демонстрационна таблица с примерни security alerts, не реален SIEM или cloud log archive" width="1200" height="675" fetchpriority="high">
+            <p class="blog-legal-notice" style="border-left:4px solid #f0a500;background:rgba(240,165,0,.08);padding:16px 20px;border-radius:8px;margin:24px 0;font-size:.95rem;line-height:1.6;"><strong>⚠️ Важна бележка:</strong> Тази публикация е с информационна и образователна цел и <strong>не представлява юридическо или правно тълкуване</strong> на приложимото законодателство. Обстоятелствата варират, а нормативните изисквания се променят. При конкретен казус се консултирайте с квалифициран юрист.</p>
+            <p class="blog-meta">Изображението е mock alerts dashboard за визуален контекст, не provider portal или реално log хранилище.</p>
+
+            <p class="blog-callout"><strong>Кратък модел:</strong> определете какво трябва да знаете, включете правилните event sources, маршрутизирайте към защитени destinations, задайте retention и права, направете detection/use cases и алармирайте при спиране на самия logging pipeline. Събирайте повече data само когато това оправдава privacy, операционния и финансовия разход.</p>
+
+            <h2>Какво наричаме cloud log?</h2>
+            <p>Тази статия се фокусира върху събития, полезни за security, audit и incident investigation; metrics и traces са различни сигнали за monitoring и performance.</p>
+            <div class="blog-table-wrap">
+                <table>
+                    <thead><tr><th>Тип събитие</th><th>Какво показва</th><th>Пример</th></tr></thead>
+                    <tbody>
+                        <tr><th>Control plane / management</th><td>Промени по ресурси, identities, policies и provider configuration.</td><td>Създаден cloud account/resource, role assignment променен или logging setting изключен.</td></tr>
+                        <tr><th>Data plane / resource access</th><td>Операции върху данни или действия вътре в конкретна услуга.</td><td>S3 object read, Key Vault secret access, database query или GCP Data Access event.</td></tr>
+                        <tr><th>Workload / application</th><td>Събития от OS, runtime, containers, application code и dependencies.</td><td>Application authentication failure, OS security event или container runtime activity.</td></tr>
+                        <tr><th>Network / security tooling</th><td>Наблюдения от firewall, flow logs, WAF, identity/security tools и detections.</td><td>Неочаквана комуникация, denied request или security finding, според услугата и конфигурацията.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Provider audit logs покриват конкретни control/data-plane операции; те не са заместител на всички application, host, container, database и network logs. Направете source inventory за всеки critical workload и отбележете кои източници изискват отделна инсталация, diagnostic setting или платен data event capture.</p>
+
+            <h2>Какво се включва по подразбиране?</h2>
+            <div class="blog-table-wrap">
+                <table>
+                    <thead><tr><th>Платформа</th><th>Наличен default audit слой</th><th>Coverage/retention caveat</th></tr></thead>
+                    <tbody>
+                        <tr><th>AWS</th><td>CloudTrail Event history дава searchable history за management events; trails по подразбиране записват management events.</td><td>Event history е 90 дни, за един account и Region, и не показва data events. Trails/event data stores не записват data events по подразбиране; избират се ресурсите/event types и се проверява цената.</td></tr>
+                        <tr><th>Azure</th><td>Activity Log се генерира автоматично за основни Azure management/control-plane операции.</td><td>Activity Log retention е 90 дни. Resource logs/data-plane operations не се събират по подразбиране; diagnostic settings определят categories и destinations.</td></tr>
+                        <tr><th>Google Cloud</th><td>Admin Activity и System Event audit logs се генерират по подразбиране и не могат да бъдат изключени; Policy Denied logs също се генерират по подразбиране.</td><td>Data Access logs са изключени по подразбиране за повечето услуги, с изключения като някои BigQuery logs, и могат да увеличат volume/cost. `_Required` bucket пази определени audit logs 400 дни; `_Default` е 30 дни по подразбиране.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Таблицата обобщава избрани provider defaults, не всички услуги или event categories. Проверката на конкретна конфигурация и актуалната документация са задължителни преди да разчитате на log source при audit или incident response.</p>
+
+            <h2>От източника до investigation</h2>
+            <ol>
+                <li><strong>Определете use case.</strong> Например да се вижда промяна в production <a href="../resources/glossary/iam/">IAM</a>, четене на чувствителен object или спиране на audit pipeline.</li>
+                <li><strong>Изберете източниците и categories.</strong> Mapping-ът трябва да покрива accounts/subscriptions/projects, Regions, resources, management и data-plane events и workload logs.</li>
+                <li><strong>Маршрутизирайте данните.</strong> Използвайте provider destinations или централизиран log/<a href="../resources/glossary/siem/">SIEM</a> pipeline според анализ, retention, privacy, location и availability изискванията.</li>
+                <li><strong>Защитете logs и routing.</strong> Ограничете кой може да чете, изтрива или променя logs, sinks, trails и diagnostic settings; отделете administration на хранилището от workload owners, където моделът го позволява.</li>
+                <li><strong>Направете searches и detections.</strong> Съпоставете actor, timestamp, resource, action, result и related events; настройте alert criteria с owner и escalation path.</li>
+                <li><strong>Проверявайте pipeline-а.</strong> Алармирайте при прекъсната ingestion, спрян trail, премахнат diagnostic setting, неочаквано паднал event volume или грешка в routing destination.</li>
+                <li><strong>Упражнете разследването.</strong> Проверете дали логовете се намират, корелират между accounts/services, запазват нужните details и стигат до responders.</li>
+            </ol>
+
+            <h2>Централизация, integrity и достъп</h2>
+            <p>Централното хранилище може да помогне за корелация между accounts и да отдели audit records от ежедневното управление на workloads. Определете отделни permissions за routing, log administration и read-only investigation; ограничете промяната на log retention и delete/stop operations до малък брой identities и логвайте и тези действия.</p>
+            <p>При нужда от доказателства или дълга retention изберете подходящи integrity, versioning, immutable/locked storage или provider validation capabilities и проверете operational consequences. Не приемайте, че всяка централизирана destination е автоматично immutable или че всички provider logs имат еднакви guarantees.</p>
+            <p>Планирайте часови източници и timestamp interpretation, Region/resource identifiers, field normalization и account/tenant mapping. Липсващ actor context, различни schemas или ingestion delay може да затруднят timeline; документирайте gaps вместо да третирате отсъствието на запис като доказателство, че действие не е имало.</p>
+
+            <h2>Retention, privacy и cost</h2>
+            <ul>
+                <li><strong>Retention:</strong> задайте срок по audit, investigation, contract и applicable requirements; разделете interactive query period от archive period, ако е нужно.</li>
+                <li><strong>Cost:</strong> включете ingestion, storage, queries, exports и cross-region/third-party transfer; AWS data events и Google Data Access logs могат да добавят обем и такси.</li>
+                <li><strong>Coverage:</strong> не изключвайте важни categories само заради обем без да разберете какво губите за audit/response.</li>
+                <li><strong>Privacy:</strong> логовете може да съдържат identities, IPs, resource names и application payloads; minimization, access, location и retention изискват policy и owner.</li>
+                <li><strong>Secrets:</strong> не логвайте access tokens, passwords, signing keys или чувствителни payloads; ревизирайте custom application logs и debug modes.</li>
+                <li><strong>Alerts:</strong> настройвайте прагове и дедупликация спрямо use case; шумните или необработвани alerts не са полезно monitoring.</li>
+            </ul>
+
+            <h2>Практичен deployment checklist</h2>
+            <ol>
+                <li>Опишете critical accounts/projects/subscriptions, services, data owners и incident scenarios.</li>
+                <li>Направете log-source matrix с control-plane, data-plane, workload и network/security sources.</li>
+                <li>Отбележете default coverage, categories, Regions/scopes и gaps, които изискват явна конфигурация.</li>
+                <li>Изберете retention, destinations, access model, integrity protection, data location и estimated cost.</li>
+                <li>Определете detection owner, alert routing, response contacts и pipeline health checks.</li>
+                <li>Изпълнете safe test event за всяка critical source и потвърдете ingestion, query, alert и escalation.</li>
+                <li>Преглеждайте source coverage, permissions и spend при добавяне на service/account и поне според вътрешния review cycle.</li>
+            </ol>
+
+            <h2>Често задавани въпроси</h2>
+            <h3>Cloud logging покрива ли всички дейности в cloud средата?</h3>
+            <p>Не автоматично. Default coverage се различава по provider и service. Някои data-plane или resource logs изискват изрична конфигурация, а application, OS и network logs може да са отделни източници.</p>
+            <h3>Колко дълго се пазят cloud logs по подразбиране?</h3>
+            <p>Няма един общ срок. Например AWS CloudTrail Event history и Azure Activity Log имат 90-дневен обхват, докато Google Cloud Logging използва различни срокове за _Required и _Default bucket. Проверете актуалния provider scope, retention настройки и отделните архиви.</p>
+            <h3>Логовете генерират ли се автоматично?</h3>
+            <p>Само част от тях. AWS Event history и Azure Activity Log включват определени management events; AWS data events, Azure resource logs и повечето Google Cloud Data Access audit logs изискват service-specific конфигурация, с provider/service exceptions.</p>
+            <h3>Достатъчно ли е логовете да се съхраняват?</h3>
+            <p>Не. Определете кой ги преглежда, как се създават alerts, кой може да променя routing/retention, как се открива прекъсване на ingestion и какви са escalation действията.</p>
+            <h3>Как да контролирам разходите за cloud logging?</h3>
+            <p>Започнете от нужните event categories и retention/use cases. Изберете подходящите sources и destinations, измервайте ingestion и storage, включете разхода от data events и analytics и филтрирайте само след оценка на audit/response последствията.</p>
+
+            <h2>Свързани ресурси</h2>
+            <ul class="blog-related">
+                <li><a href="cloud-incident-response.html">Cloud incident response: подготовка и реакция при cloud инцидент</a></li>
+                <li><a href="aws-security.html">AWS Security: практично ръководство за защита на AWS среда</a></li>
+                <li><a href="azure-security.html">Azure Security: практично ръководство за защита на Azure</a></li>
+                <li><a href="cloud-iam.html">Cloud IAM: идентичности, роли и least privilege в облака</a></li>
+                <li><a href="what-does-soc-monitor.html">Какво наблюдава SOC? Системи, логове и сигнали</a></li>
+                <li><a href="how-soc-monitoring-works.html">Как работи SOC мониторингът?</a></li>
+                <li><a href="../services/cloud-security/index.html">Cloud Security услуги на DefComs</a></li>
+                <li><a href="../services/soc-monitoring/index.html">SOC мониторинг 24/7/365</a></li>
+            </ul>
+
+            <h2>Официални източници</h2>
+            <ul class="blog-source-list">
+                <li><a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events.html" target="_blank" rel="noopener noreferrer">AWS CloudTrail — Event history and management events</a></li>
+                <li><a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html" target="_blank" rel="noopener noreferrer">AWS CloudTrail — Data events</a></li>
+                <li><a href="https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/activity-log" target="_blank" rel="noopener noreferrer">Microsoft Learn — Azure Activity Log</a></li>
+                <li><a href="https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/diagnostic-settings" target="_blank" rel="noopener noreferrer">Microsoft Learn — Azure Monitor diagnostic settings</a></li>
+                <li><a href="https://docs.cloud.google.com/logging/docs/audit" target="_blank" rel="noopener noreferrer">Google Cloud — Cloud Audit Logs</a></li>
+                <li><a href="https://docs.cloud.google.com/logging/docs/audit/configure-data-access" target="_blank" rel="noopener noreferrer">Google Cloud — Enable Data Access audit logs</a></li>
+                <li><a href="https://docs.cloud.google.com/logging/docs/quotas#logs_retention_periods" target="_blank" rel="noopener noreferrer">Google Cloud — Cloud Logging retention periods</a></li>
+            </ul>
+
+            <aside class="blog-cta">
+                <h2>Свържете log coverage с реален use case</h2>
+                <p>Определете кои събития са нужни, къде се пазят, кой ги преглежда и как се открива прекъсване на потока.</p>
+                <a class="btn btn-primary" href="../services/cloud-security/index.html">Cloud Security услуги</a>
+                <a class="btn btn-secondary" href="../services/soc-monitoring/index.html">SOC мониторинг</a>
+            </aside>
+        </article>
+    </main>
+        <!-- Footer -->
+
+    <script src="../script.js" defer></script>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="../images/Logos/DefComs-logo.svg" alt="DefComs" class="footer-logo" loading="lazy">
+                    <p>Вашият високотехнологичен партньор в киберсигурността. Предотвратяване, засичане и бърза неутрализация на съвременните заплахи.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Услуги</h3>
+                    <ul>
+                        <li><a href="../services/soc-monitoring/index.html">SOC Мониторинг 24/7</a></li>
+                        <li><a href="../services/noc-services/index.html">NOC Управление</a></li>
+                        <li><a href="../services/corporate-training/index.html">Обучения за фирми</a></li>
+                        <li><a href="../services/penetration-testing/index.html">Penetration Testing</a></li>
+                        <li><a href="../compliance/nis2/index.html">GDPR/NIS2/DORA Съответствие</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Ресурси</h3>
+                    <ul>
+                        <li><a href="../spravochnik.html">Регулаторен Хъб</a></li>
+                        <li><a href="../cybersecurity-os/index.html">Cybersecurity OS</a></li>
+                        <li><a href="../blog/index.html">Статии &amp; Блог</a></li>
+                        <li><a href="../about/index.html">За Нас</a></li>
+                        <li><a href="../bulgaria/index.html">Покритие в България</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Правна рамка</h3>
+                    <ul>
+                        <li><a href="../compliance/nis2/index.html">Регулация NIS2</a></li>
+                        <li><a href="../compliance/gdpr/index.html">Регламент GDPR</a></li>
+                        <li><a href="../compliance/iso-27001/index.html">Стандарт ISO 27001</a></li>
+                        <li><a href="../index.html#contact">Контакти</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DefComs. Всички права запазени.</p>
+                <div class="footer-bottom-links">
+                    <a href="../terms.html">Условия за ползване</a>
+                    <a href="../privacy.html">Защита на данни</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../chat-widget.js"></script>
+</body>
+</html>

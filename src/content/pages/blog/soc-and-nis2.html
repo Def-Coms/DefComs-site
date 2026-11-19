@@ -1,0 +1,210 @@
+---
+lastmod: 2026-10-06
+title: "SOC и NIS2: как мониторингът подпомага сигурността | DefComs"
+description: Как SOC мониторингът може да подпомогне мерките по NIS2 за управление на риска, обработване на инциденти и откриване — без да е универсално задължителен продукт.
+ogType: article
+imageAlt: SOC мониторингът като част от по-широка NIS2 програма за киберсигурност
+ogDescription: "Разглеждаме връзката между SOC и NIS2: риск-базирани мерки, incident handling, detection и границите на услугата."
+twitterTitle: "SOC и NIS2: връзка и отговорности | DefComs"
+twitterDescription: Как външен или вътрешен SOC може да подпомогне NIS2 контролите, без да замества отговорността на организацията.
+schema:
+  - "@context": https://schema.org
+    "@graph":
+      - "@type": Organization
+        "@id": https://defcoms.eu/#organization
+        name: DefComs
+        url: https://defcoms.eu/
+      - "@type": WebSite
+        "@id": https://defcoms.eu/#website
+        url: https://defcoms.eu/
+        name: DefComs
+        publisher:
+          "@id": https://defcoms.eu/#organization
+        inLanguage: bg
+      - "@type": WebPage
+        "@id": https://defcoms.eu/blog/soc-and-nis2#webpage
+        url: https://defcoms.eu/blog/soc-and-nis2
+        name: "SOC и NIS2: как мониторингът може да подпомогне организациите"
+        inLanguage: bg
+        isPartOf:
+          "@id": https://defcoms.eu/#website
+        breadcrumb:
+          "@id": https://defcoms.eu/blog/soc-and-nis2#breadcrumb
+        mainEntity:
+          "@id": https://defcoms.eu/blog/soc-and-nis2#article
+      - "@type": BlogPosting
+        "@id": https://defcoms.eu/blog/soc-and-nis2#article
+        headline: "SOC и NIS2: как мониторингът може да подпомогне организациите"
+        description: Обяснява как вътрешен или външен SOC може да подпомогне част от NIS2 risk-management и incident-handling мерките, без да е нормативно задължителен самостоятелен продукт.
+        image: https://defcoms.eu/images/PR_image/Киберсигурността__Щит_на_модерния_бизнес.webp
+        datePublished: 2026-10-06
+        dateModified: 2026-10-06
+        inLanguage: bg
+        mainEntityOfPage:
+          "@id": https://defcoms.eu/blog/soc-and-nis2#webpage
+        author:
+          "@type": Person
+          "@id": https://defcoms.eu/about/team/author/elena-dimitrova
+          name: Елена Димитрова
+          jobTitle: Lead Compliance & NIS2/DORA Advisor
+          url: https://defcoms.eu/about/team/author/elena-dimitrova
+        publisher:
+          "@id": https://defcoms.eu/#organization
+        citation:
+          - https://eur-lex.europa.eu/eli/dir/2022/2555/oj
+          - https://eur-lex.europa.eu/eli/reg_impl/2024/2690/oj
+          - https://www.nist.gov/cyberframework
+          - https://doi.org/10.6028/NIST.SP.800-61r3
+      - "@type": BreadcrumbList
+        "@id": https://defcoms.eu/blog/soc-and-nis2#breadcrumb
+        itemListElement:
+          - "@type": ListItem
+            position: 1
+            name: Начало
+            item: https://defcoms.eu/
+          - "@type": ListItem
+            position: 2
+            name: Блог
+            item: https://defcoms.eu/blog
+          - "@type": ListItem
+            position: 3
+            name: SOC и NIS2
+            item: https://defcoms.eu/blog/soc-and-nis2
+headExtra: |-
+  <style>
+          .blog-article { max-width: 860px; margin: 0 auto; padding: 150px 24px 80px; }
+          .blog-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: 28px; }
+          .blog-breadcrumbs a { color: var(--secondary-cyan); }
+          .blog-kicker { color: var(--secondary-cyan); text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+          .blog-article h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.12; margin: 12px 0 20px; }
+          .blog-deck { color: var(--text-secondary); font-size: 1.2rem; line-height: 1.7; }
+          .blog-meta { color: var(--text-secondary); font-size: var(--font-size-sm); margin: 22px 0; }
+          .blog-hero-image { width: 100%; max-height: 460px; object-fit: cover; border-radius: var(--radius-lg); margin: 16px 0 32px; }
+          .blog-article h2 { margin-top: 42px; }
+          .blog-article p, .blog-article li { color: var(--text-secondary); line-height: 1.8; }
+          .blog-article ul, .blog-article ol { padding-left: 24px; }
+          .blog-callout { border-left: 3px solid var(--secondary-cyan); background: var(--background-card); padding: 18px 22px; border-radius: var(--radius-md); }
+          .blog-table-wrap { overflow-x: auto; margin: 24px 0; }
+          .blog-article table { width: 100%; border-collapse: collapse; min-width: 620px; }
+          .blog-article th, .blog-article td { padding: 14px; border: 1px solid var(--border-color); text-align: left; vertical-align: top; color: var(--text-secondary); line-height: 1.65; }
+          .blog-article th { color: var(--text-primary); background: var(--background-card); }
+          .blog-related, .blog-source-list { display: grid; gap: 12px; margin: 20px 0; }
+          .blog-related a, .blog-source-list a { color: var(--secondary-cyan); }
+          .blog-source-list li { overflow-wrap: anywhere; }
+          .blog-cta { margin-top: 44px; padding: 24px; background: var(--background-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); }
+      </style>
+bodyClass: service-landing
+blog:
+  categories:
+    - SOC
+    - NIS2
+  date: 2026-10-06
+  order: 39
+  title: "SOC и NIS2: как мониторингът може да подпомогне изискванията"
+  summary: Връзката между telemetry, инцидентното обработване и риск-мерките по NIS2 — без да представя SOC като задължителен продукт.
+  image: /images/Persevs/04_Reports_Page_Persevs.webp
+  imageAlt: SOC мониторингът подпомага NIS2 risk management и инцидентната готовност
+  imageWidth: 1200
+  imageHeight: 675
+  ariaLabel: "Прочетете: SOC и NIS2"
+  cta: Прочетете ръководството →
+---
+<main class="blog-article">
+        <nav class="blog-breadcrumbs" aria-label="Навигационна пътека">
+            <a href="/">Начало</a><span aria-hidden="true">›</span>
+            <a href="/blog">Блог</a><span aria-hidden="true">›</span>
+            <span aria-current="page"><a href="/resources/glossary/soc">SOC</a> и NIS2</span>
+        </nav>
+        <article>
+            <p class="blog-kicker">SOC · NIS2 · Risk management</p>
+            <h1>SOC и NIS2: как мониторингът може да подпомогне изискванията</h1>
+            <p class="blog-deck">SOC мониторингът може да подпомогне откриването и обработването на киберинциденти и да предостави записи за анализ и подобрение. Но NIS2 не изисква универсално закупуване на конкретен SOC продукт или външна услуга: приложимите субекти трябва да въведат подходящи и пропорционални мерки за управление на риска според директивата и националното законодателство.</p>
+            <p class="blog-meta">Автор: <a href="/about/team/author/elena-dimitrova" style="color: var(--secondary-cyan);">Елена Димитрова</a> · Публикувано: <time datetime="2026-10-06">6 октомври 2026 г.</time> · Обновено: <time datetime="2026-10-06">6 октомври 2026 г.</time></p>
+            <img class="blog-hero-image" src="/images/PR_image/%D0%9A%D0%B8%D0%B1%D0%B5%D1%80%D1%81%D0%B8%D0%B3%D1%83%D1%80%D0%BD%D0%BE%D1%81%D1%82%D1%82%D0%B0__%D0%A9%D0%B8%D1%82_%D0%BD%D0%B0_%D0%BC%D0%BE%D0%B4%D0%B5%D1%80%D0%BD%D0%B8%D1%8F_%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81.webp" alt="SOC мониторингът подпомага откриването и обработването на NIS2 инциденти" width="1200" height="675" fetchpriority="high">
+            <p class="blog-legal-notice" style="border-left:4px solid #f0a500;background:rgba(240,165,0,.08);padding:16px 20px;border-radius:8px;margin:24px 0;font-size:.95rem;line-height:1.6;"><strong>⚠️ Важна бележка:</strong> Тази публикация е с информационна и образователна цел и <strong>не представлява юридическо или правно тълкуване</strong> на приложимото законодателство. Обстоятелствата варират, а нормативните изисквания се променят. При конкретен казус се консултирайте с квалифициран юрист.</p>
+
+            <p class="blog-callout"><strong>Кратък отговор:</strong> NIS2 изисква от субектите в приложимия обхват подходящи мерки за управление на киберриска и обработване на инциденти. SOC може да помогне с telemetry, детекция, триаж, ескалация и incident records, но сам по себе си не доказва съответствие и не замества отговорността на ръководството или собствениците на услугите.</p>
+
+            <h2>Как NIS2 формулира изискванията?</h2>
+            <p>Директива (ЕС) 2022/2555 определя правила за киберсигурност, управление на риска, надзор и докладване за субектите в нейния обхват. Член 20 разглежда отговорността на управителните органи за одобрение и надзор на мерките; член 21 задава тематичните области на мерките за управление на риска; член 23 урежда докладването на инциденти със значително въздействие. Конкретната приложимост, компетентните органи и процедурите се проверяват спрямо националното право и фактическата ситуация.</p>
+            <p>Текстът е технологично неутрален: той описва резултати и области за управление на риска, а не задължава всяка организация да използва конкретен продукт, <a href="/resources/glossary/siem">SIEM</a> платформа, <a href="/resources/glossary/mssp">MSSP</a> или модел на SOC. Съответната организация избира и обосновава подходящите мерки според риска, размера, характера и вероятното въздействие.</p>
+
+            <h2>Къде може SOC да подпомогне NIS2?</h2>
+            <div class="blog-table-wrap">
+                <table>
+                    <thead><tr><th>NIS2 тема</th><th>Възможен принос на SOC</th><th>Какво остава за организацията?</th></tr></thead>
+                    <tbody>
+                        <tr><th>Incident handling</th><td>Наблюдение на договорени логове, triage, case timeline, ескалация и техническа координация.</td><td>Incident policy, бизнес приоритети, incident command, решения за уведомяване и възстановяване.</td></tr>
+                        <tr><th>Detection и мониторинг</th><td>Корелация на identity, endpoint, network, cloud и други сигнали; проверка на подозрителни събития.</td><td>Определяне на scope, покритие на активите, log quality, собственици и остатъчни слепи зони.</td></tr>
+                        <tr><th>Business continuity</th><td>Технически сигнали и хронология, които могат да подпомогнат оценката и координацията при прекъсване.</td><td>Непрекъснатост, backup и recovery планове, приоритети и решения за възстановяване.</td></tr>
+                        <tr><th>Supply-chain risk</th><td>Ескалация на събития, свързани с интегрирани системи или договорени доставчици, ако telemetry е налична.</td><td>Due diligence, критичност, договори, зависимости и риск по цялата верига.</td></tr>
+                        <tr><th>Incident reporting</th><td>Навременна техническа информация, времева линия, засегнати системи и indicators за анализ.</td><td>Оценка дали инцидентът е значим и подаване към компетентния CSIRT/орган по националната процедура.</td></tr>
+                        <tr><th>Ефективност и подобрение</th><td>Тенденции в алармите, повторяеми проблеми, покритие и follow-up actions по услугата.</td><td>Ръководен преглед, ресурсни решения, acceptance на риск и проследяване на всички мерки.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Това са примери за възможна подкрепа, не гаранция, че SOC услуга сама покрива съответната точка. Техническият мониторинг е един елемент от по-широка организационна система за управление на киберриска.</p>
+
+            <h2>SOC не е равнозначен на NIS2 съответствие</h2>
+            <ul>
+                <li><strong>Не определя приложимост:</strong> SOC не решава дали конкретното юридическо лице попада под NIS2.</li>
+                <li><strong>Не замества governance:</strong> управителният орган и организацията запазват своите роли и решения.</li>
+                <li><strong>Не замества целия контролен набор:</strong> SOC наблюдението не е равнозначно на backup, <a href="/resources/glossary/iam">IAM</a>, vulnerability management, supplier risk, обучение и continuity мерки.</li>
+                <li><strong>Не подава автоматично регулаторни уведомления:</strong> кой оценява значимостта и подава report трябва да е определено по националните правила, ролите и договора.</li>
+                <li><strong>Не гарантира откриване на всеки инцидент:</strong> резултатите зависят от telemetry, покритието, детекционните правила и реакцията на клиентските екипи.</li>
+            </ul>
+
+            <h2>Как да интегрирате SOC в NIS2 подготовката?</h2>
+            <ol>
+                <li>Потвърдете обхвата и задълженията на юридическото лице спрямо действащото национално право.</li>
+                <li>Свържете релевантните NIS2 риск-сценарии и критични услуги с активи, логове и източници на сигнал.</li>
+                <li>Документирайте кои мерки и процеси SOC изпълнява, кои поддържа и кои остават изцяло вътрешни.</li>
+                <li>Съгласувайте escalation matrix, контактите, работното време, response permissions и клиентските decision owners.</li>
+                <li>Проверете как се свързва SOC сигналът с incident classification, вътрешните процедури и приложимия процес за уведомяване.</li>
+                <li>Съхранявайте evidence за лог покритието, случаите, ескалациите, тестовете и последващите действия.</li>
+                <li>Провеждайте учения и преглеждайте telemetry gaps, процесите и отговорностите след промени или инциденти.</li>
+            </ol>
+
+            <h2>Кога може да се прилага Регламент (ЕС) 2024/2690?</h2>
+            <p>Регламентът за изпълнение (ЕС) 2024/2690 допълва конкретни изисквания за технически и методологични аспекти на мерките и критериите за значимост на инцидентите за определени категории цифрови доставчици, посочени в неговия обхват. Той не е универсален технически checklist за всички субекти по NIS2. Проверете дали организацията и услугата попадат в персоналния и материалния обхват на акта.</p>
+
+            <h2>Често задавани въпроси</h2>
+            <h3>NIS2 задължава ли всяка организация да купи SOC услуга?</h3>
+            <p>Не. Директивата изисква подходящи и пропорционални мерки за управление на риска за субектите в приложимия обхват, но не предписва универсално конкретен продукт или външен SOC доставчик.</p>
+            <h3>Може ли SOC да помогне с доказателства при NIS2 преглед?</h3>
+            <p>Може да предостави договорени логове, alert/case записи, хронология, ескалации и отчети. Организацията трябва да прецени приложимостта, достатъчността и контекста на тези доказателства и да ги свърже със собствените си мерки и процедури.</p>
+            <h3>SOC отговаря ли за NIS2 докладването на инцидент?</h3>
+            <p>Не автоматично. SOC може да подпомогне техническото разследване и подготовката на факти; организацията и определените от националното право отговорници трябва да следват приложимия канал и срокове. Договорът следва да определя кой подготвя информацията и кой е упълномощен да изпрати notification.</p>
+            <h3>Трябва ли всички логове да се изпращат към външен SOC?</h3>
+            <p>Не непременно. Източниците се избират според риска, detection use cases, техническите възможности, договорните нужди и приложимите privacy/retention изисквания. Scope и изключенията трябва да са прозрачни.</p>
+
+            <h2>Свързани ресурси</h2>
+            <ul class="blog-related">
+                <li><a href="/blog/what-is-soc">Какво е SOC и как помага на бизнеса?</a></li>
+                <li><a href="/blog/how-soc-monitoring-works">Как работи SOC мониторингът?</a></li>
+                <li><a href="/blog/what-does-soc-monitor">Какво наблюдава SOC? Системи, логове и сигнали</a></li>
+                <li><a href="/blog/how-soc-detects-ransomware">Как SOC открива ransomware?</a></li>
+                <li><a href="/blog/nis2-requirements">NIS2 изисквания: мерки за киберсигурност и докладване</a></li>
+                <li><a href="/blog/nis2-incident-reporting">NIS2 докладване на инциденти: срокове и подготовка</a></li>
+                <li><a href="/blog/nis2-checklist">NIS2 checklist: практическа самооценка</a></li>
+                <li><a href="/services/soc-monitoring">SOC мониторинг 24/7/365 от DefComs</a></li>
+                <li><a href="/compliance/nis2">NIS2 подготовка</a></li>
+            </ul>
+
+            <h2>Официални източници</h2>
+            <ul class="blog-source-list">
+                <li><a href="https://eur-lex.europa.eu/eli/dir/2022/2555/oj" target="_blank" rel="noopener noreferrer">EUR-Lex — Директива (ЕС) 2022/2555, членове 20, 21 и 23</a></li>
+                <li><a href="https://eur-lex.europa.eu/eli/reg_impl/2024/2690/oj" target="_blank" rel="noopener noreferrer">EUR-Lex — Регламент за изпълнение (ЕС) 2024/2690 и приложимите цифрови доставчици</a></li>
+                <li><a href="https://digital-strategy.ec.europa.eu/en/policies/nis2-directive" target="_blank" rel="noopener noreferrer">Европейска комисия — обзор и актуализации по NIS2</a></li>
+                <li><a href="https://digital-strategy.ec.europa.eu/en/policies/nis2-directive-bulgaria" target="_blank" rel="noopener noreferrer">Европейска комисия — профил за България; проверявайте датата и действащите национални актове</a></li>
+                <li><a href="https://www.nist.gov/cyberframework" target="_blank" rel="noopener noreferrer">NIST Cybersecurity Framework 2.0 — обща рамка за управление на киберриска</a></li>
+            </ul>
+
+            <aside class="blog-cta">
+                <h2>Искате да оцените SOC monitoring спрямо NIS2 обхвата?</h2>
+                <p>Съпоставете критичните услуги, telemetry покритието, incident escalation и вътрешните отговорности преди да изберете модел.</p>
+                <a class="btn btn-primary" href="/services/soc-monitoring">SOC мониторинг 24/7/365</a>
+                <a class="btn btn-secondary" href="/compliance/nis2">NIS2 подготовка</a>
+            </aside>
+        </article>
+    </main>

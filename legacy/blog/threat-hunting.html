@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Threat hunting: проактивно търсене на заплахи | DefComs</title>
+    <meta name="description" content="Какво е threat hunting и как се различава от SOC мониторинг и alert triage. Практичен цикъл за хипотези, телеметрия, анализ, ескалация и подобряване на detections.">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <link rel="canonical" href="https://defcoms.eu/blog/threat-hunting.html">
+    <link rel="alternate" hreflang="bg" href="https://defcoms.eu/blog/threat-hunting.html">
+    <link rel="alternate" hreflang="x-default" href="https://defcoms.eu/blog/threat-hunting.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="bg_BG">
+    <meta property="og:site_name" content="DefComs">
+    <meta property="og:url" content="https://defcoms.eu/blog/threat-hunting.html">
+    <meta property="og:title" content="Threat hunting: какво е и как се провежда проактивно търсене | DefComs">
+    <meta property="og:description" content="Риск-базиран лов на заплахи чрез ясна хипотеза, налични данни, проверка на контекста и резултати за incident response и detection engineering.">
+    <meta property="og:image" content="https://defcoms.eu/images/Webp/Киберсигурност_4.0__Инструменти_и_стратегии.webp">
+    <meta property="og:image:alt" content="Анализ на сигнали и заплахи в среда за киберсигурност">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Threat hunting: практическо ръководство | DefComs">
+    <meta name="twitter:description" content="От хипотеза и telemetry до потвърден инцидент или по-добра детекция: как протича threat hunt.">
+    <meta name="twitter:image" content="https://defcoms.eu/images/Webp/Киберсигурност_4.0__Инструменти_и_стратегии.webp">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../images/Logos/DefComs-logo.svg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        { "@type": "Organization", "@id": "https://defcoms.eu/#organization", "name": "DefComs", "url": "https://defcoms.eu/" },
+        { "@type": "WebSite", "@id": "https://defcoms.eu/#website", "url": "https://defcoms.eu/", "name": "DefComs", "publisher": { "@id": "https://defcoms.eu/#organization" }, "inLanguage": "bg" },
+        {
+          "@type": "WebPage",
+          "@id": "https://defcoms.eu/blog/threat-hunting.html#webpage",
+          "url": "https://defcoms.eu/blog/threat-hunting.html",
+          "name": "Threat hunting: какво е и как се провежда проактивно търсене",
+          "inLanguage": "bg",
+          "isPartOf": { "@id": "https://defcoms.eu/#website" },
+          "breadcrumb": { "@id": "https://defcoms.eu/blog/threat-hunting.html#breadcrumb" },
+          "mainEntity": { "@id": "https://defcoms.eu/blog/threat-hunting.html#article" }
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://defcoms.eu/blog/threat-hunting.html#article",
+          "headline": "Threat hunting: какво е и как се провежда проактивно търсене",
+          "description": "Обяснение на threat hunting като хипотезно проактивно изследване на налична telemetry, с workflow за анализ, ескалация, документиране и подобряване на detections.",
+          "image": "https://defcoms.eu/images/Webp/Киберсигурност_4.0__Инструменти_и_стратегии.webp",
+          "datePublished": "2026-10-10",
+          "dateModified": "2026-10-10",
+          "inLanguage": "bg",
+          "mainEntityOfPage": { "@id": "https://defcoms.eu/blog/threat-hunting.html#webpage" },
+          "author": { "@type": "Person", "@id": "https://defcoms.eu/about/team/author/georgi-todorov.html", "name": "Георги Тодоров", "jobTitle": "SOC Operations Manager (24/7)", "url": "https://defcoms.eu/about/team/author/georgi-todorov.html" },
+          "publisher": { "@id": "https://defcoms.eu/#organization" },
+          "citation": [
+            "https://attack.mitre.org/",
+            "https://csrc.nist.gov/pubs/sp/800/61/r3/final"
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://defcoms.eu/blog/threat-hunting.html#faq",
+          "mainEntity": [
+            { "@type": "Question", "name": "Какво е threat hunting?", "acceptedAnswer": { "@type": "Answer", "text": "Threat hunting е проактивно и хипотезно изследване на налични security данни за признаци на подозрителна активност, която може да не е довела до alert. То допълва, но не заменя мониторинга и incident response." } },
+            { "@type": "Question", "name": "Threat hunting същото ли е като SOC мониторинг?", "acceptedAnswer": { "@type": "Answer", "text": "Не. Мониторингът обичайно обработва събития и alerts според постоянни правила и покритие; hunting е ограничено проучване, водено от конкретен въпрос или хипотеза. Екип може да извършва и двете дейности." } },
+            { "@type": "Question", "name": "Какво е нужно, за да започне threat hunt?", "acceptedAnswer": { "@type": "Answer", "text": "Нужни са ясен scope и хипотеза, отговорник, подходящо запазена и достъпна telemetry, инструменти за заявка и процес за ескалация, ако се открие вероятен инцидент." } },
+            { "@type": "Question", "name": "Ако hunt не намери заплаха, значи ли че няма компрометиране?", "acceptedAnswer": { "@type": "Answer", "text": "Не. Резултатът важи за зададения scope, период и налични данни. Липсваща telemetry, retention ограничения или неизвестни поведения могат да оставят слепи петна." } }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://defcoms.eu/blog/threat-hunting.html#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Начало", "item": "https://defcoms.eu/" },
+            { "@type": "ListItem", "position": 2, "name": "Блог", "item": "https://defcoms.eu/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "Threat hunting", "item": "https://defcoms.eu/blog/threat-hunting.html" }
+          ]
+        }
+      ]
+    }
+    </script>
+    <style>
+        .blog-article { max-width: 860px; margin: 0 auto; padding: 150px 24px 80px; }
+        .blog-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: 28px; }
+        .blog-breadcrumbs a { color: var(--secondary-cyan); }
+        .blog-kicker { color: var(--secondary-cyan); text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+        .blog-article h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.12; margin: 12px 0 20px; }
+        .blog-deck { color: var(--text-secondary); font-size: 1.2rem; line-height: 1.7; }
+        .blog-meta { color: var(--text-secondary); font-size: var(--font-size-sm); margin: 22px 0; }
+        .blog-hero-image { width: 100%; max-height: 460px; object-fit: cover; border-radius: var(--radius-lg); margin: 16px 0 32px; }
+        .blog-article h2 { margin-top: 42px; }
+        .blog-article p, .blog-article li { color: var(--text-secondary); line-height: 1.8; }
+        .blog-article ul, .blog-article ol { padding-left: 24px; }
+        .blog-callout { border-left: 3px solid var(--secondary-cyan); background: var(--background-card); padding: 18px 22px; border-radius: var(--radius-md); }
+        .blog-table-wrap { overflow-x: auto; margin: 24px 0; }
+        .blog-article table { width: 100%; border-collapse: collapse; min-width: 620px; }
+        .blog-article th, .blog-article td { padding: 14px; border: 1px solid var(--border-color); text-align: left; vertical-align: top; color: var(--text-secondary); line-height: 1.65; }
+        .blog-article th { color: var(--text-primary); background: var(--background-card); }
+        .blog-related, .blog-source-list { display: grid; gap: 12px; margin: 20px 0; }
+        .blog-related a, .blog-source-list a { color: var(--secondary-cyan); }
+        .blog-source-list li { overflow-wrap: anywhere; }
+        .blog-cta { margin-top: 44px; padding: 24px; background: var(--background-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); }
+    </style>
+</head>
+<body class="service-landing">
+
+    <!-- Header -->
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay"></div>
+
+    <header class="header">
+        <nav class="nav" aria-label="Основна навигация">
+            <div class="nav-container">
+                <a href="../index.html" class="logo">
+                    <img src="../images/Logos/DefComs-logo.svg" alt="DefComs">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Начало</a></li>
+                    <li><a href="../about/index.html">За нас</a></li>
+                    <li><a href="../services/index.html">Услуги</a></li>
+                    <li><a href="../compliance/index.html">Регулации</a></li>
+                    <li><a href="../cybersecurity-os/index.html">Cybersecurity OS</a></li>
+                    <li><a href="../wizard.html">NIS2 &amp; DORA Оценка</a></li>
+                    <li><a href="../spravochnik.html">Справочник</a></li>
+                    <li><a href="index.html">Блог</a></li>
+                    <li><a href="../contact/index.html">Контакти</a></li>
+                    <li class="mobile-only"><a href="../contact/index.html" class="mobile-cta">Свържете се с нас</a></li>
+                </ul>
+                <a href="../contact/index.html" class="cta-button">Свържете се с нас</a>
+                <button class="hamburger" type="button" aria-label="Отвори меню" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+
+    <main class="blog-article">
+        <nav class="blog-breadcrumbs" aria-label="Навигационна пътека">
+            <a href="../index.html">Начало</a><span aria-hidden="true">›</span>
+            <a href="index.html">Блог</a><span aria-hidden="true">›</span>
+            <span aria-current="page"><a href="../resources/glossary/threat-hunting/">Threat hunting</a></span>
+        </nav>
+        <article>
+            <p class="blog-kicker">Security Operations · Threat Hunting · Анализ</p>
+            <h1>Threat hunting: какво е и как се провежда?</h1>
+            <p class="blog-deck">Threat hunting е проактивно търсене в наличните security данни, водено от въпрос или хипотеза за активност, която може да не е задействала съществуваща детекция. Целта е да се провери дали има основание за разследване и да се подобри видимостта, а не да се обещае откриване на всяка скрита заплаха.</p>
+            <p class="blog-meta">Автор: <a href="../about/team/author/georgi-todorov.html" style="color: var(--secondary-cyan);">Георги Тодоров</a> · Публикувано: <time datetime="2026-10-10">10 октомври 2026 г.</time> · Обновено: <time datetime="2026-10-10">10 октомври 2026 г.</time></p>
+            <img class="blog-hero-image" src="../images/Webp/Киберсигурност_4.0__Инструменти_и_стратегии.webp" alt="Анализ на сигнали и заплахи в среда за киберсигурност" width="1200" height="675" fetchpriority="high">
+            <p class="blog-legal-notice" style="border-left:4px solid #f0a500;background:rgba(240,165,0,.08);padding:16px 20px;border-radius:8px;margin:24px 0;font-size:.95rem;line-height:1.6;"><strong>⚠️ Важна бележка:</strong> Тази публикация е с информационна и образователна цел и <strong>не представлява юридическо или правно тълкуване</strong> на приложимото законодателство. Обстоятелствата варират, а нормативните изисквания се променят. При конкретен казус се консултирайте с квалифициран юрист.</p>
+
+            <p class="blog-callout"><strong>Накратко:</strong> изберете риск или наблюдение, формулирайте проверима хипотеза, определете scope и нужната telemetry, потърсете и валидирайте следи, документирайте резултата и превърнете новите знания в incident escalation, detection или подобрение на покритието.</p>
+
+            <h2>Какво е threat hunting?</h2>
+            <p>Threat hunting е целенасочено проучване на данни от endpoints, identity системи, мрежа, email, cloud или други източници, за да се потърсят признаци на поведение, което заслужава внимание. То може да започне от <a href="../resources/glossary/cti/">threat intelligence</a>, промяна в средата, резултат от предишен инцидент, видима telemetry gap или въпрос за конкретна техника.</p>
+            <p><a href="../resources/glossary/mitre-attack/">MITRE ATT&amp;CK</a> е knowledge base от тактики и техники, базирани на наблюдения от реалния свят. Екипите могат да го използват като речник за моделиране на хипотези и търсене, но ATT&amp;CK не е готова заявка, гаранция за покритие или единен threat hunting playbook.</p>
+
+            <h2>Threat hunting и SOC мониторинг не са едно и също</h2>
+            <div class="blog-table-wrap">
+                <table>
+                    <thead><tr><th>Дейност</th><th>Как започва</th><th>Типичен фокус</th></tr></thead>
+                    <tbody>
+                        <tr><th>Мониторинг</th><td>Постоянни източници, правила и аларми в договорения scope.</td><td>Обработка на събития и alerts, triage, ескалация и наблюдение на покритието.</td></tr>
+                        <tr><th>Threat hunting</th><td>Въпрос, хипотеза или конкретен риск, който екипът иска да провери в наличните данни.</td><td>Търсене на следи, проверка на контекста и намиране на telemetry или detection gaps.</td></tr>
+                        <tr><th>Incident response</th><td>Подозрение или потвърден инцидент, който изисква координирано управление.</td><td>Оценка, containment, комуникация, отстраняване и възстановяване според плана.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Дейностите могат да се допълват и да се изпълняват от един <a href="../resources/glossary/soc/">SOC</a> или security екип, но не са взаимозаменяеми. Threat hunt може да е насочен и към проверка на устойчивостта на detections, докато alert triage отговаря на конкретен сигнал.</p>
+
+            <h2>Пример: формулирайте проверима хипотеза</h2>
+            <p>Хипотеза: „На администраторски работни станции може да има необичайно изпълнение на скриптове извън очакваните maintenance прозорци, което не е свързано с познатите deployment инструменти.“</p>
+            <p>Преди заявка уточнете какво би подкрепило или отслабило тази хипотеза: кои endpoints са в scope, кой процес/родител и user context са релевантни, какъв период се изследва, кои deployment задачи са легитимни и какви данни са налични. ATT&amp;CK може да помогне при терминологията за техники, но конкретните критерии трябва да отговарят на средата и данните.</p>
+
+            <h2>Работен цикъл за threat hunt</h2>
+            <ol>
+                <li><strong>Изберете приоритет.</strong> Тръгнете от риск, threat intelligence, инцидентен lesson learned, подозрителна аномалия или неизвестно покритие.</li>
+                <li><strong>Запишете хипотезата и scope-а.</strong> Определете какво проверявате, кои активи/потребители и период са включени, кой води работата и какво би довело до ескалация.</li>
+                <li><strong>Проверете наличните данни.</strong> Потвърдете източници, времеви обхват, retention, синхронизация на часовници, полета и достъп; документирайте пропуските преди да тълкувате липсата на резултати.</li>
+                <li><strong>Потърсете и обогатете.</strong> Използвайте одобрени заявки и сигнали от endpoint, identity, network, email или cloud системи, когато те са достъпни; добавяйте контекст за активи, owners и известни легитимни промени.</li>
+                <li><strong>Валидирайте кандидатите.</strong> Разгледайте timeline и свързани събития, проверете алтернативни обяснения и отделете наблюдаваните факти от работните хипотези.</li>
+                <li><strong>Определете резултата и следващото действие.</strong> Ескалирайте вероятен инцидент по IR процеса; ако дейността е легитимна, запишете основанието; ако покритието не позволява отговор, посочете нужната telemetry.</li>
+                <li><strong>Подобрете detections и повторете.</strong> При подходящи находки създайте или настройте детекция, добавете тестове, коригирайте logging/coverage и планирайте повторна проверка.</li>
+            </ol>
+
+            <h2>Какви данни могат да помогнат?</h2>
+            <p>Източниците зависят от хипотезата и средата; повече данни не гарантират по-добър резултат, ако контекстът, качеството или обхватът са неясни.</p>
+            <ul>
+                <li><strong>Endpoint/<a href="../resources/glossary/edr/">EDR</a>:</strong> процеси, command-line context, файлови и системни събития и agent health, според конфигурацията.</li>
+                <li><strong>Identity:</strong> authentication, account changes, роли и sign-in събития, когато се логват и са достъпни.</li>
+                <li><strong>Network:</strong> DNS, firewall, proxy или други наблюдения в рамките на наличното покритие и retention.</li>
+                <li><strong>Email и collaboration:</strong> сигнали за съобщения, attachments, URLs и последващи действия, ако инструментите ги предоставят.</li>
+                <li><strong>Cloud и приложения:</strong> control-plane, workload и application logs със съгласуван scope и достъп.</li>
+                <li><strong>Asset/configuration inventory:</strong> owners, критичност, роли и базова линия, които помагат да се различат очаквани промени от аномалии.</li>
+            </ul>
+            <p>Работете само с данни, до които организацията има право на достъп, и спазвайте вътрешните правила за privacy, retention и least privilege. Hunting заявките трябва да са scoped, документирани и пропорционални на конкретната цел.</p>
+
+            <h2>Как да оцените резултата?</h2>
+            <p>Не измервайте качеството само с броя „намерени заплахи“. Полезни сигнали са колко хипотези са проверени, кои критични източници са липсвали, колко кандидат-събития са валидирани, какви detections или logging подобрения са внедрени и дали повторната проверка потвърждава промяната.</p>
+            <p>Записвайте обхвата, времевия период, заявките или логиката на търсене, източниците, ограниченията, наблюдаваните факти, заключенията и действията. Така резултатът може да бъде повторен и прегледан от друг анализатор.</p>
+
+            <h2>Ограничения и чести грешки</h2>
+            <ul>
+                <li><strong>Липса на telemetry:</strong> неоткрит резултат не доказва отсъствие на активност, ако нужните събития не се събират или retention периодът е изтекъл.</li>
+                <li><strong>Неясна хипотеза:</strong> твърде широко „потърси нещо подозрително“ трудно се проверява и документира.</li>
+                <li><strong>Потвърждаващо търсене:</strong> избиране само на данни, които подкрепят първоначалната версия, без проверка на легитимни алтернативи.</li>
+                <li><strong>Объркване между факт и извод:</strong> корелация или единичен индикатор сами по себе си не доказват компрометиране.</li>
+                <li><strong>Действия извън процеса:</strong> hunting не дава автоматично разрешение за изолиране, блокиране на акаунт или промяна в production.</li>
+                <li><strong>Липса на feedback:</strong> заключението не се превръща в detection, telemetry improvement или инцидентна ескалация.</li>
+            </ul>
+
+            <h2>Често задавани въпроси</h2>
+            <h3>Какво е threat hunting?</h3>
+            <p>Threat hunting е проактивно и хипотезно изследване на налични security данни за признаци на подозрителна активност, която може да не е довела до alert. То допълва, но не заменя мониторинга и incident response.</p>
+            <h3>Threat hunting същото ли е като SOC мониторинг?</h3>
+            <p>Не. Мониторингът обичайно обработва събития и alerts според постоянни правила и покритие; hunting е ограничено проучване, водено от конкретен въпрос или хипотеза. Екип може да извършва и двете дейности.</p>
+            <h3>Какво е нужно, за да започне threat hunt?</h3>
+            <p>Нужни са ясен scope и хипотеза, отговорник, подходящо запазена и достъпна telemetry, инструменти за заявка и процес за ескалация, ако се открие вероятен инцидент.</p>
+            <h3>Ако hunt не намери заплаха, значи ли че няма компрометиране?</h3>
+            <p>Не. Резултатът важи за зададения scope, период и налични данни. Липсваща telemetry, retention ограничения или неизвестни поведения могат да оставят слепи петна.</p>
+
+            <h2>Свързани ресурси</h2>
+            <ul class="blog-related">
+                <li><a href="what-is-edr.html">Какво е EDR? Endpoint Detection and Response</a></li>
+                <li><a href="what-is-xdr.html">Какво е XDR? Extended Detection and Response</a></li>
+                <li><a href="what-is-soc.html">Какво е SOC? Мониторинг, анализ и реакция</a></li>
+                <li><a href="how-soc-monitoring-works.html">Как работи SOC мониторингът?</a></li>
+                <li><a href="how-soc-detects-ransomware.html">Как SOC открива ransomware? Ранни сигнали и реакция</a></li>
+                <li><a href="../services/soc-monitoring/index.html">SOC мониторинг 24/7/365</a></li>
+            </ul>
+
+            <h2>Официални източници</h2>
+            <ul class="blog-source-list">
+                <li><a href="https://attack.mitre.org/" target="_blank" rel="noopener noreferrer">MITRE ATT&amp;CK — knowledge base of adversary tactics and techniques</a></li>
+                <li><a href="https://csrc.nist.gov/pubs/sp/800/61/r3/final" target="_blank" rel="noopener noreferrer">NIST SP 800-61 Rev. 3 — incident response в контекста на cybersecurity risk management</a></li>
+            </ul>
+
+            <aside class="blog-cta">
+                <h2>Свържете наблюденията с процес за действие</h2>
+                <p>Определете приоритетните източници, собствениците на сигналите и пътя за ескалация при вероятен инцидент.</p>
+                <a class="btn btn-primary" href="../services/soc-monitoring/index.html">SOC мониторинг</a>
+                <a class="btn btn-secondary" href="../index.html#contact">Заявете консултация</a>
+            </aside>
+        </article>
+    </main>
+        <!-- Footer -->
+
+    <script src="../script.js" defer></script>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="../images/Logos/DefComs-logo.svg" alt="DefComs" class="footer-logo" loading="lazy">
+                    <p>Вашият високотехнологичен партньор в киберсигурността. Предотвратяване, засичане и бърза неутрализация на съвременните заплахи.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Услуги</h3>
+                    <ul>
+                        <li><a href="../services/soc-monitoring/index.html">SOC Мониторинг 24/7</a></li>
+                        <li><a href="../services/noc-services/index.html">NOC Управление</a></li>
+                        <li><a href="../services/corporate-training/index.html">Обучения за фирми</a></li>
+                        <li><a href="../services/penetration-testing/index.html">Penetration Testing</a></li>
+                        <li><a href="../compliance/nis2/index.html">GDPR/NIS2/DORA Съответствие</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Ресурси</h3>
+                    <ul>
+                        <li><a href="../spravochnik.html">Регулаторен Хъб</a></li>
+                        <li><a href="../cybersecurity-os/index.html">Cybersecurity OS</a></li>
+                        <li><a href="../blog/index.html">Статии &amp; Блог</a></li>
+                        <li><a href="../about/index.html">За Нас</a></li>
+                        <li><a href="../bulgaria/index.html">Покритие в България</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Правна рамка</h3>
+                    <ul>
+                        <li><a href="../compliance/nis2/index.html">Регулация NIS2</a></li>
+                        <li><a href="../compliance/gdpr/index.html">Регламент GDPR</a></li>
+                        <li><a href="../compliance/iso-27001/index.html">Стандарт ISO 27001</a></li>
+                        <li><a href="../index.html#contact">Контакти</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DefComs. Всички права запазени.</p>
+                <div class="footer-bottom-links">
+                    <a href="../terms.html">Условия за ползване</a>
+                    <a href="../privacy.html">Защита на данни</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../chat-widget.js"></script>
+</body>
+</html>

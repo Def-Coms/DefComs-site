@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3-2-1 backup правило: как работи и какво не гарантира | DefComs</title>
+    <meta name="description" content="Обяснение на 3-2-1 backup правилото: три копия, два различни носителя и едно извън основната локация, плюс ограничения, cloud и restore тестове.">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <link rel="canonical" href="https://defcoms.eu/blog/3-2-1-backup.html">
+    <link rel="alternate" hreflang="bg" href="https://defcoms.eu/blog/3-2-1-backup.html">
+    <link rel="alternate" hreflang="x-default" href="https://defcoms.eu/blog/3-2-1-backup.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="bg_BG">
+    <meta property="og:site_name" content="DefComs">
+    <meta property="og:url" content="https://defcoms.eu/blog/3-2-1-backup.html">
+    <meta property="og:title" content="3-2-1 backup правило: как работи и какво не гарантира | DefComs">
+    <meta property="og:description" content="Практически прочит на 3-2-1 backup схемата за устойчивост: копия, носители, offsite и проверено възстановяване.">
+    <meta property="og:image" content="https://defcoms.eu/images/PR_image/Киберсигурност_за_бизнес_оцеляване.webp">
+    <meta property="og:image:alt" content="Различни backup копия и локации за възстановяване на бизнеса">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="3-2-1 backup правило | DefComs">
+    <meta name="twitter:description" content="Три копия, два различни носителя и едно offsite копие: смисъл, ограничения и тестове.">
+    <meta name="twitter:image" content="https://defcoms.eu/images/PR_image/Киберсигурност_за_бизнес_оцеляване.webp">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../images/Logos/DefComs-logo.svg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        { "@type": "Organization", "@id": "https://defcoms.eu/#organization", "name": "DefComs", "url": "https://defcoms.eu/" },
+        { "@type": "WebSite", "@id": "https://defcoms.eu/#website", "url": "https://defcoms.eu/", "name": "DefComs", "publisher": { "@id": "https://defcoms.eu/#organization" }, "inLanguage": "bg" },
+        {
+          "@type": "WebPage",
+          "@id": "https://defcoms.eu/blog/3-2-1-backup.html#webpage",
+          "url": "https://defcoms.eu/blog/3-2-1-backup.html",
+          "name": "3-2-1 backup правило: копия, носители и offsite",
+          "inLanguage": "bg",
+          "isPartOf": { "@id": "https://defcoms.eu/#website" },
+          "breadcrumb": { "@id": "https://defcoms.eu/blog/3-2-1-backup.html#breadcrumb" },
+          "mainEntity": { "@id": "https://defcoms.eu/blog/3-2-1-backup.html#article" }
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://defcoms.eu/blog/3-2-1-backup.html#article",
+          "headline": "3-2-1 backup правило: копия, носители и offsite",
+          "description": "Обяснение на 3-2-1 backup практиката, независимостта на failure domains, cloud/offsite границите и необходимостта от restore тестове.",
+          "image": "https://defcoms.eu/images/PR_image/Киберсигурност_за_бизнес_оцеляване.webp",
+          "datePublished": "2026-10-07",
+          "dateModified": "2026-10-07",
+          "inLanguage": "bg",
+          "mainEntityOfPage": { "@id": "https://defcoms.eu/blog/3-2-1-backup.html#webpage" },
+          "author": { "@type": "Person", "@id": "https://defcoms.eu/about/team/author/georgi-todorov.html", "name": "Георги Тодоров", "jobTitle": "SOC Operations Manager (24/7)", "url": "https://defcoms.eu/about/team/author/georgi-todorov.html" },
+          "publisher": { "@id": "https://defcoms.eu/#organization" },
+          "citation": [
+            "https://www.cisa.gov/stopransomware/ransomware-guide",
+            "https://csrc.nist.gov/pubs/ir/8374/r1/final",
+            "https://csrc.nist.gov/pubs/sp/800/34/r1/upd1/final"
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://defcoms.eu/blog/3-2-1-backup.html#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Начало", "item": "https://defcoms.eu/" },
+            { "@type": "ListItem", "position": 2, "name": "Блог", "item": "https://defcoms.eu/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "3-2-1 backup", "item": "https://defcoms.eu/blog/3-2-1-backup.html" }
+          ]
+        }
+      ]
+    }
+    </script>
+    <style>
+        .blog-article { max-width: 860px; margin: 0 auto; padding: 150px 24px 80px; }
+        .blog-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: 28px; }
+        .blog-breadcrumbs a { color: var(--secondary-cyan); }
+        .blog-kicker { color: var(--secondary-cyan); text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+        .blog-article h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.12; margin: 12px 0 20px; }
+        .blog-deck { color: var(--text-secondary); font-size: 1.2rem; line-height: 1.7; }
+        .blog-meta { color: var(--text-secondary); font-size: var(--font-size-sm); margin: 22px 0; }
+        .blog-hero-image { width: 100%; max-height: 460px; object-fit: cover; border-radius: var(--radius-lg); margin: 16px 0 32px; }
+        .blog-article h2 { margin-top: 42px; }
+        .blog-article p, .blog-article li { color: var(--text-secondary); line-height: 1.8; }
+        .blog-article ul, .blog-article ol { padding-left: 24px; }
+        .blog-callout { border-left: 3px solid var(--secondary-cyan); background: var(--background-card); padding: 18px 22px; border-radius: var(--radius-md); }
+        .blog-table-wrap { overflow-x: auto; margin: 24px 0; }
+        .blog-article table { width: 100%; border-collapse: collapse; min-width: 620px; }
+        .blog-article th, .blog-article td { padding: 14px; border: 1px solid var(--border-color); text-align: left; vertical-align: top; color: var(--text-secondary); line-height: 1.65; }
+        .blog-article th { color: var(--text-primary); background: var(--background-card); }
+        .blog-related, .blog-source-list { display: grid; gap: 12px; margin: 20px 0; }
+        .blog-related a, .blog-source-list a { color: var(--secondary-cyan); }
+        .blog-source-list li { overflow-wrap: anywhere; }
+        .blog-cta { margin-top: 44px; padding: 24px; background: var(--background-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); }
+    </style>
+</head>
+<body class="service-landing">
+
+    <!-- Header -->
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay"></div>
+
+    <header class="header">
+        <nav class="nav" aria-label="Основна навигация">
+            <div class="nav-container">
+                <a href="../index.html" class="logo">
+                    <img src="../images/Logos/DefComs-logo.svg" alt="DefComs">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Начало</a></li>
+                    <li><a href="../about/index.html">За нас</a></li>
+                    <li><a href="../services/index.html">Услуги</a></li>
+                    <li><a href="../compliance/index.html">Регулации</a></li>
+                    <li><a href="../cybersecurity-os/index.html">Cybersecurity OS</a></li>
+                    <li><a href="../wizard.html">NIS2 &amp; DORA Оценка</a></li>
+                    <li><a href="../spravochnik.html">Справочник</a></li>
+                    <li><a href="index.html">Блог</a></li>
+                    <li><a href="../contact/index.html">Контакти</a></li>
+                    <li class="mobile-only"><a href="../contact/index.html" class="mobile-cta">Свържете се с нас</a></li>
+                </ul>
+                <a href="../contact/index.html" class="cta-button">Свържете се с нас</a>
+                <button class="hamburger" type="button" aria-label="Отвори меню" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+
+    <main class="blog-article">
+        <nav class="blog-breadcrumbs" aria-label="Навигационна пътека">
+            <a href="../index.html">Начало</a><span aria-hidden="true">›</span>
+            <a href="index.html">Блог</a><span aria-hidden="true">›</span>
+            <span aria-current="page">3-2-1 backup</span>
+        </nav>
+        <article>
+            <p class="blog-kicker">Backup · Resilience · <a href="../resources/glossary/ransomware/">Ransomware</a></p>
+            <h1>3-2-1 backup правило: как работи и какво не гарантира</h1>
+            <p class="blog-deck">3-2-1 е често използвана практична схема за намаляване на риска от загуба на данни: поддържайте общо три копия, използвайте два различни типа носител и пазете поне едно копие извън основната локация. Това е евристика за дизайн, не сертификация, стандарт за всички среди или доказателство, че възстановяването ще успее.</p>
+            <p class="blog-meta">Автор: <a href="../about/team/author/georgi-todorov.html" style="color: var(--secondary-cyan);">Георги Тодоров</a> · Публикувано: <time datetime="2026-10-07">7 октомври 2026 г.</time> · Обновено: <time datetime="2026-10-07">7 октомври 2026 г.</time></p>
+            <img class="blog-hero-image" src="../images/PR_image/Киберсигурност_за_бизнес_оцеляване.webp" alt="Планиране на различни backup копия и независими локации" width="1200" height="675" fetchpriority="high">
+            <p class="blog-legal-notice" style="border-left:4px solid #f0a500;background:rgba(240,165,0,.08);padding:16px 20px;border-radius:8px;margin:24px 0;font-size:.95rem;line-height:1.6;"><strong>⚠️ Важна бележка:</strong> Тази публикация е с информационна и образователна цел и <strong>не представлява юридическо или правно тълкуване</strong> на приложимото законодателство. Обстоятелствата варират, а нормативните изисквания се променят. При конкретен казус се консултирайте с квалифициран юрист.</p>
+
+            <p class="blog-callout"><strong>Накратко:</strong> В традиционното правило броим production данните като едно копие плюс две backup копия; копията трябва да използват различни носители, а едното да е извън основната локация. За ransomware устойчивост добавете контроли върху достъпа и изтриването, поне едно offline или подходящо изолирано копие и редовни restore тестове. Броят 3-2-1 сам по себе си не покрива clean restore, RPO/RTO или независимостта от общи credentials и control plane.</p>
+
+            <h2>Какво означават трите числа?</h2>
+            <div class="blog-table-wrap">
+                <table>
+                    <thead><tr><th>Число</th><th>Обичайно значение</th><th>Въпроси за проверка</th></tr></thead>
+                    <tbody>
+                        <tr><th>3 копия</th><td>Production copy плюс поне две допълнителни копия на данните.</td><td>Копират ли се критичните datasets и нужните конфигурации? Има ли версия, към която може да се върне след нежелана промяна?</td></tr>
+                        <tr><th>2 вида носител</th><td>Копията да не зависят изцяло от един и същ носител или начин на отказ.</td><td>Споделят ли еднакъв hardware, account, storage service, administration plane или credentials?</td></tr>
+                        <tr><th>1 offsite копие</th><td>Поне едно копие да е в отделна физическа локация от основната среда.</td><td>Може ли събитие в основната сграда, мрежа или cloud account да засегне и това копие?</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Формулировката „два различни носителя“ идва от традиционния прочит на правилото. При съвременни среди проверете и независимостта на failure domains: отделен physical medium не помага достатъчно, ако всички копия се управляват от един компрометиран identity или един административен control plane.</p>
+
+            <h2>Как да приложите 3-2-1 към фирмена среда?</h2>
+            <ol>
+                <li><strong>Опишете критичните услуги:</strong> inventory на данни, applications, databases, VM/cloud resources, identity/configuration dependencies и owners.</li>
+                <li><strong>Свържете ги с recovery целите:</strong> business owner-ите определят приоритет, допустима загуба на данни и recovery time; документирайте RPO/RTO за услугите, които ги изискват.</li>
+                <li><strong>Изберете отделни копия:</strong> комбинирайте локално възстановяване за скорост с независим offsite/cloud или друг носител според обем, цена, законови/договорни ограничения и архитектура.</li>
+                <li><strong>Защитете управлението:</strong> отделете backup identities, ограничете delete/retention permissions, защитете ключовете и логвайте административните промени.</li>
+                <li><strong>Уточнете versioning и retention:</strong> пазете достатъчно версии, за да се възстановите до проверена точка преди нежеланите промени, като съгласувате капацитет и срокове.</li>
+                <li><strong>Упражнявайте възстановяването:</strong> възстановявайте примерни файлове и цели услуги в подходяща тестова/clean среда, измервайте време и записвайте зависимости и gaps.</li>
+            </ol>
+
+            <h2>3-2-1 срещу 3-2-1-1-0</h2>
+            <p>Някои организации използват разширение 3-2-1-1-0: добавят едно offline или immutable копие и цел за нула непроверени грешки в backup/restore тестовете. Това е разпространена индустриална вариация, не отделно нормативно изискване и не гаранция срещу ransomware.</p>
+            <p>„Immutable“ не означава автоматично недостижимо за всеки administrator, protected от misconfiguration или възстановимо в реална криза. Проверете policy, privileged roles, retention lock, break-glass access, account recovery, encryption keys, cloud control plane и провайдърните ограничения. Offline, isolated и immutable описват различни свойства и понякога се комбинират.</p>
+
+            <h2>Чести пропуски зад привидно спазено правило</h2>
+            <ul>
+                <li>production и backup shares ползват едни и същи admin credentials;</li>
+                <li>offsite copy е в същия cloud account/tenant и се контролира от същата идентичност;</li>
+                <li>backup reports показват успешна задача, но никога не е правен service-level restore;</li>
+                <li>копират се данни, но липсват ключове, конфигурации, software images или runbooks;</li>
+                <li>retention не покрива времето за откриване на компрометиране или не позволява връщане до чиста точка;</li>
+                <li>restore тестът не проверява malware/compromise риск, приложни зависимости или реални recovery цели.</li>
+            </ul>
+
+            <h2>Какво препоръчват официалните насоки?</h2>
+            <p>CISA #StopRansomware Guide препоръчва offline encrypted backups на критични данни и редовно тестване на тяхната наличност и integrity в disaster recovery сценарий. За cloud среда тя посочва и backup извън основния cloud provider/account като вариант, заедно с caveats за immutable storage и misconfiguration. Това са насоки, които трябва да се адаптират, а не blanket design за всяка организация.</p>
+            <p>NIST IR 8374 Rev. 1 поставя ransomware риска в рамката на Cybersecurity Framework 2.0. NIST SP 800-34 Rev. 1 дава contingency planning контекст за системи и услуги. Приложимостта към частна компания и договорните/регулаторни изисквания трябва да се преценят отделно.</p>
+
+            <h2>Кратък преглед преди да разчитате на backup</h2>
+            <ul>
+                <li>има ли три копия общо, включително production, или броенето е неясно;</li>
+                <li>използват ли копията различни среди и независими access/admin paths;</li>
+                <li>има ли подходящо offsite, offline, isolated или immutable копие;</li>
+                <li>защитени ли са identities, encryption keys, deletion permissions и retention;</li>
+                <li>възстановявали ли сте реални critical workloads в чиста среда;</li>
+                <li>съответстват ли доказаните резултати на бизнес приоритетите и заявените RPO/RTO.</li>
+            </ul>
+
+            <h2>Често задавани въпроси</h2>
+            <h3>Production данните броят ли се като едно от трите копия?</h3>
+            <p>В традиционната формулировка — да: едно primary copy плюс две backup copies, общо три. Уточнете дефиницията в собствената си политика, особено ако replication и versioning се броят по различен начин.</p>
+            <h3>Offsite cloud backup винаги ли е независим?</h3>
+            <p>Не. Проверете provider, account/tenant, identities, management plane, ключове, delete permissions, региона и договорните зависимости; географската дистанция сама по себе си не е пълна изолация.</p>
+            <h3>3-2-1 гарантира ли защита от ransomware?</h3>
+            <p>Не. Това е схема за копия и локации, не пълен security или recovery стандарт. Нужни са контрол на достъпа, независимост от attack path, retention, telemetry, restore упражнения и incident response.</p>
+            <h3>Заменя ли 3-2-1 планирането на RPO/RTO?</h3>
+            <p>Не. Правилото не определя колко често се правят копията или колко бързо трябва да се възстанови услугата. Тези цели се договарят с business owner-ите и се проверяват с тестове.</p>
+
+            <h2>Свързани ресурси</h2>
+            <ul class="blog-related">
+                <li><a href="ransomware-backup-strategy.html">Ransomware backup strategy: как да планираме възстановяването?</a></li>
+                <li><a href="ransomware-recovery.html">Ransomware recovery: чиста среда и връщане към работа</a></li>
+                <li><a href="how-to-protect-business-from-ransomware.html">Как да защитим фирма от ransomware?</a></li>
+                <li><a href="what-is-ransomware.html">Какво е ransomware? Криптиране, изнудване и риск за бизнеса</a></li>
+                <li><a href="../services/backup-disaster-recovery/index.html">Backup и Disaster Recovery услуги на DefComs</a></li>
+                <li><a href="../services/ransomware-protection/index.html">Ransomware защита и превенция</a></li>
+                <li><a href="../services/incident-response/index.html">Incident Response услуги</a></li>
+            </ul>
+
+            <h2>Официални източници</h2>
+            <ul class="blog-source-list">
+                <li><a href="https://www.cisa.gov/stopransomware/ransomware-guide" target="_blank" rel="noopener noreferrer">CISA, FBI, NSA и MS-ISAC — #StopRansomware Guide</a></li>
+                <li><a href="https://csrc.nist.gov/pubs/ir/8374/r1/final" target="_blank" rel="noopener noreferrer">NIST IR 8374 Rev. 1 — Ransomware Risk Management: A Cybersecurity Framework 2.0 Community Profile</a></li>
+                <li><a href="https://csrc.nist.gov/pubs/sp/800/34/r1/upd1/final" target="_blank" rel="noopener noreferrer">NIST SP 800-34 Rev. 1 — Contingency Planning Guide for Federal Information Systems</a></li>
+            </ul>
+
+            <aside class="blog-cta">
+                <h2>Проверете backup и възстановяването си</h2>
+                <p>Потвърдете обхвата, достъпите, независимите копия и резултатите от restore упражненията.</p>
+                <a class="btn btn-primary" href="../services/backup-disaster-recovery/index.html">Backup и Disaster Recovery</a>
+                <a class="btn btn-secondary" href="../index.html#contact">Заявете консултация</a>
+            </aside>
+        </article>
+    </main>
+        <!-- Footer -->
+
+    <script src="../script.js" defer></script>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="../images/Logos/DefComs-logo.svg" alt="DefComs" class="footer-logo" loading="lazy">
+                    <p>Вашият високотехнологичен партньор в киберсигурността. Предотвратяване, засичане и бърза неутрализация на съвременните заплахи.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Услуги</h3>
+                    <ul>
+                        <li><a href="../services/soc-monitoring/index.html">SOC Мониторинг 24/7</a></li>
+                        <li><a href="../services/noc-services/index.html">NOC Управление</a></li>
+                        <li><a href="../services/corporate-training/index.html">Обучения за фирми</a></li>
+                        <li><a href="../services/penetration-testing/index.html">Penetration Testing</a></li>
+                        <li><a href="../compliance/nis2/index.html">GDPR/NIS2/DORA Съответствие</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Ресурси</h3>
+                    <ul>
+                        <li><a href="../spravochnik.html">Регулаторен Хъб</a></li>
+                        <li><a href="../cybersecurity-os/index.html">Cybersecurity OS</a></li>
+                        <li><a href="../blog/index.html">Статии &amp; Блог</a></li>
+                        <li><a href="../about/index.html">За Нас</a></li>
+                        <li><a href="../bulgaria/index.html">Покритие в България</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Правна рамка</h3>
+                    <ul>
+                        <li><a href="../compliance/nis2/index.html">Регулация NIS2</a></li>
+                        <li><a href="../compliance/gdpr/index.html">Регламент GDPR</a></li>
+                        <li><a href="../compliance/iso-27001/index.html">Стандарт ISO 27001</a></li>
+                        <li><a href="../index.html#contact">Контакти</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DefComs. Всички права запазени.</p>
+                <div class="footer-bottom-links">
+                    <a href="../terms.html">Условия за ползване</a>
+                    <a href="../privacy.html">Защита на данни</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../chat-widget.js"></script>
+</body>
+</html>

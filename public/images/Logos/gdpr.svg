@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="gdprGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff" />
+      <stop offset="100%" stop-color="#0072ff" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  <rect width="200" height="200" rx="20" fill="#0c1020" stroke="#00f0ff" stroke-width="2" />
+  <!-- European Union Stars in Circle -->
+  <circle cx="100" cy="100" r="55" fill="none" stroke="#00f0ff" stroke-width="1.5" stroke-dasharray="4,4" opacity="0.6" />
+  <!-- Central Shield or Lock -->
+  <path d="M100 50 L140 65 V110 C140 140 100 160 100 160 C100 160 60 140 60 110 V65 Z" fill="url(#gdprGrad)" opacity="0.15" />
+  <path d="M100 55 L135 68 V110 C135 135 100 152 100 152 C100 152 65 135 65 110 V68 Z" fill="none" stroke="url(#gdprGrad)" stroke-width="3" filter="url(#glow)" />
+  <!-- Text GDPR -->
+  <text x="100" y="105" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="28" font-weight="900" text-anchor="middle" fill="#ffffff" letter-spacing="2">GDPR</text>
+  <!-- Text COMPLIANT -->
+  <text x="100" y="125" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10" font-weight="700" text-anchor="middle" fill="#00f0ff" letter-spacing="1">COMPLIANT</text>
+  <!-- EU Stars around -->
+  <g fill="#ffdd00">
+    <circle cx="100" cy="45" r="3" />
+    <circle cx="127" cy="52" r="3" />
+    <circle cx="148" cy="73" r="3" />
+    <circle cx="155" cy="100" r="3" />
+    <circle cx="148" cy="127" r="3" />
+    <circle cx="127" cy="148" r="3" />
+    <circle cx="100" cy="155" r="3" />
+    <circle cx="73" cy="148" r="3" />
+    <circle cx="52" cy="127" r="3" />
+    <circle cx="45" cy="100" r="3" />
+    <circle cx="52" cy="73" r="3" />
+    <circle cx="73" cy="52" r="3" />
+  </g>
+</svg>

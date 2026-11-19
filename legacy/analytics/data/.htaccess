@@ -1,0 +1,10 @@
+# Deny ALL direct HTTP access to the analytics data directory
+# (visits.db, cleanup.log). PHP reads/writes these via the filesystem,
+# not over HTTP, so tracking, stats and cleanup keep working.
+<IfModule mod_authz_core.c>
+    Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+</IfModule>

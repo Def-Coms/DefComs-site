@@ -1,0 +1,240 @@
+---
+lastmod: 2026-10-08
+title: "Ransomware recovery: безопасно възстановяване | DefComs"
+description: "Практическа рамка за ransomware recovery: приоритети, clean среда, проверка на backup, възстановяване на зависимости и контролирано връщане към работа."
+ogType: article
+image: https://defcoms.eu/images/PR_image/Киберсигурност_за_бизнес_оцеляване.webp
+imageAlt: План за приоритетно и проверено възстановяване след ransomware
+ogTitle: "Ransomware recovery: безопасно възстановяване стъпка по стъпка | DefComs"
+ogDescription: "Планирайте възстановяването по критичност и зависимости: чиста среда, проверени копия, тестове и контролирано връщане към работа."
+twitterTitle: "Ransomware recovery: безопасно възстановяване | DefComs"
+twitterDescription: Как да планирате clean recovery след ransomware, без да върнете компрометиран достъп или система в production.
+schema:
+  - "@context": https://schema.org
+    "@graph":
+      - "@type": Organization
+        "@id": https://defcoms.eu/#organization
+        name: DefComs
+        url: https://defcoms.eu/
+      - "@type": WebSite
+        "@id": https://defcoms.eu/#website
+        url: https://defcoms.eu/
+        name: DefComs
+        publisher:
+          "@id": https://defcoms.eu/#organization
+        inLanguage: bg
+      - "@type": WebPage
+        "@id": https://defcoms.eu/blog/ransomware-recovery#webpage
+        url: https://defcoms.eu/blog/ransomware-recovery
+        name: "Ransomware recovery: безопасно възстановяване след инцидент"
+        inLanguage: bg
+        isPartOf:
+          "@id": https://defcoms.eu/#website
+        breadcrumb:
+          "@id": https://defcoms.eu/blog/ransomware-recovery#breadcrumb
+        mainEntity:
+          "@id": https://defcoms.eu/blog/ransomware-recovery#article
+      - "@type": BlogPosting
+        "@id": https://defcoms.eu/blog/ransomware-recovery#article
+        headline: "Ransomware recovery: безопасно възстановяване стъпка по стъпка"
+        description: План за приоритетно ransomware recovery чрез чиста среда, оценка на backup копията, възстановяване на зависимости, проверки и контролирано връщане към production.
+        image: https://defcoms.eu/images/PR_image/Киберсигурност_за_бизнес_оцеляване.webp
+        datePublished: 2026-10-08
+        dateModified: 2026-10-08
+        inLanguage: bg
+        mainEntityOfPage:
+          "@id": https://defcoms.eu/blog/ransomware-recovery#webpage
+        author:
+          "@type": Person
+          "@id": https://defcoms.eu/about/team/author/georgi-todorov
+          name: Георги Тодоров
+          jobTitle: SOC Operations Manager (24/7)
+          url: https://defcoms.eu/about/team/author/georgi-todorov
+        publisher:
+          "@id": https://defcoms.eu/#organization
+        citation:
+          - https://www.cisa.gov/stopransomware/ransomware-guide
+          - https://csrc.nist.gov/pubs/ir/8374/r1/final
+          - https://doi.org/10.6028/NIST.SP.800-34r1
+      - "@type": FAQPage
+        "@id": https://defcoms.eu/blog/ransomware-recovery#faq
+        mainEntity:
+          - "@type": Question
+            name: Кога е безопасно да започне възстановяването?
+            acceptedAnswer:
+              "@type": Answer
+              text: Когато incident response екипът е оценил обхвата и риска от продължаващ достъп и има одобрен план за clean recovery; конкретният момент зависи от средата и фактите.
+          - "@type": Question
+            name: Как да изберем backup копие за възстановяване?
+            acceptedAnswer:
+              "@type": Answer
+              text: Сверете времевата точка и обхвата с incident findings, проверете integrity и използвайте копие, което отговорните специалисти са преценили като подходящо за clean recovery.
+          - "@type": Question
+            name: Възстановяването от backup премахва ли ransomware?
+            acceptedAnswer:
+              "@type": Answer
+              text: Не автоматично. Нужно е да се оцени и отстрани причината за компрометиране, засегнатите identities и евентуалната persistence; restore сам по себе си не доказва, че средата е чиста.
+          - "@type": Question
+            name: Колко време отнема ransomware recovery?
+            acceptedAnswer:
+              "@type": Answer
+              text: Няма универсален срок. Зависи от критичните услуги, зависимостите, обхвата на компрометирането, наличните clean ресурси и доказаните restore времена.
+      - "@type": BreadcrumbList
+        "@id": https://defcoms.eu/blog/ransomware-recovery#breadcrumb
+        itemListElement:
+          - "@type": ListItem
+            position: 1
+            name: Начало
+            item: https://defcoms.eu/
+          - "@type": ListItem
+            position: 2
+            name: Блог
+            item: https://defcoms.eu/blog
+          - "@type": ListItem
+            position: 3
+            name: Ransomware recovery
+            item: https://defcoms.eu/blog/ransomware-recovery
+headExtra: |-
+  <style>
+          .blog-article { max-width: 860px; margin: 0 auto; padding: 150px 24px 80px; }
+          .blog-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: 28px; }
+          .blog-breadcrumbs a { color: var(--secondary-cyan); }
+          .blog-kicker { color: var(--secondary-cyan); text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+          .blog-article h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.12; margin: 12px 0 20px; }
+          .blog-deck { color: var(--text-secondary); font-size: 1.2rem; line-height: 1.7; }
+          .blog-meta { color: var(--text-secondary); font-size: var(--font-size-sm); margin: 22px 0; }
+          .blog-hero-image { width: 100%; max-height: 460px; object-fit: cover; border-radius: var(--radius-lg); margin: 16px 0 32px; }
+          .blog-article h2 { margin-top: 42px; }
+          .blog-article p, .blog-article li { color: var(--text-secondary); line-height: 1.8; }
+          .blog-article ul, .blog-article ol { padding-left: 24px; }
+          .blog-callout { border-left: 3px solid var(--secondary-cyan); background: var(--background-card); padding: 18px 22px; border-radius: var(--radius-md); }
+          .blog-table-wrap { overflow-x: auto; margin: 24px 0; }
+          .blog-article table { width: 100%; border-collapse: collapse; min-width: 620px; }
+          .blog-article th, .blog-article td { padding: 14px; border: 1px solid var(--border-color); text-align: left; vertical-align: top; color: var(--text-secondary); line-height: 1.65; }
+          .blog-article th { color: var(--text-primary); background: var(--background-card); }
+          .blog-related, .blog-source-list { display: grid; gap: 12px; margin: 20px 0; }
+          .blog-related a, .blog-source-list a { color: var(--secondary-cyan); }
+          .blog-source-list li { overflow-wrap: anywhere; }
+          .blog-cta { margin-top: 44px; padding: 24px; background: var(--background-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); }
+      </style>
+bodyClass: service-landing
+blog:
+  categories:
+    - Ransomware
+    - Recovery
+  date: 2026-10-08
+  order: 20
+  title: "Ransomware recovery: безопасно възстановяване стъпка по стъпка"
+  summary: Приоритизиране на услуги, clean среда, проверени копия, тестове и контролирано връщане към работа.
+  image: /images/SocNoc/indicator_1.webp
+  imageAlt: Безопасно възстановяване на услуги след ransomware
+  imageWidth: 1200
+  imageHeight: 675
+  ariaLabel: "Прочетете: Ransomware recovery"
+  cta: Прочетете ръководството →
+---
+<main class="blog-article">
+        <nav class="blog-breadcrumbs" aria-label="Навигационна пътека">
+            <a href="/">Начало</a><span aria-hidden="true">›</span>
+            <a href="/blog">Блог</a><span aria-hidden="true">›</span>
+            <span aria-current="page"><a href="/resources/glossary/ransomware">Ransomware</a> recovery</span>
+        </nav>
+        <article>
+            <p class="blog-kicker">Ransomware · Recovery · Business continuity</p>
+            <h1>Ransomware recovery: безопасно възстановяване стъпка по стъпка</h1>
+            <p class="blog-deck">Ransomware recovery не е просто възстановяване на файлове. Това е контролирано връщане на критични услуги в работно състояние след оценка на компрометирането, избиране на надеждна точка за възстановяване, подготовка на чиста среда и проверка на зависимостите. Редът и сроковете зависят от инцидента, архитектурата и приоритетите на организацията.</p>
+            <p class="blog-meta">Автор: <a href="/about/team/author/georgi-todorov" style="color: var(--secondary-cyan);">Георги Тодоров</a> · Публикувано: <time datetime="2026-10-08">8 октомври 2026 г.</time> · Обновено: <time datetime="2026-10-08">8 октомври 2026 г.</time></p>
+            <img class="blog-hero-image" src="/images/PR_image/%D0%9A%D0%B8%D0%B1%D0%B5%D1%80%D1%81%D0%B8%D0%B3%D1%83%D1%80%D0%BD%D0%BE%D1%81%D1%82_%D0%B7%D0%B0_%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81_%D0%BE%D1%86%D0%B5%D0%BB%D1%8F%D0%B2%D0%B0%D0%BD%D0%B5.webp" alt="Последователен план за чисто възстановяване на услуги след ransomware" width="1200" height="675" fetchpriority="high">
+            <p class="blog-legal-notice" style="border-left:4px solid #f0a500;background:rgba(240,165,0,.08);padding:16px 20px;border-radius:8px;margin:24px 0;font-size:.95rem;line-height:1.6;"><strong>⚠️ Важна бележка:</strong> Тази публикация е с информационна и образователна цел и <strong>не представлява юридическо или правно тълкуване</strong> на приложимото законодателство. Обстоятелствата варират, а нормативните изисквания се променят. При конкретен казус се консултирайте с квалифициран юрист.</p>
+
+            <p class="blog-callout"><strong>Накратко:</strong> възстановявайте по бизнес приоритет, в clean или изолирана среда, от backup точка, която е преценена спрямо findings и проверена за integrity. Възстановете нужните зависимости, валидирайте сигурността и работата с service owner-ите и върнете системите поетапно след одобрение. Backup-ът не доказва сам по себе си, че входният път е затворен или че копието е чисто.</p>
+
+            <h2>Преди restore: потвърдете готовността</h2>
+            <p>Възстановяването трябва да бъде свързано с incident response, а не да започва само защото има копие. Отговорният incident lead и техническите екипи оценяват наличните доказателства за обхвата, продължаващия достъп и засегнатите identities. Ако разследването продължава, recovery planning може да върви паралелно, но включването на системи в production следва одобрения план и оценката на риска.</p>
+            <ul>
+                <li>Определете кои системи, данни, identities и управленски plane са засегнати или все още неясни.</li>
+                <li>Съгласувайте containment/eradication статуса и критериите, при които даден workload може да се възстановява.</li>
+                <li>Запазете нужните logs и evidence преди rebuild или повторна употреба на системи, съобразно IR процедурата.</li>
+                <li>Проверете кой може да одобри restore, повторно свързване и връщане към работа.</li>
+                <li>Включете service owners, security/IR, инфраструктура, identity, backup, legal/privacy и business continuity според обхвата.</li>
+            </ul>
+
+            <h2>Подредете възстановяването по услуги и зависимости</h2>
+            <p>Започнете с критичните бизнес услуги, не с произволен ред на отделни сървъри. Картирайте зависимостите между identity, DNS/network, virtualization/cloud, storage, databases, applications, encryption keys, certificates и външни доставчици. Включете и operational/safety изисквания, когато са приложими.</p>
+            <div class="blog-table-wrap">
+                <table>
+                    <thead><tr><th>Въпрос за приоритизация</th><th>Какво да установите</th><th>Защо е важно</th></tr></thead>
+                    <tbody>
+                        <tr><th>Коя услуга трябва да се върне първа?</th><td>Влияние върху safety, критични операции, приходи, клиенти и задължения.</td><td>Определя реда за възстановяване и допустимия временен workaround.</td></tr>
+                        <tr><th>От какво зависи услугата?</th><td>Identity, network, DNS, storage, certificates, external providers и други приложения.</td><td>Предотвратява изолирано възстановяване, което не може безопасно да обслужи потребители.</td></tr>
+                        <tr><th>Какви са договорените recovery цели?</th><td>RTO, RPO, допустима загуба на данни и реално измерени restore времена.</td><td>Разграничава планирана цел от доказана техническа способност.</td></tr>
+                        <tr><th>Кой одобрява връщането?</th><td>Service owner, incident lead и security/operations отговорници.</td><td>Фиксира business acceptance и контролира повторното свързване.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Изградете и проверете clean recovery средата</h2>
+            <p>Използвайте доверени базови образи и конфигурации, проверени отговорници и отделена recovery среда, доколкото архитектурата го позволява. Не приемайте стара инсталация или backup snapshot за clean само защото може да се стартира. Проверете зависимостите, административните права, logging/monitoring и начина, по който средата ще бъде свързана с останалата инфраструктура.</p>
+            <p>Recovery екипът трябва да провери дали изборът на backup точка е съвместим с findings и времевата линия на инцидента. Използвайте одобрени integrity проверки и тестове; при съмнение за компрометиране потърсете qualified incident response помощ. Не възстановявайте credentials, конфигурации или компоненти, които могат да върнат неразрешения достъп.</p>
+
+            <h2>Възстановете поетапно и валидирайте</h2>
+            <ol>
+                <li><strong>Подгответе основата.</strong> Възстановете или проверете нужните identity, network, management, storage и security зависимости според архитектурния ред.</li>
+                <li><strong>Възстановете избраните системи и данни.</strong> Използвайте проверени копия и процедури; записвайте източника, версията, времето и изпълнителя за всеки критичен workload.</li>
+                <li><strong>Тествайте изолирано.</strong> Проверете application функции, данни, интеграции, права, ключове и security controls преди достъп от production потребители.</li>
+                <li><strong>Получете sign-off.</strong> Service owner-и и incident/security отговорниците потвърждават готовността, остатъчните ограничения и приетия риск.</li>
+                <li><strong>Свържете поетапно.</strong> Връщайте услугите към production според плана и наблюдавайте telemetry, authentication, network и workload поведението.</li>
+                <li><strong>Потвърдете устойчивостта.</strong> Проверете backup jobs, retention, logging, monitoring, access control и актуализирания recovery documentation.</li>
+            </ol>
+            <p>Успешното стартиране на система не е единствен критерий за recovery. Проверявайте приложната цялост, потребителските потоци, бизнес данните, свързаните услуги и работещото наблюдение. Задайте owner за остатъчни проблеми и план за повторна проверка.</p>
+
+            <h2>Възстановяването не приключва при връщане на файловете</h2>
+            <p>При ransomware може да има кражба на данни или изнудване без криптиране. Restore връща достъпността на услуга, но не решава автоматично въпросите за data exposure, уведомяване, правни задължения или комуникация. Те се оценяват отделно от съответните legal/privacy и management функции.</p>
+            <p>След стабилизиране документирайте timeline, взетите решения, използваните recovery точки, постигнатите времена и неуспешните стъпки. Обновете плановете, контактите, архитектурните карти, backup scope и упражненията; отделете установените факти от хипотезите.</p>
+
+            <h2>Чести recovery грешки</h2>
+            <ul>
+                <li>Връщане към production преди да е оценен остатъчният достъп или причината за компрометиране.</li>
+                <li>Избор на най-новия backup по подразбиране, без съпоставка с incident findings и integrity checks.</li>
+                <li>Възстановяване на отделен сървър без да се проверят identity, network и service dependencies.</li>
+                <li>Измерване само на file restore, без тест на цяла услуга и business процес.</li>
+                <li>Повторно използване на компрометирани credentials или административни настройки.</li>
+                <li>Приемане, че достъпността е възстановена, следователно инцидентът и data extortion рискът са приключили.</li>
+            </ul>
+
+            <h2>Често задавани въпроси</h2>
+            <h3>Кога е безопасно да започне възстановяването?</h3>
+            <p>Когато incident response екипът е оценил обхвата и риска от продължаващ достъп и има одобрен clean recovery план. Подготовката може да върви паралелно с разследването, но повторното свързване на системи трябва да следва определените критерии.</p>
+            <h3>Как да изберем backup копие за възстановяване?</h3>
+            <p>Сверете времевата точка и обхвата с incident findings, проверете integrity и използвайте копие, което отговорните специалисти са преценили като подходящо за clean recovery. По-ново не означава непременно по-подходящо.</p>
+            <h3>Възстановяването от backup премахва ли ransomware?</h3>
+            <p>Не автоматично. Трябва да се оценят и отстранят причината за компрометиране, засегнатите identities и възможната persistence. Restore сам по себе си не доказва, че средата е чиста.</p>
+            <h3>Колко време отнема ransomware recovery?</h3>
+            <p>Няма универсален срок. Зависи от услугите и зависимостите, обхвата на компрометирането, наличните clean ресурси и доказаните restore времена спрямо RTO/RPO целите.</p>
+
+            <h2>Свързани ресурси</h2>
+            <ul class="blog-related">
+                <li><a href="/blog/ransomware-incident-response">Ransomware incident response: как да координирате реакцията</a></li>
+                <li><a href="/blog/ransomware-backup-strategy">Ransomware backup strategy: как да планираме възстановяването?</a></li>
+                <li><a href="/blog/3-2-1-backup">3-2-1 backup правило: как работи и какво не гарантира</a></li>
+                <li><a href="/blog/how-to-protect-business-from-ransomware">Как да защитим фирма от ransomware?</a></li>
+                <li><a href="/blog/soc-vs-ransomware">SOC срещу ransomware: как мониторингът подпомага реакцията</a></li>
+                <li><a href="/services/backup-disaster-recovery">Backup и Disaster Recovery услуги</a></li>
+                <li><a href="/services/incident-response">Incident Response услуги</a></li>
+            </ul>
+
+            <h2>Официални източници</h2>
+            <ul class="blog-source-list">
+                <li><a href="https://www.cisa.gov/stopransomware/ransomware-guide" target="_blank" rel="noopener noreferrer">CISA, FBI, NSA и MS-ISAC — #StopRansomware Guide: recovery and restoration</a></li>
+                <li><a href="https://csrc.nist.gov/pubs/ir/8374/r1/final" target="_blank" rel="noopener noreferrer">NIST IR 8374 Rev. 1 — Ransomware Risk Management: Cybersecurity Framework 2.0 Community Profile</a></li>
+                <li><a href="https://doi.org/10.6028/NIST.SP.800-34r1" target="_blank" rel="noopener noreferrer">NIST SP 800-34 Rev. 1 — Contingency Planning Guide for Federal Information Systems</a></li>
+            </ul>
+
+            <aside class="blog-cta">
+                <h2>Проверете готовността за възстановяване</h2>
+                <p>Сверете критичните услуги, dependencies, clean recovery стъпките и реалните резултати от restore тестовете.</p>
+                <a class="btn btn-primary" href="/services/backup-disaster-recovery">Backup и Disaster Recovery</a>
+                <a class="btn btn-secondary" href="/services/incident-response">Incident Response</a>
+            </aside>
+        </article>
+    </main>

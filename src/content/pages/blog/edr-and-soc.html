@@ -1,0 +1,256 @@
+---
+lastmod: 2026-10-10
+title: "EDR и SOC: как работят заедно и кой за какво отговаря | DefComs"
+description: Как EDR сигналите стигат до SOC triage и реакция. Разграничение между технология, мониторинг и отговорности на доставчика, вътрешния IT екип и incident lead.
+ogType: article
+image: https://defcoms.eu/images/Webp/Incident_Management.webp
+imageAlt: Илюстративен incident management интерфейс за проследяване на сигнали и случаи
+ogDescription: Практически workflow за EDR alerts, SOC triage, клиентска ескалация и предварително договорени response правомощия.
+twitterTitle: "EDR и SOC: workflow и отговорности | DefComs"
+twitterDescription: "От EDR сигнал до triage, ескалация и договорена response мярка: какво трябва да уточнят екипите."
+schema:
+  - "@context": https://schema.org
+    "@graph":
+      - "@type": Organization
+        "@id": https://defcoms.eu/#organization
+        name: DefComs
+        url: https://defcoms.eu/
+      - "@type": WebSite
+        "@id": https://defcoms.eu/#website
+        url: https://defcoms.eu/
+        name: DefComs
+        publisher:
+          "@id": https://defcoms.eu/#organization
+        inLanguage: bg
+      - "@type": WebPage
+        "@id": https://defcoms.eu/blog/edr-and-soc#webpage
+        url: https://defcoms.eu/blog/edr-and-soc
+        name: "EDR и SOC: как работят заедно и кой за какво отговаря"
+        inLanguage: bg
+        isPartOf:
+          "@id": https://defcoms.eu/#website
+        breadcrumb:
+          "@id": https://defcoms.eu/blog/edr-and-soc#breadcrumb
+        mainEntity:
+          "@id": https://defcoms.eu/blog/edr-and-soc#article
+      - "@type": BlogPosting
+        "@id": https://defcoms.eu/blog/edr-and-soc#article
+        headline: "EDR и SOC: как работят заедно и кой за какво отговаря"
+        description: Ръководство за свързване на endpoint EDR telemetry със SOC monitoring, triage, escalation и response роли между доставчик, клиент и incident lead.
+        image: https://defcoms.eu/images/Webp/Incident_Management.webp
+        datePublished: 2026-10-10
+        dateModified: 2026-10-10
+        inLanguage: bg
+        mainEntityOfPage:
+          "@id": https://defcoms.eu/blog/edr-and-soc#webpage
+        author:
+          "@type": Person
+          "@id": https://defcoms.eu/about/team/author/georgi-todorov
+          name: Георги Тодоров
+          jobTitle: SOC Operations Manager (24/7)
+          url: https://defcoms.eu/about/team/author/georgi-todorov
+        publisher:
+          "@id": https://defcoms.eu/#organization
+        citation:
+          - https://csrc.nist.gov/pubs/sp/800/61/r3/final
+      - "@type": FAQPage
+        "@id": https://defcoms.eu/blog/edr-and-soc#faq
+        mainEntity:
+          - "@type": Question
+            name: EDR същото ли е като SOC?
+            acceptedAnswer:
+              "@type": Answer
+              text: Не. EDR е endpoint технология за telemetry и detection/response функции; SOC е оперативна функция, която може да обработва EDR сигнали заедно с други източници според обхвата.
+          - "@type": Question
+            name: Може ли EDR да работи без SOC?
+            acceptedAnswer:
+              "@type": Answer
+              text: Да, ако организацията има определен собственик и процес за преглед, triage, ескалация и реакция на сигналите. Самото внедряване не осигурява наблюдение.
+          - "@type": Question
+            name: SOC може ли автоматично да изолира endpoint?
+            acceptedAnswer:
+              "@type": Answer
+              text: Само ако инструментът го поддържа и договорът, runbook-ът и правата изрично разрешават действието. При критични активи трябва да са ясни одобренията и stop conditions.
+          - "@type": Question
+            name: SOC услугата гарантира ли, че всеки EDR alert ще бъде разрешен?
+            acceptedAnswer:
+              "@type": Answer
+              text: Не. Обхватът, часовете, източниците, SLA и действията зависят от договора, качеството на telemetry и достъпа. Уточнете какво се наблюдава, какво се ескалира и кой изпълнява remediation и recovery.
+      - "@type": BreadcrumbList
+        "@id": https://defcoms.eu/blog/edr-and-soc#breadcrumb
+        itemListElement:
+          - "@type": ListItem
+            position: 1
+            name: Начало
+            item: https://defcoms.eu/
+          - "@type": ListItem
+            position: 2
+            name: Блог
+            item: https://defcoms.eu/blog
+          - "@type": ListItem
+            position: 3
+            name: EDR и SOC
+            item: https://defcoms.eu/blog/edr-and-soc
+headExtra: |-
+  <style>
+          .blog-article { max-width: 860px; margin: 0 auto; padding: 150px 24px 80px; }
+          .blog-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: 28px; }
+          .blog-breadcrumbs a { color: var(--secondary-cyan); }
+          .blog-kicker { color: var(--secondary-cyan); text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+          .blog-article h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.12; margin: 12px 0 20px; }
+          .blog-deck { color: var(--text-secondary); font-size: 1.2rem; line-height: 1.7; }
+          .blog-meta { color: var(--text-secondary); font-size: var(--font-size-sm); margin: 22px 0; }
+          .blog-hero-image { width: 100%; max-height: 460px; object-fit: cover; border-radius: var(--radius-lg); margin: 16px 0 32px; }
+          .blog-article h2 { margin-top: 42px; }
+          .blog-article p, .blog-article li { color: var(--text-secondary); line-height: 1.8; }
+          .blog-article ul, .blog-article ol { padding-left: 24px; }
+          .blog-callout { border-left: 3px solid var(--secondary-cyan); background: var(--background-card); padding: 18px 22px; border-radius: var(--radius-md); }
+          .blog-table-wrap { overflow-x: auto; margin: 24px 0; }
+          .blog-article table { width: 100%; border-collapse: collapse; min-width: 620px; }
+          .blog-article th, .blog-article td { padding: 14px; border: 1px solid var(--border-color); text-align: left; vertical-align: top; color: var(--text-secondary); line-height: 1.65; }
+          .blog-article th { color: var(--text-primary); background: var(--background-card); }
+          .blog-related, .blog-source-list { display: grid; gap: 12px; margin: 20px 0; }
+          .blog-related a, .blog-source-list a { color: var(--secondary-cyan); }
+          .blog-source-list li { overflow-wrap: anywhere; }
+          .blog-cta { margin-top: 44px; padding: 24px; background: var(--background-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); }
+      </style>
+bodyClass: service-landing
+blog:
+  categories:
+    - Endpoint Security
+  date: 2026-10-10
+  order: 5
+  title: "EDR и SOC: как работят заедно?"
+  summary: "От endpoint alert до triage и ескалация: покритие, роли и договорени response правомощия."
+  image: /images/Webp/%D0%9A%D0%B8%D0%B1%D0%B5%D1%80%D1%81%D0%B8%D0%B3%D1%83%D1%80%D0%BD%D0%BE%D1%81%D1%82_4.0__%D0%98%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B8_%D0%B8_%D1%81%D1%82%D1%80%D0%B0%D1%82%D0%B5%D0%B3%D0%B8%D0%B8.webp
+  imageAlt: Илюстративен incident management интерфейс за проследяване на сигнали и случаи
+  imageWidth: 1200
+  imageHeight: 675
+  ariaLabel: "Прочетете: EDR и SOC"
+  cta: Прочетете ръководството →
+---
+<main class="blog-article">
+        <nav class="blog-breadcrumbs" aria-label="Навигационна пътека">
+            <a href="/">Начало</a><span aria-hidden="true">›</span>
+            <a href="/blog">Блог</a><span aria-hidden="true">›</span>
+            <span aria-current="page"><a href="/resources/glossary/edr">EDR</a> и <a href="/resources/glossary/soc">SOC</a></span>
+        </nav>
+        <article>
+            <p class="blog-kicker">Endpoint Security · Security Operations · Incident Response</p>
+            <h1>EDR и SOC: как работят заедно?</h1>
+            <p class="blog-deck">EDR събира endpoint telemetry и предоставя detection и response функции; SOC организира обработката на сигнали чрез хора, процеси и договорено технологично покритие. За да работят заедно, трябва да е ясно кой получава EDR alerts, кой ги проверява, кога уведомява клиента и кой може да предприеме действие.</p>
+            <p class="blog-meta">Автор: <a href="/about/team/author/georgi-todorov" style="color: var(--secondary-cyan);">Георги Тодоров</a> · Публикувано: <time datetime="2026-10-10">10 октомври 2026 г.</time> · Обновено: <time datetime="2026-10-10">10 октомври 2026 г.</time></p>
+            <img class="blog-hero-image" src="/images/Webp/Incident_Management.webp" alt="Илюстративен incident management интерфейс за проследяване на сигнали и случаи" width="1200" height="675" fetchpriority="high">
+            <p class="blog-legal-notice" style="border-left:4px solid #f0a500;background:rgba(240,165,0,.08);padding:16px 20px;border-radius:8px;margin:24px 0;font-size:.95rem;line-height:1.6;"><strong>⚠️ Важна бележка:</strong> Тази публикация е с информационна и образователна цел и <strong>не представлява юридическо или правно тълкуване</strong> на приложимото законодателство. Обстоятелствата варират, а нормативните изисквания се променят. При конкретен казус се консултирайте с квалифициран юрист.</p>
+
+            <p class="blog-callout"><strong>Накратко:</strong> EDR е технология; SOC е оперативна функция. Свързването им може да подпомогне alert triage, разследване и ескалация, но не означава автоматично 24/7 наблюдение, containment или пълно incident response. Проверете договорения обхват, източниците, SLA, клиентските контакти и response правомощията.</p>
+
+            <h2>EDR и SOC изпълняват различни роли</h2>
+            <div class="blog-table-wrap">
+                <table>
+                    <thead><tr><th>Елемент</th><th>Основна роля</th><th>Какво не следва автоматично</th></tr></thead>
+                    <tbody>
+                        <tr><th>EDR</th><td>Endpoint agent/platform събира поддържана telemetry, създава сигнали и може да предлага prevention или response действия.</td><td>Наличието на agent не означава, че сигналите се преглеждат от анализатор или че устройствата са изцяло покрити.</td></tr>
+                        <tr><th>SOC</th><td>Хора, процеси и технологии за мониторинг на договорени източници, triage, разследване, ескалация и определени response дейности.</td><td>Името SOC не гарантира конкретно EDR покритие, 24/7 дежурство, forensic обхват или право за containment.</td></tr>
+                        <tr><th>Клиентски IT/security owners</th><td>Осигуряват asset и бизнес контекст, потвърждават легитимни промени, изпълняват или одобряват договорени remediation задачи.</td><td>Външен SOC не може сам да вземе всички бизнес решения или да възстанови услуга без достъп, контекст и одобрение.</td></tr>
+                        <tr><th>Incident lead</th><td>Координира response при инцидент според организацията, критичността, плана и определените роли.</td><td>Оперативното alert triage не е непременно incident command или пълно управление на инцидента.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>От EDR сигнал до координирана реакция</h2>
+            <ol>
+                <li><strong>Сензорът наблюдава endpoint:</strong> агентът изпраща поддържани събития според OS, policy, connectivity и конфигурацията.</li>
+                <li><strong>Платформата генерира alert:</strong> правило или аналитика маркира поведение за проверка; сигналът може да е валиден, benign или да изисква допълнителен контекст.</li>
+                <li><strong>SOC извършва triage:</strong> аналитикът проверява наличните данни, asset/user контекста, времевата линия и related alerts в договорения scope.</li>
+                <li><strong>Случаят се ескалира:</strong> SOC изпраща severity, наблюдавани факти, неизвестни, препоръка и срок/канал за действие към предварително определените контакти.</li>
+                <li><strong>Одобрява се и се изпълнява response:</strong> клиентът, SOC или друг упълномощен responder действа според договора, runbook-а и критичността на актива.</li>
+                <li><strong>Случаят се документира и подобрява:</strong> записват се решенията и резултатите; подходящи lessons learned могат да доведат до промяна в coverage, detections или процедура.</li>
+            </ol>
+            <p>Някои стъпки могат да бъдат автоматизирани, но автоматизацията зависи от продукта и договорените права. Интеграцията трябва да се тества: дали alerts действително стигат до SOC, как се съпоставя asset identity и кой получава известие при прекъсната telemetry.</p>
+
+            <h2>Модели на работа</h2>
+            <div class="blog-table-wrap">
+                <table>
+                    <thead><tr><th>Модел</th><th>Как се разпределя работата</th><th>Какво трябва да е ясно</th></tr></thead>
+                    <tbody>
+                        <tr><th>EDR с вътрешен екип</th><td>Организацията управлява платформата, agent coverage и дежурствата; собствените analysts преглеждат и ескалират сигналите.</td><td>Има ли капацитет за извънработно време, покритие на отпуски, tuning и непрекъснато поддържане на integrations?</td></tr>
+                        <tr><th>EDR плюс външен SOC</th><td>Клиентът запазва EDR ownership, а SOC обработва определени alerts и изпълнява договорени ескалации.</td><td>Кои endpoints и alert types са включени, кой управлява агентите и кой одобрява containment?</td></tr>
+                        <tr><th>Managed EDR/SOC услуга</th><td>Външен доставчик може да поеме част от платформата, мониторинга или и двете според услугата.</td><td>Проверете точния scope, достъпите, ownership, data handling, SLA, изключенията и начина за изход/предаване.</td></tr>
+                        <tr><th>Хибриден модел</th><td>Външният екип triage-ва или наблюдава, а вътрешните owners решават бизнес действията и remediation при критични услуги.</td><td>Има ли актуален контакт, заместник, канал за спешна ескалация и достатъчно asset/service context?</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Кой за какво отговаря?</h2>
+            <p>Точната RACI матрица се договаря според средата и услугата. Следната таблица е отправна точка, не универсално разпределение:</p>
+            <div class="blog-table-wrap">
+                <table>
+                    <thead><tr><th>Задача</th><th>EDR/SOC доставчик</th><th>Клиентски owner</th><th>Incident lead</th></tr></thead>
+                    <tbody>
+                        <tr><th>Agent/connector health</th><td>Проверява в договорения обхват, докладва прекъсвания.</td><td>Осигурява инсталация, достъп, промени и asset inventory според модела.</td><td>Получава информация за gaps с incident impact.</td></tr>
+                        <tr><th>Alert triage</th><td>Проверява и документира сигналите, които са в scope.</td><td>Предоставя контекст и потвърждава планирани промени.</td><td>Определя дали е активиран incident process според вътрешните критерии.</td></tr>
+                        <tr><th>Containment</th><td>Изпълнява само предварително разрешено действие или препоръчва/ескалира.</td><td>Одобрява или изпълнява бизнес-критични промени, когато това е договорено.</td><td>Координира приоритети, зависимости и комуникация по IR плана.</td></tr>
+                        <tr><th>Remediation и recovery</th><td>Подпомага в границите на договора и наличните данни.</td><td>Обикновено управлява системната корекция, възстановяване и service sign-off.</td><td>Следи incident objectives и handoff към recovery.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Какво да уточните в договора и runbook-а?</h2>
+            <ul>
+                <li>обхват на endpoints, servers, OS, sites и alert categories; включени и изключени активи;</li>
+                <li>работно покритие, дефиниции на severity, време за triage и ескалация, канал и резервен контакт;</li>
+                <li>дали услугата само наблюдава, препоръчва действия или има предварително разрешен containment;</li>
+                <li>конкретни действия, които изискват клиентско одобрение, включително изолация на критичен endpoint;</li>
+                <li>кой управлява EDR deployment, policies, exclusions, tuning, retention и agent health;</li>
+                <li>как се предават доказателства, incident notes и данни за разследване; кой отговаря за forensic scope и recovery;</li>
+                <li>как се измерва услугата и какво става при загуба на telemetry, integration или доставчик.</li>
+            </ul>
+            <p>Не приемайте, че „EDR интеграция“ сама по себе си включва наблюдение на всички сигнали или че „24/7 SOC“ включва containment и remediation. Услугите и правомощията трябва да са описани конкретно.</p>
+
+            <h2>Показатели за работещо взаимодействие</h2>
+            <ul>
+                <li>дял на критичните endpoints с работещ агент и актуално reporting;</li>
+                <li>пълнота на alert forwarding и наличие на правила за прекъснат source;</li>
+                <li>време до triage и уведомяване според еднакви дефиниции и severity;</li>
+                <li>дял на ескалациите с owner, препоръка, факти и следваща стъпка;</li>
+                <li>резултат от упражненията за contact/escalation и тестовете на одобрени response действия;</li>
+                <li>повтарящи се blind spots, false positives и приключени corrective actions.</li>
+            </ul>
+            <p>Броят на събраните alerts сам по себе си не показва качество. Полезните метрики са дефинирани, ограничени до договора и свързани с подобрение или решение.</p>
+
+            <h2>Често задавани въпроси</h2>
+            <h3>EDR същото ли е като SOC?</h3>
+            <p>Не. EDR е endpoint технология за telemetry и detection/response функции; SOC е оперативна функция, която може да обработва EDR сигнали заедно с други източници според обхвата.</p>
+            <h3>Може ли EDR да работи без SOC?</h3>
+            <p>Да, ако организацията има определен собственик и процес за преглед, triage, ескалация и реакция на сигналите. Самото внедряване не осигурява наблюдение.</p>
+            <h3>SOC може ли автоматично да изолира endpoint?</h3>
+            <p>Само ако инструментът го поддържа и договорът, runbook-ът и правата изрично разрешават действието. При критични активи трябва да са ясни одобренията и stop conditions.</p>
+            <h3>SOC услугата гарантира ли, че всеки EDR alert ще бъде разрешен?</h3>
+            <p>Не. Обхватът, часовете, източниците, SLA и действията зависят от договора, качеството на telemetry и достъпа. Уточнете какво се наблюдава, какво се ескалира и кой изпълнява remediation и recovery.</p>
+
+            <h2>Свързани ресурси</h2>
+            <ul class="blog-related">
+                <li><a href="/blog/what-is-edr">Какво е EDR? Endpoint Detection and Response</a></li>
+                <li><a href="/blog/what-is-soc">Какво е SOC и как помага на бизнеса?</a></li>
+                <li><a href="/blog/how-soc-monitoring-works">Как работи SOC мониторингът?</a></li>
+                <li><a href="/blog/soc-as-a-service">SOC as a Service: външен SOC мониторинг за бизнеса</a></li>
+                <li><a href="/blog/endpoint-isolation">Endpoint isolation: кога и как се изолира устройство?</a></li>
+                <li><a href="/blog/edr-vs-ransomware">EDR срещу ransomware: как помага и къде са границите?</a></li>
+                <li><a href="/services/edr-xdr">Endpoint Security и EDR услуги на DefComs</a></li>
+                <li><a href="/services/soc-monitoring">SOC мониторинг 24/7/365</a></li>
+            </ul>
+
+            <h2>Официален източник</h2>
+            <ul class="blog-source-list">
+                <li><a href="https://csrc.nist.gov/pubs/sp/800/61/r3/final" target="_blank" rel="noopener noreferrer">NIST SP 800-61 Rev. 3 — incident response в контекста на cybersecurity risk management</a></li>
+            </ul>
+
+            <aside class="blog-cta">
+                <h2>Свържете EDR сигналите с ясен отговорник</h2>
+                <p>Уточнете coverage, сроковете за ескалация и кои response действия са разрешени за всеки тип актив.</p>
+                <a class="btn btn-primary" href="/services/soc-monitoring">SOC мониторинг</a>
+                <a class="btn btn-secondary" href="/services/edr-xdr">Endpoint Security и EDR</a>
+            </aside>
+        </article>
+    </main>

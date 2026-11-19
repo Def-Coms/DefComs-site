@@ -1,0 +1,234 @@
+---
+lastmod: 2026-10-09
+title: "Zero Trust за SMB: практичен план за малък бизнес | DefComs"
+description: "Как малък бизнес може да започне с Zero Trust: приоритетни акаунти, достъп до приложения, устройства, ограничени мрежови пътища и измерими пилоти."
+ogType: article
+image: https://defcoms.eu/images/Webp/Киберсигурност_за_модерния_бизнес.webp
+imageAlt: Прилагане на Zero Trust контроли в малък бизнес
+ogDescription: "Поетапен Zero Trust подход за малък екип: защита на важните акаунти и ресурси, ограничаване на достъпа и контролирано внедряване."
+twitterTitle: "Zero Trust за SMB: практичен план | DefComs"
+twitterDescription: Започнете Zero Trust с ограничен обхват и приоритет върху identities, приложения, устройства и наблюдение.
+schema:
+  - "@context": https://schema.org
+    "@graph":
+      - "@type": Organization
+        "@id": https://defcoms.eu/#organization
+        name: DefComs
+        url: https://defcoms.eu/
+      - "@type": WebSite
+        "@id": https://defcoms.eu/#website
+        url: https://defcoms.eu/
+        name: DefComs
+        publisher:
+          "@id": https://defcoms.eu/#organization
+        inLanguage: bg
+      - "@type": WebPage
+        "@id": https://defcoms.eu/blog/zero-trust-for-smb#webpage
+        url: https://defcoms.eu/blog/zero-trust-for-smb
+        name: "Zero Trust за SMB: практичен план за малък бизнес"
+        inLanguage: bg
+        isPartOf:
+          "@id": https://defcoms.eu/#website
+        breadcrumb:
+          "@id": https://defcoms.eu/blog/zero-trust-for-smb#breadcrumb
+        mainEntity:
+          "@id": https://defcoms.eu/blog/zero-trust-for-smb#article
+      - "@type": BlogPosting
+        "@id": https://defcoms.eu/blog/zero-trust-for-smb#article
+        headline: "Zero Trust за SMB: практичен план за малък бизнес"
+        description: "Риск-базиран Zero Trust roadmap за малки организации: protect surface, identity и access controls, устройства, network restrictions, пилоти и измерване."
+        image: https://defcoms.eu/images/Webp/Киберсигурност_за_модерния_бизнес.webp
+        datePublished: 2026-10-09
+        dateModified: 2026-10-09
+        inLanguage: bg
+        mainEntityOfPage:
+          "@id": https://defcoms.eu/blog/zero-trust-for-smb#webpage
+        author:
+          "@type": Person
+          "@id": https://defcoms.eu/about/team/author/alexander-petrov
+          name: Инж. Александър Петров
+          jobTitle: Lead Cyber Security Architect
+          url: https://defcoms.eu/about/team/author/alexander-petrov
+        publisher:
+          "@id": https://defcoms.eu/#organization
+        citation:
+          - https://csrc.nist.gov/pubs/sp/800/207/final
+      - "@type": FAQPage
+        "@id": https://defcoms.eu/blog/zero-trust-for-smb#faq
+        mainEntity:
+          - "@type": Question
+            name: Подходящ ли е Zero Trust за малък бизнес?
+            acceptedAnswer:
+              "@type": Answer
+              text: Принципите могат да се прилагат поетапно и към малка организация. Обхватът и контролите трябва да отговарят на критичните услуги, риска, наличния капацитет и зависимостите.
+          - "@type": Question
+            name: Нужен ли е специален Zero Trust продукт?
+            acceptedAnswer:
+              "@type": Answer
+              text: Не непременно. Започнете с наличните identity, MFA, endpoint, application и network контроли; добавяйте инструменти само когато запълват конкретна нужда.
+          - "@type": Question
+            name: Коя е първата стъпка за SMB?
+            acceptedAnswer:
+              "@type": Answer
+              text: Изберете една важна услуга или бизнес поток и картографирайте кой има достъп, от кои устройства, до кои ресурси и как се наблюдават тези заявки.
+          - "@type": Question
+            name: Zero Trust означава ли да премахнем VPN?
+            acceptedAnswer:
+              "@type": Answer
+              text: Не автоматично. VPN може да осигурява криптиран транспорт; Zero Trust добавя политика за достъп до конкретни ресурси и може да работи съвместно с VPN.
+      - "@type": BreadcrumbList
+        "@id": https://defcoms.eu/blog/zero-trust-for-smb#breadcrumb
+        itemListElement:
+          - "@type": ListItem
+            position: 1
+            name: Начало
+            item: https://defcoms.eu/
+          - "@type": ListItem
+            position: 2
+            name: Блог
+            item: https://defcoms.eu/blog
+          - "@type": ListItem
+            position: 3
+            name: Zero Trust за SMB
+            item: https://defcoms.eu/blog/zero-trust-for-smb
+headExtra: |-
+  <style>
+          .blog-article { max-width: 860px; margin: 0 auto; padding: 150px 24px 80px; }
+          .blog-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: 28px; }
+          .blog-breadcrumbs a { color: var(--secondary-cyan); }
+          .blog-kicker { color: var(--secondary-cyan); text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+          .blog-article h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.12; margin: 12px 0 20px; }
+          .blog-deck { color: var(--text-secondary); font-size: 1.2rem; line-height: 1.7; }
+          .blog-meta { color: var(--text-secondary); font-size: var(--font-size-sm); margin: 22px 0; }
+          .blog-hero-image { width: 100%; max-height: 460px; object-fit: cover; border-radius: var(--radius-lg); margin: 16px 0 32px; }
+          .blog-article h2 { margin-top: 42px; }
+          .blog-article p, .blog-article li { color: var(--text-secondary); line-height: 1.8; }
+          .blog-article ul, .blog-article ol { padding-left: 24px; }
+          .blog-callout { border-left: 3px solid var(--secondary-cyan); background: var(--background-card); padding: 18px 22px; border-radius: var(--radius-md); }
+          .blog-table-wrap { overflow-x: auto; margin: 24px 0; }
+          .blog-article table { width: 100%; border-collapse: collapse; min-width: 620px; }
+          .blog-article th, .blog-article td { padding: 14px; border: 1px solid var(--border-color); text-align: left; vertical-align: top; color: var(--text-secondary); line-height: 1.65; }
+          .blog-article th { color: var(--text-primary); background: var(--background-card); }
+          .blog-related, .blog-source-list { display: grid; gap: 12px; margin: 20px 0; }
+          .blog-related a, .blog-source-list a { color: var(--secondary-cyan); }
+          .blog-source-list li { overflow-wrap: anywhere; }
+          .blog-cta { margin-top: 44px; padding: 24px; background: var(--background-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); }
+      </style>
+bodyClass: service-landing
+blog:
+  categories:
+    - SMB
+  date: 2026-10-09
+  order: 12
+  title: "Zero Trust за SMB: откъде да започне малкият бизнес?"
+  summary: Практични първи стъпки за идентичности, приложения, устройства, мрежови пътища и наблюдение.
+  image: /images/PR_image/%D0%A1%D1%82%D1%80%D0%B0%D1%82%D0%B5%D0%B3%D0%B8%D1%8F_%D0%B7%D0%B0_%D1%81%D1%8A%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D0%B0_%D0%BA%D0%B8%D0%B1%D0%B5%D1%80%D1%81%D0%B8%D0%B3%D1%83%D1%80%D0%BD%D0%BE%D1%81%D1%82.webp
+  imageAlt: Поетапна защита на бизнес ресурси с Zero Trust
+  imageWidth: 1200
+  imageHeight: 675
+  ariaLabel: "Прочетете: Zero Trust за SMB"
+  cta: Прочетете ръководството →
+---
+<main class="blog-article">
+        <nav class="blog-breadcrumbs" aria-label="Навигационна пътека">
+            <a href="/">Начало</a><span aria-hidden="true">›</span>
+            <a href="/blog">Блог</a><span aria-hidden="true">›</span>
+            <span aria-current="page"><a href="/resources/glossary/zero-trust">Zero Trust</a> за SMB</span>
+        </nav>
+        <article>
+            <p class="blog-kicker">Zero Trust · SMB · Практически план</p>
+            <h1>Zero Trust за SMB: откъде да започне малкият бизнес?</h1>
+            <p class="blog-deck">Малък бизнес може да прилага Zero Trust без отделен голям екип или мащабна замяна на системи. Започнете от най-важните акаунти и услуги, ограничете достъпа до конкретните ресурси, които служителите използват, и разширявайте контролите според риска и наличния капацитет.</p>
+            <p class="blog-meta">Автор: <a href="/about/team/author/alexander-petrov" style="color: var(--secondary-cyan);">Инж. Александър Петров</a> · Публикувано: <time datetime="2026-10-09">9 октомври 2026 г.</time> · Обновено: <time datetime="2026-10-09">9 октомври 2026 г.</time></p>
+            <img class="blog-hero-image" src="/images/Webp/%D0%9A%D0%B8%D0%B1%D0%B5%D1%80%D1%81%D0%B8%D0%B3%D1%83%D1%80%D0%BD%D0%BE%D1%81%D1%82_%D0%B7%D0%B0_%D0%BC%D0%BE%D0%B4%D0%B5%D1%80%D0%BD%D0%B8%D1%8F_%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81.webp" alt="Прилагане на Zero Trust контроли за малък бизнес" width="1200" height="675" fetchpriority="high">
+            <p class="blog-legal-notice" style="border-left:4px solid #f0a500;background:rgba(240,165,0,.08);padding:16px 20px;border-radius:8px;margin:24px 0;font-size:.95rem;line-height:1.6;"><strong>⚠️ Важна бележка:</strong> Тази публикация е с информационна и образователна цел и <strong>не представлява юридическо или правно тълкуване</strong> на приложимото законодателство. Обстоятелствата варират, а нормативните изисквания се променят. При конкретен казус се консултирайте с квалифициран юрист.</p>
+
+            <p class="blog-callout"><strong>Кратък план:</strong> изберете една критична услуга; уточнете users, устройства и ресурси; подсигурете идентичности и администраторски достъп; задайте минимално нужни права; проверете устройствата и мрежовите пътища; включете логване и план за реакция; после тествайте и разширявайте. Това е адаптивна отправна точка, не задължителен checklist за всяка SMB организация.</p>
+
+            <h2>Какво означава Zero Trust за SMB?</h2>
+            <p>Zero Trust е начин да се проектира достъпът така, че доверието да не се предполага само от това кой е потребителят или откъде се свързва. Организацията оценява заявката към конкретен ресурс спрямо идентичността, устройството, контекста и политиката. NIST SP 800-207 описва този подход като архитектурен модел, а не като продукт или еднократно внедряване.</p>
+            <p>За малък екип това означава да се управляват основните access paths целенасочено: пощенски и cloud акаунти, финансови системи, remote administration, устройства на служители и външен достъп на доставчици. Не е нужно първо да внедрите всеки възможен компонент; започнете с конкретните пътища, които биха имали най-силен ефект върху бизнеса, ако бъдат компрометирани.</p>
+
+            <h2>Поетапен план с ограничен ресурс</h2>
+            <div class="blog-table-wrap">
+                <table>
+                    <thead><tr><th>Етап</th><th>Практически действия</th><th>Какво да проверите</th></tr></thead>
+                    <tbody>
+                        <tr><th>1. Изберете protect surface</th><td>Опишете една критична услуга или процес, нужните приложения, данни и зависимости.</td><td>Кой е owner, кои потребители и доставчици имат достъп и какво е допустимото прекъсване?</td></tr>
+                        <tr><th>2. Подредете identities</th><td>Премахнете ненужни акаунти, включете MFA за важни услуги, отделете admin акаунтите и ограничете привилегиите.</td><td>Има ли shared accounts, stale users, shared mailboxes или неуправляеми service credentials?</td></tr>
+                        <tr><th>3. Обвържете достъпа с ресурс</th><td>Използвайте индивидуални акаунти и роли, които дават само нужния достъп до избраното приложение или данни.</td><td>Може ли служител да вижда или променя повече ресурси от необходимото?</td></tr>
+                        <tr><th>4. Проверете устройствата</th><td>Поддържайте inventory, актуализации, базова endpoint защита и правила за изгубени или неподдържани устройства.</td><td>Кои устройства имат достъп до admin consoles и критични cloud accounts?</td></tr>
+                        <tr><th>5. Ограничете пътищата</th><td>Премахнете ненужните remote entry points, прегледайте VPN routes и отделете management или критични ресурси, когато е практично.</td><td>Има ли директни или vendor access пътища, които заобикалят очакваните проверки?</td></tr>
+                        <tr><th>6. Включете наблюдение</th><td>Пазете authentication и access logs за важните приложения и назначете кой преглежда критичните сигнали.</td><td>Ще разберете ли за необичаен admin вход, промяна на MFA или неочаквано споделяне?</td></tr>
+                        <tr><th>7. Тествайте и подобрявайте</th><td>Пилотирайте с малка група, документирайте exceptions, проверете recovery и преглеждайте достъпа периодично.</td><td>Работят ли легитимните процеси и може ли да се отмени промяна при непредвиден ефект?</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Започнете с акаунтите и услугите с най-голямо въздействие</h2>
+            <p>Ако капацитетът е ограничен, приоритизирайте администраторските идентичности, email и collaboration, cloud consoles, счетоводство/плащания, customer data и remote access. Проверете дали акаунтите са индивидуални, MFA е включено, правата са минимални и има процес за незабавно отнемане на достъп при напускане или инцидент.</p>
+            <p>След това разгледайте устройствата и външните връзки: кои служебни и лични устройства са разрешени, как се контролира third-party достъп и какво става при изгубено устройство или компрометирани credentials. За наследени приложения може да останат временни компенсиращи мерки; документирайте owner, риск и дата за преглед.</p>
+
+            <h2>Как да измерите напредъка без enterprise dashboard?</h2>
+            <ul>
+                <li>колко от критичните акаунти имат MFA и индивидуални owners;</li>
+                <li>колко администраторски акаунта и external users са известни и прегледани;</li>
+                <li>кои критични услуги имат inventory, access policy и owner за exception-ите;</li>
+                <li>дали access и authentication логовете са достъпни и има определен отговорник за преглед;</li>
+                <li>колко остатъчни shared accounts, broad permissions и unmanaged devices са известни;</li>
+                <li>резултати от тестове за account revocation, recovery и правилното блокиране на неразрешен достъп.</li>
+            </ul>
+            <p>Започнете с базова линия и подберете малък набор метрики, които водят до следващо действие. Ако таблицата се попълва ръчно, уточнете owner и честота; при растеж процесът може да се автоматизира.</p>
+
+            <h2>Какво не означава Zero Trust за малък бизнес?</h2>
+            <ul>
+                <li>Не изисква да закупите конкретен „Zero Trust“ продукт, за да започнете.</li>
+                <li>Не означава непременно да премахнете VPN или да мигрирате всички системи наведнъж.</li>
+                <li>Не заменя backup, endpoint security, patching, обучение или incident response.</li>
+                <li>Не гарантира, че инцидент няма да възникне или че всички атаки ще бъдат спрени.</li>
+                <li>Не превръща всички устройства в managed устройства автоматично; unsupported активите изискват ограничения или отделни решения.</li>
+            </ul>
+
+            <h2>Чести грешки при внедряване в SMB</h2>
+            <ul>
+                <li>Опит да се покрие цялата инфраструктура наведнъж без да е избран бизнес-приоритет.</li>
+                <li>Включване на MFA само за някои служители, но не и за privileged или recovery акаунти.</li>
+                <li>Преместване към нов access gateway без карта на app, DNS, identity и vendor зависимости.</li>
+                <li>Оставяне на временни изключения без собственик и срок за преглед.</li>
+                <li>Блокиране на legacy или OT комуникации без тест и одобрение от service/process owner.</li>
+                <li>Закупуване на платформа, преди да е известно какви ресурси, policies и signals трябва да покрива.</li>
+            </ul>
+
+            <h2>Често задавани въпроси</h2>
+            <h3>Подходящ ли е Zero Trust за малък бизнес?</h3>
+            <p>Принципите могат да се прилагат поетапно и към малка организация. Обхватът и контролите трябва да отговарят на критичните услуги, риска, наличния капацитет и зависимостите.</p>
+            <h3>Нужен ли е специален Zero Trust продукт?</h3>
+            <p>Не непременно. Започнете с наличните identity, MFA, endpoint, application и network контроли; добавяйте инструменти само когато запълват конкретна нужда.</p>
+            <h3>Коя е първата стъпка за SMB?</h3>
+            <p>Изберете една важна услуга или бизнес поток и картографирайте кой има достъп, от кои устройства, до кои ресурси и как се наблюдават тези заявки.</p>
+            <h3>Zero Trust означава ли да премахнем VPN?</h3>
+            <p>Не автоматично. VPN може да осигурява криптиран транспорт; Zero Trust добавя политика за достъп до конкретни ресурси и може да работи съвместно с VPN.</p>
+
+            <h2>Свързани ресурси</h2>
+            <ul class="blog-related">
+                <li><a href="/blog/what-is-zero-trust">Какво е Zero Trust? Принципи и практическо приложение</a></li>
+                <li><a href="/services/zero-trust">Zero Trust Architecture: компоненти и поток на достъп</a></li>
+                <li><a href="/blog/zero-trust-network">Zero Trust Network: мрежова сегментация и достъп до ресурси</a></li>
+                <li><a href="/blog/zero-trust-vs-vpn">Zero Trust vs VPN: разлики, избор и съвместна употреба</a></li>
+                <li><a href="/services/zero-trust">Zero Trust архитектура и внедряване на DefComs</a></li>
+                <li><a href="/blog/does-smb-need-soc">Има ли нужда малкият бизнес от SOC?</a></li>
+            </ul>
+
+            <h2>Официални източници</h2>
+            <ul class="blog-source-list">
+                <li><a href="https://csrc.nist.gov/pubs/sp/800/207/final" target="_blank" rel="noopener noreferrer">NIST SP 800-207 — Zero Trust Architecture</a></li>
+            </ul>
+
+            <aside class="blog-cta">
+                <h2>Започнете с критичен ресурс и реален риск</h2>
+                <p>Определете owner, потребители и достъпни устройства, после пилотирайте подходящите контроли.</p>
+                <a class="btn btn-primary" href="/services/zero-trust">Zero Trust анализ</a>
+                <a class="btn btn-secondary" href="/#contact">Заявете консултация</a>
+            </aside>
+        </article>
+    </main>

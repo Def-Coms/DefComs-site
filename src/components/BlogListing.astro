@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content';
+
+const months = ['януари','февруари','март','април','май','юни','юли','август','септември','октомври','ноември','декември'];
+const fmt = (d: Date) => `${d.getUTCDate()} ${months[d.getUTCMonth()]} ${d.getUTCFullYear()} г.`;
+const iso = (d: Date) => d.toISOString().slice(0, 10);
+
+const posts = (await getCollection('pages', ({ id, data }) => !data.draft && !!data.blog && id.startsWith('blog/')))
+  .sort((a, b) => +b.data.blog!.date - +a.data.blog!.date || a.data.blog!.order - b.data.blog!.order);
+---
+{posts.map(({ id, data }) => {
+  const b = data.blog!;
+  const href = '/' + id;
+  return (
+    <article class="blog-listing-card">
+      <a href={href} aria-label={b.ariaLabel}><img src={b.image} alt={b.imageAlt} width={b.imageWidth} height={b.imageHeight} loading="lazy" /></a>
+      <div class="blog-listing-content">
+        <span class="blog-listing-meta">{b.categories.join(' · ')} · <time datetime={iso(b.date)}>{fmt(b.date)}</time></span>
+        <h2><a href={href} set:html={b.title} /></h2>
+        <p set:html={b.summary} />
+        <a href={href}>{b.cta}</a>
+      </div>
+    </article>
+  );
+})}

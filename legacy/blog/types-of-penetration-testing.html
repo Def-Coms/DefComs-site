@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Видове penetration testing: web, API, мрежи и cloud | DefComs</title>
+    <meta name="description" content="Основни видове penetration testing: web приложения, API, външни и вътрешни мрежи, cloud, mobile, wireless и social engineering — избор според целта и scope-а.">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <link rel="canonical" href="https://defcoms.eu/blog/types-of-penetration-testing.html">
+    <link rel="alternate" hreflang="bg" href="https://defcoms.eu/blog/types-of-penetration-testing.html">
+    <link rel="alternate" hreflang="x-default" href="https://defcoms.eu/blog/types-of-penetration-testing.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="bg_BG">
+    <meta property="og:site_name" content="DefComs">
+    <meta property="og:url" content="https://defcoms.eu/blog/types-of-penetration-testing.html">
+    <meta property="og:title" content="Видове penetration testing: как да изберете подходящия тест | DefComs">
+    <meta property="og:description" content="Сравнение на често използваните видове pentest по цел, обхват и резултат; типовете могат да се комбинират според риска.">
+    <meta property="og:image" content="https://defcoms.eu/images/PR_image/Киберсигурност_4.0__Инструменти_и_стратегии.webp">
+    <meta property="og:image:alt" content="Видове penetration testing за приложения, API, мрежи и cloud">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Видове penetration testing | DefComs">
+    <meta name="twitter:description" content="Практично сравнение на web, API, network, cloud, mobile, wireless и social engineering тестове.">
+    <meta name="twitter:image" content="https://defcoms.eu/images/PR_image/Киберсигурност_4.0__Инструменти_и_стратегии.webp">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../images/Logos/DefComs-logo.svg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        { "@type": "Organization", "@id": "https://defcoms.eu/#organization", "name": "DefComs", "url": "https://defcoms.eu/" },
+        { "@type": "WebSite", "@id": "https://defcoms.eu/#website", "url": "https://defcoms.eu/", "name": "DefComs", "publisher": { "@id": "https://defcoms.eu/#organization" }, "inLanguage": "bg" },
+        {
+          "@type": "WebPage",
+          "@id": "https://defcoms.eu/blog/types-of-penetration-testing.html#webpage",
+          "url": "https://defcoms.eu/blog/types-of-penetration-testing.html",
+          "name": "Видове penetration testing: web, API, network, cloud и други",
+          "inLanguage": "bg",
+          "isPartOf": { "@id": "https://defcoms.eu/#website" },
+          "breadcrumb": { "@id": "https://defcoms.eu/blog/types-of-penetration-testing.html#breadcrumb" },
+          "mainEntity": { "@id": "https://defcoms.eu/blog/types-of-penetration-testing.html#article" }
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://defcoms.eu/blog/types-of-penetration-testing.html#article",
+          "headline": "Видове penetration testing: web, API, network, cloud и други",
+          "description": "Обзор на основните pentest engagement types и scoping dimensions, включително web, API, мрежи, cloud, mobile, wireless и social engineering.",
+          "image": "https://defcoms.eu/images/PR_image/Киберсигурност_4.0__Инструменти_и_стратегии.webp",
+          "datePublished": "2026-10-06",
+          "dateModified": "2026-10-06",
+          "inLanguage": "bg",
+          "mainEntityOfPage": { "@id": "https://defcoms.eu/blog/types-of-penetration-testing.html#webpage" },
+          "author": { "@type": "Person", "@id": "https://defcoms.eu/about/team/author/mikhail-georgiev.html", "name": "Михаил Георгиев", "jobTitle": "Head of Offensive Security (Pentesting)", "url": "https://defcoms.eu/about/team/author/mikhail-georgiev.html" },
+          "publisher": { "@id": "https://defcoms.eu/#organization" },
+          "citation": [
+            "https://doi.org/10.6028/NIST.SP.800-115",
+            "https://owasp.org/www-project-web-security-testing-guide/",
+            "https://owasp.org/www-project-api-security/"
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://defcoms.eu/blog/types-of-penetration-testing.html#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Начало", "item": "https://defcoms.eu/" },
+            { "@type": "ListItem", "position": 2, "name": "Блог", "item": "https://defcoms.eu/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "Видове penetration testing", "item": "https://defcoms.eu/blog/types-of-penetration-testing.html" }
+          ]
+        }
+      ]
+    }
+    </script>
+    <style>
+        .blog-article { max-width: 860px; margin: 0 auto; padding: 150px 24px 80px; }
+        .blog-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: 28px; }
+        .blog-breadcrumbs a { color: var(--secondary-cyan); }
+        .blog-kicker { color: var(--secondary-cyan); text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+        .blog-article h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.12; margin: 12px 0 20px; }
+        .blog-deck { color: var(--text-secondary); font-size: 1.2rem; line-height: 1.7; }
+        .blog-meta { color: var(--text-secondary); font-size: var(--font-size-sm); margin: 22px 0; }
+        .blog-hero-image { width: 100%; max-height: 460px; object-fit: cover; border-radius: var(--radius-lg); margin: 16px 0 32px; }
+        .blog-article h2 { margin-top: 42px; }
+        .blog-article p, .blog-article li { color: var(--text-secondary); line-height: 1.8; }
+        .blog-article ul, .blog-article ol { padding-left: 24px; }
+        .blog-callout { border-left: 3px solid var(--secondary-cyan); background: var(--background-card); padding: 18px 22px; border-radius: var(--radius-md); }
+        .blog-table-wrap { overflow-x: auto; margin: 24px 0; }
+        .blog-article table { width: 100%; border-collapse: collapse; min-width: 620px; }
+        .blog-article th, .blog-article td { padding: 14px; border: 1px solid var(--border-color); text-align: left; vertical-align: top; color: var(--text-secondary); line-height: 1.65; }
+        .blog-article th { color: var(--text-primary); background: var(--background-card); }
+        .blog-related, .blog-source-list { display: grid; gap: 12px; margin: 20px 0; }
+        .blog-related a, .blog-source-list a { color: var(--secondary-cyan); }
+        .blog-source-list li { overflow-wrap: anywhere; }
+        .blog-cta { margin-top: 44px; padding: 24px; background: var(--background-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); }
+    </style>
+</head>
+<body class="service-landing">
+
+    <!-- Header -->
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay"></div>
+
+    <header class="header">
+        <nav class="nav" aria-label="Основна навигация">
+            <div class="nav-container">
+                <a href="../index.html" class="logo">
+                    <img src="../images/Logos/DefComs-logo.svg" alt="DefComs">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Начало</a></li>
+                    <li><a href="../about/index.html">За нас</a></li>
+                    <li><a href="../services/index.html">Услуги</a></li>
+                    <li><a href="../compliance/index.html">Регулации</a></li>
+                    <li><a href="../cybersecurity-os/index.html">Cybersecurity OS</a></li>
+                    <li><a href="../wizard.html">NIS2 &amp; DORA Оценка</a></li>
+                    <li><a href="../spravochnik.html">Справочник</a></li>
+                    <li><a href="index.html">Блог</a></li>
+                    <li><a href="../contact/index.html">Контакти</a></li>
+                    <li class="mobile-only"><a href="../contact/index.html" class="mobile-cta">Свържете се с нас</a></li>
+                </ul>
+                <a href="../contact/index.html" class="cta-button">Свържете се с нас</a>
+                <button class="hamburger" type="button" aria-label="Отвори меню" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+
+    <main class="blog-article">
+        <nav class="blog-breadcrumbs" aria-label="Навигационна пътека">
+            <a href="../index.html">Начало</a><span aria-hidden="true">›</span>
+            <a href="index.html">Блог</a><span aria-hidden="true">›</span>
+            <span aria-current="page">Видове <a href="../resources/glossary/penetration-testing/">penetration testing</a></span>
+        </nav>
+        <article>
+            <p class="blog-kicker">Penetration Testing · Видове · Scope</p>
+            <h1>Видове penetration testing: как да изберете подходящия тест?</h1>
+            <p class="blog-deck">„Видове пентест“ може да означава различни неща: целева технологична област, позиция на тестера, ниво на предварителна информация или цел на оценката. Това не е единна официална таксономия. Правилният ангажимент се избира според въпроса, който организацията иска да провери, активите, разрешенията и правилата за безопасност.</p>
+            <p class="blog-meta">Автор: <a href="../about/team/author/mikhail-georgiev.html" style="color: var(--secondary-cyan);">Михаил Георгиев</a> · Публикувано: <time datetime="2026-10-06">6 октомври 2026 г.</time> · Обновено: <time datetime="2026-10-06">6 октомври 2026 г.</time></p>
+            <img class="blog-hero-image" src="../images/PR_image/Киберсигурност_4.0__Инструменти_и_стратегии.webp" alt="Различни обхвати и типове на контролирано penetration testing" width="1200" height="675" fetchpriority="high">
+            <p class="blog-legal-notice" style="border-left:4px solid #f0a500;background:rgba(240,165,0,.08);padding:16px 20px;border-radius:8px;margin:24px 0;font-size:.95rem;line-height:1.6;"><strong>⚠️ Важна бележка:</strong> Тази публикация е с информационна и образователна цел и <strong>не представлява юридическо или правно тълкуване</strong> на приложимото законодателство. Обстоятелствата варират, а нормативните изисквания се променят. При конкретен казус се консултирайте с квалифициран юрист.</p>
+
+            <p class="blog-callout"><strong>Кратък отговор:</strong> Пентестът може да се насочи към web приложение, API, външна или вътрешна мрежа, cloud среда, mobile приложение, wireless infrastructure или social-engineering сценарий. Отделно се уточняват tester perspective (external/internal) и knowledge level (black/gray/white box). Тези измерения могат да се комбинират; всяко тестово действие изисква разрешение и ясно определен scope.</p>
+
+            <h2>1. Видове според системата или технологията</h2>
+            <div class="blog-table-wrap">
+                <table>
+                    <thead><tr><th>Тип</th><th>Какъв въпрос проверява?</th><th>Примерен обхват</th></tr></thead>
+                    <tbody>
+                        <tr><th>Web application pentest</th><td>Може ли уязвимост в уеб приложението да засегне данни, акаунти или функционалност?</td><td>Authentication, authorization, session handling, input validation, business logic и конфигурация.</td></tr>
+                        <tr><th>API pentest</th><td>Правилно ли се прилагат достъпът, идентичността и ограниченията при API заявките?</td><td>Endpoints, tokens, authorization, data exposure, rate controls и бизнес правила.</td></tr>
+                        <tr><th>Network pentest</th><td>Какви рискове съществуват през мрежови услуги и сегменти?</td><td>Интернет-facing услуги, вътрешни мрежи, wireless или конкретни security zones.</td></tr>
+                        <tr><th>Cloud pentest</th><td>Какви рискове създават cloud конфигурации, идентичности и workloads?</td><td>Одобрени cloud accounts/resources, <a href="../resources/glossary/iam/">IAM</a> и конфигурации; изисква съгласуване с provider условията.</td></tr>
+                        <tr><th>Mobile application pentest</th><td>Как приложението и backend-ът обработват данни и удостоверяване на мобилни устройства?</td><td>Разрешени Android/iOS приложения, локално съхранение, комуникация и свързани API.</td></tr>
+                        <tr><th>Wireless pentest</th><td>Как е защитен безжичният достъп и сегментацията на безжичните мрежи?</td><td>Изрично разрешени SSID, access points, authentication и тестова локация.</td></tr>
+                        <tr><th>Social-engineering assessment</th><td>Как работят човешките процеси и защитите срещу определени сценарии?</td><td>Само писмено одобрени симулации, участници, канали, цели и stop conditions.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Таблицата е ориентационна. Например web и API тестове могат да са част от един ангажимент, а cloud assessment може да комбинира архитектурен преглед и тестове на конкретни workloads. Обхватът, deliverables и разрешенията трябва да бъдат записани отделно.</p>
+
+            <h2>2. External срещу internal: откъде започва тестерът?</h2>
+            <p><strong>External test</strong> обикновено оценява публично достъпната повърхност от позиция извън организацията. <strong>Internal test</strong> започва от разрешена вътрешна мрежа или контролирана вътрешна перспектива, за да провери сегментация, достъп и сценарии след получен вътрешен достъп.</p>
+            <p>„Internal“ не означава, че тестерът получава неограничен достъп, а „external“ не означава, че може да се тества всеки публичен asset. И в двата случая IP ranges, domains, локации, credentials и действия се одобряват предварително; системи на cloud providers, партньори и клиенти може да изискват отделно разрешение.</p>
+
+            <h2>3. Black-box, gray-box и white-box</h2>
+            <ul>
+                <li><strong>Black-box:</strong> тестерът получава малко или никаква предварителна техническа информация. Това може да моделира външен поглед, но е ограничено от времето и видимостта.</li>
+                <li><strong>Gray-box:</strong> предоставят се определени данни, например тестови акаунти, архитектурен контекст или user-level access, за да се оцени конкретен риск по-ефективно.</li>
+                <li><strong>White-box:</strong> тестерът получава широка техническа информация според договора — например документация, конфигурации или source code, когато е включен.</li>
+            </ul>
+            <p>Това са модели на информационен достъп, не оценки за качество. Изберете ги според целта: например реалистична външна експозиция, проверка на контролите след вход или детайлен преглед на определен компонент.</p>
+
+            <h2>Други ангажименти, които не бива да се смесват с pentest</h2>
+            <ul>
+                <li><strong>Vulnerability scan:</strong> автоматизирано откриване на известни слабости; обикновено не включва същата човешка проверка и валидиране на пътя на въздействие.</li>
+                <li><strong>Security configuration review:</strong> оценява настройки спрямо договорена baseline или критерии, без непременно да симулира експлоатация.</li>
+                <li><strong>Red-team exercise:</strong> по-широка симулация на конкретни adversary objectives, която може да включва хора, процеси и detection/response екипи.</li>
+                <li><strong>Source-code review:</strong> анализира кодови пътища и дефекти; може да допълва application pentest, но има различен обхват.</li>
+                <li><strong>DORA TLPT:</strong> специален регулаторен testing режим за определени финансови субекти; не е синоним на стандартен pentest. Вижте <a href="dora-penetration-testing.html">отделното обяснение за DORA penetration testing и TLPT</a>.</li>
+            </ul>
+
+            <h2>Как да изберете правилния вид тест?</h2>
+            <ol>
+                <li>Запишете решението, което искате да подпомогнете: release readiness, external exposure, access controls, cloud architecture или друг конкретен риск.</li>
+                <li>Определете активите, environments, географии, tenants, тестови акаунти и third-party зависимости.</li>
+                <li>Изберете tester perspective и knowledge level, съответстващи на целта и времето.</li>
+                <li>Съгласувайте писмено authorization, rules of engagement, тестови прозорци, забранени дейности и контакти при инцидент.</li>
+                <li>Планирайте доклада, приоритизацията, remediation owners и retest още преди началото.</li>
+                <li>След теста свържете находките с реалния бизнес риск и проследете корекциите до приключване.</li>
+            </ol>
+
+            <h2>Често задавани въпроси</h2>
+            <h3>Кой тип penetration test е най-добър?</h3>
+            <p>Няма универсално най-добър тип. Изборът зависи от целта, активите и сценария, който искате да оцените; някои организации комбинират няколко ограничени теста.</p>
+            <h3>Трябва ли да се тества всичко в една кампания?</h3>
+            <p>Не непременно. Поетапният подход може да приоритизира критичните приложения и пътища на достъп, стига остатъчният scope и непроверените системи да са документирани.</p>
+            <h3>Може ли външен доставчик да тества cloud среда?</h3>
+            <p>Може, ако има писмено разрешение, ясна граница между клиентски ресурси и provider услуги и спазени приложимите cloud-provider условия. Потвърдете разрешенията преди теста.</p>
+            <h3>Penetration test покрива ли regulatory compliance?</h3>
+            <p>Сам по себе си не. Тестът може да бъде едно доказателство или контролна дейност в по-широка програма, но не замества целия одит, регулаторния анализ или останалите задължения.</p>
+
+            <h2>Свързани ресурси</h2>
+            <ul class="blog-related">
+                <li><a href="cvss-explained.html">CVSS 4.0: score, metric groups и приоритизиране</a></li>
+                <li><a href="cloud-pentest.html">Cloud pentest: scope и тестови области</a></li>
+                <li><a href="external-vs-internal-pentest.html">External vs Internal pentest: разлики и избор</a></li>
+                <li><a href="network-pentest.html">Network pentest: обхват и тестови области</a></li>
+                <li><a href="api-pentest.html">API pentest: обхват и тестови области</a></li>
+                <li><a href="web-application-pentest.html">Web application pentest: обхват и тестови области</a></li>
+                <li><a href="what-is-penetration-testing.html">Какво е penetration testing? Цел, процес и резултат</a></li>
+                <li><a href="dora-penetration-testing.html">DORA penetration testing и TLPT</a></li>
+                <li><a href="soc-vs-siem.html">SOC vs SIEM</a></li>
+                <li><a href="../services/penetration-testing/index.html">Penetration Testing услуги на DefComs</a></li>
+                <li><a href="../services/soc-monitoring/index.html">SOC мониторинг 24/7/365</a></li>
+            </ul>
+
+            <h2>Официални източници</h2>
+            <ul class="blog-source-list">
+                <li><a href="https://csrc.nist.gov/pubs/sp/800/115/final" target="_blank" rel="noopener noreferrer">NIST SP 800-115 — Technical Guide to Information Security Testing and Assessment</a></li>
+                <li><a href="https://owasp.org/www-project-web-security-testing-guide/" target="_blank" rel="noopener noreferrer">OWASP Web Security Testing Guide (WSTG) — versioned releases and testing methodology</a></li>
+                <li><a href="https://owasp.org/www-project-api-security/" target="_blank" rel="noopener noreferrer">OWASP API Security Project</a></li>
+                <li><a href="https://www.nist.gov/cyberframework" target="_blank" rel="noopener noreferrer">NIST Cybersecurity Framework 2.0</a></li>
+            </ul>
+
+            <aside class="blog-cta">
+                <h2>Избирате подходящ pentest обхват?</h2>
+                <p>Започнете с конкретната цел, разрешените активи и правилата за теста, след което определете вида ангажимент и нужните deliverables.</p>
+                <a class="btn btn-primary" href="../services/penetration-testing/index.html">Penetration Testing услуги</a>
+                <a class="btn btn-secondary" href="../index.html#contact">Заявете консултация</a>
+            </aside>
+        </article>
+    </main>
+        <!-- Footer -->
+
+    <script src="../script.js" defer></script>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="../images/Logos/DefComs-logo.svg" alt="DefComs" class="footer-logo" loading="lazy">
+                    <p>Вашият високотехнологичен партньор в киберсигурността. Предотвратяване, засичане и бърза неутрализация на съвременните заплахи.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Услуги</h3>
+                    <ul>
+                        <li><a href="../services/soc-monitoring/index.html">SOC Мониторинг 24/7</a></li>
+                        <li><a href="../services/noc-services/index.html">NOC Управление</a></li>
+                        <li><a href="../services/corporate-training/index.html">Обучения за фирми</a></li>
+                        <li><a href="../services/penetration-testing/index.html">Penetration Testing</a></li>
+                        <li><a href="../compliance/nis2/index.html">GDPR/NIS2/DORA Съответствие</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Ресурси</h3>
+                    <ul>
+                        <li><a href="../spravochnik.html">Регулаторен Хъб</a></li>
+                        <li><a href="../cybersecurity-os/index.html">Cybersecurity OS</a></li>
+                        <li><a href="../blog/index.html">Статии &amp; Блог</a></li>
+                        <li><a href="../about/index.html">За Нас</a></li>
+                        <li><a href="../bulgaria/index.html">Покритие в България</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Правна рамка</h3>
+                    <ul>
+                        <li><a href="../compliance/nis2/index.html">Регулация NIS2</a></li>
+                        <li><a href="../compliance/gdpr/index.html">Регламент GDPR</a></li>
+                        <li><a href="../compliance/iso-27001/index.html">Стандарт ISO 27001</a></li>
+                        <li><a href="../index.html#contact">Контакти</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DefComs. Всички права запазени.</p>
+                <div class="footer-bottom-links">
+                    <a href="../terms.html">Условия за ползване</a>
+                    <a href="../privacy.html">Защита на данни</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../chat-widget.js"></script>
+</body>
+</html>

@@ -1,0 +1,251 @@
+---
+lastmod: 2026-10-09
+title: Какво е XDR? Extended Detection and Response | DefComs
+description: Какво е XDR и как свързва security сигнали от крайни устройства, идентичности, email, мрежа и cloud. Възможности, ограничения и критерии за оценка.
+ogType: article
+image: https://defcoms.eu/images/Webp/Киберсигурност_за_модерния_бизнес.webp
+imageAlt: Свързване на контроли и сигнали от различни области на киберсигурността
+ogDescription: Как XDR може да корелира сигнали от различни security домейни и какво да проверите за покритие, интеграции, response и vendor ограничения.
+twitterTitle: Какво е XDR? | DefComs
+twitterDescription: Разберете как XDR свързва security телеметрия и как да оцените реалното покритие и response процеса.
+schema:
+  - "@context": https://schema.org
+    "@graph":
+      - "@type": Organization
+        "@id": https://defcoms.eu/#organization
+        name: DefComs
+        url: https://defcoms.eu/
+      - "@type": WebSite
+        "@id": https://defcoms.eu/#website
+        url: https://defcoms.eu/
+        name: DefComs
+        publisher:
+          "@id": https://defcoms.eu/#organization
+        inLanguage: bg
+      - "@type": WebPage
+        "@id": https://defcoms.eu/blog/what-is-xdr#webpage
+        url: https://defcoms.eu/blog/what-is-xdr
+        name: Какво е XDR? Extended Detection and Response
+        inLanguage: bg
+        isPartOf:
+          "@id": https://defcoms.eu/#website
+        breadcrumb:
+          "@id": https://defcoms.eu/blog/what-is-xdr#breadcrumb
+        mainEntity:
+          "@id": https://defcoms.eu/blog/what-is-xdr#article
+      - "@type": BlogPosting
+        "@id": https://defcoms.eu/blog/what-is-xdr#article
+        headline: Какво е XDR? Extended Detection and Response
+        description: Обяснение на XDR като подход за корелация на security telemetry от различни домейни, разграничение от EDR, SIEM и SOC и критерии за покритие и response.
+        image: https://defcoms.eu/images/Webp/Киберсигурност_за_модерния_бизнес.webp
+        datePublished: 2026-10-09
+        dateModified: 2026-10-09
+        inLanguage: bg
+        mainEntityOfPage:
+          "@id": https://defcoms.eu/blog/what-is-xdr#webpage
+        author:
+          "@type": Person
+          "@id": https://defcoms.eu/about/team/author/georgi-todorov
+          name: Георги Тодоров
+          jobTitle: SOC Operations Manager (24/7)
+          url: https://defcoms.eu/about/team/author/georgi-todorov
+        publisher:
+          "@id": https://defcoms.eu/#organization
+        citation:
+          - https://csrc.nist.gov/pubs/sp/800/61/r3/final
+      - "@type": FAQPage
+        "@id": https://defcoms.eu/blog/what-is-xdr#faq
+        mainEntity:
+          - "@type": Question
+            name: Какво означава XDR?
+            acceptedAnswer:
+              "@type": Answer
+              text: XDR означава Extended Detection and Response. Терминът обикновено описва подход или платформа за свързване на security сигнали от повече от един домейн, но конкретното покритие зависи от доставчика и конфигурацията.
+          - "@type": Question
+            name: XDR заменя ли EDR?
+            acceptedAnswer:
+              "@type": Answer
+              text: Не непременно. EDR се фокусира върху endpoint telemetry и действия, а XDR цели да корелира endpoint сигнали с други домейни. Много XDR предложения включват или интегрират EDR, но това трябва да се потвърди за конкретното решение.
+          - "@type": Question
+            name: XDR същото ли е като SIEM?
+            acceptedAnswer:
+              "@type": Answer
+              text: Не винаги. SIEM обичайно събира и корелира логове според конфигурирани правила и източници; XDR предложенията обикновено наблягат на свързан detection и response в поддържаните security домейни. Функциите може да се припокриват и термините се използват различно от доставчиците.
+          - "@type": Question
+            name: Нужен ли е SOC, ако има XDR?
+            acceptedAnswer:
+              "@type": Answer
+              text: Да има XDR платформа не означава автоматично, че сигналите се наблюдават и обработват. Организацията трябва да определи owner за triage, ескалация и одобрение на response действията, вътрешно или чрез външен екип.
+      - "@type": BreadcrumbList
+        "@id": https://defcoms.eu/blog/what-is-xdr#breadcrumb
+        itemListElement:
+          - "@type": ListItem
+            position: 1
+            name: Начало
+            item: https://defcoms.eu/
+          - "@type": ListItem
+            position: 2
+            name: Блог
+            item: https://defcoms.eu/blog
+          - "@type": ListItem
+            position: 3
+            name: Какво е XDR?
+            item: https://defcoms.eu/blog/what-is-xdr
+headExtra: |-
+  <style>
+          .blog-article { max-width: 860px; margin: 0 auto; padding: 150px 24px 80px; }
+          .blog-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: 28px; }
+          .blog-breadcrumbs a { color: var(--secondary-cyan); }
+          .blog-kicker { color: var(--secondary-cyan); text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+          .blog-article h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.12; margin: 12px 0 20px; }
+          .blog-deck { color: var(--text-secondary); font-size: 1.2rem; line-height: 1.7; }
+          .blog-meta { color: var(--text-secondary); font-size: var(--font-size-sm); margin: 22px 0; }
+          .blog-hero-image { width: 100%; max-height: 460px; object-fit: cover; border-radius: var(--radius-lg); margin: 16px 0 32px; }
+          .blog-article h2 { margin-top: 42px; }
+          .blog-article p, .blog-article li { color: var(--text-secondary); line-height: 1.8; }
+          .blog-article ul, .blog-article ol { padding-left: 24px; }
+          .blog-callout { border-left: 3px solid var(--secondary-cyan); background: var(--background-card); padding: 18px 22px; border-radius: var(--radius-md); }
+          .blog-table-wrap { overflow-x: auto; margin: 24px 0; }
+          .blog-article table { width: 100%; border-collapse: collapse; min-width: 620px; }
+          .blog-article th, .blog-article td { padding: 14px; border: 1px solid var(--border-color); text-align: left; vertical-align: top; color: var(--text-secondary); line-height: 1.65; }
+          .blog-article th { color: var(--text-primary); background: var(--background-card); }
+          .blog-related, .blog-source-list { display: grid; gap: 12px; margin: 20px 0; }
+          .blog-related a, .blog-source-list a { color: var(--secondary-cyan); }
+          .blog-source-list li { overflow-wrap: anywhere; }
+          .blog-cta { margin-top: 44px; padding: 24px; background: var(--background-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); }
+      </style>
+bodyClass: service-landing
+blog:
+  categories:
+    - SOC
+    - XDR
+  date: 2026-10-09
+  order: 10
+  title: Какво е XDR (Extended Detection and Response)?
+  summary: Как XDR свързва сигнали от различни security домейни и как да оценим реалното покритие и response процеса.
+  image: /images/PR_image/%D0%9A%D0%B8%D0%B1%D0%B5%D1%80%D1%81%D0%B8%D0%B3%D1%83%D1%80%D0%BD%D0%BE%D1%81%D1%82%D1%82%D0%B0__%D0%A9%D0%B8%D1%82_%D0%BD%D0%B0_%D0%BC%D0%BE%D0%B4%D0%B5%D1%80%D0%BD%D0%B8%D1%8F_%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81.webp
+  imageAlt: Свързване на контроли и сигнали от различни области на киберсигурността
+  imageWidth: 1200
+  imageHeight: 675
+  ariaLabel: "Прочетете: Какво е XDR?"
+  cta: Прочетете ръководството →
+---
+<main class="blog-article">
+        <nav class="blog-breadcrumbs" aria-label="Навигационна пътека">
+            <a href="/">Начало</a><span aria-hidden="true">›</span>
+            <a href="/blog">Блог</a><span aria-hidden="true">›</span>
+            <span aria-current="page">Какво е <a href="/resources/glossary/xdr">XDR</a>?</span>
+        </nav>
+        <article>
+            <p class="blog-kicker">Extended Detection &amp; Response · Security Operations</p>
+            <h1>Какво е XDR (Extended Detection and Response)?</h1>
+            <p class="blog-deck">XDR описва подход или платформа, която цели да свърже сигнали от няколко security домейна, за да подпомогне откриването, разследването и реакцията. Това може да включва endpoint, identity, email, network и cloud данни, но няма универсален списък от задължителни източници или функции: конкретният обхват е различен при отделните доставчици и конфигурации.</p>
+            <p class="blog-meta">Автор: <a href="/about/team/author/georgi-todorov" style="color: var(--secondary-cyan);">Георги Тодоров</a> · Публикувано: <time datetime="2026-10-09">9 октомври 2026 г.</time> · Обновено: <time datetime="2026-10-09">9 октомври 2026 г.</time></p>
+            <img class="blog-hero-image" src="/images/Webp/%D0%9A%D0%B8%D0%B1%D0%B5%D1%80%D1%81%D0%B8%D0%B3%D1%83%D1%80%D0%BD%D0%BE%D1%81%D1%82_%D0%B7%D0%B0_%D0%BC%D0%BE%D0%B4%D0%B5%D1%80%D0%BD%D0%B8%D1%8F_%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81.webp" alt="Свързване на контроли и сигнали от различни области на киберсигурността" width="1200" height="675" fetchpriority="high">
+            <p class="blog-legal-notice" style="border-left:4px solid #f0a500;background:rgba(240,165,0,.08);padding:16px 20px;border-radius:8px;margin:24px 0;font-size:.95rem;line-height:1.6;"><strong>⚠️ Важна бележка:</strong> Тази публикация е с информационна и образователна цел и <strong>не представлява юридическо или правно тълкуване</strong> на приложимото законодателство. Обстоятелствата варират, а нормативните изисквания се променят. При конкретен казус се консултирайте с квалифициран юрист.</p>
+
+            <p class="blog-callout"><strong>Накратко:</strong> XDR се стреми да събере и корелира релевантни detections от повече от един security домейн в общ investigation и response процес. Името само по себе си не гарантира конкретни конектори, пълна видимост, автоматизирана реакция или 24/7 наблюдение. Проверявайте точно какво е включено и кой поема оперативната работа.</p>
+
+            <h2>Какво означава XDR?</h2>
+            <p>XDR е съкращение от <em>Extended Detection and Response</em>. В практиката терминът се използва за решения, които разширяват endpoint-focused detection отвъд отделното устройство и свързват събития от няколко security области. Целта е анализаторът да може да прегледа свързана активност като общ инцидент, вместо да съпоставя несвързани alerts ръчно между конзоли.</p>
+            <p>XDR не е единен технически стандарт със задължителна архитектура или фиксиран feature set. Един продукт може да използва собствени native sensors и услуги; друг може да разчита на интеграции с инструменти на различни доставчици. Затова означения като „native“ или „open XDR“ са полезни само ако се проверят срещу реалните източници, конектори, права, лицензиране и поддържани response действия.</p>
+
+            <h2>Какви сигнали може да свързва?</h2>
+            <p>В зависимост от продукта, deployment и интеграциите XDR платформа може да приема сигнали от някои от следните области:</p>
+            <div class="blog-table-wrap">
+                <table>
+                    <thead><tr><th>Източник</th><th>Примерни сигнали</th><th>Какво добавя към разследването</th></tr></thead>
+                    <tbody>
+                        <tr><th>Endpoint / <a href="/resources/glossary/edr">EDR</a></th><td>Процеси, файлови и системни събития, device alerts, agent health.</td><td>Контекст за действия на устройство и връзки между процеси или засегнати endpoints.</td></tr>
+                        <tr><th>Identity</th><td>Входове, промени в акаунти и права, authentication alerts или sign-in риск, когато са налични.</td><td>Помага да се свърже endpoint активност с потребител, акаунт и authentication контекст.</td></tr>
+                        <tr><th>Email и collaboration</th><td>Сигнали за подозрително съобщение, attachment, URL или активност в поддържани приложения.</td><td>Може да допълни историята за първоначален контакт или последваща активност.</td></tr>
+                        <tr><th>Network</th><td>Избрани firewall, DNS, proxy или network detection събития.</td><td>Добавя комуникационен контекст, ако са налични и свързани подходящите източници.</td></tr>
+                        <tr><th>Cloud и приложения</th><td>Сигнали от cloud инфраструктура, workloads, SaaS или security услуги.</td><td>Може да разшири investigation отвъд управляваните крайни устройства.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Таблицата е примерна, не спецификация. Някои източници може да не са поддържани, да изискват отделен лиценз или да предоставят само ограничени данни. Проверете и посоката на интеграцията: дали платформата само приема alerts, дали може да обогатява telemetry и дали response действие може да се изпълни обратно в изходната система.</p>
+
+            <h2>Как протича XDR detection и response?</h2>
+            <ol>
+                <li><strong>Приемане на telemetry:</strong> сигнали идват от поддържани агенти, услуги и конектори.</li>
+                <li><strong>Нормализиране и обогатяване:</strong> платформата може да преобразува събитията и да добави наличен asset, account или threat контекст.</li>
+                <li><strong>Корелация:</strong> правила или аналитика свързват събития, които изглеждат част от една активност или incident chain.</li>
+                <li><strong>Investigation:</strong> анализаторът преглежда timeline, засегнати identities/устройства, увереността на сигнала и пропуските в данните.</li>
+                <li><strong>Response:</strong> екипът решава дали да ескалира, блокира индикатор, ограничи акаунт или изолира устройство, ако интеграцията и предварително разрешените роли позволяват това.</li>
+            </ol>
+            <p>Автоматизацията не трябва да се приема за даденост. Преди да разрешите автоматични containment действия, тествайте ефекта, определете кои активи са критични и уточнете как се отменя действие, което нарушава легитимен процес.</p>
+
+            <h2>XDR, EDR, SIEM и SOC</h2>
+            <div class="blog-table-wrap">
+                <table>
+                    <thead><tr><th>Термин</th><th>Какво описва</th><th>Практическо разграничение</th></tr></thead>
+                    <tbody>
+                        <tr><th>EDR</th><td>Технология за endpoint telemetry, detection, investigation и response.</td><td>Фокусира се върху крайни устройства; може да бъде един от източниците или компонентите в XDR решение.</td></tr>
+                        <tr><th>XDR</th><td>Подход или продуктова категория за свързване на detections през няколко security домейна.</td><td>Степента на интеграция, източници и действия зависи от платформата; терминът няма единен задължителен обхват.</td></tr>
+                        <tr><th><a href="/resources/glossary/siem">SIEM</a></th><td>Система за събиране, съхранение, търсене и корелация на логове според конфигурираните източници и правила.</td><td>Може да има голяма гъвкавост за логове и корелация; конкретните response и detection функции варират и се припокриват с XDR.</td></tr>
+                        <tr><th><a href="/resources/glossary/soc">SOC</a></th><td>Оперативен екип или функция за мониторинг, triage, разследване, ескалация и response според обхвата.</td><td>Това са хора, процеси и отговорности; XDR/SIEM/EDR са технологии, които SOC може да използва.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>На пазара има припокриващи се възможности и различна продуктова терминология. Сравнявайте use cases, източници и operational outcomes, а не само имената на категориите. За endpoint основите вижте <a href="/blog/what-is-edr">ръководството за EDR</a>.</p>
+
+            <h2>Как да оцените XDR платформа?</h2>
+            <ol>
+                <li><strong>Започнете с incident сценарии:</strong> изберете няколко реалистични случая, например подозрителен вход, последван от endpoint alert или необичайна cloud активност.</li>
+                <li><strong>Картографирайте източниците:</strong> запишете кои endpoints, identity системи, email услуги, cloud и network logs са налични и какви са пропуските.</li>
+                <li><strong>Проверете интеграциите:</strong> уточнете native/API конекторите, нужните права, честотата на обновяване, данните, които не се прехвърлят, и зависимостите от лицензи.</li>
+                <li><strong>Потвърдете ownership:</strong> определете кой следи alerts, кога се ескалират и кой одобрява блокиране на акаунт или изолиране на устройство.</li>
+                <li><strong>Оценете данните и privacy:</strong> проверете retention, достъп до чувствителна telemetry, местоположение на обработка и приложимите вътрешни правила.</li>
+                <li><strong>Пилотирайте и измервайте:</strong> използвайте представителни сценарии и проверявайте качеството на корелацията, false positives, данни, които липсват, и времето за triage.</li>
+            </ol>
+
+            <h2>Ползи и ограничения</h2>
+            <div class="blog-table-wrap">
+                <table>
+                    <thead><tr><th>Възможна полза</th><th>Условие или ограничение</th></tr></thead>
+                    <tbody>
+                        <tr><td>По-малко ръчно превключване между конзоли при свързани източници.</td><td>Интеграциите може да са частични, еднопосочни, платени отделно или да изискват допълнителна поддръжка.</td></tr>
+                        <tr><td>Общ контекст за свързани сигнали и incident timeline.</td><td>Корелацията е толкова полезна, колкото са пълни, точни и навременни входящите данни.</td></tr>
+                        <tr><td>Възможност за response действия през интегрирани инструменти.</td><td>Правата и автоматизацията могат да повлияят на критични устройства, акаунти или услуги и изискват контролирано тестване.</td></tr>
+                        <tr><td>Един изглед върху няколко поддържани security области.</td><td>Един интерфейс не означава пълно покритие на всички активи или замяна на специализираните контроли и екипи.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Често срещани рискове са vendor lock-in, твърде широки API права, непроверени конектори, прекомерен шум от alerts и автоматизация без ясна отмяна. Платформа не замества incident response процес, а консолидацията на alerts не означава автоматично, че има човек, който ги наблюдава.</p>
+
+            <h2>Често задавани въпроси</h2>
+            <h3>Какво означава XDR?</h3>
+            <p>XDR означава Extended Detection and Response. Терминът обикновено описва подход или платформа за свързване на security сигнали от повече от един домейн, но конкретното покритие зависи от доставчика и конфигурацията.</p>
+            <h3>XDR заменя ли EDR?</h3>
+            <p>Не непременно. EDR се фокусира върху endpoint telemetry и действия, а XDR цели да корелира endpoint сигнали с други домейни. Много XDR предложения включват или интегрират EDR, но това трябва да се потвърди за конкретното решение.</p>
+            <h3>XDR същото ли е като SIEM?</h3>
+            <p>Не винаги. SIEM обичайно събира и корелира логове според конфигурирани правила и източници; XDR предложенията обикновено наблягат на свързан detection и response в поддържаните security домейни. Функциите може да се припокриват и термините се използват различно от доставчиците.</p>
+            <h3>Нужен ли е SOC, ако има XDR?</h3>
+            <p>Да има XDR платформа не означава автоматично, че сигналите се наблюдават и обработват. Организацията трябва да определи owner за triage, ескалация и одобрение на response действията, вътрешно или чрез външен екип.</p>
+
+            <h2>Свързани ресурси</h2>
+            <ul class="blog-related">
+                <li><a href="/blog/edr-vs-xdr">EDR vs XDR: разлики, избор и съвместна употреба</a></li>
+                <li><a href="/blog/what-is-edr">Какво е EDR? Endpoint Detection and Response</a></li>
+                <li><a href="/blog/edr-vs-ransomware">EDR срещу ransomware: как помага и къде са границите?</a></li>
+                <li><a href="/blog/what-is-soc">Какво е SOC? Мониторинг, анализ и реакция</a></li>
+                <li><a href="/blog/how-soc-monitoring-works">Как работи SOC мониторингът?</a></li>
+                <li><a href="/blog/soc-vs-siem">SOC vs SIEM: разлики и как работят заедно</a></li>
+                <li><a href="/services/edr-xdr">Endpoint Security и EDR услуги на DefComs</a></li>
+                <li><a href="/services/soc-monitoring">SOC мониторинг 24/7/365</a></li>
+            </ul>
+
+            <h2>Официални източници</h2>
+            <ul class="blog-source-list">
+                <li><a href="https://csrc.nist.gov/pubs/sp/800/61/r3/final" target="_blank" rel="noopener noreferrer">NIST SP 800-61 Rev. 3 — incident response в контекста на cybersecurity risk management (не дефинира XDR продуктова категория)</a></li>
+            </ul>
+
+            <aside class="blog-cta">
+                <h2>Свържете detection с ясен response процес</h2>
+                <p>Определете кои източници са важни, кой преглежда сигналите и как се одобряват действията при инцидент.</p>
+                <a class="btn btn-primary" href="/services/soc-monitoring">SOC мониторинг</a>
+                <a class="btn btn-secondary" href="/#contact">Заявете консултация</a>
+            </aside>
+        </article>
+    </main>

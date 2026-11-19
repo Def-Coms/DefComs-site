@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DORA ICT риск: управление, контрол и доказателства | DefComs</title>
+    <meta name="description" content="Какво изисква DORA за управление на ICT риска? Роли, активи, защита, откриване, реакция, възстановяване и RTS 2024/1774.">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <link rel="canonical" href="https://defcoms.eu/blog/dora-ict-risk-management.html">
+    <link rel="alternate" hreflang="bg" href="https://defcoms.eu/blog/dora-ict-risk-management.html">
+    <link rel="alternate" hreflang="x-default" href="https://defcoms.eu/blog/dora-ict-risk-management.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="bg_BG">
+    <meta property="og:site_name" content="DefComs">
+    <meta property="og:url" content="https://defcoms.eu/blog/dora-ict-risk-management.html">
+    <meta property="og:title" content="DORA ICT риск: управление, контрол и доказателства | DefComs">
+    <meta property="og:description" content="Практична рамка за ICT риск по DORA: управленска отговорност, активи, превенция, откриване, реакция и възстановяване.">
+    <meta property="og:image" content="https://defcoms.eu/images/PR_image/Киберсигурност_за_бизнес_оцеляване.webp">
+    <meta property="og:image:alt" content="Управление на ICT риска и контролите по DORA">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DORA ICT риск: управление и контроли | DefComs">
+    <meta name="twitter:description" content="Изискванията на DORA и RTS 2024/1774 за рамката за управление на ICT риска.">
+    <meta name="twitter:image" content="https://defcoms.eu/images/PR_image/Киберсигурност_за_бизнес_оцеляване.webp">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../images/Logos/DefComs-logo.svg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        { "@type": "Organization", "@id": "https://defcoms.eu/#organization", "name": "DefComs", "url": "https://defcoms.eu/" },
+        { "@type": "WebSite", "@id": "https://defcoms.eu/#website", "url": "https://defcoms.eu/", "name": "DefComs", "publisher": { "@id": "https://defcoms.eu/#organization" }, "inLanguage": "bg" },
+        {
+          "@type": "WebPage",
+          "@id": "https://defcoms.eu/blog/dora-ict-risk-management.html#webpage",
+          "url": "https://defcoms.eu/blog/dora-ict-risk-management.html",
+          "name": "DORA ICT риск: рамка за управление и контролни мерки",
+          "inLanguage": "bg",
+          "isPartOf": { "@id": "https://defcoms.eu/#website" },
+          "breadcrumb": { "@id": "https://defcoms.eu/blog/dora-ict-risk-management.html#breadcrumb" },
+          "mainEntity": { "@id": "https://defcoms.eu/blog/dora-ict-risk-management.html#article" }
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://defcoms.eu/blog/dora-ict-risk-management.html#article",
+          "headline": "DORA ICT риск: рамка за управление и контролни мерки",
+          "description": "Ръководство за управлението на ICT риска по DORA: управленска отчетност, идентификация на активи, защита, откриване, реакция и възстановяване.",
+          "image": "https://defcoms.eu/images/PR_image/Киберсигурност_за_бизнес_оцеляване.webp",
+          "datePublished": "2026-10-06",
+          "dateModified": "2026-10-06",
+          "inLanguage": "bg",
+          "mainEntityOfPage": { "@id": "https://defcoms.eu/blog/dora-ict-risk-management.html#webpage" },
+          "author": { "@type": "Person", "@id": "https://defcoms.eu/about/team/author/elena-dimitrova.html", "name": "Елена Димитрова", "jobTitle": "Lead Compliance & NIS2/DORA Advisor", "url": "https://defcoms.eu/about/team/author/elena-dimitrova.html" },
+          "publisher": { "@id": "https://defcoms.eu/#organization" },
+          "citation": [
+            "https://eur-lex.europa.eu/eli/reg/2022/2554/oj",
+            "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1774",
+            "https://www.eba.europa.eu/activities/single-rulebook/regulatory-activities/operational-resilience/regulatory-technical-standards-ict-risk-management-framework-and-simplified-ict-risk-management"
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://defcoms.eu/blog/dora-ict-risk-management.html#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Начало", "item": "https://defcoms.eu/" },
+            { "@type": "ListItem", "position": 2, "name": "Блог", "item": "https://defcoms.eu/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "DORA ICT risk management", "item": "https://defcoms.eu/blog/dora-ict-risk-management.html" }
+          ]
+        }
+      ]
+    }
+    </script>
+    <style>
+        .blog-article { max-width: 860px; margin: 0 auto; padding: 150px 24px 80px; }
+        .blog-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: 28px; }
+        .blog-breadcrumbs a { color: var(--secondary-cyan); }
+        .blog-kicker { color: var(--secondary-cyan); text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+        .blog-article h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.12; margin: 12px 0 20px; }
+        .blog-deck { color: var(--text-secondary); font-size: 1.2rem; line-height: 1.7; }
+        .blog-meta { color: var(--text-secondary); font-size: var(--font-size-sm); margin: 22px 0; }
+        .blog-hero-image { width: 100%; max-height: 460px; object-fit: cover; border-radius: var(--radius-lg); margin: 16px 0 32px; }
+        .blog-article h2 { margin-top: 42px; }
+        .blog-article p, .blog-article li { color: var(--text-secondary); line-height: 1.8; }
+        .blog-article ul, .blog-article ol { padding-left: 24px; }
+        .blog-callout { border-left: 3px solid var(--secondary-cyan); background: var(--background-card); padding: 18px 22px; border-radius: var(--radius-md); }
+        .blog-related, .blog-source-list { display: grid; gap: 12px; margin: 20px 0; }
+        .blog-related a, .blog-source-list a { color: var(--secondary-cyan); }
+        .blog-source-list li { overflow-wrap: anywhere; }
+        .blog-cta { margin-top: 44px; padding: 24px; background: var(--background-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); }
+    </style>
+</head>
+<body class="service-landing">
+
+    <!-- Header -->
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay"></div>
+
+    <header class="header">
+        <nav class="nav" aria-label="Основна навигация">
+            <div class="nav-container">
+                <a href="../index.html" class="logo">
+                    <img src="../images/Logos/DefComs-logo.svg" alt="DefComs">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Начало</a></li>
+                    <li><a href="../about/index.html">За нас</a></li>
+                    <li><a href="../services/index.html">Услуги</a></li>
+                    <li><a href="../compliance/index.html">Регулации</a></li>
+                    <li><a href="../cybersecurity-os/index.html">Cybersecurity OS</a></li>
+                    <li><a href="../wizard.html">NIS2 &amp; DORA Оценка</a></li>
+                    <li><a href="../spravochnik.html">Справочник</a></li>
+                    <li><a href="index.html">Блог</a></li>
+                    <li><a href="../contact/index.html">Контакти</a></li>
+                    <li class="mobile-only"><a href="../contact/index.html" class="mobile-cta">Свържете се с нас</a></li>
+                </ul>
+                <a href="../contact/index.html" class="cta-button">Свържете се с нас</a>
+                <button class="hamburger" type="button" aria-label="Отвори меню" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+
+    <main class="blog-article">
+        <nav class="blog-breadcrumbs" aria-label="Навигационна пътека">
+            <a href="../index.html">Начало</a><span aria-hidden="true">›</span>
+            <a href="index.html">Блог</a><span aria-hidden="true">›</span>
+            <span aria-current="page">DORA ICT риск</span>
+        </nav>
+        <article>
+            <p class="blog-kicker">DORA · ICT риск · Управление</p>
+            <h1>DORA ICT риск: рамка за управление и контролни мерки</h1>
+            <p class="blog-deck">DORA изисква обхванатите финансови субекти да поддържат цялостна рамка за управление на ICT риска, включена в общото управление на риска. Тя свързва отговорността на ръководството с идентифициране на активи и зависимости, защитни мерки, откриване, реакция, възстановяване и непрекъснато подобрение.</p>
+            <p class="blog-meta">Автор: <a href="../about/team/author/elena-dimitrova.html" style="color: var(--secondary-cyan);">Елена Димитрова</a> · Публикувано: <time datetime="2026-10-06">6 октомври 2026 г.</time> · Обновено: <time datetime="2026-10-06">6 октомври 2026 г.</time></p>
+            <img class="blog-hero-image" src="../images/PR_image/Киберсигурност_за_бизнес_оцеляване.webp" alt="Рамка за идентифициране и управление на ICT риска по DORA" width="1200" height="675" fetchpriority="high">
+            <p class="blog-legal-notice" style="border-left:4px solid #f0a500;background:rgba(240,165,0,.08);padding:16px 20px;border-radius:8px;margin:24px 0;font-size:.95rem;line-height:1.6;"><strong>⚠️ Важна бележка:</strong> Тази публикация е с информационна и образователна цел и <strong>не представлява юридическо или правно тълкуване</strong> на приложимото законодателство. Обстоятелствата варират, а нормативните изисквания се променят. При конкретен казус се консултирайте с квалифициран юрист.</p>
+
+            <p class="blog-callout"><strong>Кратък отговор:</strong> Основата е в членове 5–16 на Регламент (ЕС) 2022/2554 и Делегиран регламент (ЕС) 2024/1774. Финансовият субект трябва да определи управленска отговорност и да поддържа рамка, съобразена с приложимия режим и риска. Рамката не е просто набор от технологии или документ; тя трябва да се прилага, преглежда, тества и подобрява.</p>
+
+            <h2>Кои правила определят DORA ICT risk management?</h2>
+            <p>Дял II на DORA определя принципите и изискванията за управление на ICT риска. Регламентът възлага на управителния орган крайна отговорност за управление и надзор на риска и описва рамка, която трябва да бъде документирана и интегрирана в общата система за управление на риска.</p>
+            <p>Делегиран регламент (ЕС) 2024/1774 уточнява елементи на стандартната рамка и опростената рамка — включително инструменти, методи, процеси и политики. Той е в сила и се прилага от 15 юли 2024 г. Проверявайте консолидираните текстове и актуалните указания преди да използвате конкретен контролен списък.</p>
+            <p>Първо проверете дали конкретното юридическо лице попада в обхвата и кой режим важи за него. Не всеки финансов субект използва опростената рамка; тя се отнася до категориите, определени в член 16 и съответните технически стандарти. Вижте <a href="who-is-covered-by-dora.html">обзора за организациите в обхвата на DORA</a> и получете правна проверка при неясен статут.</p>
+
+            <h2>Отговорност на управителния орган</h2>
+            <p>Управленската отговорност не може да бъде прехвърлена изцяло на IT отдела или на външен доставчик. Управителният орган одобрява и надзирава рамката, определя ясни роли и отговорности, осигурява подходящи ресурси и поддържа знания за разбирането на ICT риска и неговото въздействие върху дейността.</p>
+            <p>Практически това означава управленски решения, които могат да бъдат проследени: одобрени политики и стратегия, определени рискови лимити и ескалации, редовни отчети, решения по съществени рискове и преглед на резултатите от тестове и инциденти. Форматът и честотата трябва да следват действащите изисквания и риска на организацията.</p>
+
+            <h2>Как да структурирате рамката през целия ICT жизнен цикъл</h2>
+            <ol>
+                <li><strong>Определете контекста и допустимия риск.</strong> Свържете ICT риска с бизнес услугите, критичните или важните функции, правните задължения, толеранса към риск и сценарии за прекъсване.</li>
+                <li><strong>Идентифицирайте активите и зависимостите.</strong> Поддържайте точна и актуална информация за ICT системи, инфраструктура, данни, функции, собственици, локации и взаимозависимости, включително външни услуги и подизпълнители според приложимите изисквания.</li>
+                <li><strong>Защитете системите и информацията.</strong> Използвайте документирани правила за управление на достъпа, удостоверяване, промени, конфигурации, уязвимости, защита на данни, мрежова сигурност и физическа среда, съобразени с оценения риск.</li>
+                <li><strong>Откривайте аномалии и слабости.</strong> Определете как се наблюдават системи, логове, събития и сигнали; задайте критерии за тревоги, отговорници и ескалация. Тези процеси следва да се координират с режима за ICT инциденти.</li>
+                <li><strong>Реагирайте и възстановявайте.</strong> Свържете плановете за ICT реакция, непрекъснатост и възстановяване с бизнес приоритети, резервни копия, алтернативни процедури и подходящи тестове.</li>
+                <li><strong>Извличайте поуки и подобрявайте.</strong> Преглеждайте инциденти, тестове, констатации и промени в заплахите; задавайте коригиращи действия, собственици и проверка на приключването им.</li>
+            </ol>
+            <p>Детайлът на контролите зависи от приложимия режим, размера, естеството, мащаба и сложността на дейността и риска. Посочените теми са ориентир за анализ, не универсален списък за сертифициране.</p>
+
+            <h2>Документация и доказателства, които да свържете</h2>
+            <p>Подгответе доказателства, които показват, че рамката работи, а не само че съществува на хартия. Полезна структура за gap analysis включва:</p>
+            <ul>
+                <li>одобрена ICT risk management framework, политика и описание на управленските роли;</li>
+                <li>актуални инвентари, класификации и карти на зависимости между активи, бизнес функции и доставчици;</li>
+                <li>оценки на риска, регистър на решенията, поетите остатъчни рискове и проследими планове за третиране;</li>
+                <li>доказателства за контрол на достъп, промени, конфигурации, уязвимости, наблюдение и защитни операции;</li>
+                <li>планове и резултати от тестове за непрекъснатост, резервиране и възстановяване, включително последващи корекции;</li>
+                <li>отчети към управителния орган, протоколи от прегледи, обучение и действия след инциденти или тестове.</li>
+            </ul>
+            <p>Определете източник, собственик, периодичност и версия за всяко доказателство. Съгласувайте го с точния член от DORA/RTS, обхвата на организацията и процеса, който трябва да докаже.</p>
+
+            <h2>Пропорционалност и опростена рамка</h2>
+            <p>DORA и RTS 2024/1774 предвиждат опростен ICT risk management framework за определени финансови субекти, посочени в член 16. Това е конкретен нормативен режим, а не избор на организацията само защото тя е малка или има ограничен IT екип. Проверете категорията и условията по текста, преди да прилагате опростените изисквания.</p>
+            <p>За останалите субекти се прилага съответната рамка, като принципът на пропорционалност отчита характеристиките и риска, без да премахва задълженията. Ако организацията има множество дружества или дейности, анализирайте приложимостта по юридическо лице и не приемайте, че политика на групово ниво автоматично покрива всеки локален контрол.</p>
+
+            <h2>Практически ред за gap analysis</h2>
+            <ol>
+                <li>Потвърдете правния обхват и приложимата стандартна или опростена рамка.</li>
+                <li>Определете критичните и важни функции и съответните ICT активи, процеси и зависимости.</li>
+                <li>Разбийте членове 5–16 и приложимия RTS на проверими контроли; документирайте основанието за приложимост.</li>
+                <li>Съберете доказателства от бизнеса, ICT, риска, сигурността, непрекъснатостта и доставчиците.</li>
+                <li>Опишете пропуска, риска, временното смекчаване, коригиращото действие, отговорника и срока.</li>
+                <li>Представете съществените решения на управителния орган и повторно тествайте коригираните мерки.</li>
+            </ol>
+
+            <h2>Често задавани въпроси</h2>
+            <h3>Достатъчно ли е да има ICT политика?</h3>
+            <p>Не. Политиката е част от рамката. Необходими са подходящи роли, процеси, контролни мерки, доказателства за изпълнение, преглед и подобрение спрямо приложимите изисквания.</p>
+            <h3>Може ли ръководството да прехвърли отговорността на външен ICT доставчик?</h3>
+            <p>Не. Възлагането на ICT услуга не премахва отговорността на финансовия субект за собственото му управление на ICT риска и регулаторните задължения.</p>
+            <h3>Всеки финансов субект ли прилага опростената рамка по член 16?</h3>
+            <p>Не. Тя важи за конкретните категории субекти, посочени в DORA и съответните технически стандарти. Не извеждайте приложимост само от броя служители или оборота.</p>
+            <h3>Кой RTS уточнява рамката за управление на ICT риска?</h3>
+            <p>Делегиран регламент (ЕС) 2024/1774 допълва DORA за рамката за управление на ICT риска и опростената рамка. Проверете публикувания текст в EUR-Lex за точния приложим набор от изисквания.</p>
+
+            <h2>Свързани ресурси</h2>
+            <ul class="blog-related">
+                <li><a href="dora-penetration-testing.html">DORA penetration testing и TLPT: разлики и изисквания</a></li>
+                <li><a href="dora-third-party-risk.html">DORA third-party risk: управление на ICT доставчици и договори</a></li>
+                <li><a href="dora-incident-management.html">DORA incident management: управление и докладване на ICT инциденти</a></li>
+                <li><a href="dora-requirements.html">DORA изисквания: основни задължения и как да подготвите организацията</a></li>
+                <li><a href="who-is-covered-by-dora.html">Кои организации попадат под DORA?</a></li>
+                <li><a href="what-is-dora.html">Какво е DORA? Регламентът за дигитална оперативна устойчивост</a></li>
+                <li><a href="../compliance/dora/index.html">DORA: оценка и подготовка</a></li>
+                <li><a href="../assessment/nis2-dora/index.html">Предварителна NIS2/DORA самооценка — информационен ориентир, не правно становище</a></li>
+                <li><a href="nis2-risk-assessment.html">NIS2 risk assessment: оценка на киберриска стъпка по стъпка</a></li>
+            </ul>
+
+            <h2>Официални източници</h2>
+            <ul class="blog-source-list">
+                <li><a href="https://eur-lex.europa.eu/eli/reg/2022/2554/oj" target="_blank" rel="noopener noreferrer">EUR-Lex — Регламент (ЕС) 2022/2554 (DORA), дял II и членове 5–16</a></li>
+                <li><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1774" target="_blank" rel="noopener noreferrer">EUR-Lex — Делегиран регламент (ЕС) 2024/1774 за рамката за управление на ICT риска и опростената рамка</a></li>
+                <li><a href="https://www.eba.europa.eu/activities/single-rulebook/regulatory-activities/operational-resilience/regulatory-technical-standards-ict-risk-management-framework-and-simplified-ict-risk-management" target="_blank" rel="noopener noreferrer">EBA — RTS по стандартната и опростената рамка за управление на ICT риска (статус: в сила)</a></li>
+                <li><a href="https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation/digital-operational-resilience-act-dora" target="_blank" rel="noopener noreferrer">ESMA — DORA policy requirements и материали по теми</a></li>
+            </ul>
+
+            <aside class="blog-cta">
+                <h2>Имате нужда от преглед на ICT risk framework?</h2>
+                <p>Започнете с потвърждаване на DORA обхвата, карта на активите и зависимостите и оценка на доказателствата спрямо приложимите членове.</p>
+                <a class="btn btn-primary" href="../compliance/dora/index.html">DORA подготовка</a>
+                <a class="btn btn-secondary" href="../index.html#contact">Заявете консултация</a>
+            </aside>
+        </article>
+    </main>
+        <!-- Footer -->
+
+    <script src="../script.js" defer></script>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="../images/Logos/DefComs-logo.svg" alt="DefComs" class="footer-logo" loading="lazy">
+                    <p>Вашият високотехнологичен партньор в киберсигурността. Предотвратяване, засичане и бърза неутрализация на съвременните заплахи.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Услуги</h3>
+                    <ul>
+                        <li><a href="../services/soc-monitoring/index.html">SOC Мониторинг 24/7</a></li>
+                        <li><a href="../services/noc-services/index.html">NOC Управление</a></li>
+                        <li><a href="../services/corporate-training/index.html">Обучения за фирми</a></li>
+                        <li><a href="../services/penetration-testing/index.html">Penetration Testing</a></li>
+                        <li><a href="../compliance/nis2/index.html">GDPR/NIS2/DORA Съответствие</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Ресурси</h3>
+                    <ul>
+                        <li><a href="../spravochnik.html">Регулаторен Хъб</a></li>
+                        <li><a href="../cybersecurity-os/index.html">Cybersecurity OS</a></li>
+                        <li><a href="../blog/index.html">Статии &amp; Блог</a></li>
+                        <li><a href="../about/index.html">За Нас</a></li>
+                        <li><a href="../bulgaria/index.html">Покритие в България</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Правна рамка</h3>
+                    <ul>
+                        <li><a href="../compliance/nis2/index.html">Регулация NIS2</a></li>
+                        <li><a href="../compliance/gdpr/index.html">Регламент GDPR</a></li>
+                        <li><a href="../compliance/iso-27001/index.html">Стандарт ISO 27001</a></li>
+                        <li><a href="../index.html#contact">Контакти</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DefComs. Всички права запазени.</p>
+                <div class="footer-bottom-links">
+                    <a href="../terms.html">Условия за ползване</a>
+                    <a href="../privacy.html">Защита на данни</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../chat-widget.js"></script>
+</body>
+</html>

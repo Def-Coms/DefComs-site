@@ -1,0 +1,38 @@
+---
+import SEO from '../components/SEO.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const { page, path } = Astro.props;
+const bare = page.layout === 'bare';
+---
+<!DOCTYPE html>
+<html lang="bg">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <SEO page={page} path={path} />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/svg+xml" href="/images/Logos/DefComs-logo.svg" />
+    {page.headExtra && <Fragment set:html={page.headExtra} />}
+  </head>
+  <body class={page.bodyClass} {...page.bodyAttrs}>
+    {bare ? (
+      <slot />
+    ) : (
+      <>
+        <Header current={path} />
+        <slot />
+        <Footer />
+        <script is:inline src="/script.js" defer></script>
+        <script is:inline src="/cookie-consent.js"></script>
+        {page.scripts?.map((src: string) => <script is:inline src={src}></script>)}
+        <script is:inline src="/chat-widget.js"></script>
+        <script is:inline src="/analytics-snippet.js"></script>
+      </>
+    )}
+  </body>
+</html>

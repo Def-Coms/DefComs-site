@@ -1,0 +1,255 @@
+---
+lastmod: 2026-10-09
+title: Какво е EDR? Endpoint Detection and Response | DefComs
+description: "Какво е EDR и как работи: endpoint telemetry, откриване на подозрително поведение, разследване и реакция. Възможности, ограничения и критерии за внедряване."
+ogType: article
+image: https://defcoms.eu/images/Webp/Киберсигурност_4.0__Инструменти_и_стратегии.webp
+imageAlt: Мониторинг и анализ на сигнали от крайни устройства
+ogDescription: Разберете как EDR събира endpoint данни, подпомага разследването и може да задейства response действия според конкретната конфигурация.
+twitterTitle: Какво е EDR? | DefComs
+twitterDescription: "Endpoint telemetry, detection, investigation и response: роля и ограничения на EDR."
+schema:
+  - "@context": https://schema.org
+    "@graph":
+      - "@type": Organization
+        "@id": https://defcoms.eu/#organization
+        name: DefComs
+        url: https://defcoms.eu/
+      - "@type": WebSite
+        "@id": https://defcoms.eu/#website
+        url: https://defcoms.eu/
+        name: DefComs
+        publisher:
+          "@id": https://defcoms.eu/#organization
+        inLanguage: bg
+      - "@type": WebPage
+        "@id": https://defcoms.eu/blog/what-is-edr#webpage
+        url: https://defcoms.eu/blog/what-is-edr
+        name: Какво е EDR? Endpoint Detection and Response
+        inLanguage: bg
+        isPartOf:
+          "@id": https://defcoms.eu/#website
+        breadcrumb:
+          "@id": https://defcoms.eu/blog/what-is-edr#breadcrumb
+        mainEntity:
+          "@id": https://defcoms.eu/blog/what-is-edr#article
+      - "@type": BlogPosting
+        "@id": https://defcoms.eu/blog/what-is-edr#article
+        headline: Какво е EDR? Endpoint Detection and Response
+        description: Обяснение на EDR telemetry, endpoint detection, investigation и response, разграничение от antivirus, SIEM и SOC и практични критерии за покритие.
+        image: https://defcoms.eu/images/Webp/Киберсигурност_4.0__Инструменти_и_стратегии.webp
+        datePublished: 2026-10-09
+        dateModified: 2026-10-09
+        inLanguage: bg
+        mainEntityOfPage:
+          "@id": https://defcoms.eu/blog/what-is-edr#webpage
+        author:
+          "@type": Person
+          "@id": https://defcoms.eu/about/team/author/georgi-todorov
+          name: Георги Тодоров
+          jobTitle: SOC Operations Manager (24/7)
+          url: https://defcoms.eu/about/team/author/georgi-todorov
+        publisher:
+          "@id": https://defcoms.eu/#organization
+        citation:
+          - https://attack.mitre.org/datasources/
+          - https://csrc.nist.gov/pubs/sp/800/83/r1/final
+      - "@type": FAQPage
+        "@id": https://defcoms.eu/blog/what-is-edr#faq
+        mainEntity:
+          - "@type": Question
+            name: EDR заменя ли антивируса?
+            acceptedAnswer:
+              "@type": Answer
+              text: Не автоматично. EDR решенията могат да включват prevention функции, но конкретното покритие зависи от продукта и конфигурацията. Проверете кои контроли са активни и как EDR се допълва с останалата endpoint защита.
+          - "@type": Question
+            name: Може ли EDR да предотврати всяка атака?
+            acceptedAnswer:
+              "@type": Answer
+              text: Не. EDR може да открива и подпомага реакцията при определени endpoint събития, но резултатът зависи от telemetry, agent coverage, настройките и сценария. Това не е гаранция срещу инциденти.
+          - "@type": Question
+            name: На кои устройства се инсталира EDR?
+            acceptedAnswer:
+              "@type": Answer
+              text: Обикновено на поддържани работни станции и сървъри. Поддръжката за операционни системи, cloud workloads, виртуални машини и специализирани устройства зависи от конкретното решение.
+          - "@type": Question
+            name: Нужен ли е SOC, за да използваме EDR?
+            acceptedAnswer:
+              "@type": Answer
+              text: Не е задължително, но сигналите трябва да имат owner и процес за преглед, triage и ескалация. Тези дейности могат да се поемат вътрешно или от външен доставчик според обхвата и договорените роли.
+      - "@type": BreadcrumbList
+        "@id": https://defcoms.eu/blog/what-is-edr#breadcrumb
+        itemListElement:
+          - "@type": ListItem
+            position: 1
+            name: Начало
+            item: https://defcoms.eu/
+          - "@type": ListItem
+            position: 2
+            name: Блог
+            item: https://defcoms.eu/blog
+          - "@type": ListItem
+            position: 3
+            name: Какво е EDR?
+            item: https://defcoms.eu/blog/what-is-edr
+headExtra: |-
+  <style>
+          .blog-article { max-width: 860px; margin: 0 auto; padding: 150px 24px 80px; }
+          .blog-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: 28px; }
+          .blog-breadcrumbs a { color: var(--secondary-cyan); }
+          .blog-kicker { color: var(--secondary-cyan); text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+          .blog-article h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.12; margin: 12px 0 20px; }
+          .blog-deck { color: var(--text-secondary); font-size: 1.2rem; line-height: 1.7; }
+          .blog-meta { color: var(--text-secondary); font-size: var(--font-size-sm); margin: 22px 0; }
+          .blog-hero-image { width: 100%; max-height: 460px; object-fit: cover; border-radius: var(--radius-lg); margin: 16px 0 32px; }
+          .blog-article h2 { margin-top: 42px; }
+          .blog-article p, .blog-article li { color: var(--text-secondary); line-height: 1.8; }
+          .blog-article ul, .blog-article ol { padding-left: 24px; }
+          .blog-callout { border-left: 3px solid var(--secondary-cyan); background: var(--background-card); padding: 18px 22px; border-radius: var(--radius-md); }
+          .blog-table-wrap { overflow-x: auto; margin: 24px 0; }
+          .blog-article table { width: 100%; border-collapse: collapse; min-width: 620px; }
+          .blog-article th, .blog-article td { padding: 14px; border: 1px solid var(--border-color); text-align: left; vertical-align: top; color: var(--text-secondary); line-height: 1.65; }
+          .blog-article th { color: var(--text-primary); background: var(--background-card); }
+          .blog-related, .blog-source-list { display: grid; gap: 12px; margin: 20px 0; }
+          .blog-related a, .blog-source-list a { color: var(--secondary-cyan); }
+          .blog-source-list li { overflow-wrap: anywhere; }
+          .blog-cta { margin-top: 44px; padding: 24px; background: var(--background-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); }
+      </style>
+bodyClass: service-landing
+blog:
+  categories:
+    - Endpoint Security
+  date: 2026-10-09
+  order: 11
+  title: Какво е EDR (Endpoint Detection and Response)?
+  summary: Как endpoint telemetry подпомага detection, разследването и реакцията и какви са ограниченията на EDR.
+  image: /images/PR_image/%D0%9A%D0%B8%D0%B1%D0%B5%D1%80%D1%81%D0%B8%D0%B3%D1%83%D1%80%D0%BD%D0%BE%D1%81%D1%82_4.0__%D0%98%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B8_%D0%B8_%D1%81%D1%82%D1%80%D0%B0%D1%82%D0%B5%D0%B3%D0%B8%D0%B8.webp
+  imageAlt: Мониторинг и анализ на сигнали от крайни устройства
+  imageWidth: 1200
+  imageHeight: 675
+  ariaLabel: "Прочетете: Какво е EDR?"
+  cta: Прочетете ръководството →
+---
+<main class="blog-article">
+        <nav class="blog-breadcrumbs" aria-label="Навигационна пътека">
+            <a href="/">Начало</a><span aria-hidden="true">›</span>
+            <a href="/blog">Блог</a><span aria-hidden="true">›</span>
+            <span aria-current="page">Какво е <a href="/resources/glossary/edr">EDR</a>?</span>
+        </nav>
+        <article>
+            <p class="blog-kicker">Endpoint Security · Detection &amp; Response</p>
+            <h1>Какво е EDR (Endpoint Detection and Response)?</h1>
+            <p class="blog-deck">EDR е категория технологии за откриване и разследване на подозрителна активност на крайни устройства и за подпомагане на реакцията. Решението събира endpoint telemetry, свързва събитията в контекст и дава на отговорните хора възможност да проверят сигнал и, според платформата и настройките, да предприемат действие.</p>
+            <p class="blog-meta">Автор: <a href="/about/team/author/georgi-todorov" style="color: var(--secondary-cyan);">Георги Тодоров</a> · Публикувано: <time datetime="2026-10-09">9 октомври 2026 г.</time> · Обновено: <time datetime="2026-10-09">9 октомври 2026 г.</time></p>
+            <img class="blog-hero-image" src="/images/Webp/%D0%9A%D0%B8%D0%B1%D0%B5%D1%80%D1%81%D0%B8%D0%B3%D1%83%D1%80%D0%BD%D0%BE%D1%81%D1%82_4.0__%D0%98%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B8_%D0%B8_%D1%81%D1%82%D1%80%D0%B0%D1%82%D0%B5%D0%B3%D0%B8%D0%B8.webp" alt="Мониторинг и анализ на сигнали от крайни устройства" width="1200" height="675" fetchpriority="high">
+            <p class="blog-legal-notice" style="border-left:4px solid #f0a500;background:rgba(240,165,0,.08);padding:16px 20px;border-radius:8px;margin:24px 0;font-size:.95rem;line-height:1.6;"><strong>⚠️ Важна бележка:</strong> Тази публикация е с информационна и образователна цел и <strong>не представлява юридическо или правно тълкуване</strong> на приложимото законодателство. Обстоятелствата варират, а нормативните изисквания се променят. При конкретен казус се консултирайте с квалифициран юрист.</p>
+
+            <p class="blog-callout"><strong>Накратко:</strong> EDR добавя видимост върху endpoint активността и процес за detection, investigation и response. Не всички продукти събират еднакви данни или имат еднакви prevention и containment функции. Реалното покритие зависи от устройствата с работещ агент, конфигурацията, наличния telemetry и това кой обработва сигналите.</p>
+
+            <h2>Как работи EDR?</h2>
+            <p>Обичайният модел включва софтуерен sensor или agent на поддържаното устройство и централизирана конзола или услуга за анализ. Агентът наблюдава избрани действия и изпраща събития към платформата. Правила, аналитика или <a href="/resources/glossary/cti">threat intelligence</a> могат да ги оценят и да създадат alert. Анализаторът преглежда контекста и решава дали да ескалира или да приложи разрешена response мярка.</p>
+            <ol>
+                <li><strong>Събиране:</strong> агентът регистрира поддържани endpoint събития според операционната система, продукта и политиката.</li>
+                <li><strong>Оценка:</strong> платформата търси индикатори и поведенчески комбинации, които заслужават проверка.</li>
+                <li><strong>Разследване:</strong> timeline, process tree, user и device контекст помагат да се разбере какво е предшествало alert-а и какво е последвало.</li>
+                <li><strong>Реакция:</strong> отговорният екип може да блокира обект или процес, да ограничи активност или да изолира endpoint, ако функцията е налична и действието е разрешено.</li>
+            </ol>
+            <p>Това не е непременно напълно автоматичен цикъл. Някои решения предлагат само препоръка или alert; други поддържат предварително зададени автоматични действия. Проверете точния feature set и кой има право да задейства response мерките.</p>
+
+            <h2>Какви данни може да наблюдава?</h2>
+            <p>Наборът варира според платформата и операционната система. Често срещаните типове telemetry включват:</p>
+            <div class="blog-table-wrap">
+                <table>
+                    <thead><tr><th>Тип събитие</th><th>Примерен контекст</th><th>Практическа полза</th></tr></thead>
+                    <tbody>
+                        <tr><th>Процеси</th><td>Стартиране на процес, parent-child връзки, команден ред или подпис на изпълним файл.</td><td>Помага да се проследи последователност от действия и връзки между приложения.</td></tr>
+                        <tr><th>Файлове и конфигурация</th><td>Създаване или промяна на файлове, някои системни настройки и опити за промяна на защитни механизми.</td><td>Може да даде контекст за неочаквани промени или поведение, което заслужава triage.</td></tr>
+                        <tr><th>Потребител и устройство</th><td>Идентификатор на endpoint, потребителски контекст и определени authentication или security събития.</td><td>Свързва активността с актив и контекст за разследването, когато тези данни са достъпни.</td></tr>
+                        <tr><th>Мрежова активност</th><td>Избрани връзки, адреси или процеси, свързани с комуникацията.</td><td>Може да помогне за проследяване на подозрителен процес и засегнати системи; не е пълна мрежова видимост.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p><a href="/resources/glossary/mitre-attack">MITRE ATT&amp;CK</a> описва data sources и data components, които защитните екипи могат да използват за откриване на техники. Това е полезен речник за телеметрия и detections, но не е обещание, че конкретен EDR продукт събира всички изброени събития.</p>
+
+            <h2>Какво може да прави EDR и какво зависи от продукта?</h2>
+            <ul>
+                <li>да събира и показва избрани данни за endpoint активност;</li>
+                <li>да създава alerts по конфигурирани правила или аналитични модели;</li>
+                <li>да подпомага investigation чрез история на събития и връзки между тях;</li>
+                <li>да блокира или ограничава определени действия, ако съответната prevention функция е налична и включена;</li>
+                <li>да изолира устройство или да задейства други response действия, когато платформата, правата и политиките го позволяват.</li>
+            </ul>
+            <p>Не приемайте, че всеки EDR автоматично има еднакъв prevention, rollback, forensic retention или изолационен капацитет. Дори налична функция може да изисква отделен лиценз, допълнителна настройка или оперативна проверка.</p>
+
+            <h2>EDR и близките понятия</h2>
+            <div class="blog-table-wrap">
+                <table>
+                    <thead><tr><th>Понятие</th><th>Основна роля</th><th>Разлика спрямо EDR</th></tr></thead>
+                    <tbody>
+                        <tr><th>Antivirus / endpoint prevention</th><td>Предотвратяване или блокиране на познати и определени класове заплахи на устройството.</td><td>Функциите се припокриват; EDR поставя по-голям акцент върху наблюдение, разследване и response контекст. Конкретните възможности се различават.</td></tr>
+                        <tr><th><a href="/resources/glossary/siem">SIEM</a></th><td>Събира и корелира логове от различни системи според източници, правила и обхват.</td><td>EDR се фокусира върху endpoint данни и действия; EDR събитията могат да бъдат един от източниците към SIEM.</td></tr>
+                        <tr><th><a href="/resources/glossary/soc">SOC</a></th><td>Оперативна функция за наблюдение, triage, разследване и ескалация според договорения обхват.</td><td>EDR е технология; SOC екип може да използва EDR, но наличието на EDR само по себе си не означава, че сигналите се обработват.</td></tr>
+                        <tr><th><a href="/resources/glossary/xdr">XDR</a></th><td>Разширено откриване и реакция чрез свързване на сигнали от няколко security домейна според платформата.</td><td>EDR е endpoint фокусът; XDR цели по-широка корелация, но границите и поддържаните източници са vendor-specific.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Как да планирате внедряването?</h2>
+            <ol>
+                <li><strong>Направете inventory:</strong> включете работни станции, сървъри, виртуални машини и други активи в scope; отбележете неподдържаните системи и owner-ите им.</li>
+                <li><strong>Проверете реалното покритие:</strong> сравнете активите с deployment и agent health, проверете updates, exclusions и прекъснати сензори.</li>
+                <li><strong>Определете кой обработва сигналите:</strong> уточнете работно време, severity routing, triage, escalation и кой може да изолира критично устройство.</li>
+                <li><strong>Настройте policy поетапно:</strong> тествайте detection и prevention настройки върху представителна група, преди да ги разширите.</li>
+                <li><strong>Подгответе изключения и recovery:</strong> документирайте причината, owner и срок за преглед; свържете response процеса с incident handling и тествани backup-и.</li>
+                <li><strong>Преглеждайте резултатите:</strong> проследявайте agent health, необработени high-priority alerts, времето до triage и повтарящи се false positives.</li>
+            </ol>
+
+            <h2>Какви са ограниченията?</h2>
+            <ul>
+                <li><strong>Непълно покритие:</strong> device без поддържан и работещ agent е извън наблюдавания обхват на този EDR.</li>
+                <li><strong>Неравномерна telemetry:</strong> операционни системи, настройки, exclusions и retention могат да променят какво може да се разследва.</li>
+                <li><strong>Сигналът изисква отговорник:</strong> alert без triage и ескалация не е завършен response процес.</li>
+                <li><strong>Изолацията има бизнес ефект:</strong> прекъсването на сървър или работна станция може да засегне услуга; автоматичните действия трябва да отчитат риска и ролите.</li>
+                <li><strong>Endpoint видимостта е само един слой:</strong> EDR самостоятелно не покрива всички identity, email, cloud, network и backup рискове.</li>
+                <li><strong>Не е гаранция срещу инцидент:</strong> резултатът зависи от покритие, конфигурация, сценарий и способността за навременна реакция.</li>
+            </ul>
+
+            <h2>Често задавани въпроси</h2>
+            <h3>EDR заменя ли антивируса?</h3>
+            <p>Не автоматично. EDR решенията могат да включват prevention функции, но конкретното покритие зависи от продукта и конфигурацията. Проверете кои контроли са активни и как EDR се допълва с останалата endpoint защита.</p>
+            <h3>Може ли EDR да предотврати всяка атака?</h3>
+            <p>Не. EDR може да открива и подпомага реакцията при определени endpoint събития, но резултатът зависи от telemetry, agent coverage, настройките и сценария. Това не е гаранция срещу инциденти.</p>
+            <h3>На кои устройства се инсталира EDR?</h3>
+            <p>Обикновено на поддържани работни станции и сървъри. Поддръжката за операционни системи, cloud workloads, виртуални машини и специализирани устройства зависи от конкретното решение.</p>
+            <h3>Нужен ли е SOC, за да използваме EDR?</h3>
+            <p>Не е задължително, но сигналите трябва да имат owner и процес за преглед, triage и ескалация. Тези дейности могат да се поемат вътрешно или от външен доставчик според обхвата и договорените роли.</p>
+
+            <h2>Свързани ресурси</h2>
+            <ul class="blog-related">
+                <li><a href="/blog/edr-and-soc">EDR и SOC: как работят заедно и кой за какво отговаря?</a></li>
+                <li><a href="/blog/threat-hunting">Threat hunting: какво е и как се провежда?</a></li>
+                <li><a href="/blog/edr-vs-antivirus">EDR vs Antivirus: разлики и може ли EDR да замени антивируса?</a></li>
+                <li><a href="/blog/edr-vs-xdr">EDR vs XDR: разлики, избор и съвместна употреба</a></li>
+                <li><a href="/blog/what-is-xdr">Какво е XDR? Extended Detection and Response</a></li>
+                <li><a href="/blog/edr-vs-ransomware">EDR срещу ransomware: как помага и къде са границите?</a></li>
+                <li><a href="/blog/how-soc-detects-ransomware">Как SOC открива ransomware? Ранни сигнали и реакция</a></li>
+                <li><a href="/blog/what-is-soc">Какво е SOC? Мониторинг, анализ и реакция</a></li>
+                <li><a href="/blog/soc-vs-siem">SOC vs SIEM: разлики и как работят заедно</a></li>
+                <li><a href="/services/edr-xdr">Endpoint Security и EDR услуги на DefComs</a></li>
+                <li><a href="/services/soc-monitoring">SOC мониторинг 24/7/365</a></li>
+            </ul>
+
+            <h2>Официални източници</h2>
+            <ul class="blog-source-list">
+                <li><a href="https://attack.mitre.org/datasources/" target="_blank" rel="noopener noreferrer">MITRE ATT&amp;CK — Data Sources</a></li>
+                <li><a href="https://csrc.nist.gov/pubs/sp/800/83/r1/final" target="_blank" rel="noopener noreferrer">NIST SP 800-83 Rev. 1 — Guide to Malware Incident Prevention and Handling for Desktops and Laptops</a></li>
+            </ul>
+
+            <aside class="blog-cta">
+                <h2>Проверете обхвата и обработката на EDR сигналите</h2>
+                <p>Съпоставете endpoint inventory, работещите агенти, response ролите и начина за ескалация.</p>
+                <a class="btn btn-primary" href="/services/edr-xdr">Endpoint Security и EDR</a>
+                <a class="btn btn-secondary" href="/#contact">Заявете консултация</a>
+            </aside>
+        </article>
+    </main>

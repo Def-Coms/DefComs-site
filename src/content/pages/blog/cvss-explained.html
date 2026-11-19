@@ -1,0 +1,238 @@
+---
+lastmod: 2026-10-06
+title: "CVSS 4.0: какво означава оценката на уязвимост? | DefComs"
+description: "Обяснение на CVSS 4.0: Base, Threat, Environmental и Supplemental metrics, severity скалата, vector string и разликата между severity и бизнес риск."
+ogType: article
+image: https://defcoms.eu/images/PR_image/Киберсигурност_4.0__Инструменти_и_стратегии.webp
+imageAlt: Оценка и приоритизиране на уязвимости с CVSS
+ogDescription: Как се чете CVSS 4.0 score и vector и защо техническата severity не е равна на бизнес риск.
+twitterTitle: "CVSS 4.0: score, metrics и vector | DefComs"
+twitterDescription: Практическо ръководство за CVSS 4.0 и използването му във vulnerability management.
+schema:
+  - "@context": https://schema.org
+    "@graph":
+      - "@type": Organization
+        "@id": https://defcoms.eu/#organization
+        name: DefComs
+        url: https://defcoms.eu/
+      - "@type": WebSite
+        "@id": https://defcoms.eu/#website
+        url: https://defcoms.eu/
+        name: DefComs
+        publisher:
+          "@id": https://defcoms.eu/#organization
+        inLanguage: bg
+      - "@type": WebPage
+        "@id": https://defcoms.eu/blog/cvss-explained#webpage
+        url: https://defcoms.eu/blog/cvss-explained
+        name: "CVSS 4.0: score, metric groups и приоритизиране"
+        inLanguage: bg
+        isPartOf:
+          "@id": https://defcoms.eu/#website
+        breadcrumb:
+          "@id": https://defcoms.eu/blog/cvss-explained#breadcrumb
+        mainEntity:
+          "@id": https://defcoms.eu/blog/cvss-explained#article
+      - "@type": BlogPosting
+        "@id": https://defcoms.eu/blog/cvss-explained#article
+        headline: "CVSS 4.0: score, metric groups и приоритизиране"
+        description: Обяснение на CVSS 4.0 metric groups, score nomenclature, severity ratings и vector string, с акцент, че CVSS Base е техническа severity, не самостоятелен бизнес риск.
+        image: https://defcoms.eu/images/PR_image/Киберсигурност_4.0__Инструменти_и_стратегии.webp
+        datePublished: 2026-10-06
+        dateModified: 2026-10-06
+        inLanguage: bg
+        mainEntityOfPage:
+          "@id": https://defcoms.eu/blog/cvss-explained#webpage
+        author:
+          "@type": Person
+          "@id": https://defcoms.eu/about/team/author/mikhail-georgiev
+          name: Михаил Георгиев
+          jobTitle: Head of Offensive Security (Pentesting)
+          url: https://defcoms.eu/about/team/author/mikhail-georgiev
+        publisher:
+          "@id": https://defcoms.eu/#organization
+        citation:
+          - https://www.first.org/cvss/v4.0/specification-document
+          - https://www.first.org/cvss/v4.0/user-guide
+          - https://www.first.org/cvss/calculator/4.0
+          - https://csrc.nist.gov/pubs/sp/800/30/r1/final
+      - "@type": BreadcrumbList
+        "@id": https://defcoms.eu/blog/cvss-explained#breadcrumb
+        itemListElement:
+          - "@type": ListItem
+            position: 1
+            name: Начало
+            item: https://defcoms.eu/
+          - "@type": ListItem
+            position: 2
+            name: Блог
+            item: https://defcoms.eu/blog
+          - "@type": ListItem
+            position: 3
+            name: CVSS 4.0
+            item: https://defcoms.eu/blog/cvss-explained
+headExtra: |-
+  <style>
+          .blog-article { max-width: 860px; margin: 0 auto; padding: 150px 24px 80px; }
+          .blog-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: 28px; }
+          .blog-breadcrumbs a { color: var(--secondary-cyan); }
+          .blog-kicker { color: var(--secondary-cyan); text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+          .blog-article h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.12; margin: 12px 0 20px; }
+          .blog-deck { color: var(--text-secondary); font-size: 1.2rem; line-height: 1.7; }
+          .blog-meta { color: var(--text-secondary); font-size: var(--font-size-sm); margin: 22px 0; }
+          .blog-hero-image { width: 100%; max-height: 460px; object-fit: cover; border-radius: var(--radius-lg); margin: 16px 0 32px; }
+          .blog-article h2 { margin-top: 42px; }
+          .blog-article p, .blog-article li { color: var(--text-secondary); line-height: 1.8; }
+          .blog-article ul, .blog-article ol { padding-left: 24px; }
+          .blog-callout { border-left: 3px solid var(--secondary-cyan); background: var(--background-card); padding: 18px 22px; border-radius: var(--radius-md); }
+          .blog-table-wrap { overflow-x: auto; margin: 24px 0; }
+          .blog-article table { width: 100%; border-collapse: collapse; min-width: 620px; }
+          .blog-article th, .blog-article td { padding: 14px; border: 1px solid var(--border-color); text-align: left; vertical-align: top; color: var(--text-secondary); line-height: 1.65; }
+          .blog-article th { color: var(--text-primary); background: var(--background-card); }
+          .blog-related, .blog-source-list { display: grid; gap: 12px; margin: 20px 0; }
+          .blog-related a, .blog-source-list a { color: var(--secondary-cyan); }
+          .blog-source-list li { overflow-wrap: anywhere; }
+          .blog-cta { margin-top: 44px; padding: 24px; background: var(--background-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); }
+      </style>
+bodyClass: service-landing
+blog:
+  categories:
+    - Penetration Testing
+    - Vulnerability Management
+  date: 2026-10-06
+  order: 31
+  title: "CVSS 4.0: какво означава оценката на уязвимост?"
+  summary: Metric groups, severity скала, vector string и разликата между техническа severity и бизнес риск.
+  image: /images/Sentinel/Sentinel_ops_center.webp
+  imageAlt: CVSS 4.0 severity и vulnerability prioritization
+  imageWidth: 1200
+  imageHeight: 675
+  ariaLabel: "Прочетете: CVSS 4.0"
+  cta: Прочетете ръководството →
+---
+<main class="blog-article">
+        <nav class="blog-breadcrumbs" aria-label="Навигационна пътека">
+            <a href="/">Начало</a><span aria-hidden="true">›</span>
+            <a href="/blog">Блог</a><span aria-hidden="true">›</span>
+            <span aria-current="page"><a href="/resources/glossary/cvss">CVSS</a> 4.0</span>
+        </nav>
+        <article>
+            <p class="blog-kicker">Vulnerability Management · CVSS</p>
+            <h1>CVSS 4.0: какво означава оценката на уязвимост?</h1>
+            <p class="blog-deck">CVSS (Common Vulnerability Scoring System) е отворена рамка за описание на характеристиките и техническата severity на уязвимост. Версия 4.0 използва Base, Threat, Environmental и Supplemental metric groups. Числовият резултат е полезен за сравнение и комуникация, но CVSS Base score сам по себе си не е бизнес риск или автоматично решение за реда на remediation.</p>
+            <p class="blog-meta">Автор: <a href="/about/team/author/mikhail-georgiev" style="color: var(--secondary-cyan);">Михаил Георгиев</a> · Публикувано: <time datetime="2026-10-06">6 октомври 2026 г.</time> · Обновено: <time datetime="2026-10-06">6 октомври 2026 г.</time></p>
+            <img class="blog-hero-image" src="/images/PR_image/%D0%9A%D0%B8%D0%B1%D0%B5%D1%80%D1%81%D0%B8%D0%B3%D1%83%D1%80%D0%BD%D0%BE%D1%81%D1%82_4.0__%D0%98%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B8_%D0%B8_%D1%81%D1%82%D1%80%D0%B0%D1%82%D0%B5%D0%B3%D0%B8%D0%B8.webp" alt="Оценка на техническата severity и приоритетите за remediation" width="1200" height="675" fetchpriority="high">
+            <p class="blog-legal-notice" style="border-left:4px solid #f0a500;background:rgba(240,165,0,.08);padding:16px 20px;border-radius:8px;margin:24px 0;font-size:.95rem;line-height:1.6;"><strong>⚠️ Важна бележка:</strong> Тази публикация е с информационна и образователна цел и <strong>не представлява юридическо или правно тълкуване</strong> на приложимото законодателство. Обстоятелствата варират, а нормативните изисквания се променят. При конкретен казус се консултирайте с квалифициран юрист.</p>
+
+            <p class="blog-callout"><strong>Накратко:</strong> CVSS 4.0 score варира от 0.0 до 10.0 и се извежда от metric vector. Base score описва присъщата техническа severity при стандартните допускания; Threat и Environmental metrics могат да я уточнят за текущата заплаха и конкретната среда. Supplemental metrics добавят контекст, но не променят числовия CVSS score. За приоритет на поправка добавете asset criticality, експозиция, реална заплаха, контроли и бизнес въздействие.</p>
+
+            <h2>CVSS 4.0 severity скала</h2>
+            <div class="blog-table-wrap">
+                <table>
+                    <thead><tr><th>Score</th><th>Qualitative rating</th><th>Интерпретация</th></tr></thead>
+                    <tbody>
+                        <tr><th>0.0</th><td>None</td><td>Нулева числова severity според CVSS оценката; преценете дали записът е приложим към засегнатия продукт и версия.</td></tr>
+                        <tr><th>0.1–3.9</th><td>Low</td><td>Нисък диапазон на техническа severity.</td></tr>
+                        <tr><th>4.0–6.9</th><td>Medium</td><td>Среден диапазон на техническа severity.</td></tr>
+                        <tr><th>7.0–8.9</th><td>High</td><td>Висок диапазон на техническа severity.</td></tr>
+                        <tr><th>9.0–10.0</th><td>Critical</td><td>Критичен диапазон на техническа severity.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Тези qualitative ratings са стандартните диапазони в CVSS v4.0. Те описват severity, не вероятността конкретната организация да бъде атакувана и не задават сами по себе си срок за patch.</p>
+
+            <h2>Какви metric groups използва CVSS v4.0?</h2>
+            <div class="blog-table-wrap">
+                <table>
+                    <thead><tr><th>Metric group</th><th>Кой контекст описва?</th><th>Какво включва?</th></tr></thead>
+                    <tbody>
+                        <tr><th>Base</th><td>Присъщи характеристики на уязвимостта, които са постоянни във времето и между среди.</td><td>Exploitability и impact; score се основава на стандартизирания вектор.</td></tr>
+                        <tr><th>Threat</th><td>Променящи се във времето характеристики на заплахата.</td><td>Exploit Maturity (E): налични данни за атаки, PoC и зрелост на експлоатацията.</td></tr>
+                        <tr><th>Environmental</th><td>Условията на конкретната организация и внедряване.</td><td>Security requirements и modified base metrics, например критичността на актива или компенсиращи контроли.</td></tr>
+                        <tr><th>Supplemental</th><td>Допълнителен контекст, който организацията може да използва в собствените си решения.</td><td>Например Safety, Automatable, Recovery, Value Density, Vulnerability Response Effort и Provider Urgency; тези метрики не променят CVSS score.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Какво описват Base metrics?</h2>
+            <p>Base group се състои от exploitability и impact метрики. Не е необходимо да наизустявате всички кодове, но разбирането им помага да проверите защо уязвимостта е получила конкретен score.</p>
+            <ul>
+                <li><strong>Exploitability:</strong> Attack Vector (AV), Attack Complexity (AC), Attack Requirements (AT), Privileges Required (PR) и User Interaction (UI) описват условията и усилията, необходими за успешна експлоатация.</li>
+                <li><strong>Въздействие върху уязвимата система:</strong> Vulnerable System Confidentiality, Integrity и Availability (VC/VI/VA) оценяват последиците за системата, която съдържа слабостта.</li>
+                <li><strong>Въздействие върху последваща система:</strong> Subsequent System Confidentiality, Integrity и Availability (SC/SI/SA) отразяват доказуемо въздействие върху отделен последващ security domain, когато такова има.</li>
+            </ul>
+            <p>CVSS v4.0 замества по-ранното понятие за Scope с отделно описание на Vulnerable System и Subsequent System impact. Не задавайте impact извън разумно обоснованите резултати от уязвимостта.</p>
+
+            <h2>Какво означават CVSS-B, CVSS-BT, CVSS-BE и CVSS-BTE?</h2>
+            <p>Score nomenclature уточнява кои групи са оценени и включени в резултата:</p>
+            <ul>
+                <li><strong>CVSS-B:</strong> Base metrics;</li>
+                <li><strong>CVSS-BT:</strong> Base и Threat;</li>
+                <li><strong>CVSS-BE:</strong> Base и Environmental;</li>
+                <li><strong>CVSS-BTE:</strong> Base, Threat и Environmental.</li>
+            </ul>
+            <p>В CVSS v4.0 липсващите Threat или Environmental стойности се третират като Not Defined (X) в изчислението. Затова при споделяне на score посочвайте nomenclature и vector string, за да е ясно кои оценки са приложени. Supplemental group може да се добави към vector-а за контекст, но не се включва в числовия score.</p>
+
+            <h2>Как да четете vector string?</h2>
+            <p>Vector string е компактният запис на стойностите на метриките, използвани за score. Например следният базов вектор от примерите на FIRST описва мрежово достижима уязвимост без нужни предишни права или user interaction, с високо въздействие върху поверителността на уязвимата система:</p>
+            <p class="blog-callout"><code>CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N</code></p>
+            <p>Префиксът указва версията, а всяка двойка код/стойност задава метрика. FIRST дава този пример с CVSS-B score 8.7. Това е демонстрация на формата и оценката, не универсален резултат за сходни уязвимости. Използвайте FIRST calculator или проверете източника на конкретния <a href="/resources/glossary/cve">CVE</a>, версията на продукта и допусканията за vector-а.</p>
+
+            <h2>Severity не е същото като риск</h2>
+            <p>CVSS Base описва присъщите технически характеристики на уязвимостта и често се предоставя от vendor или оценител. Реалният приоритет за организацията може да е различен според:</p>
+            <ul>
+                <li>дали засегнатата версия и конфигурация действително се използват;</li>
+                <li>дали активът е изложен към интернет или е достъпен само в ограничена зона;</li>
+                <li>наличие на наблюдавана експлоатация, PoC или приложима <a href="/resources/glossary/cti">threat intelligence</a>;</li>
+                <li>критичността на системата, вида данни и зависимостите на бизнес услугите;</li>
+                <li>съществуващи компенсиращи контроли, достъпни mitigation мерки и operational constraints.</li>
+            </ul>
+            <p>Threat и Environmental groups могат да подобрят контекста в рамките на CVSS, но не покриват всички бизнес, правни, финансови и operational фактори. Използвайте score като един от входовете във vulnerability management и risk assessment, а не като самостоятелен заместител на преценката.</p>
+
+            <h2>Практичен процес за приоритизиране</h2>
+            <ol>
+                <li>Потвърдете идентификатора на уязвимостта, засегнатия продукт/версия и приложимостта към реалната среда.</li>
+                <li>Запазете получените score, CVSS версия, nomenclature и vector string; не смесвайте стойности от различни CVSS версии.</li>
+                <li>Проверете threat информацията и актуалния статус на експлоатация от надеждни източници.</li>
+                <li>Добавете asset criticality, exposure, данни, компенсиращи контроли и зависимостите на услугата.</li>
+                <li>Определете remediation/mitigation приоритет, отговорен екип и срок според вътрешната методика и приложимите задължения.</li>
+                <li>Документирайте решенията и повторно оценете при промяна на threat или environmental контекста.</li>
+            </ol>
+
+            <h2>Често задавани въпроси</h2>
+            <h3>CVSS score от 9.0 означава ли, че уязвимостта ще бъде атакувана?</h3>
+            <p>Не. Score описва severity според избраните метрики. Вероятността и актуалната експлоатация се разглеждат отделно чрез Threat data и организацията трябва да отчете своята експозиция и контроли.</p>
+            <h3>Висок CVSS винаги ли трябва да се поправи преди среден?</h3>
+            <p>Не автоматично. CVSS е важен вход, но валидната последователност зависи и от засегнатия актив, външната достижимост, реалната заплаха, бизнес последствията и наличната mitigation.</p>
+            <h3>Може ли да сравнявам score от CVSS 3.1 и 4.0 директно?</h3>
+            <p>Внимателно. Версиите имат различни метрики и методики, затова посочвайте версията, източника и vector-а и избягвайте да третирате числата като напълно взаимозаменяеми.</p>
+            <h3>Трябва ли да публикувам vector string заедно със score?</h3>
+            <p>Да. FIRST изисква при публикуване на CVSS данни да се предоставят и score, и vector string, така че читателят да може да разбере и проследи оценката.</p>
+
+            <h2>Свързани ресурси</h2>
+            <ul class="blog-related">
+                <li><a href="/blog/pentest-report">Pentest report: находки, доказателства и remediation</a></li>
+                <li><a href="/blog/what-is-penetration-testing">Какво е penetration testing? Цел, процес и резултат</a></li>
+                <li><a href="/blog/types-of-penetration-testing">Видове penetration testing</a></li>
+                <li><a href="/blog/network-pentest">Network pentest: какво проверява тестът на мрежата?</a></li>
+                <li><a href="/blog/cloud-pentest">Cloud pentest: scope и тестови области</a></li>
+                <li><a href="/services/penetration-testing">Penetration Testing услуги на DefComs</a></li>
+                <li><a href="/spravochnik">Киберсигурност и стандарти: справочник</a></li>
+            </ul>
+
+            <h2>Официални източници</h2>
+            <ul class="blog-source-list">
+                <li><a href="https://www.first.org/cvss/v4.0/specification-document" target="_blank" rel="noopener noreferrer">FIRST — CVSS v4.0 Specification Document</a></li>
+                <li><a href="https://www.first.org/cvss/v4.0/user-guide" target="_blank" rel="noopener noreferrer">FIRST — CVSS v4.0 User Guide</a></li>
+                <li><a href="https://www.first.org/cvss/calculator/4.0" target="_blank" rel="noopener noreferrer">FIRST — CVSS v4.0 Calculator</a></li>
+                <li><a href="https://csrc.nist.gov/pubs/sp/800/30/r1/final" target="_blank" rel="noopener noreferrer">NIST SP 800-30 Rev. 1 — Guide for Conducting Risk Assessments</a></li>
+            </ul>
+
+            <aside class="blog-cta">
+                <h2>Искате по-добре да приоритизирате находките?</h2>
+                <p>Използвайте CVSS score за техническа severity, след което добавете реалния актив, заплаха, бизнес въздействие и remediation ограничения.</p>
+                <a class="btn btn-primary" href="/services/penetration-testing">Penetration Testing услуги</a>
+                <a class="btn btn-secondary" href="/#contact">Заявете консултация</a>
+            </aside>
+        </article>
+    </main>

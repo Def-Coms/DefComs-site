@@ -1,0 +1,236 @@
+---
+lastmod: 2026-10-09
+title: "EDR vs XDR: разлики, избор и съвместна употреба | DefComs"
+description: "EDR vs XDR: сравнение на обхват, telemetry, корелация, response и оперативни изисквания. Кога е достатъчен EDR, кога XDR добавя стойност и как да пилотирате."
+ogType: article
+image: https://defcoms.eu/images/Webp/Киберсигурност_за_модерния_бизнес.webp
+imageAlt: Сравнение на endpoint защита и интегриран security monitoring
+ogDescription: Сравнете EDR и XDR по реален обхват, източници на сигнали, разследване, response и оперативна готовност.
+twitterTitle: "EDR vs XDR: как да изберете? | DefComs"
+twitterDescription: Практична рамка за избор между EDR, XDR или съвместното им използване.
+schema:
+  - "@context": https://schema.org
+    "@graph":
+      - "@type": Organization
+        "@id": https://defcoms.eu/#organization
+        name: DefComs
+        url: https://defcoms.eu/
+      - "@type": WebSite
+        "@id": https://defcoms.eu/#website
+        url: https://defcoms.eu/
+        name: DefComs
+        publisher:
+          "@id": https://defcoms.eu/#organization
+        inLanguage: bg
+      - "@type": WebPage
+        "@id": https://defcoms.eu/blog/edr-vs-xdr#webpage
+        url: https://defcoms.eu/blog/edr-vs-xdr
+        name: "EDR vs XDR: разлики, избор и съвместна употреба"
+        inLanguage: bg
+        isPartOf:
+          "@id": https://defcoms.eu/#website
+        breadcrumb:
+          "@id": https://defcoms.eu/blog/edr-vs-xdr#breadcrumb
+        mainEntity:
+          "@id": https://defcoms.eu/blog/edr-vs-xdr#article
+      - "@type": BlogPosting
+        "@id": https://defcoms.eu/blog/edr-vs-xdr#article
+        headline: "EDR vs XDR: разлики, избор и съвместна употреба"
+        description: Сравнение на EDR и XDR по telemetry обхват, интеграции, investigation, response, оперативни зависимости и практически критерии за избор.
+        image: https://defcoms.eu/images/Webp/Киберсигурност_за_модерния_бизнес.webp
+        datePublished: 2026-10-09
+        dateModified: 2026-10-09
+        inLanguage: bg
+        mainEntityOfPage:
+          "@id": https://defcoms.eu/blog/edr-vs-xdr#webpage
+        author:
+          "@type": Person
+          "@id": https://defcoms.eu/about/team/author/georgi-todorov
+          name: Георги Тодоров
+          jobTitle: SOC Operations Manager (24/7)
+          url: https://defcoms.eu/about/team/author/georgi-todorov
+        publisher:
+          "@id": https://defcoms.eu/#organization
+        citation:
+          - https://csrc.nist.gov/pubs/sp/800/61/r3/final
+      - "@type": FAQPage
+        "@id": https://defcoms.eu/blog/edr-vs-xdr#faq
+        mainEntity:
+          - "@type": Question
+            name: XDR заменя ли EDR?
+            acceptedAnswer:
+              "@type": Answer
+              text: Не непременно. EDR може да остане endpoint sensor и response capability, докато XDR използва EDR данни заедно с други интегрирани източници. Точната архитектура зависи от продукта.
+          - "@type": Question
+            name: Кога EDR е достатъчен?
+            acceptedAnswer:
+              "@type": Answer
+              text: EDR може да е подходящ, когато приоритетът е endpoint telemetry и организацията има подходящ процес за преглед и реакция. Проверете покритието и другите източници, които остават извън него.
+          - "@type": Question
+            name: Кога XDR има смисъл?
+            acceptedAnswer:
+              "@type": Answer
+              text: XDR може да е полезен, когато има няколко важни security източника и доказана интеграция между тях, която подобрява конкретни разследвания или response процеси.
+          - "@type": Question
+            name: EDR и XDR гарантират ли 24/7 мониторинг?
+            acceptedAnswer:
+              "@type": Answer
+              text: Не. Това са технологични категории. Денонощното наблюдение изисква отделно определени хора, процеси, coverage и service commitments.
+      - "@type": BreadcrumbList
+        "@id": https://defcoms.eu/blog/edr-vs-xdr#breadcrumb
+        itemListElement:
+          - "@type": ListItem
+            position: 1
+            name: Начало
+            item: https://defcoms.eu/
+          - "@type": ListItem
+            position: 2
+            name: Блог
+            item: https://defcoms.eu/blog
+          - "@type": ListItem
+            position: 3
+            name: EDR vs XDR
+            item: https://defcoms.eu/blog/edr-vs-xdr
+headExtra: |-
+  <style>
+          .blog-article { max-width: 860px; margin: 0 auto; padding: 150px 24px 80px; }
+          .blog-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: 28px; }
+          .blog-breadcrumbs a { color: var(--secondary-cyan); }
+          .blog-kicker { color: var(--secondary-cyan); text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+          .blog-article h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.12; margin: 12px 0 20px; }
+          .blog-deck { color: var(--text-secondary); font-size: 1.2rem; line-height: 1.7; }
+          .blog-meta { color: var(--text-secondary); font-size: var(--font-size-sm); margin: 22px 0; }
+          .blog-hero-image { width: 100%; max-height: 460px; object-fit: cover; border-radius: var(--radius-lg); margin: 16px 0 32px; }
+          .blog-article h2 { margin-top: 42px; }
+          .blog-article p, .blog-article li { color: var(--text-secondary); line-height: 1.8; }
+          .blog-article ul, .blog-article ol { padding-left: 24px; }
+          .blog-callout { border-left: 3px solid var(--secondary-cyan); background: var(--background-card); padding: 18px 22px; border-radius: var(--radius-md); }
+          .blog-table-wrap { overflow-x: auto; margin: 24px 0; }
+          .blog-article table { width: 100%; border-collapse: collapse; min-width: 620px; }
+          .blog-article th, .blog-article td { padding: 14px; border: 1px solid var(--border-color); text-align: left; vertical-align: top; color: var(--text-secondary); line-height: 1.65; }
+          .blog-article th { color: var(--text-primary); background: var(--background-card); }
+          .blog-related, .blog-source-list { display: grid; gap: 12px; margin: 20px 0; }
+          .blog-related a, .blog-source-list a { color: var(--secondary-cyan); }
+          .blog-source-list li { overflow-wrap: anywhere; }
+          .blog-cta { margin-top: 44px; padding: 24px; background: var(--background-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); }
+      </style>
+bodyClass: service-landing
+blog:
+  categories:
+    - Endpoint Security
+  date: 2026-10-09
+  order: 9
+  title: "EDR vs XDR: каква е разликата и кое ви е нужно?"
+  summary: Сравнение на telemetry, покритие, корелация, response и оперативните условия за избор.
+  image: /images/PR_image/%D0%9A%D0%B8%D0%B1%D0%B5%D1%80%D1%81%D0%B8%D0%B3%D1%83%D1%80%D0%BD%D0%BE%D1%81%D1%82_%D0%B7%D0%B0_%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81_%D0%BE%D1%86%D0%B5%D0%BB%D1%8F%D0%B2%D0%B0%D0%BD%D0%B5.webp
+  imageAlt: Сравнение на endpoint защита и интегриран security monitoring
+  imageWidth: 1200
+  imageHeight: 675
+  ariaLabel: "Прочетете: EDR vs XDR"
+  cta: Прочетете сравнението →
+---
+<main class="blog-article">
+        <nav class="blog-breadcrumbs" aria-label="Навигационна пътека">
+            <a href="/">Начало</a><span aria-hidden="true">›</span>
+            <a href="/blog">Блог</a><span aria-hidden="true">›</span>
+            <span aria-current="page"><a href="/resources/glossary/edr">EDR</a> vs <a href="/resources/glossary/xdr">XDR</a></span>
+        </nav>
+        <article>
+            <p class="blog-kicker">Endpoint Security · Extended Detection &amp; Response</p>
+            <h1>EDR vs XDR: каква е разликата и кое ви е нужно?</h1>
+            <p class="blog-deck">EDR и XDR не са непременно взаимно изключващи се решения. EDR се фокусира върху данните и реакцията на крайни устройства; XDR цели да свърже endpoint сигналите с други поддържани security източници. Реалният избор зависи от нужните сценарии, наличната telemetry, интеграциите и екипа, който ще обработва сигналите.</p>
+            <p class="blog-meta">Автор: <a href="/about/team/author/georgi-todorov" style="color: var(--secondary-cyan);">Георги Тодоров</a> · Публикувано: <time datetime="2026-10-09">9 октомври 2026 г.</time> · Обновено: <time datetime="2026-10-09">9 октомври 2026 г.</time></p>
+            <img class="blog-hero-image" src="/images/Webp/%D0%9A%D0%B8%D0%B1%D0%B5%D1%80%D1%81%D0%B8%D0%B3%D1%83%D1%80%D0%BD%D0%BE%D1%81%D1%82_%D0%B7%D0%B0_%D0%BC%D0%BE%D0%B4%D0%B5%D1%80%D0%BD%D0%B8%D1%8F_%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81.webp" alt="Сравнение на endpoint защита и интегриран security monitoring" width="1200" height="675" fetchpriority="high">
+            <p class="blog-legal-notice" style="border-left:4px solid #f0a500;background:rgba(240,165,0,.08);padding:16px 20px;border-radius:8px;margin:24px 0;font-size:.95rem;line-height:1.6;"><strong>⚠️ Важна бележка:</strong> Тази публикация е с информационна и образователна цел и <strong>не представлява юридическо или правно тълкуване</strong> на приложимото законодателство. Обстоятелствата варират, а нормативните изисквания се променят. При конкретен казус се консултирайте с квалифициран юрист.</p>
+
+            <p class="blog-callout"><strong>Кратък отговор:</strong> изберете EDR, ако основната нужда е детайлна endpoint видимост и response; разгледайте XDR, ако трябва да свързвате няколко security домейна и конкретните конектори работят за вашите use cases. Не сравнявайте само етикети: проверете източниците, покритието, лицензите, правата и оперативната отговорност.</p>
+
+            <h2>EDR срещу XDR накратко</h2>
+            <div class="blog-table-wrap">
+                <table>
+                    <thead><tr><th>Критерий</th><th>EDR</th><th>XDR</th></tr></thead>
+                    <tbody>
+                        <tr><th>Основен фокус</th><td>Наблюдение, откриване и разследване на активност по крайни устройства и сървъри.</td><td>Корелация на сигнали от endpoint и други поддържани security домейни.</td></tr>
+                        <tr><th>Типични източници</th><td>Endpoint agent/sensor и свързани host данни според платформата.</td><td>Може да включва EDR, identity, email, network, cloud или други интеграции.</td></tr>
+                        <tr><th>Investigation</th><td>Често предоставя process/device timeline и endpoint контекст.</td><td>Цели общ контекст за връзки между източници; качеството зависи от наличните и нормализирани данни.</td></tr>
+                        <tr><th>Response</th><td>Може да поддържа действия върху endpoint като блокиране или изолация, според продукта и настройките.</td><td>Може да координира действия през интегрирани системи, ако конекторите и правата го позволяват.</td></tr>
+                        <tr><th>Основна зависимост</th><td>Пълно agent coverage, състояние на сензорите, конфигурация и процес за triage.</td><td>Качество и обхват на интеграциите, identity/asset mapping, лицензиране и response ownership.</td></tr>
+                        <tr><th>Оперативна роля</th><td>Технология; alert-ите все още трябва да бъдат преглеждани и обработвани.</td><td>Технология/платформа; сама по себе си не означава <a href="/resources/glossary/soc">SOC</a> или 24/7 наблюдение.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Как да мислите за разликата?</h2>
+            <p><strong>EDR започва от endpoint-а.</strong> Той може да покаже какво е стартирано на устройство, кои процеси са свързани и кои действия са породили сигнал. Това е полезно за разследване и response на работни станции и сървъри, при условие че устройствата са поддържани и агентите работят.</p>
+            <p><strong>XDR започва от връзките между сигналите.</strong> То може да съчетае endpoint alert с контекст от identity, email, cloud или network инструменти и да представи свързана история. Но това не е гарантирано от самото име XDR: доставчиците дефинират различен набор интеграции, данни, лицензиране и действия. Терминът не е универсален стандарт с фиксиран обхват.</p>
+            <p>Много XDR предложения включват или използват EDR telemetry. В такава архитектура EDR не изчезва; endpoint sensor може да остане основният източник за устройството, а XDR да добави по-широка корелация и orchestration. При други предложения част от тези функции са пакетирани в обща платформа.</p>
+
+            <h2>Кога EDR може да е достатъчен?</h2>
+            <ul>
+                <li>Основният приоритет е endpoint detection и investigation на управлявани устройства.</li>
+                <li>Има дефиниран начин да се преглеждат и ескалират EDR сигналите.</li>
+                <li>Другите log източници вече се обработват чрез отделни процеси или инструменти.</li>
+                <li>Нужните интеграции на XDR не са налични, не са включени в лиценза или не са доказали стойност за конкретния сценарий.</li>
+                <li>Организацията предпочита първо да подобри asset inventory, agent health, policy и response процедури.</li>
+            </ul>
+            <p>Преди избор проверете кои активи липсват от endpoint coverage и кой носи отговорност за необработените alerts. Надграждането на покритието може да е по-полезно от добавянето на нова конзола.</p>
+
+            <h2>Кога XDR може да добави стойност?</h2>
+            <ul>
+                <li>Има конкретни сценарии, които изискват корелация между endpoint и други източници.</li>
+                <li>Източниците са достъпни и интеграциите предават нужните полета достатъчно навременно.</li>
+                <li>Екипът може да валидира incident grouping и да различава свързани сигнали от случайно съвпадение.</li>
+                <li>Response actions са съвместими с одобрените процеси и могат да бъдат контролирани или отменени.</li>
+                <li>Намаленото ръчно прехвърляне между инструменти оправдава разходите за лиценз, интеграция и управление.</li>
+            </ul>
+            <p>Ако source coverage е непълно или няма човек/екип за triage, XDR може да централизира alerts без да реши основния оперативен проблем. Потвърдете конкретна полза с пилот, преди да разширявате обхвата.</p>
+
+            <h2>Практична рамка за избор</h2>
+            <ol>
+                <li><strong>Опишете два или три сценария:</strong> например подозрителен sign-in, последван от endpoint alert; подозрителен email с последващо изпълнение; или cloud промяна с activity от конкретно устройство.</li>
+                <li><strong>Посочете нужните източници:</strong> уточнете кои endpoint, identity, email, network и cloud събития са необходими, а не само кои конектори са показани в продуктов списък.</li>
+                <li><strong>Проверете coverage и качество:</strong> тествайте device inventory, user/entity matching, полетата в events, ingestion delays, retention и изключенията.</li>
+                <li><strong>Уточнете response authority:</strong> кой може да блокира акаунт, изолира endpoint или променя policy; кои действия изискват човешко одобрение и как се връщат назад.</li>
+                <li><strong>Сравнете общата цена:</strong> включете агенти, ingest/storage, допълнителни лицензи, конектори, услуги за наблюдение, интеграция и поддръжка.</li>
+                <li><strong>Проведете пилот:</strong> измерете дали продуктът свързва очакваните сигнали, намалява ли времето за triage и какви false positives или gaps остават.</li>
+            </ol>
+            <p>Полезни критерии са процент покрити критични активи и източници, състояние на агентите/конекторите, време от сигнал до triage, качество на incident grouping, брой необработени alerts и резултат от response тестовете. Изберете малък набор, който води до действие; броят на събраните събития сам по себе си не е мярка за ефективност.</p>
+
+            <h2>Не забравяйте оперативния модел</h2>
+            <p>EDR и XDR са технологии, не оперативни екипи. Определете кой следи сигналите, в кои часове, как се определя severity, кога се уведомяват собствениците на услугите и кой разрешава containment. При външен SOC или управлявана услуга съгласувайте обхвата на източниците, SLA, ескалациите и точните правомощия.</p>
+            <p>Инцидентният процес трябва да включва подготовка, triage, координация и възстановяване според организацията. NIST SP 800-61 Rev. 3 разглежда incident response в контекста на управлението на cybersecurity risk; документът не дефинира EDR или XDR продуктови категории.</p>
+
+            <h2>Често задавани въпроси</h2>
+            <h3>XDR заменя ли EDR?</h3>
+            <p>Не непременно. EDR може да остане endpoint sensor и response capability, докато XDR използва EDR данни заедно с други интегрирани източници. Точната архитектура зависи от продукта.</p>
+            <h3>Кога EDR е достатъчен?</h3>
+            <p>EDR може да е подходящ, когато приоритетът е endpoint telemetry и организацията има подходящ процес за преглед и реакция. Проверете покритието и другите източници, които остават извън него.</p>
+            <h3>Кога XDR има смисъл?</h3>
+            <p>XDR може да е полезен, когато има няколко важни security източника и доказана интеграция между тях, която подобрява конкретни разследвания или response процеси.</p>
+            <h3>EDR и XDR гарантират ли 24/7 мониторинг?</h3>
+            <p>Не. Това са технологични категории. Денонощното наблюдение изисква отделно определени хора, процеси, coverage и service commitments.</p>
+
+            <h2>Свързани ресурси</h2>
+            <ul class="blog-related">
+                <li><a href="/blog/edr-vs-antivirus">EDR vs Antivirus: разлики и може ли EDR да замени антивируса?</a></li>
+                <li><a href="/blog/what-is-edr">Какво е EDR? Endpoint Detection and Response</a></li>
+                <li><a href="/blog/what-is-xdr">Какво е XDR? Extended Detection and Response</a></li>
+                <li><a href="/blog/what-is-soc">Какво е SOC? Мониторинг, анализ и реакция</a></li>
+                <li><a href="/blog/soc-vs-siem">SOC vs SIEM: разлики и как работят заедно</a></li>
+                <li><a href="/services/edr-xdr">Endpoint Security и EDR услуги на DefComs</a></li>
+                <li><a href="/services/soc-monitoring">SOC мониторинг 24/7/365</a></li>
+            </ul>
+
+            <h2>Официален източник</h2>
+            <ul class="blog-source-list">
+                <li><a href="https://csrc.nist.gov/pubs/sp/800/61/r3/final" target="_blank" rel="noopener noreferrer">NIST SP 800-61 Rev. 3 — incident response в контекста на cybersecurity risk management</a></li>
+            </ul>
+
+            <aside class="blog-cta">
+                <h2>Съпоставете технологиите с вашите response сценарии</h2>
+                <p>Проверете кои сигнали са налични, кой ги обработва и какви действия са разрешени при потвърден инцидент.</p>
+                <a class="btn btn-primary" href="/services/edr-xdr">Endpoint Security и EDR</a>
+                <a class="btn btn-secondary" href="/services/soc-monitoring">SOC мониторинг</a>
+            </aside>
+        </article>
+    </main>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Какво е ransomware? Видове, риск и въздействие | DefComs</title>
+    <meta name="description" content="Какво представлява ransomware, как се различават криптиране и data extortion и какви последици може да има за бизнеса.">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <link rel="canonical" href="https://defcoms.eu/blog/what-is-ransomware.html">
+    <link rel="alternate" hreflang="bg" href="https://defcoms.eu/blog/what-is-ransomware.html">
+    <link rel="alternate" hreflang="x-default" href="https://defcoms.eu/blog/what-is-ransomware.html">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="bg_BG">
+    <meta property="og:site_name" content="DefComs">
+    <meta property="og:url" content="https://defcoms.eu/blog/what-is-ransomware.html">
+    <meta property="og:title" content="Какво е ransomware? Видове, риск и въздействие | DefComs">
+    <meta property="og:description" content="Обяснение на ransomware и data extortion: какво правят, как се различават и защо засягат работата на организациите.">
+    <meta property="og:image" content="https://defcoms.eu/images/PR_image/Киберсигурност_за_бизнес_оцеляване.webp">
+    <meta property="og:image:alt" content="Ransomware риск и въздействие върху бизнеса">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Какво е ransomware? | DefComs">
+    <meta name="twitter:description" content="Кратко ръководство за ransomware, криптиране, data extortion и бизнес въздействие.">
+    <meta name="twitter:image" content="https://defcoms.eu/images/PR_image/Киберсигурност_за_бизнес_оцеляване.webp">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../images/Logos/DefComs-logo.svg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        { "@type": "Organization", "@id": "https://defcoms.eu/#organization", "name": "DefComs", "url": "https://defcoms.eu/" },
+        { "@type": "WebSite", "@id": "https://defcoms.eu/#website", "url": "https://defcoms.eu/", "name": "DefComs", "publisher": { "@id": "https://defcoms.eu/#organization" }, "inLanguage": "bg" },
+        {
+          "@type": "WebPage",
+          "@id": "https://defcoms.eu/blog/what-is-ransomware.html#webpage",
+          "url": "https://defcoms.eu/blog/what-is-ransomware.html",
+          "name": "Какво е ransomware? Криптиране, data extortion и риск",
+          "inLanguage": "bg",
+          "isPartOf": { "@id": "https://defcoms.eu/#website" },
+          "breadcrumb": { "@id": "https://defcoms.eu/blog/what-is-ransomware.html#breadcrumb" },
+          "mainEntity": { "@id": "https://defcoms.eu/blog/what-is-ransomware.html#article" }
+        },
+        {
+          "@type": "BlogPosting",
+          "@id": "https://defcoms.eu/blog/what-is-ransomware.html#article",
+          "headline": "Какво е ransomware? Криптиране, data extortion и риск",
+          "description": "Въведение в ransomware като malware за блокиране/криптиране на данни и съпътстваща или самостоятелна data extortion, с фокус върху бизнес въздействието и ограниченията на общите определения.",
+          "image": "https://defcoms.eu/images/PR_image/Киберсигурност_за_бизнес_оцеляване.webp",
+          "datePublished": "2026-10-06",
+          "dateModified": "2026-10-06",
+          "inLanguage": "bg",
+          "mainEntityOfPage": { "@id": "https://defcoms.eu/blog/what-is-ransomware.html#webpage" },
+          "author": { "@type": "Person", "@id": "https://defcoms.eu/about/team/author/georgi-todorov.html", "name": "Георги Тодоров", "jobTitle": "SOC Operations Manager (24/7)", "url": "https://defcoms.eu/about/team/author/georgi-todorov.html" },
+          "publisher": { "@id": "https://defcoms.eu/#organization" },
+          "citation": [
+            "https://www.cisa.gov/stopransomware/ransomware-guide",
+            "https://www.cisa.gov/stopransomware/ransomware-101",
+            "https://csrc.nist.gov/pubs/ir/8374/r1/final"
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://defcoms.eu/blog/what-is-ransomware.html#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Начало", "item": "https://defcoms.eu/" },
+            { "@type": "ListItem", "position": 2, "name": "Блог", "item": "https://defcoms.eu/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "Какво е ransomware?", "item": "https://defcoms.eu/blog/what-is-ransomware.html" }
+          ]
+        }
+      ]
+    }
+    </script>
+    <style>
+        .blog-article { max-width: 860px; margin: 0 auto; padding: 150px 24px 80px; }
+        .blog-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: 28px; }
+        .blog-breadcrumbs a { color: var(--secondary-cyan); }
+        .blog-kicker { color: var(--secondary-cyan); text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+        .blog-article h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.12; margin: 12px 0 20px; }
+        .blog-deck { color: var(--text-secondary); font-size: 1.2rem; line-height: 1.7; }
+        .blog-meta { color: var(--text-secondary); font-size: var(--font-size-sm); margin: 22px 0; }
+        .blog-hero-image { width: 100%; max-height: 460px; object-fit: cover; border-radius: var(--radius-lg); margin: 16px 0 32px; }
+        .blog-article h2 { margin-top: 42px; }
+        .blog-article p, .blog-article li { color: var(--text-secondary); line-height: 1.8; }
+        .blog-article ul, .blog-article ol { padding-left: 24px; }
+        .blog-callout { border-left: 3px solid var(--secondary-cyan); background: var(--background-card); padding: 18px 22px; border-radius: var(--radius-md); }
+        .blog-table-wrap { overflow-x: auto; margin: 24px 0; }
+        .blog-article table { width: 100%; border-collapse: collapse; min-width: 620px; }
+        .blog-article th, .blog-article td { padding: 14px; border: 1px solid var(--border-color); text-align: left; vertical-align: top; color: var(--text-secondary); line-height: 1.65; }
+        .blog-article th { color: var(--text-primary); background: var(--background-card); }
+        .blog-related, .blog-source-list { display: grid; gap: 12px; margin: 20px 0; }
+        .blog-related a, .blog-source-list a { color: var(--secondary-cyan); }
+        .blog-source-list li { overflow-wrap: anywhere; }
+        .blog-cta { margin-top: 44px; padding: 24px; background: var(--background-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); }
+    </style>
+</head>
+<body class="service-landing">
+
+    <!-- Header -->
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay"></div>
+
+    <header class="header">
+        <nav class="nav" aria-label="Основна навигация">
+            <div class="nav-container">
+                <a href="../index.html" class="logo">
+                    <img src="../images/Logos/DefComs-logo.svg" alt="DefComs">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="../index.html">Начало</a></li>
+                    <li><a href="../about/index.html">За нас</a></li>
+                    <li><a href="../services/index.html">Услуги</a></li>
+                    <li><a href="../compliance/index.html">Регулации</a></li>
+                    <li><a href="../cybersecurity-os/index.html">Cybersecurity OS</a></li>
+                    <li><a href="../wizard.html">NIS2 &amp; DORA Оценка</a></li>
+                    <li><a href="../spravochnik.html">Справочник</a></li>
+                    <li><a href="index.html">Блог</a></li>
+                    <li><a href="../contact/index.html">Контакти</a></li>
+                    <li class="mobile-only"><a href="../contact/index.html" class="mobile-cta">Свържете се с нас</a></li>
+                </ul>
+                <a href="../contact/index.html" class="cta-button">Свържете се с нас</a>
+                <button class="hamburger" type="button" aria-label="Отвори меню" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+
+    <main class="blog-article">
+        <nav class="blog-breadcrumbs" aria-label="Навигационна пътека">
+            <a href="../index.html">Начало</a><span aria-hidden="true">›</span>
+            <a href="index.html">Блог</a><span aria-hidden="true">›</span>
+            <span aria-current="page">Какво е <a href="../resources/glossary/ransomware/">ransomware</a>?</span>
+        </nav>
+        <article>
+            <p class="blog-kicker">Ransomware · Cybersecurity fundamentals</p>
+            <h1>Какво е ransomware? Криптиране, изнудване и риск за бизнеса</h1>
+            <p class="blog-deck">Ransomware е вид зловреден софтуер, който може да криптира файлове или по друг начин да ограничи достъпа до данни и системи, след което извършителите искат плащане. Съвременните инциденти могат също да включват кражба на информация и заплаха за публикуването ѝ; това е свързано изнудване с данни и може да се случи и без криптиране.</p>
+            <p class="blog-meta">Автор: <a href="../about/team/author/georgi-todorov.html" style="color: var(--secondary-cyan);">Георги Тодоров</a> · Публикувано: <time datetime="2026-10-06">6 октомври 2026 г.</time> · Обновено: <time datetime="2026-10-06">6 октомври 2026 г.</time></p>
+            <img class="blog-hero-image" src="../images/PR_image/Киберсигурност_за_бизнес_оцеляване.webp" alt="Ransomware риск и въздействие върху организацията" width="1200" height="675" fetchpriority="high">
+            <p class="blog-legal-notice" style="border-left:4px solid #f0a500;background:rgba(240,165,0,.08);padding:16px 20px;border-radius:8px;margin:24px 0;font-size:.95rem;line-height:1.6;"><strong>⚠️ Важна бележка:</strong> Тази публикация е с информационна и образователна цел и <strong>не представлява юридическо или правно тълкуване</strong> на приложимото законодателство. Обстоятелствата варират, а нормативните изисквания се променят. При конкретен казус се консултирайте с квалифициран юрист.</p>
+
+            <p class="blog-callout"><strong>Накратко:</strong> Ransomware е malware, използван за блокиране или криптиране на данни и последващо искане на откуп. Някои кампании съчетават криптиране с кражба на данни и заплаха за разкриването им („double extortion“); други разчитат основно на data extortion. Инцидентът може да прекъсне работа и да засегне възстановяването, поверителността и доверието, но точният ефект зависи от средата и конкретния случай.</p>
+
+            <h2>Какво се случва при ransomware инцидент?</h2>
+            <p>На практика ransomware рядко е само един файл или едно съобщение на екрана. Инцидентът може да включва неразрешен достъп до акаунти или системи, опит за достигане до допълнителни активи, повлияване на резервните копия, изтичане на данни, криптиране и изнудване. Поредността и комбинацията от действия се различават между инцидентите; криптирането може да бъде крайният видим ефект, а не първото събитие.</p>
+            <p>Изразът „ransomware attack“ често се използва широко за цялата кампания. За анализ и реакция е полезно да се разделят наблюдаваните факти: дали е имало криптиране, какви данни са засегнати, има ли доказателства за достъп/изтичане и кои услуги са прекъснати. Не правете извод за кражба на данни единствено от наличието на ransom note.</p>
+
+            <h2>Криптиране и data extortion не са едно и също</h2>
+            <div class="blog-table-wrap">
+                <table>
+                    <thead><tr><th>Сценарий</th><th>Какво може да се случи?</th><th>Какво трябва да се установи?</th></tr></thead>
+                    <tbody>
+                        <tr><th>Криптиране и искане на откуп</th><td>Файлове или системи стават недостъпни; извършителите искат плащане за предполагаемо възстановяване на достъпа.</td><td>Кои системи и копия са засегнати, дали възстановяване е възможно и какво е прекъснато.</td></tr>
+                        <tr><th>Кражба на данни и изнудване</th><td>Извършителите твърдят, че са придобили информация и заплашват да я разкрият или продадат.</td><td>Какви данни са доказано засегнати, кои системи/акаунти са достъпени и какви уведомителни задължения може да има.</td></tr>
+                        <tr><th>Double extortion</th><td>Комбинират се криптиране и заплаха за разкриване на откраднати данни.</td><td>Отделно се оценяват operational disruption и възможното изтичане; твърденията на извършителя не са самостоятелно доказателство.</td></tr>
+                        <tr><th>Други форми на прекъсване или изнудване</th><td>Натискът може да включва заплаха за прекъсване, DDoS или разкриване на информация без криптиране.</td><td>Кой е засегнат, какво реално е наблюдавано и кои инцидентни процедури трябва да се задействат.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Терминологията може да варира в advisories и разследвания. Разграничавайте технически наблюдения, потвърдени доказателства и непотвърдени твърдения.</p>
+
+            <h2>Как може да започне или да се развие рискът?</h2>
+            <p>Няма един универсален входен път. Публичните advisories описват различни случаи, включително злоупотреба с компрометирани идентичности, изложени или уязвими услуги, <a href="../resources/glossary/phishing/">phishing</a>, precursor malware и third-party достъп. В отделна кампания могат да участват няколко фактора и организациите не трябва да приемат, че всеки ransomware започва с прикачен файл или че използва еднаква последователност.</p>
+            <p>След неразрешен достъп въздействието може да се разшири, ако акаунти имат излишни права, мрежовите зони са слабо разделени, администраторските инструменти не се наблюдават или резервните копия са достижими от същата среда. Тези условия са рискови фактори, не доказателство, че дадена организация ще бъде компрометирана.</p>
+
+            <h2>Какво е бизнес въздействието?</h2>
+            <ul>
+                <li><strong>Наличност:</strong> прекъсване на достъпа до системи и данни, забавено обслужване или нужда от временни процеси.</li>
+                <li><strong>Възстановяване:</strong> разход и време за изолиране, анализ, rebuild, проверка на копията и връщане към работа.</li>
+                <li><strong>Поверителност:</strong> възможно излагане на данни, което трябва да се установи чрез разследване, не само чрез твърдение на извършителя.</li>
+                <li><strong>Операции и вериги на зависимост:</strong> партньори, клиенти, доставчици или критични бизнес функции могат да бъдат засегнати.</li>
+                <li><strong>Управленски и правни решения:</strong> комуникация, запазване на доказателства, приложими уведомявания и действия към засегнати страни може да изискват специализирана преценка.</li>
+            </ul>
+            <p>Не приемайте, че плащане гарантира работещ ключ за дешифриране, предотвратява публикуване на данни или възстановява нормалната работа. Решение при изнудване включва правни, оперативни, застрахователни и правоохранителни фактори и следва да се взема от отговорните лица и професионални съветници.</p>
+
+            <h2>Ransomware готовността е lifecycle, не един продукт</h2>
+            <p>Подходът за намаляване на риска обхваща подготовка, защита, откриване, реакция и възстановяване. CISA #StopRansomware Guide препоръчва, наред с други практики, защитени и offline backups с редовни тестове, incident response и комуникационни планове, управление на идентичности, patching, logging и анализ на потенциално засегнатите системи. Изборът на мерки трябва да съответства на риска, архитектурата и наличните ресурси.</p>
+            <ul>
+                <li>поддържайте инвентар на критичните активи, собственици и зависимости;</li>
+                <li>използвайте MFA и least privilege, особено за администраторски и remote-access акаунти;</li>
+                <li>поддържайте защитени backup копия и упражнявайте възстановяването;</li>
+                <li>ограничавайте ненужните network paths и контролирайте third-party access;</li>
+                <li>събирайте релевантни endpoint, identity, network, cloud и backup logs според политиката;</li>
+                <li>договорете incident contacts, decision authority и комуникационен процес предварително.</li>
+            </ul>
+
+            <h2>Какво да направите при подозрение за инцидент?</h2>
+            <p>Следвайте утвърдения incident response plan и свържете незабавно отговорните security/IT лица. Изолация, запазване на доказателства, изключване на система, уведомяване и възстановяване са контекстни решения: прибързано действие може да загуби важна информация или да засегне услуги. Ако няма план или екип, потърсете квалифицирана incident response помощ и компетентни институции според приложимия контекст.</p>
+            <p>Тази статия е общо образователно съдържание, не оперативен playbook за конкретен инцидент и не правен съвет. Документирайте какво е наблюдавано и кога, пазете наличните записи по вътрешна процедура и не приемайте, че всички файлове или системи са чисти само защото ransom note е изчезнал.</p>
+
+            <h2>Често задавани въпроси</h2>
+            <h3>Ransomware винаги ли криптира данни?</h3>
+            <p>Криптирането е характерна форма, но в някои случаи данните могат да бъдат откраднати и използвани за изнудване без криптиране. Затова трябва да се установи какво действително е станало в конкретния инцидент.</p>
+            <h3>Ransomware същото ли е като data breach?</h3>
+            <p>Не. Ransomware може да причини криптиране или прекъсване без доказателство за изтичане. Data breach се отнася до неразрешен достъп или разкриване на данни; един инцидент може да включва и двете, но оценката е отделна.</p>
+            <h3>Backup гарантира ли възстановяване?</h3>
+            <p>Не сам по себе си. Важни са изолацията и защитата на копията, целостта им, наличността, процедурите и редовната практическа проверка на възстановяването.</p>
+            <h3>Може ли SOC да предотврати всеки ransomware инцидент?</h3>
+            <p>Не. <a href="../resources/glossary/soc/">SOC</a> може да подобри наблюдението, triage и ескалацията в рамките на договореното покритие, но не гарантира откриване или спиране на всеки инцидент.</p>
+
+            <h2>Свързани ресурси</h2>
+            <ul class="blog-related">
+                <li><a href="how-to-protect-business-from-ransomware.html">Как да защитим фирма от ransomware? Практичен план</a></li>
+                <li><a href="how-ransomware-works.html">Как работи ransomware? Етапи на една атака</a></li>
+                <li><a href="how-soc-detects-ransomware.html">Как SOC открива ransomware? Ранни сигнали и реакция</a></li>
+                <li><a href="pentest-report.html">Pentest report: находки, доказателства и remediation</a></li>
+                <li><a href="retesting.html">Pentest retesting: проверка след корекции</a></li>
+                <li><a href="../services/ransomware-protection/index.html">Ransomware защита и превенция на DefComs</a></li>
+                <li><a href="../services/backup-disaster-recovery/index.html">Backup и Disaster Recovery услуги</a></li>
+                <li><a href="../services/incident-response/index.html">Incident Response услуги</a></li>
+                <li><a href="../services/soc-monitoring/index.html">SOC мониторинг 24/7/365</a></li>
+            </ul>
+
+            <h2>Официални източници</h2>
+            <ul class="blog-source-list">
+                <li><a href="https://www.cisa.gov/stopransomware/ransomware-101" target="_blank" rel="noopener noreferrer">CISA — Ransomware 101: определение и основни ресурси</a></li>
+                <li><a href="https://www.cisa.gov/stopransomware/ransomware-guide" target="_blank" rel="noopener noreferrer">CISA, FBI, NSA и MS-ISAC — #StopRansomware Guide: prevention, response и recovery</a></li>
+                <li><a href="https://csrc.nist.gov/pubs/ir/8374/r1/final" target="_blank" rel="noopener noreferrer">NIST IR 8374 Rev. 1 — Ransomware Risk Management: A Cybersecurity Framework Profile</a></li>
+            </ul>
+
+            <aside class="blog-cta">
+                <h2>Подгответе организацията преди инцидент</h2>
+                <p>Свържете превенцията с наблюдението, ясната ескалация и проверено възстановяване на критичните услуги.</p>
+                <a class="btn btn-primary" href="../services/ransomware-protection/index.html">Ransomware защита</a>
+                <a class="btn btn-secondary" href="../services/backup-disaster-recovery/index.html">Backup и Disaster Recovery</a>
+            </aside>
+        </article>
+    </main>
+        <!-- Footer -->
+
+    <script src="../script.js" defer></script>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="../images/Logos/DefComs-logo.svg" alt="DefComs" class="footer-logo" loading="lazy">
+                    <p>Вашият високотехнологичен партньор в киберсигурността. Предотвратяване, засичане и бърза неутрализация на съвременните заплахи.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Услуги</h3>
+                    <ul>
+                        <li><a href="../services/soc-monitoring/index.html">SOC Мониторинг 24/7</a></li>
+                        <li><a href="../services/noc-services/index.html">NOC Управление</a></li>
+                        <li><a href="../services/corporate-training/index.html">Обучения за фирми</a></li>
+                        <li><a href="../services/penetration-testing/index.html">Penetration Testing</a></li>
+                        <li><a href="../compliance/nis2/index.html">GDPR/NIS2/DORA Съответствие</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Ресурси</h3>
+                    <ul>
+                        <li><a href="../spravochnik.html">Регулаторен Хъб</a></li>
+                        <li><a href="../cybersecurity-os/index.html">Cybersecurity OS</a></li>
+                        <li><a href="../blog/index.html">Статии &amp; Блог</a></li>
+                        <li><a href="../about/index.html">За Нас</a></li>
+                        <li><a href="../bulgaria/index.html">Покритие в България</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Правна рамка</h3>
+                    <ul>
+                        <li><a href="../compliance/nis2/index.html">Регулация NIS2</a></li>
+                        <li><a href="../compliance/gdpr/index.html">Регламент GDPR</a></li>
+                        <li><a href="../compliance/iso-27001/index.html">Стандарт ISO 27001</a></li>
+                        <li><a href="../index.html#contact">Контакти</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DefComs. Всички права запазени.</p>
+                <div class="footer-bottom-links">
+                    <a href="../terms.html">Условия за ползване</a>
+                    <a href="../privacy.html">Защита на данни</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../chat-widget.js"></script>
+</body>
+</html>
