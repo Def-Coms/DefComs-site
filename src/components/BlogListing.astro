@@ -1,15 +1,13 @@
 ---
 import { getCollection } from 'astro:content';
+import { formatBg as fmt, isoDate as iso } from '../lib/dates';
+import { blogCard } from '../lib/blog';
 
-const months = ['януари','февруари','март','април','май','юни','юли','август','септември','октомври','ноември','декември'];
-const fmt = (d: Date) => `${d.getUTCDate()} ${months[d.getUTCMonth()]} ${d.getUTCFullYear()} г.`;
-const iso = (d: Date) => d.toISOString().slice(0, 10);
-
-const posts = (await getCollection('pages', ({ id, data }) => !data.draft && !!data.blog))
-  .sort((a, b) => +b.data.blog!.date - +a.data.blog!.date || a.data.blog!.order - b.data.blog!.order);
+const posts = (await getCollection('pages', ({ id, data }) => !data.draft && !!blogCard(data)))
+  .sort((a, b) => +blogCard(b.data).date - +blogCard(a.data).date || blogCard(a.data).order - blogCard(b.data).order);
 ---
 {posts.map(({ id, data }) => {
-  const b = data.blog!;
+  const b = blogCard(data);
   const href = '/' + id;
   return (
     <article class="blog-listing-card">

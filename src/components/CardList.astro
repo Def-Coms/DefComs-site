@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import { cityCardText } from '../lib/city';
+
+const { list, group } = Astro.props;
+const all = await getCollection('pages', ({ data }) => !data.draft && !!data.card);
+const cards = all
+  .flatMap(({ id, data }) => [data.card].flat().map((c) => data.city && c.list === 'cities' ? { ...c, title: data.city.name, text: cityCardText(data.city) } : c).map((card) => ({ id, card })))
+  .filter(({ card }) => card.list === list && (!group || card.group === group))
+  .sort((a, b) => a.card.order - b.card.order);
+const articleStyle = 'border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 24px; background: var(--background-card);';
+---
+{cards.map(({ id, card: c }) => {
+  const href = '/' + id;
+  if (list === 'services') return (
+    <article style={articleStyle}>
+      <h3 set:html={c.title} />
+      <p set:html={c.text} />
+      <a href={href} class="btn btn-primary">{c.cta ?? 'Виж подробности'}</a>
+    </article>
+  );
+  if (list === 'glossary') return (
+    <div class="card term-card">
+      <span class="badge" set:html={c.badge} />
+      <h2 set:html={c.title} />
+      <p set:html={c.text} />
+      <a href={href} class="term-link" set:html={c.cta} />
+    </div>
+  );
+  return <a class="city-card" href={href}><h3 set:html={c.title} /><p set:html={c.text} /></a>;
+})}

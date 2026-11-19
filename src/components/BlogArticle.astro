@@ -1,0 +1,41 @@
+---
+import { formatBg, isoDate } from '../lib/dates';
+
+const { page, title } = Astro.props;
+const a = page.article;
+const crumb = a.breadcrumb ?? title;
+---
+<main class="blog-article">
+  <nav class="blog-breadcrumbs" aria-label="Навигационна пътека">
+    <a href="/">Начало</a><span aria-hidden="true">›</span>
+    <a href="/blog">Блог</a><span aria-hidden="true">›</span>
+    <span aria-current="page">{crumb}</span>
+  </nav>
+  <article>
+    <p class="blog-kicker">{a.kicker ?? a.categories.join(' · ')}</p>
+    <h1>{title}</h1>
+    {a.deck && <p class="blog-deck">{a.deck}</p>}
+    <p class="blog-meta">
+      Автор: <a href={a.author.href} style="color: var(--secondary-cyan);">{a.author.name}</a>
+      · Публикувано: <time datetime={isoDate(a.published)}>{formatBg(a.published)}</time>
+      {a.updated && <> · Обновено: <time datetime={isoDate(a.updated)}>{formatBg(a.updated)}</time></>}
+    </p>
+    <img class="blog-hero-image" src={a.image} alt={a.imageAlt} width="1200" height="675" />
+    <slot />
+    {a.related.length > 0 && (
+      <>
+        <h2>Свързани ресурси</h2>
+        <ul class="blog-related">
+          {a.related.map((r: { label: string; href: string }) => <li><a href={r.href}>{r.label}</a></li>)}
+        </ul>
+      </>
+    )}
+    {a.cta && (
+      <aside class="blog-cta">
+        <h2>{a.cta.title}</h2>
+        <p>{a.cta.text}</p>
+        <a class="btn btn-primary" href={a.cta.href}>{a.cta.label}</a>
+      </aside>
+    )}
+  </article>
+</main>

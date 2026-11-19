@@ -1,0 +1,110 @@
+---
+import { getCollection } from 'astro:content';
+import { inCity, faq } from '../lib/city';
+
+const { city: c, id } = Astro.props;
+const w = inCity(c);
+const all = await getCollection('pages');
+const others = c.others.map((slug) => ({ slug, name: all.find((e) => e.id === `bulgaria/${slug}`)?.data.city?.name ?? slug }));
+const services = [
+  ['soc-monitoring', 'SOC мониторинг 24/7'], ['noc-services', 'NOC управление'], ['penetration-testing', 'Penetration Testing'],
+  ['incident-response', 'Incident Response'], ['edr-xdr', 'EDR/XDR'], ['ransomware-protection', 'Ransomware защита'],
+  ['backup-disaster-recovery', 'Backup и Disaster Recovery'], ['corporate-training', 'Корпоративни обучения'],
+];
+const why = [
+  ['Денонощно наблюдение', 'Анализатори следят логове, крайни устройства и мрежи непрекъснато, включително през почивните дни и празниците.'],
+  ['Регулаторна готовност', `Помагаме на организации ${w} да отговорят на изискванията на NIS2, DORA, GDPR и ISO 27001 с практически стъпки, а не само с документи.`],
+  ['Говорим на български', 'Отчети, обучения и комуникация при инцидент на ваш език, съобразени с българското законодателство и практика.'],
+  ['Прозрачни срокове', 'Договаряме SLA, ескалационни канали и отговорни лица предварително, за да знаете какво се случва при всеки инцидент.'],
+];
+const steps = [
+  ['1. Безплатна първична консултация по имейл', `Разбираме бизнеса ви ${w}, критичните системи и текущите мерки.`],
+  ['2. Оценка на риска и пропуските', 'Преглед на мрежа, облак, устройства и процеси спрямо NIS2/DORA и добри практики.'],
+  ['3. План и внедряване', 'Приоритизирани мерки, включване на SOC/NOC мониторинг, EDR, резервни копия и политики.'],
+  ['4. Непрекъсната работа и обучение', 'Мониторинг 24/7, редовни отчети, тестове за проникване и обучение на служителите.'],
+];
+const img = '/images/PR_image/%D0%9A%D0%B8%D0%B1%D0%B5%D1%80%D1%81%D0%B8%D0%B3%D1%83%D1%80%D0%BD%D0%BE%D1%81%D1%82%D1%82%D0%B0__%D0%A9%D0%B8%D1%82_%D0%BD%D0%B0_%D0%BC%D0%BE%D0%B4%D0%B5%D1%80%D0%BD%D0%B8%D1%8F_%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81.webp';
+---
+<div class="cyber-grid-bg"></div>
+<main>
+  <nav class="breadcrumbs" aria-label="Навигационна пътека"><div class="container"><a href="/">Начало</a> › <a href="/bulgaria">Покритие в България</a> › {c.name}</div></nav>
+  <section class="service-landing-hero">
+    <div class="container service-landing-grid">
+      <div>
+        <p class="service-landing-kicker">{c.region}</p>
+        <h1>Киберсигурност за бизнеса {w}</h1>
+        <p class="service-landing-lead" set:html={c.lead} />
+        <div class="service-landing-actions">
+          <a href="/#contact" class="btn btn-primary">Заявете консултация</a>
+          <a href="/wizard" class="btn btn-secondary">NIS2 и DORA самооценка</a>
+        </div>
+      </div>
+      <div class="service-landing-visual city-visual">
+        <img src={img} alt={`Киберсигурност ${w}`} width="640" height="320" />
+        <div class="city-stats">
+          <div class="city-stat"><strong>24/7/365</strong><span>SOC и NOC мониторинг</span></div>
+          <div class="city-stat"><strong>Дистанционно</strong><span>обслужване</span></div>
+          <div class="city-stat"><strong>NIS2 · DORA</strong><span>готовност за съответствие</span></div>
+          <div class="city-stat"><strong>BG</strong><span>екип и поддръжка на български</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="service-landing-section">
+    <div class="container">
+      <p class="service-landing-kicker">Рискове по сектори</p>
+      <h2>Най-важните киберрискове за фирмите {w}</h2>
+      <p>Типичните сектори {w} са изложени на различни заплахи. Ето на какво обръщаме внимание при оценката:</p>
+      <ul class="service-landing-list">
+        {c.risks.map((r) => <li><strong>{r.title}:</strong> <Fragment set:html={r.text} /></li>)}
+      </ul>
+    </div>
+  </section>
+  <section class="service-landing-section alt">
+    <div class="container">
+      <p class="service-landing-kicker">Услуги</p>
+      <h2>Какво предлагаме на организациите {w}</h2>
+      <ul class="service-landing-list">
+        {services.map(([slug, label]) => <li><a href={`/services/${slug}`}>{label}</a></li>)}
+      </ul>
+      <p>Услугите се доставят дистанционно с еднакво качество във всяко населено място в България, а при нужда организираме работа на място по предварителна заявка. Свържете се на <a href="mailto:info@defcoms.eu">info@defcoms.eu</a> или <a href="tel:+359886088668">+359 886 088 668</a>.</p>
+    </div>
+  </section>
+  <section class="service-landing-section alt">
+    <div class="container">
+      <p class="service-landing-kicker">Защо DefComs</p>
+      <h2>Защо фирмите {w} избират DefComs</h2>
+      <p>Киберсигурността не зависи от адреса на офиса, а от навременното откриване и реакция. Затова работим като дистанционен екип за сигурност на вашата организация {w}, с ясни отговорности, отчети и срокове.</p>
+      <div class="city-cards">
+        {why.map(([h, t]) => <div class="city-card"><h3>{h}</h3><p>{t}</p></div>)}
+      </div>
+    </div>
+  </section>
+  <section class="service-landing-section">
+    <div class="container">
+      <p class="service-landing-kicker">Как работим</p>
+      <h2>От първа среща до работеща защита</h2>
+      <ul class="service-landing-list">
+        {steps.map(([h, t]) => <li><strong>{h}:</strong> {t}</li>)}
+      </ul>
+    </div>
+  </section>
+  <section class="service-landing-section alt city-cta">
+    <div class="container">
+      <h2>Готови ли сте да защитите бизнеса си {w}?</h2>
+      <p>Разкажете ни за вашата организация и ще ви предложим конкретни стъпки и оферта без ангажимент.</p>
+      <div class="service-landing-actions">
+        <a href="/#contact" class="btn btn-primary">Свържете се с нас</a>
+        <a href="/wizard" class="btn btn-secondary">Безплатна NIS2/DORA самооценка</a>
+      </div>
+    </div>
+  </section>
+  <section class="service-landing-section">
+    <div class="container">
+      <p class="service-landing-kicker">Често задавани въпроси</p>
+      <h2>Въпроси за киберсигурността {w}</h2>
+      {faq(c).map(([q, a]) => <details class="faq-item"><summary>{q}</summary><p>{a}</p></details>)}
+      <p style="margin-top:var(--space-xl);">Други градове: {others.map((o) => <><a href={`/bulgaria/${o.slug}`}>{o.name}</a> · </>)}<a href="/bulgaria">Всички градове</a></p>
+    </div>
+  </section>
+</main>
