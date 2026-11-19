@@ -16,7 +16,7 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const data = entry.data.city ? { ...entry.data, ...cityMeta(entry.data.city, entry.id) } : entry.data;
+const data = entry.data.city ? { ...cityMeta(entry.data.city, entry.id), ...entry.data, title: entry.data.title || cityMeta(entry.data.city, entry.id).title, description: entry.data.description || cityMeta(entry.data.city, entry.id).description } : entry.data;
 const path = entry.id === 'index' ? '/' : '/' + entry.id;
 const html = entry.rendered?.html ?? '';
 const parts = html.split(/<!--@listing:([\w:-]+)-->/);

@@ -5,8 +5,9 @@ const cardSchema = z.object({
   list: z.enum(['services', 'glossary', 'cities']),
   group: z.string().optional(),
   order: z.number().default(0),
-  title: z.string(),
-  text: z.string(),
+  // Optional for city pages: derived from `city`
+  title: z.string().optional(),
+  text: z.string().optional(),
   badge: z.string().optional(),
   cta: z.string().optional(),
 });
