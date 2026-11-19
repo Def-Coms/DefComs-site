@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Page from '../layouts/Page.astro';
+import BlogListing from '../components/BlogListing.astro';
 
 export async function getStaticPaths() {
   const pages = await getCollection('pages', ({ data }) => !data.draft);
@@ -12,7 +13,10 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const path = entry.id === 'index' ? '/' : '/' + entry.id;
+const [before, after] = (entry.rendered?.html ?? '').split('<!--@listing-->');
 ---
 <Page page={entry.data} path={path}>
-  <Fragment set:html={entry.rendered?.html} />
+  <Fragment set:html={before} />
+  {entry.data.listing === 'blog' && <BlogListing />}
+  {after !== undefined && <Fragment set:html={after} />}
 </Page>
