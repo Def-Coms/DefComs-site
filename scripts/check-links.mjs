@@ -27,5 +27,8 @@ for (const f of walk(DIST).filter((f) => f.endsWith('.html'))) {
     if (!exists(p)) bad.set(`${path.relative(DIST, f)} -> ${v}`, 1);
   });
 }
-console.log({ html, dotHtml, broken: bad.size });
-[...bad.keys()].slice(0, 25).forEach((k) => console.log(k));
+// chat-widget.html is a legacy file, not a site page (see PLAN.md)
+const broken = [...bad.keys()].filter((k) => !k.startsWith('chat-widget.html'));
+console.log({ html, dotHtml, broken: broken.length });
+broken.slice(0, 25).forEach((k) => console.log(k));
+if (dotHtml || broken.length) process.exit(1);
