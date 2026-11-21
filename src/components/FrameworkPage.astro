@@ -1,0 +1,4 @@
+---
+const { framework: f } = Astro.props;
+---
+<main><section class="page-hero"><div class="page-hero-inner"><nav aria-label="Навигационна пътека"><a href="/">Начало</a> › <span>Регулации</span> › <span aria-current="page" set:html={f.name} /></nav><h1 set:html={f.h1} /><p set:html={f.lead} /><a href={f.cta.href} class="cta-button" set:html={f.cta.text} /></div></section><section class="grid-section"><div class="section-title text-center"><h2 set:html={f.heading} /><p class="section-subtitle" set:html={f.subtitle} /></div><div class="cards-grid">{f.cards.map((c) => <div class="feature-card"><h3 set:html={c.title} /><p set:html={c.text} /></div>)}</div></section></main>

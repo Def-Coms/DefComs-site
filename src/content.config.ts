@@ -83,6 +83,19 @@ const pages = defineCollection({
         ),
       })
       .optional(),
+    // Compliance framework page: hero, cards, CSS and JSON-LD are generated from this record
+    framework: z
+      .object({
+        name: z.string(),
+        h1: z.string(),
+        lead: z.string(),
+        cta: z.object({ text: z.string(), href: z.string() }),
+        heading: z.string(),
+        subtitle: z.string(),
+        cardMin: z.number().optional(),
+        cards: z.array(z.object({ title: z.string(), text: z.string() })),
+      })
+      .optional(),
     // Card(s) shown on generated indexes (services, glossary, cities); an array when a page is listed in several
     card: z
       .union([cardSchema, z.array(cardSchema)])

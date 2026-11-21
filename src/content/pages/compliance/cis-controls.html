@@ -3,99 +3,26 @@ lastmod: 2026-10-10
 title: CIS Controls v8 Приоритетни Контроли | DefComs Compliance
 description: Внедряване на 18-те приоритетни киберконтрола по CIS Controls v8. Оценка на риска, защита на активи, мрежова сигурност и непрекъснат мониторинг от DefComs.
 robots: index, follow
-schema:
-  - "@context": https://schema.org
-    "@graph":
-      - "@type": WebPage
-        "@id": https://defcoms.eu/compliance/cis-controls#webpage
-        url: https://defcoms.eu/compliance/cis-controls
-        name: CIS Controls v8 Приоритетни Контроли | DefComs Compliance
-        description: Внедряване на 18-те приоритетни киберконтрола по CIS Controls v8. Оценка на риска, защита на активи, мрежова сигурност и непрекъснат мониторинг от DefComs.
-        inLanguage: bg-BG
-        isPartOf:
-          "@id": https://defcoms.eu/#website
-        publisher:
-          "@id": https://defcoms.eu/#organization
-        about:
-          "@id": https://defcoms.eu/#organization
-      - "@type": BreadcrumbList
-        itemListElement:
-          - "@type": ListItem
-            position: 1
-            name: DefComs
-            item: https://defcoms.eu/
-          - "@type": ListItem
-            position: 2
-            name: CIS Controls v8 Приоритетни Контроли
-            item: https://defcoms.eu/compliance/cis-controls
-headExtra: |-
-  <style>
-          .page-hero {
-              padding: 160px 24px 80px;
-              background: radial-gradient(circle at 50% 20%, rgba(0, 240, 255, 0.12) 0%, transparent 60%),
-                          radial-gradient(circle at 80% 80%, rgba(0, 102, 255, 0.1) 0%, transparent 50%),
-                          var(--background-dark);
-              text-align: center;
-          }
-          .page-hero-inner { max-width: 900px; margin: 0 auto; }
-          .page-hero h1 { font-size: clamp(2.3rem, 4.5vw, 3.6rem); margin-bottom: 20px; line-height: 1.15; }
-          .page-hero p { font-size: 1.18rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 30px; }
-          .grid-section { padding: 80px 24px; max-width: 1200px; margin: 0 auto; }
-          .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-          .feature-card {
-              background: var(--background-card);
-              border: 1px solid var(--border-color);
-              border-radius: var(--radius-lg);
-              padding: 32px;
-              transition: transform 0.3s ease, border-color 0.3s ease;
-          }
-          .feature-card:hover { transform: translateY(-5px); border-color: var(--primary-cyan); }
-          .feature-card h3 { font-size: 1.3rem; color: var(--text-primary); margin-bottom: 14px; }
-          .feature-card p { color: var(--text-secondary); line-height: 1.65; font-size: 0.98rem; }
-      </style>
-bodyClass: service-landing
+framework:
+  name: CIS Controls v8
+  h1: CIS Controls v8 — Практически Защитни Контроли
+  lead: Центърът за интернет сигурност (CIS) дефинира 18 приоритетни контрола за практически доказана защита срещу над 85% от най-честите кибератаки.
+  cta:
+    text: Заявете CIS Controls Оценка
+    href: /#contact
+  heading: Приоритетни Защитни Групи (Implementation Groups)
+  subtitle: Поетапно внедряване на критичните хигиенни контроли според размера на организацията.
+  cards:
+    - title: 1. Инвентаризация на Активи и Софтуер
+      text: Пълна видимост върху всички устройства, сървъри, приложения и облачни ресурси в организацията.
+    - title: 2. Защита на Данните и Криптиране
+      text: Класификация, криптиране при пренос и съхранение, и предотвратяване на изтичане на информация (DLP).
+    - title: 3. Контрол на Достъпа и Управление на Правата
+      text: Прилагане на принципа за най-малки привилегии (Least Privilege), MFA и контрол над администраторските акаунти.
+    - title: 4. Управление на Уязвимости и Пачове
+      text: Непрекъснато сканиране и своевременно инсталиране на актуализации на сигурността за операционните системи.
+    - title: 5. Мониторинг и Одит на Логове (24/7 SOC)
+      text: Централизирано събиране и анализ на събития за сигурност чрез нашия SOC екип и Sentinel OS.
+    - title: 6. Защита на Мрежата и Реакция при Инциденти
+      text: Сегментация на мрежата, EDR защита за крайните точки и тестван план за бърза реакция при инцидент.
 ---
-<main>
-        <section class="page-hero">
-            <div class="page-hero-inner">
-                <nav aria-label="Навигационна пътека"><a href="/">Начало</a> › <span>Регулации</span> › <span aria-current="page">CIS Controls v8</span></nav>
-                <h1>CIS Controls v8 — Практически Защитни Контроли</h1>
-                <p>Центърът за интернет сигурност (CIS) дефинира 18 приоритетни контрола за практически доказана защита срещу над 85% от най-честите кибератаки.</p>
-                <a href="/#contact" class="cta-button">Заявете CIS Controls Оценка</a>
-            </div>
-        </section>
-
-        <section class="grid-section">
-            <div class="section-title text-center">
-                <h2>Приоритетни Защитни Групи (Implementation Groups)</h2>
-                <p class="section-subtitle">Поетапно внедряване на критичните хигиенни контроли според размера на организацията.</p>
-            </div>
-
-            <div class="cards-grid">
-                <div class="feature-card">
-                    <h3>1. Инвентаризация на Активи и Софтуер</h3>
-                    <p>Пълна видимост върху всички устройства, сървъри, приложения и облачни ресурси в организацията.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>2. Защита на Данните и Криптиране</h3>
-                    <p>Класификация, криптиране при пренос и съхранение, и предотвратяване на изтичане на информация (DLP).</p>
-                </div>
-                <div class="feature-card">
-                    <h3>3. Контрол на Достъпа и Управление на Правата</h3>
-                    <p>Прилагане на принципа за най-малки привилегии (Least Privilege), MFA и контрол над администраторските акаунти.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>4. Управление на Уязвимости и Пачове</h3>
-                    <p>Непрекъснато сканиране и своевременно инсталиране на актуализации на сигурността за операционните системи.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>5. Мониторинг и Одит на Логове (24/7 SOC)</h3>
-                    <p>Централизирано събиране и анализ на събития за сигурност чрез нашия SOC екип и Sentinel OS.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>6. Защита на Мрежата и Реакция при Инциденти</h3>
-                    <p>Сегментация на мрежата, EDR защита за крайните точки и тестван план за бърза реакция при инцидент.</p>
-                </div>
-            </div>
-        </section>
-    </main>
