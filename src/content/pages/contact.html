@@ -31,12 +31,12 @@ schema:
           "@id": https://defcoms.eu/#organization
 bodyClass: service-landing
 ---
-<main class="container" style="max-width: 1000px; margin: 150px auto 60px; padding: 0 24px;">
+<main class="container section">
         <h1>Контакти</h1>
         <p>Свържете се с екипа на DefComs за консултация по киберсигурност, SOC мониторинг, NIS2, DORA и penetration testing.</p>
 
-        <section style="margin-top: 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px;">
-            <div style="border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 32px; background: var(--background-card);">
+        <section class="grid grid-2">
+            <div class="card">
                 <h2>Как да ни достигнете</h2>
                 <div class="contact-info">
                     <div class="contact-item">
@@ -63,7 +63,7 @@ bodyClass: service-landing
                 </div>
             </div>
 
-            <div style="border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 32px; background: var(--background-card);">
+            <div class="card">
                 <h2>Оформете заявка</h2>
                 <form action="/send_form.php" method="POST" style="display: flex; flex-direction: column; gap: 16px;">
                     <label>
@@ -121,7 +121,7 @@ bodyClass: service-landing
             </div>
         </section>
 
-        <section style="margin-top: 64px; border-top: 1px solid var(--border-color); padding-top: 32px;">
+        <section>
             <h2>Често задавани въпроси</h2>
             <details style="margin-bottom: 12px; border: 1px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden;">
                 <summary style="padding: 16px; font-weight: 600; cursor: pointer;">Как да се свържа с вас?</summary>
