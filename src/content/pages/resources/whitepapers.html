@@ -42,7 +42,7 @@ headExtra: |-
           .page-hero p { font-size: 1.18rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 30px; }
           .grid-section { padding: 80px 24px; max-width: 1200px; margin: 0 auto; }
           .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 40px; }
-          .whitepaper-card {
+          .resource-card {
               background: var(--background-card);
               border: 1px solid var(--border-color);
               border-radius: var(--radius-lg);
@@ -50,9 +50,9 @@ headExtra: |-
               display: flex; flex-direction: column;
               transition: transform 0.3s ease, border-color 0.3s ease;
           }
-          .whitepaper-card:hover { transform: translateY(-5px); border-color: var(--primary-cyan); }
-          .whitepaper-card h3 { font-size: 1.35rem; color: var(--text-primary); margin-bottom: 14px; }
-          .whitepaper-card p { color: var(--text-secondary); line-height: 1.65; font-size: 0.98rem; margin-bottom: 20px; flex: 1; }
+          .resource-card:hover { transform: translateY(-5px); border-color: var(--primary-cyan); }
+          .resource-card h3 { font-size: 1.35rem; color: var(--text-primary); margin-bottom: 14px; }
+          .resource-card p { color: var(--text-secondary); line-height: 1.65; font-size: 0.98rem; margin-bottom: 20px; flex: 1; }
       </style>
 bodyClass: service-landing
 ---
@@ -66,17 +66,6 @@ bodyClass: service-landing
         </section>
 
         <section class="grid-section">
-            <div class="cards-grid">
-                <div class="whitepaper-card">
-                    <h3>Внедряване на Zero Trust в Български Предприятия</h3>
-                    <p>Практическо ръководство за преход от периметрова защита към архитекура Zero Trust според NIST SP 800-207.</p>
-                    <a href="/blog/zero-trust-architecture" class="btn btn-secondary">Прочетете анализа →</a>
-                </div>
-                <div class="whitepaper-card">
-                    <h3>DORA и Устойчивост на ИКТ Доставчиците</h3>
-                    <p>Подробен одит на изискванията за управление на трети страни и тестове за проникване (TLPT) за финансовия сектор.</p>
-                    <a href="/blog/dora-penetration-testing" class="btn btn-secondary">Прочетете анализа →</a>
-                </div>
-            </div>
+            <!--@resources:whitepapers-->
         </section>
     </main>

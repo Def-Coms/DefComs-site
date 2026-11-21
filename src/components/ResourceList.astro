@@ -1,0 +1,19 @@
+---
+import { resources } from '../data/resources';
+
+interface Props {
+  list: string;
+}
+
+const { list } = Astro.props;
+const resourceList = resources[list];
+---
+<div class="resource-grid">
+  {resourceList.cards.map((card) => (
+    <div class="resource-card">
+      <h3 set:html={card.title} />
+      <p set:html={card.description} />
+      <a href={card.href} class="btn btn-secondary" set:html={card.buttonText} />
+    </div>
+  ))}
+</div>

@@ -1,0 +1,20 @@
+---
+import { checklists } from '../data/checklists';
+---
+<div class="grid grid-2">
+  {checklists.map((checklist) => (
+    <div class="card">
+      <span class="badge" set:html={checklist.badge} />
+      <h2 set:html={checklist.title} />
+      <p set:html={checklist.intro} />
+      <ul class="checklist-items">
+        {checklist.items.map((item) => (
+          <li>✓ {item}</li>
+        ))}
+      </ul>
+      <div style="margin-top: 1.5rem;">
+        <a href={checklist.ctaHref} class="btn btn-primary" set:html={checklist.ctaText} />
+      </div>
+    </div>
+  ))}
+</div>

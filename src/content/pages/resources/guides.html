@@ -31,6 +31,14 @@ schema:
             name: Ръководства и Насоки за Киберсигурност
             item: https://defcoms.eu/resources/guides
 bodyClass: service-landing
+headExtra: |-
+  <style>
+          .resource-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+          .resource-card { background: var(--background-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 32px; display: flex; flex-direction: column; transition: transform 0.3s ease, border-color 0.3s ease; }
+          .resource-card:hover { transform: translateY(-5px); border-color: var(--secondary-cyan); }
+          .resource-card h3 { font-size: 1.35rem; color: var(--text-primary); margin-bottom: 14px; }
+          .resource-card p { color: var(--text-secondary); line-height: 1.65; font-size: 0.98rem; margin-bottom: 20px; flex: 1; }
+  </style>
 ---
 <main class="container section">
         <section class="hero-section">
@@ -42,22 +50,6 @@ bodyClass: service-landing
         </section>
 
         <section class="section">
-            <div class="grid grid-2">
-                <div class="card">
-                    <h3>Ръководство за NIS2 Подготовка</h3>
-                    <p>Стъпка-по-стъпка план за техническа и организационна готовност по Член 21 от директивата NIS2.</p>
-                    <a href="/blog/nis2-requirements" class="btn btn-secondary">Прочетете ръководството →</a>
-                </div>
-                <div class="card">
-                    <h3>Как Работи SOC Мониторингът?</h3>
-                    <p>От прихващане на сигнали и триаж до координирана реакция при инцидент с EDR и SIEM.</p>
-                    <a href="/blog/how-soc-monitoring-works" class="btn btn-secondary">Прочетете ръководството →</a>
-                </div>
-                <div class="card">
-                    <h3>Внедряване на Zero Trust Архитектура</h3>
-                    <p>Поетапен план за интеграция на Zero Trust принципи според NIST SP 800-207 в корпоративна среда.</p>
-                    <a href="/blog/zero-trust-implementation" class="btn btn-secondary">Прочетете ръководството →</a>
-                </div>
-            </div>
+            <!--@resources:guides-->
         </section>
     </main>

@@ -14,6 +14,9 @@ import AuthorPage from '../components/AuthorPage.astro';
 import { authorSchema } from '../lib/author';
 import CardList from '../components/CardList.astro';
 import BlogListing from '../components/BlogListing.astro';
+import CertificateGrid from '../components/CertificateGrid.astro';
+import WizardPage from '../components/WizardPage.astro';
+import ResourceList from '../components/ResourceList.astro';
 
 export async function getStaticPaths() {
   const pages = await getCollection('pages', ({ data }) => !data.draft);
@@ -46,11 +49,29 @@ if (entry.data.framework) {
 const path = entry.id === 'index' ? '/' : '/' + entry.id;
 const html = entry.rendered?.html ?? '';
 const parts = html.split(/<!--@listing:([\w:-]+)-->/);
-// parts alternates: html, marker, html, marker, ...
 const [before, after] = html.split('<!--@listing-->');
+const certParts = html.split('<!--@certificates-->');
+const wizardParts = html.split('<!--@wizard-->');
+const resourcesParts = html.split(/<!--@resources:([\w:-]+)-->/);
+
+const wizardProps = (id: string) => {
+  if (id === 'assessment/nis2-dora') {
+    return { action: '/assessment/nis2-dora/send_form.php', showDisclaimer: true, assessmentHref: '/wizard', wizardHref: '/assessment/nis2-dora' };
+  }
+  return { action: '/send_form.php', showDisclaimer: false, assessmentHref: '/assessment/nis2-dora', wizardHref: '/wizard' };
+};
 ---
 <Page page={data} path={path}>
-  {entry.data.framework ? <FrameworkPage framework={entry.data.framework} /> : entry.data.service ? <ServicePage service={entry.data.service} /> : entry.data.term ? <GlossaryTerm term={entry.data.term} /> : entry.data.author ? <AuthorPage author={entry.data.author} /> : entry.data.city ? <CityPage city={entry.data.city} id={entry.id} /> : parts.length > 1 ? parts.map((part, i) => i % 2 === 0
+  {entry.data.framework ? <FrameworkPage framework={entry.data.framework} /> : entry.data.service ? <ServicePage service={entry.data.service} /> : entry.data.term ? <GlossaryTerm term={entry.data.term} /> : entry.data.author ? <AuthorPage author={entry.data.author} />   : entry.data.city ? <CityPage city={entry.data.city} id={entry.id} /> : certParts.length > 1 ? certParts.map((part, i) => i % 2 === 0
+    ? <Fragment set:html={part} />
+    : <CertificateGrid />
+  ) : wizardParts.length > 1 ? wizardParts.map((part, i) => i % 2 === 0
+    ? <Fragment set:html={part} />
+    : <WizardPage {...wizardProps(entry.id)} />
+  ) : resourcesParts.length > 1 ? resourcesParts.map((part, i) => i % 2 === 0
+    ? <Fragment set:html={part} />
+    : <ResourceList list={part} />
+  ) : parts.length > 1 ? parts.map((part, i) => i % 2 === 0
     ? <Fragment set:html={part} />
     : <CardList list={part.split(':')[0]} group={part.split(':')[1]} />
   ) : entry.data.article ? (
