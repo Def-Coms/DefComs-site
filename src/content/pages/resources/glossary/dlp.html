@@ -8,81 +8,36 @@ robots: index, follow, max-image-preview:large, max-snippet:-1, max-video-previe
 ogType: article
 image: https://defcoms.eu/images/Logos/DefComs-logo.svg
 ogTitle: DLP — Речник по киберсигурност | DefComs
-schema:
-  - "@context": https://schema.org
-    "@type": DefinedTerm
-    name: DLP (Data Loss Prevention)
-    description: DLP е набор контроли, които откриват и спират неоторизирано движение на чувствителни данни — в покой, в движение и в употреба.
-    inLanguage: bg
-    url: https://defcoms.eu/resources/glossary/dlp
-    isPartOf:
-      "@type": DefinedTermSet
-      name: Речник по киберсигурност
-      url: https://defcoms.eu/resources/glossary
-  - "@context": https://schema.org
-    "@type": BreadcrumbList
-    itemListElement:
-      - "@type": ListItem
-        position: 1
-        name: Начало
-        item: https://defcoms.eu/
-      - "@type": ListItem
-        position: 2
-        name: Речник
-        item: https://defcoms.eu/resources/glossary
-      - "@type": ListItem
-        position: 3
-        name: DLP
-        item: https://defcoms.eu/resources/glossary/dlp
 card:
   list: glossary
   order: 25
-  badge: Данни
   title: DLP (Data Loss Prevention)
   text: <strong>Дефиниция:</strong> Набор контроли, които откриват и спират неоторизирано движение на чувствителни данни — в покой, в движение и в употреба.
   cta: Пълна дефиниция за DLP →
+term:
+  name: DLP (Data Loss Prevention)
+  short: DLP
+  badge: Данни
+  subtitle: "DLP: пази чувствителните данни да не напуснат организацията по грешка или злоумишлено."
+  definition: DLP (Data Loss Prevention) е набор от технологии и политики, които идентифицират чувствителни данни и предотвратяват тяхното неоторизирано разкриване или екфилтрация — като наблюдават данните в покой (в хранилища), в движение (мрежа, имейл) и в употреба (крайни точки).
+  importance: Изтичането на клиентски данни, интелектуална собственост или регулаторно защитена информация е скъпо и създава правни и репутационни рискове. DLP добавя контрола, който спира или маркира изтичането, преди то да стане инцидент.
+  how: Данните се класифицират по правила, подписи или машинно обучение; DLP контролите наблюдават каналите (имейл, уеб, USB, облак, печат) и при нарушаване на политиката блокират, криптират или предупреждават.
+  example: Опит за изпращане на имейл с номер на кредитна карта към външен адрес се спира от DLP за имейл, а събитието се записва за преглед.
+  risks:
+    - Добрата ефективност зависи от точна класификация; суровите правила дават фалшиви блокирания или пропуски.
+    - Ако каналите не са покрити, данните изтичат по неосигурения път.
+  practices:
+    - Започнете с ясно дефинирани данни и политики за най-чувствителното.
+    - "Настройте режимите: предупреждение за обучение, блокиране за реален риск."
+    - Комбинирайте DLP за крайни точки, мрежа и облак (CASB) за пълно покритие.
+  related:
+    - text: Zero Trust услуги
+      href: /services/zero-trust
+    - text: Защита от ransomware
+      href: /services/ransomware-protection
+  sources:
+    - text: CISA — агенция по киберсигурност и инфраструктура
+      href: https://www.cisa.gov/
+      external: true
+  updated: 21.10.2026
 ---
-<main>
-        <section class="hero-section">
-            <div class="container hero-container">
-                <p class="breadcrumb-nav"><a href="/">Начало</a> / <a href="/resources/glossary">Речник</a> / DLP</p>
-                <span class="badge">Данни</span>
-                <h1>DLP (Data Loss Prevention)</h1>
-                <p class="hero-subtitle">DLP: пази чувствителните данни да не напуснат организацията по грешка или злоумишлено.</p>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <article class="card term-card">
-                    <h2>Дефиниция</h2>
-                    <p>DLP (Data Loss Prevention) е набор от технологии и политики, които идентифицират чувствителни данни и предотвратяват тяхното неоторизирано разкриване или екфилтрация — като наблюдават данните в покой (в хранилища), в движение (мрежа, имейл) и в употреба (крайни точки).</p>
-                    <h2>Защо е важно</h2>
-                    <p>Изтичането на клиентски данни, интелектуална собственост или регулаторно защитена информация е скъпо и създава правни и репутационни рискове. DLP добавя контрола, който спира или маркира изтичането, преди то да стане инцидент.</p>
-                    <h2>Как работи</h2>
-                    <p>Данните се класифицират по правила, подписи или машинно обучение; DLP контролите наблюдават каналите (имейл, уеб, USB, облак, печат) и при нарушаване на политиката блокират, криптират или предупреждават.</p>
-                    <h2>Пример</h2>
-                    <p>Опит за изпращане на имейл с номер на кредитна карта към външен адрес се спира от DLP за имейл, а събитието се записва за преглед.</p>
-                    <h2>Рискове</h2>
-                    <ul><li>Добрата ефективност зависи от точна класификация; суровите правила дават фалшиви блокирания или пропуски.</li>
-<li>Ако каналите не са покрити, данните изтичат по неосигурения път.</li></ul>
-                    <h2>Добри практики</h2>
-                    <ul><li>Започнете с ясно дефинирани данни и политики за най-чувствителното.</li>
-<li>Настройте режимите: предупреждение за обучение, блокиране за реален риск.</li>
-<li>Комбинирайте DLP за крайни точки, мрежа и облак (CASB) за пълно покритие.</li></ul>
-                    <h2>Свързани ресурси</h2>
-                    <ul><li><a href="/services/zero-trust">Zero Trust услуги</a></li>
-<li><a href="/services/ransomware-protection">Защита от ransomware</a></li></ul>
-                    <h2>Официални източници</h2>
-                    <ul><li><a href="https://www.cisa.gov/" rel="noopener" target="_blank">CISA — агенция по киберсигурност и инфраструктура</a></li></ul>
-                </article>
-
-                <div class="hero-actions">
-                    <a href="/contact" class="btn btn-primary">Безплатна консултация по имейл</a>
-                    <a href="/resources/glossary" class="btn btn-secondary">Към целия речник</a>
-                </div>
-
-                <p><em>Публикуван и последно актуализиран: 21.10.2026. Материалът е с образователна цел и не представлява правен или технически съвет за конкретния ви случай.</em></p>
-            </div>
-        </section>
-    </main>

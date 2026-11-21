@@ -8,81 +8,36 @@ robots: index, follow, max-image-preview:large, max-snippet:-1, max-video-previe
 ogType: article
 image: https://defcoms.eu/images/Logos/DefComs-logo.svg
 ogTitle: IOA — Речник по киберсигурност | DefComs
-schema:
-  - "@context": https://schema.org
-    "@type": DefinedTerm
-    name: IOA (Indicator of Attack)
-    description: IOA е модел на поведение, насочено към цел, който показва атака в ход — по-устойчив от единичен IOC.
-    inLanguage: bg
-    url: https://defcoms.eu/resources/glossary/ioa
-    isPartOf:
-      "@type": DefinedTermSet
-      name: Речник по киберсигурност
-      url: https://defcoms.eu/resources/glossary
-  - "@context": https://schema.org
-    "@type": BreadcrumbList
-    itemListElement:
-      - "@type": ListItem
-        position: 1
-        name: Начало
-        item: https://defcoms.eu/
-      - "@type": ListItem
-        position: 2
-        name: Речник
-        item: https://defcoms.eu/resources/glossary
-      - "@type": ListItem
-        position: 3
-        name: IOA
-        item: https://defcoms.eu/resources/glossary/ioa
 card:
   list: glossary
   order: 18
-  badge: Данни
   title: IOA (Indicator of Attack)
   text: <strong>Дефиниция:</strong> Модел на поведение, насочено към цел, който показва атака в ход — по-устойчив от единичен IOC.
   cta: Пълна дефиниция за IOA →
+term:
+  name: IOA (Indicator of Attack)
+  short: IOA
+  badge: Данни
+  subtitle: "Индикатор за атака: гледате поведението и намерението, не само статичната следа."
+  definition: IOA (Indicator of Attack) е описание на поредица от действия или поведения (например злоупотреба с законен инструмент за отдалечено изпълнение след фишинг), които показват, че е в ход насочена атака — независимо от конкретните IOC като адреси и хешове.
+  importance: IOA са по-устойчиви от IOC, защото нападателите сменят индикаторите, но техниките остават сходни. Поведенческият фокус позволява откриване и на нови, непознати атаки, чиито IOC все още не са известни.
+  how: IOA се дефинират чрез съчетание от събития в контекст (кой какво прави, в каква последователност) и се вграждат в правилата за откриване на EDR/SIEM или в лова на заплахи.
+  example: Правилото „процес от браузъра стартира PowerShell, който декодира и изпълнява код в паметта“ хваща атаката по поведение, дори хешовете и адресите да са нови.
+  risks:
+    - Прекалено широките IOA дават фалшиви тревоги и натоварват екипа.
+    - Изискват качествена телеметрия и поддръжка, за да останат точни.
+  practices:
+    - Базирайте IOA на техники от MITRE ATT&amp;CK и на реалното поведение у вас.
+    - Тествайте и настройвайте правилата постепенно, за да сведете шума до минимум.
+    - Комбинирайте IOA с IOC и CTI за пълна картина.
+  related:
+    - text: Threat hunting
+      href: /blog/threat-hunting
+    - text: Защита на крайни точки (EDR/XDR)
+      href: /services/edr-xdr
+  sources:
+    - text: MITRE ATT&amp;CK
+      href: https://attack.mitre.org/
+      external: true
+  updated: 21.10.2026
 ---
-<main>
-        <section class="hero-section">
-            <div class="container hero-container">
-                <p class="breadcrumb-nav"><a href="/">Начало</a> / <a href="/resources/glossary">Речник</a> / IOA</p>
-                <span class="badge">Данни</span>
-                <h1>IOA (Indicator of Attack)</h1>
-                <p class="hero-subtitle">Индикатор за атака: гледате поведението и намерението, не само статичната следа.</p>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <article class="card term-card">
-                    <h2>Дефиниция</h2>
-                    <p>IOA (Indicator of Attack) е описание на поредица от действия или поведения (например злоупотреба с законен инструмент за отдалечено изпълнение след фишинг), които показват, че е в ход насочена атака — независимо от конкретните IOC като адреси и хешове.</p>
-                    <h2>Защо е важно</h2>
-                    <p>IOA са по-устойчиви от IOC, защото нападателите сменят индикаторите, но техниките остават сходни. Поведенческият фокус позволява откриване и на нови, непознати атаки, чиито IOC все още не са известни.</p>
-                    <h2>Как работи</h2>
-                    <p>IOA се дефинират чрез съчетание от събития в контекст (кой какво прави, в каква последователност) и се вграждат в правилата за откриване на EDR/SIEM или в лова на заплахи.</p>
-                    <h2>Пример</h2>
-                    <p>Правилото „процес от браузъра стартира PowerShell, който декодира и изпълнява код в паметта“ хваща атаката по поведение, дори хешовете и адресите да са нови.</p>
-                    <h2>Рискове</h2>
-                    <ul><li>Прекалено широките IOA дават фалшиви тревоги и натоварват екипа.</li>
-<li>Изискват качествена телеметрия и поддръжка, за да останат точни.</li></ul>
-                    <h2>Добри практики</h2>
-                    <ul><li>Базирайте IOA на техники от MITRE ATT&amp;CK и на реалното поведение у вас.</li>
-<li>Тествайте и настройвайте правилата постепенно, за да сведете шума до минимум.</li>
-<li>Комбинирайте IOA с IOC и CTI за пълна картина.</li></ul>
-                    <h2>Свързани ресурси</h2>
-                    <ul><li><a href="/blog/threat-hunting">Threat hunting</a></li>
-<li><a href="/services/edr-xdr">Защита на крайни точки (EDR/XDR)</a></li></ul>
-                    <h2>Официални източници</h2>
-                    <ul><li><a href="https://attack.mitre.org/" rel="noopener" target="_blank">MITRE ATT&amp;CK</a></li></ul>
-                </article>
-
-                <div class="hero-actions">
-                    <a href="/contact" class="btn btn-primary">Безплатна консултация по имейл</a>
-                    <a href="/resources/glossary" class="btn btn-secondary">Към целия речник</a>
-                </div>
-
-                <p><em>Публикуван и последно актуализиран: 21.10.2026. Материалът е с образователна цел и не представлява правен или технически съвет за конкретния ви случай.</em></p>
-            </div>
-        </section>
-    </main>

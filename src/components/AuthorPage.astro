@@ -1,0 +1,54 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import CertificateGrid from './CertificateGrid.astro';
+
+interface Props {
+  author: NonNullable<CollectionEntry<'pages'>['data']['author']>;
+}
+
+const { author } = Astro.props;
+const full = author.variant === 'full';
+---
+<main>
+  <section class="service-landing-hero">
+    <div class="container service-landing-grid" style={full ? 'grid-template-columns: 1fr;' : undefined}>
+      <div>
+        <p class="service-landing-kicker">Автор</p>
+        <h1>{author.name}</h1>
+        <p class="service-landing-lead" set:html={author.lead} />
+      </div>
+      {!full && <div class="service-landing-visual">
+        <img src={new URL(author.image).pathname} alt={author.name} width="320" height="320" style="border-radius: 50%; border: 3px solid var(--primary-cyan);" />
+      </div>}
+    </div>
+  </section>
+  <section class="service-landing-section">
+    <div class="container">
+      <h2>За автора</h2>
+      <p set:html={author.bio} />
+      <p set:html={author.expertiseIntro} />
+      <ul>{author.expertise.map((item) => <li set:html={item} />)}</ul>
+    </div>
+  </section>
+  {full && <section class="service-landing-section">
+    <div class="container">
+      <h2>Сертификати</h2>
+      <p>Притежавани професионални сертификати от OPSWAT:</p>
+      <CertificateGrid />
+    </div>
+  </section>}
+  <section class="service-landing-section">
+    <div class="container">
+      <h2>Статии от автора</h2>
+      <div class="articles-grid">
+        {author.articles.map((article) => <article class:list={['article-card', { show: full }]}>
+          <div class="article-content">
+            <span class="article-category" set:html={article.category} />
+            <h3 set:html={article.title} />
+            <a href={article.href} class="read-more">Прочети статията →</a>
+          </div>
+        </article>)}
+      </div>
+    </div>
+  </section>
+</main>

@@ -3,11 +3,15 @@ import { getCollection } from 'astro:content';
 import Page from '../layouts/Page.astro';
 import BlogArticle from '../components/BlogArticle.astro';
 import ServicePage from '../components/ServicePage.astro';
-import { serviceMeta } from '../lib/service';
+import { faqSchema, serviceMeta } from '../lib/service';
 import FrameworkPage from '../components/FrameworkPage.astro';
 import { frameworkMeta } from '../lib/framework';
 import CityPage from '../components/CityPage.astro';
 import { cityMeta } from '../lib/city';
+import GlossaryTerm from '../components/GlossaryTerm.astro';
+import { termMeta } from '../lib/glossary';
+import AuthorPage from '../components/AuthorPage.astro';
+import { authorSchema } from '../lib/author';
 import CardList from '../components/CardList.astro';
 import BlogListing from '../components/BlogListing.astro';
 
@@ -20,7 +24,25 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const data = entry.data.framework ? { ...frameworkMeta(entry.data.framework, entry.id, entry.data.title, entry.data.description), ...entry.data } : entry.data.service ? { ...serviceMeta(entry.data.service, entry.id, entry.data.title), ...entry.data } : entry.data.city ? { ...cityMeta(entry.data.city, entry.id), ...entry.data, title: entry.data.title || cityMeta(entry.data.city, entry.id).title, description: entry.data.description || cityMeta(entry.data.city, entry.id).description } : entry.data;
+let data = entry.data;
+if (entry.data.framework) {
+  data = { ...frameworkMeta(entry.data.framework, entry.id, entry.data.title, entry.data.description), ...entry.data };
+} else if (entry.data.service) {
+  if (entry.data.service.layout === 'soc') {
+    if (!entry.data.schema) throw new Error(`Missing schema for ${entry.id}`);
+    const faq = entry.data.service.sections.filter((section) => section.type === 'faq').flatMap((section) => section.items);
+    data = { ...entry.data, schema: [...entry.data.schema, ...(faq.length ? [{ '@context': 'https://schema.org', ...faqSchema(faq) }] : [])] };
+  } else {
+    data = { ...serviceMeta(entry.data.service, entry.id, entry.data.title), ...entry.data };
+  }
+} else if (entry.data.term) {
+  data = { ...termMeta(entry.data.term, entry.id, entry.data.description), ...entry.data };
+} else if (entry.data.author) {
+  data = { ...entry.data, schema: [authorSchema(entry.data.author)] };
+} else if (entry.data.city) {
+  const generated = cityMeta(entry.data.city, entry.id);
+  data = { ...generated, ...entry.data, title: entry.data.title || generated.title, description: entry.data.description || generated.description };
+}
 const path = entry.id === 'index' ? '/' : '/' + entry.id;
 const html = entry.rendered?.html ?? '';
 const parts = html.split(/<!--@listing:([\w:-]+)-->/);
@@ -28,7 +50,7 @@ const parts = html.split(/<!--@listing:([\w:-]+)-->/);
 const [before, after] = html.split('<!--@listing-->');
 ---
 <Page page={data} path={path}>
-  {entry.data.framework ? <FrameworkPage framework={entry.data.framework} /> : entry.data.service ? <ServicePage service={entry.data.service} /> : entry.data.city ? <CityPage city={entry.data.city} id={entry.id} /> : parts.length > 1 ? parts.map((part, i) => i % 2 === 0
+  {entry.data.framework ? <FrameworkPage framework={entry.data.framework} /> : entry.data.service ? <ServicePage service={entry.data.service} /> : entry.data.term ? <GlossaryTerm term={entry.data.term} /> : entry.data.author ? <AuthorPage author={entry.data.author} /> : entry.data.city ? <CityPage city={entry.data.city} id={entry.id} /> : parts.length > 1 ? parts.map((part, i) => i % 2 === 0
     ? <Fragment set:html={part} />
     : <CardList list={part.split(':')[0]} group={part.split(':')[1]} />
   ) : entry.data.article ? (

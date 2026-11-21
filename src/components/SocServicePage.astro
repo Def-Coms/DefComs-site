@@ -1,0 +1,45 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+type SocService = Extract<NonNullable<CollectionEntry<'pages'>['data']['service']>, { layout: 'soc' }>;
+interface Props {
+  service: SocService;
+}
+
+const { service: s } = Astro.props;
+---
+<main class="soc-page">
+  <nav class="soc-breadcrumbs" aria-label="Навигационна пътека">
+    <a href="/">Начало</a><span aria-hidden="true">›</span>
+    <a href={s.breadcrumbServicesHref}>Услуги</a><span aria-hidden="true">›</span>
+    <span aria-current="page" set:html={s.breadcrumbName} />
+  </nav>
+  <header>
+    <p class="soc-kicker" set:html={s.category} />
+    <h1 set:html={s.name} />
+    <p class="soc-lead" set:html={s.lead} />
+    <div class="soc-actions">
+      {s.actions.map((action, i) => <a href={action.href} class={i === 0 ? 'btn btn-primary' : 'btn btn-secondary'} set:html={action.text} />)}
+    </div>
+    <aside class="soc-note" set:html={s.note} />
+  </header>
+  {s.sections.map((section) => (
+    <section class={section.type === 'cta' ? 'soc-cta' : undefined}>
+      <p class="soc-kicker" set:html={section.kicker} />
+      <h2 set:html={section.title} />
+      {section.type === 'cards' && <>
+        {section.intro && <p set:html={section.intro} />}
+        <div class="soc-grid">
+          {section.cards.map((card) => <article class="soc-card"><h3 set:html={card.title} /><p set:html={card.text} /></article>)}
+        </div>
+      </>}
+      {section.type === 'steps' && <ol>{section.items.map((item) => <li set:html={item} />)}</ol>}
+      {section.type === 'links' && <ul class="soc-links">{section.items.map((item) => <li><a href={item.href} set:html={item.text} /></li>)}</ul>}
+      {section.type === 'faq' && section.items.map((item) => <details><summary set:html={item.q} /><p set:html={item.a} /></details>)}
+      {section.type === 'cta' && <>
+        <p set:html={section.text} />
+        <div class="soc-actions">{section.actions.map((action, i) => <a href={action.href} class={i === 0 ? 'btn btn-primary' : 'btn btn-secondary'} set:html={action.text} />)}</div>
+      </>}
+    </section>
+  ))}
+</main>

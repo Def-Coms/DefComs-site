@@ -30,6 +30,13 @@ export interface Service {
 const plain = (s: string) =>
   s.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'");
 
+export function faqSchema(items: { q: string; a: string }[]) {
+  return {
+    '@type': 'FAQPage',
+    mainEntity: items.map((i) => ({ '@type': 'Question', name: plain(i.q), acceptedAnswer: { '@type': 'Answer', text: plain(i.a) } })),
+  };
+}
+
 // JSON-LD (Service, WebPage, BreadcrumbList, FAQPage) derived from the service record
 export function serviceMeta(s: Service, id: string, title: string) {
   const url = `https://defcoms.eu/${id}`;
@@ -46,7 +53,7 @@ export function serviceMeta(s: Service, id: string, title: string) {
       { '@type': 'ListItem', position: 3, name, item: url },
     ] },
   ];
-  if (faq.length) graph.push({ '@type': 'FAQPage', mainEntity: faq.map((i) => ({ '@type': 'Question', name: plain(i.q), acceptedAnswer: { '@type': 'Answer', text: plain(i.a) } })) });
+  if (faq.length) graph.push(faqSchema(faq));
   return {
     schema: [{ '@context': 'https://schema.org', '@graph': graph }],
     ...(s.image.width ? { headExtra: `<link rel="preload" as="image" href="${s.image.src}" fetchpriority="high">` } : {}),

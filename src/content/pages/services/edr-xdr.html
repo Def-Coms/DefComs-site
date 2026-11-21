@@ -10,47 +10,6 @@ ogDescription: Защита и мониторинг на крайни устро
 twitterDescription: EDR защита за крайни устройства, сървъри и работни станции.
 meta:
   theme-color: "#050811"
-schema:
-  - "@context": https://schema.org
-    "@graph":
-      - "@type": Service
-        name: EDR/XDR защита за крайни устройства
-        provider:
-          "@id": https://defcoms.eu/#organization
-          "@type": Organization
-          name: DefComs
-          url: https://defcoms.eu/
-        serviceType: Endpoint Detection and Response
-        description: EDR/XDR telemetry, детекция, изолация и координирана реакция за крайни устройства и сървъри.
-        areaServed:
-          "@type": Country
-          name: Bulgaria
-      - "@type": WebPage
-        name: EDR/XDR защита за крайни устройства
-        url: https://defcoms.eu/services/edr-xdr
-        inLanguage: bg
-      - "@type": BreadcrumbList
-        itemListElement:
-          - "@type": ListItem
-            position: 1
-            name: Начало
-            item: https://defcoms.eu/
-          - "@type": ListItem
-            position: 2
-            name: EDR/XDR
-            item: https://defcoms.eu/services/edr-xdr
-      - "@type": FAQPage
-        mainEntity:
-          - "@type": Question
-            name: Какво защитава EDR?
-            acceptedAnswer:
-              "@type": Answer
-              text: EDR защитава лаптопи, работни станции и сървъри чрез поведенческа детекция, наблюдение и изолация на подозрителни процеси.
-          - "@type": Question
-            name: Може ли EDR да се интегрира със SOC?
-            acceptedAnswer:
-              "@type": Answer
-              text: Да. EDR сигналите могат да се интегрират със SOC мониторинга за централизирана реакция и анализ.
 bodyClass: service-landing
 card:
   list: services
@@ -60,6 +19,8 @@ card:
   text: Защита и мониторинг на крайни устройства с детекция на заплахи и бърза реакция.
   cta: Виж подробности
 service:
+  short: EDR/XDR
+  schemaName: EDR/XDR защита за крайни устройства
   name: EDR/XDR защита за крайни устройства
   category: Endpoint Detection and Response
   lead: Защитете крайните устройства и сървърите с EDR/XDR telemetry, поведенческа детекция, контролирана изолация и координирана реакция.
@@ -71,7 +32,8 @@ service:
   image:
     src: /images/Webp/SIEM_Alert.webp
     alt: EDR/XDR защита за крайни устройства
-  breadcrumb: false
+    width: 1900
+    height: 879
   nodes:
     - title: Prevent
       text: Политики и hardening

@@ -5,14 +5,14 @@ import { cityCardText } from '../lib/city';
 const { list, group } = Astro.props;
 const all = await getCollection('pages', ({ data }) => !data.draft && !!data.card);
 const cards = all
-  .flatMap(({ id, data }) => [data.card].flat().map((c) => data.city && c.list === 'cities' ? { ...c, title: data.city.name, text: cityCardText(data.city) } : c).map((card) => ({ id, card })))
+  .flatMap(({ id, data }) => [data.card].flat().map((c) => data.city && c.list === 'cities' ? { ...c, title: data.city.name, text: cityCardText(data.city) } : data.term && c.list === 'glossary' ? { ...c, badge: data.term.badge } : c).map((card) => ({ id, card })))
   .filter(({ card }) => card.list === list && (!group || card.group === group))
   .sort((a, b) => a.card.order - b.card.order);
 const articleStyle = 'border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 24px; background: var(--background-card);';
 ---
 {cards.map(({ id, card: c }) => {
   const href = '/' + id;
-  if (list === 'services') return (
+  if (list === 'services' || list === 'compliance') return (
     <article style={articleStyle}>
       <h3 set:html={c.title} />
       <p set:html={c.text} />

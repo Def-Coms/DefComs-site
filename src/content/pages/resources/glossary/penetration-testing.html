@@ -8,84 +8,43 @@ robots: index, follow, max-image-preview:large, max-snippet:-1, max-video-previe
 ogType: article
 image: https://defcoms.eu/images/Logos/DefComs-logo.svg
 ogTitle: Penetration Testing — Речник по киберсигурност | DefComs
-schema:
-  - "@context": https://schema.org
-    "@type": DefinedTerm
-    name: Penetration testing (тест за проникване)
-    description: Penetration testing е оторизирано симулиране на атака срещу системи с цел откриване и отстраняване на уязвимости преди реален нападател.
-    inLanguage: bg
-    url: https://defcoms.eu/resources/glossary/penetration-testing
-    isPartOf:
-      "@type": DefinedTermSet
-      name: Речник по киберсигурност
-      url: https://defcoms.eu/resources/glossary
-  - "@context": https://schema.org
-    "@type": BreadcrumbList
-    itemListElement:
-      - "@type": ListItem
-        position: 1
-        name: Начало
-        item: https://defcoms.eu/
-      - "@type": ListItem
-        position: 2
-        name: Речник
-        item: https://defcoms.eu/resources/glossary
-      - "@type": ListItem
-        position: 3
-        name: Penetration Testing
-        item: https://defcoms.eu/resources/glossary/penetration-testing
 card:
   list: glossary
   order: 7
-  badge: Одит
   title: Penetration Testing (Пентестинг)
   text: <strong>Дефиниция:</strong> Симулирана кибератака срещу компютърна система, апликация или мрежа с цел откриване и коригиране на уязвимости, преди те да бъдат използвани от хакери.
   cta: Пълна дефиниция за Penetration Testing →
+term:
+  name: Penetration testing (тест за проникване)
+  short: Penetration Testing
+  badge: Одит
+  subtitle: Контролирано и разрешено „ Представете си, че сте нападателят“ — за да намерите дупките пръв.
+  definition: Penetration testing (тест за проникване) е оторизирано, целенасочено симулиране на кибератака срещу приложения, мрежи или системи, проведено по договорен обхват и правила, с цел откриване, експлоатиране и докладване на уязвимости, преди да бъдат използвани от реален нападател.
+  importance: Автоматичните скенери дават списък с потенциални проблеми, но не показват кои реално водят до компромис. Тестът за проникване добавя човешка преценка, вериги от уязвимости и бизнес контекст, което помага да приоритизирате това, което наистина защитава.
+  how: Процесът обхваща планиране и обхват, разузнаване, откриване и опити за експлоитране в рамките на договорените права, след което се изготвя доклад с намереното, неговия риск (например по CVSS) и препоръки, и обикновено се прави повторен тест след отстраняването.
+  example: Тест върху уеб приложение открива, че едно входно поле позволява прочитане на чужди данни; докладът показва стъпките за възпроизвеждане, влиянието и как да се поправи, а след отстраняването се прави повторен тест за потвърждение.
+  risks:
+    - Тест без ясен обхват и правила на ангажиране може да прекъсне продукционната среда или да създаде правен риск.
+    - Доклад, който е само списък с констатации без приоритет и стъпки за възпроизвеждане, трудно се превръща в действие.
+  practices:
+    - Фиксирайте писмено обхват, прозорци и права за действие преди теста.
+    - Изисквайте доклад с контекст, оценка на риска и ясни препоръки, последван от повторен тест.
+    - Вържете резултатите с процеса за отстраняване и с ниво на обслужване за критичните уязвимости.
+  related:
+    - text: Услуга penetration testing
+      href: /services/penetration-testing
+    - text: Какво е penetration testing?
+      href: /blog/what-is-penetration-testing
+    - text: Видове penetration testing
+      href: /blog/types-of-penetration-testing
+    - text: Доклад след penetration testing
+      href: /blog/pentest-report
+  sources:
+    - text: NIST SP 800-115 — наръчник за сигурностно тестване
+      href: https://csrc.nist.gov/publications/detail/sp/800-115/final
+      external: true
+    - text: OWASP
+      href: https://owasp.org/
+      external: true
+  updated: 21.10.2026
 ---
-<main>
-        <section class="hero-section">
-            <div class="container hero-container">
-                <p class="breadcrumb-nav"><a href="/">Начало</a> / <a href="/resources/glossary">Речник</a> / Penetration Testing</p>
-                <span class="badge">Одит</span>
-                <h1>Penetration testing (тест за проникване)</h1>
-                <p class="hero-subtitle">Контролирано и разрешено „ Представете си, че сте нападателят“ — за да намерите дупките пръв.</p>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <article class="card term-card">
-                    <h2>Дефиниция</h2>
-                    <p>Penetration testing (тест за проникване) е оторизирано, целенасочено симулиране на кибератака срещу приложения, мрежи или системи, проведено по договорен обхват и правила, с цел откриване, експлоатиране и докладване на уязвимости, преди да бъдат използвани от реален нападател.</p>
-                    <h2>Защо е важно</h2>
-                    <p>Автоматичните скенери дават списък с потенциални проблеми, но не показват кои реално водят до компромис. Тестът за проникване добавя човешка преценка, вериги от уязвимости и бизнес контекст, което помага да приоритизирате това, което наистина защитава.</p>
-                    <h2>Как работи</h2>
-                    <p>Процесът обхваща планиране и обхват, разузнаване, откриване и опити за експлоитране в рамките на договорените права, след което се изготвя доклад с намереното, неговия риск (например по CVSS) и препоръки, и обикновено се прави повторен тест след отстраняването.</p>
-                    <h2>Пример</h2>
-                    <p>Тест върху уеб приложение открива, че едно входно поле позволява прочитане на чужди данни; докладът показва стъпките за възпроизвеждане, влиянието и как да се поправи, а след отстраняването се прави повторен тест за потвърждение.</p>
-                    <h2>Рискове</h2>
-                    <ul><li>Тест без ясен обхват и правила на ангажиране може да прекъсне продукционната среда или да създаде правен риск.</li>
-<li>Доклад, който е само списък с констатации без приоритет и стъпки за възпроизвеждане, трудно се превръща в действие.</li></ul>
-                    <h2>Добри практики</h2>
-                    <ul><li>Фиксирайте писмено обхват, прозорци и права за действие преди теста.</li>
-<li>Изисквайте доклад с контекст, оценка на риска и ясни препоръки, последван от повторен тест.</li>
-<li>Вържете резултатите с процеса за отстраняване и с ниво на обслужване за критичните уязвимости.</li></ul>
-                    <h2>Свързани ресурси</h2>
-                    <ul><li><a href="/services/penetration-testing">Услуга penetration testing</a></li>
-<li><a href="/blog/what-is-penetration-testing">Какво е penetration testing?</a></li>
-<li><a href="/blog/types-of-penetration-testing">Видове penetration testing</a></li>
-<li><a href="/blog/pentest-report">Доклад след penetration testing</a></li></ul>
-                    <h2>Официални източници</h2>
-                    <ul><li><a href="https://csrc.nist.gov/publications/detail/sp/800-115/final" rel="noopener" target="_blank">NIST SP 800-115 — наръчник за сигурностно тестване</a></li>
-<li><a href="https://owasp.org/" rel="noopener" target="_blank">OWASP</a></li></ul>
-                </article>
-
-                <div class="hero-actions">
-                    <a href="/contact" class="btn btn-primary">Безплатна консултация по имейл</a>
-                    <a href="/resources/glossary" class="btn btn-secondary">Към целия речник</a>
-                </div>
-
-                <p><em>Публикуван и последно актуализиран: 21.10.2026. Материалът е с образователна цел и не представлява правен или технически съвет за конкретния ви случай.</em></p>
-            </div>
-        </section>
-    </main>

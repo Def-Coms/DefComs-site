@@ -26,17 +26,21 @@
 | Layout, SEO, компоненти | `src/layouts/`, `src/components/` |
 | Генерирани списъци | `src/components/CardList.astro`, `BlogListing.astro` |
 | Шаблон за град | `src/components/CityPage.astro`, `src/lib/city.ts` |
+| Шаблон за термин | `src/components/GlossaryTerm.astro`, `src/lib/glossary.ts` |
+| Шаблон за автор | `src/components/AuthorPage.astro`, `src/lib/author.ts` |
 | Статични файлове (CSS, JS, снимки, PHP, `.htaccess`) | `public/` |
 | Стар сайт (справка) | `legacy/` |
 
 ## Често срещани задачи
 
-Команди: `npm install` (веднъж), `npm run dev` (http://localhost:4321), `npm run build`, `npm run check`.
+Команди: `npm install` (веднъж), `npm run dev` (http://localhost:4321), `npm run build`, `npm run check`. След build тестовете за услуги, речник и автори се изпълняват с `node --test tests/service-pages.test.mjs tests/glossary-pages.test.mjs tests/author-pages.test.mjs`.
 
 - **Нова статия:** Markdown файл в `src/content/pages/blog/` с `article:` във frontmatter. Картата в блога, JSON-LD и sitemap се появяват автоматично. Образец: съществуваща статия.
-- **Нова регулация/стандарт (кратка):** файл в `src/content/pages/compliance/` с `framework:` (hero, карти). Образец: `owasp.html`.
+- **Нова регулация/стандарт (кратка):** файл в `src/content/pages/compliance/` с `framework:` (hero, карти) и `card:` за списъка: `list: compliance`, `group: regulations` или `standards`, `order`, `title` и `text`. Образец: `owasp.html`. При включване и в други списъци използвай масив от `card:` записи, както в `nis2.html`.
 - **Нова услуга:** файл в `src/content/pages/services/` със `service:` (hero, секции, ЧЗВ) и `card:` (група, ред). Заглавието, JSON-LD и ЧЗВ схемата се генерират. Образец: `vps-servers.html`.
-- **Нов термин от речника:** страница с `card:` (след задача 2.5 ще има шаблон).
+- **SOC мониторинг:** `soc-monitoring.html` използва вариант `service.layout: soc` със секции `cards`, `steps`, `links`, `faq` и `cta`. ЧЗВ JSON-LD се генерира от секциите `faq`; останалите `schema` и `headExtra` остават изрични.
+- **Нов термин от речника:** файл в `src/content/pages/resources/glossary/` с `title`, `description`, `card:` (`list: glossary`, `order`, `title`, `text`, `cta`) и `term:`. В `term:` се задават името, краткото име, категорията (`badge`), текстовете, рисковете, практиките, връзките и датата `updated` във формат `ДД.ММ.ГГГГ`. За външни връзки с отваряне в нов раздел добави `external: true`. Категорията на картата и JSON-LD се генерират от `term:`. Образец: `edr.html`.
+- **Авторски профил:** редактирай `author:` във файла в `src/content/pages/about/team/author/` (основен, `variant: full`) или `src/content/pages/about/author/` (кратък, `variant: short`). Полетата съдържат биографията, експертизата, данните за Person JSON-LD и ръчно подредените статии; `url` е адресът на основния профил, а краткият вариант има и същия `canonical`. Вариантите се поддържат отделно, защото съдържанието им може да се различава. Картите със сертификати за основните профили се поддържат в `src/data/certificates.ts`; `/about` остава отделна до 2.6в. Автоматичното извеждане на статиите е задача 2.6б. Образец: `elena-dimitrova.html`.
 - **Нов град:** файл `src/content/pages/bulgaria/<град>.html` само с frontmatter (`city:`, `card:`), без тяло. Образец: `varna.html`.
 - **Промяна в менюто или футъра:** само `src/data/site.ts`.
 - **Скриване на страница:** `draft: true`.

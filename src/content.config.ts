@@ -2,7 +2,7 @@ import { defineCollection, z } from 'astro:content';
 import { pagesLoader } from './loaders/pages';
 
 const cardSchema = z.object({
-  list: z.enum(['services', 'glossary', 'cities']),
+  list: z.enum(['services', 'glossary', 'cities', 'compliance']),
   group: z.string().optional(),
   order: z.number().default(0),
   // Optional for city pages: derived from `city`
@@ -10,6 +10,53 @@ const cardSchema = z.object({
   text: z.string().optional(),
   badge: z.string().optional(),
   cta: z.string().optional(),
+});
+
+const socSectionSchema = z.discriminatedUnion('type', [
+  z.object({
+    type: z.literal('cards'),
+    kicker: z.string(),
+    title: z.string(),
+    intro: z.string().optional(),
+    cards: z.array(z.object({ title: z.string(), text: z.string() })),
+  }),
+  z.object({
+    type: z.literal('steps'),
+    kicker: z.string(),
+    title: z.string(),
+    items: z.array(z.string()),
+  }),
+  z.object({
+    type: z.literal('links'),
+    kicker: z.string(),
+    title: z.string(),
+    items: z.array(z.object({ text: z.string(), href: z.string() })),
+  }),
+  z.object({
+    type: z.literal('faq'),
+    kicker: z.string(),
+    title: z.string(),
+    items: z.array(z.object({ q: z.string(), a: z.string() })),
+  }),
+  z.object({
+    type: z.literal('cta'),
+    kicker: z.string(),
+    title: z.string(),
+    text: z.string(),
+    actions: z.array(z.object({ text: z.string(), href: z.string() })),
+  }),
+]);
+
+const socServiceSchema = z.object({
+  layout: z.literal('soc'),
+  name: z.string(),
+  breadcrumbName: z.string(),
+  breadcrumbServicesHref: z.string(),
+  category: z.string(),
+  lead: z.string(),
+  actions: z.array(z.object({ text: z.string(), href: z.string() })).length(2),
+  note: z.string(),
+  sections: z.array(socSectionSchema),
 });
 
 const pages = defineCollection({
@@ -56,9 +103,10 @@ const pages = defineCollection({
         loc: z.string().optional(),
       })
       .optional(),
-    // Service landing page: hero, JSON-LD and sections are generated from this record
+    // Service landing page: the SOC layout retains its explicit schema and headExtra
     service: z
-      .object({
+      .union([z.object({
+        layout: z.literal('standard').optional(),
         name: z.string(),
         short: z.string().optional(),
         schemaName: z.string().optional(),
@@ -81,7 +129,7 @@ const pages = defineCollection({
             items: z.array(z.object({ q: z.string(), a: z.string(), open: z.boolean().optional() })).optional(),
           }),
         ),
-      })
+      }), socServiceSchema])
       .optional(),
     // Compliance framework page: hero, cards, CSS and JSON-LD are generated from this record
     framework: z
@@ -96,7 +144,41 @@ const pages = defineCollection({
         cards: z.array(z.object({ title: z.string(), text: z.string() })),
       })
       .optional(),
-    // Card(s) shown on generated indexes (services, glossary, cities); an array when a page is listed in several
+    term: z
+      .object({
+        name: z.string(),
+        short: z.string(),
+        badge: z.string(),
+        subtitle: z.string(),
+        definition: z.string(),
+        importance: z.string(),
+        how: z.string(),
+        example: z.string(),
+        risks: z.array(z.string()).min(1),
+        practices: z.array(z.string()).min(1),
+        related: z.array(z.object({ text: z.string(), href: z.string(), external: z.boolean().optional() })).min(1),
+        sources: z.array(z.object({ text: z.string(), href: z.string(), external: z.boolean().optional() })).min(1),
+        updated: z.string(),
+      })
+      .optional(),
+    author: z
+      .object({
+        variant: z.enum(['short', 'full']),
+        name: z.string(),
+        jobTitle: z.string(),
+        personDescription: z.string(),
+        image: z.string().url(),
+        url: z.string().url(),
+        sameAs: z.array(z.string().url()).optional(),
+        knowsAbout: z.array(z.string()).min(1),
+        lead: z.string(),
+        bio: z.string(),
+        expertiseIntro: z.string(),
+        expertise: z.array(z.string()).min(1),
+        articles: z.array(z.object({ category: z.string(), title: z.string(), href: z.string() })).min(1),
+      })
+      .optional(),
+    // Card(s) shown on generated indexes; an array when a page is listed in several
     card: z
       .union([cardSchema, z.array(cardSchema)])
       .optional(),

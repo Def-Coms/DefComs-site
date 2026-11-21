@@ -8,81 +8,36 @@ robots: index, follow, max-image-preview:large, max-snippet:-1, max-video-previe
 ogType: article
 image: https://defcoms.eu/images/Logos/DefComs-logo.svg
 ogTitle: IAM — Речник по киберсигурност | DefComs
-schema:
-  - "@context": https://schema.org
-    "@type": DefinedTerm
-    name: IAM (Identity and Access Management)
-    description: IAM управлява цифровите самоличности и правата им — кой към какво има достъп, как се удостоверява и кога правата се отнемат.
-    inLanguage: bg
-    url: https://defcoms.eu/resources/glossary/iam
-    isPartOf:
-      "@type": DefinedTermSet
-      name: Речник по киберсигурност
-      url: https://defcoms.eu/resources/glossary
-  - "@context": https://schema.org
-    "@type": BreadcrumbList
-    itemListElement:
-      - "@type": ListItem
-        position: 1
-        name: Начало
-        item: https://defcoms.eu/
-      - "@type": ListItem
-        position: 2
-        name: Речник
-        item: https://defcoms.eu/resources/glossary
-      - "@type": ListItem
-        position: 3
-        name: IAM
-        item: https://defcoms.eu/resources/glossary/iam
 card:
   list: glossary
   order: 26
-  badge: Самоличност
   title: IAM (Identity and Access Management)
   text: <strong>Дефиниция:</strong> Управлява цифровите самоличности и правата им — кой към какво има достъп, как се удостоверява и кога правата се отнемат.
   cta: Пълна дефиниция за IAM →
+term:
+  name: IAM (Identity and Access Management)
+  short: IAM
+  badge: Самоличност
+  subtitle: "IAM: правилният човек, към правилния ресурс, с правилните права — и само когато трябва."
+  definition: "IAM (Identity and Access Management) е рамката от процеси, политики и технологии за управление на цифровите самоличности и техните права: удостоверяване, оторизиране, жизнен цикъл на акаунтите и проследяване на достъпа."
+  importance: Контролът на достъпа е в основата на почти всяка защита. Силното IAM намалява риска от компрометирани удостоверения, осигурява най-малки привилегии и дава одита, нужен за съответствие и за разследване.
+  how: IAM централно съхранява самоличностите, прилага удостоверяване (парола, MFA, без парола), единен вход, роли и политики за достъп, и автоматизира отпускането и отнемането на права при промени в организацията.
+  example: При напускане на служител IAM автоматично отнема достъпите навсякъде; при нова роля правата се дават по шаблон, без ръчно разпръскване.
+  risks:
+    - Лошото управление на жизнения цикъл оставя активни акаунти на напуснали — честа точка за злоупотреба.
+    - Прекалените привилегии и споделяните акаунти размиват отговорността.
+  practices:
+    - Въведете MFA навсякъде, особено за административния и отдалечения достъп.
+    - Прилагайте най-малки привилегии и редовен преглед на правата.
+    - Автоматизирайте отпускането и отнемането на достъп и записвайте достъпа.
+  related:
+    - text: Zero Trust услуги
+      href: /services/zero-trust
+    - text: Cloud IAM
+      href: /blog/cloud-iam
+  sources:
+    - text: NIST SP 800-63 — наръчник за дигитална самоличност
+      href: https://csrc.nist.gov/publications/detail/sp/800-63-3/final
+      external: true
+  updated: 21.10.2026
 ---
-<main>
-        <section class="hero-section">
-            <div class="container hero-container">
-                <p class="breadcrumb-nav"><a href="/">Начало</a> / <a href="/resources/glossary">Речник</a> / IAM</p>
-                <span class="badge">Самоличност</span>
-                <h1>IAM (Identity and Access Management)</h1>
-                <p class="hero-subtitle">IAM: правилният човек, към правилния ресурс, с правилните права — и само когато трябва.</p>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <article class="card term-card">
-                    <h2>Дефиниция</h2>
-                    <p>IAM (Identity and Access Management) е рамката от процеси, политики и технологии за управление на цифровите самоличности и техните права: удостоверяване, оторизиране, жизнен цикъл на акаунтите и проследяване на достъпа.</p>
-                    <h2>Защо е важно</h2>
-                    <p>Контролът на достъпа е в основата на почти всяка защита. Силното IAM намалява риска от компрометирани удостоверения, осигурява най-малки привилегии и дава одита, нужен за съответствие и за разследване.</p>
-                    <h2>Как работи</h2>
-                    <p>IAM централно съхранява самоличностите, прилага удостоверяване (парола, MFA, без парола), единен вход, роли и политики за достъп, и автоматизира отпускането и отнемането на права при промени в организацията.</p>
-                    <h2>Пример</h2>
-                    <p>При напускане на служител IAM автоматично отнема достъпите навсякъде; при нова роля правата се дават по шаблон, без ръчно разпръскване.</p>
-                    <h2>Рискове</h2>
-                    <ul><li>Лошото управление на жизнения цикъл оставя активни акаунти на напуснали — честа точка за злоупотреба.</li>
-<li>Прекалените привилегии и споделяните акаунти размиват отговорността.</li></ul>
-                    <h2>Добри практики</h2>
-                    <ul><li>Въведете MFA навсякъде, особено за административния и отдалечения достъп.</li>
-<li>Прилагайте най-малки привилегии и редовен преглед на правата.</li>
-<li>Автоматизирайте отпускането и отнемането на достъп и записвайте достъпа.</li></ul>
-                    <h2>Свързани ресурси</h2>
-                    <ul><li><a href="/services/zero-trust">Zero Trust услуги</a></li>
-<li><a href="/blog/cloud-iam">Cloud IAM</a></li></ul>
-                    <h2>Официални източници</h2>
-                    <ul><li><a href="https://csrc.nist.gov/publications/detail/sp/800-63-3/final" rel="noopener" target="_blank">NIST SP 800-63 — наръчник за дигитална самоличност</a></li></ul>
-                </article>
-
-                <div class="hero-actions">
-                    <a href="/contact" class="btn btn-primary">Безплатна консултация по имейл</a>
-                    <a href="/resources/glossary" class="btn btn-secondary">Към целия речник</a>
-                </div>
-
-                <p><em>Публикуван и последно актуализиран: 21.10.2026. Материалът е с образователна цел и не представлява правен или технически съвет за конкретния ви случай.</em></p>
-            </div>
-        </section>
-    </main>

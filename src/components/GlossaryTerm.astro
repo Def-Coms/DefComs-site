@@ -1,0 +1,46 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  term: NonNullable<CollectionEntry<'pages'>['data']['term']>;
+}
+
+const { term } = Astro.props;
+---
+<main>
+  <section class="hero-section">
+    <div class="container hero-container">
+      <p class="breadcrumb-nav"><a href="/">Начало</a> / <a href="/resources/glossary">Речник</a> / {term.short}</p>
+      <span class="badge">{term.badge}</span>
+      <h1>{term.name}</h1>
+      <p class="hero-subtitle" set:html={term.subtitle} />
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <article class="card term-card">
+        <h2>Дефиниция</h2>
+        <p set:html={term.definition} />
+        <h2>Защо е важно</h2>
+        <p set:html={term.importance} />
+        <h2>Как работи</h2>
+        <p set:html={term.how} />
+        <h2>Пример</h2>
+        <p set:html={term.example} />
+        <h2>Рискове</h2>
+        <ul>{term.risks.map((item) => <li set:html={item} />)}</ul>
+        <h2>Добри практики</h2>
+        <ul>{term.practices.map((item) => <li set:html={item} />)}</ul>
+        <h2>Свързани ресурси</h2>
+        <ul>{term.related.map((link) => <li><a href={link.href} rel={link.external ? 'noopener' : undefined} target={link.external ? '_blank' : undefined} set:html={link.text} /></li>)}</ul>
+        <h2>Официални източници</h2>
+        <ul>{term.sources.map((link) => <li><a href={link.href} rel={link.external ? 'noopener' : undefined} target={link.external ? '_blank' : undefined} set:html={link.text} /></li>)}</ul>
+      </article>
+      <div class="hero-actions">
+        <a href="/contact" class="btn btn-primary">Безплатна консултация по имейл</a>
+        <a href="/resources/glossary" class="btn btn-secondary">Към целия речник</a>
+      </div>
+      <p><em>Публикуван и последно актуализиран: {term.updated}. Материалът е с образователна цел и не представлява правен или технически съвет за конкретния ви случай.</em></p>
+    </div>
+  </section>
+</main>

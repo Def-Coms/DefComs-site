@@ -53,23 +53,6 @@ schema:
             position: 3
             name: SOC мониторинг
             item: https://defcoms.eu/services/soc-monitoring
-      - "@type": FAQPage
-        mainEntity:
-          - "@type": Question
-            name: Какво наблюдава SOC екипът?
-            acceptedAnswer:
-              "@type": Answer
-              text: Обхватът може да включва endpoints, сървъри, мрежи, облачни среди, identity сигнали и логове чрез SIEM, EDR, NDR и threat intelligence източници.
-          - "@type": Question
-            name: Какво се случва при потвърден инцидент?
-            acceptedAnswer:
-              "@type": Answer
-              text: Сигналът се анализира и ескалира според договорения процес. Следват координирани действия за ограничаване, препоръки към клиента и отчет за констатациите.
-          - "@type": Question
-            name: SOC услугата заменя ли вътрешния IT екип?
-            acceptedAnswer:
-              "@type": Answer
-              text: Не. SOC допълва вътрешните екипи чрез постоянно наблюдение, анализ и договорен процес за ескалация; отговорностите и правата за реакция се определят в обхвата и SLA.
 headExtra: |-
   <style>
           .soc-page { max-width: 1120px; margin: 0 auto; padding: 145px 24px 80px; }
@@ -99,104 +82,109 @@ card:
   title: SOC мониторинг 24/7/365
   text: Денонощен мониторинг, детекция и реакция при киберзаплахи със SIEM, EDR и NDR.
   cta: Виж подробности
+service:
+  layout: soc
+  name: SOC мониторинг 24/7/365
+  breadcrumbName: SOC мониторинг
+  breadcrumbServicesHref: /#services
+  category: Managed Security Operations Center
+  lead: Вашият външен security operations екип за постоянно наблюдение, детекция и координирана реакция при киберзаплахи — без изграждане на собствен денонощен SOC.
+  actions:
+    - text: Заяви SOC консултация
+      href: /#contact
+    - text: Предварителна оценка
+      href: /wizard
+  note: <strong>Важно:</strong> обхватът, интеграциите, правата за реакция, SLA и отчетите се определят според активите, риска и нуждите на организацията. SOC не е автоматична гаранция за предотвратяване на всеки инцидент.
+  sections:
+    - type: cards
+      kicker: Как работи
+      title: От сигнал към решение с контекст
+      intro: SOC комбинира telemetry, правила, threat intelligence и човешки анализ, за да отдели реалните рискове от шума. Процесът трябва да има ясни отговорности между SOC доставчика, клиента и евентуалния incident lead.
+      cards:
+        - title: Detect
+          text: Събиране и корелация на сигнали от endpoints, identity, мрежи, облак и логове.
+        - title: Analyze
+          text: Триаж, обогатяване, проверка на контекста и приоритизиране според въздействието.
+        - title: Respond
+          text: Ескалация и договорени действия за ограничаване, възстановяване и следващи стъпки.
+        - title: Report
+          text: Ясни оперативни и управленски отчети, тенденции, препоръки и lessons learned.
+    - type: cards
+      kicker: Технологии и обхват
+      title: Покритието започва с правилно определени източници
+      cards:
+        - title: SIEM
+          text: Централизиране и корелация на релевантни събития с внимание към coverage, качество, retention и разходи.
+        - title: EDR / XDR
+          text: Endpoint telemetry, investigation и контролирана реакция според правата и процесите на клиента.
+        - title: NDR и мрежови сигнали
+          text: Наблюдение на комуникации, аномалии и сегментация, когато източниците и архитектурата го позволяват.
+        - title: Cloud и identity
+          text: Сигнали от облачни control/data planes, акаунти, роли и authentication потоци според нужния обхват.
+    - type: steps
+      kicker: Внедряване
+      title: Практична последователност за onboarding
+      items:
+        - <strong>Определяне на обхвата.</strong> Критични активи, бизнес услуги, users, cloud accounts, логове, endpoints и комуникационни канали.
+        - <strong>Интеграция и baseline.</strong> Свързване на източниците, проверка на coverage, нормализиране и настройка на приоритети.
+        - <strong>Use cases и триаж.</strong> Сценарии за identity abuse, ransomware, malware, suspicious network activity и други реални рискове.
+        - <strong>Ескалация и response.</strong> Кой се уведомява, кой одобрява containment и как се пазят доказателства и контекст.
+        - <strong>Метрики и подобрение.</strong> Signal quality, MTTD/MTTR, coverage, response ownership и периодичен преглед на процеса.
+    - type: links
+      kicker: Практически материали
+      title: Ръководства за SOC и мониторинг
+      items:
+        - text: Какво е SOC?
+          href: /blog/what-is-soc
+        - text: Как работи SOC мониторингът?
+          href: /blog/how-soc-monitoring-works
+        - text: SOC vs SIEM
+          href: /blog/soc-vs-siem
+        - text: SOC vs MSSP
+          href: /blog/soc-vs-mssp
+        - text: SOC as a Service
+          href: /blog/soc-as-a-service
+        - text: Има ли нужда малкият бизнес от SOC?
+          href: /blog/does-smb-need-soc
+        - text: Колко струва SOC?
+          href: /blog/how-much-does-soc-cost
+        - text: Какво наблюдава SOC?
+          href: /blog/what-does-soc-monitor
+        - text: Как SOC открива ransomware?
+          href: /blog/how-soc-detects-ransomware
+        - text: SOC и NIS2
+          href: /blog/soc-and-nis2
+    - type: links
+      kicker: Свързани topic clusters
+      title: Допълнителни ресурси
+      items:
+        - text: NIS2 съответствие
+          href: /compliance/nis2
+        - text: Защита от ransomware
+          href: /services/ransomware-protection
+        - text: Penetration testing
+          href: /services/penetration-testing
+    - type: faq
+      kicker: Често задавани въпроси
+      title: SOC мониторинг
+      items:
+        - q: Нужно ли е SOC на малък бизнес?
+          a: Зависи от риска, критичността на услугите, регулаторния контекст и наличния вътрешен екип. Външен SOC може да добави постоянен monitoring капацитет, но обхватът трябва да бъде пропорционален.
+        - q: Нужно ли е да имаме SIEM, за да използваме SOC?
+          a: Не приемайте една технология като универсално условие. Решението зависи от източниците, интеграциите, качеството на telemetry, нужния retention и модела на работа.
+        - q: Как SOC помага при ransomware?
+          a: SOC може да корелира сигнали от endpoint, identity, network, backup и cloud източници, да подпомогне triage и да ескалира действията според договорения response процес.
+        - q: Как се измерва SOC услугата?
+          a: Използват се показатели като coverage, качество на сигналите, MTTD, MTTR, време за ескалация, потвърдени инциденти и изпълнение на договорените процеси.
+    - type: cta
+      kicker: Следваща стъпка
+      title: Проверете дали managed SOC е подходящ за вашата организация
+      text: Започнете с разговор за критичните активи, наличните telemetry източници, нужния response модел и регулаторния контекст.
+      actions:
+        - text: Заяви SOC консултация
+          href: /#contact
+        - text: NIS2 подготовка
+          href: /compliance/nis2
+        - text: DORA подготовка
+          href: /compliance/dora
 ---
-<main class="soc-page">
-        <nav class="soc-breadcrumbs" aria-label="Навигационна пътека">
-            <a href="/">Начало</a><span aria-hidden="true">›</span>
-            <a href="/#services">Услуги</a><span aria-hidden="true">›</span>
-            <span aria-current="page">SOC мониторинг</span>
-        </nav>
-
-        <header>
-            <p class="soc-kicker">Managed Security Operations Center</p>
-            <h1>SOC мониторинг 24/7/365</h1>
-            <p class="soc-lead">Вашият външен security operations екип за постоянно наблюдение, детекция и координирана реакция при киберзаплахи — без изграждане на собствен денонощен SOC.</p>
-            <div class="soc-actions">
-                <a href="/#contact" class="btn btn-primary">Заяви SOC консултация</a>
-                <a href="/wizard" class="btn btn-secondary">Предварителна оценка</a>
-            </div>
-            <aside class="soc-note"><strong>Важно:</strong> обхватът, интеграциите, правата за реакция, SLA и отчетите се определят според активите, риска и нуждите на организацията. SOC не е автоматична гаранция за предотвратяване на всеки инцидент.</aside>
-        </header>
-
-        <section>
-            <p class="soc-kicker">Как работи</p>
-            <h2>От сигнал към решение с контекст</h2>
-            <p>SOC комбинира telemetry, правила, threat intelligence и човешки анализ, за да отдели реалните рискове от шума. Процесът трябва да има ясни отговорности между SOC доставчика, клиента и евентуалния incident lead.</p>
-            <div class="soc-grid">
-                <article class="soc-card"><h3>Detect</h3><p>Събиране и корелация на сигнали от endpoints, identity, мрежи, облак и логове.</p></article>
-                <article class="soc-card"><h3>Analyze</h3><p>Триаж, обогатяване, проверка на контекста и приоритизиране според въздействието.</p></article>
-                <article class="soc-card"><h3>Respond</h3><p>Ескалация и договорени действия за ограничаване, възстановяване и следващи стъпки.</p></article>
-                <article class="soc-card"><h3>Report</h3><p>Ясни оперативни и управленски отчети, тенденции, препоръки и lessons learned.</p></article>
-            </div>
-        </section>
-
-        <section>
-            <p class="soc-kicker">Технологии и обхват</p>
-            <h2>Покритието започва с правилно определени източници</h2>
-            <div class="soc-grid">
-                <article class="soc-card"><h3>SIEM</h3><p>Централизиране и корелация на релевантни събития с внимание към coverage, качество, retention и разходи.</p></article>
-                <article class="soc-card"><h3>EDR / XDR</h3><p>Endpoint telemetry, investigation и контролирана реакция според правата и процесите на клиента.</p></article>
-                <article class="soc-card"><h3>NDR и мрежови сигнали</h3><p>Наблюдение на комуникации, аномалии и сегментация, когато източниците и архитектурата го позволяват.</p></article>
-                <article class="soc-card"><h3>Cloud и identity</h3><p>Сигнали от облачни control/data planes, акаунти, роли и authentication потоци според нужния обхват.</p></article>
-            </div>
-        </section>
-
-        <section>
-            <p class="soc-kicker">Внедряване</p>
-            <h2>Практична последователност за onboarding</h2>
-            <ol>
-                <li><strong>Определяне на обхвата.</strong> Критични активи, бизнес услуги, users, cloud accounts, логове, endpoints и комуникационни канали.</li>
-                <li><strong>Интеграция и baseline.</strong> Свързване на източниците, проверка на coverage, нормализиране и настройка на приоритети.</li>
-                <li><strong>Use cases и триаж.</strong> Сценарии за identity abuse, ransomware, malware, suspicious network activity и други реални рискове.</li>
-                <li><strong>Ескалация и response.</strong> Кой се уведомява, кой одобрява containment и как се пазят доказателства и контекст.</li>
-                <li><strong>Метрики и подобрение.</strong> Signal quality, MTTD/MTTR, coverage, response ownership и периодичен преглед на процеса.</li>
-            </ol>
-        </section>
-
-        <section>
-            <p class="soc-kicker">Практически материали</p>
-            <h2>Ръководства за SOC и мониторинг</h2>
-            <ul class="soc-links">
-                <li><a href="/blog/what-is-soc">Какво е SOC?</a></li>
-                <li><a href="/blog/how-soc-monitoring-works">Как работи SOC мониторингът?</a></li>
-                <li><a href="/blog/soc-vs-siem">SOC vs SIEM</a></li>
-                <li><a href="/blog/soc-vs-mssp">SOC vs MSSP</a></li>
-                <li><a href="/blog/soc-as-a-service">SOC as a Service</a></li>
-                <li><a href="/blog/does-smb-need-soc">Има ли нужда малкият бизнес от SOC?</a></li>
-                <li><a href="/blog/how-much-does-soc-cost">Колко струва SOC?</a></li>
-                <li><a href="/blog/what-does-soc-monitor">Какво наблюдава SOC?</a></li>
-                <li><a href="/blog/how-soc-detects-ransomware">Как SOC открива ransomware?</a></li>
-                <li><a href="/blog/soc-and-nis2">SOC и NIS2</a></li>
-            </ul>
-        </section>
-
-        <section>
-            <p class="soc-kicker">Свързани topic clusters</p>
-            <h2>Допълнителни ресурси</h2>
-            <ul class="soc-links">
-                <li><a href="/compliance/nis2">NIS2 съответствие</a></li>
-                <li><a href="/services/ransomware-protection">Защита от ransomware</a></li>
-                <li><a href="/services/penetration-testing">Penetration testing</a></li>
-            </ul>
-        </section>
-
-        <section>
-            <p class="soc-kicker">Често задавани въпроси</p>
-            <h2>SOC мониторинг</h2>
-            <details><summary>Нужно ли е SOC на малък бизнес?</summary><p>Зависи от риска, критичността на услугите, регулаторния контекст и наличния вътрешен екип. Външен SOC може да добави постоянен monitoring капацитет, но обхватът трябва да бъде пропорционален.</p></details>
-            <details><summary>Нужно ли е да имаме SIEM, за да използваме SOC?</summary><p>Не приемайте една технология като универсално условие. Решението зависи от източниците, интеграциите, качеството на telemetry, нужния retention и модела на работа.</p></details>
-            <details><summary>Как SOC помага при ransomware?</summary><p>SOC може да корелира сигнали от endpoint, identity, network, backup и cloud източници, да подпомогне triage и да ескалира действията според договорения response процес.</p></details>
-            <details><summary>Как се измерва SOC услугата?</summary><p>Използват се показатели като coverage, качество на сигналите, MTTD, MTTR, време за ескалация, потвърдени инциденти и изпълнение на договорените процеси.</p></details>
-        </section>
-
-        <section class="soc-cta">
-            <p class="soc-kicker">Следваща стъпка</p>
-            <h2>Проверете дали managed SOC е подходящ за вашата организация</h2>
-            <p>Започнете с разговор за критичните активи, наличните telemetry източници, нужния response модел и регулаторния контекст.</p>
-            <div class="soc-actions">
-                <a href="/#contact" class="btn btn-primary">Заяви SOC консултация</a>
-                <a href="/compliance/nis2" class="btn btn-secondary">NIS2 подготовка</a>
-                <a href="/compliance/dora" class="btn btn-secondary">DORA подготовка</a>
-            </div>
-        </section>
-    </main>

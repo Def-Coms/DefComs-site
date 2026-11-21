@@ -8,81 +8,36 @@ robots: index, follow, max-image-preview:large, max-snippet:-1, max-video-previe
 ogType: article
 image: https://defcoms.eu/images/Logos/DefComs-logo.svg
 ogTitle: CWE — Речник по киберсигурност | DefComs
-schema:
-  - "@context": https://schema.org
-    "@type": DefinedTerm
-    name: CWE (Common Weakness Enumeration)
-    description: CWE е каталог на типове слабости в софтуер и конфигурации; CVE са конкретните случаи, CWE — класовете проблеми зад тях.
-    inLanguage: bg
-    url: https://defcoms.eu/resources/glossary/cwe
-    isPartOf:
-      "@type": DefinedTermSet
-      name: Речник по киберсигурност
-      url: https://defcoms.eu/resources/glossary
-  - "@context": https://schema.org
-    "@type": BreadcrumbList
-    itemListElement:
-      - "@type": ListItem
-        position: 1
-        name: Начало
-        item: https://defcoms.eu/
-      - "@type": ListItem
-        position: 2
-        name: Речник
-        item: https://defcoms.eu/resources/glossary
-      - "@type": ListItem
-        position: 3
-        name: CWE
-        item: https://defcoms.eu/resources/glossary/cwe
 card:
   list: glossary
   order: 21
-  badge: Уязвимости
   title: CWE (Common Weakness Enumeration)
   text: <strong>Дефиниция:</strong> Каталог на типовете слабости в софтуер и конфигурации; CVE са конкретните случаи, CWE — класовете проблеми зад тях.
   cta: Пълна дефиниция за CWE →
+term:
+  name: CWE (Common Weakness Enumeration)
+  short: CWE
+  badge: Уязвимости
+  subtitle: "CWE: каталогът с видовете слабости в кода и настройките — класът зад конкретните дупки."
+  definition: CWE (Common Weakness Enumeration) е изброен каталог и класификация на често срещаните слабости в софтуер, хардуер и конфигурации. Всеки запис описва тип проблем (например инжектиране на код или невалидиран вход), който може да доведе до уязвимости.
+  importance: Докато CVE описва конкретна разкрита уязвимост, CWE описва класа слабости, който я поражда. Това помага на разработчици и тестери да мислят в категории, да прилагат системни мерки и да разпознават повтарящи се грешки.
+  how: Скенерите и статичният анализ отчитат находките си чрез CWE идентификатори; екипите използват класовете, за да приоритизират и да коригират корена, а не само симптома.
+  example: Много на пръв поглед различни уеб уязвимости споделят CWE-89 (инжектиране на SQL); лечението е общо — параметризирани заявки и валидация, а не една отделна кръпка.
+  risks:
+    - Някои уязвимости имат погрешна или твърде обща CWE класификация; разчитането само на класа пропуска спецификата.
+    - CWE не казва къде точно е проблемът във вашата система — нужно е свързване с конкретния код или конфигурация.
+  practices:
+    - Използвайте CWE, за да адресирате корена на цели класове проблеми в кода и настройките.
+    - Свързвайте CWE с обучение на разработчици и с ревизия на кода.
+    - Комбинирайте CWE с CVSS и контекст за реална приоритизация.
+  related:
+    - text: Уеб приложение тест за проникване
+      href: /blog/web-application-pentest
+    - text: OWASP съответствие
+      href: /compliance/owasp
+  sources:
+    - text: MITRE CWE
+      href: https://cwe.mitre.org/
+      external: true
+  updated: 21.10.2026
 ---
-<main>
-        <section class="hero-section">
-            <div class="container hero-container">
-                <p class="breadcrumb-nav"><a href="/">Начало</a> / <a href="/resources/glossary">Речник</a> / CWE</p>
-                <span class="badge">Уязвимости</span>
-                <h1>CWE (Common Weakness Enumeration)</h1>
-                <p class="hero-subtitle">CWE: каталогът с видовете слабости в кода и настройките — класът зад конкретните дупки.</p>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <article class="card term-card">
-                    <h2>Дефиниция</h2>
-                    <p>CWE (Common Weakness Enumeration) е изброен каталог и класификация на често срещаните слабости в софтуер, хардуер и конфигурации. Всеки запис описва тип проблем (например инжектиране на код или невалидиран вход), който може да доведе до уязвимости.</p>
-                    <h2>Защо е важно</h2>
-                    <p>Докато CVE описва конкретна разкрита уязвимост, CWE описва класа слабости, който я поражда. Това помага на разработчици и тестери да мислят в категории, да прилагат системни мерки и да разпознават повтарящи се грешки.</p>
-                    <h2>Как работи</h2>
-                    <p>Скенерите и статичният анализ отчитат находките си чрез CWE идентификатори; екипите използват класовете, за да приоритизират и да коригират корена, а не само симптома.</p>
-                    <h2>Пример</h2>
-                    <p>Много на пръв поглед различни уеб уязвимости споделят CWE-89 (инжектиране на SQL); лечението е общо — параметризирани заявки и валидация, а не една отделна кръпка.</p>
-                    <h2>Рискове</h2>
-                    <ul><li>Някои уязвимости имат погрешна или твърде обща CWE класификация; разчитането само на класа пропуска спецификата.</li>
-<li>CWE не казва къде точно е проблемът във вашата система — нужно е свързване с конкретния код или конфигурация.</li></ul>
-                    <h2>Добри практики</h2>
-                    <ul><li>Използвайте CWE, за да адресирате корена на цели класове проблеми в кода и настройките.</li>
-<li>Свързвайте CWE с обучение на разработчици и с ревизия на кода.</li>
-<li>Комбинирайте CWE с CVSS и контекст за реална приоритизация.</li></ul>
-                    <h2>Свързани ресурси</h2>
-                    <ul><li><a href="/blog/web-application-pentest">Уеб приложение тест за проникване</a></li>
-<li><a href="/compliance/owasp">OWASP съответствие</a></li></ul>
-                    <h2>Официални източници</h2>
-                    <ul><li><a href="https://cwe.mitre.org/" rel="noopener" target="_blank">MITRE CWE</a></li></ul>
-                </article>
-
-                <div class="hero-actions">
-                    <a href="/contact" class="btn btn-primary">Безплатна консултация по имейл</a>
-                    <a href="/resources/glossary" class="btn btn-secondary">Към целия речник</a>
-                </div>
-
-                <p><em>Публикуван и последно актуализиран: 21.10.2026. Материалът е с образователна цел и не представлява правен или технически съвет за конкретния ви случай.</em></p>
-            </div>
-        </section>
-    </main>

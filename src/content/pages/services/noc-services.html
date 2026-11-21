@@ -12,47 +12,6 @@ twitterTitle: NOC услуги 24/7 | DefComs
 twitterDescription: Наблюдение, управление и техническа реакция за мрежи, сървъри и критична инфраструктура.
 meta:
   theme-color: "#050811"
-schema:
-  - "@context": https://schema.org
-    "@graph":
-      - "@type": Service
-        name: NOC услуги 24/7
-        provider:
-          "@id": https://defcoms.eu/#organization
-          "@type": Organization
-          name: DefComs
-          url: https://defcoms.eu/
-        serviceType: Network Operations Center
-        description: Проактивен мониторинг и управление на мрежова, сървърна и IT инфраструктура.
-        areaServed:
-          "@type": Country
-          name: Bulgaria
-      - "@type": WebPage
-        name: NOC услуги и мрежов мониторинг 24/7
-        url: https://defcoms.eu/services/noc-services
-        inLanguage: bg
-      - "@type": BreadcrumbList
-        itemListElement:
-          - "@type": ListItem
-            position: 1
-            name: Начало
-            item: https://defcoms.eu/
-          - "@type": ListItem
-            position: 2
-            name: NOC услуги
-            item: https://defcoms.eu/services/noc-services
-      - "@type": FAQPage
-        mainEntity:
-          - "@type": Question
-            name: Какво наблюдава NOC екипът?
-            acceptedAnswer:
-              "@type": Answer
-              text: Наблюдаваме мрежови устройства, връзки, сървъри, приложения и ключови показатели за наличност и производителност.
-          - "@type": Question
-            name: Работи ли NOC услугата с MikroTik?
-            acceptedAnswer:
-              "@type": Answer
-              text: Да. Можем да наблюдаваме и управляваме MikroTik RouterOS инфраструктура и да я интегрираме със SOC процесите.
 bodyClass: service-landing
 card:
   list: services
@@ -62,6 +21,8 @@ card:
   text: Мрежов мониторинг, управление на инфраструктурата и техническа подкрепа 24/7.
   cta: Виж подробности
 service:
+  short: NOC услуги
+  schemaName: NOC услуги 24/7
   name: NOC услуги 24/7
   category: Network Operations Center
   lead: Проактивно наблюдение и управление на мрежи, сървъри и инфраструктура, за да откриваме техническите проблеми преди да се превърнат в бизнес прекъсване.
@@ -73,7 +34,8 @@ service:
   image:
     src: /images/Webp/network-Operation_center.webp
     alt: NOC мониторинг на IT инфраструктура
-  breadcrumb: false
+    width: 1902
+    height: 832
   nodes:
     - title: Network
       text: Връзки и устройства

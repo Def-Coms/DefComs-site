@@ -1,0 +1,11 @@
+---
+import { certificates } from '../data/certificates';
+---
+<div class="cert-grid">
+  {certificates.map((certificate) => (
+    <figure class="cert-card">
+      <a class="cert-link" href={certificate.href} target="_blank" rel="noopener noreferrer"><img src={certificate.image} alt={certificate.alt} loading="lazy" width="356" height="200" /></a>
+      <figcaption><span class="cert-title">{certificate.title}</span><span class="cert-desc">{certificate.description}</span></figcaption>
+    </figure>
+  ))}
+</div>

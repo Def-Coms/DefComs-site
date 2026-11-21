@@ -8,81 +8,36 @@ robots: index, follow, max-image-preview:large, max-snippet:-1, max-video-previe
 ogType: article
 image: https://defcoms.eu/images/Logos/DefComs-logo.svg
 ogTitle: MSSP — Речник по киберсигурност | DefComs
-schema:
-  - "@context": https://schema.org
-    "@type": DefinedTerm
-    name: MSSP (Managed Security Service Provider)
-    description: MSSP е външен доставчик, който поема операциите по сигурност — мониторинг, управление на устройства и реакция при инциденти — като абонаментна услуга.
-    inLanguage: bg
-    url: https://defcoms.eu/resources/glossary/mssp
-    isPartOf:
-      "@type": DefinedTermSet
-      name: Речник по киберсигурност
-      url: https://defcoms.eu/resources/glossary
-  - "@context": https://schema.org
-    "@type": BreadcrumbList
-    itemListElement:
-      - "@type": ListItem
-        position: 1
-        name: Начало
-        item: https://defcoms.eu/
-      - "@type": ListItem
-        position: 2
-        name: Речник
-        item: https://defcoms.eu/resources/glossary
-      - "@type": ListItem
-        position: 3
-        name: MSSP
-        item: https://defcoms.eu/resources/glossary/mssp
 card:
   list: glossary
   order: 10
-  badge: Услуги
   title: MSSP (Managed Security Service Provider)
   text: <strong>Дефиниция:</strong> Външен доставчик, който поема операциите по сигурност — мониторинг, управление на устройства и реакция при инциденти — като абонаментна услуга.
   cta: Пълна дефиниция за MSSP →
+term:
+  name: MSSP (Managed Security Service Provider)
+  short: MSSP
+  badge: Услуги
+  subtitle: "Управленски доставчик на сигурност: външен екип, който поема ежедневните операции за киберсигурност."
+  definition: MSSP (Managed Security Service Provider) е външна компания, която поема част или цялата ежедневна операционна сигурност на организацията — мониторинг, управление на устройства, актуализации и реакция при инциденти — обикновено като абонаментна управлявана услуга.
+  importance: Малките и средни организации често нямат нито бюджета, нито хората за собствен денонощен екип. MSSP дава достъп до експертиза и непрекъснатост без пълните разходи за вътрешен SOC, с ясно договорени роли и нива на обслужване.
+  how: Клиентът предава или споделя видимост към своите системи; MSSP прилага дефиниран обхват — мониторинг и корелация, управление на устройства, алармиране и ескалация, периодични отчети — според договорените права за намеса.
+  example: Фирма без вътрешен екип по сигурността възлага на MSSP наблюдението на файрвола, алармите от EDR и седмични отчети; при реална заплаха MSSP изпълнява първоначалните стъпки и ескалира към клиента.
+  risks:
+    - Размит обхват и права оставят пролуки в отговорността — всеки смята, че другият се грижи.
+    - Пълното възлагане на външен изпълнител без вътрешен собственик на риска води до фалшиво усещане за безопасност.
+  practices:
+    - Фиксирайте писмено кои системи са в обхвата и какво право на намеса има доставчикът.
+    - Договорете ясни канали за ескалация и отчетност, а не само месечно табло.
+    - Запазете вътрешна отговорност за сигурността, дори операциите да са външни.
+  related:
+    - text: SOC срещу MSSP
+      href: /blog/soc-vs-mssp
+    - text: SOC като услуга
+      href: /services/soc-monitoring
+  sources:
+    - text: ENISA — реагиране при инциденти
+      href: https://www.enisa.europa.eu/topics/incident-response
+      external: true
+  updated: 21.10.2026
 ---
-<main>
-        <section class="hero-section">
-            <div class="container hero-container">
-                <p class="breadcrumb-nav"><a href="/">Начало</a> / <a href="/resources/glossary">Речник</a> / MSSP</p>
-                <span class="badge">Услуги</span>
-                <h1>MSSP (Managed Security Service Provider)</h1>
-                <p class="hero-subtitle">Управленски доставчик на сигурност: външен екип, който поема ежедневните операции за киберсигурност.</p>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <article class="card term-card">
-                    <h2>Дефиниция</h2>
-                    <p>MSSP (Managed Security Service Provider) е външна компания, която поема част или цялата ежедневна операционна сигурност на организацията — мониторинг, управление на устройства, актуализации и реакция при инциденти — обикновено като абонаментна управлявана услуга.</p>
-                    <h2>Защо е важно</h2>
-                    <p>Малките и средни организации често нямат нито бюджета, нито хората за собствен денонощен екип. MSSP дава достъп до експертиза и непрекъснатост без пълните разходи за вътрешен SOC, с ясно договорени роли и нива на обслужване.</p>
-                    <h2>Как работи</h2>
-                    <p>Клиентът предава или споделя видимост към своите системи; MSSP прилага дефиниран обхват — мониторинг и корелация, управление на устройства, алармиране и ескалация, периодични отчети — според договорените права за намеса.</p>
-                    <h2>Пример</h2>
-                    <p>Фирма без вътрешен екип по сигурността възлага на MSSP наблюдението на файрвола, алармите от EDR и седмични отчети; при реална заплаха MSSP изпълнява първоначалните стъпки и ескалира към клиента.</p>
-                    <h2>Рискове</h2>
-                    <ul><li>Размит обхват и права оставят пролуки в отговорността — всеки смята, че другият се грижи.</li>
-<li>Пълното възлагане на външен изпълнител без вътрешен собственик на риска води до фалшиво усещане за безопасност.</li></ul>
-                    <h2>Добри практики</h2>
-                    <ul><li>Фиксирайте писмено кои системи са в обхвата и какво право на намеса има доставчикът.</li>
-<li>Договорете ясни канали за ескалация и отчетност, а не само месечно табло.</li>
-<li>Запазете вътрешна отговорност за сигурността, дори операциите да са външни.</li></ul>
-                    <h2>Свързани ресурси</h2>
-                    <ul><li><a href="/blog/soc-vs-mssp">SOC срещу MSSP</a></li>
-<li><a href="/services/soc-monitoring">SOC като услуга</a></li></ul>
-                    <h2>Официални източници</h2>
-                    <ul><li><a href="https://www.enisa.europa.eu/topics/incident-response" rel="noopener" target="_blank">ENISA — реагиране при инциденти</a></li></ul>
-                </article>
-
-                <div class="hero-actions">
-                    <a href="/contact" class="btn btn-primary">Безплатна консултация по имейл</a>
-                    <a href="/resources/glossary" class="btn btn-secondary">Към целия речник</a>
-                </div>
-
-                <p><em>Публикуван и последно актуализиран: 21.10.2026. Материалът е с образователна цел и не представлява правен или технически съвет за конкретния ви случай.</em></p>
-            </div>
-        </section>
-    </main>

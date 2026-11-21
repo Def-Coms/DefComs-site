@@ -8,81 +8,36 @@ robots: index, follow, max-image-preview:large, max-snippet:-1, max-video-previe
 ogType: article
 image: https://defcoms.eu/images/Logos/DefComs-logo.svg
 ogTitle: NDR — Речник по киберсигурност | DefComs
-schema:
-  - "@context": https://schema.org
-    "@type": DefinedTerm
-    name: NDR (Network Detection and Response)
-    description: NDR наблюдава мрежовия трафик, открива аномалии и злонамерена активност и позволява реакция чрез мрежови контроли като изолиране на сегменти.
-    inLanguage: bg
-    url: https://defcoms.eu/resources/glossary/ndr
-    isPartOf:
-      "@type": DefinedTermSet
-      name: Речник по киберсигурност
-      url: https://defcoms.eu/resources/glossary
-  - "@context": https://schema.org
-    "@type": BreadcrumbList
-    itemListElement:
-      - "@type": ListItem
-        position: 1
-        name: Начало
-        item: https://defcoms.eu/
-      - "@type": ListItem
-        position: 2
-        name: Речник
-        item: https://defcoms.eu/resources/glossary
-      - "@type": ListItem
-        position: 3
-        name: NDR
-        item: https://defcoms.eu/resources/glossary/ndr
 card:
   list: glossary
   order: 14
-  badge: Защита
   title: NDR (Network Detection &amp; Response)
   text: <strong>Дефиниция:</strong> Наблюдава мрежовия трафик, открива аномалии и злонамерена активност и позволява реакция чрез мрежови контроли като изолиране на сегменти.
   cta: Пълна дефиниция за NDR →
+term:
+  name: NDR (Network Detection and Response)
+  short: NDR
+  badge: Защита
+  subtitle: "Засичане и реакция по мрежата: виждате зловредното движение между системите, не само вътре в тях."
+  definition: NDR (Network Detection and Response) е клас решения, които анализират мрежовия трафик (пакети, потоци, DNS, сесии) в реално време, за да откриват аномално и злонамерено поведение, и позволяват реакция чрез мрежови контроли — например изолиране на устройство или сегмент.
+  importance: "NDR хваща неща, които не оставят следа в крайните точки: движение между машини (странично), неочаквани връзки към външни сървъри и зловреден трафик от IoT и стари системи, където не може да се сложи агент."
+  how: Сензори или огледални точки събират трафик; платформата прилага поведенчески модели, данни за заплахи и техники от MITRE ATT&amp;CK, за да открие аномалии, и подава аларми с контекст, а при интеграция изпълнява мрежови реакции.
+  example: Заразена работна станция започва да сканира подмрежа и да се свързва към много машини; NDR открива страничното движение и го блокира, преди разпространението да спре.
+  risks:
+    - NDR без видимост към трафика (неправилно огледално копиране, шифровани потоци) има слепи петна.
+    - Реакциите, които автоматично блокират, могат да спрат легитимни бизнес потоци.
+  practices:
+    - Осигурете видимост към критичните сегменти и изходите към интернет.
+    - Свържете NDR със SOC и със сегментацията, за да реагирате контролирано.
+    - Използвайте поведенческа базова линия, а не само познати подписи.
+  related:
+    - text: SOC мониторинг
+      href: /services/soc-monitoring
+    - text: Zero Trust и сегментация
+      href: /services/zero-trust
+  sources:
+    - text: MITRE ATT&amp;CK
+      href: https://attack.mitre.org/
+      external: true
+  updated: 21.10.2026
 ---
-<main>
-        <section class="hero-section">
-            <div class="container hero-container">
-                <p class="breadcrumb-nav"><a href="/">Начало</a> / <a href="/resources/glossary">Речник</a> / NDR</p>
-                <span class="badge">Защита</span>
-                <h1>NDR (Network Detection and Response)</h1>
-                <p class="hero-subtitle">Засичане и реакция по мрежата: виждате зловредното движение между системите, не само вътре в тях.</p>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <article class="card term-card">
-                    <h2>Дефиниция</h2>
-                    <p>NDR (Network Detection and Response) е клас решения, които анализират мрежовия трафик (пакети, потоци, DNS, сесии) в реално време, за да откриват аномално и злонамерено поведение, и позволяват реакция чрез мрежови контроли — например изолиране на устройство или сегмент.</p>
-                    <h2>Защо е важно</h2>
-                    <p>NDR хваща неща, които не оставят следа в крайните точки: движение между машини (странично), неочаквани връзки към външни сървъри и зловреден трафик от IoT и стари системи, където не може да се сложи агент.</p>
-                    <h2>Как работи</h2>
-                    <p>Сензори или огледални точки събират трафик; платформата прилага поведенчески модели, данни за заплахи и техники от MITRE ATT&amp;CK, за да открие аномалии, и подава аларми с контекст, а при интеграция изпълнява мрежови реакции.</p>
-                    <h2>Пример</h2>
-                    <p>Заразена работна станция започва да сканира подмрежа и да се свързва към много машини; NDR открива страничното движение и го блокира, преди разпространението да спре.</p>
-                    <h2>Рискове</h2>
-                    <ul><li>NDR без видимост към трафика (неправилно огледално копиране, шифровани потоци) има слепи петна.</li>
-<li>Реакциите, които автоматично блокират, могат да спрат легитимни бизнес потоци.</li></ul>
-                    <h2>Добри практики</h2>
-                    <ul><li>Осигурете видимост към критичните сегменти и изходите към интернет.</li>
-<li>Свържете NDR със SOC и със сегментацията, за да реагирате контролирано.</li>
-<li>Използвайте поведенческа базова линия, а не само познати подписи.</li></ul>
-                    <h2>Свързани ресурси</h2>
-                    <ul><li><a href="/services/soc-monitoring">SOC мониторинг</a></li>
-<li><a href="/services/zero-trust">Zero Trust и сегментация</a></li></ul>
-                    <h2>Официални източници</h2>
-                    <ul><li><a href="https://attack.mitre.org/" rel="noopener" target="_blank">MITRE ATT&amp;CK</a></li></ul>
-                </article>
-
-                <div class="hero-actions">
-                    <a href="/contact" class="btn btn-primary">Безплатна консултация по имейл</a>
-                    <a href="/resources/glossary" class="btn btn-secondary">Към целия речник</a>
-                </div>
-
-                <p><em>Публикуван и последно актуализиран: 21.10.2026. Материалът е с образователна цел и не представлява правен или технически съвет за конкретния ви случай.</em></p>
-            </div>
-        </section>
-    </main>
