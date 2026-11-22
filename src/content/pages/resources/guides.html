@@ -31,25 +31,59 @@ schema:
             name: Ръководства и Насоки за Киберсигурност
             item: https://defcoms.eu/resources/guides
 bodyClass: service-landing
-headExtra: |-
-  <style>
-          .resource-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-          .resource-card { background: var(--background-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 32px; display: flex; flex-direction: column; transition: transform 0.3s ease, border-color 0.3s ease; }
-          .resource-card:hover { transform: translateY(-5px); border-color: var(--secondary-cyan); }
-          .resource-card h3 { font-size: 1.35rem; color: var(--text-primary); margin-bottom: 14px; }
-          .resource-card p { color: var(--text-secondary); line-height: 1.65; font-size: 0.98rem; margin-bottom: 20px; flex: 1; }
-  </style>
+headExtra: |
+    <style>
+            .page-hero {
+                padding: 160px 24px 80px;
+                background: radial-gradient(circle at 50% 20%, rgba(0, 240, 255, 0.12) 0%, transparent 60%),
+                            radial-gradient(circle at 80% 80%, rgba(0, 102, 255, 0.1) 0%, transparent 50%),
+                            var(--background-dark);
+                text-align: center;
+            }
+            .page-hero-inner { max-width: 900px; margin: 0 auto; }
+            .page-hero h1 { font-size: clamp(2.3rem, 4.5vw, 3.6rem); margin-bottom: 20px; line-height: 1.15; }
+            .page-hero p { font-size: 1.18rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 30px; }
+            .grid-section { padding: 80px 24px; max-width: 1200px; margin: 0 auto; }
+            .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+            .guide-card {
+                background: var(--background-card);
+                border: 1px solid var(--border-color);
+                border-radius: var(--radius-lg);
+                padding: 32px;
+                display: flex; flex-direction: column;
+                transition: transform 0.3s ease, border-color 0.3s ease;
+            }
+            .guide-card:hover { transform: translateY(-5px); border-color: var(--primary-cyan); }
+            .guide-card h3 { font-size: 1.35rem; color: var(--text-primary); margin-bottom: 14px; }
+            .guide-card p { color: var(--text-secondary); line-height: 1.65; font-size: 0.98rem; margin-bottom: 20px; flex: 1; }
+        </style>
 ---
-<main class="container section">
-        <section class="hero-section">
-            <div class="container hero-container text-center">
-                <nav aria-label="Навигационна пътека"><a href="/">Начало</a> › <span>Ресурси</span> › <span aria-current="page">Ръководства</span></nav>
+<main>
+        <section class="page-hero">
+            <div class="page-hero-inner">
+                <nav aria-label="Навигационна пътека"><a href="/">Начало</a> &rsaquo; <span>Ресурси</span> &rsaquo; <span aria-current="page">Ръководства</span></nav>
                 <h1>Практически Ръководства за Киберсигурност</h1>
                 <p>Детайлни технически указания и практически стъпки за защита на мрежи, облачни среди и регулаторно съответствие.</p>
             </div>
         </section>
 
-        <section class="section">
-            <!--@resources:guides-->
+        <section class="grid-section">
+            <div class="cards-grid">
+                <div class="guide-card">
+                    <h3>Ръководство за NIS2 Подготовка</h3>
+                    <p>Стъпка-по-стъпка план за техническа и организационна готовност по Член 21 от директивата NIS2.</p>
+                    <a href="/blog/nis2-requirements" class="btn btn-secondary">Прочетете ръководството →</a>
+                </div>
+                <div class="guide-card">
+                    <h3>Как Работи SOC Мониторингът?</h3>
+                    <p>От прихващане на сигнали и триаж до координирана реакция при инцидент с EDR и SIEM.</p>
+                    <a href="/blog/how-soc-monitoring-works" class="btn btn-secondary">Прочетете ръководството →</a>
+                </div>
+                <div class="guide-card">
+                    <h3>Внедряване на Zero Trust Архитектура</h3>
+                    <p>Поетапен план за интеграция на Zero Trust принципи според NIST SP 800-207 в корпоративна среда.</p>
+                    <a href="/blog/zero-trust-implementation" class="btn btn-secondary">Прочетете ръководството →</a>
+                </div>
+            </div>
         </section>
     </main>

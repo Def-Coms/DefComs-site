@@ -31,12 +31,12 @@ schema:
           "@id": https://defcoms.eu/#organization
 bodyClass: service-landing
 ---
-<main class="container section">
+<main class="container" style="max-width: 1000px; margin: 150px auto 60px; padding: 0 24px;">
         <h1>Контакти</h1>
         <p>Свържете се с екипа на DefComs за консултация по киберсигурност, SOC мониторинг, NIS2, DORA и penetration testing.</p>
 
-        <section class="grid grid-2">
-            <div class="card">
+        <section style="margin-top: 48px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px;">
+            <div style="border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 32px; background: var(--background-card);">
                 <h2>Как да ни достигнете</h2>
                 <div class="contact-info">
                     <div class="contact-item">
@@ -63,16 +63,16 @@ bodyClass: service-landing
                 </div>
             </div>
 
-            <div class="card">
+            <div style="border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 32px; background: var(--background-card);">
                 <h2>Оформете заявка</h2>
                 <form action="/send_form.php" method="POST" style="display: flex; flex-direction: column; gap: 16px;">
                     <label>
                         <span>Име и фамилия</span>
-                        <input type="text" name="name" required="" style="width: 100%; padding: 12px; margin-top: 8px; border: 1px solid var(--border-color); border-radius: var(--radius-md);">
+                        <input type="text" name="name" required style="width: 100%; padding: 12px; margin-top: 8px; border: 1px solid var(--border-color); border-radius: var(--radius-md);">
                     </label>
                     <label>
                         <span>Имейл</span>
-                        <input type="email" name="email" required="" style="width: 100%; padding: 12px; margin-top: 8px; border: 1px solid var(--border-color); border-radius: var(--radius-md);">
+                        <input type="email" name="email" required style="width: 100%; padding: 12px; margin-top: 8px; border: 1px solid var(--border-color); border-radius: var(--radius-md);">
                     </label>
                     <label>
                         <span>Телефон</span>
@@ -85,7 +85,7 @@ bodyClass: service-landing
                     <label>
                         <span>Услуга</span>
                         <select name="service" style="width: 100%; padding: 12px; margin-top: 8px; border: 1px solid var(--border-color); border-radius: var(--radius-md);">
-                            <option value="" selected="">Изберете услуга…</option>
+                            <option value="" selected>Изберете услуга…</option>
                             <option value="soc-monitoring">SOC мониторинг 24/7/365</option>
                             <option value="noc-services">NOC управление</option>
                             <option value="penetration-testing">Penetration Testing</option>
@@ -113,7 +113,7 @@ bodyClass: service-landing
                         <label>Молба не попълвайте това поле<input type="text" name="website_hp" tabindex="-1" autocomplete="off" style="width:1px;height:1px;"></label>
                     </div>
                     <label style="display:flex;gap:10px;align-items:flex-start;font-size:14px;">
-                        <input type="checkbox" name="consent" value="yes" required="" style="margin-top:3px;">
+                        <input type="checkbox" name="consent" value="yes" required style="margin-top:3px;">
                         <span>Съгласявам се личните ми данни да бъдат обработени според <a href="/privacy">Политиката за защита на личните данни</a>.</span>
                     </label>
                     <button type="submit" class="btn btn-primary" style="width: auto; padding: 14px 32px;">Изпратете заявка</button>
@@ -121,7 +121,7 @@ bodyClass: service-landing
             </div>
         </section>
 
-        <section>
+        <section style="margin-top: 64px; border-top: 1px solid var(--border-color); padding-top: 32px;">
             <h2>Често задавани въпроси</h2>
             <details style="margin-bottom: 12px; border: 1px solid var(--border-color); border-radius: var(--radius-md); overflow: hidden;">
                 <summary style="padding: 16px; font-weight: 600; cursor: pointer;">Как да се свържа с вас?</summary>
