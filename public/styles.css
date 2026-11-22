@@ -556,6 +556,7 @@ body .header .logo img {
     display: flex;
     gap: var(--space-md);
     margin-bottom: var(--space-xl);
+    flex-wrap: wrap;
 }
 
 .btn {
@@ -2427,7 +2428,8 @@ section {
     }
     
     .hero-buttons {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: nowrap;
         gap: var(--space-sm);
     }
     
