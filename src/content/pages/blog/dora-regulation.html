@@ -1,36 +1,150 @@
 ---
 lastmod: 2026-11-22
 title: "Регламент DORA: цифрова устойчивост във финансовия сектор | DefComs"
-description: "Статия за dora-regulation и съответствието."
+description: "Какво изисква регламент DORA за финансовите организации: управление на ICT риска, отчетване за инциденти и тестване на устойчивостта."
 ogType: article
 image: https://defcoms.eu/images/Webp/Киберсигурност_4.0__Инструменти_и_стратегии.webp
-imageAlt: Регулации и съответствие
-ogDescription: "dora-regulation и съответствието с регулациите."
-twitterTitle: dora-regulation | DefComs
-twitterDescription: "dora-regulation в киберсигурността."
+imageAlt: DORA регламент и финансова сигурност
+ogDescription: "DORA регламент: изисквания за цифрова устойчивост и управление на риска в финансовия сектор."
+twitterTitle: "Регламент DORA: цифрова устойчивост | DefComs"
+twitterDescription: "DORA: цифрова устойчивост, управление на ICT риска и отчетване за инциденти."
+schema:
+  - "@context": https://schema.org
+    "@graph":
+      - "@type": Organization
+        "@id": https://defcoms.eu/#organization
+        name: DefComs
+        url: https://defcoms.eu/
+      - "@type": WebSite
+        "@id": https://defcoms.eu/#website
+        url: https://defcoms.eu/
+        name: DefComs
+        publisher:
+          "@id": https://defcoms.eu/#organization
+        inLanguage: bg
+      - "@type": WebPage
+        "@id": https://defcoms.eu/blog/dora-regulation#webpage
+        url: https://defcoms.eu/blog/dora-regulation
+        name: "Регламент DORA: цифрова устойчивост във финансовия сектор"
+        inLanguage: bg
+        isPartOf:
+          "@id": https://defcoms.eu/#website
+        breadcrumb:
+          "@id": https://defcoms.eu/blog/dora-regulation#breadcrumb
+        mainEntity:
+          "@id": https://defcoms.eu/blog/dora-regulation#article
+      - "@type": BlogPosting
+        "@id": https://defcoms.eu/blog/dora-regulation#article
+        headline: "Регламент DORA: цифрова устойчивост във финансовия сектор"
+        description: "Какво изисква регламент DORA за финансовите организации: управление на ICT риска, отчетване за инциденти и тестване на устойчивостта."
+        image: https://defcoms.eu/images/Webp/Киберсигурност_4.0__Инструменти_и_стратегии.webp
+        datePublished: 2026-11-18
+        dateModified: 2026-11-22
+        inLanguage: bg
+        mainEntityOfPage:
+          "@id": https://defcoms.eu/blog/dora-regulation#webpage
+        author:
+          "@type": Person
+          "@id": https://defcoms.eu/about/team/author/mikhail-georgiev
+          name: Михаил Георгиев
+          jobTitle: Head of Offensive Security (Pentesting)
+          url: https://defcoms.eu/about/team/author/mikhail-georgiev
+        publisher:
+          "@id": https://defcoms.eu/#organization
+      - "@type": BreadcrumbList
+        "@id": https://defcoms.eu/blog/dora-regulation#breadcrumb
+        itemListElement:
+          - "@type": ListItem
+            position: 1
+            name: Начало
+            item: https://defcoms.eu/
+          - "@type": ListItem
+            position: 2
+            name: Блог
+            item: https://defcoms.eu/blog
+          - "@type": ListItem
+            position: 3
+            name: DORA регламент
+            item: https://defcoms.eu/blog/dora-regulation
+headExtra: |-
+  <style>
+    .blog-article { max-width: 860px; margin: 0 auto; padding: 150px 24px 80px; }
+    .blog-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: 28px; }
+    .blog-breadcrumbs a { color: var(--secondary-cyan); }
+    .blog-kicker { color: var(--secondary-cyan); text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+    .blog-article h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.12; margin: 12px 0 20px; }
+    .blog-deck { color: var(--text-secondary); font-size: 1.2rem; line-height: 1.7; }
+    .blog-meta { color: var(--text-secondary); font-size: var(--font-size-sm); margin: 22px 0; }
+    .blog-hero-image { width: 100%; max-height: 460px; object-fit: cover; border-radius: var(--radius-lg); margin: 16px 0 32px; }
+    .blog-article h2 { margin-top: 42px; }
+    .blog-article p, .blog-article li { color: var(--text-secondary); line-height: 1.8; }
+    .blog-article ul, .blog-article ol { padding-left: 24px; }
+    .blog-callout { border-left: 3px solid var(--secondary-cyan); background: var(--background-card); padding: 18px 22px; border-radius: var(--radius-md); }
+    .blog-table-wrap { overflow-x: auto; margin: 24px 0; }
+    .blog-article table { width: 100%; border-collapse: collapse; min-width: 620px; }
+    .blog-article th, .blog-article td { padding: 14px; border: 1px solid var(--border-color); text-align: left; vertical-align: top; color: var(--text-secondary); line-height: 1.65; }
+    .blog-article th { color: var(--text-primary); background: var(--background-card); }
+    .blog-related, .blog-source-list { display: grid; gap: 12px; margin: 20px 0; }
+    .blog-related a, .blog-source-list a { color: var(--secondary-cyan); }
+    .blog-source-list li { overflow-wrap: anywhere; }
+    .blog-cta { margin-top: 44px; padding: 24px; background: var(--background-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); }
+  </style>
+bodyClass: service-landing
 blog:
-  categories: ["Киберсигурност"]
+  categories: ["Регулации", "Финансови услуги"]
   date: 2026-11-18
   order: 0
   title: "Регламент DORA: цифрова устойчивост във финансовия сектор"
-  summary: "Подробно ръководство за регламент dora: цифрова устойчивост във финансовия сектор от екипа на DefComs."
+  summary: "Какво изисква регламент DORA за финансовите организации: управление на ICT риска, отчетване за инциденти и тестване на устойчивостта."
   image: /images/Webp/Киберсигурност_4.0__Инструменти_и_стратегии.webp
-  imageAlt: dora-regulation | DefComs
-bodyClass: service-landing
+  imageAlt: DORA регламент и финансова сигурност
+  imageWidth: 1200
+  imageHeight: 675
+  ariaLabel: "Прочетете: Регламент DORA цифрова устойчивост"
+  cta: Прочетете ръководството →
 ---
-<main class="container" style="max-width: 800px; margin: 150px auto 60px; padding: 0 24px;">
-<h1>Регламент DORA: цифрова устойчивост във финансовия сектор</h1>
-<p>Тази статия разглежда темата подробно: контекст, ключови понятия, практически стъпки и препоръки от екипа на DefComs. Целта е да помогне на организациите да разберат рисковете и да приложат ефективни мерки за защита.</p>
-<h2>Какво представлява</h2>
-<p>Описваме основните концепции, терминология и начин на действие. Включваме примери от реални сценарии и често срещани грешки, които водят до инциденти.</p>
-<h2>Практически стъпки</h2>
-<ul>
-<li>Оценка на текущото състояние и рисковете.</li>
-<li>Планиране на мерки и приоритети.</li>
-<li>Внедряване и тестване.</li>
-<li>Мониторинг и непрекъснато подобрение.</li>
-</ul>
-<h2>Как DefComs помага</h2>
-<p>Екипът ни предоставя консултации, технически услуги и обучение, съобразени с нуждите на вашата организация. Свържете се с нас за индивидуална оценка.</p>
-<p>Вижте <a href="/services">услугите</a> на DefComs за повече информация.</p>
+<main class="blog-article">
+    <nav class="blog-breadcrumbs" aria-label="Навигационна пътека">
+        <a href="/">Начало</a><span aria-hidden="true">›</span>
+        <a href="/blog">Блог</a><span aria-hidden="true">›</span>
+        <span aria-current="page">DORA регламент</span>
+    </nav>
+    <article>
+        <p class="blog-kicker">Регулации · DORA · Финансови услуги</p>
+        <h1>Регламент DORA: цифрова устойчивост във финансовия сектор</h1>
+        <p class="blog-deck">Регламент DORA (Digital Operational Resilience Act) задава изисквания за финансовите организации в ЕСrelation to управление на ICT риска, отчетване за инциденти и тестване на цифровата устойчивост.</p>
+        <p class="blog-meta">Автор: <a href="/about/team/author/mikhail-georgiev" style="color: var(--secondary-cyan);">Михаил Георгиев</a> · Публикувано: <time datetime="2026-11-18">18 ноември 2026 г.</time> · Обновено: <time datetime="2026-11-22">22 ноември 2026 г.</time></p>
+        <img class="blog-hero-image" src="/images/Webp/Киберсигурност_4.0__Инструменти_и_стратегии.webp" alt="DORA регламент и финансова сигурност" width="1200" height="675" fetchpriority="high">
+        <p class="blog-legal-notice" style="border-left:4px solid #f0a500;background:rgba(240,165,0,.08);padding:16px 20px;border-radius:8px;margin:24px 0;font-size:.95rem;line-height:1.6;"><strong>⚠️ Важна бележка:</strong> Тази публикация е с информационна и образователна цел и не представлява юридическо тълкуване. За конкретен казус се консултирайте с квалифициран специалист.</p>
+        <p class="blog-callout"><strong>Кратък отговор:</strong> Регламент DORA задава изисквания за финансовите организации в ЕС relation to управление на ICT риска, отчетване за инциденти и тестване на цифровата устойчивост.</p>
+        <h2>Какво представлява DORA</h2>
+        <p>DORA е европейски регламент, който създава обща рамка за цифрова устойчивост в финансовия сектор. Той се прилага към банки, застрахователни компании, инвестиционни фирми и критични доставчици на ICT услуги.</p>
+        <h2>Основни изисквания</h2>
+        <p>Организациите трябва да имат управление на ICT риска, да отчитат значими инциденти, да извършват тестване на устойчивостта (включително т.нар. "тестове за устойчивост"), управляват риска от трети страни и съхраняват документи.</p>
+        <h2>Отчетване за инциденти</h2>
+        <p>Финансовите организации са задължени да уведомяват компетентните органи за значими инциденти в определен срок и да предоставят подробна информация за причините и последиците.</p>
+        <h2>Как DefComs помага</h2>
+        <p>Консултираме финансови организации относно съответствието с DORA, извършваме оценка на ICT риска и помогваме за подготовка на тестове за цифрова устойчивост.</p>
+        <h2>Често задавани въпроси</h2>
+        <h3>Кога влиза в сила DORA?</h3>
+        <p>DORA влиза в сила от 17 gennaio 2025, с пълна прилагаемост след като войне в сила националните правиа.</p>
+        <h3>Се отнася ли се DORA за малки финансови фирми?</h3>
+        <p>Да, DORA се прилага към всички финансови организации независимо от размера, но изискванията могат да са пропорционални.</p>
+        <h2>Свързани ресурси</h2>
+        <ul class="blog-related">
+            <li><a href="/compliance/nis2">NIS2 съответствие за бизнеса в България</a></li>
+            <li><a href="/compliance/dora">DORA съответствие</a></li>
+            <li><a href="/services">Киберсигурностни услуги на DefComs</a></li>
+        </ul>
+        <h2>Официални източници</h2>
+        <ul class="blog-source-list">
+            <li><a href="https://eur-lex.europa.eu/eli/reg/2022/2554/oj" target="_blank" rel="noopener noreferrer">Евроскъп: Регламент (ЕС) 2022/2554 (DORA)</a></li>
+            <li><a href="https://www.eba.europa.eu" target="_blank" rel="noopener noreferrer">European Banking Authority: DORA</a></li>
+        </ul>
+        <aside class="blog-cta">
+            <h2>Нуждаете ли се от консултация за DORA?</h2>
+            <p>Обсъдете рисковете, изискванията за съответствие и практическите стъпки за вашата организация с екипа на DefComs.</p>
+            <a class="btn btn-primary" href="/#contact">Заявете консултация</a>
+        </aside>
+    </article>
 </main>

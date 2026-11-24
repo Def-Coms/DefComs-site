@@ -1,36 +1,150 @@
 ---
 lastmod: 2026-11-22
-title: Откриване на заплахи с изкуствен интелект | DefComs
-description: "Статия за ai-threat-detection и ролята му в киберсигурността."
+title: "Откриване на заплахи с изкуствен интелект | DefComs"
+description: "Как AI помага за автоматизирано откриване на киберзаплахи, анализ на трафика и бърз отговор при инциденти."
 ogType: article
 image: https://defcoms.eu/images/Webp/pentest-platform-Sentinel-1.webp
-imageAlt: AI и киберсигурност
-ogDescription: "ai-threat-detection и неговата роля в киберсигурността."
-twitterTitle: ai-threat-detection | DefComs
-twitterDescription: "ai-threat-detection в киберсигурността."
+imageAlt: AI детекция на заплахи
+ogDescription: "AI за детекция на заплахи: UEBA, anomaly detection, автоматизиран отговор."
+twitterTitle: "Откриване на заплахи с изкуствен интелект | DefComs"
+twitterDescription: "Откриване на киберзаплахи с помощта на изкуствен интелект."
+schema:
+  - "@context": https://schema.org
+    "@graph":
+      - "@type": Organization
+        "@id": https://defcoms.eu/#organization
+        name: DefComs
+        url: https://defcoms.eu/
+      - "@type": WebSite
+        "@id": https://defcoms.eu/#website
+        url: https://defcoms.eu/
+        name: DefComs
+        publisher:
+          "@id": https://defcoms.eu/#organization
+        inLanguage: bg
+      - "@type": WebPage
+        "@id": https://defcoms.eu/blog/ai-threat-detection#webpage
+        url: https://defcoms.eu/blog/ai-threat-detection
+        name: "Откриване на заплахи с изкуствен интелект"
+        inLanguage: bg
+        isPartOf:
+          "@id": https://defcoms.eu/#website
+        breadcrumb:
+          "@id": https://defcoms.eu/blog/ai-threat-detection#breadcrumb
+        mainEntity:
+          "@id": https://defcoms.eu/blog/ai-threat-detection#article
+      - "@type": BlogPosting
+        "@id": https://defcoms.eu/blog/ai-threat-detection#article
+        headline: "Откриване на заплахи с изкуствен интелект"
+        description: "Как AI помага за автоматизирано откриване на киберзаплахи, анализ на трафика и бърз отговор при инциденти."
+        image: https://defcoms.eu/images/Webp/pentest-platform-Sentinel-1.webp
+        datePublished: 2026-11-18
+        dateModified: 2026-11-22
+        inLanguage: bg
+        mainEntityOfPage:
+          "@id": https://defcoms.eu/blog/ai-threat-detection#webpage
+        author:
+          "@type": Person
+          "@id": https://defcoms.eu/about/team/author/mikhail-georgiev
+          name: Михаил Георгиев
+          jobTitle: Head of Offensive Security (Pentesting)
+          url: https://defcoms.eu/about/team/author/mikhail-georgiev
+        publisher:
+          "@id": https://defcoms.eu/#organization
+      - "@type": BreadcrumbList
+        "@id": https://defcoms.eu/blog/ai-threat-detection#breadcrumb
+        itemListElement:
+          - "@type": ListItem
+            position: 1
+            name: Начало
+            item: https://defcoms.eu/
+          - "@type": ListItem
+            position: 2
+            name: Блог
+            item: https://defcoms.eu/blog
+          - "@type": ListItem
+            position: 3
+            name: Откриване на заплахи с AI
+            item: https://defcoms.eu/blog/ai-threat-detection
+headExtra: |-
+  <style>
+    .blog-article { max-width: 860px; margin: 0 auto; padding: 150px 24px 80px; }
+    .blog-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: 28px; }
+    .blog-breadcrumbs a { color: var(--secondary-cyan); }
+    .blog-kicker { color: var(--secondary-cyan); text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+    .blog-article h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.12; margin: 12px 0 20px; }
+    .blog-deck { color: var(--text-secondary); font-size: 1.2rem; line-height: 1.7; }
+    .blog-meta { color: var(--text-secondary); font-size: var(--font-size-sm); margin: 22px 0; }
+    .blog-hero-image { width: 100%; max-height: 460px; object-fit: cover; border-radius: var(--radius-lg); margin: 16px 0 32px; }
+    .blog-article h2 { margin-top: 42px; }
+    .blog-article p, .blog-article li { color: var(--text-secondary); line-height: 1.8; }
+    .blog-article ul, .blog-article ol { padding-left: 24px; }
+    .blog-callout { border-left: 3px solid var(--secondary-cyan); background: var(--background-card); padding: 18px 22px; border-radius: var(--radius-md); }
+    .blog-table-wrap { overflow-x: auto; margin: 24px 0; }
+    .blog-article table { width: 100%; border-collapse: collapse; min-width: 620px; }
+    .blog-article th, .blog-article td { padding: 14px; border: 1px solid var(--border-color); text-align: left; vertical-align: top; color: var(--text-secondary); line-height: 1.65; }
+    .blog-article th { color: var(--text-primary); background: var(--background-card); }
+    .blog-related, .blog-source-list { display: grid; gap: 12px; margin: 20px 0; }
+    .blog-related a, .blog-source-list a { color: var(--secondary-cyan); }
+    .blog-source-list li { overflow-wrap: anywhere; }
+    .blog-cta { margin-top: 44px; padding: 24px; background: var(--background-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); }
+  </style>
+bodyClass: service-landing
 blog:
-  categories: ["Киберсигурност"]
+  categories: ["Изкуствен интелект", "Детекция на заплахи"]
   date: 2026-11-18
   order: 0
-  title: Откриване на заплахи с изкуствен интелект
-  summary: Подробно ръководство за откриване на заплахи с изкуствен интелект от екипа на DefComs.
+  title: "Откриване на заплахи с изкуствен интелект"
+  summary: "Как AI помага за автоматизирано откриване на киберзаплахи, анализ на трафика и бърз отговор при инциденти."
   image: /images/Webp/pentest-platform-Sentinel-1.webp
-  imageAlt: ai-threat-detection | DefComs
-bodyClass: service-landing
+  imageAlt: AI детекция на заплахи
+  imageWidth: 1200
+  imageHeight: 675
+  ariaLabel: "Прочетете: Откриване на заплахи с изкуствен интелект"
+  cta: Прочетете ръководството →
 ---
-<main class="container" style="max-width: 800px; margin: 150px auto 60px; padding: 0 24px;">
-<h1>Откриване на заплахи с изкуствен интелект</h1>
-<p>Тази статия разглежда темата подробно: контекст, ключови понятия, практически стъпки и препоръки от екипа на DefComs. Целта е да помогне на организациите да разберат рисковете и да приложат ефективни мерки за защита.</p>
-<h2>Какво представлява</h2>
-<p>Описваме основните концепции, терминология и начин на действие. Включваме примери от реални сценарии и често срещани грешки, които водят до инциденти.</p>
-<h2>Практически стъпки</h2>
-<ul>
-<li>Оценка на текущото състояние и рисковете.</li>
-<li>Планиране на мерки и приоритети.</li>
-<li>Внедряване и тестване.</li>
-<li>Мониторинг и непрекъснато подобрение.</li>
-</ul>
-<h2>Как DefComs помага</h2>
-<p>Екипът ни предоставя консултации, технически услуги и обучение, съобразени с нуждите на вашата организация. Свържете се с нас за индивидуална оценка.</p>
-<p>Вижте <a href="/services">услугите</a> на DefComs за повече информация.</p>
+<main class="blog-article">
+    <nav class="blog-breadcrumbs" aria-label="Навигационна пътека">
+        <a href="/">Начало</a><span aria-hidden="true">›</span>
+        <a href="/blog">Блог</a><span aria-hidden="true">›</span>
+        <span aria-current="page">Откриване на заплахи с AI</span>
+    </nav>
+    <article>
+        <p class="blog-kicker">Изкуствен интелект · Детекция · Отговор</p>
+        <h1>Откриване на заплахи с изкуствен интелект</h1>
+        <p class="blog-deck">Автоматичното откриване на заплахи с AI позволява по-бърз анализ на сигнали, по-ниско MTTD/MTTR и по-ефективно разграничаване на реални рискове от шума.</p>
+        <p class="blog-meta">Автор: <a href="/about/team/author/mikhail-georgiev" style="color: var(--secondary-cyan);">Михаил Георгиев</a> · Публикувано: <time datetime="2026-11-18">18 ноември 2026 г.</time> · Обновено: <time datetime="2026-11-22">22 ноември 2026 г.</time></p>
+        <img class="blog-hero-image" src="/images/Webp/pentest-platform-Sentinel-1.webp" alt="AI детекция на заплахи" width="1200" height="675" fetchpriority="high">
+        <p class="blog-legal-notice" style="border-left:4px solid #f0a500;background:rgba(240,165,0,.08);padding:16px 20px;border-radius:8px;margin:24px 0;font-size:.95rem;line-height:1.6;"><strong>⚠️ Важна бележка:</strong> Тази публикация е с информационна и образователна цел и не представлява юридическо тълкуване. За конкретен казус се консултирайте с квалифициран специалист.</p>
+        <p class="blog-callout"><strong>Кратък отговор:</strong> Автоматичното откриване на заплахи с AI позволява по-бърз анализ на сигнали, по-ниско MTTD/MTTR и по-ефективно разграничаване на реални рискове от шума.</p>
+        <h2>Как работи AI детекцията на заплахи</h2>
+        <p>AI системите събират telemetry от endpoints, мрежа, облак и идентитет, корелират сигнали и използват машинно обучение, за да откриват аномалии и подозрително поведение.</p>
+        <h2>UEBA и анализ на поведение</h2>
+        <p>User and Entity Behavior Analytics следват шаблони на потребителско поведение и изкачват отклонения, които могат да означават компрометиран акаунт или вътрешна заплаха.</p>
+        <h2>Автоматизиран отговор (SOAR)</h2>
+        <p>Когато AI открива заплаха, той може да déclencheра предварително дефинирани действия — изоляция на endpoint, блокиране на IP, изпращане на сигнал на SOC екипа.</p>
+        <h2>Как DefComs помага</h2>
+        <p>Нашият SOC използва AI-базирани инструменти за мониторинг 24/7/365, анализ на сигнали и coordenторана реакция при инциденти.</p>
+        <h2>Често задавани въпроси</h2>
+        <h3>Нужно ли е SOC за AI детекция?</h3>
+        <p>AI детекцията е най-ефективна, когато е интегрирана в SOC процес, където аналитиците валидират и решават откритите инциденти.</p>
+        <h3>Как се намалява falsh positive?</h3>
+        <p>Чрез multi-стандарт анализ, контекстуализация на сигнали и обратна връзка от аналитиците, AI моделите се настройват за по-малко броя на falsa positive.</p>
+        <h2>Свързани ресурси</h2>
+        <ul class="blog-related">
+            <li><a href="/blog/ai-in-cybersecurity">Изкуственият интелект в киберсигурността</a></li>
+            <li><a href="/blog/what-is-soc">Какво е SOC?</a></li>
+            <li><a href="/services/soc-monitoring">SOC Мониторинг 24/7/365</a></li>
+        </ul>
+        <h2>Официални източници</h2>
+        <ul class="blog-source-list">
+            <li><a href="https://www.nist.gov/cyberframework" target="_blank" rel="noopener noreferrer">NIST Cybersecurity Framework</a></li>
+            <li><a href="https://www.sans.org" target="_blank" rel="noopener noreferrer">SANS Institute: Threat Detection</a></li>
+        </ul>
+        <aside class="blog-cta">
+            <h2>Нуждаете ли се от консултация за AI детекция на заплахи?</h2>
+            <p>Обсъдете рисковете, изискванията и практическите стъпки за вашата организация с екипа на DefComs.</p>
+            <a class="btn btn-primary" href="/#contact">Заявете консултация</a>
+        </aside>
+    </article>
 </main>

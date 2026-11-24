@@ -112,7 +112,7 @@
 ## 6. Съдържание (backlog)
 Тук се записват планирани страници, услуги и статии. Всеки ред: тип · тема · отговорен · статус.
 
-- [ ] (примерно) статия · … · … · …
+- [x] (2026-11-22) статия · разширяване и стиловизация на 20 нови блог статии (ai-act, ai-in-cybersecurity, ai-threat-detection, decompilation, dora-regulation, forensics, incident-response-malware, llm-security, malware-analysis, nis2-directive, password-hygiene-training, phishing-awareness-training, ransomware-awareness, reverse-engineering, sandbox-analysis, security-awareness-program, social-engineering-training, what-is-ghidra, what-is-ida, what-is-owasp-zap) към дизайна на старите статии (pentest-report): headExtra CSS, JSON-LD schema, blog-article структура, мета, callout, FAQ, свързани ресурси, източници, CTA
 
 ---
 

@@ -1,36 +1,150 @@
 ---
 lastmod: 2026-11-22
-title: Дигитална форензика и разследване на инциденти | DefComs
-description: "Статия за forensics в защитена среда."
+title: "Дигитална форензика и разследване на инциденти | DefComs"
+description: "Как се извършва дигитална форензика: съхранение на доказателства, анализ на зловреден код и разследване на киберінциденти."
 ogType: article
 image: https://defcoms.eu/images/Webp/pentest-platform-Sentinel.webp
-imageAlt: Анализ на зловреден софтуер
-ogDescription: "forensics и анализ в защитена среда."
-twitterTitle: forensics | DefComs
-twitterDescription: "forensics в киберсигурността."
+imageAlt: Дигитална форензика и анализ
+ogDescription: "Дигитална форензика: съхранение, анализ и разследване на киберінциденти."
+twitterTitle: "Дигитална форензика | DefComs"
+twitterDescription: "Дигитална форензика и разследване на инциденти."
+schema:
+  - "@context": https://schema.org
+    "@graph":
+      - "@type": Organization
+        "@id": https://defcoms.eu/#organization
+        name: DefComs
+        url: https://defcoms.eu/
+      - "@type": WebSite
+        "@id": https://defcoms.eu/#website
+        url: https://defcoms.eu/
+        name: DefComs
+        publisher:
+          "@id": https://defcoms.eu/#organization
+        inLanguage: bg
+      - "@type": WebPage
+        "@id": https://defcoms.eu/blog/forensics#webpage
+        url: https://defcoms.eu/blog/forensics
+        name: "Дигитална форензика и разследване на инциденти"
+        inLanguage: bg
+        isPartOf:
+          "@id": https://defcoms.eu/#website
+        breadcrumb:
+          "@id": https://defcoms.eu/blog/forensics#breadcrumb
+        mainEntity:
+          "@id": https://defcoms.eu/blog/forensics#article
+      - "@type": BlogPosting
+        "@id": https://defcoms.eu/blog/forensics#article
+        headline: "Дигитална форензика и разследване на инциденти"
+        description: "Как се извършва дигитална форензика: съхранение на доказателства, анализ на зловреден код и разследване на киберінциденти."
+        image: https://defcoms.eu/images/Webp/pentest-platform-Sentinel.webp
+        datePublished: 2026-11-20
+        dateModified: 2026-11-22
+        inLanguage: bg
+        mainEntityOfPage:
+          "@id": https://defcoms.eu/blog/forensics#webpage
+        author:
+          "@type": Person
+          "@id": https://defcoms.eu/about/team/author/mikhail-georgiev
+          name: Михаил Георгиев
+          jobTitle: Head of Offensive Security (Pentesting)
+          url: https://defcoms.eu/about/team/author/mikhail-georgiev
+        publisher:
+          "@id": https://defcoms.eu/#organization
+      - "@type": BreadcrumbList
+        "@id": https://defcoms.eu/blog/forensics#breadcrumb
+        itemListElement:
+          - "@type": ListItem
+            position: 1
+            name: Начало
+            item: https://defcoms.eu/
+          - "@type": ListItem
+            position: 2
+            name: Блог
+            item: https://defcoms.eu/blog
+          - "@type": ListItem
+            position: 3
+            name: Дигитална форензика
+            item: https://defcoms.eu/blog/forensics
+headExtra: |-
+  <style>
+    .blog-article { max-width: 860px; margin: 0 auto; padding: 150px 24px 80px; }
+    .blog-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: 28px; }
+    .blog-breadcrumbs a { color: var(--secondary-cyan); }
+    .blog-kicker { color: var(--secondary-cyan); text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+    .blog-article h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.12; margin: 12px 0 20px; }
+    .blog-deck { color: var(--text-secondary); font-size: 1.2rem; line-height: 1.7; }
+    .blog-meta { color: var(--text-secondary); font-size: var(--font-size-sm); margin: 22px 0; }
+    .blog-hero-image { width: 100%; max-height: 460px; object-fit: cover; border-radius: var(--radius-lg); margin: 16px 0 32px; }
+    .blog-article h2 { margin-top: 42px; }
+    .blog-article p, .blog-article li { color: var(--text-secondary); line-height: 1.8; }
+    .blog-article ul, .blog-article ol { padding-left: 24px; }
+    .blog-callout { border-left: 3px solid var(--secondary-cyan); background: var(--background-card); padding: 18px 22px; border-radius: var(--radius-md); }
+    .blog-table-wrap { overflow-x: auto; margin: 24px 0; }
+    .blog-article table { width: 100%; border-collapse: collapse; min-width: 620px; }
+    .blog-article th, .blog-article td { padding: 14px; border: 1px solid var(--border-color); text-align: left; vertical-align: top; color: var(--text-secondary); line-height: 1.65; }
+    .blog-article th { color: var(--text-primary); background: var(--background-card); }
+    .blog-related, .blog-source-list { display: grid; gap: 12px; margin: 20px 0; }
+    .blog-related a, .blog-source-list a { color: var(--secondary-cyan); }
+    .blog-source-list li { overflow-wrap: anywhere; }
+    .blog-cta { margin-top: 44px; padding: 24px; background: var(--background-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); }
+  </style>
+bodyClass: service-landing
 blog:
-  categories: ["Киберсигурност"]
+  categories: ["Форензика", "Разследване на инциденти"]
   date: 2026-11-20
   order: 0
-  title: Дигитална форензика и разследване на инциденти
-  summary: Подробно ръководство за дигитална форензика и разследване на инциденти от екипа на DefComs.
+  title: "Дигитална форензика и разследване на инциденти"
+  summary: "Как се извършва дигитална форензика: съхранение на доказателства, анализ на зловреден код и разследване на киберінциденти."
   image: /images/Webp/pentest-platform-Sentinel.webp
-  imageAlt: forensics | DefComs
-bodyClass: service-landing
+  imageAlt: Дигитална форензика и анализ
+  imageWidth: 1200
+  imageHeight: 675
+  ariaLabel: "Прочетете: Дигитална форензика и разследване на инциденти"
+  cta: Прочетете ръководството →
 ---
-<main class="container" style="max-width: 800px; margin: 150px auto 60px; padding: 0 24px;">
-<h1>Дигитална форензика и разследване на инциденти</h1>
-<p>Тази статия разглежда темата подробно: контекст, ключови понятия, практически стъпки и препоръки от екипа на DefComs. Целта е да помогне на организациите да разберат рисковете и да приложат ефективни мерки за защита.</p>
-<h2>Какво представлява</h2>
-<p>Описваме основните концепции, терминология и начин на действие. Включваме примери от реални сценарии и често срещани грешки, които водят до инциденти.</p>
-<h2>Практически стъпки</h2>
-<ul>
-<li>Оценка на текущото състояние и рисковете.</li>
-<li>Планиране на мерки и приоритети.</li>
-<li>Внедряване и тестване.</li>
-<li>Мониторинг и непрекъснато подобрение.</li>
-</ul>
-<h2>Как DefComs помага</h2>
-<p>Екипът ни предоставя консултации, технически услуги и обучение, съобразени с нуждите на вашата организация. Свържете се с нас за индивидуална оценка.</p>
-<p>Вижте <a href="/services">услугите</a> на DefComs за повече информация.</p>
+<main class="blog-article">
+    <nav class="blog-breadcrumbs" aria-label="Навигационна пътека">
+        <a href="/">Начало</a><span aria-hidden="true">›</span>
+        <a href="/blog">Блог</a><span aria-hidden="true">›</span>
+        <span aria-current="page">Дигитална форензика</span>
+    </nav>
+    <article>
+        <p class="blog-kicker">Форензика · Разследване · Доказателства</p>
+        <h1>Дигитална форензика и разследване на инциденти</h1>
+        <p class="blog-deck">Дигиталната форензика позволява съхранение, анализ и представяне на цифрови доказателства в съответствие с закона, за разследване на киберінциденти и нападения.</p>
+        <p class="blog-meta">Автор: <a href="/about/team/author/mikhail-georgiev" style="color: var(--secondary-cyan);">Михаил Георгиев</a> · Публикувано: <time datetime="2026-11-20">20 ноември 2026 г.</time> · Обновено: <time datetime="2026-11-22">22 ноември 2026 г.</time></p>
+        <img class="blog-hero-image" src="/images/Webp/pentest-platform-Sentinel.webp" alt="Дигитална форензика и анализ" width="1200" height="675" fetchpriority="high">
+        <p class="blog-legal-notice" style="border-left:4px solid #f0a500;background:rgba(240,165,0,.08);padding:16px 20px;border-radius:8px;margin:24px 0;font-size:.95rem;line-height:1.6;"><strong>⚠️ Важна бележка:</strong> Тази публикация е с информационна и образователна цел и не представлява юридическо тълкуване. За конкретен казус се консултирайте с квалифициран специалист.</p>
+        <p class="blog-callout"><strong>Кратък отговор:</strong> Дигиталната форензика позволява съхранение, анализ и представяне на цифрови доказателства в съответствие с закона, за разследване на киберінциденти и нападения.</p>
+        <h2>Какво представлява дигиталната форензика</h2>
+        <p>Дигиталната форензика е процес на съхранение, извличане и анализ на данни от компютри, мрежи, мобилни устройства и цифрови носители, за да се установи какво се е случило по време на кибератака.</p>
+        <h2>Етапи на разследване</h2>
+        <p>1) Съхранение на доказателства (forensic image), 2) Анализ на данни, 3) Възстановяване на изтрити файлове, 4) Документиране и отчети, 5) Представяне в съд.</p>
+        <h2>Инструменти за форензика</h2>
+        <p>Популярни инструменти включват Autopsy, FTK, Wireshark, Volatility (за анализ на паметта) и специализиран hardware за write-blocking.</p>
+        <h2>Как DefComs помага</h2>
+        <p>Екипът ни извършва дигитална форензика след киберінциденти, съхранява доказателства и подготвя отчети за правни и регулаторни цели.</p>
+        <h2>Често задавани въпроси</h2>
+        <h3>Мога ли сам да извърша форензичен анализ?</h3>
+        <p>Форензичният анализ изисква специални инструменти и знания, за да не се отеatcheват доказателствата. Препоръчва се квалифициран специалист.</p>
+        <h3>Колко време отнема разследването?</h3>
+        <p>Времето зависи от размера на инцидента, количеството данни и комплексността — от няколко дни до няколко седмици.</p>
+        <h2>Свързани ресурси</h2>
+        <ul class="blog-related">
+            <li><a href="/blog/incident-response-malware">Реакция при инциденти със зловреден код</a></li>
+            <li><a href="/blog/malware-analysis">Анализ на зловреден софтуер в защитена среда</a></li>
+            <li><a href="/services/incident-response">Инцидентен отговор</a></li>
+        </ul>
+        <h2>Официални източници</h2>
+        <ul class="blog-source-list">
+            <li><a href="https://www.nist.gov/publications/computer-security-incident-handling-guide" target="_blank" rel="noopener noreferrer">NIST SP 800-61: Computer Security Incident Handling Guide</a></li>
+            <li><a href="https://www.first.org" target="_blank" rel="noopener noreferrer">FIRST: Forum of Incident Response and Security Teams</a></li>
+        </ul>
+        <aside class="blog-cta">
+            <h2>Нуждаете ли се от консултация за дигитална форензика?</h2>
+            <p>Обсъдете разследването на киберінцидент и съхранението на доказателства с екипа на DefComs.</p>
+            <a class="btn btn-primary" href="/#contact">Заявете консултация</a>
+        </aside>
+    </article>
 </main>

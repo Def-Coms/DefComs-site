@@ -1,36 +1,150 @@
 ---
 lastmod: 2026-11-22
-title: Обучение срещу социално инженерство | DefComs
-description: "Обучения за фирми по social-engineering-training."
+title: "Обучение срещу социално инженерство | DefComs"
+description: "Как да обучавате служители да разпознават и се branт срещу социални инженерски атаки."
 ogType: article
 image: https://defcoms.eu/images/Webp/Киберсигурност_4.0__Инструменти_и_стратегии.webp
-imageAlt: Обучение по киберсигурност
-ogDescription: "social-engineering-training и обучение на служители."
-twitterTitle: social-engineering-training | DefComs
-twitterDescription: "social-engineering-training в киберсигурността."
+imageAlt: Обучение срещу социално инженерство
+ogDescription: "Социално инженерство: обучение, разпознаване и protection."
+twitterTitle: "Обучение срещу социално инженерство | DefComs"
+twitterDescription: "Как да се branт срещу социални инженерски атаки."
+schema:
+  - "@context": https://schema.org
+    "@graph":
+      - "@type": Organization
+        "@id": https://defcoms.eu/#organization
+        name: DefComs
+        url: https://defcoms.eu/
+      - "@type": WebSite
+        "@id": https://defcoms.eu/#website
+        url: https://defcoms.eu/
+        name: DefComs
+        publisher:
+          "@id": https://defcoms.eu/#organization
+        inLanguage: bg
+      - "@type": WebPage
+        "@id": https://defcoms.eu/blog/social-engineering-training#webpage
+        url: https://defcoms.eu/blog/social-engineering-training
+        name: "Обучение срещу социално инженерство"
+        inLanguage: bg
+        isPartOf:
+          "@id": https://defcoms.eu/#website
+        breadcrumb:
+          "@id": https://defcoms.eu/blog/social-engineering-training#breadcrumb
+        mainEntity:
+          "@id": https://defcoms.eu/blog/social-engineering-training#article
+      - "@type": BlogPosting
+        "@id": https://defcoms.eu/blog/social-engineering-training#article
+        headline: "Обучение срещу социално инженерство"
+        description: "Как да обучавате служители да разпознават и се branт срещу социални инженерски атаки."
+        image: https://defcoms.eu/images/Webp/Киберсигурност_4.0__Инструменти_и_стратегии.webp
+        datePublished: 2026-11-20
+        dateModified: 2026-11-22
+        inLanguage: bg
+        mainEntityOfPage:
+          "@id": https://defcoms.eu/blog/social-engineering-training#webpage
+        author:
+          "@type": Person
+          "@id": https://defcoms.eu/about/team/author/mikhail-georgiev
+          name: Михаил Георгиев
+          jobTitle: Head of Offensive Security (Pentesting)
+          url: https://defcoms.eu/about/team/author/mikhail-georgiev
+        publisher:
+          "@id": https://defcoms.eu/#organization
+      - "@type": BreadcrumbList
+        "@id": https://defcoms.eu/blog/social-engineering-training#breadcrumb
+        itemListElement:
+          - "@type": ListItem
+            position: 1
+            name: Начало
+            item: https://defcoms.eu/
+          - "@type": ListItem
+            position: 2
+            name: Блог
+            item: https://defcoms.eu/blog
+          - "@type": ListItem
+            position: 3
+            name: Обучение срещу социално инженерство
+            item: https://defcoms.eu/blog/social-engineering-training
+headExtra: |-
+  <style>
+    .blog-article { max-width: 860px; margin: 0 auto; padding: 150px 24px 80px; }
+    .blog-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: 28px; }
+    .blog-breadcrumbs a { color: var(--secondary-cyan); }
+    .blog-kicker { color: var(--secondary-cyan); text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+    .blog-article h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.12; margin: 12px 0 20px; }
+    .blog-deck { color: var(--text-secondary); font-size: 1.2rem; line-height: 1.7; }
+    .blog-meta { color: var(--text-secondary); font-size: var(--font-size-sm); margin: 22px 0; }
+    .blog-hero-image { width: 100%; max-height: 460px; object-fit: cover; border-radius: var(--radius-lg); margin: 16px 0 32px; }
+    .blog-article h2 { margin-top: 42px; }
+    .blog-article p, .blog-article li { color: var(--text-secondary); line-height: 1.8; }
+    .blog-article ul, .blog-article ol { padding-left: 24px; }
+    .blog-callout { border-left: 3px solid var(--secondary-cyan); background: var(--background-card); padding: 18px 22px; border-radius: var(--radius-md); }
+    .blog-table-wrap { overflow-x: auto; margin: 24px 0; }
+    .blog-article table { width: 100%; border-collapse: collapse; min-width: 620px; }
+    .blog-article th, .blog-article td { padding: 14px; border: 1px solid var(--border-color); text-align: left; vertical-align: top; color: var(--text-secondary); line-height: 1.65; }
+    .blog-article th { color: var(--text-primary); background: var(--background-card); }
+    .blog-related, .blog-source-list { display: grid; gap: 12px; margin: 20px 0; }
+    .blog-related a, .blog-source-list a { color: var(--secondary-cyan); }
+    .blog-source-list li { overflow-wrap: anywhere; }
+    .blog-cta { margin-top: 44px; padding: 24px; background: var(--background-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); }
+  </style>
+bodyClass: service-landing
 blog:
-  categories: ["Киберсигурност"]
+  categories: ["Обучение", "Социално инженерство"]
   date: 2026-11-20
   order: 0
-  title: Обучение срещу социално инженерство
-  summary: Подробно ръководство за обучение срещу социално инженерство от екипа на DefComs.
+  title: "Обучение срещу социално инженерство"
+  summary: "Как да обучавате служители да разпознават и се branт срещу социални инженерски атаки."
   image: /images/Webp/Киберсигурност_4.0__Инструменти_и_стратегии.webp
-  imageAlt: social-engineering-training | DefComs
-bodyClass: service-landing
+  imageAlt: Обучение срещу социално инженерство
+  imageWidth: 1200
+  imageHeight: 675
+  ariaLabel: "Прочетете: Обучение срещу социално инженерство"
+  cta: Прочетете ръководството →
 ---
-<main class="container" style="max-width: 800px; margin: 150px auto 60px; padding: 0 24px;">
-<h1>Обучение срещу социално инженерство</h1>
-<p>Тази статия разглежда темата подробно: контекст, ключови понятия, практически стъпки и препоръки от екипа на DefComs. Целта е да помогне на организациите да разберат рисковете и да приложат ефективни мерки за защита.</p>
-<h2>Какво представлява</h2>
-<p>Описваме основните концепции, терминология и начин на действие. Включваме примери от реални сценарии и често срещани грешки, които водят до инциденти.</p>
-<h2>Практически стъпки</h2>
-<ul>
-<li>Оценка на текущото състояние и рисковете.</li>
-<li>Планиране на мерки и приоритети.</li>
-<li>Внедряване и тестване.</li>
-<li>Мониторинг и непрекъснато подобрение.</li>
-</ul>
-<h2>Как DefComs помага</h2>
-<p>Екипът ни предоставя консултации, технически услуги и обучение, съобразени с нуждите на вашата организация. Свържете се с нас за индивидуална оценка.</p>
-<p>Вижте <a href="/services">услугите</a> на DefComs за повече информация.</p>
+<main class="blog-article">
+    <nav class="blog-breadcrumbs" aria-label="Навигационна пътека">
+        <a href="/">Начало</a><span aria-hidden="true">›</span>
+        <a href="/blog">Блог</a><span aria-hidden="true">›</span>
+        <span aria-current="page">Обучение срещу социално инженерство</span>
+    </nav>
+    <article>
+        <p class="blog-kicker">Обучение · Социално инженерство · Манулкация</p>
+        <h1>Обучение срещу социално инженерство</h1>
+        <p class="blog-deck">Социалните инженерни атаки използват психологически манипулации, за да изucaт информация. Обучението на служителите е първият ред на защита.</p>
+        <p class="blog-meta">Автор: <a href="/about/team/author/mikhail-georgiev" style="color: var(--secondary-cyan);">Михаил Георгиев</a> · Публикувано: <time datetime="2026-11-20">20 ноември 2026 г.</time> · Обновено: <time datetime="2026-11-22">22 ноември 2026 г.</time></p>
+        <img class="blog-hero-image" src="/images/Webp/Киберсигурност_4.0__Инструменти_и_стратегии.webp" alt="Обучение срещу социално инженерство" width="1200" height="675" fetchpriority="high">
+        <p class="blog-legal-notice" style="border-left:4px solid #f0a500;background:rgba(240,165,0,.08);padding:16px 20px;border-radius:8px;margin:24px 0;font-size:.95rem;line-height:1.6;"><strong>⚠️ Важна бележка:</strong> Тази публикация е с информационна и образователна цел и не представлява юридическо тълкуване. За конкретен казус се консултирайте с квалифициран специалист.</p>
+        <p class="blog-callout"><strong>Кратък отговор:</strong> Социалните инженерни атаки използват психологически манипулации, за да изucaт информация. Обучението на служителите е първият ред на защита.</p>
+        <h2>Какво представлява социално инженерство</h2>
+        <p>Социалното инженерство е техника, при която атакуващите manipulate хора, за да изucaт данни, да получат достъп или да actions, които са в полза на атакуващия.</p>
+        <h2>Типове атаки</h2>
+        <p>Фишинг, pretexting, baiting, quid pro quo, tailgating и други. Всички селат на човеския фактор.</p>
+        <h2>Как да се противопоставим</h2>
+        <p>Обучение на служители, проверка на идентичността, не споделяне на лични данни и сигнал за подозрителен опит.</p>
+        <h2>Как DefComs помог達</h2>
+        <p>Проведем обучения, симулации и консултираме за политики срещу социално инженерство.</p>
+        <h2>Често задавани въпроси</h2>
+        <h3>Кой е най-рискован?</h3>
+        <p>Служителите с достъп до чувствителни данни или финансови системи са основна цел за социални инженерни атаки.</p>
+        <h3>Как да разпознаме опит за социално инженерство?</h3>
+        <p>Натиск за бързо действие, поисквания за лични данни, неочаквани прилози и подозрители комуникации.</p>
+        <h2>Свързани ресурси</h2>
+        <ul class="blog-related">
+            <li><a href="/blog/phishing-awareness-training">Обучение на служители срещу фишинг</a></li>
+            <li><a href="/blog/security-awareness-program">Програма за повишаване на осведомеността за сигурност</a></li>
+            <li><a href="/services/corporate-training">Обучения за фирми</a></li>
+        </ul>
+        <h2>Официални източници</h2>
+        <ul class="blog-source-list">
+            <li><a href="https://www.sans.org/social-engineering" target="_blank" rel="noopener noreferrer">SANS: Social Engineering</a></li>
+            <li><a href="https://www.cisa.gov/social-engineering" target="_blank" rel="noopener noreferrer">CISA: Social Engineering</a></li>
+        </ul>
+        <aside class="blog-cta">
+            <h2>Нуждаете ли се от консултация за обучение срещу социално инженерство?</h2>
+            <p>Обсъдете обучението и практическите стъпки за защита на вашата организация с екипа на DefComs.</p>
+            <a class="btn btn-primary" href="/#contact">Заявете консултация</a>
+        </aside>
+    </article>
 </main>

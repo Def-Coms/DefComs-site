@@ -1,36 +1,150 @@
 ---
 lastmod: 2026-11-22
-title: Какво е Ghidra и как се използва за reverse engineering | DefComs
-description: "Статия за what-is-ghidra и приложение в сигурността."
+title: "Какво е Ghidra и как се използва за reverse engineering | DefComs"
+description: "Ghidra е безплатен frameworks за обратно инжеенериране, разработен от NSA. Как се инсталира и използва."
 ogType: article
 image: https://defcoms.eu/images/Webp/pentest-platform-Sentinel.webp
-imageAlt: Инструменти за сигурност
-ogDescription: "what-is-ghidra и неговата роля в киберсигурността."
-twitterTitle: what-is-ghidra | DefComs
-twitterDescription: "what-is-ghidra в киберсигурността."
+imageAlt: Ghidra инструмент за reverse engineering
+ogDescription: "Ghidra: безплатен frameworks за reverse engineering, разработен от NSA."
+twitterTitle: "Какво е Ghidra и как се използва за reverse engineering | DefComs"
+twitterDescription: "Какво е Ghidra и как се използва за обратно инжеенериране."
+schema:
+  - "@context": https://schema.org
+    "@graph":
+      - "@type": Organization
+        "@id": https://defcoms.eu/#organization
+        name: DefComs
+        url: https://defcoms.eu/
+      - "@type": WebSite
+        "@id": https://defcoms.eu/#website
+        url: https://defcoms.eu/
+        name: DefComs
+        publisher:
+          "@id": https://defcoms.eu/#organization
+        inLanguage: bg
+      - "@type": WebPage
+        "@id": https://defcoms.eu/blog/what-is-ghidra#webpage
+        url: https://defcoms.eu/blog/what-is-ghidra
+        name: "Какво е Ghidra и как се използва за reverse engineering"
+        inLanguage: bg
+        isPartOf:
+          "@id": https://defcoms.eu/#website
+        breadcrumb:
+          "@id": https://defcoms.eu/blog/what-is-ghidra#breadcrumb
+        mainEntity:
+          "@id": https://defcoms.eu/blog/what-is-ghidra#article
+      - "@type": BlogPosting
+        "@id": https://defcoms.eu/blog/what-is-ghidra#article
+        headline: "Какво е Ghidra и как се използва за reverse engineering"
+        description: "Ghidra е безплатен frameworks за обратно инжеенериране, разработен от NSA. Как се инсталира и използва."
+        image: https://defcoms.eu/images/Webp/pentest-platform-Sentinel.webp
+        datePublished: 2026-11-16
+        dateModified: 2026-11-22
+        inLanguage: bg
+        mainEntityOfPage:
+          "@id": https://defcoms.eu/blog/what-is-ghidra#webpage
+        author:
+          "@type": Person
+          "@id": https://defcoms.eu/about/team/author/mikhail-georgiev
+          name: Михаил Георгиев
+          jobTitle: Head of Offensive Security (Pentesting)
+          url: https://defcoms.eu/about/team/author/mikhail-georgiev
+        publisher:
+          "@id": https://defcoms.eu/#organization
+      - "@type": BreadcrumbList
+        "@id": https://defcoms.eu/blog/what-is-ghidra#breadcrumb
+        itemListElement:
+          - "@type": ListItem
+            position: 1
+            name: Начало
+            item: https://defcoms.eu/
+          - "@type": ListItem
+            position: 2
+            name: Блог
+            item: https://defcoms.eu/blog
+          - "@type": ListItem
+            position: 3
+            name: Ghidra инструмент
+            item: https://defcoms.eu/blog/what-is-ghidra
+headExtra: |-
+  <style>
+    .blog-article { max-width: 860px; margin: 0 auto; padding: 150px 24px 80px; }
+    .blog-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: 28px; }
+    .blog-breadcrumbs a { color: var(--secondary-cyan); }
+    .blog-kicker { color: var(--secondary-cyan); text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+    .blog-article h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.12; margin: 12px 0 20px; }
+    .blog-deck { color: var(--text-secondary); font-size: 1.2rem; line-height: 1.7; }
+    .blog-meta { color: var(--text-secondary); font-size: var(--font-size-sm); margin: 22px 0; }
+    .blog-hero-image { width: 100%; max-height: 460px; object-fit: cover; border-radius: var(--radius-lg); margin: 16px 0 32px; }
+    .blog-article h2 { margin-top: 42px; }
+    .blog-article p, .blog-article li { color: var(--text-secondary); line-height: 1.8; }
+    .blog-article ul, .blog-article ol { padding-left: 24px; }
+    .blog-callout { border-left: 3px solid var(--secondary-cyan); background: var(--background-card); padding: 18px 22px; border-radius: var(--radius-md); }
+    .blog-table-wrap { overflow-x: auto; margin: 24px 0; }
+    .blog-article table { width: 100%; border-collapse: collapse; min-width: 620px; }
+    .blog-article th, .blog-article td { padding: 14px; border: 1px solid var(--border-color); text-align: left; vertical-align: top; color: var(--text-secondary); line-height: 1.65; }
+    .blog-article th { color: var(--text-primary); background: var(--background-card); }
+    .blog-related, .blog-source-list { display: grid; gap: 12px; margin: 20px 0; }
+    .blog-related a, .blog-source-list a { color: var(--secondary-cyan); }
+    .blog-source-list li { overflow-wrap: anywhere; }
+    .blog-cta { margin-top: 44px; padding: 24px; background: var(--background-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); }
+  </style>
+bodyClass: service-landing
 blog:
-  categories: ["Киберсигурност"]
+  categories: ["Инструменти", "Reverse engineering"]
   date: 2026-11-16
   order: 0
-  title: Какво е Ghidra и как се използва за reverse engineering
-  summary: Подробно ръководство за какво е ghidra и как се използва за reverse engineering от екипа на DefComs.
+  title: "Какво е Ghidra и как се използва за reverse engineering"
+  summary: "Ghidra е безплатен frameworks за обратно инжеенериране, разработен от NSA. Как се инсталира и използва."
   image: /images/Webp/pentest-platform-Sentinel.webp
-  imageAlt: what-is-ghidra | DefComs
-bodyClass: service-landing
+  imageAlt: Ghidra инструмент за reverse engineering
+  imageWidth: 1200
+  imageHeight: 675
+  ariaLabel: "Прочетете: Какво е Ghidra и как се използва за reverse engineering"
+  cta: Прочетете ръководството →
 ---
-<main class="container" style="max-width: 800px; margin: 150px auto 60px; padding: 0 24px;">
-<h1>Какво е Ghidra и как се използва за reverse engineering</h1>
-<p>Тази статия разглежда темата подробно: контекст, ключови понятия, практически стъпки и препоръки от екипа на DefComs. Целта е да помогне на организациите да разберат рисковете и да приложат ефективни мерки за защита.</p>
-<h2>Какво представлява</h2>
-<p>Описваме основните концепции, терминология и начин на действие. Включваме примери от реални сценарии и често срещани грешки, които водят до инциденти.</p>
-<h2>Практически стъпки</h2>
-<ul>
-<li>Оценка на текущото състояние и рисковете.</li>
-<li>Планиране на мерки и приоритети.</li>
-<li>Внедряване и тестване.</li>
-<li>Мониторинг и непрекъснато подобрение.</li>
-</ul>
-<h2>Как DefComs помага</h2>
-<p>Екипът ни предоставя консултации, технически услуги и обучение, съобразени с нуждите на вашата организация. Свържете се с нас за индивидуална оценка.</p>
-<p>Вижте <a href="/services">услугите</a> на DefComs за повече информация.</p>
+<main class="blog-article">
+    <nav class="blog-breadcrumbs" aria-label="Навигационна пътека">
+        <a href="/">Начало</a><span aria-hidden="true">›</span>
+        <a href="/blog">Блог</a><span aria-hidden="true">›</span>
+        <span aria-current="page">Ghidra инструмент</span>
+    </nav>
+    <article>
+        <p class="blog-kicker">Ghidra · Инструменти · Reverse engineering</p>
+        <h1>Какво е Ghidra и как се използва за reverse engineering</h1>
+        <p class="blog-deck">Ghidra е безплатен и отворен frameworks за reverse engineering, разработен от NSA, за анализ на бинарен код и зловреден софтуер.</p>
+        <p class="blog-meta">Автор: <a href="/about/team/author/mikhail-georgiev" style="color: var(--secondary-cyan);">Михаил Георгиев</a> · Публикувано: <time datetime="2026-11-16">16 ноември 2026 г.</time> · Обновено: <time datetime="2026-11-22">22 ноември 2026 г.</time></p>
+        <img class="blog-hero-image" src="/images/Webp/pentest-platform-Sentinel.webp" alt="Ghidra инструмент за reverse engineering" width="1200" height="675" fetchpriority="high">
+        <p class="blog-legal-notice" style="border-left:4px solid #f0a500;background:rgba(240,165,0,.08);padding:16px 20px;border-radius:8px;margin:24px 0;font-size:.95rem;line-height:1.6;"><strong>⚠️ Важна бележка:</strong> Тази публикация е с информационна и образователна цел и не представлява юридическо тълкуване. За конкретен казус се консултирайте с квалифициран специалист.</p>
+        <p class="blog-callout"><strong>Кратък отговор:</strong> Ghidra е безплатен и отворен frameworks за reverse engineering, разработен от NSA, за анализ на бинарен код и зловреден софтуер.</p>
+        <h2>Какво представлява Ghidra</h2>
+        <p>Ghidra е софтуерен пакет за reverse engineering, който включва дисасемблер, декомпилатор, дебъгер и инструменти за анализ на бинарни файлове.</p>
+        <h2>Основни функции</h2>
+        <p>Поддръжка на множество архитектури, декомпилация в C-подобен код, автоматизирани скриптове и colaboración по анализ.</p>
+        <h2>Как се използва</h2>
+        <p>Инсталира се Java, стартира се Ghidra, се импортира изпълнителен файл и се анализира кода, логиката и уязвимостите.</p>
+        <h2>Как DefComs използва</h2>
+        <p>Нашият екип използва Ghidra за анализ на зловреден код и изследване на уязвимости в софтуер.</p>
+        <h2>Често задавани въпроси</h2>
+        <h3>E безплатен ли Ghidra?</h3>
+        <p>Да, Ghidra е безплатен и отворен код, публикуван от NSA.</p>
+        <h3>Какво се изисква за инсталиране?</h3>
+        <p>Java Runtime Environment (JVM) и операционна система Windows, Linux или macOS.</p>
+        <h2>Свързани ресурси</h2>
+        <ul class="blog-related">
+            <li><a href="/blog/reverse-engineering">Reverse engineering на бинарен код</a></li>
+            <li><a href="/blog/what-is-ida">Какво е IDA Pro и декомпилацията</a></li>
+            <li><a href="/blog/decompilation">Декомпилация на изпълними файлове</a></li>
+        </ul>
+        <h2>Официални източници</h2>
+        <ul class="blog-source-list">
+            <li><a href="https://ghidra-sre.org" target="_blank" rel="noopener noreferrer">NSA Ghidra Software Reverse Engineering Framework</a></li>
+            <li><a href="https://github.com/NationalSecurityAgency/ghidra" target="_blank" rel="noopener noreferrer">Ghidra на GitHub</a></li>
+        </ul>
+        <aside class="blog-cta">
+            <h2>Нуждаете ли се от консултация за Ghidra и reverse engineering?</h2>
+            <p>Обсъдете анализа на бинарен код и практическите стъпки за защита с екипа на DefComs.</p>
+            <a class="btn btn-primary" href="/#contact">Заявете консултация</a>
+        </aside>
+    </article>
 </main>

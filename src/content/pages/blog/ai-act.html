@@ -1,36 +1,169 @@
 ---
 lastmod: 2026-11-22
 title: "AI Act: регулация на изкуствения интелект в ЕС | DefComs"
-description: "Статия за ai-act и съответствието."
+description: "Подробно ръководство за EU AI Act: рискови категории, изисквания за съответствие и практически стъпки за организациите в България."
 ogType: article
 image: https://defcoms.eu/images/Webp/pentest-platform-Sentinel-1.webp
-imageAlt: Регулации и съответствие
-ogDescription: "ai-act и съответствието с регулациите."
-twitterTitle: ai-act | DefComs
-twitterDescription: "ai-act в киберсигурността."
+imageAlt: AI Act регулация и съответствие
+ogDescription: "Какво изисква регламентът за изкуствен интелект и как да се подготвят организациите."
+twitterTitle: "AI Act: регулация на изкуствения интелект в ЕС | DefComs"
+twitterDescription: "EU AI Act: рискови категории, изисквания и съответствие за българския бизнес."
+schema:
+  - "@context": https://schema.org
+    "@graph":
+      - "@type": Organization
+        "@id": https://defcoms.eu/#organization
+        name: DefComs
+        url: https://defcoms.eu/
+      - "@type": WebSite
+        "@id": https://defcoms.eu/#website
+        url: https://defcoms.eu/
+        name: DefComs
+        publisher:
+          "@id": https://defcoms.eu/#organization
+        inLanguage: bg
+      - "@type": WebPage
+        "@id": https://defcoms.eu/blog/ai-act#webpage
+        url: https://defcoms.eu/blog/ai-act
+        name: "AI Act: регулация на изкуствения интелект в ЕС"
+        inLanguage: bg
+        isPartOf:
+          "@id": https://defcoms.eu/#website
+        breadcrumb:
+          "@id": https://defcoms.eu/blog/ai-act#breadcrumb
+        mainEntity:
+          "@id": https://defcoms.eu/blog/ai-act#article
+      - "@type": BlogPosting
+        "@id": https://defcoms.eu/blog/ai-act#article
+        headline: "AI Act: регулация на изкуствения интелект в ЕС"
+        description: "Подробно ръководство за EU AI Act: рискови категории, изисквания за съответствие и практически стъпки."
+        image: https://defcoms.eu/images/Webp/pentest-platform-Sentinel-1.webp
+        datePublished: 2026-11-21
+        dateModified: 2026-11-22
+        inLanguage: bg
+        mainEntityOfPage:
+          "@id": https://defcoms.eu/blog/ai-act#webpage
+        author:
+          "@type": Person
+          "@id": https://defcoms.eu/about/team/author/mikhail-georgiev
+          name: Михаил Георгиев
+          jobTitle: Head of Offensive Security (Pentesting)
+          url: https://defcoms.eu/about/team/author/mikhail-georgiev
+        publisher:
+          "@id": https://defcoms.eu/#organization
+      - "@type": BreadcrumbList
+        "@id": https://defcoms.eu/blog/ai-act#breadcrumb
+        itemListElement:
+          - "@type": ListItem
+            position: 1
+            name: Начало
+            item: https://defcoms.eu/
+          - "@type": ListItem
+            position: 2
+            name: Блог
+            item: https://defcoms.eu/blog
+          - "@type": ListItem
+            position: 3
+            name: AI Act
+            item: https://defcoms.eu/blog/ai-act
+headExtra: |-
+  <style>
+    .blog-article { max-width: 860px; margin: 0 auto; padding: 150px 24px 80px; }
+    .blog-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: 28px; }
+    .blog-breadcrumbs a { color: var(--secondary-cyan); }
+    .blog-kicker { color: var(--secondary-cyan); text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+    .blog-article h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.12; margin: 12px 0 20px; }
+    .blog-deck { color: var(--text-secondary); font-size: 1.2rem; line-height: 1.7; }
+    .blog-meta { color: var(--text-secondary); font-size: var(--font-size-sm); margin: 22px 0; }
+    .blog-hero-image { width: 100%; max-height: 460px; object-fit: cover; border-radius: var(--radius-lg); margin: 16px 0 32px; }
+    .blog-article h2 { margin-top: 42px; }
+    .blog-article p, .blog-article li { color: var(--text-secondary); line-height: 1.8; }
+    .blog-article ul, .blog-article ol { padding-left: 24px; }
+    .blog-callout { border-left: 3px solid var(--secondary-cyan); background: var(--background-card); padding: 18px 22px; border-radius: var(--radius-md); }
+    .blog-table-wrap { overflow-x: auto; margin: 24px 0; }
+    .blog-article table { width: 100%; border-collapse: collapse; min-width: 620px; }
+    .blog-article th, .blog-article td { padding: 14px; border: 1px solid var(--border-color); text-align: left; vertical-align: top; color: var(--text-secondary); line-height: 1.65; }
+    .blog-article th { color: var(--text-primary); background: var(--background-card); }
+    .blog-related, .blog-source-list { display: grid; gap: 12px; margin: 20px 0; }
+    .blog-related a, .blog-source-list a { color: var(--secondary-cyan); }
+    .blog-source-list li { overflow-wrap: anywhere; }
+    .blog-cta { margin-top: 44px; padding: 24px; background: var(--background-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); }
+  </style>
+bodyClass: service-landing
 blog:
-  categories: ["Киберсигурност"]
+  categories: ["Регулации", "Изкуствен интелект"]
   date: 2026-11-21
   order: 0
   title: "AI Act: регулация на изкуствения интелект в ЕС"
-  summary: "Подробно ръководство за ai act: регулация на изкуствения интелект в ес от екипа на DefComs."
+  summary: "Подробно ръководство за EU AI Act: рискови категории, изисквания за съответствие и практически стъпки за организациите в България."
   image: /images/Webp/pentest-platform-Sentinel-1.webp
-  imageAlt: ai-act | DefComs
-bodyClass: service-landing
+  imageAlt: AI Act регулация и съответствие
+  imageWidth: 1200
+  imageHeight: 675
+  ariaLabel: "Прочетете: AI Act регулация"
+  cta: Прочетете ръководството →
 ---
-<main class="container" style="max-width: 800px; margin: 150px auto 60px; padding: 0 24px;">
-<h1>AI Act: регулация на изкуствения интелект в ЕС</h1>
-<p>Тази статия разглежда темата подробно: контекст, ключови понятия, практически стъпки и препоръки от екипа на DefComs. Целта е да помогне на организациите да разберат рисковете и да приложат ефективни мерки за защита.</p>
-<h2>Какво представлява</h2>
-<p>Описваме основните концепции, терминология и начин на действие. Включваме примери от реални сценарии и често срещани грешки, които водят до инциденти.</p>
-<h2>Практически стъпки</h2>
-<ul>
-<li>Оценка на текущото състояние и рисковете.</li>
-<li>Планиране на мерки и приоритети.</li>
-<li>Внедряване и тестване.</li>
-<li>Мониторинг и непрекъснато подобрение.</li>
-</ul>
-<h2>Как DefComs помага</h2>
-<p>Екипът ни предоставя консултации, технически услуги и обучение, съобразени с нуждите на вашата организация. Свържете се с нас за индивидуална оценка.</p>
-<p>Вижте <a href="/services">услугите</a> на DefComs за повече информация.</p>
+<main class="blog-article">
+    <nav class="blog-breadcrumbs" aria-label="Навигационна пътека">
+        <a href="/">Начало</a><span aria-hidden="true">›</span>
+        <a href="/blog">Блог</a><span aria-hidden="true">›</span>
+        <span aria-current="page">AI Act</span>
+    </nav>
+    <article>
+        <p class="blog-kicker">Регулации · Изкуствен интелект · Съответствие</p>
+        <h1>AI Act: регулация на изкуствения интелект в ЕС</h1>
+<p class="blog-deck">Регламентът за изкуствен интелект (EU AI Act) създава първата обхващаща правна рамка за AI в ЕС. Статията обяснява рисковите категории, изискванията за съответствие и стъпките за организациите в България.</p>
+        <p class="blog-meta">Автор: <a href="/about/team/author/mikhail-georgiev" style="color: var(--secondary-cyan);">Михаил Георгиев</a> · Публикувано: <time datetime="2026-11-21">21 ноември 2026 г.</time> · Обновено: <time datetime="2026-11-22">22 ноември 2026 г.</time></p>
+        <img class="blog-hero-image" src="/images/Webp/pentest-platform-Sentinel-1.webp" alt="AI Act регулация и съответствие" width="1200" height="675" fetchpriority="high">
+        <p class="blog-legal-notice" style="border-left:4px solid #f0a500;background:rgba(240,165,0,.08);padding:16px 20px;border-radius:8px;margin:24px 0;font-size:.95rem;line-height:1.6;"><strong>⚠️ Важна бележка:</strong> Тази публикация е с информационна и образователна цел и не представлява юридическо тълкуване. За конкретен казус се консултирайте с квалифициран специалист.</p>
+        <p class="blog-callout"><strong>Кратък отговор:</strong> AI Act разделя AI системите на четири рискови категории — неприемлив, висок, ограничен и минимален риск — и задава изисквания за тестване, документация, надзор и съответствие.</p> <h2>Какво представлява AI Act</h2>
+        <p>Регламентът за изкуствен интелект на Европейския съюз е първия глобален законодателен акт, който regulира разработването и използването на AI системи. Целта е да гарантира безопасност, прозрачност и уважение към основните права.</p>
+        <h2>Четири рискови категории</h2>
+        <div class="blog-table-wrap">
+            <table>
+                <thead><tr><th>Категория</th><th>Примери</th><th>Изисквания</th></tr></thead>
+                <tbody>
+                    <tr><th>Неприемлив риск</th><td>Социално рейтинг, манипулация на поведение, дистанционно биометрично разпознаване</td><td>Забране nени</td></tr>
+                    <tr><th>Висок риск</th><td>Здравна cave, образование, наемане, правосъдие, критична инфраструктура</td><td>Съответствие, оценка на conformity, документация, надзор</td></tr>
+                    <tr><th>Ограничен риск</th><td>Чатботове, генеративен AI, дипфик</td><td>Прозрачност — потребителят да знае че общува с AI</td></tr>
+                    <tr><th>Минимален риск</th><td>Филтри за спам, препоръчителен софтуер</td><td>Добри практики; доброволни кодекси</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <h2>Какво изисква съответствието</h2>
+        <p>За високорискови AI системи доставчиците трябва да:</p>
+        <ul>
+            <li>направят оценка на съответствието и да държат техническа документация;</li>
+            <li>обезпечат надзор от човек и качество на данните;</li>
+            <li>публикуват декларация за съответствие и поставят CE маркиране;</li>
+            <li>съобщават инциденти на националните органи.</li>
+        </ul>
+        <h2>Как DefComs помага</h2>
+        <p>Екипът ни предоставя консултации за interprété на AI Act, оценка на рисковете, техническо сопровождение и обучение на екипи. Свържете се с нас за индивидуална оценка.</p>
+        <p>Вижте <a href="/services">услугите</a> на DefComs за повече информация.</p>
+        <h2>Често задавани въпроси</h2>
+        <h3>Кога влиза в сила AI Act?</h3>
+        <p>Регламентът се прилага по етапи. Запретените практики прекратяват се по-рано, а пълните изисквания за високорискови системи влизат в сила след напредналите срокове.</p>
+        <h3>Се отнася ли се AI Act за малки фирми?</h3>
+        <p>Да, ако фирмата използва или доставя AI системи обхванати от регламента. Изискванията са пропорционални на размера и риска.</p>
+        <h3>Има ли наказания за несъответствие?</h3>
+        <p>Да. Наказанията са до 35 млн евро или 7% от годишния оборот за най-тежките нарушения, подобно на GDPR.</p>
+        <h2>Свързани ресурси</h2>
+        <ul class="blog-related">
+            <li><a href="/blog/llm-security">Сигурност на големите езикови модели (LLM)</a></li>
+            <li><a href="/blog/ai-in-cybersecurity">Изкуственият интелект в киберсигурността</a></li>
+            <li><a href="/blog/ai-threat-detection">Откриване на заплахи с изкуствен интелект</a></li>
+            <li><a href="/services">Киберсигурностни услуги на DefComs</a></li>
+        </ul>
+        <h2>Официални източници</h2>
+        <ul class="blog-source-list">
+            <li><a href="https://eur-lex.europa.eu/legal-content/BG/TXT/?uri=CELEX:32024R1689" target="_blank" rel="noopener noreferrer">Евроскъп: Регламент (ЕС) 2024/1689 за изкуствен интелект (AI Act)</a></li>
+            <li><a href="https://digital-strategy.ec.europa.eu/en/policies/ai-act" target="_blank" rel="noopener noreferrer">Европейска комисия: AI Act</a></li>
+        </ul>
+        <aside class="blog-cta">
+            <h2>Нуждаете ли се от консултация за AI Act?</h2>
+            <p>Обсъдете рисковете, изискванията за съответствие и практическите стъпки за вашата организация с екипа на DefComs.</p>
+            <a class="btn btn-primary" href="/#contact">Заявете консултация</a>
+        </aside>
+    </article>
 </main>

@@ -1,36 +1,150 @@
 ---
 lastmod: 2026-11-22
-title: Обучение на служители срещу фишинг | DefComs
-description: "Обучения за фирми по phishing-awareness-training."
+title: "Обучение на служители срещу фишинг | DefComs"
+description: "Как да проведете обучение за разпознаване на фишинг атаки и подобрите осведомеността на служителите."
 ogType: article
 image: https://defcoms.eu/images/Webp/pentest-platform-Sentinel-1.webp
-imageAlt: Обучение по киберсигурност
-ogDescription: "phishing-awareness-training и обучение на служители."
-twitterTitle: phishing-awareness-training | DefComs
-twitterDescription: "phishing-awareness-training в киберсигурността."
+imageAlt: Обучение срещу фишинг
+ogDescription: "Фишинг обучение: разпознаване на фишинг, симулации и подобряване на осведомеността."
+twitterTitle: "Обучение на служители срещу фишинг | DefComs"
+twitterDescription: "Обучение срещу фишинг атаки за служители."
+schema:
+  - "@context": https://schema.org
+    "@graph":
+      - "@type": Organization
+        "@id": https://defcoms.eu/#organization
+        name: DefComs
+        url: https://defcoms.eu/
+      - "@type": WebSite
+        "@id": https://defcoms.eu/#website
+        url: https://defcoms.eu/
+        name: DefComs
+        publisher:
+          "@id": https://defcoms.eu/#organization
+        inLanguage: bg
+      - "@type": WebPage
+        "@id": https://defcoms.eu/blog/phishing-awareness-training#webpage
+        url: https://defcoms.eu/blog/phishing-awareness-training
+        name: "Обучение на служители срещу фишинг"
+        inLanguage: bg
+        isPartOf:
+          "@id": https://defcoms.eu/#website
+        breadcrumb:
+          "@id": https://defcoms.eu/blog/phishing-awareness-training#breadcrumb
+        mainEntity:
+          "@id": https://defcoms.eu/blog/phishing-awareness-training#article
+      - "@type": BlogPosting
+        "@id": https://defcoms.eu/blog/phishing-awareness-training#article
+        headline: "Обучение на служители срещу фишинг"
+        description: "Как да проведете обучение за разпознаване на фишинг атаки и подобрите осведомеността на служителите."
+        image: https://defcoms.eu/images/Webp/pentest-platform-Sentinel-1.webp
+        datePublished: 2026-11-17
+        dateModified: 2026-11-22
+        inLanguage: bg
+        mainEntityOfPage:
+          "@id": https://defcoms.eu/blog/phishing-awareness-training#webpage
+        author:
+          "@type": Person
+          "@id": https://defcoms.eu/about/team/author/mikhail-georgiev
+          name: Михаил Георгиев
+          jobTitle: Head of Offensive Security (Pentesting)
+          url: https://defcoms.eu/about/team/author/mikhail-georgiev
+        publisher:
+          "@id": https://defcoms.eu/#organization
+      - "@type": BreadcrumbList
+        "@id": https://defcoms.eu/blog/phishing-awareness-training#breadcrumb
+        itemListElement:
+          - "@type": ListItem
+            position: 1
+            name: Начало
+            item: https://defcoms.eu/
+          - "@type": ListItem
+            position: 2
+            name: Блог
+            item: https://defcoms.eu/blog
+          - "@type": ListItem
+            position: 3
+            name: Обучение срещу фишинг
+            item: https://defcoms.eu/blog/phishing-awareness-training
+headExtra: |-
+  <style>
+    .blog-article { max-width: 860px; margin: 0 auto; padding: 150px 24px 80px; }
+    .blog-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; color: var(--text-secondary); font-size: var(--font-size-sm); margin-bottom: 28px; }
+    .blog-breadcrumbs a { color: var(--secondary-cyan); }
+    .blog-kicker { color: var(--secondary-cyan); text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+    .blog-article h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.12; margin: 12px 0 20px; }
+    .blog-deck { color: var(--text-secondary); font-size: 1.2rem; line-height: 1.7; }
+    .blog-meta { color: var(--text-secondary); font-size: var(--font-size-sm); margin: 22px 0; }
+    .blog-hero-image { width: 100%; max-height: 460px; object-fit: cover; border-radius: var(--radius-lg); margin: 16px 0 32px; }
+    .blog-article h2 { margin-top: 42px; }
+    .blog-article p, .blog-article li { color: var(--text-secondary); line-height: 1.8; }
+    .blog-article ul, .blog-article ol { padding-left: 24px; }
+    .blog-callout { border-left: 3px solid var(--secondary-cyan); background: var(--background-card); padding: 18px 22px; border-radius: var(--radius-md); }
+    .blog-table-wrap { overflow-x: auto; margin: 24px 0; }
+    .blog-article table { width: 100%; border-collapse: collapse; min-width: 620px; }
+    .blog-article th, .blog-article td { padding: 14px; border: 1px solid var(--border-color); text-align: left; vertical-align: top; color: var(--text-secondary); line-height: 1.65; }
+    .blog-article th { color: var(--text-primary); background: var(--background-card); }
+    .blog-related, .blog-source-list { display: grid; gap: 12px; margin: 20px 0; }
+    .blog-related a, .blog-source-list a { color: var(--secondary-cyan); }
+    .blog-source-list li { overflow-wrap: anywhere; }
+    .blog-cta { margin-top: 44px; padding: 24px; background: var(--background-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); }
+  </style>
+bodyClass: service-landing
 blog:
-  categories: ["Киберсигурност"]
+  categories: ["Обучение", "Фишинг"]
   date: 2026-11-17
   order: 0
-  title: Обучение на служители срещу фишинг
-  summary: Подробно ръководство за обучение на служители срещу фишинг от екипа на DefComs.
+  title: "Обучение на служители срещу фишинг"
+  summary: "Как да проведете обучение за разпознаване на фишинг атаки и подобрите осведомеността на служителите."
   image: /images/Webp/pentest-platform-Sentinel-1.webp
-  imageAlt: phishing-awareness-training | DefComs
-bodyClass: service-landing
+  imageAlt: Обучение срещу фишинг
+  imageWidth: 1200
+  imageHeight: 675
+  ariaLabel: "Прочетете: Обучение на служители срещу фишинг"
+  cta: Прочетете ръководството →
 ---
-<main class="container" style="max-width: 800px; margin: 150px auto 60px; padding: 0 24px;">
-<h1>Обучение на служители срещу фишинг</h1>
-<p>Тази статия разглежда темата подробно: контекст, ключови понятия, практически стъпки и препоръки от екипа на DefComs. Целта е да помогне на организациите да разберат рисковете и да приложат ефективни мерки за защита.</p>
-<h2>Какво представлява</h2>
-<p>Описваме основните концепции, терминология и начин на действие. Включваме примери от реални сценарии и често срещани грешки, които водят до инциденти.</p>
-<h2>Практически стъпки</h2>
-<ul>
-<li>Оценка на текущото състояние и рисковете.</li>
-<li>Планиране на мерки и приоритети.</li>
-<li>Внедряване и тестване.</li>
-<li>Мониторинг и непрекъснато подобрение.</li>
-</ul>
-<h2>Как DefComs помага</h2>
-<p>Екипът ни предоставя консултации, технически услуги и обучение, съобразени с нуждите на вашата организация. Свържете се с нас за индивидуална оценка.</p>
-<p>Вижте <a href="/services">услугите</a> на DefComs за повече информация.</p>
+<main class="blog-article">
+    <nav class="blog-breadcrumbs" aria-label="Навигационна пътека">
+        <a href="/">Начало</a><span aria-hidden="true">›</span>
+        <a href="/blog">Блог</a><span aria-hidden="true">›</span>
+        <span aria-current="page">Обучение срещу фишинг</span>
+    </nav>
+    <article>
+        <p class="blog-kicker">Обучение · Фишинг · Социално инженерство</p>
+        <h1>Обучение на служители срещу фишинг</h1>
+        <p class="blog-deck">Фишинг атаките оставят една от най-честите методи за компрометиране. Обучението на служителите за разпознаване и реакция е ключово за защитата на организацията.</p>
+        <p class="blog-meta">Автор: <a href="/about/team/author/mikhail-georgiev" style="color: var(--secondary-cyan);">Михаил Георгиев</a> · Публикувано: <time datetime="2026-11-17">17 ноември 2026 г.</time> · Обновено: <time datetime="2026-11-22">22 ноември 2026 г.</time></p>
+        <img class="blog-hero-image" src="/images/Webp/pentest-platform-Sentinel-1.webp" alt="Обучение срещу фишинг" width="1200" height="675" fetchpriority="high">
+        <p class="blog-legal-notice" style="border-left:4px solid #f0a500;background:rgba(240,165,0,.08);padding:16px 20px;border-radius:8px;margin:24px 0;font-size:.95rem;line-height:1.6;"><strong>⚠️ Важна бележка:</strong> Тази публикация е с информационна и образователна цел и не представлява юридическо тълкуване. За конкретен казус се консултирайте с квалифициран специалист.</p>
+        <p class="blog-callout"><strong>Кратък отговор:</strong> Фишинг атаките оставят една от най-честите методи за компрометиране. Обучението на служителите за разпознаване и реакция е ключово за защитата на организацията.</p>
+        <h2>Какво представлява фишингът</h2>
+        <p>Фишингът е техника за социално инженерство, при която атакуващите се притесняват за легитимни организации, за да извадят чувствителна информация — пароли, финансови данни или достъп.</p>
+        <h2>Типове фишинг</h2>
+        <p>Email фишинг, spear фишинг (целева атака), whaling (насочен към ръководство), smishing (SMS) и vishing (гласови взвари).</p>
+        <h2>Как да разпознаме фишинг</h2>
+        <p>Подозрителен адрес на пратича, срочност и натиск, неочаквани прилози, линкове към подозрителни сайтове и поисквания за лични данни.</p>
+        <h2>Как DefComs помог達</h2>
+        <p>Проведем симулации на фишинг атаки, обучаваме служители и подготвяме политики за реакция при подозрителни имейли.</p>
+        <h2>Често задавани въпроси</h2>
+        <h3>Как често да се провеждат симулации?</h3>
+        <p>Препоръчително е минимал четири симулации годишно, последвани от обратна връзка и допълнително обучение за провалилите.</p>
+        <h3>Какво правим ако се кликне на фишинг линк?</h3>
+        <p>Не въвеждайте данни, затворете страната, извличете устройството от мрежата и уведомявайте IT екипа веднага.</p>
+        <h2>Свързани ресурси</h2>
+        <ul class="blog-related">
+            <li><a href="/blog/security-awareness-program">Програма за повишаване на осведомеността за сигурност</a></li>
+            <li><a href="/blog/social-engineering-training">Обучение срещу социално инженерство</a></li>
+            <li><a href="/services/corporate-training">Обучения за фирми</a></li>
+        </ul>
+        <h2>Официални източници</h2>
+        <ul class="blog-source-list">
+            <li><a href="https://www.antiphishing.org" target="_blank" rel="noopener noreferrer">APWG: Anti-Phishing Working Group</a></li>
+            <li><a href="https://www.cisa.gov/phishing" target="_blank" rel="noopener noreferrer">CISA: Phishing</a></li>
+        </ul>
+        <aside class="blog-cta">
+            <h2>Нуждаете ли се от консултация за обучение срещу фишинг?</h2>
+            <p>Обсъдете обучението и практическите стъпки за защита на вашата организация с екипа на DefComs.</p>
+            <a class="btn btn-primary" href="/#contact">Заявете консултация</a>
+        </aside>
+    </article>
 </main>
