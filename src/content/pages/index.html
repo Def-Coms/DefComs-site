@@ -204,9 +204,9 @@ headExtra: <link rel="preload" as="image" href="/images/PR_image/%D0%9A%D0%B8%D0
             <h2 class="section-title animate-on-scroll">За <span class="logo-def">Def</span><span class="logo-coms">Coms</span></h2>
             <p class="section-subtitle animate-on-scroll">Вашият технологичен партньор с денонощна експертиза.</p>
 
-            <div class="about-content centered-about-content" style="max-width: 860px; margin: 0 auto; text-align: center;">
-                <div class="about-text animate-on-scroll" style="text-align: center;">
-                    <h3 class="single-line-heading" style="text-align: center;">Вашата денонощна сигурност на корпоративно ниво</h3>
+            <div class="about-content centered-about-content about-content--narrow">
+                <div class="about-text animate-on-scroll text-center">
+                    <h3 class="single-line-heading text-center">Вашата денонощна сигурност на корпоративно ниво</h3>
                     <p>DefComs предлага услуги за киберсигурност, включително SOC мониторинг, тестове за проникване, реакция при инциденти и подготовка по регулаторни изисквания.</p>
                     <p>Услугите се съобразяват с обхвата и нуждите на организацията и могат да допълнят съществуващите ѝ ИТ и екипи по сигурността.</p>
 
@@ -453,8 +453,8 @@ headExtra: <link rel="preload" as="image" href="/images/PR_image/%D0%9A%D0%B8%D0
                     </div>
 
                     <!-- Link to detailed Spravochnik page -->
-                    <div style="text-align: center; margin-top: 40px;" class="animate-on-scroll">
-                        <a href="/spravochnik" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 10px; padding: 15px 35px; font-weight: 700; box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);">
+                    <div class="spravochnik-cta animate-on-scroll">
+                        <a href="/spravochnik" class="btn btn-primary btn--glow">
                             <span>📚 Справочника по Киберсигурност & Стандарти</span>
                         </a>
                     </div>
@@ -566,22 +566,22 @@ headExtra: <link rel="preload" as="image" href="/images/PR_image/%D0%9A%D0%B8%D0
             <h2 class="section-title animate-on-scroll">Cybersecurity OS</h2>
             <p class="section-subtitle animate-on-scroll">Собствените платформи на DefComs за киберсигурност: вътрешната операционна платформа Sentinel OS и клиентската платформа за мрежови мониторинг NetWatch.</p>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-top: 24px;">
-                <article style="border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 24px; background: var(--background-card);">
-                    <img src="/images/Sentinel/Operation_overview_soc-noc.webp" alt="Sentinel OS – таблото за SOC/NOC операции" style="width: 100%; height: auto; border-radius: var(--radius-md); margin-bottom: 16px;" loading="lazy">
+            <div class="platform-grid">
+                <article class="platform-card">
+                    <img src="/images/Sentinel/Operation_overview_soc-noc.webp" alt="Sentinel OS – таблото за SOC/NOC операции" loading="lazy">
                     <h3>Sentinel OS</h3>
                     <p>Вътрешна операционна платформа, използвана от нашите SOC и NOC екипи – визуализация на операциите, SIEM, инвентар на активите, threat intelligence и управление на инциденти.</p>
                     <a href="/cybersecurity-os/sentinel" class="btn btn-primary">Разгледай Sentinel OS</a>
                 </article>
-                <article style="border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 24px; background: var(--background-card);">
-                    <img src="/images/NetWatch/Clipboard_10-21-2026_01.webp" alt="NetWatch – табло за мрежови трафик и сигурност" style="width: 100%; height: auto; border-radius: var(--radius-md); margin-bottom: 16px;" loading="lazy">
+                <article class="platform-card">
+                    <img src="/images/NetWatch/Clipboard_10-21-2026_01.webp" alt="NetWatch – табло за мрежови трафик и сигурност" loading="lazy">
                     <h3>NetWatch</h3>
                     <p>Платформа, която се внедрява при клиента, за следене на мрежата в реално време – скорост, графика на трафика за последните 60 секунди, натоварване на връзката, класация на топ консуматори, устройства с мигновено блокиране, дневник по сигурността и екип с роли. Интеграция с MikroTik.</p>
                     <a href="/cybersecurity-os/netwatch" class="btn btn-primary">Разгледай NetWatch</a>
                 </article>
             </div>
 
-            <p style="text-align: center; margin-top: 28px;"><a href="/cybersecurity-os" class="btn btn-secondary">Към всички платформи (Cybersecurity OS)</a></p>
+            <p class="platforms-cta"><a href="/cybersecurity-os" class="btn btn-secondary">Към всички платформи (Cybersecurity OS)</a></p>
         </div>
     </section>
 
@@ -590,9 +590,9 @@ headExtra: <link rel="preload" as="image" href="/images/PR_image/%D0%9A%D0%B8%D0
         <div class="container">
             <h2 class="section-title animate-on-scroll">Киберхигиена & Блог</h2>
             <p class="section-subtitle animate-on-scroll">Професионални анализи и полезни съвети за сигурността на вашия бизнес от нашите експерти.</p>
-            <div class="articles-archive-link" style="display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;margin:16px 0 24px;">
-                <a class="btn btn-secondary" href="/blog" style="flex:0 0 auto;">Всички статии</a>
-                <p class="articles-legal-notice" style="border-left:4px solid #f0a500;background:rgba(240,165,0,.08);padding:14px 20px;border-radius:8px;margin:0;flex:1 1 460px;max-width:760px;min-width:0;font-size:.9rem;line-height:1.55;text-align:left;"><strong>⚠️ Важна бележка:</strong> Статиите и публикациите в този раздел са с информационна и образователна цел и <strong>не представляват юридическо или правно тълкуване</strong> на приложимото законодателство. При конкретен казус се консултирайте с квалифициран юрист.</p>
+            <div class="articles-archive-link">
+                <a class="btn btn-secondary" href="/blog">Всички статии</a>
+                <p class="articles-legal-notice"><strong>⚠️ Важна бележка:</strong> Статиите и публикациите в този раздел са с информационна и образователна цел и <strong>не представляват юридическо или правно тълкуване</strong> на приложимото законодателство. При конкретен казус се консултирайте с квалифициран юрист.</p>
             </div>
 
             <!-- Category Filtering -->
@@ -614,7 +614,7 @@ headExtra: <link rel="preload" as="image" href="/images/PR_image/%D0%9A%D0%B8%D0
                         <span class="article-category">За Бизнеса</span>
                         <h3>Как да защитим бизнеса си от ransomware</h3>
                         <p>Рансъмуер криптира файловете и спира дейността на фирмата. Разберете как да се защитите с изолиран бекъп, сегментация, мониторинг и обучени служители...</p>
-                        <p class="article-author" style="color:var(--text-secondary);font-size:.85rem;margin:14px 0 0;">Автор: <a href="/about/team/author/georgi-todorov" style="color:var(--secondary-cyan);">Георги Тодоров</a></p>
+                        <p class="article-author">Автор: <a href="/about/team/author/georgi-todorov">Георги Тодоров</a></p>
                                                 <a href="/blog/how-to-protect-business-from-ransomware" class="read-more">Прочети цялата статия →</a>
                     </div>
                 </article>
@@ -628,7 +628,7 @@ headExtra: <link rel="preload" as="image" href="/images/PR_image/%D0%9A%D0%B8%D0
                         <span class="article-category">За Бизнеса</span>
                         <h3>Защо аутсорсването на SOC е по-изгодно от вътрешен екип</h3>
                         <p>Изграждането на денонощен вътрешен SOC отдел изисква огромни средства за лицензи, заплати и 24/7 смени. Как DefComs решава този проблем...</p>
-                        <p class="article-author" style="color:var(--text-secondary);font-size:.85rem;margin:14px 0 0;">Автор: <a href="/about/team/author/alexander-petrov" style="color:var(--secondary-cyan);">Инж. Александър Петров</a></p>
+                        <p class="article-author">Автор: <a href="/about/team/author/alexander-petrov">Инж. Александър Петров</a></p>
                                                 <a href="/blog/soc-as-a-service" class="read-more">Прочети цялата статия →</a>
                     </div>
                 </article>
@@ -642,7 +642,7 @@ headExtra: <link rel="preload" as="image" href="/images/PR_image/%D0%9A%D0%B8%D0
                         <span class="article-category">За Бизнеса</span>
                         <h3>Нужен ли е SOC на малкия и среден бизнес?</h3>
                         <p>Не всяка фирма има нужда от собствен SOC. Разберете кога външният 24/7 мониторинг се изплаща и какъв е разумният праг за малък и среден бизнес...</p>
-                        <p class="article-author" style="color:var(--text-secondary);font-size:.85rem;margin:14px 0 0;">Автор: <a href="/about/team/author/alexander-petrov" style="color:var(--secondary-cyan);">Инж. Александър Петров</a></p>
+                        <p class="article-author">Автор: <a href="/about/team/author/alexander-petrov">Инж. Александър Петров</a></p>
                                                 <a href="/blog/does-smb-need-soc" class="read-more">Прочети цялата статия →</a>
                     </div>
                 </article>
@@ -656,7 +656,7 @@ headExtra: <link rel="preload" as="image" href="/images/PR_image/%D0%9A%D0%B8%D0
                         <span class="article-category">За Бизнеса</span>
                         <h3>Какво е ransomware и как заплашва бизнеса</h3>
                         <p>Загуба на клиенти, правни санкции, съдебни дела и разходи за възстановяване — цената на пробива далеч надхвърля финансовия откуп...</p>
-                        <p class="article-author" style="color:var(--text-secondary);font-size:.85rem;margin:14px 0 0;">Автор: <a href="/about/team/author/georgi-todorov" style="color:var(--secondary-cyan);">Георги Тодоров</a></p>
+                        <p class="article-author">Автор: <a href="/about/team/author/georgi-todorov">Георги Тодоров</a></p>
                                                 <a href="/blog/what-is-ransomware" class="read-more">Прочети цялата статия →</a>
                     </div>
                 </article>
@@ -670,7 +670,7 @@ headExtra: <link rel="preload" as="image" href="/images/PR_image/%D0%9A%D0%B8%D0
                         <span class="article-category">За Бизнеса</span>
                         <h3>NIS2 risk assessment: как да оцените киберриска</h3>
                         <p>Поетапен подход за оценка на киберриска по NIS2 – идентифициране на критични активи, заплахи и уязвимости и приоритизация на мерките...</p>
-                        <p class="article-author" style="color:var(--text-secondary);font-size:.85rem;margin:14px 0 0;">Автор: <a href="/about/team/author/elena-dimitrova" style="color:var(--secondary-cyan);">Елена Димитрова</a></p>
+                        <p class="article-author">Автор: <a href="/about/team/author/elena-dimitrova">Елена Димитрова</a></p>
                                                 <a href="/blog/nis2-risk-assessment" class="read-more">Прочети цялата статия →</a>
                     </div>
                 </article>
@@ -684,7 +684,7 @@ headExtra: <link rel="preload" as="image" href="/images/PR_image/%D0%9A%D0%B8%D0
                         <span class="article-category">За Бизнеса</span>
                         <h3>NIS2 изисквания: мерки за сигурност и докладване</h3>
                         <p>Кои технически и организационни мерки изисква NIS2 и какви са сроковете за докладване на инциденти? Практически преглед на задълженията по чл. 21...</p>
-                        <p class="article-author" style="color:var(--text-secondary);font-size:.85rem;margin:14px 0 0;">Автор: <a href="/about/team/author/elena-dimitrova" style="color:var(--secondary-cyan);">Елена Димитрова</a></p>
+                        <p class="article-author">Автор: <a href="/about/team/author/elena-dimitrova">Елена Димитрова</a></p>
                                                 <a href="/blog/nis2-requirements" class="read-more">Прочети цялата статия →</a>
                     </div>
                 </article>
@@ -700,7 +700,7 @@ headExtra: <link rel="preload" as="image" href="/images/PR_image/%D0%9A%D0%B8%D0
                         <span class="article-category">Технически</span>
                         <h3>Phishing Заплахата: Как да изградим силен човешки firewall</h3>
                         <p>Phishing атаките използват социално инженерство, за да извлекат пароли. Какво да направим, за да подготвим служителите и да спрем заплахата...</p>
-                        <p class="article-author" style="color:var(--text-secondary);font-size:.85rem;margin:14px 0 0;">Автор: <a href="/about/team/author/alexander-petrov" style="color:var(--secondary-cyan);">Инж. Александър Петров</a></p>
+                        <p class="article-author">Автор: <a href="/about/team/author/alexander-petrov">Инж. Александър Петров</a></p>
                                                 <a href="/services/phishing-simulation" class="read-more">Научете повече →</a>
                     </div>
                 </article>
@@ -714,7 +714,7 @@ headExtra: <link rel="preload" as="image" href="/images/PR_image/%D0%9A%D0%B8%D0
                         <span class="article-category">Технически</span>
                         <h3>Ransomware: Как да се защитим и да запазим данните си</h3>
                         <p>Криптирането на бази данни е кошмарът на бизнеса. Как се разпространява зловредният код и кои са надеждните стратегии за изолиран бекъп...</p>
-                        <p class="article-author" style="color:var(--text-secondary);font-size:.85rem;margin:14px 0 0;">Автор: <a href="/about/team/author/georgi-todorov" style="color:var(--secondary-cyan);">Георги Тодоров</a></p>
+                        <p class="article-author">Автор: <a href="/about/team/author/georgi-todorov">Георги Тодоров</a></p>
                                                 <a href="/blog/how-ransomware-works" class="read-more">Прочети цялата статия →</a>
                     </div>
                 </article>
@@ -728,7 +728,7 @@ headExtra: <link rel="preload" as="image" href="/images/PR_image/%D0%9A%D0%B8%D0
                         <span class="article-category">Технически</span>
                         <h3>Zero Trust архитектура: Моделът за сигурност на утрешния ден</h3>
                         <p>Вече не можем да се доверяваме просто защото някой е в мрежата ни. Разберете стъпките за проектиране на модел "винаги проверявай"...</p>
-                        <p class="article-author" style="color:var(--text-secondary);font-size:.85rem;margin:14px 0 0;">Автор: <a href="/about/team/author/alexander-petrov" style="color:var(--secondary-cyan);">Инж. Александър Петров</a></p>
+                        <p class="article-author">Автор: <a href="/about/team/author/alexander-petrov">Инж. Александър Петров</a></p>
                                                 <a href="/blog/zero-trust-architecture" class="read-more">Прочети цялата статия →</a>
                     </div>
                 </article>
@@ -742,7 +742,7 @@ headExtra: <link rel="preload" as="image" href="/images/PR_image/%D0%9A%D0%B8%D0
                         <span class="article-category">Технически</span>
                         <h3>Тестове за проникване: Открийте пропуските първи</h3>
                         <p>Етичните хакери на DefComs симулират реални атаки, за да разкрият уязвимости във вашите системи, преди злонамерени лица да се възползват...</p>
-                        <p class="article-author" style="color:var(--text-secondary);font-size:.85rem;margin:14px 0 0;">Автор: <a href="/about/team/author/mikhail-georgiev" style="color:var(--secondary-cyan);">Михаил Георгиев</a></p>
+                        <p class="article-author">Автор: <a href="/about/team/author/mikhail-georgiev">Михаил Георгиев</a></p>
                                                 <a href="/blog/what-is-penetration-testing" class="read-more">Прочети цялата статия →</a>
                     </div>
                 </article>
@@ -756,7 +756,7 @@ headExtra: <link rel="preload" as="image" href="/images/PR_image/%D0%9A%D0%B8%D0
                         <span class="article-category">Технически</span>
                         <h3>Киберсигурност в Индустрия 4.0/5.0: рискове и мерки</h3>
                         <p>Всяко "умно" устройство е потенциална уязвимост. Как правилно да сегментираме и защитим IoT/IIoT мрежите в модерния офис или производство...</p>
-                        <p class="article-author" style="color:var(--text-secondary);font-size:.85rem;margin:14px 0 0;">Автор: <a href="/about/team/author/alexander-petrov" style="color:var(--secondary-cyan);">Инж. Александър Петров</a></p>
+                        <p class="article-author">Автор: <a href="/about/team/author/alexander-petrov">Инж. Александър Петров</a></p>
                                                 <a href="/blog/industrial-cybersecurity-industry-4-0" class="read-more">Прочети цялата статия →</a>
                     </div>
                 </article>
@@ -770,7 +770,7 @@ headExtra: <link rel="preload" as="image" href="/images/PR_image/%D0%9A%D0%B8%D0
                         <span class="article-category">Технически</span>
                         <h3>Защита на крайните точки чрез EDR/XDR решения</h3>
                         <p>Лаптопи, телефони и сървъри са основните мишени на атаките. Научете защо традиционният антивирус не е достатъчен и как работи EDR...</p>
-                        <p class="article-author" style="color:var(--text-secondary);font-size:.85rem;margin:14px 0 0;">Автор: <a href="/about/team/author/georgi-todorov" style="color:var(--secondary-cyan);">Георги Тодоров</a></p>
+                        <p class="article-author">Автор: <a href="/about/team/author/georgi-todorov">Георги Тодоров</a></p>
                                                 <a href="/blog/what-is-edr" class="read-more">Прочети цялата статия →</a>
                     </div>
                 </article>
@@ -786,7 +786,7 @@ headExtra: <link rel="preload" as="image" href="/images/PR_image/%D0%9A%D0%B8%D0
                         <span class="article-category">Регулации</span>
                         <h3>Какво е NIS2? Цели, обхват и основни задължения</h3>
                         <p>Разберете кои компании попадат под строгите изисквания на NIS2, какви са глобите при несъответствие и как DefComs ви подготвя за одита...</p>
-                        <p class="article-author" style="color:var(--text-secondary);font-size:.85rem;margin:14px 0 0;">Автор: <a href="/about/team/author/elena-dimitrova" style="color:var(--secondary-cyan);">Елена Димитрова</a></p>
+                        <p class="article-author">Автор: <a href="/about/team/author/elena-dimitrova">Елена Димитрова</a></p>
                                                 <a href="/blog/what-is-nis2" class="read-more">Прочети цялата статия →</a>
                     </div>
                 </article>
@@ -800,7 +800,7 @@ headExtra: <link rel="preload" as="image" href="/images/PR_image/%D0%9A%D0%B8%D0
                         <span class="article-category">Регулации</span>
                         <h3>Съответствие с GDPR: Основни технически изисквания</h3>
                         <p>Какво трябва да направи всяка организация, обработваща лични данни на граждани на ЕС, за да постигне съответствие с изискванията на регламента...</p>
-                        <p class="article-author" style="color:var(--text-secondary);font-size:.85rem;margin:14px 0 0;">Автор: <a href="/about/team/author/elena-dimitrova" style="color:var(--secondary-cyan);">Елена Димитрова</a></p>
+                        <p class="article-author">Автор: <a href="/about/team/author/elena-dimitrova">Елена Димитрова</a></p>
                                                 <a href="/compliance/gdpr" class="read-more">Научете повече →</a>
                     </div>
                 </article>
@@ -814,7 +814,7 @@ headExtra: <link rel="preload" as="image" href="/images/PR_image/%D0%9A%D0%B8%D0
                         <span class="article-category">Регулации</span>
                         <h3>Стандартът ISO/IEC 27001 — основа на СУИС</h3>
                         <p>Системата за управление на информационната сигурност (СУИС) е глобалният златен стандарт. Как да се подготвим за успешна сертификация...</p>
-                        <p class="article-author" style="color:var(--text-secondary);font-size:.85rem;margin:14px 0 0;">Автор: <a href="/about/team/author/elena-dimitrova" style="color:var(--secondary-cyan);">Елена Димитрова</a></p>
+                        <p class="article-author">Автор: <a href="/about/team/author/elena-dimitrova">Елена Димитрова</a></p>
                                                 <a href="/compliance/iso-27001" class="read-more">Научете повече →</a>
                     </div>
                 </article>
@@ -828,7 +828,7 @@ headExtra: <link rel="preload" as="image" href="/images/PR_image/%D0%9A%D0%B8%D0
                         <span class="article-category">Регулации</span>
                         <h3>Директивата ePrivacy и бисквитките в уебсайтовете</h3>
                         <p>Разликите между GDPR и ePrivacy, правилата за електронни съобщения, бисквитки и проследяващите технологии на вашите корпоративни уебсайтове...</p>
-                        <p class="article-author" style="color:var(--text-secondary);font-size:.85rem;margin:14px 0 0;">Автор: <a href="/about/team/author/elena-dimitrova" style="color:var(--secondary-cyan);">Елена Димитрова</a></p>
+                        <p class="article-author">Автор: <a href="/about/team/author/elena-dimitrova">Елена Димитрова</a></p>
                                                 <a href="/cookie-policy" class="read-more">Научете повече →</a>
                     </div>
                 </article>
@@ -842,7 +842,7 @@ headExtra: <link rel="preload" as="image" href="/images/PR_image/%D0%9A%D0%B8%D0
                         <span class="article-category">Регулации</span>
                         <h3>Регламентът DORA за устойчивост на финансовия сектор</h3>
                         <p>Какво представлява DORA рамката, кои финансови субекти и ИКТ доставчици обхваща тя и какви технически контроли на сигурност изисква...</p>
-                        <p class="article-author" style="color:var(--text-secondary);font-size:.85rem;margin:14px 0 0;">Автор: <a href="/about/team/author/elena-dimitrova" style="color:var(--secondary-cyan);">Елена Димитрова</a></p>
+                        <p class="article-author">Автор: <a href="/about/team/author/elena-dimitrova">Елена Димитрова</a></p>
                                                 <a href="/blog/what-is-dora" class="read-more">Прочети цялата статия →</a>
                     </div>
                 </article>
@@ -856,7 +856,7 @@ headExtra: <link rel="preload" as="image" href="/images/PR_image/%D0%9A%D0%B8%D0
                         <span class="article-category">Регулации</span>
                         <h3>Законът за киберсигурност в България и МЕУ</h3>
                         <p>Националното законодателство в сферата на киберзащитата, ролята на Министерство на електронното управление и задълженията на операторите...</p>
-                        <p class="article-author" style="color:var(--text-secondary);font-size:.85rem;margin:14px 0 0;">Автор: <a href="/about/team/author/elena-dimitrova" style="color:var(--secondary-cyan);">Елена Димитрова</a></p>
+                        <p class="article-author">Автор: <a href="/about/team/author/elena-dimitrova">Елена Димитрова</a></p>
                                                 <a href="/blog/who-is-covered-by-nis2-bulgaria" class="read-more">Прочети цялата статия →</a>
                     </div>
                 </article>
@@ -905,7 +905,7 @@ headExtra: <link rel="preload" as="image" href="/images/PR_image/%D0%9A%D0%B8%D0
                         <div class="form-group form-consent">
                             <label><input type="checkbox" name="consent" value="yes" required> Съгласявам се личните ми данни да бъдат обработени според <a href="/privacy">Политиката за защита на личните данни</a>. *</label>
                         </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Изпрати запитване</button>
+                        <button type="submit" class="btn btn-primary btn--full">Изпрати запитване</button>
                     </form>
                 </div>
 

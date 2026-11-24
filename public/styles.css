@@ -3269,9 +3269,11 @@ html,body{overflow-x:clip}
 .section { margin: 0; padding: 0; }
 .card-actions { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
 .show { display: block !important; }
-.article-author { color: var(--text-secondary); font-size: 0.9rem; display: flex; align-items: center; gap: 8px; margin-top: 12px; }
-.articles-archive-link { color: var(--secondary-cyan); text-decoration: underline; }
-.articles-legal-notice { color: var(--text-secondary); font-size: 0.85rem; margin-top: 24px; }
+.article-author { color: var(--text-secondary); font-size: 0.85rem; margin: 14px 0 0; }
+.article-author a { color: var(--secondary-cyan); }
+.articles-archive-link { display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap; margin: 16px 0 24px; color: var(--secondary-cyan); text-decoration: underline; }
+.articles-archive-link > .btn { flex: 0 0 auto; }
+.articles-legal-notice { border-left: 4px solid #f0a500; background: rgba(240, 165, 0, 0.08); padding: 14px 20px; border-radius: 8px; margin: 0; flex: 1 1 460px; max-width: 760px; min-width: 0; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.55; text-align: left; }
 
 /* ============ Главен герой (съхранява визуала на легацията) ============ */
 .hero-content { max-width: 1400px; margin: 0 auto; padding: 0 var(--space-lg); display: flex; flex-wrap: wrap; align-items: center; gap: 48px; }
@@ -3324,3 +3326,48 @@ html,body{overflow-x:clip}
 .text-muted { color: var(--text-secondary); }
 .text-primary { color: var(--text-primary); }
 .text-white { color: #ffffff; }
+
+/* ============ Миграция на inline стилове (2.8a) ============ */
+.blog-meta a { color: var(--secondary-cyan); }
+.blog-legal-notice { border-left: 4px solid #f0a500; background: rgba(240, 165, 0, 0.08); padding: 16px 20px; border-radius: 8px; margin: 24px 0; font-size: 0.95rem; line-height: 1.6; }
+.contact-faq { margin-top: 64px; border-top: 1px solid var(--border-color); padding-top: 32px; }
+.svc-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin: 32px 0 8px; justify-content: center; }
+.service-landing-actions--spaced { margin-top: var(--space-xl); }
+.service-landing-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 12px; }
+.landing-actions--spaced { margin-top: var(--space-xl); }
+.landing-faq-question { display: inline; font-size: 1.05rem; margin: 0; color: inherit; font-weight: 700; }
+.inherit-link { color: inherit; text-decoration: none; }
+.page-shell { max-width: 1000px; margin: 150px auto 60px; padding: 0 24px; }
+.page-shell--narrow { max-width: 800px; }
+.page-breadcrumbs { font-size: 0.9rem; margin-bottom: 16px; }
+.page-breadcrumbs--spaced { margin: 24px 0; }
+.page-section--center { margin: 56px 0; text-align: center; }
+.page-title-center { text-align: center; }
+.page-subtitle-lg { font-size: 1.15rem; }
+.page-section { margin-top: 48px; }
+.page-section--spaced { margin-top: 40px; }
+.page-section--bordered { margin-top: 48px; border-top: 1px solid var(--border-color); padding-top: 24px; }
+.page-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 28px; }
+.page-grid--wide { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); margin-top: 24px; }
+.page-card { border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 24px; background: var(--background-card); }
+.page-card--lg { padding: 28px; }
+.page-card-icon { color: var(--secondary-cyan); margin-bottom: 12px; }
+.page-list { margin: 16px 0 0; padding-left: 22px; line-height: 1.9; }
+.page-paragraph--spaced { margin-top: 16px; }
+.page-image { width: 100%; height: auto; border-radius: var(--radius-lg); border: 1px solid var(--border-color); margin: 24px 0 8px; }
+.page-image--plain { width: 100%; height: auto; border-radius: var(--radius-lg); border: 1px solid var(--border-color); }
+.page-image--center { display: block; width: 100%; max-width: 640px; height: auto; margin: 24px auto 0; border-radius: var(--radius-lg); border: 1px solid var(--border-color); }
+.page-note { color: var(--text-secondary); font-size: 0.95rem; }
+.page-cta { margin-top: 40px; text-align: center; }
+.page-cta--spaced { margin-top: 64px; }
+.page-cta-actions { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin-top: 24px; }
+.btn--lg { font-size: 1.05rem; padding: 14px 28px; }
+.btn--xl { font-size: 1.1rem; padding: 16px 32px; }
+.btn--full { width: 100%; }
+.about-content--narrow { max-width: 860px; margin: 0 auto; text-align: center; }
+.spravochnik-cta { text-align: center; margin-top: 40px; }
+.btn--glow { display: inline-flex; align-items: center; gap: 10px; padding: 15px 35px; font-weight: 700; box-shadow: 0 0 20px rgba(0, 240, 255, 0.3); }
+.platform-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-top: 24px; }
+.platform-card { border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 24px; background: var(--background-card); }
+.platform-card img { width: 100%; height: auto; border-radius: var(--radius-md); margin-bottom: 16px; }
+.platforms-cta { text-align: center; margin-top: 28px; }

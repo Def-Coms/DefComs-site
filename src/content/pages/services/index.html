@@ -25,24 +25,25 @@ schema:
           "@id": https://defcoms.eu/#website
         publisher:
           "@id": https://defcoms.eu/#organization
+headExtra: |-
+  <style>
+    .svc-tab{padding:8px 14px;border:1px solid var(--border-color);background:var(--background-card);color:var(--text-primary);border-radius:8px;cursor:pointer}
+    .svc-tab.active{background:var(--secondary-cyan);color:#000;border-color:var(--secondary-cyan)}
+    .svc-panel{display:none}
+    .svc-panel.active{display:block}
+  </style>
 bodyClass: service-landing
 ---
 <main class="container section">
         <h1>Услуги по киберсигурност за бизнеса в България</h1>
         <p>DefComs предлага пълен набор от специализирани услуги за защита на българските организации от киберзаплахи. Всички услуги се предоставят с денонощен мониторинг и съответствие с NIS2, DORA и GDPR. Освен киберсигурност предлагаме и хостинг и инфраструктура, приложения като услуга и управляеми ИТ услуги за фирми — от VPS и Nextcloud до backup като услуга и MSP поддръжка.</p>
 
-        <nav class="svc-tabs" style="display:flex;gap:8px;flex-wrap:wrap;margin:32px 0 8px;justify-content:center;">
+        <nav class="svc-tabs">
             <button class="svc-tab active" data-tab="core">Основни</button>
             <button class="svc-tab" data-tab="business">Бизнес</button>
             <button class="svc-tab" data-tab="advanced">Разширена киберсигурност</button>
             <button class="svc-tab" data-tab="compliance">Съответствие</button>
         </nav>
-        <style>
-        .svc-tab{padding:8px 14px;border:1px solid var(--border-color);background:var(--background-card);color:var(--text-primary);border-radius:8px;cursor:pointer}
-        .svc-tab.active{background:var(--secondary-cyan);color:#000;border-color:var(--secondary-cyan)}
-        .svc-panel{display:none}
-        .svc-panel.active{display:block}
-        </style>
 
         <div class="svc-panel active" data-panel="core">
         <section class="mt-4">

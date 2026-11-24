@@ -571,13 +571,25 @@ headExtra: |-
                   font-size: 20px;
               }
           }
+
+          .spravochnik-hubs-grid {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+              gap: 16px;
+              margin: 30px 0;
+          }
+
+          .compliance-table th:nth-child(1) { width: 25%; }
+          .compliance-table th:nth-child(2) { width: 35%; }
+          .compliance-table th:nth-child(3) { width: 20%; }
+          .compliance-table th:nth-child(4) { width: 20%; }
       </style>
 ---
 <section class="spravochnik-hero">
         <div class="hero-container">
             <div class="hero-tag">DefComs Справочник</div>
 
-<div class="spravochnik-hubs-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 30px 0;">
+<div class="spravochnik-hubs-grid">
     <a href="/compliance/owasp" class="btn btn-secondary">OWASP Framework</a>
     <a href="/compliance/nist-csf" class="btn btn-secondary">NIST CSF 2.0</a>
     <a href="/compliance/cis-controls" class="btn btn-secondary">CIS Controls v8</a>
@@ -665,10 +677,10 @@ headExtra: |-
                     <table class="compliance-table">
                         <thead>
                             <tr>
-                                <th style="width: 25%;">Документ</th>
-                                <th style="width: 35%;">Описание</th>
-                                <th style="width: 20%;">Приложимост</th>
-                                <th style="width: 20%;">Свързани документи</th>
+                                <th>Документ</th>
+                                <th>Описание</th>
+                                <th>Приложимост</th>
+                                <th>Свързани документи</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -814,10 +826,10 @@ headExtra: |-
                     <table class="compliance-table">
                         <thead>
                             <tr>
-                                <th style="width: 25%;">Документ</th>
-                                <th style="width: 35%;">Описание</th>
-                                <th style="width: 20%;">Приложимост</th>
-                                <th style="width: 20%;">Свързани документи</th>
+                                <th>Документ</th>
+                                <th>Описание</th>
+                                <th>Приложимост</th>
+                                <th>Свързани документи</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -1047,10 +1059,10 @@ headExtra: |-
                     <table class="compliance-table">
                         <thead>
                             <tr>
-                                <th style="width: 25%;">Документ</th>
-                                <th style="width: 35%;">Описание</th>
-                                <th style="width: 20%;">Приложимост</th>
-                                <th style="width: 20%;">Свързани документи</th>
+                                <th>Документ</th>
+                                <th>Описание</th>
+                                <th>Приложимост</th>
+                                <th>Свързани документи</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -1175,10 +1187,10 @@ headExtra: |-
                     <table class="compliance-table">
                         <thead>
                             <tr>
-                                <th style="width: 25%;">Документ</th>
-                                <th style="width: 35%;">Описание</th>
-                                <th style="width: 20%;">Приложимост</th>
-                                <th style="width: 20%;">Свързани документи</th>
+                                <th>Документ</th>
+                                <th>Описание</th>
+                                <th>Приложимост</th>
+                                <th>Свързани документи</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -1212,10 +1224,10 @@ headExtra: |-
                     <table class="compliance-table">
                         <thead>
                             <tr>
-                                <th style="width: 25%;">Документ</th>
-                                <th style="width: 35%;">Описание</th>
-                                <th style="width: 20%;">Приложимост</th>
-                                <th style="width: 20%;">Свързани документи</th>
+                                <th>Документ</th>
+                                <th>Описание</th>
+                                <th>Приложимост</th>
+                                <th>Свързани документи</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -1284,10 +1296,10 @@ headExtra: |-
                     <table class="compliance-table">
                         <thead>
                             <tr>
-                                <th style="width: 25%;">Документ</th>
-                                <th style="width: 35%;">Описание</th>
-                                <th style="width: 20%;">Приложимост</th>
-                                <th style="width: 20%;">Свързани документи</th>
+                                <th>Документ</th>
+                                <th>Описание</th>
+                                <th>Приложимост</th>
+                                <th>Свързани документи</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -1426,10 +1438,10 @@ headExtra: |-
                     <table class="compliance-table">
                         <thead>
                             <tr>
-                                <th style="width: 25%;">Документ</th>
-                                <th style="width: 35%;">Описание</th>
-                                <th style="width: 20%;">Приложимост</th>
-                                <th style="width: 20%;">Свързани документи</th>
+                                <th>Документ</th>
+                                <th>Описание</th>
+                                <th>Приложимост</th>
+                                <th>Свързани документи</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -1498,10 +1510,10 @@ headExtra: |-
                     <table class="compliance-table">
                         <thead>
                             <tr>
-                                <th style="width: 25%;">Документ</th>
-                                <th style="width: 35%;">Описание</th>
-                                <th style="width: 20%;">Приложимост</th>
-                                <th style="width: 20%;">Свързани документи</th>
+                                <th>Документ</th>
+                                <th>Описание</th>
+                                <th>Приложимост</th>
+                                <th>Свързани документи</th>
                             </tr>
                         </thead>
                         <tbody>
