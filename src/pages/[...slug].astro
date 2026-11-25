@@ -41,7 +41,32 @@ if (entry.data.framework) {
 } else if (entry.data.term) {
   data = { ...termMeta(entry.data.term, entry.id, entry.data.description), ...entry.data };
 } else if (entry.data.author) {
-  data = { ...entry.data, schema: [authorSchema(entry.data.author)] };
+  const authorName = entry.data.author.name;
+  const allPages = await getCollection('pages', ({ data: d }) => !d.draft);
+  const autoArticles = allPages
+    .filter((p) => {
+      if (p.id === entry.id) return false;
+      const d = p.data;
+      let name;
+      if (d.article?.author?.name) name = d.article.author.name;
+      else if (Array.isArray(d.schema)) {
+        for (const s of d.schema) {
+          const graph = s?.['@graph'];
+          if (Array.isArray(graph)) for (const n of graph) if (n?.['@type'] === 'BlogPosting' && n?.author?.name) { name = n.author.name; break; }
+          if (name) break;
+        }
+      }
+      return name === authorName;
+    })
+    .map((p) => {
+      const d = p.data;
+      let cats = d.article?.categories ?? d.blog?.categories ?? ['Блог'];
+      let title = (d.article?.title ?? d.blog?.title ?? d.title).replace(/\s*\|\s*DefComs$/, '');
+      return { category: cats[0] ?? 'Блог', title, href: '/' + p.id };
+    });
+  const articles = autoArticles.length ? autoArticles : entry.data.author.articles;
+  data = { ...entry.data, author: { ...entry.data.author, articles } };
+  data = { ...data, schema: entry.data.schema ?? [authorSchema(entry.data.author)] };
 } else if (entry.data.city) {
   const generated = cityMeta(entry.data.city, entry.id);
   data = { ...generated, ...entry.data, title: entry.data.title || generated.title, description: entry.data.description || generated.description };
@@ -62,7 +87,7 @@ const wizardProps = (id: string) => {
 };
 ---
 <Page page={data} path={path}>
-  {entry.data.framework ? <FrameworkPage framework={entry.data.framework} /> : entry.data.service ? <ServicePage service={entry.data.service} /> : entry.data.term ? <GlossaryTerm term={entry.data.term} /> : entry.data.author ? <AuthorPage author={entry.data.author} />   : entry.data.city ? <CityPage city={entry.data.city} id={entry.id} /> : certParts.length > 1 ? certParts.map((part, i) => i % 2 === 0
+  {entry.data.framework ? <FrameworkPage framework={entry.data.framework} /> : entry.data.service ? <ServicePage service={entry.data.service} /> : entry.data.term ? <GlossaryTerm term={entry.data.term} /> : entry.data.author ? <AuthorPage author={data.author ?? entry.data.author} />   : entry.data.city ? <CityPage city={entry.data.city} id={entry.id} /> : certParts.length > 1 ? certParts.map((part, i) => i % 2 === 0
     ? <Fragment set:html={part} />
     : <CertificateGrid />
   ) : wizardParts.length > 1 ? wizardParts.map((part, i) => i % 2 === 0

@@ -6,7 +6,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "astro dev",
     "build": "astro build",
-    "check": "node scripts/check-links.mjs"
+    "check": "node scripts/check-links.mjs",
+    "validate": "node scripts/validate.mjs",
+    "gen-llms": "node scripts/gen-llms.mjs"
   },
   "keywords": [],
   "author": "",

@@ -28,6 +28,10 @@ export const nav: NavItem[] = [
 
 export const navCta = { label: 'Свържете се с нас', href: '/contact' };
 
+export const social = [
+  { label: 'YouTube', href: 'https://www.youtube.com/@DefComs' },
+  { label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61590374520528' },
+];
 export const footer = {
   about:
     'Вашият високотехнологичен партньор в киберсигурността. Предотвратяване, засичане и бърза неутрализация на съвременните заплахи.',

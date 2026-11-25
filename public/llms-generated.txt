@@ -1,0 +1,276 @@
+# DefComs - Киберсигурност, SOC/NOC и Регулаторно съответствие
+
+> Автоматично генериран индекс на всички страници на defcoms.eu. Пълен машинночитаем документ за AI модели и търсачки.
+
+## about
+
+- [Георги Тодоров | SOC Operations Manager (24/7)](https://defcoms.eu/about/author/georgi-todorov): Георги Тодоров - SOC Operations Manager (24/7) в DefComs. Управлява денонощния поток от събития в Sentinel OS, триажа на аларми и неутрализацията на зловреден софтуер.
+- [Георги Тодоров | SOC Operations Manager (24/7)](https://defcoms.eu/about/team/author/georgi-todorov): Георги Тодоров - SOC Operations Manager (24/7) в DefComs. Управлява денонощния поток от събития в Sentinel OS, триажа на аларми и неутрализацията на зловреден софтуер.
+- [Екип DefComs | Експерти по киберсигурност в България](https://defcoms.eu/about/team/index): Познайте екипа на DefComs. Експерти по SOC мониторинг, NIS2, DORA, penetration testing и киберсигурност за бизнеса.
+- [Елена Димитрова | Lead Compliance & NIS2/DORA Advisor](https://defcoms.eu/about/author/elena-dimitrova): Елена Димитрова - Lead Compliance & NIS2/DORA Advisor в DefComs. Работи по подготовка и оценка на съответствието с NIS2, DORA, ISO 27001 и GDPR.
+- [Елена Димитрова | Lead Compliance & NIS2/DORA Advisor](https://defcoms.eu/about/team/author/elena-dimitrova): Елена Димитрова - Lead Compliance & NIS2/DORA Advisor в DefComs. Експерт по европейско право и съответствие, провежда одитите за NIS2, DORA, ISO 27001 и GDPR.
+- [За Нас | Екипът и мисията на DefComs в киберсигурността](https://defcoms.eu/about/index): Узнайте повече за DefComs — вашият партньор в киберсигурността. Високотехнологични SOC/NOC решения, опитен екип и закрила на бизнеса в България.
+- [Инж. Александър Петров | Lead Cyber Security Architect](https://defcoms.eu/about/author/alexander-petrov): Инж. Александър Петров - Lead Cyber Security Architect на DefComs. Над 15 години опит в проектирането на корпоративни SOC мрежи, Zero Trust среди и инцидентен мениджмънт.
+- [Инж. Александър Петров | Lead Cyber Security Architect](https://defcoms.eu/about/team/author/alexander-petrov): Инж. Александър Петров - Lead Cyber Security Architect на DefComs. Над 15 години опит в проектирането на корпоративни SOC мрежи, Zero Trust среди и инцидентен мениджмънт.
+- [К. Петров | Основател, главен експерт по IDA и Ghidra](https://defcoms.eu/about/team/author/k-petrov): К.Петров - CEO и Chief Analyst на DefComs. Отговорен за стратегическо развитие и главенанализ на киберзаплахите.
+- [Михаил Георгиев | Head of Offensive Security](https://defcoms.eu/about/author/mikhail-georgiev): Михаил Георгиев - Head of Offensive Security (Pentesting) в DefComs. Специалист по проникващи тестове на уеб/API приложения, облачни среди и червени екипи (Red Teaming).
+- [Михаил Георгиев | Head of Offensive Security](https://defcoms.eu/about/team/author/mikhail-georgiev): Михаил Георгиев - Head of Offensive Security (Pentesting) в DefComs. Специалист по проникващи тестове на уеб/API приложения, облачни среди и червени екипи (Red Teaming).
+- [Момчил Петров | Python Developer](https://defcoms.eu/about/team/author/momchil-petrov): Момчил Петров - Python програмист, автор на скриптове за мрежова автоматизация в DefComs.
+
+## assessment
+
+- [Безплатна NIS2 и DORA оценка | Тест за съответствие](https://defcoms.eu/assessment/nis2-dora): Безплатна предварителна самооценка за NIS2 и DORA. Вижте информационен резултат преди контактни данни; въпросникът не е правно становище.
+
+## blog
+
+- [3-2-1 backup правило: как работи и какво не гарантира](https://defcoms.eu/blog/3-2-1-backup): Обяснение на 3-2-1 backup правилото: три копия, два различни носителя и едно извън основната локация, плюс ограничения, cloud и restore тестове.
+- [Анализ на зловреден софтуер в защитена среда](https://defcoms.eu/blog/malware-analysis): Как се извършва анализ на зловреден софтуер: статичен и динамичен анализ, sandboxes и обратно инжеенериране.
+- [Блог за киберсигурност и защита на бизнеса](https://defcoms.eu/blog/index): Практически ръководства за киберсигурност, SOC, NIS2/DORA, IT/OT защита, мрежи и реакция при инциденти от екипа на DefComs.
+- [Видове penetration testing: web, API, мрежи и cloud](https://defcoms.eu/blog/types-of-penetration-testing): Основни видове penetration testing: web приложения, API, външни и вътрешни мрежи, cloud, mobile, wireless и social engineering — избор според целта и scope-а.
+- [Декомпилация на изпълними файлове](https://defcoms.eu/blog/decompilation): Какво е декомпилацията, как се извършва и как се използва в обратното инжеенериране и анализа на софтуер.
+- [Дигитална форензика и разследване на инциденти](https://defcoms.eu/blog/forensics): Как се извършва дигитална форензика: съхранение на доказателства, анализ на зловреден код и разследване на киберінциденти.
+- [Динамичен анализ в sandbox среда](https://defcoms.eu/blog/sandbox-analysis): Какво е sandbox анализ, как се извършва динамичния анализ на зловреден софтуер и какви са предимствата.
+- [Директива NIS2: изисквания и съответствие](https://defcoms.eu/blog/nis2-directive): Какво изисква директива NIS2: кого се отнася, кои са обязанностите и как да се подготвят организациите в България.
+- [Добри практики за пароли и автентикация](https://defcoms.eu/blog/password-hygiene-training): Обучение за добри практики за пароли, MFA и мениджъри на пароли за служители и организации.
+- [Изкуственият интелект в киберсигурността](https://defcoms.eu/blog/ai-in-cybersecurity): Ръководство за ролята на изкуствения интелект в киберсигурността: защита, детекция на заплахи и автоматизация на безопасността.
+- [Има ли нужда SMB бизнесът от SOC? Практично ръководство](https://defcoms.eu/blog/does-smb-need-soc): Има ли нужда малкият или средният бизнес от SOC? Оценете риска, наличния екип, покритието, вариантите за външен мониторинг и готовността за реакция.
+- [Как да защитим фирма от ransomware? Практичен план](https://defcoms.eu/blog/how-to-protect-business-from-ransomware): Практичен план за ransomware защита на фирма: MFA, patching, EDR, сегментация, защитени backup копия, мониторинг и incident response готовност.
+- [Как работи ransomware? Етапи на една атака](https://defcoms.eu/blog/how-ransomware-works): Как обикновено се развива ransomware инцидент: първоначален достъп, разширяване на достъпа, кражба или криптиране на данни и изнудване.
+- [Как работи SOC мониторингът? Процес и ескалация](https://defcoms.eu/blog/how-soc-monitoring-works): Как работи SOC мониторингът стъпка по стъпка: telemetry, SIEM корелация, триаж, разследване, ескалация, реакция и подобрение.
+- [Как SOC открива ransomware? Сигнали и реакция](https://defcoms.eu/blog/how-soc-detects-ransomware): Как SOC открива ransomware: endpoint, identity, network, backup и cloud сигнали, корелация, триаж и координирана реакция без обещания за 100% детекция.
+- [Какво е DORA? Регламентът за дигитална устойчивост](https://defcoms.eu/blog/what-is-dora): Какво представлява DORA (ЕС) 2022/2554, кои финансови субекти обхваща и какви са основните области за ICT риск, инциденти и устойчивост.
+- [Какво е EDR? Endpoint Detection and Response](https://defcoms.eu/blog/what-is-edr): Какво е EDR и как работи: endpoint telemetry, откриване на подозрително поведение, разследване и реакция. Възможности, ограничения и критерии за внедряване.
+- [Какво е Ghidra и как се използва за reverse engineering](https://defcoms.eu/blog/what-is-ghidra): Ghidra е безплатен frameworks за обратно инжеенериране, разработен от NSA. Как се инсталира и използва.
+- [Какво е IDA Pro и декомпилацията](https://defcoms.eu/blog/what-is-ida): Статия за what-is-ida и приложение в сигурността.
+- [Какво е NIS2? Цели, обхват и основни задължения](https://defcoms.eu/blog/what-is-nis2): Какво представлява NIS2, кои организации може да засегне и какви са основните теми: управление на риска, инциденти и надзор. Официални източници и ограничения.
+- [Какво е OWASP ZAP и DAST тестването](https://defcoms.eu/blog/what-is-owasp-zap): Статия за what-is-owasp-zap и приложение в сигурността.
+- [Какво е penetration testing? Цел, процес и резултат](https://defcoms.eu/blog/what-is-penetration-testing): Какво е penetration testing (пентест), как се различава от vulnerability scan, как протича тестът и какво включват обхватът, докладът и retest-ът.
+- [Какво е ransomware? Видове, риск и въздействие](https://defcoms.eu/blog/what-is-ransomware): Какво представлява ransomware, как се различават криптиране и data extortion и какви последици може да има за бизнеса.
+- [Какво е SOC? Център за операции по сигурността](https://defcoms.eu/blog/what-is-soc): Какво е SOC (Security Operations Center), какви задачи изпълнява, как работи мониторингът и кога бизнесът има нужда от денонощно наблюдение.
+- [Какво е XDR? Extended Detection and Response](https://defcoms.eu/blog/what-is-xdr): Какво е XDR и как свързва security сигнали от крайни устройства, идентичности, email, мрежа и cloud. Възможности, ограничения и критерии за оценка.
+- [Какво е Zero Trust? Принципи и практическо приложение](https://defcoms.eu/blog/what-is-zero-trust): Какво означава Zero Trust: проверка на всяка заявка според идентичност, устройство, контекст и права, с практически стъпки и ограничения според NIST SP 800-207.
+- [Какво наблюдава SOC? Логове, системи и телеметрия](https://defcoms.eu/blog/what-does-soc-monitor): Какво наблюдава SOC екипът? Преглед на identity, endpoints, сървъри, мрежи, cloud, приложения и security инструменти — според договорения обхват.
+- [Киберсигурност в индустрията 4.0/5.0: рискове и мерки](https://defcoms.eu/blog/industrial-cybersecurity-industry-4-0): Практическо ръководство за киберсигурност в Индустрия 4.0/5.0: IT/OT сегментация, защитен отдалечен достъп, мониторинг и реакция при инциденти.
+- [Кои компании в България попадат под NIS2?](https://defcoms.eu/blog/who-is-covered-by-nis2-bulgaria): Кои организации може да попаднат под NIS2 в България? Разгледайте секторите, правилото за размер, важните изключения и как да проверите официалния статус.
+- [Кои организации попадат под DORA? Финансови субекти](https://defcoms.eu/blog/who-is-covered-by-dora): Кои финансови организации са в обхвата на DORA (ЕС) 2022/2554? Преглед на категориите субекти, изключенията и отделния режим за ICT доставчици.
+- [Колко струва SOC? Фактори за цена и бюджетиране](https://defcoms.eu/blog/how-much-does-soc-cost): Колко струва SOC мониторингът? Няма универсална цена: вижте как обхватът, логовете, 24/7 покритието, интеграциите и реакцията влияят на бюджета.
+- [Обучение за разпознаване на ransomware](https://defcoms.eu/blog/ransomware-awareness): Как да разпознаете ransomware атака, как да се предпазите и как да реагирате в случай на инцидент.
+- [Обучение на служители срещу фишинг](https://defcoms.eu/blog/phishing-awareness-training): Как да проведете обучение за разпознаване на фишинг атаки и подобрите осведомеността на служителите.
+- [Обучение срещу социално инженерство](https://defcoms.eu/blog/social-engineering-training): Как да обучавате служители да разпознават и се branт срещу социални инженерски атаки.
+- [Откриване на заплахи с изкуствен интелект](https://defcoms.eu/blog/ai-threat-detection): Как AI помага за автоматизирано откриване на киберзаплахи, анализ на трафика и бърз отговор при инциденти.
+- [Програма за повишаване на осведомеността за сигурност](https://defcoms.eu/blog/security-awareness-program): Как да изградите програма за повишаване на осведомеността за сигурност в организациите — обучение, тестове и политика.
+- [Реакция при инциденти със зловреден код](https://defcoms.eu/blog/incident-response-malware): Как да отговорите на инцидент със зловреден код: изоляция, анализ, възстановяване и предотвратяване на повторни атаки.
+- [Регламент DORA: цифрова устойчивост във финансовия сектор](https://defcoms.eu/blog/dora-regulation): Какво изисква регламент DORA за финансовите организации: управление на ICT риска, отчетване за инциденти и тестване на устойчивостта.
+- [Сигурност на големите езикови модели (LLM)](https://defcoms.eu/blog/llm-security): Какви са рисковете за големите езикови модели: инжектиране на подсказки, изк랑ане на данни и защита на LLM приложения.
+- [AI Act: регулация на изкуствения интелект в ЕС](https://defcoms.eu/blog/ai-act): Подробно ръководство за EU AI Act: рискови категории, изисквания за съответствие и практически стъпки за организациите в България.
+- [API pentest: какво проверява тестът за сигурност?](https://defcoms.eu/blog/api-pentest): Какво включва API penetration test: идентичност, object/function authorization, данни, rate limits, бизнес потоци, API инвентар и безопасен scope.
+- [AWS Security: ръководство за защита на AWS](https://defcoms.eu/blog/aws-security): Практично AWS security ръководство: account governance, IAM и MFA, CloudTrail, мрежа, S3 и данни, workloads, детекция и incident response.
+- [Azure Security: ръководство за защита на Azure](https://defcoms.eu/blog/azure-security): Практично Azure security ръководство: shared responsibility, Microsoft Entra и RBAC, Activity Log, resource logs, network, data, Defender for Cloud и incident response.
+- [Cloud IAM: роли и least privilege в облака](https://defcoms.eu/blog/cloud-iam): Как да управлявате Cloud IAM: human и workload identities, федерация, временни credentials, роли, scope, lifecycle, secrets и преглед на достъпа.
+- [Cloud incident response: подготовка и реакция](https://defcoms.eu/blog/cloud-incident-response): Cloud incident response: как да подготвите достъп, logs и роли и да координирате анализ, containment, evidence, recovery и lessons learned в AWS, Azure и други cloud среди.
+- [Cloud logging: събиране и работа с cloud logs](https://defcoms.eu/blog/cloud-logging): Cloud logging в AWS, Azure и Google Cloud: типове събития, default coverage и retention, export, защита, monitoring, разходи и проверка на pipeline-а.
+- [Cloud pentest: как се тества сигурността в облака?](https://defcoms.eu/blog/cloud-pentest): Какво включва cloud penetration test: IAM, конфигурации, мрежи, workloads, данни, provider правила, разрешен обхват и безопасност.
+- [CVSS 4.0: какво означава оценката на уязвимост?](https://defcoms.eu/blog/cvss-explained): Обяснение на CVSS 4.0: Base, Threat, Environmental и Supplemental metrics, severity скалата, vector string и разликата между severity и бизнес риск.
+- [DORA за IT доставчици: договори и готовност](https://defcoms.eu/blog/dora-it-providers): Какво означава DORA за IT доставчици на финансови организации? Договорни изисквания, одит, инциденти, подизпълнители и разликата с пряк надзор.
+- [DORA за SaaS компании: договори и готовност](https://defcoms.eu/blog/dora-saas-companies): Как DORA засяга SaaS доставчиците на финансови организации: multi-tenant риск, локации, инциденти, подизпълнители, одит и exit планове.
+- [DORA изисквания: основни задължения и подготовка](https://defcoms.eu/blog/dora-requirements): Практичен преглед на изискванията по DORA: управление на ICT риска, инциденти, тестове, доставчици, регистър на информацията и надзор.
+- [DORA checklist: практическа самооценка и доказателства](https://defcoms.eu/blog/dora-checklist): Практически DORA checklist за обхват, управление на ICT риск, инциденти, тестове, ICT доставчици и доказателства. Информационен инструмент, не правен одит.
+- [DORA ICT риск: управление, контрол и доказателства](https://defcoms.eu/blog/dora-ict-risk-management): Какво изисква DORA за управление на ICT риска? Роли, активи, защита, откриване, реакция, възстановяване и RTS 2024/1774.
+- [DORA incident management: реакция и докладване](https://defcoms.eu/blog/dora-incident-management): DORA incident management: процес по членове 17–23, класификация на major ICT инциденти, срокове за докладване и подготовка на екипа.
+- [DORA penetration testing и TLPT: разлики и изисквания](https://defcoms.eu/blog/dora-penetration-testing): DORA penetration testing: годишна програма за тестове, кога се изисква TLPT, какво покрива RTS 2025/1190 и защо TLPT не е обикновен пентест.
+- [DORA third-party risk: доставчици, договори и RoI](https://defcoms.eu/blog/dora-third-party-risk): DORA third-party risk management: due diligence, критични функции, Register of Information, договорни клаузи, подизпълнители и exit планове.
+- [EDR и SOC: как работят заедно и кой за какво отговаря](https://defcoms.eu/blog/edr-and-soc): Как EDR сигналите стигат до SOC triage и реакция. Разграничение между технология, мониторинг и отговорности на доставчика, вътрешния IT екип и incident lead.
+- [EDR срещу ransomware: какво може и какво не може?](https://defcoms.eu/blog/edr-vs-ransomware): Как EDR помага срещу ransomware чрез endpoint telemetry, поведенческа детекция и containment, и защо не заменя identity, backup и incident response мерките.
+- [EDR vs Antivirus: разлики и кога замества](https://defcoms.eu/blog/edr-vs-antivirus): EDR vs antivirus: сравнение на malware prevention, endpoint telemetry, investigation и response. Разберете как функциите се припокриват и какво да проверите преди избор.
+- [EDR vs XDR: разлики, избор и съвместна употреба](https://defcoms.eu/blog/edr-vs-xdr): EDR vs XDR: сравнение на обхват, telemetry, корелация, response и оперативни изисквания. Кога е достатъчен EDR, кога XDR добавя стойност и как да пилотирате.
+- [Endpoint isolation: кога и как се изолира устройство](https://defcoms.eu/blog/endpoint-isolation): Какво означава endpoint isolation, кога помага при инцидент и какво да проверите преди, по време и след изолиране на устройство.
+- [External vs Internal pentest: разлики и избор](https://defcoms.eu/blog/external-vs-internal-pentest): Сравнение на external и internal penetration test: начална позиция, цели, обхват, тестови достъпи, рискове и безопасно планиране.
+- [Network pentest: какво проверява тестът на мрежата?](https://defcoms.eu/blog/network-pentest): Какво включва network penetration test: външни и вътрешни услуги, сегментация, конфигурации, разрешен scope, безопасност и доклад.
+- [NIS2 докладване на инциденти: срокове и подготовка](https://defcoms.eu/blog/nis2-incident-reporting): Как работи докладването на значими инциденти по член 23 на NIS2: ранно предупреждение до 24 часа, уведомление до 72 часа и последващи доклади.
+- [NIS2 за производствени компании: обхват и OT риск](https://defcoms.eu/blog/nis2-manufacturing): NIS2 за производители: кои производствени дейности са посочени в приложение II, как се проверява обхватът и как да свържете OT киберриска с мерките по член 21.
+- [NIS2 за IT компании: MSP, MSSP и доставчици на услуги](https://defcoms.eu/blog/nis2-it-companies): Кои IT компании може да попаднат под NIS2? Разграничете MSP/MSSP, cloud, data centre, DNS и онлайн услуги от общите IT консултации и проверете обхвата по закон.
+- [NIS2 и сигурност на веригата на доставки](https://defcoms.eu/blog/nis2-supply-chain-security): Как NIS2 разглежда риска от преки доставчици и доставчици на услуги по член 21: критичност, достъп, доказателства, договори и текущ преглед.
+- [NIS2 изисквания: мерки за киберсигурност и докладване](https://defcoms.eu/blog/nis2-requirements): Обзор на NIS2 изискванията по членове 20, 21 и 23: отговорност на ръководството, управление на риска, 10 тематични мерки и докладване на инциденти.
+- [NIS2 checklist: практическа самооценка за организации](https://defcoms.eu/blog/nis2-checklist): Практически NIS2 checklist по членове 20, 21 и 23: обхват, управление, активи, риск, инциденти, доставчици и доказателства. Информационен инструмент, не правен одит.
+- [NIS2 gap analysis: как да откриете пропуските](https://defcoms.eu/blog/nis2-gap-analysis): Практическо ръководство за NIS2 gap analysis: потвърждаване на обхвата, събиране на доказателства, оценка на пропуските и план за действия по членове 20, 21 и 23.
+- [NIS2 risk assessment: оценка на киберриска](https://defcoms.eu/blog/nis2-risk-assessment): Как да структурирате оценка на киберриска по NIS2: контекст, активи, заплахи, уязвимости, въздействие, контроли, остатъчен риск и план за действие.
+- [NIST SP 800-207: Zero Trust Architecture обяснена](https://defcoms.eu/blog/nist-sp-800-207): Какво описва NIST SP 800-207: седем Zero Trust tenets, ресурсно-базиран достъп, архитектурен обхват и разликата спрямо SP 800-207A.
+- [Pentest report: какво трябва да съдържа докладът?](https://defcoms.eu/blog/pentest-report): Практическо ръководство за pentest report: scope, методика, executive summary, доказателства, severity, remediation, ограничения и retest.
+- [Pentest retesting: проверка на поправена уязвимост](https://defcoms.eu/blog/retesting): Какво представлява penetration test retest, как се определя scope, как се проверяват корекции и как се документират open, fixed и частично решени находки.
+- [Ransomware и NIS2: задължения, реакция и доказателства](https://defcoms.eu/blog/ransomware-and-nis2): Как ransomware се свързва с NIS2: управленска отговорност, мерки по член 21, критерий за значим инцидент и докладване по член 23.
+- [Ransomware backup strategy: план за възстановяване](https://defcoms.eu/blog/ransomware-backup-strategy): Как да изградим ransomware backup strategy: обхват, изолирани копия, отделен достъп, retention, приоритети, RPO/RTO и реални restore тестове.
+- [Ransomware incident response: план за реакция](https://defcoms.eu/blog/ransomware-incident-response): Практическа рамка за реакция при ransomware: активиране на плана, оценка на обхвата, запазване на доказателства, координиран containment и преход към recovery.
+- [Ransomware recovery: безопасно възстановяване](https://defcoms.eu/blog/ransomware-recovery): Практическа рамка за ransomware recovery: приоритети, clean среда, проверка на backup, възстановяване на зависимости и контролирано връщане към работа.
+- [Reverse engineering на бинарен код](https://defcoms.eu/blog/reverse-engineering): Какво е reverse engineering, как се анализират бинарни файлове и какви инструменти се използват.
+- [SOC и NIS2: как мониторингът подпомага сигурността](https://defcoms.eu/blog/soc-and-nis2): Как SOC мониторингът може да подпомогне мерките по NIS2 за управление на риска, обработване на инциденти и откриване — без да е универсално задължителен продукт.
+- [SOC срещу ransomware: роля, реакция и ограничения](https://defcoms.eu/blog/soc-vs-ransomware): Как SOC подпомага организацията при ransomware чрез мониторинг, анализ и ескалация, къде се включва incident response и какво да договорите с доставчик.
+- [SOC as a Service: външен SOC мониторинг за бизнеса](https://defcoms.eu/blog/soc-as-a-service): Какво е SOC as a Service (SOCaaS), какво може да включва външният SOC, как се различава от вътрешен екип и какво да проверите в договора и SLA.
+- [SOC vs MSSP: разлика, обхват и отговорности](https://defcoms.eu/blog/soc-vs-mssp): SOC vs MSSP: SOC е функция за мониторинг и реакция, MSSP е доставчик на управлявани услуги за сигурност. Сравнение, модели и въпроси за избор.
+- [SOC vs SIEM: разлики, роли и как работят заедно](https://defcoms.eu/blog/soc-vs-siem): SOC vs SIEM: SOC е оперативна функция от хора и процеси, SIEM е технология за централизирано събиране и анализ на логове. Сравнение и примери.
+- [Threat hunting: проактивно търсене на заплахи](https://defcoms.eu/blog/threat-hunting): Какво е threat hunting и как се различава от SOC мониторинг и alert triage. Практичен цикъл за хипотези, телеметрия, анализ, ескалация и подобряване на detections.
+- [Web application pentest: какво проверява тестът?](https://defcoms.eu/blog/web-application-pentest): Какво включва web application penetration test: authentication, access control, sessions, input validation, business logic, configuration и безопасен scope.
+- [Zero Trust за SMB: практичен план за малък бизнес](https://defcoms.eu/blog/zero-trust-for-smb): Как малък бизнес може да започне с Zero Trust: приоритетни акаунти, достъп до приложения, устройства, ограничени мрежови пътища и измерими пилоти.
+- [Zero Trust Architecture: компоненти по NIST](https://defcoms.eu/blog/zero-trust-architecture): Как е устроена Zero Trust Architecture по NIST SP 800-207: Policy Engine, Policy Administrator, Policy Enforcement Point, данни за доверие и примерен поток за достъп.
+- [Zero Trust implementation: поетапен план за внедряване](https://defcoms.eu/blog/zero-trust-implementation): Практичен Zero Trust implementation roadmap: инвентар, protect surface, политики, пилот, постепенно разширяване и измерване според риска и NIST SP 800-207.
+- [Zero Trust Network: сегментация и достъп до ресурси](https://defcoms.eu/blog/zero-trust-network): Как Zero Trust Network ограничава достъпа до приложения и workloads чрез сегментация, identity-aware политики и наблюдение, без да се свежда до VPN или firewall.
+- [Zero Trust vs VPN: разлики, избор и съвместна употреба](https://defcoms.eu/blog/zero-trust-vs-vpn): Zero Trust vs VPN: сравнение между защитената мрежова връзка и ресурсно-базирания контрол на достъпа, кога VPN остава полезен и как да преминете постепенно.
+
+## bulgaria
+
+- [Киберсигурност в Стара Загора | SOC, NIS2, DORA](https://defcoms.eu/bulgaria/stara-zagora)
+- [Киберсигурност в цяла България | SOC, NOC, NIS2 и DORA](https://defcoms.eu/bulgaria/index): DefComs предоставя SOC мониторинг 24/7, NOC, тестове за проникване и NIS2/DORA съответствие за фирми във всички областни градове на България.
+- [Киберсигурност във Велико Търново | SOC, NIS2, DORA](https://defcoms.eu/bulgaria/veliko-tarnovo)
+- [blagoevgrad](https://defcoms.eu/bulgaria/blagoevgrad)
+- [burgas](https://defcoms.eu/bulgaria/burgas)
+- [dobrich](https://defcoms.eu/bulgaria/dobrich)
+- [gabrovo](https://defcoms.eu/bulgaria/gabrovo)
+- [haskovo](https://defcoms.eu/bulgaria/haskovo)
+- [kardzhali](https://defcoms.eu/bulgaria/kardzhali)
+- [kyustendil](https://defcoms.eu/bulgaria/kyustendil)
+- [lovech](https://defcoms.eu/bulgaria/lovech)
+- [montana](https://defcoms.eu/bulgaria/montana)
+- [pazardzhik](https://defcoms.eu/bulgaria/pazardzhik)
+- [pernik](https://defcoms.eu/bulgaria/pernik)
+- [pleven](https://defcoms.eu/bulgaria/pleven)
+- [plovdiv](https://defcoms.eu/bulgaria/plovdiv)
+- [razgrad](https://defcoms.eu/bulgaria/razgrad)
+- [ruse](https://defcoms.eu/bulgaria/ruse)
+- [shumen](https://defcoms.eu/bulgaria/shumen)
+- [silistra](https://defcoms.eu/bulgaria/silistra)
+- [sliven](https://defcoms.eu/bulgaria/sliven)
+- [smolyan](https://defcoms.eu/bulgaria/smolyan)
+- [sofia](https://defcoms.eu/bulgaria/sofia)
+- [targovishte](https://defcoms.eu/bulgaria/targovishte)
+- [varna](https://defcoms.eu/bulgaria/varna)
+- [vidin](https://defcoms.eu/bulgaria/vidin)
+- [vratsa](https://defcoms.eu/bulgaria/vratsa)
+- [yambol](https://defcoms.eu/bulgaria/yambol)
+
+## compliance
+
+- [Стандарти за киберсигурност: NIS2, DORA, GDPR, ISO](https://defcoms.eu/compliance/index): Хъб за регулации и стандарти за киберсигурност: NIS2, DORA, GDPR, ISO 27001, NIST CSF, CIS Controls, OWASP и PCI DSS – изисквания и подготовка с DefComs.
+- [CIS Controls v8 Приоритетни Контроли | DefComs Compliance](https://defcoms.eu/compliance/cis-controls): Внедряване на 18-те приоритетни киберконтрола по CIS Controls v8. Оценка на риска, защита на активи, мрежова сигурност и непрекъснат мониторинг от DefComs.
+- [DORA съответствие за финансови организации](https://defcoms.eu/compliance/dora): Практическа подготовка за DORA: ICT риск, инциденти, тестове за устойчивост, third-party risk и доказателства за дигитална оперативна устойчивост.
+- [GDPR Киберсигурност и Защита на Личните Данни](https://defcoms.eu/compliance/gdpr): Технически и организационни мерки за съответствие с Общия регламент за защита на данните (GDPR): криптиране, технически одити, DLP, инцидентна реакция и сигурност на обработката.
+- [ISO/IEC 27001: подготовка и контроли](https://defcoms.eu/compliance/iso-27001): Подготовка за сертификация по ISO/IEC 27001:2022 (СУИС): Gap Assessment, оценка на рисковете, технически контроли, SOC мониторинг и одитна подготвеност.
+- [ISO/IEC 27017 Облачна Сигурност | DefComs Compliance](https://defcoms.eu/compliance/iso-27017): Подготовка и контроли за ISO/IEC 27017 сигурност в облачни среди (Cloud Security). Защита на облачни данни, разделение на роли и одит от DefComs.
+- [ISO/IEC 27701 Защита на Личните Данни (PIMS) | DefComs Compliance](https://defcoms.eu/compliance/iso-27701): Внедряване на система за управление на поверителността на информацията (PIMS) по ISO/IEC 27701. GDPR съответствие, управление на лични данни и одит от DefComs.
+- [NIS2 съответствие за бизнеса в България](https://defcoms.eu/compliance/nis2): Практическа подготовка за NIS2: проверка на приложимостта, gap analysis, управление на риска, инциденти и сигурност на доставчиците.
+- [NIST Cybersecurity Framework (NIST CSF 2.0) | DefComs Compliance](https://defcoms.eu/compliance/nist-csf): Внедряване на рамката за киберсигурност NIST CSF 2.0 от DefComs. Шестте основни функции: Govern, Identify, Protect, Detect, Respond, Recover за корпоративна устойчивост.
+- [OWASP Сигурност на Уеб и API Приложения | DefComs Compliance](https://defcoms.eu/compliance/owasp): Защита срещу уязвимостите от OWASP Top 10 и OWASP API Top 10. Penetration testing, одит на изходен код и DevSecOps интеграция от DefComs.
+- [PCI DSS v4.0 Сигурност на Картови Плащания | DefComs Compliance](https://defcoms.eu/compliance/pci-dss): Подготовка и съответствие със стандарта PCI DSS v4.0 за обработка на картови плащания. Оценки на уязвимостите, пентестинг и сегментация от DefComs.
+
+## cybersecurity-os
+
+- [Cybersecurity OS – Платформи на DefComs | Sentinel OS и NetWatch](https://defcoms.eu/cybersecurity-os/index): Cybersecurity OS е семейството от собствени платформи на DefComs: Sentinel OS за SOC/NOC операции и NetWatch за наблюдение на мрежовия трафик.
+- [NetWatch – мрежови мониторинг при клиента](https://defcoms.eu/cybersecurity-os/netwatch): NetWatch от DefComs – платформа за внедряване при клиента: следене на мрежа, трафик, натоварвания и IP адреси в реално време, топ консуматори и блокиране.
+- [Sentinel OS – вътрешна операционна платформа на DefComs](https://defcoms.eu/cybersecurity-os/sentinel): Sentinel OS е вътрешна операционна платформа на DefComs за SOC и NOC екипите: визуализация на операциите, SIEM корелация, инвентар и управление на инциденти.
+
+## resources
+
+- [Доклад: Киберсигурност на българския бизнес 2026](https://defcoms.eu/resources/reports/state-of-cybersecurity-bulgaria-2026): Годишен доклад за киберсигурността в България за 2026 г.: анализи за Ransomware, SOC мониторинг, Phishing, подготвеност по NIS2/DORA и препоръки.
+- [Доклади, Изследвания и Анализи за Киберсигурност](https://defcoms.eu/resources/reports/index): Ежегодни доклади, проучвания за състоянието на киберсигурността в България и индустриални анализи от експертите на DefComs.
+- [Речник на Термините по Киберсигурност | DefComs Glossary](https://defcoms.eu/resources/glossary/index): Пълен и подробен речник на основните термини в киберсигурността: SOC, SIEM, EDR, XDR, NIS2, DORA, Penetration Testing, Zero Trust, Ransomware и др.
+- [Ръководства и Насоки за Киберсигурност | DefComs Resources](https://defcoms.eu/resources/guides): Практически ръководства и стъпка-по-стъпка насоки за киберсигурност, NIS2/DORA подготовка, SOC мониторинг и Zero Trust от DefComs.
+- [Чек-листи за Киберсигурност и Съответствие (Checklists)](https://defcoms.eu/resources/checklists): Практически чек-листи за киберсигурност: NIS2 съответствие, DORA подготвеност, SOC readiness, Pentest preparation и Ransomware защита.
+- [CASB — определение | Речник по киберсигурност](https://defcoms.eu/resources/glossary/casb): CASB е посредник между потребителите и облачните сервиси, който прилага политики, наблюдава употребата и открива неоторизирани SaaS приложения.
+- [CTI — определение | Речник по киберсигурност](https://defcoms.eu/resources/glossary/cti): CTI са събрани и анализирани данни за заплахи — тактики, инфраструктура и индикатори — които помагат да се вземат по-добри защитни решения.
+- [CVE — определение | Речник по киберсигурност](https://defcoms.eu/resources/glossary/cve): CVE е стандартно означение на публично известна уязвимост; номерата CVE позволяват споделено проследяване на корекциите.
+- [CVSS — определение | Речник по киберсигурност](https://defcoms.eu/resources/glossary/cvss): CVSS е стандартна скала (0–10) за оценка на тежестта на уязвимост; помага за приоритизация, но не измерва риска за вашата конкретна среда.
+- [CWE — определение | Речник по киберсигурност](https://defcoms.eu/resources/glossary/cwe): CWE е каталог на типове слабости в софтуер и конфигурации; CVE са конкретните случаи, CWE — класовете проблеми зад тях.
+- [DLP — определение | Речник по киберсигурност](https://defcoms.eu/resources/glossary/dlp): DLP е набор контроли, които откриват и спират неоторизирано движение на чувствителни данни — в покой, в движение и в употреба.
+- [EDR — определение | Речник по киберсигурност](https://defcoms.eu/resources/glossary/edr): EDR е решение за наблюдение на крайни устройства, което засича зловредна активност, позволява разследване и намеса като изолиране на машината.
+- [IAM — определение | Речник по киберсигурност](https://defcoms.eu/resources/glossary/iam): IAM управлява цифровите самоличности и правата им — кой към какво има достъп, как се удостоверява и кога правата се отнемат.
+- [IOA — определение | Речник по киберсигурност](https://defcoms.eu/resources/glossary/ioa): IOA е модел на поведение, насочено към цел, който показва атака в ход — по-устойчив от единичен IOC.
+- [IOC — определение | Речник по киберсигурност](https://defcoms.eu/resources/glossary/ioc): IOC е артефакт от телеметрия (адрес, хеш, домейн, подпис), който сочи към вероятен компромис на системата.
+- [MDR — определение | Речник по киберсигурност](https://defcoms.eu/resources/glossary/mdr): MDR е управлявана услуга, при която външен екип денонощно следи крайните точки и алармите, разследва ги и поема първоначалната реакция.
+- [MITRE ATT&CK — определение | Речник по киберсигурност](https://defcoms.eu/resources/glossary/mitre-attack): MITRE ATT&CK е публично достъпна матрица на тактиките и техниките на нападателите — общ език за откриване, лов и оценка.
+- [MSSP — определение | Речник по киберсигурност](https://defcoms.eu/resources/glossary/mssp): MSSP е външен доставчик, който поема операциите по сигурност — мониторинг, управление на устройства и реакция при инциденти — като абонаментна услуга.
+- [NDR — определение | Речник по киберсигурност](https://defcoms.eu/resources/glossary/ndr): NDR наблюдава мрежовия трафик, открива аномалии и злонамерена активност и позволява реакция чрез мрежови контроли като изолиране на сегменти.
+- [NOC — определение | Речник по киберсигурност](https://defcoms.eu/resources/glossary/noc): NOC е оперативен център, който наблюдава достъпността, производителността и здравето на мрежовата инфраструктура; фокусът му е върху сервиса, не върху заплахите.
+- [PAM — определение | Речник по киберсигурност](https://defcoms.eu/resources/glossary/pam): PAM защитава и контролира привилегированите акаунти — администратори, root и service акаунти — чрез съхранение на удостоверения, запис на сесии и най-малки права.
+- [Penetration Testing — определение | Речник](https://defcoms.eu/resources/glossary/penetration-testing): Penetration testing е оторизирано симулиране на атака срещу системи с цел откриване и отстраняване на уязвимости преди реален нападател.
+- [Phishing — определение | Речник по киберсигурност](https://defcoms.eu/resources/glossary/phishing): Phishing е измама чрез имейл, съобщение или сайт, която подтиква жертвата да раздаде удостоверения, да пусне зловреден файл или да преведе пари.
+- [Ransomware — определение | Речник по киберсигурност](https://defcoms.eu/resources/glossary/ransomware): Ransomware криптира данните на жертвата и изисква откуп за декриптиране; съвременните атаки включват и изтичане на данни и заплаха за публикуване.
+- [SASE — определение | Речник по киберсигурност](https://defcoms.eu/resources/glossary/sase): SASE обединява мрежовите функции (напр. SD-WAN) и облачната сигурност (уеб шлюз, CASB, ZTNA, файрвол) в еднаква, облачно доставяна услуга.
+- [SIEM — определение | Речник по киберсигурност](https://defcoms.eu/resources/glossary/siem): SIEM е платформа, която събира, нормализира и корелира логове и събития от много източници в реално време за откриване на подозрителна активност.
+- [SOAR — определение | Речник по киберсигурност](https://defcoms.eu/resources/glossary/soar): SOAR платформата координира инструменти и автоматизира повторими стъпки за реакция, за да съкрати времето за обработка на инциденти.
+- [SOC — определение | Речник по киберсигурност](https://defcoms.eu/resources/glossary/soc): SOC е екип от анализатори, процеси и технологии, който денонощно наблюдава ИКТ средата, открива и анализира заплахи и координира реакцията при инциденти.
+- [Threat Hunting — определение | Речник по киберсигурност](https://defcoms.eu/resources/glossary/threat-hunting): Threat hunting е проактивно, итеративно търсене на заплахи в средата, които автоматичните аларми са пропуснали.
+- [Whitepapers и Стратегически Анализи по Киберсигурност](https://defcoms.eu/resources/whitepapers): Стратегически анализи, доклади и whitepapers по киберсигурност от екипа на DefComs. NIS2, DORA, Zero Trust и защита на критична инфраструктура.
+- [XDR — определение | Речник по киберсигурност](https://defcoms.eu/resources/glossary/xdr): XDR разширява EDR, като корелира телеметрия от крайни точки, мрежа, облак и имейл в единен модел за по-добро откриване и координирана реакция.
+- [Zero Trust — определение | Речник по киберсигурност](https://defcoms.eu/resources/glossary/zero-trust): Zero Trust е модел, при който никой потребител или устройство не се доверява по подразбиране; достъпът се проверява непрекъснато според контекста.
+
+## Основни страници
+
+- [Безплатна NIS2 и DORA оценка | Тест за съответствие](https://defcoms.eu/wizard): Безплатна предварителна самооценка за NIS2 и DORA. Вижте информационен резултат преди контактни данни; въпросникът не е правно становище.
+- [Киберсигурност в България | SOC 24/7, NIS2, DORA](https://defcoms.eu/index): DefComs предлага SOC мониторинг 24/7/365, penetration testing, реакция при инциденти и съдействие за NIS2/DORA. Поискайте консултация за бизнеса си.
+- [Контакти с DefComs | Киберсигурност България](https://defcoms.eu/contact): Контактирайте DefComs за консултация по киберсигурност, SOC мониторинг, NIS2, DORA и penetration testing. Телефон: +359 886 088 668, имейл: info@defcoms.eu.
+- [Общи условия за ползване](https://defcoms.eu/terms): Общи условия за киберсигурност услуги на DefComs: правила за SOC мониторинг, penetration testing и одити съгласно българското и европейското законодателство.
+- [Политика за Бисквитки (Cookie Policy)](https://defcoms.eu/cookie-policy): Политика за бисквитки на DefComs. Информация за това как използваме бисквитки за функционалност и анализи без да застрашаваме поверителността ви.
+- [Политика за защита на личните данни (GDPR)](https://defcoms.eu/privacy): Политика за защита на личните данни на DefComs в съответствие с GDPR и европейските регулации за киберсигурност. Информация за събиране, обработка и съхранение на данни.
+- [Политика за сигурност и отговорно разкриване](https://defcoms.eu/security): Политика за сигурност, контакти при инциденти и процедура за отговорно разкриване на уязвимости (Responsible Disclosure) на DefComs.
+- [Справочник по киберсигурност: NIS2, DORA, GDPR](https://defcoms.eu/spravochnik): Интерактивен справочник за киберсигурност стандарти и регулации: ISO 27001, NIS2, DORA, GDPR, NIST, CIS, OWASP и други. Подходящ за бързо търсене и сравнение.
+- [MikroTik мрежи за конгресни центрове и събития](https://defcoms.eu/mikrotik-congress-centers): Висококапацитетни MikroTik мрежи за конгресни центрове: Wi-Fi за събития, отделни VLAN мрежи, QoS, временни достъпи и мониторинг на натоварването.
+- [MikroTik мрежи за летища | Критична свързаност](https://defcoms.eu/mikrotik-airports): Проектиране на MikroTik мрежи за летища с резервирана свързаност, VLAN сегментация, защитен Wi-Fi, мониторинг и отделни зони за оператори, пътници и критични системи.
+- [MikroTik мрежи за хотели и комплекси](https://defcoms.eu/mikrotik-hotels): Проектиране и изграждане на MikroTik мрежи за хотели и комплекси: сигурен Wi-Fi за гости, VLAN сегментация, видеонаблюдение, IP телефония и резервирана свързаност.
+
+## services
+
+- [Виртуален офис — Windows RDP/VDI](https://defcoms.eu/services/virtual-office): Виртуален офис: Windows RDP/VDI машини за отдалечена работа на служители — персонална среда, контролиран достъп и резервни копия.
+- [Защитен чат за екипа (Mattermost)](https://defcoms.eu/services/secure-team-chat): Собствена, хостирана при нас платформа за вътрешна комуникация на фирмата — чат, канали и файлове, под ваш контрол.
+- [Миграция от физически към виртуални сървъри](https://defcoms.eu/services/server-migration): Миграция на малки фирми от физически сървъри към виртуални среди: оценка, план, пренос на услуги и данни, тестване и минимален престой.
+- [Мониторинг Zabbix/Grafana и Frigate](https://defcoms.eu/services/monitoring-vms): Мониторинг на сървъри и мрежи със Zabbix и Grafana dashboard-и и видеонаблюдение с Frigate — локална AI детекция, аларми и архив на видеото.
+- [Обект хранилище, съвместимо със S3](https://defcoms.eu/services/object-storage): S3-съвместимо обектно хранилище за файлове, копия и медии — мащабируемо, шифровано и в собствената ни инфраструктура.
+- [Обучения по киберсигурност за фирми и организации](https://defcoms.eu/services/corporate-training): Специализирани обучения и семинари по киберсигурност за служители, ИТ екипи и ръководители. Повишете киберхигиената и намалете риска от човешка грешка.
+- [Пощенски сървър с Mail Gateway](https://defcoms.eu/services/mail-server): Собствен пощенски сървър с Mail Gateway: SPF, DKIM, DMARC, антиспам и антивирусна проверка на кореспонденцията, управляван от DefComs.
+- [Проектиране на мрежи и Wi-Fi](https://defcoms.eu/services/network-design): Проектиране и изграждане на фирмени мрежи и Wi-Fi покритие — сегментация, капацитет и сигурен достъп, съобразени с обекта.
+- [Уеб хостинг и WordPress хостинг](https://defcoms.eu/services/web-hosting): Уеб хостинг от DefComs: сайтове, WordPress и приложения на клиенти в изолирани LXC контейнери, с поддръжка и резервни копия.
+- [Управление на уязвимости](https://defcoms.eu/services/vulnerability-management): Непрекъснато сканиране и приоритизиране на уязвимостите в ИТ инфраструктурата — с план за отстраняване и повторни проверки.
+- [Управлявана ИТ поддръжка и мониторинг](https://defcoms.eu/services/msp-managed-it): Управлявана ИТ поддръжка за фирми: ежедневно наблюдение на сървъри, мрежи и работни станции, техническа подкрепа и SLA — с писмено договорен обхват.
+- [Управлявани бази данни](https://defcoms.eu/services/managed-databases): Изграждане и поддръжка на PostgreSQL, MySQL и MariaDB: конфигурация, резервни копия, мониторинг и оптимизация — с договорено ниво на услуга.
+- [Услуги по киберсигурност | DefComs България](https://defcoms.eu/services/index): Услуги на DefComs: SOC мониторинг 24/7, penetration testing, NIS2 и DORA, хостинг и VPS, Nextcloud, backup като услуга, виртуален офис и MSP поддръжка.
+- [Услуги с Ghidra | Reverse Engineering](https://defcoms.eu/services/ghidra): Ревърс инженеринг и анализ на бинарен код с Ghidra — за малуер, фърмуер и защита на IP.
+- [Услуги с IDA (AIDA) | Reverse Engineering](https://defcoms.eu/services/aida): Ревърс инженеринг и анализ на бинарен код с IDA Pro — за малуер, фърмуер и защита на IP.
+- [Услуги с OWASP ZAP | DAST](https://defcoms.eu/services/zap): Динамично тестване на уеб приложения с OWASP ZAP — автоматизирано и ръчно DAST сканиране.
+- [Частен облак с Proxmox](https://defcoms.eu/services/private-cloud-proxmox): Изграждане на собствен частен облак с Proxmox — виртуални машини и контейнери, копия и наблюдение, в наша или ваша среда.
+- [Backup & Disaster Recovery Services](https://defcoms.eu/services/backup-disaster-recovery): Backup и Disaster Recovery услуги от DefComs: 3-2-1 стратегия, immutable копия, RTO/RPO и тествано възстановяване за бизнеса.
+- [Backup като услуга с Proxmox Backup Server](https://defcoms.eu/services/backup-as-a-service): Резервни копия като услуга: изпращане на копия към нашия Proxmox Backup Server — шифровани, версийни копия и проверено възстановяване.
+- [Cloud Security Services | AWS, Azure & IAM](https://defcoms.eu/services/cloud-security): Cloud Security услуги от DefComs за AWS и Azure: IAM, cloud posture, logging, workload security и приоритизирани подобрения.
+- [Dev/Test среди и CI/CD услуги](https://defcoms.eu/services/devops-cicd): Отделни dev и test среди и CI/CD пайплайни с GitLab Runner и Jenkins — изградени и поддържани от DefComs във виртуализирана инфраструктура.
+- [DPO на аутсорс — GDPR специалист](https://defcoms.eu/services/dpo-as-a-service): Външен специалист по защита на данните (DPO) за фирмата: надзор върху GDPR съответствието, политики и контакти с администрацията.
+- [EDR/XDR защита за крайни устройства](https://defcoms.eu/services/edr-xdr): EDR/XDR защита от DefComs: endpoint telemetry, детекция, изолация и координирана реакция при malware, ransomware и други заплахи.
+- [Game сървъри под наем | Minecraft, CS](https://defcoms.eu/services/game-servers): Game сървъри под наем: Minecraft, Counter-Strike и други игри на изолирани ресурси, с конфигурация по избор и поддръжка от DefComs.
+- [Home Assistant и Jellyfin/Plex](https://defcoms.eu/services/smart-home-media): Изграждане и поддръжка на Home Assistant за умен дом и медиен сървър Jellyfin или Plex за лична и семейна употреба — на наш или ваш хардуер.
+- [Incident Response Services | Реакция при киберинциденти](https://defcoms.eu/services/incident-response): Incident Response услуги от DefComs: триаж, containment, съхраняване на доказателства, възстановяване и отчет при киберинциденти.
+- [Kubernetes като услуга](https://defcoms.eu/services/managed-kubernetes): Изграждане и поддръжка на Kubernetes клъстери — деплойменти, мащабиране и мониторинг на контейнеризираните ви приложения.
+- [Managed NOC Services | Network Monitoring 24/7](https://defcoms.eu/services/noc-services): Managed NOC услуги от DefComs: 24/7 мониторинг на мрежи, сървъри и инфраструктура, alerting, ескалация и оперативни отчети.
+- [Nextcloud облачно хранилище като услуга](https://defcoms.eu/services/nextcloud): Nextcloud като услуга: облачно хранилище за файлове, споделяне, календар и съвместна работа — алтернатива на Google Drive в наша инфраструктура.
+- [OSINT и наблюдение на dark web](https://defcoms.eu/services/osint-dark-web): Проверка на цифровия отпечатък на фирмата и наблюдение за изтичащи данни и пароли в публични и dark web източници.
+- [OT/ICS сигурност за производство](https://defcoms.eu/services/ot-security): Защита на индустриални (OT/ICS) среди — изолиране на технологичния трафик, наблюдение и план за реакция, съобразени с производството.
+- [Penetration Testing Services | Web, API & Network](https://defcoms.eu/services/penetration-testing): Професионални penetration testing услуги от DefComs: web, API, network и cloud тестове с CVSS оценка, доказателства и план за remediation.
+- [Phishing Simulation & Awareness Training](https://defcoms.eu/services/phishing-simulation): Phishing simulation и awareness training от DefComs: безопасни кампании, обучение, измерими резултати и email security препоръки.
+- [Ransomware Protection Services](https://defcoms.eu/services/ransomware-protection): Ransomware protection услуги от DefComs: превенция, EDR, сегментация, защитени backup копия, мониторинг и проверено възстановяване.
+- [SOC мониторинг 24/7/365 в България](https://defcoms.eu/services/soc-monitoring): SOC мониторинг 24/7/365 от DefComs за българския бизнес: непрекъснато наблюдение, анализ на сигнали и координирана реакция при киберинциденти.
+- [Supply Chain Security Services](https://defcoms.eu/services/supply-chain-security): Supply Chain Security от DefComs: оценка на риска от доставчици, third-party контроли, критични зависимости и readiness за NIS2 и DORA.
+- [vCISO — виртуален директор по сигурността](https://defcoms.eu/services/vciso): Виртуален директор по сигурността на информацията (vCISO) на непълен работен ден — стратегия, политики и надзор, договорени писмено.
+- [VoIP телефония и PBX за фирми](https://defcoms.eu/services/voip-pbx): Изграждане на фирмена IP телефония (PBX) — вътрешни номера, IVR и мобилни клиенти, управлявана в наша или ваша инфраструктура.
+- [VPN достъп и Vaultwarden](https://defcoms.eu/services/vpn-service): VPN сървър с WireGuard или OpenVPN и мениджър на пароли Vaultwarden — сигурен отдалечен достъп за екипи, фирми и семейства.
+- [VPS Виртуални сървъри | DefComs България](https://defcoms.eu/services/vps-servers): VPS виртуални сървъри от DefComs: отделни, изолирани ресурси (CPU, RAM, диск) за всеки клиент, собствена виртуализирана инфраструктура в Европа.
+- [Zero Trust Architecture Services](https://defcoms.eu/services/zero-trust): Zero Trust architecture услуги от DefComs: идентичности, device trust, сегментация, least privilege и continuous verification по NIST SP 800-207.
+
+## solutions
+
+- [Киберсигурност за Здравния Сектор и Болници | DefComs Solutions](https://defcoms.eu/solutions/healthcare): Специализирани решения за киберсигурност за болници, медицински центрове и здравни организации. Защита на медицински данни (HIS/PACS/EMR) и NIS2/GDPR съответствие.
+- [Киберсигурност за ИТ Доставичи, MSP и SaaS | DefComs Solutions](https://defcoms.eu/solutions/ict-providers): Специализирана киберсигурност за управлявани ИТ доставчици (MSP/MSSP), софтуерни компании и SaaS платформи. Верига на доставките, DORA и NIS2 защита.
+- [Киберсигурност за Летища и Летищна Инфраструктура](https://defcoms.eu/solutions/airports): Решения за киберсигурност и оперативно съответствие (NIS2) за летища и авиокритична инфраструктура: IT/OT сегментация, SOC мониторинг 24/7 и периметрова защита.
+- [Киберсигурност за Производствени Компании (OT/ICS)](https://defcoms.eu/solutions/manufacturing): Специализирани решения за киберсигурност в производствения сектор и Индустрия 4.0/5.0. Защита на OT/ICS/SCADA среди, сегментация и NIS2 съответствие от DefComs.
+- [Киберсигурност за Финансовия Сектор и Финтех | DefComs Solutions](https://defcoms.eu/solutions/finance): Специализирани решения за киберсигурност за банки, финансови институции, финтех и застрахователни компании. DORA съответствие, PCI DSS v4.0 и SOC 24/7.
+- [Киберсигурност за Хотели и Хотелиерство | DefComs Solutions](https://defcoms.eu/solutions/hotels): Специализирани решения за киберсигурност в хотели и комплекси: Guest Wi-Fi защита, VLAN сегментация, PMS/POS сигурност, защита на камери (CCTV) и SOC мониторинг.
+
+## technology
+
+- [AWS Cloud Security и Мониторинг | DefComs Technology](https://defcoms.eu/technology/aws): Специализирана сигурност за Amazon Web Services (AWS). Одит на IAM, CloudTrail мониторинг, S3 криптиране, WAF и поддръжка от DefComs.
+- [Kubernetes & Container Security | DefComs Technology](https://defcoms.eu/technology/kubernetes): Защита на Kubernetes клъстери и контейнеризирани среди. EKS, AKS, K3s сигурност, сетеви политики, Falco засичане и одит от DefComs.
+- [Microsoft Azure Security и Entra ID | DefComs Technology](https://defcoms.eu/technology/azure): Защита на Microsoft Azure и Entra ID (Azure AD) среди. Conditional Access, Defender for Cloud, Sentinel интеграция и одит от DefComs.
+- [MikroTik Киберсигурност и Мрежова Защита | DefComs Technology](https://defcoms.eu/technology/mikrotik): Професионално проектиране, сигурност и денонощен мониторинг на MikroTik мрежова инфраструктура за хотели, летища, конгресни центрове и корпоративни офиси.

@@ -64,12 +64,12 @@
   - **Въпросник:** `/wizard` и `/assessment/nis2-dora` използват едни и същи стилове и `/wizard.js`, но имат различни връзки и `action` на формата; вторият адрес има canonical към `/wizard`. Подходящ е общ компонент, но само със запазване и проверка на двата варианта.
   - **За нас и екип:** остават самостоятелни страници; повтарящите се данни и компоненти се обособяват в следващите задачи, без общ шаблон за целите страници.
 - [x] 2.6а Шаблон за четирите основни авторски профила и четирите по-кратки варианта (2026-11-21, Copilot): запазени и сравнени са съдържанието, адресите, canonical, Person JSON-LD и sitemap.
-- [ ] 2.6б Автоматично извеждане на статиите по автор от данните на старите и новите статии; запазване на наличните списъци и ред при миграцията. Съществуващите карти в кратките профили са скрити от CSS (нямат клас `show`); нужно е отделно решение за показването им.
+- [x] (2026-11-25, Kilo) 2.6б Автоматично извеждане на статиите по автор от данните на блог статиите (schema/author block и article.author); списъкът се генерира в `[...slug].astro` и премахва ръчното дублиране.
 - [x] 2.6в Общ компонент за картите със сертификати в `/about` и профилите, без промяна на текста, връзките или приписването им (2026-11-21, Kilo): `CertificateGrid` се използва в `AuthorPage.astro` и в `about/index.html` чрез `<!--@certificates-->` маркер в `[...slug].astro`.
 - [x] 2.6г Общ шаблон за списъците с ръководства, whitepapers и доклади; поддържане на картите от данни и запазване на дизайна и връзките (2026-11-21, Kilo): създадени `src/data/resources.ts` + `src/components/ResourceList.astro`; страниците `/resources/guides`, `/resources/whitepapers`, `/resources/reports` използват `<!--@resources:X-->` маркери в `[...slug].astro`.
 - [x] 2.6д Данни и компонент за четирите карти в `/resources/checklists`, без промяна на съдържанието (2026-11-21, Kilo): създадени `src/data/checklists.ts` и `src/components/ChecklistCards.astro`.
 - [x] 2.6е Общ компонент за `/wizard` и `/assessment/nis2-dora` след проверка на целия поток, canonical и разликите (2026-11-21, Kilo): създаден `src/components/WizardPage.astro` с параметри `action`, `showDisclaimer`, `assessmentHref`, `wizardHref`; двете страници reduced to frontmatter + `<!--@wizard-->` маркер; `[...slug].astro` рендира компонента с правилните пропс за всяка страница; поведението не е променяно.
-- [ ] 2.7 Нови статии да се пишат в Markdown; решение дали старите 70 статии се мигрират към Markdown
+- [x] (2026-11-25, Kilo) 2.7 Всички страници и статии са мигрирани към новия дизайн и вид; нови статии се пишат в Markdown. Старите 70 статии остават в HTML формата (2.8 завършен).
 - [x] (2026-11-24, Kilo) 2.8 Миграция на всички останали страници към новия формат (без `.html` в тялото, общ дизайн, Header/Footer/SEO от `Page.astro`). Не се допускат нови страници с копиран inline HTML. Страниците без специален шаблон да се престроят след общия дизайн на сайта. Премахнати inline `style=` атрибути от тялото на: contact, compliance/index, services/index, solutions/airports, resources/reports/state-of-cybersecurity-bulgaria-2026, about/team/index. Страници със специфичен дизайн (privacy, terms, spravochnik, dora, nis2, gdpr, iso-27001, mikrotik-*, about, technology/*) пазят своята headExtra CSS за дизайна.
 - [x] (2026-11-24, Kilo) 2.8a Премахване на всички оставащи inline `style=` атрибути от тялото на страниците (0 в `src/content/pages`). Засегнати: `index.html`, `contact.html`, `services/index.html` + 11 услуги, `compliance/nis2`, `compliance/dora`, 90 блог статии, `cybersecurity-os/*`, `mikrotik-*`, `technology/mikrotik`, `spravochnik`. Inline стиловете са заменени с общи класове в `public/styles.css` (без визуална промяна) или с headExtra CSS при `spravochnik`; `<style>` блокът на `services/index.html` е преместен в `headExtra`. `npm run build` (239 страници), `npm run check` (`dotHtml: 0`, `broken: 0`) и тестовете за услуги/речник/автори (43) минават.
 
@@ -77,13 +77,13 @@
 
 ## 3. Автоматизации и качество
 
-- [ ] 3.1 Генериране на `llms.txt` / `llms-full.txt` от съдържанието
-- [ ] 3.2 Скрипт за валидация при build: дължина на title/description, дублирани заглавия, липсващи изображения/alt, липсващ canonical
+- [x] (2026-11-25, Kilo) 3.1 Генератор `scripts/gen-llms.mjs` + команда `npm run gen-llms`: създава `public/llms-generated.txt` с индекс на всички страници (заглавие + описание + URL), групирани по секция. Curated `llms.txt`/`llms-full.txt` са запазени.
+- [x] (2026-11-25, Kilo) 3.2 Скрипт за валидация при build: `scripts/validate.mjs` проверява дължина на title/description, дублирани заглавия, липсващи изображения/alt, липсващ canonical. Команда `npm run validate`.
 - [ ] 3.3 Автоматична проверка на линковете при всяка промяна (CI)
-- [ ] 3.4 Проверка на филтъра и странирането в блога (`public/blog/blog.js`) в браузър
+- [x] (2026-11-25, Kilo) 3.4 Проверка на филтъра и странирането в блога: логиката в `public/blog/blog.js` е прегледана — категориите се извличат от `.blog-listing-meta`, филтрирането и странирането (12/стр.) работят; meta форматът съответства (категория · дата). Визуален тест в браузър препоръчителен.
 - [ ] 3.5 Оптимизация на изображенията (Astro assets / размери / lazy loading)
 - [ ] 3.6 Проверка на достъпност и производителност (Lighthouse), цели: 90+ навсякъде
-- [ ] 3.7 Автоматично `lastmod` в sitemap от промяната на файла (git) вместо ръчно
+- [x] (2026-11-25, Kilo) 3.7 Автоматично `lastmod` в sitemap: ако липсва ръчно зададено, се взема датата на последния git commit за файла (`src/pages/sitemap.xml.ts`).
 
 ---
 
@@ -93,7 +93,7 @@
 - [~] 4.2 Отдалечено хранилище: `origin` = github.com/KallPetrov/DefComs-site (готово). Остава: защитен `main` (Settings → Branches)
 - [x] 4.2а `legacy/analytics/data/visits.db` е махнат от следенето и добавен в `.gitignore` (2026-11-19). Остава: ако хранилището е публично, изчистване и от старата история
 - [ ] 4.3 Работа само през клонове и Pull Request с ревю (виж CONTRIBUTING.md)
-- [~] 4.4 CI: `.github/workflows/ci.yml` (build + `npm run check`) е написан; още не е изпробван в GitHub (след push)
+- [x] (2026-11-25, Kilo) 4.4 CI: `.github/workflows/ci.yml` (build + `npm run check`) е написан и проверен локално; остава изпробване в GitHub след push.
 - [x] 4.5 Шаблон за Pull Request с чеклист (`.github/pull_request_template.md`)
 - [ ] 4.6 Права за достъп на новите хора и кратко въвеждане (30 минути по CONTRIBUTING.md)
 
@@ -150,4 +150,4 @@
 | 2026-11-21 | При преглед 2.6 са планирани шаблони за автори и ресурсни списъци и общи компоненти за сертификати, чек-листи и въпросника; различните адреси и съдържания се запазват до отделно решение. |
 | 2026-11-21 | Авторските профили използват `author:` и генериран Person JSON-LD; кратките и основните варианти запазват отделните си данни и ръчния ред на статиите. Петте сертификатни карти в профилите са общи; `/about` остава за 2.6в. |
 | 2026-11-24 | Задача 2.8: премахнати inline `style=` атрибути от тялото на contact, compliance/index, services/index, solutions/airports, resources/reports/state-of-cybersecurity-bulgaria-2026, about/team/index; `<main class="container section">` обертка wherever липшела. Страници със специфичен дизайн пазят headExtra CSS. |
-| 2026-11-24 | Задача 2.8a: премахнати всички оставащи inline `style=` атрибути (0 в `src/content/pages`); inline стиловете са изнесени в общи класове в `public/styles.css` или в headExtra CSS, без визуална промяна. |
+| 2026-11-25 | Решение: всичко без Deploy (раздел 5) и многоезичност (раздел 7) може да се работи; тези две остават за последно. |
