@@ -979,6 +979,7 @@ section {
     justify-content: center;
     gap: var(--space-lg);
     margin-top: var(--space-lg);
+    margin-bottom: var(--space-xl);
 }
 
 .cert-card {
@@ -3254,6 +3255,12 @@ html,body{overflow-x:clip}
 .lead { color: var(--text-secondary); font-size: var(--font-size-lg); line-height: 1.7; margin-bottom: var(--space-xl); max-width: 680px; }
 .bg-light { background: var(--background-secondary); }
 .hero-section { padding: 150px 24px 80px; }
+.hero-section h1 {
+    max-width: 900px;
+    margin: 0 auto 24px;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.15;
+}
 .hero-container { max-width: 1120px; margin: 0 auto; }
 .feature-list { list-style: none; padding: 0; margin: 0; }
 .feature-list li { margin-bottom: 12px; }
@@ -3266,7 +3273,8 @@ html,body{overflow-x:clip}
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
 .faq-section { margin-top: 48px; }
 .faq-list { display: flex; flex-direction: column; gap: 12px; }
-.section { margin: 0; padding: 0; }
+.section { padding: var(--space-xl) 0; }
+.section + .section { margin-top: var(--space-xl); }
 .card-actions { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
 .show { display: block !important; }
 .article-author { color: var(--text-secondary); font-size: 0.85rem; margin: 14px 0 0; }
@@ -3371,3 +3379,50 @@ html,body{overflow-x:clip}
 .platform-card { border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 24px; background: var(--background-card); }
 .platform-card img { width: 100%; height: auto; border-radius: var(--radius-md); margin-bottom: 16px; }
 .platforms-cta { text-align: center; margin-top: 28px; }
+
+/* ============ Бутони – отстояние от блиzkiят текст ============ */
+.btn,
+.cta-button {
+    margin-top: var(--space-md);
+}
+
+/* Бутони, които са в бутонови групи – нямат допълнително отстояние */
+.hero-buttons > .btn,
+.hero-buttons > .cta-button,
+.hero-actions > .btn,
+.hero-actions > .cta-button,
+.service-landing-actions > .btn,
+.service-landing-actions > .cta-button,
+.nis2-actions > .btn,
+.dora-actions > .btn,
+.card-actions > .btn,
+.card-actions > .cta-button,
+.page-cta-actions > .btn,
+.page-cta-actions > .cta-button,
+.team-banner > .btn,
+.nav-container .cta-button {
+    margin-top: 0;
+}
+
+/* ============ Контактна форма – услугата под надписа „Услуга“ ============ */
+.service-field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    align-items: start;
+}
+.service-field select.service-select {
+    width: 100%;
+    padding: var(--space-sm);
+    background: var(--background-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    color: white;
+}
+.service-field select.service-select:focus {
+    outline: none;
+    border-color: var(--secondary-cyan);
+    box-shadow: 0 0 0 3px rgba(0, 240, 255, 0.15);
+}
