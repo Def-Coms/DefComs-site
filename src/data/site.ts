@@ -44,6 +44,7 @@ export const footer = {
         { label: 'Обучения за фирми', href: '/services/corporate-training' },
         { label: 'Penetration Testing', href: '/services/penetration-testing' },
         { label: 'GDPR/NIS2/DORA Съответствие', href: '/compliance/nis2' },
+        { label: 'Управление на уязвимости', href: '/services/vulnerability-management' },
       ],
     },
     {
@@ -51,6 +52,7 @@ export const footer = {
       links: [
         { label: 'Регулаторен Хъб', href: '/spravochnik' },
         { label: 'Cybersecurity OS', href: '/cybersecurity-os' },
+        { label: 'ShieldAcademy', href: '/shield-academy' },
         { label: 'Статии & Блог', href: '/blog' },
         { label: 'За Нас', href: '/about' },
         { label: 'Покритие в България', href: '/bulgaria' },
@@ -62,6 +64,8 @@ export const footer = {
         { label: 'Регулация NIS2', href: '/compliance/nis2' },
         { label: 'Регламент GDPR', href: '/compliance/gdpr' },
         { label: 'Стандарт ISO 27001', href: '/compliance/iso-27001' },
+        { label: 'DORA съответствие', href: '/compliance/dora' },
+        { label: 'NIST CSF', href: '/compliance/nist-csf' },
         { label: 'Контакти', href: '/#contact' },
       ],
     },

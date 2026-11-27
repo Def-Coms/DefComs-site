@@ -30,92 +30,112 @@ schema:
         publisher:
           "@id": https://defcoms.eu/#organization
 bodyClass: service-landing
+headExtra: |-
+  <style>
+    .contact-hero { padding: 100px 24px 60px; text-align: center; background: radial-gradient(circle at 50% 20%, rgba(0, 240, 255, 0.12) 0%, transparent 60%), radial-gradient(circle at 80% 80%, rgba(0, 102, 255, 0.1) 0%, transparent 50%), var(--background-primary); }
+    .contact-hero h1 { font-size: clamp(2.5rem, 5vw, 3.8rem); margin-bottom: 16px; line-height: 1.15; }
+    .contact-hero p { font-size: 1.2rem; color: var(--text-secondary); line-height: 1.7; max-width: 800px; margin: 0 auto 30px; }
+    .contact-section { padding: 60px 24px; max-width: 1200px; margin: 0 auto; }
+    .contact-section h2 { font-size: 1.8rem; margin-bottom: 24px; text-align: center; }
+    .contact-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 24px; }
+    .contact-card { border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 32px; background: var(--background-card); display: flex; flex-direction: column; height: 100%; transition: transform 0.3s ease, border-color 0.3s ease; }
+    .contact-card:hover { transform: translateY(-4px); border-color: var(--secondary-cyan); }
+    .contact-card h2 { margin-top: 0; margin-bottom: 18px; font-size: 1.35rem; }
+    .contact-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 30px; }
+  </style>
 ---
-<main class="container section">
-        <h1>Контакти</h1>
-        <p>Свържете се с екипа на DefComs за консултация по киберсигурност, SOC мониторинг, NIS2, DORA и penetration testing.</p>
+<main class="container page-shell">
+    <section class="contact-hero">
+        <div class="container">
+            <nav class="blog-breadcrumbs page-breadcrumbs" aria-label="Навигационна пътека">
+                <a href="/">Начало</a> › <span aria-current="page">Контакти</span>
+            </nav>
+            <h1>Контакти</h1>
+            <p>Свържете се с екипа на DefComs за консултация по киберсигурност, SOC мониторинг, NIS2, DORA и penetration testing.</p>
+        </div>
+    </section>
 
-        <section class="mt-4">
-            <div class="grid grid-2">
-                <div class="card">
-                    <h2>Как да ни достигнете</h2>
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <div class="contact-item-icon">📧</div>
-                            <div class="contact-item-text">
-                                <h3>Имейл за контакт</h3>
-                                <p>info@defcoms.eu</p>
-                            </div>
+    <section class="contact-section">
+        <div class="contact-cards">
+            <article class="contact-card">
+                <h2>Как да ни достигнете</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📧</div>
+                        <div class="contact-item-text">
+                            <h3>Имейл за контакт</h3>
+                            <p>info@defcoms.eu</p>
                         </div>
-                        <div class="contact-item">
-                            <div class="contact-item-icon">📞</div>
-                            <div class="contact-item-text">
-                                <h3>Телефон за контакт</h3>
-                                <p><a href="tel:+359886088668">+359 886 088 668</a></p>
-                            </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📞</div>
+                        <div class="contact-item-text">
+                            <h3>Телефон за контакт</h3>
+                            <p><a href="tel:+359886088668">+359 886 088 668</a></p>
                         </div>
-                        <div class="contact-item">
-                            <div class="contact-item-icon">👁️‍🗨️</div>
-                            <div class="contact-item-text">
-                                <h3>Работно време търговски отдел</h3>
-                                <p>Понеделник – Петък (09:00 – 18:00)<br>SOC/NOC дежурство: 24/7/365</p>
-                            </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">👁️‍🗨️</div>
+                        <div class="contact-item-text">
+                            <h3>Работно време търговски отдел</h3>
+                            <p>Понеделник – Петък (09:00 – 18:00)<br>SOC/NOC дежурство: 24/7/365</p>
                         </div>
                     </div>
                 </div>
+            </article>
 
-                <div class="card">
-                    <h2>Оформете заявка</h2>
-                    <form action="/send_form.php" method="POST" class="contact-form">
-                        <div class="form-group">
-                            <label><span>Име и фамилия</span><input type="text" name="name" required></label>
-                        </div>
-                        <div class="form-group">
-                            <label><span>Имейл</span><input type="email" name="email" required></label>
-                        </div>
-                        <div class="form-group">
-                            <label><span>Телефон</span><input type="tel" name="phone"></label>
-                        </div>
-                        <div class="form-group">
-                            <label><span>Компания</span><input type="text" name="company"></label>
-                        </div>
-                        <div class="form-group">
-                            <label class="service-field"><span>Услуга</span><select name="service" class="service-select">
-                                <option value="" selected>Изберете услуга…</option>
-                                <option value="soc-monitoring">SOC мониторинг 24/7/365</option>
-                                <option value="noc-services">NOC управление</option>
-                                <option value="penetration-testing">Penetration Testing</option>
-                                <option value="incident-response">Incident Response (инцидентен отговор)</option>
-                                <option value="edr-xdr">EDR/XDR защита</option>
-                                <option value="ransomware-protection">Ransomware защита</option>
-                                <option value="zero-trust">Zero Trust архитектура</option>
-                                <option value="cloud-security">Cloud Security (облачна сигурност)</option>
-                                <option value="backup-disaster-recovery">Backup и Disaster Recovery</option>
-                                <option value="supply-chain-security">Supply Chain Security</option>
-                                <option value="phishing-simulation">Phishing симулации</option>
-                                <option value="corporate-training">Обучения за фирми</option>
-                                <option value="netwatch">NetWatch – мрежови мониторинг</option>
-                                <option value="nis2">NIS2 съответствие</option>
-                                <option value="dora">DORA съответствие</option>
-                                <option value="gdpr">GDPR съответствие</option>
-                                <option value="other">Друго</option>
-                            </select></label>
-                        </div>
-                        <div class="form-group">
-                            <label><span>Съобщение</span><textarea name="message" rows="5"></textarea></label>
-                        </div>
-                        <div class="hp-field" aria-hidden="true">
-                            <label>Молба не попълвайте това поле<input type="text" name="website_hp" tabindex="-1" autocomplete="off"></label>
-                        </div>
-                        <div class="form-consent">
-                            <input type="checkbox" name="consent" value="yes" required id="consent">
-                            <label for="consent">Съгласявам се личните ми данни да бъдат обработени според <a href="/privacy">Политиката за защита на личните данни</a>.</label>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Изпратете заявка</button>
-                    </form>
-                </div>
-            </div>
-        </section>
+            <article class="contact-card">
+                <h2>Оформете заявка</h2>
+                <form action="/send_form.php" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <label><span>Име и фамилия</span><input type="text" name="name" required></label>
+                    </div>
+                    <div class="form-group">
+                        <label><span>Имейл</span><input type="email" name="email" required></label>
+                    </div>
+                    <div class="form-group">
+                        <label><span>Телефон</span><input type="tel" name="phone"></label>
+                    </div>
+                    <div class="form-group">
+                        <label><span>Компания</span><input type="text" name="company"></label>
+                    </div>
+                    <div class="form-group">
+                        <label class="service-field"><span>Услуга</span><select name="service" class="service-select">
+                            <option value="" selected>Изберете услуга…</option>
+                            <option value="soc-monitoring">SOC мониторинг 24/7/365</option>
+                            <option value="noc-services">NOC управление</option>
+                            <option value="penetration-testing">Penetration Testing</option>
+                            <option value="incident-response">Incident Response (инцидентен отговор)</option>
+                            <option value="edr-xdr">EDR/XDR защита</option>
+                            <option value="ransomware-protection">Ransomware защита</option>
+                            <option value="zero-trust">Zero Trust архитектура</option>
+                            <option value="cloud-security">Cloud Security (облачна сигурност)</option>
+                            <option value="backup-disaster-recovery">Backup и Disaster Recovery</option>
+                            <option value="supply-chain-security">Supply Chain Security</option>
+                            <option value="phishing-simulation">Phishing симулации</option>
+                            <option value="corporate-training">Обучения за фирми</option>
+                            <option value="netwatch">NetWatch – мрежови мониторинг</option>
+                            <option value="nis2">NIS2 съответствие</option>
+                            <option value="dora">DORA съответствие</option>
+                            <option value="gdpr">GDPR съответствие</option>
+                            <option value="other">Друго</option>
+                        </select></label>
+                    </div>
+                    <div class="form-group">
+                        <label><span>Съобщение</span><textarea name="message" rows="5"></textarea></label>
+                    </div>
+                    <div class="hp-field" aria-hidden="true">
+                        <label>Молба не попълвайте това поле<input type="text" name="website_hp" tabindex="-1" autocomplete="off"></label>
+                    </div>
+                    <div class="form-consent">
+                        <input type="checkbox" name="consent" value="yes" required id="consent">
+                        <label for="consent">Съгласявам се личните ми данни да бъдат обработени според <a href="/privacy">Политиката за защита на личните данни</a>.</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Изпратете заявка</button>
+                </form>
+            </article>
+        </div>
+    </section>
 
         <section class="contact-faq">
             <h2>Често задавани въпроси</h2>
