@@ -6,12 +6,13 @@ const a = page.article;
 const crumb = a.breadcrumb ?? title;
 ---
 <main class="blog-article">
-  <nav class="blog-breadcrumbs" aria-label="Навигационна пътека">
-    <a href="/">Начало</a><span aria-hidden="true">›</span>
-    <a href="/blog">Блог</a><span aria-hidden="true">›</span>
-    <span aria-current="page">{crumb}</span>
-  </nav>
-  <article>
+  <div class="container">
+    <nav class="blog-breadcrumbs" aria-label="Навигационна пътека">
+      <a href="/">Начало</a><span aria-hidden="true">›</span>
+      <a href="/blog">Блог</a><span aria-hidden="true">›</span>
+      <span aria-current="page">{crumb}</span>
+    </nav>
+    <article>
     <p class="blog-kicker">{a.kicker ?? a.categories.join(' · ')}</p>
     <h1>{title}</h1>
     {a.deck && <p class="blog-deck">{a.deck}</p>}
@@ -38,4 +39,5 @@ const crumb = a.breadcrumb ?? title;
       </aside>
     )}
   </article>
+  </div>
 </main>
